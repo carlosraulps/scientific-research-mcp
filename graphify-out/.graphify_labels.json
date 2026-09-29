@@ -2,7 +2,7 @@
   "0": "__init__.py",
   "1": "CanvasStore",
   "2": "TestScientificResearchLog",
-  "3": "CheckpointManager",
+  "3": "GitController",
   "4": "HistoricalMemoryStore",
   "5": "ScientificEvaluator",
   "6": "MDCrow: Checkpoint-Based Memory & Session Resumption",
@@ -36,10 +36,15 @@
   "34": "pt_bulk_convergence_discussion_v3.md",
   "35": "Meadows_2008_Thinking_In_Systems.md",
   "36": "Sankaralingam_2026_Rosetta_Performance_Modeling.md",
-  "37": ".audit_dual_verification",
+  "37": "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling",
   "38": "pt_bulk_convergence_discussion_v4.md",
   "39": "pt_bulk_convergence_discussion_v5.md",
-  "40": "GitController",
+  "40": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
   "41": "Sol27LC Benchmark Platinum Study Report 18a8ee",
-  "42": "pt_bulk_convergence_discussion_v6.md"
+  "42": "pt_bulk_convergence_discussion_v6.md",
+  "43": "Sol27LC Benchmark Platinum Study Report 965f17",
+  "44": "Sol27LC Benchmark Platinum Study Report a1f321",
+  "45": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+  "46": "pt_bulk_convergence_discussion_v7.md",
+  "47": "pt_bulk_convergence_discussion_v8.md"
 }

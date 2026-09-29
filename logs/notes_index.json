@@ -2,17 +2,17 @@
   "pt_bulk_convergence_discussion": {
     "key": "pt_bulk_convergence_discussion",
     "title": "Pt Bulk Convergence Discussion",
-    "current_version": 7,
-    "current_file": "pt_bulk_convergence_discussion_v7.md",
+    "current_version": 8,
+    "current_file": "pt_bulk_convergence_discussion_v8.md",
     "tags": [
       "dft",
       "pt",
       "convergence"
     ],
     "references": [
-      "7a30e181"
+      "8085ade2"
     ],
-    "updated_at": "2026-09-29T17:28:37.579666+00:00",
+    "updated_at": "2026-09-29T17:30:42.853076+00:00",
     "history": [
       {
         "version": 1,
@@ -48,6 +48,88 @@
         "version": 7,
         "file": "pt_bulk_convergence_discussion_v7.md",
         "timestamp": "2026-09-29T17:28:37.579666+00:00"
+      },
+      {
+        "version": 8,
+        "file": "pt_bulk_convergence_discussion_v8.md",
+        "timestamp": "2026-09-29T17:30:42.853076+00:00"
+      }
+    ]
+  },
+  "distributed_execution_and_converged_benchmarks_for_monolayer_crcl3": {
+    "key": "distributed_execution_and_converged_benchmarks_for_monolayer_crcl3",
+    "title": "Distributed Execution and Converged Benchmarks for Monolayer CrCl3",
+    "current_version": 1,
+    "current_file": "distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+    "tags": [
+      "crcl3",
+      "dft_plus_u",
+      "co_embedded",
+      "her_catalysis",
+      "provenance"
+    ],
+    "references": [
+      "6aba240c",
+      "67595469"
+    ],
+    "updated_at": "2026-09-29T17:58:06.019443+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+        "timestamp": "2026-09-29T17:58:06.019443+00:00"
+      }
+    ]
+  },
+  "photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report": {
+    "key": "photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report",
+    "title": "PHOTH-Graphene DFT & MD Convergence Benchmarks and Supercell Scaling Report",
+    "current_version": 1,
+    "current_file": "photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+    "tags": [
+      "dft",
+      "photh-graphene",
+      "convergence",
+      "supercell",
+      "lammps",
+      "reaxff",
+      "hpc"
+    ],
+    "references": [],
+    "updated_at": "2026-09-29T19:14:46.740736+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+        "timestamp": "2026-09-29T19:14:46.740736+00:00"
+      }
+    ]
+  },
+  "multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems": {
+    "key": "multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems",
+    "title": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
+    "current_version": 1,
+    "current_file": "multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+    "tags": [
+      "crcl3",
+      "her",
+      "dft_plus_u",
+      "co_fe_ni",
+      "convergence",
+      "hpc"
+    ],
+    "references": [
+      "6aba240c",
+      "67595469",
+      "9721a455",
+      "a765b3ed"
+    ],
+    "updated_at": "2026-09-29T20:14:01.684736+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+        "timestamp": "2026-09-29T20:14:01.684736+00:00"
       }
     ]
   }

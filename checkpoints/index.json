@@ -56,5 +56,40 @@
     "updated_at": "2026-09-29T17:28:37.593356+00:00",
     "metrics": {},
     "git_commit": null
+  },
+  "test_md_20260929_173042": {
+    "run_id": "test_md_20260929_173042",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:30:42.889321+00:00",
+    "metrics": {},
+    "git_commit": "5958522f"
+  },
+  "crcl3_2x2_co_embedded_clean": {
+    "run_id": "crcl3_2x2_co_embedded_clean",
+    "prompt_summary": "Two-phase in-allocation structural relaxation of embedded Co in monolayer CrCl3 (PBE+D3 BJ followed by PBE+D3+U).",
+    "status": "CONVERGED",
+    "updated_at": "2026-09-29T17:58:13.301641+00:00",
+    "metrics": {
+      "d3_energy_ev": -167.02604,
+      "final_e0_ev": -152.68359,
+      "mag_moment_mub": 28.1422,
+      "status": "CONVERGED"
+    },
+    "git_commit": "5958522f"
+  },
+  "crcl3_2x2_ni_embedded_clean": {
+    "run_id": "crcl3_2x2_ni_embedded_clean",
+    "prompt_summary": "In-allocation two-phase relaxation of clean Ni-embedded monolayer CrCl3 (Cr8NiCl24) from PBE+D3 to PBE+D3+U.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T20:13:43.827758+00:00",
+    "metrics": {
+      "d3_e0_ev": -165.4896,
+      "d3_ionic_steps": 8,
+      "d3_magmom_mub": 24,
+      "phase1_status": "CONVERGED",
+      "phase2_status": "RUNNING"
+    },
+    "git_commit": "5958522f"
   }
 }

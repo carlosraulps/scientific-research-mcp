@@ -101,11 +101,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "checkpointmanager",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L24"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller",
+      "label": "GitController",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "gitcontroller",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L23"
     },
     {
       "id": "scripts_historical_memory_historicalmemorystore",
@@ -118,19 +131,6 @@
       "file_type": "code",
       "norm_label": "historicalmemorystore",
       "source_file": "scripts/historical_memory.py",
-      "source_location": "L23"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller",
-      "label": "GitController",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "gitcontroller",
-      "source_file": "scripts/git_controller.py",
       "source_location": "L23"
     },
     {
@@ -157,6 +157,18 @@
       "norm_label": "main()",
       "source_file": "cli.py",
       "source_location": "L35"
+    },
+    {
+      "id": "scripts_dual_verifier_dualverifier_audit_dual_verification",
+      "label": ".audit_dual_verification()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "__init__.py",
+      "file_type": "code",
+      "norm_label": ".audit_dual_verification()",
+      "source_file": "scripts/dual_verifier.py",
+      "source_location": "L25"
     },
     {
       "id": "scripts_dual_verifier_dualverifier_init",
@@ -680,7 +692,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".append_trace_step()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -692,7 +704,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".generate_run_id()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -704,7 +716,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".__init__()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -716,7 +728,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "._init_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -728,7 +740,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".list_runs()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -740,7 +752,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "._load_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -752,7 +764,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".resume_run()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -764,7 +776,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "._save_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -776,11 +788,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".save_run()",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L55"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_create_snapshot",
+      "label": ".create_snapshot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".create_snapshot()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L108"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_get_status",
+      "label": ".get_status()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".get_status()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L43"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_is_git_repo",
+      "label": ".is_git_repo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".is_git_repo()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_run_git",
+      "label": "._run_git()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "._run_git()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L29"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_verify_reproducibility",
+      "label": ".verify_reproducibility()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".verify_reproducibility()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L197"
     },
     {
       "id": "scripts_mcp_server_handle_tool_call",
@@ -805,18 +889,6 @@
       "norm_label": "main()",
       "source_file": "scripts/mcp_server.py",
       "source_location": "L580"
-    },
-    {
-      "id": "scripts_dual_verifier_dualverifier_audit_dual_verification",
-      "label": ".audit_dual_verification()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": ".audit_dual_verification",
-      "file_type": "code",
-      "norm_label": ".audit_dual_verification()",
-      "source_file": "scripts/dual_verifier.py",
-      "source_location": "L25"
     },
     {
       "id": "scripts_historical_memory_historicalmemorystore_init",
@@ -877,78 +949,6 @@
       "norm_label": ".store_calculation()",
       "source_file": "scripts/historical_memory.py",
       "source_location": "L128"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_create_snapshot",
-      "label": ".create_snapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".create_snapshot()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L108"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_get_status",
-      "label": ".get_status()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".get_status()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L43"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L24"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_is_git_repo",
-      "label": ".is_git_repo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".is_git_repo()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L38"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_run_git",
-      "label": "._run_git()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "._run_git()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L29"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_verify_reproducibility",
-      "label": ".verify_reproducibility()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".verify_reproducibility()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L197"
     },
     {
       "id": "scripts_scientific_evaluator_scientificevaluator_diagnose_convergence",
@@ -1053,6 +1053,17 @@
       "norm_label": "dual_verifier.py",
       "source_file": "scripts/dual_verifier.py",
       "source_location": "L1"
+    },
+    {
+      "id": "scripts_dual_verifier_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "__init__.py",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "scripts_facts_store",
@@ -1207,6 +1218,17 @@
       "norm_label": "===============================================================================...",
       "source_file": "scripts/dual_verifier.py",
       "source_location": "L2"
+    },
+    {
+      "id": "scripts_dual_verifier_rationale_32",
+      "label": "Performs dual verification across Functional Correctness and Scientific\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "__init__.py",
+      "file_type": "rationale",
+      "norm_label": "performs dual verification across functional correctness and scientific...",
+      "source_file": "scripts/dual_verifier.py",
+      "source_location": "L32"
     },
     {
       "id": "scripts_facts_store_rationale_2",
@@ -2232,11 +2254,33 @@
       "source_location": "L14"
     },
     {
+      "id": "completedprocess",
+      "label": "CompletedProcess",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "completedprocess",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "scripts_checkpoint_manager_py_any",
       "label": "Any",
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_git_controller_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "any",
       "source_file": "",
@@ -2247,7 +2291,7 @@
       "label": "Reloads memory summaries, trace, parameter registry, and files for an\u2026",
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "reloads memory summaries, trace, parameter registry, and files for an...",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2258,7 +2302,7 @@
       "label": "Lists all runs with optional status and text search filtering.",
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "lists all runs with optional status and text search filtering.",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2269,7 +2313,7 @@
       "label": "Appends a discrete milestone or action to the agent trace.",
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "appends a discrete milestone or action to the agent trace.",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2280,11 +2324,66 @@
       "label": "Saves or updates a simulation run checkpoint and its dedicated run directory.",
       "_origin": "ast",
       "community": 3,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "saves or updates a simulation run checkpoint and its dedicated run directory.",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L66"
+    },
+    {
+      "id": "scripts_git_controller_rationale_117",
+      "label": "Creates an atomic Git commit snapshot linking the workspace state to active\u2026",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "creates an atomic git commit snapshot linking the workspace state to active...",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L117"
+    },
+    {
+      "id": "scripts_git_controller_rationale_198",
+      "label": "Evaluates whether a simulation setup is strictly reproducible from Git.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "evaluates whether a simulation setup is strictly reproducible from git.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L198"
+    },
+    {
+      "id": "scripts_git_controller_rationale_30",
+      "label": "Helper to run git commands in the base directory.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "helper to run git commands in the base directory.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "scripts_git_controller_rationale_39",
+      "label": "Checks if base_dir is inside an active git repository.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "checks if base_dir is inside an active git repository.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "scripts_git_controller_rationale_44",
+      "label": "Retrieves current git repository state for scientific audit trails.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "retrieves current git repository state for scientific audit trails.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L44"
     },
     {
       "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_unique",
@@ -2514,26 +2613,59 @@
       "source_location": "L1"
     },
     {
-      "id": "scripts_dual_verifier_py_any",
-      "label": "Any",
+      "id": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1",
+      "label": "photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
       "_origin": "ast",
       "community": 37,
-      "community_name": ".audit_dual_verification",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
+      "community_name": "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "PHOTH-Graphene DFT &amp; MD Convergence Benchmarks and Supercell Scaling Report",
+        "version": "1",
+        "created_at": "2026-09-29T19:14:46.740736+00:00",
+        "tags": "[&quot;dft&quot;, &quot;photh-graphene&quot;, &quot;convergence&quot;, &quot;supercell&quot;, &quot;lammps&quot;, &quot;reaxff&quot;, &quot;hpc&quot;]",
+        "references": "[]"
+      },
+      "node_kind": "page",
+      "norm_label": "photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L1"
     },
     {
-      "id": "scripts_dual_verifier_rationale_32",
-      "label": "Performs dual verification across Functional Correctness and Scientific\u2026",
+      "id": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_1_executive_summary",
+      "label": "1. Executive Summary",
       "_origin": "ast",
       "community": 37,
-      "community_name": ".audit_dual_verification",
-      "file_type": "rationale",
-      "norm_label": "performs dual verification across functional correctness and scientific...",
-      "source_file": "scripts/dual_verifier.py",
-      "source_location": "L32"
+      "community_name": "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. executive summary",
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_2_supercell_transferability_rules_notebooklm_grounded",
+      "label": "2. Supercell Transferability Rules (NotebookLM Grounded)",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. supercell transferability rules (notebooklm grounded)",
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_photh_graphene_comprehensive_convergence_benchmarks_supercell_scaling",
+      "label": "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "photh-graphene comprehensive convergence benchmarks & supercell scaling",
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L9"
     },
     {
       "id": "canvas_notes_pt_bulk_convergence_discussion_v4",
@@ -2618,81 +2750,59 @@
       "source_location": "L61"
     },
     {
-      "id": "completedprocess",
-      "label": "CompletedProcess",
+      "id": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1",
+      "label": "multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
       "_origin": "ast",
       "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "completedprocess",
-      "source_file": "",
-      "source_location": ""
+      "community_name": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
+        "version": "1",
+        "created_at": "2026-09-29T20:14:01.684736+00:00",
+        "tags": "[&quot;crcl3&quot;, &quot;her&quot;, &quot;dft_plus_u&quot;, &quot;co_fe_ni&quot;, &quot;convergence&quot;, &quot;hpc&quot;]",
+        "references": "[&quot;6aba240c&quot;, &quot;67595469&quot;, &quot;9721a455&quot;, &quot;a765b3ed&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L1"
     },
     {
-      "id": "scripts_git_controller_py_any",
-      "label": "Any",
+      "id": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_1_executive_status",
+      "label": "1. Executive Status",
       "_origin": "ast",
       "community": 40,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
+      "community_name": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. executive status",
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L11"
     },
     {
-      "id": "scripts_git_controller_rationale_117",
-      "label": "Creates an atomic Git commit snapshot linking the workspace state to active\u2026",
+      "id": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_2_infrastructure_algorithmic_acceleration_opportunities",
+      "label": "2. Infrastructure & Algorithmic Acceleration Opportunities",
       "_origin": "ast",
       "community": 40,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "creates an atomic git commit snapshot linking the workspace state to active...",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L117"
+      "community_name": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. infrastructure & algorithmic acceleration opportunities",
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L20"
     },
     {
-      "id": "scripts_git_controller_rationale_198",
-      "label": "Evaluates whether a simulation setup is strictly reproducible from Git.",
+      "id": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems",
+      "label": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
       "_origin": "ast",
       "community": 40,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "evaluates whether a simulation setup is strictly reproducible from git.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L198"
-    },
-    {
-      "id": "scripts_git_controller_rationale_30",
-      "label": "Helper to run git commands in the base directory.",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "helper to run git commands in the base directory.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L30"
-    },
-    {
-      "id": "scripts_git_controller_rationale_39",
-      "label": "Checks if base_dir is inside an active git repository.",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "checks if base_dir is inside an active git repository.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L39"
-    },
-    {
-      "id": "scripts_git_controller_rationale_44",
-      "label": "Retrieves current git repository state for scientific audit trails.",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "retrieves current git repository state for scientific audit trails.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L44"
+      "community_name": "Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "multi-cluster distributed execution and convergence milestones for monolayer crcl3 systems",
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L9"
     },
     {
       "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_18a8ee",
@@ -2783,6 +2893,255 @@
       "node_kind": "page",
       "norm_label": "pt_bulk_convergence_discussion_v6.md",
       "source_file": "canvas/notes/pt_bulk_convergence_discussion_v6.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17",
+      "label": "sol27lc_benchmark_platinum_study_report_965f17.md",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_executive_summary",
+      "label": "Executive Summary",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "executive summary",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_finding_1_equilibrium_parameter",
+      "label": "Finding 1: Equilibrium Parameter",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "finding 1: equilibrium parameter",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_scientific_findings_numerical_data",
+      "label": "Scientific Findings & Numerical Data",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scientific findings & numerical data",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_sol27lc_benchmark_platinum_study_report_965f17",
+      "label": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sol27lc benchmark platinum study report 965f17",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_verified_claims_provenance_audit",
+      "label": "Verified Claims & Provenance Audit",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 965f17",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verified claims & provenance audit",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321",
+      "label": "sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_executive_summary",
+      "label": "Executive Summary",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "executive summary",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_finding_1_equilibrium_parameter",
+      "label": "Finding 1: Equilibrium Parameter",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "finding 1: equilibrium parameter",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_scientific_findings_numerical_data",
+      "label": "Scientific Findings & Numerical Data",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scientific findings & numerical data",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_sol27lc_benchmark_platinum_study_report_a1f321",
+      "label": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sol27lc benchmark platinum study report a1f321",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_verified_claims_provenance_audit",
+      "label": "Verified Claims & Provenance Audit",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Sol27LC Benchmark Platinum Study Report a1f321",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verified claims & provenance audit",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1",
+      "label": "distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Distributed Execution and Converged Benchmarks for Monolayer CrCl3",
+        "version": "1",
+        "created_at": "2026-09-29T17:58:06.019443+00:00",
+        "tags": "[&quot;crcl3&quot;, &quot;dft_plus_u&quot;, &quot;co_embedded&quot;, &quot;her_catalysis&quot;, &quot;provenance&quot;]",
+        "references": "[&quot;6aba240c&quot;, &quot;67595469&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_1_overview",
+      "label": "1. Overview",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. overview",
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_2_converged_benchmarks_artifact_provenance",
+      "label": "2. Converged Benchmarks & Artifact Provenance",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. converged benchmarks & artifact provenance",
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_3_hubbard_u_dual_benchmark",
+      "label": "3. Hubbard U Dual Benchmark",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. hubbard u dual benchmark",
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_multi_cluster_distributed_execution_baseline_benchmarks_for_monolayer_crcl3",
+      "label": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "multi-cluster distributed execution & baseline benchmarks for monolayer crcl3",
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "canvas_notes_pt_bulk_convergence_discussion_v7",
+      "label": "pt_bulk_convergence_discussion_v7.md",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "pt_bulk_convergence_discussion_v7.md",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Pt Bulk Convergence Discussion",
+        "version": "7",
+        "created_at": "2026-09-29T17:28:37.579666+00:00",
+        "tags": "[&quot;dft&quot;, &quot;pt&quot;, &quot;convergence&quot;]",
+        "references": "[&quot;7a30e181&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "pt_bulk_convergence_discussion_v7.md",
+      "source_file": "canvas/notes/pt_bulk_convergence_discussion_v7.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_notes_pt_bulk_convergence_discussion_v8",
+      "label": "pt_bulk_convergence_discussion_v8.md",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "pt_bulk_convergence_discussion_v8.md",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Pt Bulk Convergence Discussion",
+        "version": "8",
+        "created_at": "2026-09-29T17:30:42.853076+00:00",
+        "tags": "[&quot;dft&quot;, &quot;pt&quot;, &quot;convergence&quot;]",
+        "references": "[&quot;8085ade2&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "pt_bulk_convergence_discussion_v8.md",
+      "source_file": "canvas/notes/pt_bulk_convergence_discussion_v8.md",
       "source_location": "L1"
     },
     {
@@ -3019,7 +3378,7 @@
       "node_kind": "heading",
       "norm_label": "2. canvas working notes (version-controlled & append-only)",
       "source_file": "docs/KNOWLEDGE_MAP.md",
-      "source_location": "L10"
+      "source_location": "L12"
     },
     {
       "id": "docs_knowledge_map_3_mdcrow_simulation_checkpoints_resumable_runs",
@@ -3031,7 +3390,7 @@
       "node_kind": "heading",
       "norm_label": "3. mdcrow simulation checkpoints (resumable runs)",
       "source_file": "docs/KNOWLEDGE_MAP.md",
-      "source_location": "L13"
+      "source_location": "L18"
     },
     {
       "id": "docs_knowledge_map_4_append_only_provenance_registry_stats",
@@ -3043,7 +3402,7 @@
       "node_kind": "heading",
       "norm_label": "4. append-only provenance registry stats",
       "source_file": "docs/KNOWLEDGE_MAP.md",
-      "source_location": "L22"
+      "source_location": "L31"
     },
     {
       "id": "docs_knowledge_map_scientific_research_knowledge_map",
@@ -4668,6 +5027,116 @@
       "weight": 1.0
     },
     {
+      "source": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1",
+      "target": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_multi_cluster_distributed_execution_baseline_benchmarks_for_monolayer_crcl3",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_multi_cluster_distributed_execution_baseline_benchmarks_for_monolayer_crcl3",
+      "target": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_1_overview",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_multi_cluster_distributed_execution_baseline_benchmarks_for_monolayer_crcl3",
+      "target": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_2_converged_benchmarks_artifact_provenance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_multi_cluster_distributed_execution_baseline_benchmarks_for_monolayer_crcl3",
+      "target": "canvas_notes_distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1_3_hubbard_u_dual_benchmark",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1",
+      "target": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems",
+      "target": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_1_executive_status",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems",
+      "target": "canvas_notes_multi_cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1_2_infrastructure_algorithmic_acceleration_opportunities",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1",
+      "target": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_photh_graphene_comprehensive_convergence_benchmarks_supercell_scaling",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_photh_graphene_comprehensive_convergence_benchmarks_supercell_scaling",
+      "target": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_1_executive_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_photh_graphene_comprehensive_convergence_benchmarks_supercell_scaling",
+      "target": "canvas_notes_photh_graphene_dft_md_convergence_benchmarks_and_supercell_scaling_report_v1_2_supercell_transferability_rules_notebooklm_grounded",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
       "source": "canvas_reports_sol27lc_benchmark_platinum_study",
       "target": "canvas_reports_sol27lc_benchmark_platinum_study_sol27lc_benchmark_platinum_study",
       "relation": "contains",
@@ -4730,6 +5199,116 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_18a8ee.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_sol27lc_benchmark_platinum_study_report_965f17",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_scientific_findings_numerical_data",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_finding_1_equilibrium_parameter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_sol27lc_benchmark_platinum_study_report_965f17",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_executive_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_sol27lc_benchmark_platinum_study_report_965f17",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_verified_claims_provenance_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_sol27lc_benchmark_platinum_study_report_965f17",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_scientific_findings_numerical_data",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_sol27lc_benchmark_platinum_study_report_a1f321",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_scientific_findings_numerical_data",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_finding_1_equilibrium_parameter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_sol27lc_benchmark_platinum_study_report_a1f321",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_executive_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_sol27lc_benchmark_platinum_study_report_a1f321",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_verified_claims_provenance_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_sol27lc_benchmark_platinum_study_report_a1f321",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_a1f321_scientific_findings_numerical_data",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md",
       "source_location": "L23",
       "weight": 1.0
     },
@@ -5038,7 +5617,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/KNOWLEDGE_MAP.md",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -5049,7 +5628,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/KNOWLEDGE_MAP.md",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -5060,7 +5639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/KNOWLEDGE_MAP.md",
-      "source_location": "L22",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -7263,5 +7842,6 @@
       "weight": 0.8
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515"
 }

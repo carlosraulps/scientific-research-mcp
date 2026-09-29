@@ -1,0 +1,39 @@
+{
+  "result_id": "67595469",
+  "producing_tool": "vasp_std_6.2.0",
+  "value": {
+    "delta_e_ev": -2.46553,
+    "delta_g_ev": 1.1545,
+    "e0_ev": -149.76937,
+    "e_ads_ev": 0.9145,
+    "ionic_steps": 10,
+    "mag_moment_mub": 25,
+    "status": "GROUND_STATE_CONVERGED"
+  },
+  "arguments": {
+    "EDIFFG": -0.025,
+    "ENCUT": 400,
+    "LDAU": true,
+    "LDAUU": 3.29,
+    "calculation": "crcl3-2x2-h_ads-with-U/yes_vdw/S1",
+    "cluster": "carbono",
+    "functional": "PBE+D3(BJ)+U",
+    "node": "n09",
+    "site": "Site 1 (Top-Cl)",
+    "supercell": "2x2"
+  },
+  "rationales": {
+    "LDAUU": "U=3.29 eV from lattice parameter intersection a(U)=a_exp (Webster 2018) and Cococcioni linear response [3.26, 3.32] eV.",
+    "functional": "PBE with Grimme DFT-D3 Becke-Johnson damping (IVDW=12) to capture van der Waals interactions without short-range overbinding."
+  },
+  "sources": {},
+  "declared_context": "Hydrogen adsorption thermodynamic benchmark and HER Delta_G calculation on monolayer CrCl3 (S1 ground state).",
+  "parent_ids": [],
+  "created_at": "2026-09-29T17:57:57.140601+00:00",
+  "git": {
+    "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+    "short_commit": "5958522f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

@@ -898,5 +898,296 @@
       "branch": null,
       "is_dirty": false
     }
+  },
+  "6fcce653": {
+    "result_id": "6fcce653",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-09-29T17:30:42.642077+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": false
+    }
+  },
+  "33a0eaf1": {
+    "result_id": "33a0eaf1",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "6fcce653"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "6fcce653"
+    ],
+    "created_at": "2026-09-29T17:30:42.676832+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "8085ade2": {
+    "result_id": "8085ade2",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-09-29T17:30:42.749650+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "8da43ba5": {
+    "result_id": "8da43ba5",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "8085ade2"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "8085ade2"
+    ],
+    "created_at": "2026-09-29T17:30:42.807001+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "6aba240c": {
+    "result_id": "6aba240c",
+    "producing_tool": "vasp_std_6.2.0",
+    "value": {
+      "e0_ev": -152.68359,
+      "mag_moment_mub": 28.1422,
+      "status": "CONVERGED",
+      "total_ionic_steps": 60
+    },
+    "arguments": {
+      "ENCUT": 400,
+      "LDAU": true,
+      "LDAUU": 3.29,
+      "calculation": "crcl3-2x2-co_emb-metano/clean",
+      "cluster": "carbono",
+      "functional": "PBE+D3(BJ)+U",
+      "node": "gn01",
+      "supercell": "2x2"
+    },
+    "rationales": {
+      "LDAUU": "U=3.29 eV from lattice parameter intersection a(U)=a_exp (Webster 2018) and Cococcioni linear response [3.26, 3.32] eV.",
+      "functional": "PBE with Grimme DFT-D3 Becke-Johnson damping (IVDW=12) to capture van der Waals interactions without short-range overbinding."
+    },
+    "sources": {},
+    "declared_context": "Evaluation of embedded transition metal stability and HER catalytic baseline for Co-substituted monolayer CrCl3 (Cr7CoCl24).",
+    "parent_ids": [],
+    "created_at": "2026-09-29T17:57:50.224626+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "67595469": {
+    "result_id": "67595469",
+    "producing_tool": "vasp_std_6.2.0",
+    "value": {
+      "delta_e_ev": -2.46553,
+      "delta_g_ev": 1.1545,
+      "e0_ev": -149.76937,
+      "e_ads_ev": 0.9145,
+      "ionic_steps": 10,
+      "mag_moment_mub": 25,
+      "status": "GROUND_STATE_CONVERGED"
+    },
+    "arguments": {
+      "EDIFFG": -0.025,
+      "ENCUT": 400,
+      "LDAU": true,
+      "LDAUU": 3.29,
+      "calculation": "crcl3-2x2-h_ads-with-U/yes_vdw/S1",
+      "cluster": "carbono",
+      "functional": "PBE+D3(BJ)+U",
+      "node": "n09",
+      "site": "Site 1 (Top-Cl)",
+      "supercell": "2x2"
+    },
+    "rationales": {
+      "LDAUU": "U=3.29 eV from lattice parameter intersection a(U)=a_exp (Webster 2018) and Cococcioni linear response [3.26, 3.32] eV.",
+      "functional": "PBE with Grimme DFT-D3 Becke-Johnson damping (IVDW=12) to capture van der Waals interactions without short-range overbinding."
+    },
+    "sources": {},
+    "declared_context": "Hydrogen adsorption thermodynamic benchmark and HER Delta_G calculation on monolayer CrCl3 (S1 ground state).",
+    "parent_ids": [],
+    "created_at": "2026-09-29T17:57:57.140601+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "9721a455": {
+    "result_id": "9721a455",
+    "producing_tool": "vasp_std_6.2.0",
+    "value": {
+      "e0_ev": -165.4896,
+      "forces_converged": true,
+      "ionic_steps": 8,
+      "magmom_mub": 24,
+      "system": "crcl3_2x2_ni_embedded_clean_phase1"
+    },
+    "arguments": {
+      "ediff": 1e-06,
+      "ediffg": -0.025,
+      "encut": 400,
+      "formula": "Cr8Cl24Ni",
+      "ispin": 2,
+      "ivdw": 12,
+      "kpoints": "5x5x1",
+      "magmom": "8*3.0 24*0.0 1*2.0",
+      "xc": "PBE-D3(BJ)"
+    },
+    "rationales": {
+      "ediffg": "Standard force convergence threshold for Phase 1 pre-relaxation",
+      "encut": "Plane-wave cutoff sufficient for soft halogen/transition metal potentials",
+      "ivdw": "DFT-D3(BJ) dispersion correction for 2D layered materials"
+    },
+    "sources": {
+      "ediffg": "6aba240c",
+      "encut": "6aba240c",
+      "ivdw": "6aba240c"
+    },
+    "declared_context": "Phase 1 (PBE+D3 BJ) relaxation of clean Ni-embedded monolayer CrCl3 supercell (Cr8NiCl24, 33 atoms) in nanotubo on node n04. Fully converged in 8 ionic steps.",
+    "parent_ids": [
+      "6aba240c"
+    ],
+    "created_at": "2026-09-29T20:13:18.622521+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "a765b3ed": {
+    "result_id": "a765b3ed",
+    "producing_tool": "vasp_std_6.2.0",
+    "value": {
+      "checkpoint_saved": true,
+      "e0_ev": -154.69642,
+      "ionic_steps_completed": 12,
+      "magmom_mub": 24,
+      "max_force_ev_a": 0.1408,
+      "system": "crcl3_2x2_co_embedded_h_step12"
+    },
+    "arguments": {
+      "checkpoint_step": 12,
+      "ediff": 1e-05,
+      "ediffg": -0.02,
+      "encut": 400,
+      "formula": "Cr8CoCl24H",
+      "ispin": 2,
+      "ivdw": 12,
+      "kpoints": "5x5x1",
+      "ldau": true,
+      "u_cr": 3.29,
+      "xc": "PBE-D3(BJ)+U"
+    },
+    "rationales": {
+      "ediffg": "HER structural convergence limit",
+      "encut": "Standard kinetic cutoff for 3d transition metal halides",
+      "u_cr": "Cococcioni/structural observable benchmark on Cr 3d manifold"
+    },
+    "sources": {
+      "ediffg": "67595469",
+      "encut": "6aba240c",
+      "u_cr": "6aba240c"
+    },
+    "declared_context": "Phase 2 (+U) intermediate structural optimization of H adsorbed on Co-embedded monolayer CrCl3 supercell (Cr8CoCl24H, 34 atoms) in nanotubo on node n12. Reached ionic step 12 at 4h walltime.",
+    "parent_ids": [
+      "6aba240c",
+      "67595469"
+    ],
+    "created_at": "2026-09-29T20:13:24.756132+00:00",
+    "git": {
+      "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+      "short_commit": "5958522f",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

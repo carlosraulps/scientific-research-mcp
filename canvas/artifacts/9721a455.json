@@ -1,0 +1,43 @@
+{
+  "result_id": "9721a455",
+  "producing_tool": "vasp_std_6.2.0",
+  "value": {
+    "e0_ev": -165.4896,
+    "forces_converged": true,
+    "ionic_steps": 8,
+    "magmom_mub": 24,
+    "system": "crcl3_2x2_ni_embedded_clean_phase1"
+  },
+  "arguments": {
+    "ediff": 1e-06,
+    "ediffg": -0.025,
+    "encut": 400,
+    "formula": "Cr8Cl24Ni",
+    "ispin": 2,
+    "ivdw": 12,
+    "kpoints": "5x5x1",
+    "magmom": "8*3.0 24*0.0 1*2.0",
+    "xc": "PBE-D3(BJ)"
+  },
+  "rationales": {
+    "ediffg": "Standard force convergence threshold for Phase 1 pre-relaxation",
+    "encut": "Plane-wave cutoff sufficient for soft halogen/transition metal potentials",
+    "ivdw": "DFT-D3(BJ) dispersion correction for 2D layered materials"
+  },
+  "sources": {
+    "ediffg": "6aba240c",
+    "encut": "6aba240c",
+    "ivdw": "6aba240c"
+  },
+  "declared_context": "Phase 1 (PBE+D3 BJ) relaxation of clean Ni-embedded monolayer CrCl3 supercell (Cr8NiCl24, 33 atoms) in nanotubo on node n04. Fully converged in 8 ionic steps.",
+  "parent_ids": [
+    "6aba240c"
+  ],
+  "created_at": "2026-09-29T20:13:18.622521+00:00",
+  "git": {
+    "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+    "short_commit": "5958522f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

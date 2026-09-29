@@ -1,0 +1,47 @@
+{
+  "result_id": "a765b3ed",
+  "producing_tool": "vasp_std_6.2.0",
+  "value": {
+    "checkpoint_saved": true,
+    "e0_ev": -154.69642,
+    "ionic_steps_completed": 12,
+    "magmom_mub": 24,
+    "max_force_ev_a": 0.1408,
+    "system": "crcl3_2x2_co_embedded_h_step12"
+  },
+  "arguments": {
+    "checkpoint_step": 12,
+    "ediff": 1e-05,
+    "ediffg": -0.02,
+    "encut": 400,
+    "formula": "Cr8CoCl24H",
+    "ispin": 2,
+    "ivdw": 12,
+    "kpoints": "5x5x1",
+    "ldau": true,
+    "u_cr": 3.29,
+    "xc": "PBE-D3(BJ)+U"
+  },
+  "rationales": {
+    "ediffg": "HER structural convergence limit",
+    "encut": "Standard kinetic cutoff for 3d transition metal halides",
+    "u_cr": "Cococcioni/structural observable benchmark on Cr 3d manifold"
+  },
+  "sources": {
+    "ediffg": "67595469",
+    "encut": "6aba240c",
+    "u_cr": "6aba240c"
+  },
+  "declared_context": "Phase 2 (+U) intermediate structural optimization of H adsorbed on Co-embedded monolayer CrCl3 supercell (Cr8CoCl24H, 34 atoms) in nanotubo on node n12. Reached ionic step 12 at 4h walltime.",
+  "parent_ids": [
+    "6aba240c",
+    "67595469"
+  ],
+  "created_at": "2026-09-29T20:13:24.756132+00:00",
+  "git": {
+    "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+    "short_commit": "5958522f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

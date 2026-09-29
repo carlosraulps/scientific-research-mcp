@@ -1,0 +1,42 @@
+{
+  "run_id": "crcl3_2x2_ni_embedded_clean",
+  "prompt_summary": "In-allocation two-phase relaxation of clean Ni-embedded monolayer CrCl3 (Cr8NiCl24) from PBE+D3 to PBE+D3+U.",
+  "status": "RUNNING",
+  "run_directory": "/home/cr/simulations/scientific-research/runs/crcl3_2x2_ni_embedded_clean",
+  "created_at": "2026-09-29T20:13:43.827758+00:00",
+  "updated_at": "2026-09-29T20:13:43.827758+00:00",
+  "agent_trace": [
+    "Phase 1 (PBE+D3) converged in 8 ionic steps at E0 = -165.4896 eV on Carbono n04 (Job 165245). Phase 2 (+U, U_Cr=3.29 eV) initiated in-allocation."
+  ],
+  "parameter_registry": {
+    "algo": "Normal",
+    "ediff": 1e-06,
+    "ediffg": -0.025,
+    "encut": 400,
+    "formula": "Cr8NiCl24",
+    "ispin": 2,
+    "ivdw": 12,
+    "kpoints": "5x5x1",
+    "ldau": true,
+    "u_cr": 3.29
+  },
+  "file_paths": [
+    "crcl3-newcals/crcl3-2x2-ni_emb-pipeline/clean/d3_converged/CONTCAR",
+    "crcl3-newcals/crcl3-2x2-ni_emb-pipeline/clean/d3_converged/OUTCAR",
+    "crcl3-newcals/crcl3-2x2-ni_emb-pipeline/clean/d3_converged/OSZICAR"
+  ],
+  "figures": [],
+  "metrics": {
+    "d3_e0_ev": -165.4896,
+    "d3_ionic_steps": 8,
+    "d3_magmom_mub": 24,
+    "phase1_status": "CONVERGED",
+    "phase2_status": "RUNNING"
+  },
+  "git": {
+    "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+    "short_commit": "5958522f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

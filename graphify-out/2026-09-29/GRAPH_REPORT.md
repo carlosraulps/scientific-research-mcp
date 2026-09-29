@@ -1,14 +1,19 @@
 # Graph Report - scientific-research  (2026-09-29)
 
 ## Corpus Check
-- 78 files · ~433,948 words
+- 96 files · ~440,550 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 5 file(s) not represented in the graph (top: .db 3, .csv 2)
+- Unclassified: 9 file(s) not represented in the graph (top: (none) 4, .db 3, .csv 2)
 
 ## Summary
-- 238 nodes · 319 edges · 40 communities (24 shown, 1 thin omitted)
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 26 edges (avg confidence: 0.92)
+- 285 nodes · 380 edges · 48 communities
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `5958522f`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - __init__.py
@@ -34,41 +39,46 @@
 - Sol27LC Benchmark Platinum Study Report a769b1
 - Sol27LC Benchmark Platinum Study Report Unique
 - Donella Meadows (2008): Thinking in Systems Applied to Scientific Agents
-- handle_tool_call
-- .audit_dual_verification
+- GraphifyBridge
+- PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling
+- GitController
+- Sol27LC Benchmark Platinum Study Report 18a8ee
+- Sol27LC Benchmark Platinum Study Report 965f17
+- Sol27LC Benchmark Platinum Study Report a1f321
+- Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3
 
 ## God Nodes (most connected - your core abstractions)
-1. `TestScientificResearchLog` - 23 edges
-2. `CanvasStore` - 19 edges
-3. `CheckpointManager` - 14 edges
-4. `FactsStore` - 10 edges
-5. `HistoricalMemoryStore` - 10 edges
-6. `ScientificEvaluator` - 10 edges
-7. `main()` - 9 edges
-8. `SkillCrystallizer` - 9 edges
-9. `GraphifyBridge` - 8 edges
-10. `DualVerifier` - 7 edges
+1. `TestScientificResearchLog` - 25 edges
+2. `CanvasStore` - 20 edges
+3. `GitController` - 16 edges
+4. `CheckpointManager` - 15 edges
+5. `main()` - 10 edges
+6. `FactsStore` - 10 edges
+7. `HistoricalMemoryStore` - 10 edges
+8. `ScientificEvaluator` - 10 edges
+9. `SkillCrystallizer` - 9 edges
+10. `GraphifyBridge` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --uses--> `CanvasStore`  [INFERRED]
   cli.py → scripts/canvas_store.py
 - `main()` --uses--> `CheckpointManager`  [INFERRED]
   cli.py → scripts/checkpoint_manager.py
+- `main()` --uses--> `DualVerifier`  [INFERRED]
+  cli.py → scripts/dual_verifier.py
 - `main()` --uses--> `FactsStore`  [INFERRED]
   cli.py → scripts/facts_store.py
-- `main()` --uses--> `GraphifyBridge`  [INFERRED]
-  cli.py → scripts/graphify_bridge.py
-- `main()` --uses--> `HistoricalMemoryStore`  [INFERRED]
-  cli.py → scripts/historical_memory.py
+- `main()` --uses--> `GitController`  [INFERRED]
+  cli.py → scripts/git_controller.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (40 total, 1 thin omitted)
+## Communities (48 total, 0 thin omitted)
 
 ### Community 0 - "__init__.py"
-Cohesion: 0.13
-Nodes (15): main(), ===============================================================================…, ===============================================================================…, ===============================================================================…, DualVerifier, ===============================================================================…, ===============================================================================…, ===============================================================================… (+7 more)
+Cohesion: 0.11
+Nodes (20): main(), ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+12 more)
 
 ### Community 1 - "CanvasStore"
 Cohesion: 0.21
@@ -76,7 +86,7 @@ Nodes (8): CanvasStore, Any, Traverses upstream DAG dependencies to produce an a
 
 ### Community 2 - "TestScientificResearchLog"
 Cohesion: 0.09
-Nodes (8): GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, Creates an interconnected Markdown summary linking all Notes, Reports,…, ProtocolEngine, Any, AEH Stage 1: Static verification of multi-step simulation protocols., TestScientificResearchLog
+Nodes (7): DualVerifier, Any, Performs dual verification across Functional Correctness and Scientific…, ProtocolEngine, Any, AEH Stage 1: Static verification of multi-step simulation protocols., TestScientificResearchLog
 
 ### Community 3 - "CheckpointManager"
 Cohesion: 0.24
@@ -158,29 +168,52 @@ Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findi
 Cohesion: 0.40
 Nodes (4): 1. Core Systems Principles Applied to AI Scientific Agents, 2. Springing the Archetypal System Traps in Scientific LLMs, 3. Top Leverage Points for Scientific Autonomous Systems, Donella Meadows (2008): Thinking in Systems Applied to Scientific Agents
 
-### Community 32 - "handle_tool_call"
+### Community 32 - "GraphifyBridge"
+Cohesion: 0.33
+Nodes (4): GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, Creates an interconnected Markdown summary linking all Notes, Reports,…
+
+### Community 37 - "PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling"
+Cohesion: 0.50
+Nodes (3): 1. Executive Summary, 2. Supercell Transferability Rules (NotebookLM Grounded), PHOTH-Graphene Comprehensive Convergence Benchmarks & Supercell Scaling
+
+### Community 40 - "GitController"
+Cohesion: 0.24
+Nodes (8): CompletedProcess, GitController, Any, Creates an atomic Git commit snapshot linking the workspace state to active…, Evaluates whether a simulation setup is strictly reproducible from Git., Helper to run git commands in the base directory., Checks if base_dir is inside an active git repository., Retrieves current git repository state for scientific audit trails.
+
+### Community 41 - "Sol27LC Benchmark Platinum Study Report 18a8ee"
+Cohesion: 0.33
+Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findings & Numerical Data, Sol27LC Benchmark Platinum Study Report 18a8ee, Verified Claims & Provenance Audit
+
+### Community 43 - "Sol27LC Benchmark Platinum Study Report 965f17"
+Cohesion: 0.33
+Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findings & Numerical Data, Sol27LC Benchmark Platinum Study Report 965f17, Verified Claims & Provenance Audit
+
+### Community 44 - "Sol27LC Benchmark Platinum Study Report a1f321"
+Cohesion: 0.33
+Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findings & Numerical Data, Sol27LC Benchmark Platinum Study Report a1f321, Verified Claims & Provenance Audit
+
+### Community 45 - "Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3"
 Cohesion: 0.40
-Nodes (5): handle_tool_call(), main(), Any, Dispatches tool calls to the underlying engine., Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients.
+Nodes (4): 1. Overview, 2. Converged Benchmarks & Artifact Provenance, 3. Hubbard U Dual Benchmark, Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3
 
 ## Knowledge Gaps
-- **50 isolated node(s):** `Executive Summary`, `Verified Claims & Provenance Audit`, `Finding 1: Equilibrium Parameter`, `Executive Summary`, `Verified Claims & Provenance Audit` (+45 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 137 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **64 isolated node(s):** `1. Overview`, `2. Converged Benchmarks & Artifact Provenance`, `3. Hubbard U Dual Benchmark`, `1. Executive Summary`, `2. Supercell Transferability Rules (NotebookLM Grounded)` (+59 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 168 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TestScientificResearchLog` connect `TestScientificResearchLog` to `__init__.py`, `CanvasStore`, `CheckpointManager`, `HistoricalMemoryStore`, `ScientificEvaluator`, `FactsStore`, `SkillCrystallizer`?**
-  _High betweenness centrality (0.092) - this node is a cross-community bridge._
-- **Why does `CanvasStore` connect `CanvasStore` to `__init__.py`, `TestScientificResearchLog`?**
-  _High betweenness centrality (0.090) - this node is a cross-community bridge._
-- **Why does `CheckpointManager` connect `CheckpointManager` to `__init__.py`, `TestScientificResearchLog`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
-- **Are the 9 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
-  _`TestScientificResearchLog` has 9 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `CanvasStore` (e.g. with `main()` and `TestScientificResearchLog`) actually correct?**
-  _`CanvasStore` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `CheckpointManager` (e.g. with `main()` and `TestScientificResearchLog`) actually correct?**
-  _`CheckpointManager` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `FactsStore` (e.g. with `main()` and `TestScientificResearchLog`) actually correct?**
-  _`FactsStore` has 3 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `TestScientificResearchLog` connect `TestScientificResearchLog` to `__init__.py`, `CanvasStore`, `GraphifyBridge`, `CheckpointManager`, `HistoricalMemoryStore`, `ScientificEvaluator`, `GitController`, `FactsStore`, `SkillCrystallizer`?**
+  _High betweenness centrality (0.080) - this node is a cross-community bridge._
+- **Why does `CanvasStore` connect `CanvasStore` to `__init__.py`, `GitController`, `TestScientificResearchLog`?**
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
+- **Why does `GitController` connect `GitController` to `__init__.py`, `CanvasStore`, `TestScientificResearchLog`, `CheckpointManager`?**
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+- **Are the 10 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
+  _`TestScientificResearchLog` has 10 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 4 inferred relationships involving `CanvasStore` (e.g. with `main()` and `GitController`) actually correct?**
+  _`CanvasStore` has 4 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 5 inferred relationships involving `GitController` (e.g. with `main()` and `CanvasStore`) actually correct?**
+  _`GitController` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 4 inferred relationships involving `CheckpointManager` (e.g. with `main()` and `GitController`) actually correct?**
+  _`CheckpointManager` has 4 INFERRED edges - model-reasoned connections that need verification._

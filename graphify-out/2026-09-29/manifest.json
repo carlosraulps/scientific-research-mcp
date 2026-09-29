@@ -42,45 +42,33 @@
     "semantic_hash": ""
   },
   "checkpoints/index.json": {
-    "mtime": 1790702489.6675992,
-    "seen": 1790702551.7457623,
-    "ast_hash": "270c3961aa7e8d72d3a4942631dcb07d",
-    "semantic_hash": ""
-  },
-  "checkpoints/test_md_20260929_170314.json": {
-    "mtime": 1790701394.236331,
-    "seen": 1790701514.3245592,
-    "ast_hash": "cfe125ee176c441c395640d86bd36108",
-    "semantic_hash": ""
-  },
-  "checkpoints/test_md_20260929_170332.json": {
-    "mtime": 1790701412.9033968,
-    "seen": 1790701514.3245606,
-    "ast_hash": "4756e3741da06aea6eff07e392182dc4",
+    "mtime": 1790704693.3891852,
+    "seen": 1790704735.7467673,
+    "ast_hash": "c0096be018896062e88ab8281e718eef",
     "semantic_hash": ""
   },
   "cli.py": {
-    "mtime": 1790702321.9637275,
-    "seen": 1790702445.4168189,
-    "ast_hash": "e6d9292974cb1a757ddd61bdb8d44dc0",
+    "mtime": 1790702784.3348098,
+    "seen": 1790702912.3047018,
+    "ast_hash": "e469413dfdfc78344c53228c64cda8eb",
     "semantic_hash": ""
   },
   "logs/artifacts_registry.json": {
-    "mtime": 1790702489.662599,
-    "seen": 1790702551.745781,
-    "ast_hash": "7ba51ec9e64562f690e4cd3158a461e7",
+    "mtime": 1790704677.2157047,
+    "seen": 1790704735.7467766,
+    "ast_hash": "49a7d8fd5e865175a81e714e4f952e17",
     "semantic_hash": ""
   },
   "logs/notes_index.json": {
-    "mtime": 1790702489.6641383,
-    "seen": 1790702551.745783,
-    "ast_hash": "8bd10f1e3a77f1b46f92c24ec374f8e4",
+    "mtime": 1790709286.7413945,
+    "seen": 1790709295.0460954,
+    "ast_hash": "cfd200cc9a709a5197aea3ec8c9cfbe7",
     "semantic_hash": ""
   },
   "logs/reports_index.json": {
-    "mtime": 1790702489.6648462,
-    "seen": 1790702551.7457852,
-    "ast_hash": "8fd94b0c05ac3394c6cb0887a44700b4",
+    "mtime": 1790703042.886316,
+    "seen": 1790704735.7467842,
+    "ast_hash": "bb96cc31b7c05e3bd8896af4c26d5671",
     "semantic_hash": ""
   },
   "scripts/__init__.py": {
@@ -90,15 +78,15 @@
     "semantic_hash": ""
   },
   "scripts/canvas_store.py": {
-    "mtime": 1790701277.615865,
-    "seen": 1790701514.3245714,
-    "ast_hash": "364eea7d911183cfaa95c39b73a25bd5",
+    "mtime": 1790702669.320566,
+    "seen": 1790702912.3047132,
+    "ast_hash": "c348a4ae08e93e3b4b5d9a189a15c27a",
     "semantic_hash": ""
   },
   "scripts/checkpoint_manager.py": {
-    "mtime": 1790701287.1940281,
-    "seen": 1790701514.3245735,
-    "ast_hash": "6ea8486db4dcbadd80920b6ae6036697",
+    "mtime": 1790702699.6918952,
+    "seen": 1790702912.3047152,
+    "ast_hash": "2ecefa7db55f09310fd9ebe05902bb1a",
     "semantic_hash": ""
   },
   "scripts/graphify_bridge.py": {
@@ -114,9 +102,9 @@
     "semantic_hash": ""
   },
   "scripts/mcp_server.py": {
-    "mtime": 1790702311.8656132,
-    "seen": 1790702445.4168465,
-    "ast_hash": "ff8f8b75ec9a6a42644087d2e4eee760",
+    "mtime": 1790702737.8573084,
+    "seen": 1790702912.3047287,
+    "ast_hash": "215d1f01bb4dafd3ecc48de39b6f2864",
     "semantic_hash": ""
   },
   "scripts/scientific_evaluator.py": {
@@ -126,9 +114,9 @@
     "semantic_hash": ""
   },
   "tests/test_sciresearch.py": {
-    "mtime": 1790702485.8795574,
-    "seen": 1790702551.7458174,
-    "ast_hash": "a7e9a77be3c1ae67116ab49d3f2fb088",
+    "mtime": 1790702824.3602402,
+    "seen": 1790702912.304738,
+    "ast_hash": "a801b889681e7e8d31a301c3c15849b8",
     "semantic_hash": ""
   },
   "canvas/notes/pt_bulk_convergence_discussion_v1.md": {
@@ -144,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/KNOWLEDGE_MAP.md": {
-    "mtime": 1790702550.0721185,
-    "seen": 1790702551.7458432,
-    "ast_hash": "9edeccd0dcd1df2bdd36faa5180076d0",
+    "mtime": 1790709292.7776434,
+    "seen": 1790709295.046513,
+    "ast_hash": "e651293b9d45c22764fbdf7e5f59817d",
     "semantic_hash": ""
   },
   "extracted_insights/01_DREAMS_provenance_canvas.md": {
@@ -180,15 +168,15 @@
     "semantic_hash": ""
   },
   "EVIDENCE.md": {
-    "mtime": 1790701501.1824071,
-    "seen": 1790701514.3246012,
-    "ast_hash": "38be099721bb1d3d1c8909f9098d286c",
+    "mtime": 1790704725.7431717,
+    "seen": 1790704735.7469857,
+    "ast_hash": "4f0059cbe0ef04c3fc55c9e1fb80ac28",
     "semantic_hash": ""
   },
   "SKILL.md": {
-    "mtime": 1790702448.3641417,
-    "seen": 1790702551.74592,
-    "ast_hash": "006b9219b5f7831fc34e9b3f49fb7a6e",
+    "mtime": 1790702905.567673,
+    "seen": 1790702912.3048291,
+    "ast_hash": "d240ec0e6435c4f40894077b40c2e75c",
     "semantic_hash": ""
   },
   "TASK.md": {
@@ -467,18 +455,6 @@
     "ast_hash": "ddf81fd06aa4140f1b9e33fce3a371e2",
     "semantic_hash": ""
   },
-  "checkpoints/test_md_20260929_171925.json": {
-    "mtime": 1790702365.5828125,
-    "seen": 1790702445.4168143,
-    "ast_hash": "7dd972433e73ec867dfa826bbb16294f",
-    "semantic_hash": ""
-  },
-  "checkpoints/test_md_20260929_171939.json": {
-    "mtime": 1790702379.198371,
-    "seen": 1790702445.4168162,
-    "ast_hash": "3b12c196d7c35cb5b8a97afae939ae36",
-    "semantic_hash": ""
-  },
   "scripts/dual_verifier.py": {
     "mtime": 1790702263.723067,
     "seen": 1790702445.4168375,
@@ -629,18 +605,6 @@
     "ast_hash": "f5aaf9a5bac46c7c96745e4bfbcb3cbe",
     "semantic_hash": ""
   },
-  "checkpoints/test_md_20260929_172048.json": {
-    "mtime": 1790702448.3390174,
-    "seen": 1790702551.7457743,
-    "ast_hash": "ad33a0b255ea9e5e785dbdad79ddc08c",
-    "semantic_hash": ""
-  },
-  "checkpoints/test_md_20260929_172129.json": {
-    "mtime": 1790702489.6675828,
-    "seen": 1790702551.7457762,
-    "ast_hash": "3e18eca605ad9b4b04a906fadef45e0c",
-    "semantic_hash": ""
-  },
   "canvas/notes/pt_bulk_convergence_discussion_v4.md": {
     "mtime": 1790702448.2844775,
     "seen": 1790702551.7458284,
@@ -657,6 +621,156 @@
     "mtime": 1790702489.6647391,
     "seen": 1790702551.745835,
     "ast_hash": "c2b5c8e5362e0033d197a29b7852676c",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/23d64afd.json": {
+    "mtime": 1790702829.9303002,
+    "seen": 1790702912.3046248,
+    "ast_hash": "48a7087ed782ea04683a37b0dffe89a6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/2fb7b3e8.json": {
+    "mtime": 1790702829.9391491,
+    "seen": 1790702912.3046274,
+    "ast_hash": "aaf3cd90493e5555f37576f5e6eea659",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/46ea4929.json": {
+    "mtime": 1790702829.9433002,
+    "seen": 1790702912.304637,
+    "ast_hash": "5bd321a7cfb2685b1aa2666e63535bd6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/c6ffc7cb.json": {
+    "mtime": 1790702829.9254847,
+    "seen": 1790702912.30467,
+    "ast_hash": "ec63f90e498bc7526ab29592494c1f8d",
+    "semantic_hash": ""
+  },
+  "scripts/git_controller.py": {
+    "mtime": 1790702632.2361627,
+    "seen": 1790702912.3047216,
+    "ast_hash": "b805609b9967f91d283a52f218dc0323",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v6.md": {
+    "mtime": 1790702829.9504585,
+    "seen": 1790702912.3047504,
+    "ast_hash": "6ffc792f8a3c17c70847800b4e6458df",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study_report_18a8ee.md": {
+    "mtime": 1790702829.9693005,
+    "seen": 1790702912.304754,
+    "ast_hash": "de4ab852b0c9c4908e1958501a58ad65",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790702854.2114182,
+    "seen": 1790702912.3048272,
+    "ast_hash": "825572d924a4040a9d4c0f9ca3169176",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/33a0eaf1.json": {
+    "mtime": 1790703042.731463,
+    "seen": 1790704735.7466023,
+    "ast_hash": "0dcee188ba55e6ff5f35c711c998805f",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/67595469.json": {
+    "mtime": 1790704677.2107046,
+    "seen": 1790704735.746651,
+    "ast_hash": "66b60c9de9483eba01a3f4a9f287ee7e",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/6aba240c.json": {
+    "mtime": 1790704670.3216383,
+    "seen": 1790704735.746654,
+    "ast_hash": "98a29c729848ceb311d9ad53a47efd09",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/6fcce653.json": {
+    "mtime": 1790703042.6714625,
+    "seen": 1790704735.7466567,
+    "ast_hash": "9eba00329a890dde5a4b724f107726d2",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/7a30e181.json": {
+    "mtime": 1790702917.5645342,
+    "seen": 1790704735.7466607,
+    "ast_hash": "42a36dee916489e437f78712f94b7200",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/8085ade2.json": {
+    "mtime": 1790703042.8046637,
+    "seen": 1790704735.746663,
+    "ast_hash": "be76125f7d4272d19c4ed312f81c445e",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/83ec4c26.json": {
+    "mtime": 1790702917.5445454,
+    "seen": 1790704735.7466657,
+    "ast_hash": "f59c30c79fd04f0ebd48e0af63b16f63",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/8da43ba5.json": {
+    "mtime": 1790703042.8494637,
+    "seen": 1790704735.7466738,
+    "ast_hash": "6b3abf55967bbbe04ec64fa4dddc741e",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/c1d5c2c7.json": {
+    "mtime": 1790702917.5287359,
+    "seen": 1790704735.7467241,
+    "ast_hash": "33f5a8f03470e3c72f1ee651fc295523",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/d452b63a.json": {
+    "mtime": 1790702917.577384,
+    "seen": 1790704735.7467358,
+    "ast_hash": "2200bb2d2736d3e36080d509e9a9734f",
+    "semantic_hash": ""
+  },
+  "checkpoints/crcl3_2x2_co_embedded_clean.json": {
+    "mtime": 1790704693.388616,
+    "seen": 1790704735.7467623,
+    "ast_hash": "f75760adbc9da51f0d758856bae24a26",
+    "semantic_hash": ""
+  },
+  "canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md": {
+    "mtime": 1790704686.019653,
+    "seen": 1790704735.7468524,
+    "ast_hash": "7d6d8fcbfde2ef12fd4693d0e2611772",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v7.md": {
+    "mtime": 1790702917.5797906,
+    "seen": 1790704735.7468872,
+    "ast_hash": "ca694b08e0d35f6f52232452af7759ce",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v8.md": {
+    "mtime": 1790703042.8532221,
+    "seen": 1790704735.7468905,
+    "ast_hash": "39efa05907935b12341c5c7ac838136b",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study_report_965f17.md": {
+    "mtime": 1790702917.5876155,
+    "seen": 1790704735.7468984,
+    "ast_hash": "87e3a5a8b1a2095708b785c9697af41f",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study_report_a1f321.md": {
+    "mtime": 1790703042.8861167,
+    "seen": 1790704735.7469008,
+    "ast_hash": "9767be770b056fbdb212e3df28d16169",
+    "semantic_hash": ""
+  },
+  "canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md": {
+    "mtime": 1790709286.7410214,
+    "seen": 1790709295.0463328,
+    "ast_hash": "3c03fee1d03219131a3f6d552fdbf6eb",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,34 @@
+{
+  "result_id": "6aba240c",
+  "producing_tool": "vasp_std_6.2.0",
+  "value": {
+    "e0_ev": -152.68359,
+    "mag_moment_mub": 28.1422,
+    "status": "CONVERGED",
+    "total_ionic_steps": 60
+  },
+  "arguments": {
+    "ENCUT": 400,
+    "LDAU": true,
+    "LDAUU": 3.29,
+    "calculation": "crcl3-2x2-co_emb-metano/clean",
+    "cluster": "carbono",
+    "functional": "PBE+D3(BJ)+U",
+    "node": "gn01",
+    "supercell": "2x2"
+  },
+  "rationales": {
+    "LDAUU": "U=3.29 eV from lattice parameter intersection a(U)=a_exp (Webster 2018) and Cococcioni linear response [3.26, 3.32] eV.",
+    "functional": "PBE with Grimme DFT-D3 Becke-Johnson damping (IVDW=12) to capture van der Waals interactions without short-range overbinding."
+  },
+  "sources": {},
+  "declared_context": "Evaluation of embedded transition metal stability and HER catalytic baseline for Co-substituted monolayer CrCl3 (Cr7CoCl24).",
+  "parent_ids": [],
+  "created_at": "2026-09-29T17:57:50.224626+00:00",
+  "git": {
+    "commit": "5958522f18e9d7ceae3f73ed97c41a4c5d572515",
+    "short_commit": "5958522f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}
