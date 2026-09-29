@@ -1,0 +1,2236 @@
+Structural
+Information
+Manual Setup time
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+x
+−
+−
+
+− −
+y −
+− z
+
+Zhengding Hu 1 Kuntal Talit 2 Zhen Wang 1 Haseeb Ahmad 2 Yichen Lin 1 Prabhleen Kaur 1
+1 ~ 4 hour
+1
+Manual
+Christopher Lane 3 Elizabeth A. Peterson 3 Zhiting 27
+Humin
+Elizabeth A. Nowadnick 2 Yufei Ding
+
+arXiv:2603.03372v2 [cond-mat.mtrl-sci] 5 Mar 2026
+
+Setup
+
+Multi-step DFT Execution
+
+Abstract
+2 min ~20 min
+Density Functional Theory (DFT) is
+a cornerstone of materials science, yet executing DFT in
+practice requires coordinating a < 5
+complex,
+min multistep workflow. Existing tools and LLM-based
+solutions automate parts of the steps, but lack
+support for full workflow automation, diverse
+task adaptation, and accuracy–cost trade-off optimization in
+DFT
+configuration. To this end, we
+Search
+Structural
+Information
+present T RITON DFT, a multi-agent framework
+that enables efficient and accurate DFT execution
+through an expert-curated, extensible workflow
+design, Pareto-aware parameter inference, and
+multi-source knowledge augmentation. We further introduce DFTB ENCH, a benchmark for evaluating the agent’s multi-dimensional capabilities,
+spanning science expertise, trade-off optimization,
+HPC knowledge, and cost efficiency.
+
+Quantum
+Espresso
+
+Search Structural Information
+(Web Search, Open Database)
+
+Human
+
+2 min~20 min
+
+TritonDFT
+
+5 s~1 min
+
+Configure Physical Parameters
+(Science Expertise)
+
+Human
+
+27 min~4 hour
+
+TritonDFT
+
+4 s~2 min
+
+Human
+
+11 min~2 hour
+
+TritonDFT
+
+5 s~1 min
+
+VASP
+
+Write DFT Library Scripts
+(Software Details)
+
+Job Submission & Parallelization
+(HPC Expertise)
+
+Human
+
+5 min~10 min
+
+TritonDFT
+
+5 s~2 min
+
+Log Parsing & Result Analysis
+(Software + Science Expertise)
+
+Human
+
+15 min~3 hour
+
+TritonDFT
+
+4 s~5 min
+
+Figure 1. DFT execution is a complex, multi-step process requiring
+heterogeneous domain expertise. Based on an internal survey
+conducted with 19 domain researchers at the PhD level or above,
+manually handling each step typically takes minutes to hours.
+T RITON DFT reduces the per-step time to the scale of seconds to
+minutes, and provides automation across the entire workflow.
+
+T RITON DFT provides an open user interface for
+real-world usage. Our website is at https:
+//www.tritondft.com. Our source code
+and benchmark suite are available at https://
+github.com/Leo9660/TritonDFT.git.
+
+steps require distinct areas of expertise, including physics
+and materials science, DFT library software details, and
+High-Performance-Computing (HPC). Each step takes minutes to hours of manual effort. This imposes substantial
+overhead and slows down the discovery process. While existing DFT tools can handle certain low-level details, such
+as script generation (Mathew et al., 2017; Larsen et al.,
+2017) and HPC resource management (Pizzi et al., 2016),
+users still need to manually handle most of the steps and
+coordinate the overall workflow.
+
+1. Introduction
+Density Functional Theory (DFT) (Hohenberg & Kohn,
+1964; Kohn & Sham, 1965) stands as the computational cornerstone of modern materials science. As a first-principles
+method, DFT provides high-fidelity predictions to validate
+theoretical hypotheses and reduce experimental cost.
+
+Such manual overhead gives rise to a natural question: can
+we leverage Large Language Model (LLM)-based agents to
+orchestrate these steps and enable automation? LLM agents
+have been successfully applied across materials science, including domain-specific tool augmentation (M. Bran et al.,
+2024; Zhang et al., 2024), theoretical hypothesis loop (Ding
+et al., 2024; Kumbhar et al., 2025), and autonomous laboratory (Szymanski et al., 2023; Dai et al., 2025). However,
+applying LLM-based agents to DFT execution, a highly
+complex, large-scale, and cross-domain theoretical tool, remains challenging and underexplored. These challenges
+directly motivate our design of T RITON DFT.
+
+Executing DFT in practice involves a complex, multi-step
+workflow. Practitioners must search for structural information, configure input parameters, write DFT softwarespecific scripts, launch and monitor HPC jobs, and interpret
+and analyze execution results. As shown in Figure 1, such
+*
+Equal contribution 1 University of California, San Diego
+University of California, Merced 3 Los Alamos National Laboratory. Correspondence to: Elizabeth A. Nowadnick <enowadnick@ucmerced.edu>, Yufei Ding <yufeiding@ucsd.edu>.
+2
+
+Preprint. March 6, 2026.
+
+1
+
+11s
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+Energy Deviation E (meV/atom)
+
+10
+
+5
+0
+
+15
+
+5
+6
+
+8
+10
+12
+K-point Mesh (K × K × K)
+
+0
+
+Computational Cost
+
+Fixed K-points = 8 × 8 × 8
+
+2.4
+2.2
+2.0
+1.8
+1.6
+
+5
+
+Normalized Cost
+
+10
+
+Energy Deviation
+
+Energy Deviation
+
+Fixed Ecut = 60 Ry
+
+Normalized Cost
+
+First, the complexity of DFT increases the difficulty to implement a robust and generalizable agent framework. Modern DFT libraries like Quantum Espresso (Giannozzi
+et al., 2009) comprise > 10 executables and > 50 commonly used parameters, with completely different invocation patterns and analyzing methods across tasks. While
+prior work have demonstrated feasibility on specific tasks
+such as structural relaxation or adsorption (Wang et al.,
+2025; Hafner, 2008), they typically rely on static, taskspecific workflows. In contrast, T RITON DFT adopts an
+expert-informed Plan–Execute–Refine workflow design,
+coupled with an explicit task–to–executable mapping mechanism for extensibility. T RITON DFT now supports a broad
+set of tasks, ranging from structural optimization to complex
+tasks such as phonon properties.
+
+4
+3
+40
+
+60
+80
+Energy Cutoff Ecut (Ry)
+
+Figure 2. Energy Deviation and Computational Cost Variations
+with different DFT Parameters for Silicon (Space Group F d3̄m).
+Computational cost is normalized as C/C0 , where C denotes the
+actual execution time and C0 corresponds to the execution time
+with K=6 and ecut=40.
+
+Second, as a numerical simulation, DFT requires results
+to be obtained both accurately and efficiently. Thus, DFT
+parameter configurations simultaneously affect numerical
+fidelity and computational workload, introducing an inherent accuracy–cost trade-off. An existing agent study on
+parameter configuration (Xia et al., 2025) primarily focuses
+on accuracy while leaving this trade-off problem unsolved.
+T RITON DFT introduces a Pareto-aware parameter inference method, which enables the LLM to estimate the accuracy–cost Pareto frontier and iteratively refine configurations. We further incorporate augmentation including
+domain-specific tools, historical memory mechanism, and
+an interactive human-in-the-loop interface, to improve the
+agent’s reliability on the parameter configurations.
+
+2. Background and Related Work
+2.1. DFT Execution and Challenges
+DFT predicts material properties from first principles, based
+on the atom identities and structural information. Its practical execution entails a multi-step workflow. We formulate
+a DFT query Q as a chain of computational steps {Ci }N
+i=1 ,
+where each step Ci = ⟨Mi , θ i , Oi ⟩ transforms the input
+state of a specific material via method Mi (e.g., structure
+relaxation, self consistent field) into output Oi . Oi encompasses the updated physical state (e.g., atomic geometry,
+electron density) and computed observables (e.g., total energy, band gap, density of states).
+
+Third, despite extensive benchmarks like graduate-level
+materials-domain knowledge (Zaki et al., 2024; Mirza et al.,
+2024), key capabilities in end-to-end DFT workflows, including numerical accuracy, Pareto-optimality, HPC parallelization, and cost efficiency, remain unevaluated. We
+present DFTB ENCH to evaluate these capabilities. DFTB ENCH comprises 68 materials spanning 10 distinct types
+to ensure diversity in physical properties and computational
+complexity, with expert-curated convergence tests totaling
+over 500 CPU-hours to obtain Pareto-optimal parameter
+configurations and ground-truth calculation results.
+
+The parameter space θ i includes two components: Physical parameters θ phy (e.g., kinetic energy cutoffs, k-point
+densities, and more advanced parameters like spin-orbit coupling) govern numerical accuracy and convergence behavior.
+These parameters also determine computational workload.
+HPC parameters θ hpc (e.g., parallelization over k-points
+or images) determine how parallel tasks are mapped onto
+hardware resources, influencing execution time and resource
+efficiency. Thus, efficient DFT execution requires expertise
+in both materials science and high-performance computing.
+Complexity in Manual DFT Execution. Widely used DFT
+packages such as Quantum ESPRESSO (Giannozzi et al.,
+2009) and VASP (Hafner, 2008) require substantial manual effort in practice. Researchers must retrieve structural
+data from external sources, construct software-specific input
+scripts, submit and monitor HPC jobs, and interpret lengthy
+execution logs. Existing DFT tools partially automate this
+workflow. For example, Atomate (Mathew et al., 2017) and
+ASE (Larsen et al., 2017) support structure-to-script generation, and AiiDA (Pizzi et al., 2016) manages HPC job
+execution and scheduling. However, existing tools typically
+operate on parts of the steps and do not provide intelligent
+guidance for parameter configuration or execution. As a re-
+
+In summary, our contribution can be summarized as follows:
+• We present T RITON DFT, an expert-informed automation framework for complete DFT workflow execution.
+• We present DFTB ENCH, a benchmark suite for multidimensional capabilities to automate DFT workflows,
+spanning science, HPC and accuracy-cost tradeoffs.
+• Comprehensive experiments demonstrate the potential
+of T RITON DFT as a practical building block for realworld research. We also reveal substantial capability
+differences of LLMs across different task steps.
+2
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+Table 1. Comparison of T RITON DFT with state-of-the-art agentic DFT frameworks.
+Framework Architecture
+
+Method
+
+Evaluation Dataset & Metrics
+
+Supported
+Task Types
+
+Parameter
+Configuration
+
+Knowledge
+Augmentation
+
+Number of
+Material Types
+
+Ground Truth
+Curation
+
+Accuracy-Cost
+Tradeoff
+
+Parallel
+Efficiency
+
+Monetary
+Cost
+
+DREAMS
+(Wang et al., 2025)
+
+Surface Chemistry
+(Adsorption)
+
+Physics Only
+
+Open Database
+
+2 (Metal,
+Insulator)
+
+Public
+Dataset
+
+✗
+
+✗
+
+✗
+
+VASPilot
+(Liu et al., 2025)
+
+Electronic Structure
+(Band, DOS)
+
+Physics Only
+
+Open Database
+
+1 (Semiconductor)
+
+Public
+Dataset
+
+✗
+
+✗
+
+✗
+
+AgenticDFT
+(Xia et al., 2025)
+
+Geometry & Energetics Physics Only
+(Relaxation, Band)
+
+Open Database
+
+2 (Metal,
+Semiconductor)
+
+Public
+Dataset
+
+✗
+
+✗
+
+✗
+
+Open Database
++ Memory
++ Human Interact.
+
+10 (Metal, Insulator,
+van der Waals,
+Topological, ...)
+
+Expert Curated
+Calculation
+
+✓
+
+✓
+
+✓
+
+T RITON DFT
+(Ours)
+
+General QE Usage
+(> 10 Types)
+
+Physics + HPC
+(Pareto-aware)
+
+sult, DFT researchers still need to manually make decisions
+and coordinate the overall workflow.
+
+Shetty et al., 2023), property prediction (Song et al., 2025;
+Yao et al., 2025), hypothesis proposal (Ding et al., 2024;
+Kumbhar et al., 2025), and novel material generation (Gruver et al., 2024; Qi et al., 2025; Ghafarollahi & Buehler,
+2025; Wang et al., 2024; Jia et al., 2024). On the experimental side, agent-driven embodied systems enable increasingly
+autonomous wet-lab workflows for synthesis (Szymanski
+et al., 2023; Delgado-Licona et al., 2025), characterization (Dai et al., 2025), and measurement (Olowe & Chitnis,
+2025; Boiko et al., 2023), substantially expanding the scale
+of materials discovery (Merchant et al., 2023).
+
+Parameters with Accuracy–Cost Tradeoff. DFT execution time can range from minutes to hours or even days,
+which is largely determined by the parameters θ. Figure 2
+presents one example: increasing some physical parameters
+like the k-points and energy cutoff reduces calculation error but incurs higher computational cost. This introduces a
+tradeoff: DFT practitioners need to identify Pareto-optimal
+configurations, to maximize the efficiency while meeting
+the required accuracy. More importantly, the non-trivial
+coupling among multiple parameters further exacerbates the
+complexity of this tradeoff. Thus, users must either conduct
+expensive convergence tests or rely on extensive experience.
+
+DFT as a cornerstone should naturally be incorporated into
+such discovery automation. Recent efforts demonstrate the
+feasibility of DFT agents (Wang et al., 2025; Liu et al., 2025;
+Xia et al., 2025). However, these works are primarily casestudy driven, focusing on the correctness on specific tasks
+and materials, and lack evaluation of accuracy, efficiency
+and monetary cost. Table 1 summarizes the key differences
+between T RITON DFT and existing DFT agents.
+
+2.2. LLM Agents for Automated Material Discovery
+LLM agents are fundamentally reshaping scientific research
+by automating complex discovery cycles (Wang et al., 2023),
+enabled by the capabilities of tool-usage (Yao et al., 2024)
+and multi-step workflow coordination (Hong et al., 2023).
+
+Benchmarking Agents in Materials Science. A growing
+number of LLM benchmarks has been proposed in material
+science, including graduate-level question answering (Zaki
+et al., 2024; Mirza et al., 2024; Zhang et al., 2025; Cheung
+et al., 2025), research-level task completion (Miret & Krishnan, 2024; Guo et al., 2023), specific tool usage (Huang
+et al., 2025), retrieval-augmented reasoning (Zhong et al.,
+2025), and wet-lab experimental design and analysis (Mandal et al., 2025). However, DFT requires multi-dimensional
+capabilities including science, HPC, and dual optimization,
+which are not fully captured by existing benchmarks. This
+motivates the design of DFTB ENCH.
+
+Domain-Specific Tool Augmentation. Prior work augments agents with domain-specific tools, including paper
+extraction (Cheung et al., 2024; Hira et al., 2024; Song
+et al., 2023), retrieval augmentation (Schilling-Wilhelmi
+et al., 2025; Chiang et al., 2024; McNaughton et al., 2024),
+and surrogate models (Liu et al., 2024). Tool-hub-based
+agents like HoneyComb (Zhang et al., 2024) and ChemCrow (M. Bran et al., 2024) assemble multiple tools to
+enable coordinated augmentation. These tools typically follow simple input–output protocols and can be effectively
+encapsulated as single function calls. In contrast, using
+DFT as a tool require more complex workflows, involving
+physical parameter configuration, HPC job parallelization
+and management, result analysis and iterative refinement.
+
+3. T RITON DFT: Method and Implementation
+We propose T RITON DFT, a multi-agent framework designed to achieve fully automated DFT calculations. The
+framework integrates an LLM-driven agent workflow with
+Quantum Espresso (Giannozzi et al., 2009), one of the
+most prominent open-source DFT libraries. Shown in Fig-
+
+Automated Agent Framework. On the theoretical side,
+LLM agents have demonstrated promising capabilities in
+knowledge organization (Tang et al., 2025; Ye et al., 2024;
+
+3
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+The Band Structure
+of Na (bcc).
+User
+
+Agent Workflow
+
+Subproblem 1
+
+VC-relax
+SCF
+Planner
+
+Cost
+
+K points = 8
+Ecut = 80 ry
+
+Subproblem 2
+
+Subproblem 3
+
+Parameter
+Inference
+
+K points = 6
+Ecut = 80 ry
+
+Accuracy
+
+Output parsing
+
+Convergence
+Failed
+
+SCF converged
+within 20 iterations.
+
+Configuration
+Error
+
+Subproblem 4
+Result
+Interpreter
+
+Input Script
+Target
+
+QE Script
+Generator
+
+calculation = ‘vc-relax’,
+pseudo = ‘PBE’
+nat = 1, ntyp = 1
+ecutwfc = 60.0,
+K_POINTS 6 6 6 0 0
+
+Hardware
+Description
+Shared-memory node
+with 16 CPU cores
+and 128 GB RAM.
+
+Domain
+Tools
+
+Pareto Curve Estimation
+
+NSCF
+
+bands
+
+Knowledge Augmentation
+
+Subproblem: Perform Variable-Cell relaxation (VC-Relax) for Na (bcc).
+
+Parallel
+Executor
+
+mpirun –np 16 pw.x –in input.in
+Short default MPI run
+Parallel information:
+# of k points, RAM consumption, …
+HPC parameter inference
+mpirun –np 16 pw.x –nk 8 –in input.in
+
+Conclusion: The VC-relax calculation successfully converged with lattice constant = 4.29 Å.
+Bands Plot
+
+Historical
+Memory
+
+Materials
+Project
+
+AFlow
+
+Similar
+Materials
+Material Info.
+Formula = “Li”,
+System = cubic,
+Physical Param.
+K points = 6
+Ecut = 60
+
+pymatgen
+
+Similar
+Parallelization
+Parallel Info.
+# of k = 216
+# of Band = 2,
+HPC Param.
+nk = 8
+
+Parameter Suggestions
+Resource Validation
+
+Human-inthe-loop
+
+Calculation Feedback
+
+Figure 3. The overview of T RITON DFT framework.
+
+ure 3, T RITON DFT accepts task descriptions directly in natural language and autonomously orchestrates the entire DFT
+workflow, allowing researchers to obtain simulation results
+without specialized knowledge in computational physics.
+
+discrepancy between the numerical accuracy of the current
+configuration and user expectations, and closes the feedback
+loop through iterative parameter self-refinement, ultimately
+converging toward an estimated Pareto-optimal point. The
+agent also leverages execution-based feedback by validating
+DFT outputs against correctness and convergence criteria.
+Configurations that fail to achieve convergence are treated
+as invalid points in the accuracy–cost space and excluded
+from Pareto consideration. Such a refinement process allows the agent to iteratively adjust parameters rather than
+making a single-shot guess.
+
+T RITON DFT was developed through a close collaboration
+between theoretical material scientists and computer science
+researchers. The agent workflow encapsulates the empirical
+routines typically employed by experienced physicists. The
+input prompts are rigorously refined based on both official
+library documentation and expert domain knowledge.
+
+Automated Parallelization. The executor automatically
+sets up parallelization parameters to maximize execution
+efficiency. It takes as input a natural-language hardware
+specification (e.g., “32 CPU cores on a 128 GB sharedmemory node”), together with the generated input scripts
+and an estimation of the resource cost to finish the calculation. Following common practices adopted by DFT experts,
+the agent estimates the resource cost via a short default MPI
+run (within 30 seconds), and extracts key signals such as
+number of k-points and total DRAM consumption. These
+signals provide a lightweight estimation of both parallel
+scalability and memory footprint, and are jointly used to
+guide parallelization setup and avoid oversubscription.
+
+3.1. Agentic Workflow for Automation
+We adopt a Planner Agent that dynamically decomposes
+high-level user queries into a sequence of DFT subproblems. Each category establishes a deterministic mapping
+to a specific binary executable within the DFT library suite.
+For instance, the structural relaxation (VC-relax) and selfconsistent-field calculation (SCF) are mapped to pw.x.
+This design ensures every subproblem to be solved through
+executable invocations. Each executable is registered with
+structured metadata describing input/output formats and execution constraints. This enables new executables to be
+added in a modular manner.
+Within each subproblem, T RITON DFT executes a closedloop solving workflow: (1) Parameter Inference leverages Pareto-optimal-aware reasoning to identify θ phy for
+expected accuracy-cost tradeoff; (2) Script Generator synthesizes these parameters into syntactically correct input
+files; (3) Executor performs job submission and setup θ hpc ;
+(4) Interpreter parses the raw output to provides correctness and produces refinement suggestions or summaries.
+
+3.2. Domain Knowledge Augmentation
+T RITON DFT leverages external domain-specific tools and
+internal memory module for augmented generation.
+Domain-Specific Tool Integration. T RITON DFT integrates open materials databases, including Materials
+Project (Jain et al., 2013) and AFlow (Curtarolo et al., 2012),
+to retrieve physically grounded information that guides parameter guessing and script construction. The agent dynamically selects specific querying fields based on the current
+task type. For example, the agent retrieves initial atomic
+structures for structure relaxation and reasonable lattice
+constants for subsequent Self Consistent Field. We also
+integrate pymatgen (Ong et al., 2013) to enable the agent
+
+Pareto-Aware Parameter Refinement. To navigate the inherent accuracy-cost trade-off and address the bi-objective
+optimization problem, we introduce a Pareto-aware Reasoning mechanism. Instead of static, one-shot inference, the
+agent is designed to iteratively infer parameter configurations based on result estimation. The agent estimates the
+4
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+
+to perform symmetry analysis and space group verification,
+ensuring the geometric consistency of the structures.
+
+diversity in composition, symmetry, and electronic structure
+requires the model to understand different material properties and precisely configure θ phy .
+
+Historical Memory Mechanism. Our system implements
+two forms of memory: For θ phy , the agents recall parameters from physically similar materials. For successfully
+converged calculations, the agent summarizes and stores the
+material information and θ phy in memory. During retrieval,
+the agent first applies structured filtering based on high-level
+symmetry features, including space group and crystal system. Within the filtered candidates, similarity is computed
+over other features such as elemental composition, electron
+count, and unit-cell volume. For θ hpc , the agent directly
+compares workload-related features, such as the total number of k-points, the size of the plane-wave basis, and the
+number of bands. Such historical execution results provides
+estimation guidance for the accuracy–cost trade-off.
+
+Computational Complexity Diversity: The dataset covers
+a broad range of system sizes, from single-atom primitive
+cells to polyatomic unit cells, with varying unit cell volumes
+and total valence electron counts. Such diversity requires
+the model to efficiently configure θ hpc to handle workloads
+spanning multiple orders of magnitude.
+Evaluation Design. Our test suite evaluates the agent in automated DFT workflows along following three dimensions:
+(i) Accuracy-Cost Trade-off and Pareto-Optimal Parameter Reference . To evaluate numerical accuracy, we define three target energy deviation levels, ∆E < 1, 10,
+and 20 meV/atom. These thresholds reflect commonly
+adopted DFT accuracy levels under different accuracy–cost
+trade-offs. The stringent threshold of 1 meV/atom is computational expensive, targeting energy-sensitive properties
+(e.g., relative phase stability and defect energetics). 10
+meV/atom is commonly used for standard high-throughput
+accuracy (e.g., equilibrium structures and band properties).
+20 meV/atom offers the lowest computational cost, commonly used for coarse-grained screening, structure filtering,
+and exploratory data generation.
+
+3.3. User Interface and Interaction
+We adopt a decoupled design that separates the agent backend from the DFT computation backend. This only requires
+users to connect their own computation platform and specify
+the task submission method for that environment. Currently,
+the system supports execution on both local servers and
+Slurm-managed clusters. With this design, T RITON DFT
+serves as a comprehensive intermediate layer between the
+user and the low-level hardware. This relieves users from
+trivial domain-specific details and tedious manual tasks,
+such as parameter configuration, parallelization configuration, script writing, progress monitoring, and result analysis.
+
+For each material, we provide fully expert-curated input
+parameter configurations that satisfy these three accuracy
+targets, serving as reference Pareto-optimal configurations.
+These configurations are obtained through manual convergence testing, involving over 500 CPU-hours of DFT runs to
+sweep and test relevant numerical parameters, and identifying optimal configurations on the Pareto curve. We evaluate
+the agent by comparing its generated parameter configurations against these reference configurations, assessing its
+ability to identify Pareto-optimal points under different energy error tolerances.
+
+We have developed an open web interface for T RITON DFT,
+allowing users to interact with pure natural language. We
+also support the human-in-the-loop feedback mechanism:
+Users can intervene at specific stages to provide feedback,
+such as reviewing θ phy configurations, validating θ hpc settings and submission commands, or assessing execution
+results. This capability enables granular control for researchers with varying levels of expertise, establishing a
+reliable building block for practical research.
+
+(ii) HPC Parallelization. We evaluate the execution time
+for each test case under a default mpirun setup, where np
+denotes the total number of parallel processes, and compare
+it against agent-generated configurations that leverage advanced DFT parallelization parameters such as nk and ntg.
+This evaluation assesses the agent’s capability of effective
+parallel acceleration for DFT workloads.
+
+4. DFTB ENCH: Benchmarking DFT Accuracy
+and Efficiency with LLM Agents
+Benchmark Statistics. DFTB ENCH is an expert-curated
+benchmark suite comprising 68 unique crystalline materials,
+exhibiting diversity in two aspects:
+
+(iii) Cost evaluation. We also measure the number of tokens
+and the total runtime of LLM calls. These quantities are
+converted into the corresponding API costs and end-to-end
+workflow throughput, to evaluate both time and monetary
+costs of the agent in real-world usage.
+
+Physical Diversity: DFTB ENCH covers 10 distinct material categories, ranging from fundamental electronic phases
+(Metals, Insulators, Semiconductors) to complex functional
+and quantum materials (van der Waals, Topological insulators, Ferroelectrics). The material set contains 47 chemical
+elements, and 23 crystallographic space groups, spanning
+multiple electronic phases and magnetic ground states. Such
+5
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+Table 2. Model performance on DFT parameter configuration across different LLMs under varying error threshold.
+∆E < 20 meV/atom
+
+∆E < 10 meV/atom
+
+Pass Rate
+
+Norm. Cost
+
+Pass Rate
+
+Norm. Cost
+
+Pass Rate
+
+Norm. Cost
+
+70.5%
+39.3%
+52.8%
+5.7%
+59.6%
+23.6%
+9.0%
+30.3%
+
+14.29
+6.22
+1.85
+1.01
+3.77
+1.85
+1.62
+2.38
+
+67.0%
+32.9%
+38.2%
+5.6%
+53.9%
+16.9%
+5.6%
+25.8%
+
+8.95
+4.21
+1.28
+1.17
+2.95
+1.68
+1.33
+1.93
+
+47.1%
+9.8%
+13.6%
+4.5%
+14.9%
+2.3%
+4.5%
+21.6%
+
+4.23
+2.24
+0.50
+0.97
+1.24
+0.78
+0.58
+0.87
+
+Model
+GPT 5.2
+GPT 5.1
+GPT 4o
+GPT 4o mini
+Gemini 2.5 Pro
+Gemini 2.5 Flash
+Claude Opus 4.5
+Claude Sonnet 4.5
+
+Pass Rate ( E < 10 meV)
+
+Ferroelectric
+100%
+Topological
+Insulator
+80%
+
+60%
+
+Thermoelectric
+
+40%
+20%
+
+Advanced Parameter
+Satisfaction Rate
+51.3%
+43.6%
+28.2%
+28.2%
+48.7%
+38.5%
+53.8%
+38.5%
+
+Table 3. Mean relative error (MRE, %) for VC-relax and SCF, and
+mean absolute error (MAE) for Band Gap and DOS, computed
+over successfully finished execution results.
+
+Cost Efficiency (1 / Cost Factor)
+
+Ferroelectric
+100%
+Topological
+Insulator
+80%
+
+∆E < 1 meV/atom
+
+60%
+
+Magnetic Thermoelectric
+
+van der
+Waals
+
+Metal
+
+SemiOptical
+conductor
+Piezoelectric
+
+40%
+20%
+
+Magnetic
+
+van der
+Waals
+
+Metal
+
+GPT 5.2
+SemiGPT 4o
+Optical
+Gemini 2.5 Proconductor
+Piezoelectric
+Claude Sonnet 4.5
+
+Figure 4. Performance Analysis with Pass Rate and Cost Efficiency
+across different material types. Cost Efficiency is measured (1 /
+Cost Factor), averaged over all passed cases within each type.
+
+Model
+
+VC-relax
+(Lattice)
+
+SCF
+(E/atom)
+
+Bandgap
+(eV)
+
+EF
+(eV)
+
+GPT 5.2
+GPT 5.1
+GPT 4o
+Gemini 2.5 Pro
+Gemini 2.5 Flash
+Claude Opus 4.5
+Claude Sonnet 4.5
+
+5.7%
+7.4%
+10.1%
+5.5%
+8.1%
+8.0%
+9.1%
+
+0.0%
+0.1%
+1.2%
+0.1%
+0.5%
+0.1%
+0.1%
+
+0.34
+0.45
+1.90
+1.02
+1.19
+1.84
+1.83
+
+1.32
+2.34
+8.17
+1.45
+7.09
+3.01
+1.75
+
+5.2. Accuracy and Trade-off Analysis
+DFT Parameter Evaluation. We evaluate the model performance in setting parameters for structural relaxation(VCrelax). It is the most fundamental step that determines the
+quality of the relaxed geometry and subsequent energy evaluations. Table 2 summarizes the results. Pass Rate denotes
+the fraction of cases where the generated configuration satisfies ∆E < 20, 10, 1 meV/atom, compared to the most
+accurate results obtained with the most stringent configuration obtained by human-performed convergence tests.
+Normalized Cost is measured as the ratio of computational
+cost relative to the Pareto-optimal configuration obtained
+by human-performed convergence tests. Values closer to
+1 indicate stronger capability in identifying Pareto-optimal
+configurations. We also report the Advanced Requirement
+Satisfaction Rate, corresponding to parameters required by
+more complex materials such as spin polarization, Hubbard
+U and van der Waals corrections. In total, 39 materials in
+DFTB ENCH require one or more such advanced parameters.
+
+5. Evaluation
+5.1. Experimental Setup
+Evaluated Models. We benchmark eight state-of-the-art
+models across three major families: OpenAI’s GPT 5.2,
+GPT 5.1, GPT 4o, and GPT 4o mini; Google’s Gemini 2.5
+Pro and Gemini 2.5 Flash; and Anthropic’s Claude Opus
+4.5 and Claude Sonnet 4.5. This selection spans a broad
+spectrum of model architectures and scales, from flagship
+frontier models to more cost-efficient ones.
+Implementation and Platform. T RITON DFT integrates
+Quantum ESPRESSO (v7.4) with a unified API interface
+for accessing diverse commercial LLMs. The framework is
+deployed on a high-performance computing node equipped
+with an AMD EPYC 9534 64-Core Processor clocked at
+3.48 GHz. The CPU supports advanced vector extensions
+like AVX-512, ensuring optimized execution for DFT.
+
+Among the evaluated models, GPT 5.2 consistently achieves
+the highest pass rates across all thresholds. This advantage
+comes at the expense of higher computational cost (with average cost up to 14.29). Intermediate models, including GPT
+5.1, GPT 4o, and Gemini 2.5 Pro, exhibit more balanced
+behavior, with moderate pass rates and lower costs with
+20,10 meV/atom. However, under the strict 1 meV/atom
+
+Test Cases. We perform benchmarking primarily on
+four DFT tasks: variable-cell relaxation (VC-relax), selfconsistent field (SCF), band gap, and density of states
+(DOS). These tasks cover the most fundamental steps in
+DFT workflows. We also present examples of more advanced tasks such as phonon analysis in a case study.
+6
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+Table 4. Relative speedup (%) of parallel execution of different
+LLMs over the default baseline across different CPU core numbers.
+Model
+
+16 Cores
+
+32 Cores
+
+64 Cores
+
+GPT 5.2
+GPT 5.1
+GPT 4o
+GPT 4o mini
+Gemini 2.5 Pro
+Gemini 2.5 Flash
+Claude 4.5 Opus
+Claude 4.5 Sonnet
+
++14.4%
++11.3%
+-21.0%
+-25.7%
+4.74%
+-20.7%
++15.4%
++13.0%
+
++4.2%
+-5.8%
+-34.0%
+-25.6%
+-6.4%
+-43.7%
++16.1%
++5.1%
+
++15.1%
+-14.1%
+-23.6%
++2.8%
+-3.29%
+-32.0%
++16.1%
++2.43%
+
+tions, leading to unnecessary computational cost.
+End-to-End Workflow Evaluation. Table 3 reports the
+mean relative error of final results for different task workflows, using the maximum relative deviation of lattice parameters for VC-relax and total energy per atom for SCF.
+For bandgap calculations and DOS, we report mean absolute
+error, measured by band gap and Fermi level respectively,
+since many ground-truth band gaps and Fermi levels are
+zero, making relative error ill-defined. All results are compared against the most stringent human-configured results.
+Across all four tasks, stronger models achieve consistently
+high accuracy, demonstrating the reliability of LLM-based
+agents for such fundamental tasks in end-to-end DFT workflows.
+
+threshold, pass rates of these models drop below 15%. We
+further observe that the Claude 4.5 family exhibits lower
+pass rates, with Opus underperforming Sonnet. Based on
+parameter-level analysis, Opus 4.5 tends to generate aggressively low-cost configurations (< 1.62). However, the
+insufficient accuracy estimation causes suboptimal configuration with frequent threshold violation.
+
+5.3. Time and Cost Efficiency Analysis
+Automatic Parallelization. We evaluate the execution
+efficiency of the structure relaxation phase, which dominates over 50% of the end-to-end runtime. Table 4 shows
+speedups of LLM-generated parallel configurations over the
+default MPI baseline (mpirun -np <cores>).
+
+Regarding advanced parameters, models with stronger reasoning capabilities generally achieve higher satisfaction
+rates. We also observe that models exhibit distinct strengths
+across specific parameters. For example, Claude Opus 4.5
+is the most reliable model in Hubbard U , while Gemini-2.5Pro and Gemini-2.5-Flash are the only models that identify
+cases requiring van der Waals corrections. Interestingly,
+Opus 4.5 achieves the highest advanced parameter satisfaction rate. This demonstrates its deep domain knowledge,
+despite weaker cost–accuracy trade-off.
+
+Models with superior coding and reasoning capabilities,
+such as Claude 4.5 Opus and GPT 5.2, deliver consistent
+performance gains, achieving peak speedups of up to 16.1%.
+This confirms that effective HPC parallelization requires
+deep reasoning to map physical tasks onto hardware specifications. In contrast, mid-tier and smaller models (e.g.,
+GPT-4o, Gemini 2.5 Flash) exhibit performance degradation. Our analysis reveals that these models attempt aggressive optimizations without fully grasping strict parallel
+constraints, leading to suboptimal configurations, such as
+over-parallelization on small-scale systems, or setting a
+number of k-points nk not divisible by the number of pools.
+
+Performance across Material Types. We further compare model performance across different material types in
+DFTB ENCH, as shown in Figure 4. We observe that relatively simple systems, such as metals, semiconductors, and
+insulators, achieve higher pass rates across models. These
+materials exhibit weak sensitivity to physical parameters and
+smoother convergence behavior. In contrast, performance
+degrades on more complex systems, particularly magnetic
+materials, where all models exhibit low pass rates (< 6%).
+Magnetic systems require careful treatment of spin polarization and magnetic ordering, and are highly sensitive to
+the choice of initial magnetic moments and convergence
+parameters. We also notice that GPT 5.2 performs better on
+ferroelectric and optical materials, indicating higher reliability on moderately complex systems.
+
+As the number of cores increases, the complexity of identifying valid parallel parameters rises due to stricter constraints
+on task divisibility and communication overhead. Most
+high-performing models exhibit varying degrees of performance degradation at larger scales. Notably, Claude 4.5
+Opus stands out as the most robust model, maintaining consistent peak speedups (≈16%) across all hardware setups.
+Workflow Throughput. Figure 5 illustrates the end-toend throughput of the DFT setup workflow. We exclude
+the execution time of DFT and focus only on the automation overhead. T RITON DFT achieves an effective request
+rate of approximately 10–100 queries/hour, depending on
+task complexity and API latency. In contrast, our survey
+on PhD-level practitioners indicates that manually setup
+DFT workflows sustain less than 1 request/hour. Overall,
+T RITON DFT delivers > 10× efficiency improvement.
+
+In terms of cost efficiency, GPT 4o performs best, while
+Gemini 2.5 Pro strikes a more balanced trade-off between
+pass rate and cost efficiency across different types. We also
+observe that for materials such as van der Waals and insulators, cost efficiency tends to be lower. Although these systems are easier to achieve numerical convergence, models
+still tend to adopt more conservative parameter configura-
+
+Monetary Cost. We calculated the input and output tokens
+of T RITON DFT across three tasks and estimated the mone7
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+Gemini 2.5 Flash
+Gemini 2.5 Pro
+
+GPT 5.2 One-Shot
+GPT 5.2 Pareto
+
+Claude Opus 4.5
+Claude Sonnet 4.5
+
+Normalized Cost
+
+GPT-4o
+GPT-5.1
+GPT-5.2
+
+Struct Relax
+
+Band Gap
+
+DOS
+
+Figure 5. Comparison of T RITON DFT’s workflow throughput
+with different LLMs across different DFT tasks.
+
+10
+5
+
+Struct Relax
+
+Band Gap
+
+DOS
+
+GPT 5.2
+GPT 5.1
+GPT 4o
+Gemini 2.5 Pro
+Gemini 2.5 Flash
+Claude Opus 4.5
+Claude Sonnet 4.5
+
+0.05 ± 0.02
+0.04 ± 0.02
+0.06 ± 0.03
+0.05 ± 0.03
+0.01 ± 0.01
+0.15 ± 0.08
+0.15 ± 0.06
+
+0.15 ± 0.04
+0.13 ± 0.04
+0.18 ± 0.04
+0.13 ± 0.04
+0.03 ± 0.01
+0.44 ± 0.13
+0.34 ± 0.09
+
+0.13 ± 0.04
+0.10 ± 0.03
+0.14 ± 0.03
+0.11 ± 0.04
+0.03 ± 0.01
+0.37 ± 0.11
+0.28 ± 0.08
+
+30
+
+5
+
+10
+
+HgTe (topological)
+
+Claude Opus 4.5 One-Shot
+Claude Opus 4.5 Pareto
+
+Ground Truth
+(Pareto-Optimal)
+
+Na (metal)
+
+75
+50
+25
+0
+30
+
+20
+
+20
+
+10
+
+10
+1
+5
+Accuracy (meV/atom)
+
+Table 5. Average cost consumption (USD) per query regarding
+API usage across different tasks.
+Model
+
+Gemini 2.5 Pro One-Shot
+Gemini 2.5 Pro Pareto
+
+Si (semiconductor)
+
+15
+
+1
+Normalized Cost
+
+Requests / hour
+
+End-to-End Workflow Throughput (w/o DFT Execution)
+175
+150
+125
+100
+75
+50
+25
+0
+
+1
+
+5
+
+10
+
+Bi2Te3 (topological)
+
+1
+Accuracy (meV/atom)
+
+5
+
+Figure 6. Accuracy-Cost Trade-offs across different models and
+parameter inference methods when using One-Shot inference and
+Pareto-aware inference, respectively.
+User: Calculated full phonon dispersion of diamond-cubic Si (Fd-3m).
+
+Human Curated
+
+tary cost based on official API pricing. The results are shown
+in Table 5. Different models exhibit significant divergence
+in economic efficiency. Gemini 2.5 Flash demonstrates exceptional cost-effectiveness, maintaining an average cost as
+low as $0.01–0.03 per query. The GPT-5 series and Gemini 2.5 Pro show comparable pricing with $0.04–$0.18 per
+query. In contrast, the Claude series incurs the highest costs,
+reaching up to $0.44 per query for complex calculations.
+
+TritonDFT (with GPT 5.2)
+
+Figure 7. Comparison of T RITON DFT’s results with humancurated results on phonon dispersion calculation.
+
+entire solution path (pw.x–ph.x–q2r.x–matdyn.x in
+this case) without user specification. This design eliminates
+the need for defining static and task-specific workflows in
+prior work (Wang et al., 2025).
+
+5.4. Case Study
+
+We also observe that the agent exhibits clear adaptivity to
+different user intents by adjusting key numerical parameters. For example, in phonon calculations, the agent dynamically adapts the phonon q-point sampling density when
+performing Γ-point and full phonon dispersion calculations.
+In elastic energy–strain analysis that is highly sensitive to
+numerical noise, the agent employs stricter electronic and
+force convergence thresholds compared to relaxation tasks.
+
+Pareto-aware Reasoning. Figure 6 compares the accuracy–
+cost trade-offs obtained on representative materials under
+three target thresholds (20, 10, and 1 meV/atom). We contrast one-shot parameter inference with Pareto-aware iterative reasoning (Pareto). Overall, Pareto-aware reasoning
+enables models to adaptively navigate the accuracy–cost
+frontier. GPT 5.2 benefits the most, achieving up to 4.1×
+reductions in normalized cost while still meeting the target
+accuracy constraints. Gemini 2.5 Pro tends to select a fixed,
+relatively low-accuracy configuration, yet its choices closely
+follow the ground-truth frontier. In contrast, Claude Opus
+4.5 tends to select suboptimal configurations on complex
+materials (e.g., topological systems), leading to frequent
+violations of the prescribed accuracy budgets.
+
+6. Conclusion
+In this work, we presented T RITON DFT, a multi-agent
+framework that automates Density Functional Theory (DFT)
+workflows through expert-informed planning, Pareto-aware
+parameter inference, and automated HPC orchestration. To
+assess multi-dimensional agentic capabilities in this domain,
+we introduced DFTB ENCH, a benchmark spanning diverse
+materials to evaluate numerical accuracy, parallelization efficiency, and cost-effectiveness. Our evaluation confirms
+that T RITON DFT delivers a >10× acceleration over manual expert execution. We further identify distinct strengths
+
+Broader Task Types. T RITON DFT is designed to handle a
+broad set of DFT task types. Figure 7 shows a representative
+example, where all intermediate steps are automatically handled by the agent except for figure plotting. With our Plan–
+Execute–Refine workflow, the agent autonomously plans the
+8
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+
+across models, such as GPT-5.2 excels in accuracy, Gemini 2.5 Flash provides a better accuracy–cost tradeoff, and
+Opus 4.5 performs better in parallelization schemes.
+
+ence of the North American Chapter of the Association
+for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), pp. 2370–2385, 2024.
+
+Future Direction. Future development will address the
+observed limitations in modeling complex quantum states,
+such as magnetic materials, where current models achieve
+pass rates below 6%, by integrating specialized physicsinformed reasoning modules. We aim to expand the framework’s modularity beyond Quantum Espresso to support diverse DFT solvers, enhancing portability across the
+materials science ecosystem. Additionally, we plan to integrate T RITON DFT with autonomous experimental platforms for automated theoretical simulation and validation,
+to enable a low-cost, high-throughput in closed-loop discovery.
+
+Cheung, J. J., Shen, S., Zhuang, Y., Li, Y., Ramprasad, R.,
+and Zhang, C. Msqa: Benchmarking llms on graduatelevel materials science reasoning and knowledge. arXiv
+preprint arXiv:2505.23982, 2025.
+Chiang, Y., Hsieh, E., Chou, C.-H., and Riebesell, J. Llamp:
+Large language model made powerful for high-fidelity
+materials knowledge retrieval and distillation. arXiv
+preprint arXiv:2401.17244, 2024.
+Curtarolo, S., Setyawan, W., Hart, G. L., Jahnatek, M.,
+Chepulskii, R. V., Taylor, R. H., Wang, S., Xue, J., Yang,
+K., Levy, O., et al. Aflow: An automatic framework
+for high-throughput materials discovery. Computational
+Materials Science, 58:218–226, 2012.
+
+Impact Statement
+This paper presents work whose primary goal is to accelerate scientific discovery by automating complex Density
+Functional Theory (DFT) workflows. By democratizing
+access to high-fidelity material simulations, T RITON DFT
+has the potential to expedite the development of critical
+technologies, such as clean and low-energy materials and
+novel semiconductors. A key societal benefit of this work
+lies in its emphasis on computational efficiency; the framework’s Pareto-aware parameter inference and automated
+parallelization are specifically designed to optimize HighPerformance Computing (HPC) resource usage, thereby
+reducing the energy footprint associated with large-scale
+scientific simulations.
+
+Dai, Y., Chan, H., Vriza, A., Fan, J., Kim, F., Wang, Y.,
+Liu, W., Shan, N., Xu, J., Weires, M., et al. Adaptive
+ai decision interface for autonomous electronic material
+discovery. Nature Chemical Engineering, pp. 1–11, 2025.
+Delgado-Licona, F., Alsaiari, A., Dickerson, H., Klem, P.,
+Ghorai, A., Canty, R. B., Bennett, J. A., Jha, P., Mukhin,
+N., Li, J., et al. Flow-driven data intensification to accelerate autonomous inorganic materials discovery. Nature
+Chemical Engineering, 2(7):436–446, 2025.
+Ding, Q., Miret, S., and Liu, B. Matexpert: Decomposing
+materials discovery by mimicking human experts. arXiv
+preprint arXiv:2410.21317, 2024.
+
+We explicitly incorporate a human-in-the-loop mechanism
+to ensure expert oversight and validation of results for two
+reasons. First, the automation of material design may carry
+theoretical risks regarding dual-use applications (e.g., the design of hazardous materials). Second, while this automation
+democratizes access to complex simulation tools for nonexperts, the reliance on probabilistic models necessitates
+robust verification mechanisms to prevent the propagation
+of scientific errors. We do not foresee other specific negative
+societal consequences beyond those broadly associated with
+the application of ML to scientific automation.
+
+Ghafarollahi, A. and Buehler, M. J. Automating alloy design
+and discovery with physics-aware multimodal multiagent
+ai. Proceedings of the National Academy of Sciences, 122
+(4):e2414074122, 2025.
+Giannozzi, P., Baroni, S., Bonini, N., Calandra, M., Car, R.,
+Cavazzoni, C., Ceresoli, D., Chiarotti, G. L., Cococcioni,
+M., Dabo, I., et al. Quantum espresso: a modular and
+open-source software project for quantumsimulations of
+materials. Journal of physics: Condensed matter, 21(39):
+395502, 2009.
+
+References
+Boiko, D. A., MacKnight, R., Kline, B., and Gomes, G. Autonomous chemical research with large language models.
+Nature, 624(7992):570–578, 2023.
+
+Gruver, N., Sriram, A., Madotto, A., Wilson, A. G., Zitnick,
+C. L., and Ulissi, Z. Fine-tuned language models generate stable inorganic materials as text. arXiv preprint
+arXiv:2402.04379, 2024.
+
+Cheung, J., Zhuang, Y., Li, Y., Shetty, P., Zhao, W., Grampurohit, S., Ramprasad, R., and Zhang, C. Polyie: A
+dataset of information extraction from polymer material
+scientific literature. In Proceedings of the 2024 Confer-
+
+Guo, T., Nan, B., Liang, Z., Guo, Z., Chawla, N., Wiest, O.,
+Zhang, X., et al. What can large language models do in
+chemistry? a comprehensive benchmark on eight tasks.
+Advances in Neural Information Processing Systems, 36:
+59662–59688, 2023.
+9
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+
+Hafner, J. Ab-initio simulations of materials using vasp:
+Density-functional theory and beyond. Journal of computational chemistry, 29(13):2044–2078, 2008.
+
+M. Bran, A., Cox, S., Schilter, O., Baldassari, C., White,
+A. D., and Schwaller, P. Augmenting large language models with chemistry tools. Nature Machine Intelligence, 6
+(5):525–535, 2024.
+
+Hira, K., Zaki, M., Sheth, D., Krishnan, N. A., et al. Reconstructing the materials tetrahedron: challenges in materials information extraction. Digital Discovery, 3(5):
+1021–1037, 2024.
+
+Mandal, I., Soni, J., Zaki, M., Smedskjaer, M. M., Wondraczek, K., Wondraczek, L., Gosvami, N. N., and Krishnan, N. A. Evaluating large language model agents for
+automation of atomic force microscopy. Nature Communications, 16(1):9104, 2025.
+
+Hohenberg, P. and Kohn, W. Inhomogeneous electron gas.
+Physical review, 136(3B):B864, 1964.
+
+Mathew, K., Montoya, J. H., Faghaninia, A., Dwarakanath,
+S., Aykol, M., Tang, H., Chu, I.-h., Smidt, T., Bocklund,
+B., Horton, M., et al. Atomate: A high-level interface to
+generate, execute, and analyze computational materials
+science workflows. Computational Materials Science,
+139:140–152, 2017.
+
+Hong, S., Zhuge, M., Chen, J., Zheng, X., Cheng, Y., Wang,
+J., Zhang, C., Wang, Z., Yau, S. K. S., Lin, Z., et al.
+Metagpt: Meta programming for a multi-agent collaborative framework. In The twelfth international conference
+on learning representations, 2023.
+Huang, X., Chen, J., Fei, Y., Li, Z., Schwaller, P., and Ceder,
+G. Cascade: Cumulative agentic skill creation through
+autonomous development and evolution. arXiv preprint
+arXiv:2512.23880, 2025.
+
+McNaughton, A. D., Sankar Ramalaxmi, G. K., Kruel, A.,
+Knutson, C. R., Varikoti, R. A., and Kumar, N. Cactus:
+Chemistry agent connecting tool usage to science. ACS
+omega, 9(46):46563–46573, 2024.
+
+Jain, A., Ong, S. P., Hautier, G., Chen, W., Richards, W. D.,
+Dacek, S., Cholia, S., Gunter, D., Skinner, D., Ceder, G.,
+et al. Commentary: The materials project: A materials
+genome approach to accelerating materials innovation.
+APL materials, 1(1), 2013.
+
+Merchant, A., Batzner, S., Schoenholz, S. S., Aykol, M.,
+Cheon, G., and Cubuk, E. D. Scaling deep learning for
+materials discovery. Nature, 624(7990):80–85, 2023.
+Miret, S. and Krishnan, N. M. Are llms ready for real-world
+materials discovery? arXiv preprint arXiv:2402.05200,
+2024.
+
+Jia, S., Zhang, C., and Fung, V. Llmatdesign: Autonomous
+materials discovery with large language models. arXiv
+preprint arXiv:2406.13163, 2024.
+Kohn, W. and Sham, L. J. Self-consistent equations including exchange and correlation effects. Physical review,
+140(4A):A1133, 1965.
+
+Mirza, A., Alampara, N., Kunchapu, S., Rı́os-Garcı́a,
+M., Emoekabu, B., Krishnan, A., Gupta, T., SchillingWilhelmi, M., Okereke, M., Aneesh, A., et al. Are large
+language models superhuman chemists? arXiv preprint
+arXiv:2404.01475, 2024.
+
+Kumbhar, S., Mishra, V., Coutinho, K., Handa, D., Iquebal,
+A., and Baral, C. Hypothesis generation for materials
+discovery and design using goal-driven and constraintguided llm agents. arXiv preprint arXiv:2501.13299,
+2025.
+
+Olowe, E. A. and Chitnis, D. Labiium: Ai-enhanced zeroconfiguration measurement automation system. In 2025
+IEEE International Instrumentation and Measurement
+Technology Conference (I2MTC), pp. 1–6. IEEE, 2025.
+Ong, S. P., Richards, W. D., Jain, A., Hautier, G., Kocher,
+M., Cholia, S., Gunter, D., Chevrier, V. L., Persson, K. A.,
+and Ceder, G. Python materials genomics (pymatgen): A
+robust, open-source python library for materials analysis.
+Computational Materials Science, 68:314–319, 2013.
+
+Larsen, A. H., Mortensen, J. J., Blomqvist, J., Castelli,
+I. E., Christensen, R., Dułak, M., Friis, J., Groves, M. N.,
+Hammer, B., Hargus, C., et al. The atomic simulation
+environment—a python library for working with atoms.
+Journal of Physics: Condensed Matter, 29(27):273002,
+2017.
+
+Pizzi, G., Cepellotti, A., Sabatini, R., Marzari, N., and
+Kozinsky, B. Aiida: automated interactive infrastructure
+and database for computational science. Computational
+Materials Science, 111:218–230, 2016.
+
+Liu, J., Zhu, T., Ye, C., Fang, Z., Weng, H., and Wu, Q.
+Vaspilot: Mcp-facilitated multi-agent intelligence for autonomous vasp simulations. Chinese Physics B, 34(11):
+117106, 2025.
+
+Qi, J., Jia, Z., Liu, M., Zhan, W., Zhang, J., Wen, X., Gan,
+J., Chen, J., Liu, Q., Ma, M. D., et al. Metascientist: A
+human-ai synergistic framework for automated mechanical metamaterial design. In Proceedings of the 2025
+Conference of the Nations of the Americas Chapter of the
+
+Liu, S., Wen, T., Pattamatta, A. S., and Srolovitz, D. J. A
+prompt-engineered large language model, deep learning
+workflow for materials classification. Materials Today,
+80:240–249, 2024.
+10
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+
+Yao, L., Samantray, S., Ghosh, A., Roccapriore, K., Kovarik, L., Allec, S., and Ziatdinov, M. Operationalizing
+serendipity: Multi-agent ai workflows for enhanced materials characterization with theory-in-the-loop. arXiv
+preprint arXiv:2508.06569, 2025.
+
+Association for Computational Linguistics: Human Language Technologies (System Demonstrations), pp. 404–
+436, 2025.
+Schilling-Wilhelmi, M., Rı́os-Garcı́a, M., Shabih, S., Gil,
+M. V., Miret, S., Koch, C. T., Márquez, J. A., and
+Jablonka, K. M. From text to insight: large language
+models for chemical data extraction. Chemical Society
+Reviews, 2025.
+
+Yao, S., Shinn, N., Razavi, P., and Narasimhan, K. τ -bench:
+A benchmark for tool-agent-user interaction in real-world
+domains. arXiv preprint arXiv:2406.12045, 2024.
+
+Shetty, P., Rajan, A. C., Kuenneth, C., Gupta, S., Panchumarti, L. P., Holm, L., Zhang, C., and Ramprasad,
+R. A general-purpose material property data extraction
+pipeline from large polymer corpora using natural language processing. npj Computational Materials, 9(1):52,
+2023.
+
+Ye, Y., Ren, J., Wang, S., Wan, Y., Razzak, I., Hoex, B.,
+Wang, H., Xie, T., and Zhang, W. Construction and application of materials knowledge graph in multidisciplinary
+materials science via large language model. Advances
+in Neural Information Processing Systems, 37:56878–
+56897, 2024.
+
+Song, Y., Miret, S., and Liu, B. Matsci-nlp: Evaluating
+scientific language models on materials science language
+tasks using text-to-schema modeling. arXiv preprint
+arXiv:2305.08264, 2023.
+
+Zaki, M., Krishnan, N. A., et al. Mascqa: investigating
+materials science knowledge of large language models.
+Digital Discovery, 3(2):313–327, 2024.
+Zhang, H., Song, Y., Hou, Z., Miret, S., and Liu, B. Honeycomb: A flexible llm-based agent system for materials
+science. arXiv preprint arXiv:2409.00135, 2024.
+
+Song, Z., Lu, S., Ju, M., Zhou, Q., and Wang, J. Accurate
+prediction of synthesizability and precursors of 3d crystal
+structures via large language models. Nature Communications, 16(1):6530, 2025.
+
+Zhang, J., Gan, J., Wang, X., Jia, Z., Gu, C., Chen,
+J., Zhu, Y., Ma, M. D., Zhou, D., Li, L., et al.
+Matscibench: Benchmarking the reasoning ability of
+large language models in materials science. arXiv
+preprint arXiv:2510.12171, 2025.
+
+Szymanski, N. J., Rendy, B., Fei, Y., Kumar, R. E., He,
+T., Milsted, D., McDermott, M. J., Gallant, M., Cubuk,
+E. D., Merchant, A., et al. An autonomous laboratory for
+the accelerated synthesis of novel materials. Nature, 624
+(7990):86–91, 2023.
+
+Zhong, X., Jin, B., Ouyang, S., Shen, Y., Jin, Q., Fang,
+Y., Lu, Z., and Han, J. Benchmarking retrievalaugmented generation for chemistry. arXiv preprint
+arXiv:2505.07671, 2025.
+
+Tang, X., Hu, T., Ye, M., Shao, Y., Yin, X., Ouyang, S.,
+Zhou, W., Lu, P., Zhang, Z., Zhao, Y., et al. Chemagent:
+Self-updating library in large language models improves
+chemical reasoning. arXiv preprint arXiv:2501.06590,
+2025.
+Wang, H., Fu, T., Du, Y., Gao, W., Huang, K., Liu, Z.,
+Chandak, P., Liu, S., Van Katwyk, P., Deac, A., et al.
+Scientific discovery in the age of artificial intelligence.
+Nature, 620(7972):47–60, 2023.
+Wang, H., Skreta, M., Ser, C.-T., Gao, W., Kong, L., StriethKalthoff, F., Duan, C., Zhuang, Y., Yu, Y., Zhu, Y., et al.
+Efficient evolutionary search over chemical space with
+large language models. arXiv preprint arXiv:2406.16976,
+2024.
+Wang, Z., Huang, H., Zhao, H., Xu, C., Zhu, S., Janssen, J.,
+and Viswanathan, V. Dreams: Density functional theory
+based research engine for agentic materials simulation.
+arXiv preprint arXiv:2507.14267, 2025.
+Xia, Z., Ma, J., Zheng, C., Zhang, S., Li, Y., Su, H., Hu,
+P., Zhang, C., Gong, X., Ouyang, W., et al. An agentic
+framework for autonomous materials computation. arXiv
+preprint arXiv:2512.19458, 2025.
+11
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+
+A. Details of DFTB ENCH
+A.1. Information of Materials
+DFTB ENCH comprises 68 distinct materials spanning 10 different material categories. All material information is summarized in Table 6.
+Table 6. Benchmark dataset of materials used for DFT workflow evaluation, including material category (multiple categories separated by
+commas), space group, and number of atoms in the conventional unit cell.
+#
+
+Material
+
+Category
+
+Space
+Group
+
+Atoms
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+
+CaO
+KCl
+LiF
+MgF2
+MgO
+NaCl
+NaF
+SiO2
+BN (hex)
+Cdiamond
+BN
+AlN
+BeO
+BaTiO3
+HfO2
+NaNbO3
+LiTaO3
+PbTiO3
+Cr2 O3
+FeO
+MnO
+NiO
+Al2 O3
+BaF2
+CaF2
+Bi2 Se3
+Ag
+Al
+Au
+Cu
+Fe
+K
+Li
+Mo
+Na
+W
+MgB2
+Nb
+Pb
+Sn (β-Sn)
+V
+Co
+Fe (bcc)
+Fe3 O4
+Ni
+FeSe
+NbSe2
+AlP
+CdTe
+GaAs
+
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator
+Insulator, Piezoelectric
+Insulator, piezoelectric
+Insulator, piezoelectric
+Insulator, Ferroelectric
+Insulator, Ferroelectric
+Insulator, Ferroelectric
+Insulator, Ferroelectric, Piezoelectric
+Insulator, Ferroelectric, Piezoelectric
+Insulator, Magnetic
+Insulator, Magnetic
+Insulator, Magnetic
+Insulator, Magnetic
+Insulator, Optical
+Insulator, Optical
+Insulator, Optical
+Insulator, van der Waals, Topological
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal
+Metal, Magnetic
+Metal, Magnetic
+Metal, Magnetic
+Metal, Magnetic
+Metal, van der Waals
+Metal, van der Waals
+Semiconductor
+Semiconductor
+Semiconductor
+
+Fm3̄m
+Fm3̄m
+Fm3̄m
+P42 /mnm
+Fm3̄m
+Fm3̄m
+Fm3̄m
+P31 21
+P63 /mmc
+Fd3̄m
+Fm3̄m
+P63 mc
+P63 mc
+P4mm
+Pca21
+Pm3̄m
+R3c
+P4mm
+R3c
+P4/mmm
+P4/mmm
+P4/mmm
+R3̄c
+Fm3̄m
+Fm3̄m
+R3̄m
+Fm3̄m
+Fm3̄m
+Fm3̄m
+Fm3̄m
+I4/mmm
+Im3̄m
+Im3̄m
+Im3̄m
+Im3̄m
+Im3̄m
+P6/mmm
+Im3̄m
+Fm3̄m
+I41 /amd
+Im3̄m
+P63 /mmc
+Im3̄m
+Fd3̄m
+Fm3̄m
+P4/nmm
+P63 /mmc
+F4̄3m
+F4̄3m
+F4̄3m
+
+2
+2
+2
+6
+2
+2
+2
+9
+4
+2
+2
+4
+4
+5
+12
+5
+10
+5
+10
+8
+8
+8
+10
+3
+3
+5
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+3
+1
+1
+2
+1
+2
+1
+14
+1
+4
+6
+2
+2
+2
+
+Continued on next page
+
+12
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+#
+
+Material
+
+Category
+
+Space
+Group
+
+Atoms
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+
+Ge
+InP
+Si
+ZnS
+ZnSe
+PbTe
+SnTe
+Mg2 Ge
+Mg2 Si
+SiGe
+GeTe
+CdS
+CdSe
+GaN
+ZnO
+Bi
+Na3 Bi
+Sb
+
+Semiconductor
+Semiconductor
+Semiconductor
+Semiconductor
+Semiconductor
+Semiconductor, Topological
+Semiconductor, Topological
+Semiconductor, Thermoelectric
+Semiconductor, Thermoelectric
+Semiconductor, Thermoelectric
+Semiconductor, Ferroelectric
+Semiconductor, Piezoelectric
+Semiconductor, Piezoelectric
+Semiconductor, Piezoelectric
+Semiconductor, Piezoelectric
+Topological
+Topological
+Topological
+
+Fd3̄m
+F4̄3m
+Fd3̄m
+F4̄3m
+F4̄3m
+Fm3̄m
+Fm3̄m
+Fm3̄m
+Fm3̄m
+F4̄3m
+R3m
+P63 mc
+P63 mc
+P63 mc
+P63 mc
+R3̄m
+P63 /mmc
+R3̄m
+
+2
+2
+2
+2
+2
+2
+2
+3
+3
+2
+2
+4
+4
+4
+4
+2
+8
+2
+
+B. Details of DFTB ENCH
+B.1. Information of Materials
+DFTB ENCH comprises 68 distinct materials spanning 10 different material categories. Some materials belong to multiple
+categories (e.g., semiconductor, optical). All material information is summarized in Table 6.
+B.2. Question Templates
+DFTB ENCH provides question templates for a diverse set of tasks. For each material, the placeholders {formula} and
+{space group} in the templates are instantiated accordingly. The required accuracy is also parameterized as {dEnergy},
+which specifies the target energy tolerance for the task. The question templates used for evaluation are listed below:
+VC-relax: For {formula} with space group {space group}, perform a variable-cell relaxation (vc-relax) calculation. Require
+an energy convergence of {dEnergy}. Use a PBE functional as pseudopotentials. Return the fully relaxed structure (atomic
+parameters).
+SCF: For {formula} with space group {space group}, run a self-consistent field (SCF) calculation and report the converged
+total energy per formula unit in eV. Require an energy convergence of {dEnergy}. Use a PBE functional as pseudopotentials.
+Band Gap: For {formula} with space group {space group}, Use a full workflow consisting of: 1) vc-relax, 2) scf, 3) nscf, 4)
+band structure calculation and 5) band post-processing. Require an energy convergence of {dEnergy}. Use a PBE functional
+as pseudopotentials. Do not need to explicitly return band structure. Just finish the calculation.
+DOS: For {formula} with space group {space group}, use a full workflow consisting of: 1) vc-relax, 2) scf, 3) nscf,
+4) band structure calculation 5) band post-processing, and 6) DOS post-processing. Require an energy convergence of
+{dEnergy}. Use a PBE functional as pseudopotentials. Do not need to explicitly return band structure and DOS. Just finish
+the calculation.
+Currently, our evaluation covers the four most essential DFT task types. In the future, we will support additional question
+templates and datasets. Notably, new tasks can be incorporated in a modular manner, making such extensions fully feasible.
+
+C. Computational details for human-performed DFT calculations
+All density functional theory (DFT) calculations were performed using Q UANTUM ESPRESSO. Structural relaxations
+were carried out with a total energy convergence threshold of 1.0 × 10−9 Ry and a force convergence threshold of
+1.0×10−8 Ry/Bohr. For the self-consistent field (SCF) cycles, the electronic convergence threshold was set to 1.0×10−10 Ry,
+and a mixing parameter β = 0.7 was employed to ensure stable convergence. The plane-wave kinetic energy cutoff and
+13
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+
+Monkhorst–Pack k-point grids were determined from systematic convergence tests, requiring the total energy to be converged
+within 1 meV per atom. The converged cutoff energy and k-point mesh were subsequently used for all subsequent SCF
+calculations. For non-self-consistent field (NSCF) calculations, denser k-point meshes were adopted to obtain accurate
+electronic properties such as band structures and density of states. The k-point density for NSCF calculations was increased
+on a case-by-case basis depending on the specific property being evaluated. Complete convergence data, including cutoff
+energies, k-point grids, and total energies, are provided in the accompanying CSV file to ensure reproducibility.
+C.1. Estimation of Normalized cost
+The number of plane waves in a DFT calculation is controlled by the kinetic energy cutoff (Ecut ), which defines the radius
+of the reciprocal-space sphere used in the plane-wave expansion. The number of plane waves scales as
+
+3/2
+
+NPW ∝ Ecut ,
+
+(1)
+
+while the computational cost scales linearly with the total number of k-points, Nk = kx ky kz .
+Accordingly, the overall computational cost scales approximately as
+
+3/2
+
+C ∝ Ecut Nk .
+
+(2)
+
+To compare different parameter choices, we define a normalized cost metric as
+
+3/2
+
+Cnorm =
+
+Ecut (kx ky kz )agent
+3/2
+
+.
+
+(3)
+
+Ecut (kx ky kz )ground truth
+
+C.2. Calculation of Band Gap
+Band gaps were computed from the highest occupied molecular orbital (HOMO) and lowest unoccupied molecular orbital
+(LUMO) energies obtained from the NSCF calculations. For certain materials, electronic smearing was required to achieve
+stable convergence. In such cases, Q UANTUM ESPRESSO does not explicitly report the HOMO and LUMO energies and
+instead provides only the Fermi energy. As a result, the band gaps extracted for these systems may appear as zero in Table 6.
+These materials require additional post-processing or alternative workflows for an accurate determination of the band gap.
+In this work, our primary objective was to benchmark the agent’s performance within a standard automated workflow.
+Implementation of specialized procedures for robust band gap extraction in smeared calculations is planned for future
+versions of the framework.
+
+D. Details about T RITON DFT Framework Design
+D.1. QE-aware Multi-step Planner
+The planner currently incorporates 13 executable files from Quantum ESPRESSO. The prompt is designed as follows:
+14
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+You are a strict planning assistant for Quantum ESPRESSO.
+Output requirements:
+- Decompose the user query into 1..N subproblems.
+- Each subproblem must be wrapped as <subproblem1>...</subproblem1>, <subproblem2>...</subproblem2>, etc. (in order).
+- Each subproblem must contain four fields:
+Problem: What to calculate, Tool: Tool to use, Required input: Required input parameters (Do not give any concrete parameter value here, just describe what is
+needed). These fields MUST appear on separate lines, each separated by a newline; otherwise, the output is considered incorrect.
+- Keep each subproblem short (2–3 lines).
+- Do not output anything outside <subproblem> blocks.
+Core rules:
+Allowed tools: pw scf, pw nscf, pw relax, pw vc relax, pw bands, bands post, dos post, projwfc post, pp post, q2r post,
+matdyn post, pw phonon gamma, elastic post.
+In-Context Example 1 (band structure with given lattice constant)
+Query: Calculate the band structure of silicon in the diamond structure (a0 = 5.43 Å).
+<subproblem1>
+Problem: Do an SCF calculation to converge charge density
+Tool: pw scf
+Required input: diamond Si structure
+</subproblem1>
+<subproblem2>
+Problem: Perform NSCF calculation along the high-symmetry path
+Tool: pw nscf
+Required input: same structure, SCF charge density
+</subproblem2>
+<subproblem3>
+Problem: Post-process bands to obtain band structure
+Tool: bands post
+Required input: NSCF results
+</subproblem3>
+In-Context Example 2 (equilibrium lattice constant unknown)
+Query: Calculate the equilibrium lattice constant of Na in the BCC structure.
+<subproblem1>
+Problem: Find equilibrium lattice constant by relaxing the cell volume and atomic positions
+Tool: pw vc relax
+Required input: BCC Na structure
+Output: equilibrium lattice constant (Å)
+</subproblem1>
+Now handle this query:
+Query: {question}
+- Do NOT include reasoning, explanations, or justification.
+- The output must ONLY be <subproblemN>...</subproblemN> blocks, nothing else.
+
+T RITON DFT will parse these <subproblem> blocks and execute each subproblem accordingly. Further extension of
+additional executables can be incorporated by adding corresponding options explicitly in the prompt, along with executable
+descriptions and parameter specifications, as described in Section D.2.
+D.2. Pareto-aware Parameter Guess and Script Generation
+For each subproblem, a parameter-guessing stage is first performed to estimate the key input parameters required for
+execution. By explicitly guiding the model to generate Pareto-aware parameter estimates, T RITON DFT achieves a principled
+trade-off between numerical accuracy and computational efficiency. Additionally, T RITON DFT aggregates the execution
+results of previous subproblems together with relevant internal memory, forming the previous memory field to enable
+enhanced context-aware parameter estimation and decision making. The parameter guessing prompt is designed as follows:
+15
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+You are a computational materials scientist solving a DFT subproblem. Now you are asked to propose ONLY the minimal necessary input parameter guesses for this
+subproblem.
+Instructions
+1) Propose only the parameters that are directly required or explicitly important for this query.
+2) Make reasonable guesses based on existing data. Avoid performing convergence tests; instead, provide an educated estimate.
+3) When guessing parameters, aim for a Pareto-efficient trade-off: choose values that are accurate and numerically stable (i.e., likely to converge), while keeping
+computational cost (time and memory) reasonably low.
+Output Schema
+{
+"material": "<element/compound>",
+"structure": {
+"prototype": "<fcc|bcc|rocksalt|diamond|...>"
+},
+"parameter_guesses": {
+"<only the parameters directly relevant to the query>": "<value>"
+}
+}
+The whole user query is:
+{query}
+{previous memory}
+Current Problem to Solve:
+{subproblem}
+Please respond strictly in the required JSON schema, without any additional explanation.
+
+Once the parameter guesses are determined, T RITON DFT further generates executable-specific scripts for each subproblem.
+We design a dedicated set of executable requirements, provided in the tool requirements field, where the script
+format is carefully specified by domain experts. For example, for pw.x, we require the model to explicitly generate the
+standard namelists such as &control, &system, &electrons, &ions, and &cell. This modular and extensible
+prompt integration enables T RITON DFT to support additional executables and functionalities with minimal changes.
+
+You are a computational materials scientist.
+Given the parameter JSON below, GENERATE ONLY input files in Quantum ESPRESSO. Wrap ALL generated inputs inside ONE <scripts>...
+</scripts> block; each file inside a <script>... </script> tag.
+{tool requirements}
+{previous memory}
+{previous run}
+Only apply targeted corrections to the script based on the errors above; do not change any other guessed parameters unnecessarily.
+The whole user query is:
+{query}.
+Input (parameter JSON)
+{params json}
+{query info}
+Current Problem to Solve:
+{subproblem}.
+Output Schema
+<scripts>\n <script>...one input... </script>\n <script>...next... </script>\n ...</scripts>
+Pitfall
+Do NOT regenerate or reinterpret the entire query. Only generate new or corrected scripts corresponding to the specific subproblem(s) currently being handled. For
+example, if the overall query involves multiple tasks on the same system (e.g., vc-relax, scf, and bandgap), generate scripts only for the current subproblem
+(e.g., vc-relax). Future subproblems like scf or bandgap will be generated later.
+Please provide your output containing only the text wrapped in <scripts> and <script> tags.
+You MUST output raw plain text. Do NOT format or render anything. Output must be copy-paste ready for a Unix shell or input file.
+Do NOT escape or encode any characters. In particular, NEVER output “&amp;”.
+Use literal Quantum ESPRESSO namelists like “&control”, “&system”, “&electrons”, “&ions”, “&cell”.
+
+D.3. Automatic Parallelization
+For the generated executable script, T RITON DFT further performs automatic parallelization by configuring hybrid
+MPI/OpenMP parameters for mpirun. The computational scale and workload characteristics of the target program
+are estimated from the probe output field, which is obtained by running a default mpirun configuration for two
+minutes and extracting profiling information from the output log. Based on this runtime probe, the model selects appropriate
+parallel parameters to balance communication overhead and computational scalability. Meanwhile, the hardware information
+is integrated into the hardware description field in natural language, enabling the model to infer physical core counts
+and resource constraints. The prompt is designed as follows.
+16
+
+TritonDFT: Automating DFT with a Multi-Agent Framework
+You are an expert in Quantum ESPRESSO (QE) parallelization for HPC systems. Your goal is to choose the optimal Hybrid MPI/OpenMP configuration
+(OMP NUM THREADS, -nk, -nb, -ntg).
+PARAMETER RULES
+1. Resource Limits:
+- Identify Physical Cores from the description. IGNORE logical/hyper-threads.
+- Constraint: (MPI RANKS) * (OMP NUM THREADS) ≤ Total Physical Cores.
+- Under-subscription: It is valid to leave some cores idle to satisfy divisibility requirements.
+2. Parallel Flags:
+- -nk (Pools): Parallelizes over k-points. Constraint: MPI RANKS and k-points must be divisible by nk.
+- -nb (Band Groups): Parallelizes linear algebra (diagonalization). Usage: Typically for systems with many electronic bands.
+- -ntg (Task Groups): Parallelizes 3D FFT grids. Constraint: MPI RANKS must be divisible by ntg. Usage: Helps distribute large FFT grids across many ranks.
+3. General Optimization Strategy (Reasoning Required):
+- Assess System Scale: Look at nat (number of atoms) and k-points in the input.
+- For Small Systems (few atoms), MPI communication overhead often outweighs the benefit of complex parallelization logic. Excessive splitting (high -nb, -ntg or
+OpenMP) can degrade performance.
+- For Large Systems (many atoms), calculation and memory are the bottlenecks. Advanced flags (-ntg, -nb) and Hybrid MPI/OpenMP become essential to scale.
+- Decision Process: Balance the need for parallelism against the cost of communication.
+Inputs
+1) QE input script (verbatim): {input script}
+2) Hardware resources (natural language description): {hardware description}
+3) Probe output (from a default run): {probe output}
+# Output Format (STRICT)
+Command: export OMP NUM THREADS=<int>; mpirun –allow-run-as-root -np <int>{exec path} -nk <int>-nb <int>-ntg <int>-in {input filename} — tee
+{output filename}
+
+17
+
+

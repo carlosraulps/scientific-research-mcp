@@ -1,0 +1,1497 @@
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+Yapeng Mi 1 2 Zhi Gao 1 3 Xiaojian Ma 1 Qing Li 1
+
+arXiv:2504.04485v1 [cs.CV] 6 Apr 2025
+
+Abstract
+
+generality and scalability. At the same time, the lack of a
+systematic approach to developing LLM agents limits the
+ability to guide future research directions. Therefore, we
+are faced with a critical question: How can general LLM
+agents be systematically constructed and evolved?
+
+LLM-driven autonomous agents have emerged
+as a promising direction in recent years. However, many of these LLM agents are designed
+empirically or based on intuition, often lacking
+systematic design principles, which results in diverse agent structures with limited generality and
+scalability. In this paper, we advocate for building LLM agents by incorporating insights from
+computer systems. Inspired by the von Neumann
+architecture, we propose a structured framework
+for LLM agentic systems, emphasizing modular
+design and universal principles. Specifically, this
+paper first provides a comprehensive review of
+LLM agents from the computer system perspective, then identifies key challenges and future
+directions inspired by computer system design,
+and finally explores the learning mechanisms for
+LLM agents beyond the computer system. The
+insights gained from this comparative analysis offer a foundation for systematic LLM agent design
+and advancement.
+
+In this paper, we advocate for building LLM agents by
+incorporating insights from computer systems. Looking
+back at the evolution of computer system design(CampbellKelly & Aspray, 1996), we find that it once witnessed a proliferation of various structural approaches. In the early days
+of computing, systems were often designed with specific
+architectures tailored to particular tasks, such as the ABC
+computer in 1942 for solving linear equations (Burks et al.,
+1946). This specificity meant that these systems lacked
+general-purpose capabilities. As time goes on, modern computer systems have largely converged on a unified theoretical
+framework: the von Neumann architecture, which has significantly advanced the field. Similarly, the design of agents
+today revolves around system-level considerations, much
+like computer systems design. A straightforward comparison between the von Neumann architecture and the agent
+architecture shows their high similarity in both structural
+design and task workflows, as shown in Figure 1. This parallel offers numerous opportunities for comparative analysis
+between these two fields. For example, both systems have
+memory modules, and the computer storage hierarchy can
+guide agents’ finer-grained memory design. Furthermore,
+computer systems have developed several golden insights
+over time, such as parallelization. These principles can be effectively transferred to the design of LLM agents, providing
+foundational guidance for their construction.
+
+1. Introduction
+In recent years, autonomous agents have emerged as a
+promising direction, with widespread applications in various domains, such as computer use (Hong et al., 2024; Lin
+et al., 2024), code assistance (Wang et al., 2024a; Yang et al.,
+2024), and others (Kim et al., 2024; Fan et al., 2025). These
+agents, powered by large language models (LLMs) (Achiam
+et al., 2023) as controllers, integrate key components such
+as memory, tools, and action while allowing effective environmental interaction. Currently, many studies (Xie et al.,
+2024; Durante et al., 2024) rely on intuition or experience
+to design agents, often lacking systematic design principles.
+As a result, the significant divergence among these designs
+makes it difficult to establish a standardized structure with
+
+Therefore, this paper proposes building and evolving general
+LLM agents by drawing insights from computer systems,
+including von Neumann architecture and other related principles. We will conduct a comprehensive analysis of the
+LLM agent compared with the computer systems, then investigate the potential future research direction inspired by
+the computer systems, and explore the learning capability
+of agents beyond the computer systems. Specifically, this
+work provides a comparative analysis of LLM agents for the
+framework, inspired by the von Neumann architecture (Section 2). We propose LLM agents as a collection of distinct
+modules that dynamically interact with the environment.
+This framework effectively encapsulates existing research
+
+1
+State Key Laboratory of General Artificial Intelligence, BIGAI
+Harbin Institute of Technology 3 School of Intelligence Science
+and Technology, Peking University. Correspondence to: Qing Li
+<dylan.liqing@gmail.com>.
+2
+
+1
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+Input/Perception
+
+Von Neumann architecture
+
+Control Unit/Cognition
+
+Memory
+
+Logic Unit/Tool
+
+Output/Action
+
+Task: Count the total size of images in one directory.
+
+Output
+Memory
+Unit
+
+Control
+Unit
+
+Logic
+Unit
+
+Input:
+Python
+run.py./images
+
+Decision-making:
+Call a function to
+solve the task:
+code:Calculate _Sizes()
+
+Read Memory:
+Read data from disks
+to main memory
+
+Decision-making:
+Check the condition
+and choose path
+
+code: os.walk(directory)…
+
+code:If os.path.splitext. in..
+
+Compute:
+get the result 55643
+code: file_size=getsize()
+sum = sum + file_size
+
+Output:
+Total size of images
+in './images': 55643
+bytes
+code: print(f " Total ...")
+
+Images
+
+Input
+
+Variable
+
+LLM agent architecture
+
+Task: Which electronic product do I use and check its latest price.
+
+Action
+
+Memory
+
+Cognition
+
+Tool
+
+Question:
+Which electronic
+product do I use
+and check its
+latest price.
+
+Read Memory :
+From my long -term
+memory, I know: You
+use a MacBook Pro.
+
+Planning: Get
+Profile Information
+→ Search price →
+Validate → Output.
+
+Decision-making:
+Use the web search
+tool to get price for
+real-time pricing
+updates.
+
+Tool Use: Web
+Search tool →
+Found $1,599 for
+the MacBook Pro.
+
+Answer: "You use a
+MacBook Pro. The
+14-inch MacBook
+Pro starts at $1,599."
+
+MacBook Pro
+
+Perception
+
+Figure 1. An analogy between von Neumann architecture and LLM agent architecture with task execution workflows (Appendix A).
+
+external environment, denoted o. At time step t, the action
+at can be derived using the following equation:
+
+
+
+at = A C P (o1 , a1 , . . . , ot−1 , at−1 , ot ), Mr , Tc . (1)
+
+while inspiring future directions. Then, this paper will discuss potential directions inspired by computers, including
+finer-grained memory, parallelization, and other potential
+advances(Section 3). Finally, we analyze current learning
+mechanisms and explore how such agents can learn from
+their environment, through which the agents could go beyond some limitations of computer systems(Section 4). We
+believe that better learning methods are key to the evolution
+of LLM agents. To the best of our knowledge, this is the
+first analogy drawn between computer systems and LLM
+agents, and we hope it can benefit the community.
+
+Here, Mr represents the content retrieved by the memory
+module, and Tc represents the output of the calling tool. This
+equation briefly illustrates how our framework generates
+the action at by integrating the historical sequence starting
+from the initial prompt-guided observation o1 , followed by
+actions and observations, combined with memory content
+and tool outputs. More details can be found in Appendix B.
+
+2. LLM Agent Framework Inspired by Von
+Neumann Architecture
+
+2.1. Perception
+For agents interacting in real-world environments, the capability of perception is indispensable, similar to the role of
+input modules in computer systems. Just as computers use
+input such as keyboards and cameras, agents gather various
+types of information, such as text, images, video, and audio.
+Based on existing research, the perception of agents can be
+divided into two parts: unimodal and multimodal.
+
+One important insight from computer systems is the von
+Neumann architecture, which established the foundational
+framework of modern computing by integrating a central
+processing unit, memory, and input/output systems (Burks
+et al., 1946). In this section, we follow a systematic perspective and draw inspiration from von Neumann architecture
+(Figure 1) to explore how to construct general LLM agents.
+We posit that an LLM agent comprises interconnected components: perception, cognition, memory, tools, and action,
+which dynamically interact with each other and the environment, as shown in Figure 2. We conducted a literature
+review based on this definition. During this process, we also
+conducted a comparative analysis with the von Neumann
+architecture, revealing shared principles in system design
+between the two.
+
+Unimodal: Unimodal perception means that the agent perceives only one type of information. Due to the significant achievements of LLMs in natural language processing,
+early agents used LLMs as core processors, relying on the
+model’s inherent perception capabilities. In previous studies (Wang et al., 2023; Shen et al., 2024), these agents only
+utilize textual information in environments for processing
+and planning, and restrict accurate understanding of multimodal information, driving the development of subsequent
+multimodal perception agents.
+
+To further support the foundational framework, this paper
+provides a concise formulation. To formalize, each module
+is denoted by its uppercase initial (e.g., P for perception).
+The framework is defined as F = (P, C, M, T, A). Specifically, the LLM agent also receives observations from the
+
+Multimodal: With recent advancements in multimodal
+LLMs, more agents (Hong et al., 2024; Kim et al., 2024)
+now adopt multimodal models as controllers, enabling the
+2
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+Internal
+Actions
+
+External
+Actions
+
+Ac�on
+Output
+
+Short-Term
+Context Window
+
+Long-Term
+RAG
+
+Model
+
+Tool Set
+
+Memory
+
+Cogni�on
+
+Tool
+
+Planning
+
+Tool Retrieval
+
+Memory Write
+
+Reasoning
+
+Memory Read
+Memory Manage
+
+Unimodal
+
+Tool Calling
+
+COT
+TOT
+Reflection
+
+Multimodal
+
+Environment
+
+Open-World
+
+Tool Update
+
+Percep�on
+Input
+
+Figure 2. A framework diagram of LLM agents inspired by the von Neumann architecture. This framework illustrates the different
+components of LLM agents and specific classifications within each module, along with the interactions between the modules.
+
+integration of diverse modalities such as text, images, and
+videos. For complex scenarios, external encoders (Fan et al.,
+2022) can also be used to convert information into forms
+perceivable by agents. In summary, multimodal has become
+a mainstream direction for agent perception.
+
+of thought and reflection to facilitate better planning. Analogously, planning can be seen as the central function of the
+control unit, while reasoning represents the underlying logic
+that drives its decision-making processes.
+Planning: Planning is a foundational capability of cognition. Given a goal,OK, planning decides on a sequence of
+actions (a0 , a1 , . . . , an ) that will lead to a state achieving
+the goal. Early studies (Liu et al., 2023; Yao et al., 2020) explored the use of external planners to assist planning. With
+the further enhancement of LLMs in reasoning (Wei et al.,
+2022), planning is expected to be incorporated into the controllers themselves. For example, WebDreamer (Gu et al.,
+2024) uses LLMs to simulate candidate actions and evaluate
+their outcomes to select the optimal step. Therefore, we can
+see that future planning methods are likely to be centered
+around LLMs, requiring less scaffolding. This is largely
+attributed to the improvement of reasoning capabilities of
+LLMs, which is crucial in cognition.
+
+Notably, a crucial principle of von Neumann architecture is that various types of information are transformed
+into a common representation within the system. Computer systems represent information in a data space of 0s
+and 1s, modern agents represent perceived information in
+the language space, which offers several distinct advantages. Firstly, language space demonstrates higher fault
+tolerance during agent task execution due to the superior
+generalization capabilities of natural language. Secondly,
+language space enables the expression of more abstract and
+ambiguous concepts, which is often beyond the capacity of
+conventional computer systems. Lastly, since the output in
+the process of task completion can be observed in natural
+language, representing information in the language space
+inherently provides better Interpretability.
+
+Reasoning: Reasoning is a fundamental unit of cognition,
+and it supports the thinking capability of LLM agents. Objectively, the development of reasoning is closely tied to
+LLMs, significantly expanding their ability to think and
+enabling them to solve more complex problems. In recent
+years, the advancement of reasoning based on LLMs began
+with CoT (Wei et al., 2022), which allows the model to decompose complex problems into a sequence of intermediate
+reasoning steps. CoT-SC (Wang et al., 2022) builds upon
+CoT by generating multiple answers simultaneously and
+
+2.2. Cognition
+The cognition module plays a crucial role in LLM agents,
+much like the position of the control unit in the computer
+architecture. Cognition governs the agent’s decisions, encompassing planning and reasoning capabilities. Planning
+is an essential capability for almost every LLM agent, while
+reasoning involves various thought processes such as chain
+
+3
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+selecting the optimal one. ToT (Yao et al., 2024) adopts a
+tree structure to explore multiple reasoning paths and selfevaluate for a globally optimal decision. These methods
+enable the cognition module to engage in deep thinking,
+thereby significantly enhancing its decision-making capabilities.
+
+Primary
+Storage
+
+Register
+Cache
+
+Faster Access
+
+Main Memory
+
+Short-term
+Memory
+Context window
+
+Higher Capacity
+
+Disk
+
+Another key capability in reasoning is known as selfrefinement or reflection. This ability allows LLM agents
+to reflect on their past actions and further optimize future
+decisions. Essentially, it transforms a linear thought process
+into a cyclical one by treating the decision-making process
+as continuous. The ReAct (Yao et al., 2022) framework is a
+notable pioneer in this area. It enhances LLMs by integrating task-specific actions for environmental interaction and
+natural language reasoning for situational reflection. Reflexion (Shinn et al., 2024) converts binary or scalar feedback
+from the environment into textual summaries, which are
+then incorporated as additional context for LLM agents in
+subsequent iterations. Most self-refinement mechanisms
+enable agents to improve through trial-and-error processes,
+enhancing their robustness.
+
+Computer Memory Hierarchy
+
+Long-term Memory
+Database , Knowledge Graph
+
+Agent Memory Hierarchy
+
+Figure 3. An intuitive comparison between computer memory hierarchy and agent memory hierarchy.
+
+tain agent task interaction workflows, short-term memory
+is often used to store contextual input-output information
+related to the task, including reasoning details, tool usage
+data, and past state information. Therefore, it is often referred to as working memory, which supports contextually
+appropriate responses during ongoing interactions.
+Long-Term Memory: In contrast, long-term memory is
+designed to store information for extended periods, enabling
+LLM agents to retrieve and utilize past knowledge or skills
+across different interactions, like disks in the memory hierarchy (see Figure 3). Long-term memory encompasses a
+diverse range of content types, including text, images, codes,
+trajectories, profile information, and successful demonstrations, significantly broadening the scope of information that
+agents can leverage. Long-term memory is typically implemented through external memory systems, enhancing an
+agent’s reliability.
+
+Notably, in the history of electronic computing, the evolution of CPUs, following the unified von Neumann architecture, has consistently been the most critical development in
+computers. From this perspective, the cognition module of
+LLM agents is likely to follow a similar trajectory. In the
+future, advanced planning and reasoning units may emerge
+as the core direction for LLM agents, further underscoring
+the central role of cognition in their development.
+2.3. Memory
+
+Memory Read and Write: Memory reading and writing are
+fundamental operations in the von Neumann architecture,
+serving as the critical link between the CPU and memory.
+Similarly, LLM agents are increasingly equipped with mechanisms to read and write their memory. These capabilities
+allow agents to adapt dynamically to changing environments
+by editing stored information, ensuring that the memory remains relevant to specific tasks. For memory reading, most
+methods select memory values that exhibit the highest similarity to the query object. Furthermore, many agents adopt
+Retrieval-Augmented Generation (Lewis et al., 2020) to
+form a complete reading and generation workflow. Generative Agents (Park et al., 2023) retrieve necessary information
+in text form based on relevance, recency, and importance.
+Memory writing often follows the storage format of memory reading. For example, in MemoChat (Lu et al., 2023),
+agents summarize each conversation segment by identifying
+the main topics discussed and storing them as keys to index
+memory pieces. This structured approach facilitates efficient memory retrieval during reading operations. Memory
+reading and writing operations are collaborative, collectively
+enhancing the capabilities of LLM agents. Moreover, from
+a computational perspective, the speed of memory read and
+
+In the von Neumann architecture, the memory unit serves
+as the central repository for both data and instructions. This
+essential unit can be analogously extended to LLM agents,
+where a memory-like component is constructed for storing states, knowledge, or learned behaviors, facilitating
+decision-making and dynamic adaptation. In computer systems, the memory units follow a memory hierarchy, which
+is a good insight from computer systems. We find a strong
+analogy between the memory between computers and LLM
+agents, as illustrated in Figure 3. Short-term memory is
+smaller than long-term memory but is fast, and long-term
+memory restores information longer but short-term memory
+cannot. Therefore, memory of LLM agents can be categorized into short-term and long-term memory, accompanied
+by associated read and write operations, aligning with the
+aforementioned perspective.
+Short-Term Memory: Short-term memory is often incorporated into LLMs, like primary memory in computer architecture, as illustrated in Figure 3. Short-term memory refers to
+an LLM agent’s contextual understanding within its context
+window, which is critical for immediate operations. In cer4
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+write operations remains an area to be explored for LLM
+agents, as it directly impacts information processing and
+task execution efficiency.
+
+ing actions. These internal actions modify agents’ internal
+state, enabling it to better learn and adapt to environments.
+Specifically, reasoning represents a novel internal action that
+does not exist in traditional computer systems, highlighting
+that LLM agents have a broader action space due to their
+ability to operate within abstract semantic spaces.
+
+2.4. Tool
+A unique feature is that LLM agents could utilize external
+tools, which is similar to a logic unit in computer systems.
+As the logic unit is the true executor of arithmetic operations,
+the tools within LLM agents concrete execution of tasks.
+Tool usage is often presented as APIs, enabling agents to
+select the appropriate tools based on their objectives quickly.
+Commonly used tools in existing methods are diverse and
+depend on the design of the toolset, such as calculators for
+arithmetic operations, and Google search for retrieving the
+latest information. There are two main interactions in tool
+use, which are named tool retrieval and tool calling.
+
+External Actions: External actions refer to the actions output by LLM agents that target external environments. These
+actions are closely tied to the external context and primarily
+include execution actions in GUI or embodied environments,
+as well as interaction actions in natural language dialogue.
+For example, SayCan (Ahn et al., 2022) generates actionable steps for robots, ShowUI (Lin et al., 2024) outputs
+actions and coordinates for virtual environments, and MDagents (Kim et al., 2024) perform conversational actions to
+provide medical advice. It is worth noting that some action
+formats require specific agents to use an additional action
+processing function to generate executable actions.
+
+Tool Retrieval: When given a question that needs tools to
+solve, LLM agents perform reasoning and planning to generate responses containing tool information. Tool retrieval
+means selecting the right tools using a retriever or LLM.
+For instance, Gorilla (Patil et al., 2023) employs BM25 and
+GPT-Index to construct a retriever to implement tool retrieval. ToolLLM (Qin et al., 2023) trains a Sentence-BERT
+model to serve as a tool retriever, allowing highly efficient
+retrieval of relevant tools.
+
+2.6. Environment
+In computer systems, computers interact with environments
+in ways designed by humans. Similarly, an agent system
+only exerts its unique capabilities through environmental
+interaction. The interaction environment of agent LLMs is
+highly diverse; it could be a human (Chen et al., 2023b),
+a game (Wang et al., 2023), or a real-world setting (Ahn
+et al., 2022). Typically, an agent acts and receives new
+observations and feedback from the environment after execution, and this process is called a complete interaction loop.
+What’s more, people design effective human-computer interaction ecosystems, such as VSCode. Similarly, there is a significant unexplored ecosystem space between LLM agents
+and external environments. For example, SWE-agent (Yang
+et al., 2024) constructs a friendly interface between LLM
+agents and software engineering. This analogy highlights
+the potential for enhanced environmental interaction.
+
+Tool Calling: As for tool calling, it means a right tool is
+correctly provided with required parameters and executed
+successfully to return results for LLM agents, making it
+a successful call. In EasyTool (Yuan et al., 2024), it improves LLMs’ understanding of tool functions and parameter requirements by prompting ChatGPT to rewrite tool
+descriptions. ConAgents (Shi et al., 2024) presents a multiagent collaborative framework, incorporating a dedicated
+execution agent responsible for parameter extraction and
+tool invocation. Notably, LLMs sometimes act as tools, representing the execution end beyond decision-making, not
+limited to specific instruments.
+
+In summary, inspired by the von Neumann architecture,
+we designed the corresponding LLM agent structure while
+conducting a comparative analysis. We also find that this
+structure effectively encompasses existing work, as shown
+in Table 1. We can observe the rise of multimodal agents,
+most of which possess reasoning capabilities, yet long-term
+memory is not widely utilized. This indicates that the framework we designed effectively summarizes the current development trends. This analogy-based design confirms the
+significant similarities between the two designs, inspiring
+us to draw insights from computer systems.
+
+2.5. Action
+Similar to the output modules in computer systems, the
+action module in LLM agents serves as the interface for
+interaction with environments. The functionality and mechanisms of the action module are typically goal-oriented and
+closely tied to LLM agents’ operating environments. Fundamentally, the action module transforms high-level actions
+into low-level actions through appropriate conversions. The
+action module can be simply categorized into two types:
+internal actions and external actions.
+
+3. Future Directions Inspired by Computers
+
+Internal Actions: Internal Actions refer to the internal operations performed by LLM agents during task execution,
+including memory read/write, tool invocation, and reason-
+
+To guide future research, it is important to address key
+challenges and realize the future direction. Building on
+5
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+Table 1. Summary of module inclusion in landmark LLM agent studies based on the proposed framework. Specifically, we also include a
+summary of the learning mechanisms of LLM agents. We abbreviate the learning mechanism subclasses using initials.
+Agent
+WebGPT (Nakano et al., 2021)
+SayCan (Ahn et al., 2022)
+ReAct (Yao et al., 2022)
+Voyager (Wang et al., 2023)
+Generative Agents (Park et al., 2023)
+AppAgent (Zhang et al., 2023)
+ChemCrow (Bran et al., 2023)
+MemGPT (Packer et al., 2023)
+ChatDev (Qian et al., 2023)
+LEO (Huang et al., 2024)
+VideoAgent (Fan et al., 2025)
+Agent Q (Putta et al., 2024)
+Reflexion (Shinn et al., 2024)
+HuggingGPT (Shen et al., 2024)
+Jarvis-1 (Wang et al., 2024b)
+SWE-agent (Yang et al., 2024)
+DigiRL (Bai et al., 2024)
+CLOVA (Gao et al., 2024)
+MDagents (Kim et al., 2024)
+OS-Copilot (Wu et al., 2024)
+
+Cognition
+
+Perception
+Unimodal
+Multimodal
+Unimodal
+Multimodal
+Unimodal
+Multimodal
+Unimodal
+Unimodal
+Unimodal
+Multimodal
+Multimodal
+Multimodal
+Unimodal
+Multimodal
+Multimodal
+Unimodal
+Multimodal
+Multimodal
+Multimodal
+Multimodal
+
+Memory
+
+Tool
+
+Model
+
+Reasoning
+
+Long-Term
+
+Short-Term
+
+GPT-3
+PaLM
+PaLM
+GPT-4
+GPT-3.5
+GPT-4
+GPT-4
+GPT-4
+GPT-3.5
+Vicuna-7B
+GPT-4
+LLaMA-3
+GPT-3
+GPT-4
+GPT-4
+GPT-4
+DigiRL-1.3B
+GPT-4
+GPT-4
+GPT4
+
+✗
+✓
+✓
+✓
+✓
+✗
+✓
+✗
+✗
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✗
+✓
+✓
+✓
+
+✗
+✗
+✗
+✓
+✓
+✓
+✗
+✓
+✓
+✗
+✓
+✗
+✓
+✗
+✓
+✗
+✗
+✗
+✓
+✓
+
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+
+detailed analyses of various components of LLM agents and
+the comparison drawn with the von Neumann architecture,
+we observe striking similarities that can inspire agent design.
+At the same time, viewing from a computer perspective
+allows us to identify shortcomings in current agent designs
+and gain further inspiration. In this section, we outline
+some future directions and critical challenges that demand
+attention. These challenges highlight the opportunities to
+advance the field.
+
+✓
+✓
+✓
+✓
+✗
+✗
+✓
+✗
+✓
+✗
+✓
+✗
+✓
+✓
+✓
+✓
+✓
+✓
+✗
+✓
+
+Learning Mechanisms
+
+Environment
+GUI
+Physical World
+QA
+Game
+Virtual World
+GUI
+Chemistry
+QA
+Software
+Virtual World
+QA
+GUI
+Code Execution
+QA
+Game
+Software
+GUI
+QA
+QA
+GUI
+
+LLM
+
+Memory
+
+Tool
+
+FT&RL
+ICL
+ICL
+ICL
+ICL
+ICL
+ICL
+ICL
+ICL
+ICL&FT
+ICL
+FT&RL
+ICL&RL
+ICL
+ICL
+ICL
+FT&RL
+ICL&FT
+ICL
+ICL&FT
+
+✗
+✗
+✗
+✓
+✓
+✗
+✗
+✓
+✓
+✗
+✓
+✗
+✓
+✗
+✓
+✗
+✗
+✗
+✓
+✓
+
+✗
+✗
+✗
+✓
+✗
+✗
+✗
+✗
+✗
+✗
+✗
+✗
+✗
+✓
+✓
+✗
+✗
+✓
+✗
+✓
+
+Principles of Building LLM Agents
+Can LLMs solve the task?
+Yes
+Use LLMs
+
+No
+Can a workflow solve the task?
+Yes
+
+Use a workflow with LLMs
+
+3.1. The Principles of Building Agents
+
+No
+Design LLM agents
+Follow three rules: abstraction,
+modularity and scalability
+
+Numerous principles have been accumulated in the evolution of computers (Appendix C), which guide the development of computer architectures (Saltzer & Kaashoek, 2009).
+By drawing an analogy and comparing computer system
+design principles, we can see that building LLM agents also
+requires certain principles. Here, we advocate the principle
+of “Build agents for demand”. This means that agents
+should be designed only when a problem cannot be directly
+solved by an LLM itself or by constructing a workflow. For
+example, when an AI is needed to autonomously use various tools and browse the internet to complete tasks, agents
+should be built. This principle is accompanied by the adherence to three design principles: (1) Abstraction: Hide
+implementation details and provide simplified interfaces to
+reduce complexity. (2) Modularity: Break agents into functional modules with clear interfaces. (3) Scalability: Agents
+should be designed to scale efficiently with growing users,
+data, or computational demands without major changes. A
+design decision diagram is shown in Figure 4. Moreover,
+we believe that more principles will be discovered.
+
+Figure 4. A design decision diagram illustrating the principles of
+building LLM agents.
+
+3.2. Refining Memory for Greater Impact
+The importance and role of memory are well recognized. In
+computer systems, memory is structured into finer-grained
+levels, incorporating cache mechanisms and diverse readand-write operations to optimize performance and efficiency.
+However, such explorations remain insufficient in the domain of LLM agents, highlighting the need to refine their
+memory mechanisms for greater impact.
+Finer-Grained Memory: As shown in Figure 3, computer
+systems form a fine-grained memory hierarchy, including
+components like main memory, cache, and registers. Agents
+can adopt this idea to design analogous modules. The
+existing context window is similar to main memory, and
+databases are akin to disks. We have found that the cache
+module is missing in agents. Therefore, we call for re6
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+search into the cache module in LLM agents. Commonly
+used information in agents can be stored in a cache-like
+module, enabling quick retrieval of past experiences to efficiently complete complex tasks. This cache module not only
+reduces memory pressure but also facilitates the training of
+LLM agents. Furthermore, the construction of the memory
+pyramid is largely driven by the principle of locality, which
+emphasizes focusing on the ”most important 20%.” We posit
+that a similar form of locality exists during the interactions
+of LLM agents, which could serve as a valuable guide for
+future memory design.
+
+and power efficiency, making it ideal for modern computing workloads. We advocate incorporating a multi-core
+mechanism into LLM agents, utilizing an appropriate number of models to serve as the cognition module within the
+agent. Specifically, the unique Big.LITTLE (ARM, 2011)
+architecture in multi-core systems refers to a design where
+high-performance ”big” cores and energy-efficient ”little”
+cores are used together, enabling optimal performance and
+power consumption. LLM agents can draw inspiration from
+this design. Larger models can be responsible for complex
+planning and reasoning tasks, while smaller models can
+manage basic operations such as dialogue and interactions
+with memory and tool modules. This design is analogous
+to the human brain’s System 1 and System 2, reflecting the
+rationality of such a design.
+
+DMA is Useful in Memory: When drawing an analogy
+with computer memory mechanisms, we found that Direct
+Memory Access (DMA) (Khawaja & Khan, 2014) can be
+effective for agents. DMA improves data transfer efficiency
+by enabling peripheral devices (such as hard drives) to exchange data with memory directly, bypassing the CPU and
+enhancing overall system performance. For LLM agents,
+this means that access instructions do not always have to
+go through the LLM. This approach can optimize data retrieval by allowing long-term memory to be written directly
+to short-term memory. At the same time, LLMs can focus on handling other tasks more efficiently. For example,
+VideoAgent (Fan et al., 2025) employs some unique memory querying tools to retrieve long-term memory during the
+question-answering process without requiring direct LLM
+access, enabling it to perform effectively in long-horizon
+video understanding.
+
+3.4. Parallelization and Pipelining
+Parallelization: Parallelization in computers refers to the
+technique of executing multiple instructions simultaneously
+by utilizing multiple processing threads. This highlights
+the correctness of breaking down large tasks into sub-tasks
+within agents, while also suggesting that existing agents may
+benefit from parallel processing. Considering parallelization from both single-agent and multi-agent perspectives,
+for a single agent, parallelization means that a task can be
+processed simultaneously by leveraging multiple tools or
+LLMs to achieve acceleration. In a multi-agent system, a
+task can be distributed among different agents, which then
+integrate their outputs to achieve parallel processing and
+improve accuracy.
+
+Memory as the Center of Data Flow: Throughout computer system development, the von Neumann architecture
+initially centered on the CPU but shifted to a memorycentric model to optimize data storage and retrieval efficiency. In current agent designs, LLMs drive the agent’s
+reasoning processes. However, when agents interact in realworld environments, the limitations of the context window
+within models restrict their ability to respond effectively to
+rapidly changing conditions. This raises the possibility that
+future agent systems may adopt a memory-centric approach
+to handle vast external information and enable real-time
+interaction more effectively. Existing works, such as Generative Agents (Park et al., 2023), have explored designs
+in this direction, but real-time interaction remains an area
+requiring further study.
+
+Pipelining: Pipelining in computers is a technique that improves instruction throughput by overlapping the execution
+of multiple instructions. It divides the instruction cycle
+into discrete stages, where different stages of multiple instructions can be processed simultaneously. This allows for
+continuous data flow and minimizes idle time, enhancing
+overall performance. A similar pipelining approach can
+also be adopted in open-world agents to improve the speed
+and accuracy of processing continuous external environmental feedback, which is particularly evident in embodied
+intelligence and autonomous driving.
+In addition to the mechanisms mentioned above, we believe
+that many insights can be drawn from computer systems.
+These directions further illustrate the strong correlation between the two fields, suggesting that the current design
+of LLM agents can fully leverage advancements in computer systems. Furthermore, the software layers developed
+through the evolution of computing—such as software systems and user interfaces—can also be applied to the advancement of LLM agents, highlighting their potential.
+
+3.3. Multi-Core System
+Multi-core mechanisms in computer systems enable parallel
+processing by integrating multiple processing cores within
+a single CPU, allowing concurrent execution of tasks to
+enhance performance and efficiency (Hennessy & Patterson, 2011). Each core operates independently, handling
+separate threads or processes, improving multitasking and
+throughput. This architecture optimizes resource utilization
+7
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+4. Go beyond Computers: Learning Capability
+in LLM Agents
+
+tioned three approaches will likely form a standardized
+learning process for agents in the future.
+
+If LLM agents only include the aforementioned modules
+and interaction mechanisms, their roles in an open-world
+setting would resemble that of a computer, which cannot
+achieve Artificial General Intelligence (AGI). To answer
+how general agents will evolve after construction, we find
+that the critical factor lies in the learning mechanism, which
+does not exist in computer systems. Therefore, in this section, we will explore the future learning methods of agents
+to go beyond computers. The analysis and summary of
+learning approaches in existing studies can also be found in
+Table 1.
+
+Memory Manage and Tool Update: In addition, updating the memory and tool modules is another promising
+direction, as such updates can enable agents to develop
+unique characteristics. Memory management refers to the
+processes of storing and organizing information during such
+interactions, forming a memory module characterized by
+specific environmental features. For instance, Generative
+Agents (Park et al., 2023) place a memory stream at their
+core, extracting observations from the environment into the
+main memory and retrieving them based on specific rules.
+Without memory management, agents would lack consistent behaviors, underscoring the effectiveness of learning
+with memory management mechanisms. ICAL (Sarch et al.,
+2024) introduces a method for building a memory of multimodal experiences from sub-optimal demonstrations and
+human feedback. It demonstrates that by distilling and filtering experiences, as the agent’s library of examples grows,
+the agent becomes more efficient. Tool update refers to
+the process by which tools are updated through interaction.
+The motivation for tool updates arises from the fact that
+some tools often become outdated or malfunction, such as
+an agent failing to retrieve updated data from an outdated
+API endpoint. One interesting work named CLOVA (Gao
+et al., 2024) introduces a novel training-validation prompt
+tuning scheme to efficiently update tools while avoiding
+catastrophic forgetting. This work demonstrates that tool
+learning can optimize both the model and the tools themselves. In summary, the learnable components of LLM
+agents are not limited to LLMs; both the memory and tool
+modules can be updated and learned through interactions.
+
+LLM Learning: LLMs are at the heart of LLM agents,
+and most agent learning is achieved through the learning
+capabilities of LLMs. Key learning methods include Incontext Learning (ICL), Fine-tuning (FT), and Reinforcement Learning (RL). In-context learning is a paradigm that
+allows language models to learn tasks given only a few examples in the form of demonstration (Dong et al., 2022).
+Specifically, early studies such as ReAct (Yao et al., 2022)
+and Voyager (Wang et al., 2023) use ICL to drive LLMs
+in building agents, achieving good results. However, since
+LLMs are not specifically trained for agent tasks and incontext learning does not modify model parameters, the
+performance improvements achievable through in-context
+learning remain limited. Fine-tuning is a technique that
+updates model parameters on a given dataset to enable an
+agent to learn specific tasks. Unlike fine-tuning for LLMs,
+agent fine-tuning involves training on diverse levels of agent
+trajectory data. Consequently, many studies (Chen et al.,
+2023a; Zeng et al., 2023; Yin et al., 2024) focus on obtaining high-quality trajectory operation data, aiming to equip
+LLM agents with robust capabilities in tool usage, memory
+retrieval, and long-term trajectory planning. However, it
+cannot address out-of-domain challenges due to the absence
+of environmental learning. To address this issue, recent
+studies have attempted to integrate RL into the learning process of LLM agents, enabling them to interact with their
+environment. For example, AGILE (He et al., 2024) treats
+the construction of LLM agents as an RL problem, using
+the LLM as a policy model and fine-tuning it through Proximal Policy Optimization (PPO) (Schulman et al., 2017).
+DigiRL (Bai et al., 2024) trains device control agents via
+a two-stage fine-tuning process: first initializing the model
+with offline RL and then transitioning from offline to online
+RL. However, RL training in LLM agents often suffers from
+instability and the challenge of designing effective reward
+functions, which require further research to address. It is
+worth noting that these learning methods are not isolated.
+The practice has shown that an LLM agent often employs
+multiple methods simultaneously during the learning process. This highlights that the integration of the aforemen-
+
+5. Conclusion
+This paper advocates for a novel perspective on building
+LLM agents by drawing insights from computer systems,
+particularly the von Neumann architecture. To support our
+claim, we have drawn inspiration from the von Neumann
+architecture and designed a structured framework consisting of distinct modules for agent components—perception,
+cognition, memory, tools, and actions. We then summarize
+future directions by drawing analogies to the development
+of computer systems. Key areas for improvement include
+establishing principles for building LLM agents, refining
+memory structures, utilizing multi-core systems, and leveraging parallelization and pipelining to boost LLM agent
+efficiency. Finally, we have investigated the learning mechanisms of LLM agents and pointed out that improved learning
+methods are key to their future evolution. By leveraging
+these insights, we aim to guide the systematic construction
+and evolution of general LLM agents. In addition, these insights still require thorough experimental validation, which
+we will continue to explore in our future research.
+8
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+References
+
+Fan, Y., Ma, X., Wu, R., Du, Y., Li, J., Gao, Z., and Li,
+Q. Videoagent: A memory-augmented multimodal agent
+for video understanding. In European Conference on
+Computer Vision, pp. 75–92. Springer, 2025.
+
+Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I.,
+Aleman, F. L., Almeida, D., Altenschmidt, J., Altman, S.,
+Anadkat, S., et al. Gpt-4 technical report. arXiv preprint
+arXiv:2303.08774, 2023.
+
+Gao, Z., Du, Y., Zhang, X., Ma, X., Han, W., Zhu, S.-C.,
+and Li, Q. Clova: A closed-loop visual assistant with
+tool usage and update. In Proceedings of the IEEE/CVF
+Conference on Computer Vision and Pattern Recognition,
+pp. 13258–13268, 2024.
+
+Ahn, M., Brohan, A., Brown, N., Chebotar, Y., Cortes, O.,
+David, B., Finn, C., Fu, C., Gopalakrishnan, K., Hausman,
+K., et al. Do as i can, not as i say: Grounding language
+in robotic affordances. arXiv preprint arXiv:2204.01691,
+2022.
+
+Gu, Y., Zheng, B., Gou, B., Zhang, K., Chang, C., Srivastava, S., Xie, Y., Qi, P., Sun, H., and Su, Y. Is your llm
+secretly a world model of the internet? model-based planning for web agents. arXiv preprint arXiv:2411.06559,
+2024.
+
+ARM. Big.little processing. In ARM White Paper. ARM
+Holdings, 2011.
+Bai, H., Zhou, Y., Cemri, M., Pan, J., Suhr, A., Levine,
+S., and Kumar, A. Digirl: Training in-the-wild devicecontrol agents with autonomous reinforcement learning. Advances in Neural Information Processing Systems
+(NeurIPS), 2024.
+
+He, Y., Huang, G., Lin, Y., Zhang, H., Zhang, Y., Li, H.,
+et al. Agile: A novel reinforcement learning framework
+of llm agents. In The Thirty-eighth Annual Conference
+on Neural Information Processing Systems, 2024.
+
+Bran, A. M., Cox, S., Schilter, O., Baldassari, C., White,
+A. D., and Schwaller, P. Chemcrow: Augmenting largelanguage models with chemistry tools. arXiv preprint
+arXiv:2304.05376, 2023.
+
+Hennessy, J. L. and Patterson, D. A. Computer Architecture:
+A Quantitative Approach. Morgan Kaufmann, 2011.
+
+Burks, A. W., Goldstine, H. H., and von Neumann, J. Preliminary discussion of the logical design of an electronic
+computing instrument. Institute for Advanced Study,
+1946.
+
+Hong, W., Wang, W., Lv, Q., Xu, J., Yu, W., Ji, J., Wang, Y.,
+Wang, Z., Dong, Y., Ding, M., et al. Cogagent: A visual
+language model for gui agents. In Proceedings of the
+IEEE/CVF Conference on Computer Vision and Pattern
+Recognition, pp. 14281–14290, 2024.
+
+Campbell-Kelly, M. and Aspray, W. Computer: A History
+of the Information Machine. Westview Press, Boulder,
+CO, 1996.
+
+Huang, J., Yong, S., Ma, X., Linghu, X., Li, P., Wang, Y.,
+Li, Q., Zhu, S.-C., Jia, B., and Huang, S. An embodied generalist agent in 3d world. In Proceedings of the
+International Conference on Machine Learning (ICML),
+2024.
+
+Chen, B., Shu, C., Shareghi, E., Collier, N., Narasimhan, K.,
+and Yao, S. Fireact: Toward language agent fine-tuning.
+arXiv preprint arXiv:2310.05915, 2023a.
+Chen, W.-G., Spiridonova, I., Yang, J., Gao, J., and Li, C.
+Llava-interactive: An all-in-one demo for image chat,
+segmentation, generation and editing. arXiv preprint
+arXiv:2311.00571, 2023b.
+
+Khawaja, K. K. A. M. and Khan, A. A. Direct memory
+access: Overview and applications. International Journal
+of Computer Applications, 94(1):1–7, 2014.
+Kim, Y., Park, C., Jeong, H., Chan, Y. S., Xu, X., McDuff,
+D., Breazeal, C., and Park, H. W. Adaptive collaboration
+strategy for llms in medical decision making. Advances in
+Neural Information Processing Systems (NeurIPS), 2024.
+
+Dong, Q., Li, L., Dai, D., Zheng, C., Ma, J., Li, R., Xia,
+H., Xu, J., Wu, Z., Liu, T., et al. A survey on in-context
+learning. Annual Meeting of the Association for Computational Linguistics (ACL), 2022.
+Durante, Z., Huang, Q., Wake, N., Gong, R., Park, J. S.,
+Sarkar, B., Taori, R., Noda, Y., Terzopoulos, D., Choi, Y.,
+et al. Agent ai: Surveying the horizons of multimodal
+interaction. arXiv preprint arXiv:2401.03568, 2024.
+
+Langley, P. Crafting papers on machine learning. In Langley,
+P. (ed.), Proceedings of the 17th International Conference
+on Machine Learning (ICML 2000), pp. 1207–1216, Stanford, CA, 2000. Morgan Kaufmann.
+
+Fan, L., Wang, G., Jiang, Y., Mandlekar, A., Yang, Y., Zhu,
+H., Tang, A., Huang, D.-A., Zhu, Y., and Anandkumar, A.
+Minedojo: Building open-ended embodied agents with
+internet-scale knowledge. Advances in Neural Information Processing Systems, 35:18343–18362, 2022.
+
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V.,
+Goyal, N., Küttler, H., Lewis, M., Yih, W.-t., Rocktäschel,
+T., et al. Retrieval-augmented generation for knowledgeintensive nlp tasks. Advances in Neural Information Processing Systems, 33:9459–9474, 2020.
+9
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+Lin, K. Q., Li, L., Gao, D., Yang, Z., Wu, S., Bai, Z.,
+Lei, W., Wang, L., and Shou, M. Z. Showui: One
+vision-language-action model for gui visual agent. arXiv
+preprint arXiv:2411.17465, 2024.
+
+Schulman, J., Wolski, F., Dhariwal, P., Radford, A., and
+Klimov, O. Proximal policy optimization algorithms.
+arXiv preprint arXiv:1707.06347, 2017.
+Shen, Y., Song, K., Tan, X., Li, D., Lu, W., and Zhuang,
+Y. Hugginggpt: Solving ai tasks with chatgpt and its
+friends in hugging face. Advances in Neural Information
+Processing Systems, 36, 2024.
+
+Liu, B., Jiang, Y., Zhang, X., Liu, Q., Zhang, S., Biswas,
+J., and Stone, P. Llm+ p: Empowering large language
+models with optimal planning proficiency. arXiv preprint
+arXiv:2304.11477, 2023.
+Lu, J., An, S., Lin, M., Pergola, G., He, Y., Yin, D., Sun, X.,
+and Wu, Y. Memochat: Tuning llms to use memos for
+consistent long-range open-domain conversation. arXiv
+preprint arXiv:2308.08239, 2023.
+
+Shi, Z., Gao, S., Chen, X., Feng, Y., Yan, L., Shi, H., Yin, D.,
+Ren, P., Verberne, S., and Ren, Z. Learning to use tools
+via cooperative and interactive agents. arXiv preprint
+arXiv:2403.03031, 2024.
+
+Nakano, R., Hilton, J., Balaji, S., Wu, J., Ouyang, L., Kim,
+C., Hesse, C., Jain, S., Kosaraju, V., Saunders, W., et al.
+Webgpt: Browser-assisted question-answering with human feedback. arXiv preprint arXiv:2112.09332, 2021.
+
+Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., and
+Yao, S. Reflexion: Language agents with verbal reinforcement learning. Advances in Neural Information
+Processing Systems, 36, 2024.
+
+Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G.,
+Stoica, I., and Gonzalez, J. E. Memgpt: Towards llms
+as operating systems. arXiv preprint arXiv:2310.08560,
+2023.
+
+Wang, G., Xie, Y., Jiang, Y., Mandlekar, A., Xiao, C., Zhu,
+Y., Fan, L., and Anandkumar, A. Voyager: An openended embodied agent with large language models. arXiv
+preprint arXiv:2305.16291, 2023.
+
+Park, J. S., O’Brien, J., Cai, C. J., Morris, M. R., Liang,
+P., and Bernstein, M. S. Generative agents: Interactive
+simulacra of human behavior. In Proceedings of the 36th
+annual acm symposium on user interface software and
+technology, pp. 1–22, 2023.
+
+Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang,
+S., Chowdhery, A., and Zhou, D. Self-consistency improves chain of thought reasoning in language models.
+arXiv preprint arXiv:2203.11171, 2022.
+
+Patil, S. G., Zhang, T., Wang, X., and Gonzalez, J. E. Gorilla:
+Large language model connected with massive apis. arXiv
+preprint arXiv:2305.15334, 2023.
+
+Wang, X., Li, B., Song, Y., Xu, F. F., Tang, X., Zhuge, M.,
+Pan, J., Song, Y., Li, B., Singh, J., et al. Openhands: An
+open platform for ai software developers as generalist
+agents. arXiv preprint arXiv:2407.16741, 2024a.
+
+Putta, P., Mills, E., Garg, N., Motwani, S., Finn, C., Garg,
+D., and Rafailov, R. Agent q: Advanced reasoning
+and learning for autonomous ai agents. arXiv preprint
+arXiv:2408.07199, 2024.
+
+Wang, Z., Cai, S., Liu, A., Jin, Y., Hou, J., Zhang, B.,
+Lin, H., He, Z., Zheng, Z., Yang, Y., et al. Jarvis-1:
+Open-world multi-task agents with memory-augmented
+multimodal language models. IEEE Transactions on
+Pattern Analysis and Machine Intelligence, 2024b.
+
+Qian, C., Cong, X., Yang, C., Chen, W., Su, Y., Xu, J.,
+Liu, Z., and Sun, M. Communicative agents for software
+development. arXiv preprint arXiv:2307.07924, 6(3),
+2023.
+
+Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi,
+E., Le, Q. V., Zhou, D., et al. Chain-of-thought prompting
+elicits reasoning in large language models. Advances in
+neural information processing systems, 35:24824–24837,
+2022.
+
+Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y.,
+Cong, X., Tang, X., Qian, B., et al. Toolllm: Facilitating
+large language models to master 16000+ real-world apis.
+arXiv preprint arXiv:2307.16789, 2023.
+Saltzer, J. H. and Kaashoek, M. F. Principles of Computer
+System Design: An Introduction. Morgan Kaufmann,
+2009. ISBN 978-0123749574.
+
+Wu, Z., Han, C., Ding, Z., Weng, Z., Liu, Z., Yao, S.,
+Yu, T., and Kong, L. Os-copilot: Towards generalist
+computer agents with self-improvement. arXiv preprint
+arXiv:2402.07456, 2024.
+
+Sarch, G., Jang, L., Tarr, M. J., Cohen, W. W., Marino,
+K., and Fragkiadaki, K. Vlm agents generate their
+own memories: Distilling experience into embodied programs. Advances in Neural Information Processing Systems (NeurIPS), 2024.
+
+Xie, J., Chen, Z., Zhang, R., Wan, X., and Li, G.
+Large multimodal agents: A survey. arXiv preprint
+arXiv:2402.15116, 2024.
+10
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+Yang, J., Jimenez, C. E., Wettig, A., Lieret, K., Yao,
+S., Narasimhan, K., and Press, O. Swe-agent: Agentcomputer interfaces enable automated software engineering. Advances in Neural Information Processing Systems
+(NeurIPS), 2024.
+Yao, S., Rao, R., Hausknecht, M., and Narasimhan, K. Keep
+calm and explore: Language models for action generation
+in text-based games. arXiv preprint arXiv:2010.02903,
+2020.
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan,
+K., and Cao, Y. React: Synergizing reasoning and acting
+in language models. arXiv preprint arXiv:2210.03629,
+2022.
+Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y.,
+and Narasimhan, K. Tree of thoughts: Deliberate problem
+solving with large language models. Advances in Neural
+Information Processing Systems, 36, 2024.
+Yin, D., Brahman, F., Ravichander, A., Chandu, K., Chang,
+K.-W., Choi, Y., and Lin, B. Y. Agent lumos: Unified
+and modular training for open-source language agents.
+In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long
+Papers), pp. 12380–12403, 2024.
+Yuan, S., Song, K., Chen, J., Tan, X., Shen, Y., Kan, R.,
+Li, D., and Yang, D. Easytool: Enhancing llm-based
+agents with concise tool instruction. arXiv preprint
+arXiv:2401.06201, 2024.
+Zeng, A., Liu, M., Lu, R., Wang, B., Liu, X., Dong, Y.,
+and Tang, J. Agenttuning: Enabling generalized agent
+abilities for llms. Annual Meeting of the Association for
+Computational Linguistics (ACL), 2023.
+Zhang, C., Yang, Z., Liu, J., Han, Y., Chen, X., Huang,
+Z., Fu, B., and Yu, G. Appagent: Multimodal agents
+as smartphone users. arXiv preprint arXiv:2312.13771,
+2023.
+
+11
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+A. Analogy Examples
+Our Figure 1 compares von Neumann architecture and LLM agent architecture with task execution workflows. The structural
+comparison on the left side demonstrates the similarity between the two architectures, showing that they are highly alike in
+terms of modules and their interconnections. On the right side, the workflow comparison during task execution illustrates
+that they also share similarities in how tasks are performed.
+A.1. von Neumann architecture
+To intuitively demonstrate the working process of a computer (von Neumann architecture), the example in our diagram is
+presented using the following code. The following Python script named run.py calculates the total size of all image files in a
+given directory.
+import os, sys
+def Calculate_Sizes(directory):
+image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp"}
+total_size = 0
+for root, _, files in os.walk(directory):
+for file in files:
+if os.path.splitext(file)[1].lower() in image_extensions:
+file_size = os.path.getsize(os.path.join(root, file))
+total_size = total_size + file_size
+print(f"Total size of images in ’{directory}’: {total_size} bytes")
+if __name__ == "__main__":
+directory = sys.argv[1]
+Calculate_Sizes(directory)
+A.2. LLM agent architecture
+For LLM agent architecture, we ask some agentic systems like ChatGPT. The query is ”Which electronic product do I use
+and check its latest price”. Since the diagram we use is a preliminary conceptual framework mainly intended to illustrate
+the similarity between the two. Additionally, to protect personal privacy, we do not provide execution diagrams for the
+examples here. You can try this prompt using the most advanced model on your personal ChatGPT.
+
+B. Framework Formalization
+In this appendix, we provide a detailed description of each component in the proposed framework F = (P, C, M, T, A),
+as illustrated in Figure 2. This framework consists of perception, cognition, memory, tool usage, and action execution,
+facilitating interaction with an open-world environment.
+B.1. Perception Module
+The perception module processes external inputs from the environment, supporting both unimodal and multimodal data
+processing:
+P : O → X,
+
+(2)
+
+where O represents raw observations, and X denotes the extracted feature representations. This module enables the agent to
+interpret sensory data from multiple sources such as images, text, and audio. It is noteworthy that past observations are
+often combined with past actions for perception, where actions also serve as an external source of information. Of course,
+in different designs, past actions and observations can be stored in memory, but this transformation does not bring about
+significant changes.
+12
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+B.2. Cognition Module
+The cognition module serves as the core reasoning engine, responsible for planning and decision-making. It takes perceptual
+inputs xt , memory content Mr , and tool use output Tc as inputs to generate intermediate decisions.
+C : (X , M, T ) → D,
+
+(3)
+
+where D represents the cognitive decision output space. Advanced reasoning techniques such as Chain-of-Thought (CoT),
+Tree-of-Thought (ToT), and Reflection mechanisms are employed to enhance decision-making.
+B.3. Memory Module
+Memory management in the framework includes both short-term (context window) and long-term (retrieval-augmented
+generation, RAG) storage, formulated as:
+M : H → M,
+(4)
+where H represents the historical interaction sequence, and M denotes the memory content retrieved for current processing.
+Key memory operations include:
+• Memory Write: Storing new experience mt .
+• Memory Read: Retrieving relevant historical data.
+• Memory Manage: Optimizing memory utilization.
+B.4. Tool Module
+The tool module enables interaction with external toolset sources such as Google Search and Arxiv. It includes operations
+like retrieval, calling, and updating:
+T : (Q, E) → T ,
+(5)
+where Q is the query space, E denotes tool set resources, and T represents the tool output used in decision-making.
+B.5. Action Module
+The action module selects and executes actions based on cognitive outputs and tool assistance:
+at = A(C(xt , Mr , Tc )),
+
+(6)
+
+
+
+
+at = A C P (o1 , a1 , . . . , ot−1 , at−1 , ot ), Mr , Tc ,
+
+(7)
+
+for time step t, it has:
+
+where Tc is the retrieved tool information. Actions can be categorized into internal and external types. For external actions,
+they alter the external environment, transitioning from ot−1 to ot . Internal actions involve searching memory, invoking tools,
+and performing reasoning, which do not directly affect external observations but instead modify the internal state of the
+LLM agents.
+B.6. Learning Paradigms
+Our framework supports multiple learning approaches to enhance performance over time:
+B.6.1. I N -C ONTEXT L EARNING
+In-context learning allows the model to make predictions based on provided examples without updating parameters:
+at = arg max P (a | o1 , a1 , . . . , ot−1 , at−1 , ot )
+a∈A
+
+13
+
+(8)
+
+Building LLM Agents by Incorporating Insights from Computer Systems
+
+B.6.2. F INE - TUNING
+Fine-tuning adjusts model parameters using a dataset D with gradient-based optimization:
+X
+θ∗ = arg min
+L(fθ (x), y)
+θ
+
+(9)
+
+(x,y)∈D
+
+where L represents the loss function and θ are model parameters.
+B.6.3. R EINFORCEMENT L EARNING
+In reinforcement learning (RL), the agent learns through interactions with the environment by maximizing cumulative
+rewards:
+#
+" T
+X
+∗
+t
+π = arg max E
+γ R(st , at )
+(10)
+π
+
+t=0
+
+where π is the policy, γ is the discount factor, and R represents the reward function.
+
+C. Golden insights of computer system design
+Golden insights of computer system design
+Abstraction: Hide implementation details and provide simplified interfaces to reduce complexity.
+Modularity: Break the system into functional modules with clear interfaces.
+Unified data representation: Unified data representation ensures seamless module integration.
+Scalability: Systems should be designed to handle growth in terms of users, data, or computational requirements
+without significant re-architecture.
+The end-to-end principle: This principle states that certain functions in a system should be implemented at the
+endpoints rather than in the middle of a communication system. For example, reliability mechanisms like error
+checking are more effective when placed at the application’s endpoints rather than in intermediate network layers.
+The principle of least privilege: A system component or user should only have the minimum privileges necessary
+to perform its tasks. This minimizes the risk of misuse or errors affecting the overall system.
+Layering: Systems should be built in layers, where each layer provides a specific set of services to the layer above
+while using the services of the layer below. This hierarchical approach aids in abstraction and simplifies debugging
+and maintenance.
+The robustness principle (Postel’s Law): “Be conservative in what you do, be liberal in what you accept
+from others.” This principle encourages designing systems to be strict in output and tolerant in input to promote
+interoperability.
+Fail-Fast Systems: A system should detect and report errors as early as possible, rather than allowing them to
+propagate unnoticed. This helps maintain system integrity and simplifies debugging.
+Concurrency: Systems should efficiently manage multiple simultaneous activities, taking advantage of parallelism
+when possible.
+Transparency: A system should aim to hide complexity from users where appropriate, such as in distributed
+systems, where failures or location details are often masked.
+Trade-off: System design involves balancing trade-offs, such as performance vs. correctness, simplicity vs.
+flexibility, and latency vs. throughput.
+
+14
+
+

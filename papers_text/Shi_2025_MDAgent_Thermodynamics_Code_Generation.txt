@@ -1,0 +1,588 @@
+www.nature.com/scientificreports
+
+OPEN
+
+A fine-tuned large language
+model based molecular dynamics
+agent for code generation to
+obtain material thermodynamic
+parameters
+Zhuofan Shi1,2,3,5, Chunxiao Xin1,2,3,5, Tong Huo2,3,4,5, Yuntao Jiang1,2,5, Bowen Wu1,5,
+Xingyue Chen1, Wei Qin3, Xinjian Ma2,3, Gang Huang1,2,3, Zhenyu Wang1 & Xiang Jing1,2,3
+In the field of materials science, addressing the complex relationship between the material structure
+and properties has increasingly involved leveraging the text generation capabilities of AI-generated
+content (AIGC) models for tasks that include literature mining and data analysis. However, theoretical
+calculations and code development remain labor-intensive challenges. This paper proposes a novel
+approach based on text-to-code generation, utilizing large language models to automate the
+implementation of simulation programs in materials science. The effectiveness of automated code
+generation and review is validated with thermodynamics simulations based on the LAMMPS software
+as a foundation. This study introduces Molecular Dynamics Agent (MDAgent), a framework designed
+to guide large models in automatically generating, executing, and refining simulation code. In
+addition, a thermodynamic simulation code dataset for LAMMPS was constructed to fine-tune the
+language model. Expert evaluation scores demonstrate that MDAgent significantly improves the code
+generation and review capabilities. The proposed approach reduces the average task time by 42.22%,
+as compared to traditional models, thus highlighting its potential applications in the field of materials
+science.
+
+Keywords LLM, Agent, Materials science
+Calculating thermodynamic properties is a common task in materials computation that provides important
+insights into material characteristics and informing design and optimization strategies in materials science.
+For instance, understanding phase transitions in two-dimensional materials is crucial for their applications
+in electronics and energy storage1. Accurately predicting and controlling specific thermodynamic properties,
+including stability and thermal expansion coefficients, is essential for ensuring the material performance in
+extreme environments, such as those in aerospace applications2.
+Molecular dynamics (MD) simulations have emerged as an indispensable tool to address these challenges
+at the atomic scale. Using platforms such as LAMMPS, which is specialized software for MD simulations,
+researchers can model thermodynamic phenomena, analyze atomic interactions, and investigate material
+behaviors under varying conditions3,4. MD simulations are particularly effective for studying phase transitions,
+thermal conductivity, and mechanical properties in both simple and complex systems5. However, despite their
+versatility, MD simulations often involve intricate workflows and demand a high level of expertise and manual
+input, which can hinder their broader adoption and efficiency6,7. This highlights the need for novel approaches—
+particularly the integration of AI—to simplify and enhance MD simulations, thus ensuring reliability and
+precision while improving accessibility8.
+Recent advancements in large language models (LLMs) have opened new possibilities in this domain.
+Powerful models, such as ChatGPT9,10, Qwen11, and ChatGLM12, are becoming increasingly robust. In materials
+1School of Software and Microelectronics, Peking University, Beijing 102600, China. 2National Key Laboratory
+
+of Data Space Technology and System, Beijing 100195, China. 3Advanced Institute of Big Data, Beijing
+100195, China. 4Institute of Information Engineering, Chinese Academy of Sciences, Beijing 100085, China.
+5Zhuofan Shi, Chunxiao Xin, Tong Huo, Yuntao Jiang and Bowen Wu contributed equally to this work. email:
+zw@ss.pku.edu.cn; jingxiang@pku.edu.cn
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+1
+
+www.nature.com/scientificreports/
+science, the integration of AI is gaining momentum, with numerous studies highlighting its transformative
+potential13–18. For example, ChemLLM19 fine-tunes LLMs for chemical materials, and MatterGen20 employs
+generative modeling for inorganic material design. ChemCrow21 leverages API tools to tackle chemistry-related
+problems, and HoneyComb22 explores LLM-based agent systems for materials science, albeit without finetuning. Further, AI applications have expanded to specialized domains, such as organic semiconductor device
+research, with LLM-based AI agents for organic semiconductor device research23 demonstrating promising
+results. Similarly, ChatMOF24 uses AI systems to predict and generate metal–organic frameworks. These
+advancements underscore the growing role of LLMs in advancing materials science research.
+However, it is evident from the literature that several issues persist:
+• In materials science research13, there is a growing demand for high-quality, large-scale data to support advancements in AI-driven research. However, the current data ecosystem is inadequate, with materials data
+often being scarce, fragmented, non-standardized, difficult to access, and of varying quality, particularly in
+the area of text-to-code generation. Although some databases and platforms exist, their limited coverage and
+dispersed data pose significant challenges, thus making it difficult to effectively fine-tune large models for
+this field.
+• Prior studies have mainly focused on text-to-text generation, overlooking the potential of text-to-code generation. As a result, the capabilities of LLMs in theoretical calculations and code development within this
+domain remain underexplored. This has led to traditional methods where human experts rely on software
+such as LAMMPS to address domain-specific problems, which demands a high level of expertise, incurring
+significant time costs. Current text-to-text research fails to efficiently address these challenges.
+This paper focuses on using LAMMPS to solve problems related to computing the thermodynamic properties
+of materials, aiming to establish our proposed approach as a general paradigm that can be extended to text-tocode applications in the field of materials science. To achieve this, this paper introduces Molecular Dynamics
+Agent (MDAgent), illustrated in Fig. 1, which employs text-to-code generation to automate code generation and
+correction for LAMMPS, specialized software for MD simulations. Based on a collaboration with domain experts,
+this paper presents two specialized datasets curated to enhance the capabilities and accuracy of MDAgent. These
+datasets were for fine-tuning and evaluation in our work.
+Our experimental results demonstrate that MDAgent can effectively assist experts in semi-automating
+domain-specific tasks, serving as a valuable support tool, especially in complex scenarios where it significantly
+enhances the workflow efficiency. The results also confirmed that this method improves the model’s code
+generation and review capabilities, thus successfully reducing the average time required for materials scientists
+to complete their tasks.
+The main contributions and innovations of our paper are as follows:
+• This paper introduces MDAgent, an LLM-based system that uses text-to-code generation to obtain material
+thermodynamic parameters, reducing task completion time, lowering the knowledge barrier for materials
+scientists, and providing scalability and cross-task transferability.
+• In order to address the lack of publicly available datasets and fine-tuned large models for use in LAMMPS,
+this paper introduces two specialized datasets: the ‘LSCF-Dataset’ and the ‘LEQS-Dataset’. These datasets are
+tailored for fine-tuning and testing large models with thermodynamic knowledge in materials science. Our
+fine-tuning approach enhances the model’s review capabilities, making its scoring more accurate and justifications more aligned with expert standards. This also improves the model’s ability to generate high-quality,
+reliable code scripts.
+
+Results
+
+Overview of methodology
+
+MDAgent is an advanced framework designed to automate and enhance the process of obtaining material
+thermodynamic parameters through MD simulations. The architecture of MDAgent centers around a modular
+agent system, as shown in Fig. 2a, comprising Manager, Planner, Worker, and Evaluator components, which
+collaboratively process tasks described in natural language. The Manager interprets user inputs and coordinates
+task distribution, and the Planner decomposes high-level objectives into actionable subtasks. Workers, specialized
+for domain-specific software such as LAMMPS, generate corresponding simulation scripts. Evaluators provide
+feedback on the script quality, iteratively refining outputs to ensure precision and adherence to domain standards.
+Two custom datasets were constructed to support this workflow, as illustrated in Fig. 2b: the LSCF-Dataset,
+focusing on fine-tuning LLMs for accurate LAMMPS script generation, and the LEQS-Dataset, which enables
+the evaluation of the script quality through expert-annotated scoring and justifications. These datasets address
+the scarcity of high-quality, domain-specific data in materials science, thus ensuring robust model training and
+testing.
+MDAgent, which combines intelligent automation with human oversight, streamlines complex workflows,
+reduces the barrier of technical expertise, and accelerates research progress in materials science.
+
+Demonstration of molecular dynamics agent (MDAgent) in thermodynamic property
+calculations
+
+Four thermodynamic computational tasks were designed to evaluate the effectiveness of MDAgent in preparing
+LAMMPS input scripts, which are common in material thermodynamics research and have well-established
+references for evaluation. Input scripts were generated using both MDAgent and an independent method for
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+2
+
+www.nature.com/scientificreports/
+
+Fig. 1. Comparison of thermodynamic analysis workflow with and without the use of Molecular Dynamics
+Agent (MDAgent). In the process on the left, the manual workflow requires human users to perform every
+step, resulting in inefficiency, complexity, and high skill requirements. In contrast, in the MDAgent-assisted
+workflow on the right, the agent automates key tasks in LAMMPS and other software, enabling a semiautomated, efficient process. The agent simplifies user tasks, reduces the skill requirement, and minimizes
+errors by overseeing each step and assisting the user as needed.
+
+comparison. The results from the two approaches were analyzed to assess their performances in completing
+these tasks.
+The first task involved calculating the volumetric heat capacity of copper. We extracted the changes in energy
+and temperature during the simulation, as shown in Fig. 3b, with Fig. 3a depicting the molecular model states at
+different times during the simulation. The volumetric heat capacity values of copper calculated by MDAgent and
+the independent method were 3.37 and 3.56 J/(cm3 ·K), respectively.
+The second task was to calculate the equilibrium lattice constant of a diamond crystal. The basic principle
+was to vary the lattice constant and identify the constant corresponding to the lowest energy, as shown in Fig.
+3d. The equilibrium lattice constants obtained with and without MDAgent were 3.52 and 3.54 Å, respectively,
+with the theoretical value being approximately 3.45 Å. Figure 3c presents the molecular models corresponding
+to different lattice constants.
+The third task involved simulating the melting of copper, where the predicted melting point was identified
+as the temperature at which a sudden change in the system volume occurred as the temperature increased.
+The predicted melting points obtained by the two methods were 1440.8 and 1533.5 K, respectively, with the
+theoretical value being 1357.7 K.
+The fourth task was to calculate the linear expansion coefficient of copper. The results calculated by MDAgent
+and the independent method were 20.6 × 10−6 and 17.5 × 10−6 K−1 , respectively, both of which were near
+the theoretical value.
+As shown in Fig. 3, MDAgent demonstrated its capabilities as an intelligent assistant in addressing these
+thermodynamic property tasks for materials. It effectively supports entry-level materials science practitioners,
+helping them accomplish tasks more easily and efficiently. However, instead of aiming to outperform human
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+3
+
+www.nature.com/scientificreports/
+
+Fig. 2. (a) Architecture diagram: MDAgent with Manager, Worker, and evaluator powered by large language
+models (LLMs), interacting through a user interface. (b) Example of the dataset used.
+
+experts in the accuracy of calculation results at this stage, MDAgent focuses on enabling novice users to complete
+tasks quickly while maintaining the required quality level.
+
+Experimental setup
+
+We consulted several experts throughout the experiment who discussed and agreed upon a common evaluation
+standard prior to proceeding with the assessment, with the aim of minimizing biases commonly found in human
+evaluations. After the first round of evaluations by all of the experts, a second round of discussions was held
+to refine and align their opinions, ensuring that the final results reflected a unified consensus. After this, we
+evaluated the performance of MDAgent using LAMMPS as a case study, focusing on three key aspects:
+(1)	Overall Ability of MDAgent to Assist Users in Completing Tasks: We conducted user studies with materials
+science experts to gauge the usability and efficiency of MDAgent. Participants were tasked with defining
+MD simulations using natural language, and their interactions with the agent were monitored.
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+4
+
+www.nature.com/scientificreports/
+
+Fig. 3. Simulation models and results: (a) copper molecular model for volumetric heat capacity, (b) energy–
+temperature curve, (c) diamond crystal model for equilibrium lattice constant, (d) energy–lattice curve, (e)
+copper molecular model for melting, (f) volume–temperature curve, (g) copper molecular model for thermal
+expansion, and (h) lattice–temperature curve.
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+5
+
+www.nature.com/scientificreports/
+(2)	Ability of LammpsWorker to Generate Script Code: We evaluated the script files generated by LammpsWorker for various thermodynamic problems in simple materials. Human experts assessed these scripts
+for syntactic correctness, adherence to simulation objectives, and alignment with best practices in the field.
+(3)	Ability of LammpsEvaluator to Evaluate Script Code: LammpsEvaluator was tested on a range of evaluation
+tasks. It identified issues in existing script code and assigning scores accordingly. The scores that LammpsEvaluator provided were compared with those from human experts to assess the model’s reliability and
+accuracy in materials science applications.
+
+Evaluation of MDAgent as assistant
+
+Inspired by the experimental design in studies such as ChemCrow21, our experiment engaged multiple experts
+in materials science to complete LAMMPS-related tasks using two different approaches. The first approach used
+our MDAgent as an assistant, and the second approach relied solely on traditional manual methods based on
+human expertise. Experts then rated every task based on their satisfaction with every approach, with the total
+score across all of the methods summing to 10.
+The results, shown in Fig. 4a,b, demonstrate that MDAgent is highly effective in assisting experts with the
+semi-automation of domain-specific tasks. The average task completion time is significantly lower when using
+the Agent, indicating its ability to help human experts reduce time costs. Further, despite the reduced time cost,
+human experts still expressed a high level of satisfaction with the Agent’s performance.
+
+Evaluation of LammpsWorker to generate script code
+
+We used a subset of the LEQS-Dataset containing only the task descriptions in order to evaluate the LLMs acting
+as LammpsWorker. Task descriptions were input into LAMMPSLLM, which then generated a corresponding
+output. The results were subsequently reviewed by materials science experts, who assigned scores based on the
+rating criteria used in the construction of the LEQS-Dataset, providing a score between 1 and 10. The results are
+shown in Fig. 4c.
+Our results demonstrated that the fine-tuned LAMMPSLLM model outperformed other large models of
+similar size that had not been fine-tuned for specific LAMMPS tasks. Further, the results confirmed the feasibility
+of using large models to generate LAMMPS scripts for thermodynamic tasks involving simple materials.
+
+Evaluation of LammpsEvaluator to evaluate script code
+
+We used a subset of the LEQS-Dataset designated as the test set to evaluate the ability of LLMs, acting as the
+LammpsEvaluator, to review existing LAMMPS script code and identify errors, effectively simulating the role
+of expert evaluators.
+The scores that LammpsEvaluator provided were compared with the standard scores given by human experts,
+and the results were further evaluated by human experts to assess the model’s scoring accuracy. The statistical
+results are presented in Fig. 4d–f. Figure 4d shows that, to a certain extent, human experts acknowledged
+the evaluation capability displayed by the model. Figure 4e,f demonstrate that fine-tuning reduced the mean
+absolute error (MAE) and mean squared error (MSE) values, indicating the promising potential of using LLMs
+as evaluators. While LammpsEvaluator is not yet ideal in terms of performance metrics because of limitations
+in the parameter size and data volume, it has demonstrated the potential to act as a reasonable evaluation tool.
+To a certain extent, in the future, with further fine-tuning, it is expected that LLMs could achieve a high level of
+consistency with human evaluators’ ratings, enabling them to accurately identify and correct issues in a manner
+similar to humans.
+
+Discussion
+
+In evaluating MDAgent, the following three aspects were analyzed. (1) Task Completion Efficiency: MDAgent
+showed substantial efficiency gains in both task definition and execution, demonstrating an enhanced workflow
+that reduced the time and effort compared to traditional methods. (2) LAMMPS Script Generation: MDAgent
+outperformed general models because of targeted fine-tuning, proving its ability to generate precise scripts and
+demonstrating excellent capabilities in script code generation. (3) Error Detection in Scripts: The LLM used as
+an evaluator exhibited consistency in scoring and provided constructive feedback on common errors. Overall,
+we conclude that MDAgent can effectively assist novice materials scientists in solving related problems based on
+these experiments.
+Looking ahead, there are several promising directions for future research. First, we plan to continue
+expanding the two datasets presented in this paper. Concurrently, we are exploring the extension of the MDAgent
+methodology to first-principles calculation tasks, including the use of the VASP software package for Density
+Functional Theory (DFT) calculations aimed at material property prediction. Second, inspired by the concept of
+“Agent-as-a-Judge”25, we believe that the Evaluator can further enhance its code review capabilities by adopting
+similar strategies.
+Finally, it is important to acknowledge that MDAgent is currently a semi-automated intelligent assistant,
+because current local small-parameter LLMs are not yet sufficient to automatically run all complex codes and
+programs, so human involvement is still needed in the process. We plan to transition it into a fully automated
+system, with a focus on enhancing Docker and LAMMPS integration and increasing the precision of the LLMdriven tool usage. Research such as AutoGPT26, Openai’s Operator and TaskWeaver27, which are designed to
+enable autonomous AI execution by translating user requests into executable code and coordinating various
+plugins to accomplish tasks, provide valuable insights for our work.
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+6
+
+www.nature.com/scientificreports/
+
+Fig. 4. Comparison of (a) task elapsed time, (b) subjective ratings by experts on task assistance, (c) evaluation
+scores for mainstream and fine-tuned models, and (d) scores for the Evaluator LLM. (e) Mean absolute error
+and (f) and mean squared error.
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+7
+
+www.nature.com/scientificreports/
+
+Methods
+
+Detailed description of the code implementation details please see the GitHub repository.
+
+Dataset for LAMMPS fine-tuning and evaluation
+
+Relevant datasets are required to fine-tune and evaluate MDAgent; however, there are currently no suitable opensource datasets available. In addition, there are no well-established automated evaluation methods. LAMMPS
+was used as a case study, to address this gap, and two MD datasets were developed, namely, the LEQS-Dataset
+and the LSCF-Dataset. An example of these datasets is shown in Fig. 2b. Based on existing research28–30, the
+quantity of data in these two datasets is sufficient to enable effective fine-tuning.
+LSCF-dataset
+We fine-tuned the model using a dataset of LAMMPS scripts in order to improve the LLM’s ability to handle
+LAMMPS material simulations. Because no standard dataset exists publicly, we created the “LAMMPS Script
+Collection for Fine-Tuning Dataset (LSCF-Dataset)”.
+We faced several challenges during dataset construction. First, material simulations cover a wide range of
+issues, requiring diverse data for the model to generalize across different scenarios. However, no integrated
+LAMMPS script dataset exists, and available scripts are scarce, varied in quality, and scattered. Second, material
+simulations involve complex terminology and concepts, the correct understanding of which is crucial for
+improving LLM performance. Third, high-quality data are essential, but they are difficult to obtain due to
+varying experimental conditions and research methods. Finally, many scripts lacked annotations, thus hindering
+the model’s ability to properly learn terminology, concepts, and script-writing techniques.
+We processed the collected LAMMPS scripts through several steps in order to create a high-quality finetuning dataset. We gathered case code from diverse sources, including official documentation, published
+papers, and open-source projects, which are classic and reliable script codes that add diversity and reliability
+to the dataset. We then screened the code, removing erroneous code through expert review or validation with
+experimental results, and retained only executable scripts. Finally, we annotated every script and divided it into
+three main parts: initialization, modeling, and computation, and explained important steps and concepts to help
+model learning. Then we converted it to Alpaca format for fine-tuning data. The molecular dynamics processes
+accomplished by each script are summarized as the value of instruction to the data, and the value of output is
+complete annotated script, with hint at the input section for more complex cases, such as “use NVT system
+synthesis”.
+Following processing, we created a dataset of 167 scripts, all of which were sourced from manual production,
+LAMMPS documentation cases, and online resources at a 1:2:2 ratio. Their structure is shown in Fig. 2b. It
+included 127 simulation scripts and 40 modeling scripts, covering a wide range of application scenarios and
+scientific problems. Incorporating a diverse range of problems from various domains enabled the comprehensive
+dataset to enhance the LLM’s capabilities, improving its performance not only in the obtainment of material
+thermodynamic parameters, but also extending its potential across other fields.
+The simulation dataset involves dynamic processes such as temperature change, shape change, force change,
+etc. It contains problems in various fields such as material mechanical property simulation, material synthesis
+and processing simulation, interface simulation, fluid simulation, heat transfer simulation and so on. The
+modeling dataset contains modeling problems for complex material systems (e.g., high-entropy alloys), extreme
+geometrical topologies (e.g., diamond trigonal tools, sinusoidal rough interfaces), multi-phase heterogeneous
+interfaces (Si/Cu pre-positioned cracks, CO2 -encapsulated water spheres), and functionally oriented structures
+(e.g., nanoindentation of semi-ellipsoidal indentation heads, graphene desalination slits). The broad coverage
+of different application scenarios and scientific problems ensures that the dataset reflects common situations in
+molecular dynamics.
+LEQS-dataset
+In collaboration with experts in materials science, we have developed a dataset: LAMMPS-Expert Question
+with Score Dataset (LEQS-Dataset). It consists of a collection of quadruples, where each quadruple includes the
+following:
+• Task A description of a task conducted using LAMMPS for calculating a specific thermodynamic property of
+materials using MD.
+• Result The corresponding LAMMPS script generated to complete the task.
+• Expert score A manually assigned score, ranging from 0 to 10, given by experts based on unified evaluation
+rules.
+• Score justification A detailed justification from the experts, explaining the score and considering multiple
+factors.
+The LEQS-Dataset was constructed through a multi-stage process. Initially, senior materials scientists designed
+tasks encompassing core aspects of material thermodynamic property calculation, including thermal expansion
+coefficients, thermal conductivity, density, and phase transition behavior. These tasks served as input for
+LammpsWorkerLLM, which generated corresponding LAMMPS scripts. To preserve the LLM’s raw output,
+these scripts were included in the dataset without modification. Subsequently, a team of experts discussed
+and developed a structured evaluation rubric with clear and uniform dimensions and scoring criteria, also
+summarizing common error types observed in LAMMPS scripts. This rubric, based on a perfect score of 10,
+guided the assessment of potential deductions based on six key factors: syntax correctness, logical consistency,
+parameter rationality, core logic accuracy, logical completeness, and code completeness.
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+8
+
+www.nature.com/scientificreports/
+A random subset of the LEQS-Dataset will be used for fine-tuning the LLM acting as the LammpsEvaluator,
+with a separate random subset designated for testing to ensure no overlap between the two.
+
+MDAgent design
+
+In this paper, we focus on LAMMPS as a representative software package to demonstrate the feasibility of our
+approach. Based on established scaling law theories in existing research31–35, MDAgent possesses inherent
+scalability, and the methodology can be readily transferred to other tasks in computational materials science. By
+adapting the datasets used for the Workers and Evaluator, along with the underlying models, MDAgent can be
+trained to generate code for other specialized software packages in the field, thereby addressing a wider range of
+complex problems.
+Overview
+The architecture of MDAgent is illustrated in Fig. 2a, structured around an intelligent agent system, comprising
+three primary components, namely, the Manager, the Executor, the Planner, the Expert Team (which includes
+software-specific Workers and Evaluators), and additional supporting elements. MDAgent also includes a
+memory module, allowing LLMs to remember and track system-wide messages, thus ensuring continuity and
+context retention throughout complex tasks. In addition, a user interface (UI) was designed to facilitate ongoing
+interactions between the user and the framework. When the agent is unable to complete a task independently, it
+can pause the current process and request clarification or assistance from the user via the UI.
+Manager
+The Manager serves as the entry point, receiving detailed user requirements as an input. When the user’s
+requirements are unclear or lack technical specificity, the Manager refines and rephrases them using expertise
+from the materials science domain.
+Internally, the Manager will invoke the Planner to formulate a high-level plan based on the user’s needs. This
+plan is then broken down into several sub-tasks using expert knowledge, which are subsequently assigned to the
+agent teams for execution. After every step, the Manager evaluates every team’s response and the current plan to
+determine the next team assigned for execution.
+Worker
+In the case of LAMMPS, the LammpsWorker generates LAMMPS script content based on assigned sub-tasks.
+This process leverages material-specific parameters, such as interatomic potentials, force fields, and simulation
+protocols, which are essential for accurate MD simulations. Therefore, the Worker should be an LLM with
+domain knowledge. For the experiments in this paper, fine-tuning techniques were chosen to enhance the
+domain knowledge of the LLM. The LSCF-Dataset was used as the fine-tuning dataset, and the QLoRA technique
+was applied for fine-tuning, along with the “Unsloth”36 framework to improve training efficiency.
+Considering that MDAgent may be used for other complex problems in future work, this paper provides
+RAG and Agent Tools as additional optional features to further ensure the scalability of the project, which also
+allows LLMs to acquire additional domain-specific knowledge through RAG and Agent Tools. On the one hand,
+even after fine-tuning the LLM, it may happen that the worker cannot easily solve some problems. At this point
+the MDAgent is allowed to try to acquire knowledge to help before answering by calling the RAG, or other
+Tools. On the other hand, considering other problems that the MDAgent faces in the future, the scenario may
+not be able to find a suitable fine-tuning dataset to fine-tune, which can only be solved by using the RAG and
+the TOOLS as alternatives.
+Simply put, if the Worker needs to reference domain-related content, it can utilize RAG function or other
+tools to retrieve information from a pre-built knowledge base provided by the user. To demonstrate, for the
+LammpsWorker, we gathered a collection of MD papers from the web and the official LAMMPS documentation
+as resources for the RAG module.
+Technically, the RAG system vectorizes the data using an open-source embedding model, then splits the data
+based on token count. An LLM is subsequently used to automatically annotate keywords, extracting N keywords
+for each chunk to increase their ranking for queries containing those keywords. During retrieval, the system
+employs a hybrid approach, integrating both vector retrieval and keyword search to enhance search precision.
+Furthermore, we utilize an open-source re-ranking model to refine the initial search results, ensuring that the
+retrieved information is highly relevant to the query. The Tools module includes a web search tool and APIs to
+access major materials science databases such as the Materials Project, providing comprehensive datasets on
+material properties, crystallography, and computational predictions.
+Evaluator and executor
+MDAgent used a subset of the LEQS-dataset designated for fine-tuning as the basis, converting it into an
+appropriate format for fine-tuning. We then fine-tuned a LammpsEvaluator model, built on the open-source
+large models, specifically for evaluation tasks. At the same time, we informed LammpsEvaluator about the
+evaluation dimensions and point deduction criteria previously discussed by the experts via PROMPT. To enable
+MDAgent to autonomously detect and correct code errors, we incorporated principles from Reflexion37 into
+the interactions between the Worker and Evaluator. The output generated by the Worker is assessed by the
+Evaluator, which provides a JSON-formatted score and reasoning. If the score falls below a specified threshold,
+the Evaluator offers feedback and suggestions, guiding the Worker to regenerate the output. This process is
+repeated until the score exceeds the threshold, at which point the output is considered satisfactory.
+For the Executor, we installed the required software in a Docker container, which allows the Manager to
+interact with and operate within the Docker environment using a command line interface (such as a UNIX
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+9
+
+www.nature.com/scientificreports/
+shell) or Python. This allows for the use of command-line commands and the execution of Python code within
+the environment.
+This setup theoretically enables automation by saving the generated script files locally and running them
+automatically to obtain actual execution results. However, due to certain uncertainties inherent in current LLMs,
+as well as limitations related to the model size and operational costs, interacting with the Docker container can
+be resource intensive. In general, it is often more cost-effective for users to independently run the generated
+scripts in the software.
+
+Data availability
+
+The code and datasets supporting the findings of this study are available from the corresponding author, Xiang
+Jing (jingxiang@pku.edu.cn), upon reasonable request. The data is also publicly available at ​h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​
+F​r​e​d​e​r​i​c​V​A​N​/​P​K​U​_​M​D​A​g​e​n​t​​
+Received: 2 December 2024; Accepted: 26 February 2025
+
+References
+
+1. Huang, T., Pan, Q. & Granick, S. Seriously non-thermal thermodynamics. Nat. Mater. 22, 1281–1282 (2023).
+2. Bartel, C. J., Rumptz, J. R., Weimer, A. W., Holder, A. M. & Musgrave, C. B. High-throughput equilibrium analysis of active
+materials for solar thermochemical ammonia synthesis. ACS Appl. Mater. Interfaces 11, 24850–24858 (2019).
+3. Plimpton, S. Fast parallel algorithms for short-range molecular dynamics. J. Comput. Phys. 117, 1–19 (1995).
+4. Frenkel, D. & Smit, B. Understanding Molecular Simulation: From Algorithms to Applications (Elsevier, 2023).
+5. Rapaport, D. C. The Art of Molecular Dynamics Simulation (Cambridge University Press, 2004).
+6. Hollingsworth, S. A. & Dror, R. O. Molecular dynamics simulation for all. Neuron 99, 1129–1143 (2018).
+7. Xu, W., Tao, Y., Xu, H. & Wen, J. Theoretical trends in the dynamics simulations of molecular machines across multiple scales. Phys.
+Chem. Chem. Phys. 26, 4828–4839 (2024).
+8. Noé, F., Tkatchenko, A., Müller, K.-R. & Clementi, C. Machine learning for molecular simulation. Annu. Rev. Phys. Chem. 71,
+361–390. ​h​t​t​p​s​:​​/​/​d​o​i​.​​o​r​g​/​1​0​​.​1​1​4​6​/​​a​n​n​u​r​​e​v​-​p​h​y​​s​c​h​e​m​-​​0​4​2​0​1​8​​-​0​5​2​3​3​1 (2020).
+9. OpenAI et al. GPT-4 Technical Report. https://doi.org/10.48550/arXiv.2303.08774 (2023).
+10. Bahrini, A. et al. ChatGPT: Applications, Opportunities, and Threats. https://doi.org/10.48550/arXiv.2304.09103 (2023).
+11. Bai, J. et al. Qwen Technical Report. http://arxiv.org/abs/2309.16609 (2023).
+12. GLM, T. et al. Chatglm: A Family of Large Language Models from glm-130b to glm-4 All Tools. http://arxiv.org/abs/2406.12793
+(2024).
+13. Lu, Y. et al. Unleashing the power of AI in science-key considerations for materials data preparation. Sci. Data 11, 1039. ​h​t​t​p​s​:​/​/​d​o​
+i​.​o​r​g​/​1​0​.​1​0​3​8​/​s​4​1​5​9​7​-​0​2​4​-​0​3​8​2​1​-​z​​​​ (2024).
+14. Wang, L. et al. A survey on large language model based autonomous agents. Front. Comp. Sci. 18, 1–26 (2024).
+15. Wu, Q. et al. Autogen: Enabling Next-gen llm Applications Via Multi-agent Conversation (2024).
+16. Jung, H., Covino, R. & Hummer, G. Artificial Intelligence Assists Discovery of Reaction Coordinates and Mechanisms from Molecular
+Dynamics Simulations. http://arxiv.org/abs/1901.04595 (2019).
+17. Ni, Z. et al. Matpilot: An llm-Enabled AI Materials Scientist Under the Framework of Human–Machine Collaboration. ​h​t​t​p​:​/​/​a​r​x​i​v​.​o​
+r​g​/​a​b​s​/​2​4​1​1​.​0​8​0​6​3​​​​ (2024).
+18. Jablonka, K. M. et al. 14 examples of how llms can transform materials science and chemistry: A reflection on a large language
+model hackathon. Dig. Discov. 2, 1233–1250 (2023).
+19. Zhang, D. et al. Chemllm: A Chemical Large Language Model. http://arxiv.org/abs/2402.06852 (2024).
+20. Zeni, C. et al. Mattergen: A Generative Model for Inorganic Materials Design. http://arxiv.org/abs/2312.03687 (2024).
+21. Bran, M. A. et al. Augmenting large language models with chemistry tools. Nat. Mach. Intell. 6, 525–535. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​3​8​/​
+s​4​2​2​5​6​-​0​2​4​-​0​0​8​3​2​-​8​​​​ (2024).
+22. Zhang, H., Song, Y., Hou, Z., Miret, S. & Liu, B. Honeycomb: A Flexible LLM-based Agent System for Materials Science. ​h​t​t​p​:​/​/​a​r​x​i​v​
+.​o​r​g​/​a​b​s​/​2​4​0​9​.​0​0​1​3​5​​​​ (2024).
+23. Zhang, Q. et al. Large-language-model-based ai agent for organic semiconductor device research. Adv. Mater. 36, 2405163. ​h​t​t​p​s​:​/​
+/​d​o​i​.​o​r​g​/​1​0​.​1​0​0​2​/​a​d​m​a​.​2​0​2​4​0​5​1​6​3​​​​ (2024).
+24. Kang, Y. & Kim, J. ChatMOF: An artificial intelligence system for predicting and generating metal–organic frameworks using large
+language models. Nat. Commun. 15, 4705. https://doi.org/10.1038/s41467-024-48998-4 (2024).
+25. Zhuge, M. et al. Agent-as-a-Judge: Evaluate Agents with Agents. http://arxiv.org/abs/2410.10934 (2024).
+26. Yang, H., Yue, S. & He, Y. Auto-gpt for Online Decision Making: Benchmarks and Additional Opinions. ​h​t​t​p​:​/​/​a​r​x​i​v​.​o​r​g​/​a​b​s​/​2​3​0​6​
+.​0​2​2​2​4​​​​ (2023).
+27. Qiao, B. et al. Taskweaver: A Code-First Agent Framework. http://arxiv.org/abs/2311.17541 (2024).
+28. Dong, G. et al. How abilities in large language models are affected by supervised fine-tuning data composition. In Proceedings of
+the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (eds Ku, L.-W. et al.) 177–198.
+https://doi.org/10.18653/v1/2024.acl-long.12 (Association for Computational Linguistics, 2024).
+29. Liu, H. et al. Few-shot parameter-efficient fine-tuning is better and cheaper than in-context learning. In Advances in Neural
+Information Processing Systems (eds Koyejo, S. et al.), vol. 35, 1950–1965 (Curran Associates, Inc., 2022).
+30. Ramirez, A., Agarwal, K., Juraska, J., Garg, U. & Walker, M. Controllable generation of dialogue acts for dialogue systems via
+few-shot response generation and ranking. In Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse
+and Dialogue (eds Stoyanchev, S. et al.) 355–369. https://doi.org/10.18653/v1/2023.sigdial-1.32 (Association for Computational
+Linguistics, 2023).
+31. Kaplan, J. et al. Scaling Laws for Neural Language Models. http://arxiv.org/abs/2001.08361 (2020).
+32. Hoffmann, J. et al. Training Compute-Optimal Large Language Models. http://arxiv.org/abs/2203.15556 (2022).
+33. Isik, B. et al. Scaling Laws for Downstream Task Performance Of Large Language Models. http://arxiv.org/abs/2402.04177 (2024).
+34. Yang, H. et al. Unveiling the generalization power of fine-tuned large language models. In Proceedings of the 2024 Conference of the
+North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)
+(eds Duh, K. et al.) 884–899. https://doi.org/10.18653/v1/2024.naacl-long.51 (Association for Computational Linguistics, 2024).
+35. Song, Y., Miret, S., Zhang, H. & Liu, B. HoneyBee: Progressive instruction finetuning of large language models for materials
+science. In Findings of the Association for Computational Linguistics: EMNLP 2023 (eds Bouamor, H. et al.) 5724–5739. ​h​t​t​p​s​:​​​/​​/​d​o​​i​
+.​o​r​​g​/​​1​0​.​1​8​6​​​5​3​​/​v​1​​/​2​​0​2​3​​.​f​i​n​d​​i​​n​g​s​-​e​​​m​n​l​p​.​3​8​0 (Association for Computational Linguistics, 2023).
+36. Daniel Han, M. H. et al. Unsloth (2023).
+37. Shinn, N. et al. Reflexion: Language Agents with Verbal Reinforcement Learning. https://doi.org/10.48550/arXiv.2303.11366 (2023).
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+10
+
+www.nature.com/scientificreports/
+
+Acknowledgements
+
+We gratefully acknowledge the support of the project “Key Technologies Research for Data Space Application
+Construction Oriented towards Computational Reproduction”. We thank LetPub (www.letpub.com.cn) for its
+linguistic assistance during the preparation of this manuscript. This project was supported by National Key Laboratory of Data Space Technology and System.
+
+Author contributions
+
+Z.F.S. conceived the experiments, wrote the paper, performed specific fine-tuning work, designed and conducted
+evaluation experiments, and was responsible for the Agent framework design and implementation, as well as
+assigning tasks to team members. C.X.X. wrote the paper, collected and produced dataset, conducted numerical
+experiments, graphed the results of the experiments. T.H. performed specific fine-tuning work. Y.T.J. performed
+specific fine-tuning work. B.W.W. handled material domain tasks in the experiments, evaluated experimental
+results X.Y.C. wrote the paper, provided materials science expertise to enhance the clarity and depth of the paper.
+All of the authors reviewed the manuscript.
+
+Declarations
+Competing interests
+
+The authors declare no competing interests.
+
+Additional information
+
+Correspondence and requests for materials should be addressed to Z.W. or X.J.
+Reprints and permissions information is available at www.nature.com/reprints.
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and
+institutional affiliations.
+Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives
+4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in
+any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide
+a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have
+permission under this licence to share adapted material derived from this article or parts of it. The images or
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence
+and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this licence, visit ​h​t​t​p​:​/​/​c​r​e​a​t​i​v​e​c​o​m​m​o​
+n​s​.​o​r​g​/​l​i​c​e​n​s​e​s​/​b​y​-​n​c​-​n​d​/​4​.​0​/​​​​.​​
+© The Author(s) 2025
+
+Scientific Reports |
+
+(2025) 15:10295
+
+| https://doi.org/10.1038/s41598-025-92337-6
+
+11
+
+

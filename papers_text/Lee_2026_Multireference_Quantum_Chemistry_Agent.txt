@@ -1,0 +1,1651 @@
+Can Autonomous LLM Agents Execute Multireference Quantum Chemistry
+Calculations?
+Victor Chang Lee and James M. Rondinelli∗
+
+arXiv:2609.13357v1 [physics.chem-ph] 11 Sep 2026
+
+Department of Materials Science and Engineering, Northwestern University, Evanston, IL, USA
+(Dated: September 15, 2026)
+Multireference electronic-structure calculations remain difficult to automate because critical
+workflow decisions, including active-space selection, state averaging, convergence recovery, and state
+identification, traditionally rely on expert judgment. Here, we investigate whether an autonomous
+large language model (LLM) agent can perform these tasks without human intervention. The agent
+selects active spaces using literature-grounded analogies or explicitly documented chemical reasoning,
+generates and submits ORCA calculations, analyzes outputs, and records all decisions in an auditable
+reasoning log. Benchmarking against 558 vertical transition energies (VTEs) from QUESTDB shows
+that an unguided baseline agent achieves 24.9% coverage with a mean absolute error (MAE) of
+0.373 eV. Introducing a structured decision ladder increases coverage to 44.1% while reducing the
+MAE to 0.339 eV. The largest gains are observed for double and Rydberg excitations, demonstrating
+that expert-informed procedural guidance substantially improves active-space construction and
+state identification. When provided with complete workflow information, the agent successfully
+reproduces published QUEST calculations with an MAE of only 23 meV, resolving 75% of target
+configurations within seven attempts. These results demonstrate that contemporary LLM agents can
+autonomously execute and reproduce complex multireference quantum-chemical workflows, while
+highlighting the importance of structured reasoning frameworks for achieving reliable high-throughput
+and high-fidelity electronic-structure calculations.
+
+I.
+
+INTRODUCTION
+
+In recent years, the generation of large-scale computational databases has emerged as a major breakthrough in
+materials research and molecular chemistry. At the firstprinciples level, density functional theory (DFT) serves
+as the primary method for data generation [1–3]. Benefiting from standardized computational pipelines that
+are straightforward to automate, along with a reasonable
+computational cost, DFT has enabled high-throughput
+databases that collectively span millions of systems, such
+as Meta FAIR’s OMol25 [4], the Materials Project [5],
+and the Open Quantum Materials Database (OQMD) [6],
+among others. However, standard exchange-correlation
+functionals to DFT fail systematically when static electron correlation is strong, impacting predictive capability
+of excited states [7], d- and f -block complexes [8, 9], diradicals, bioinorganic active sites [10], and photochemical
+reaction paths [11].
+Multiconfigurational (multireference) electronic structure methods, such as the Complete Active Space SelfConsistent Field (CASSCF) [12, 13], more accurately
+describe these strongly correlated regimes. The so-called
+active space in CASSCF is a subset of electrons and
+orbitals that are optimized using a full configuration iteration (FCI) to obtain the configuration iteration (CI)
+coefficients and the multiconfigurational wave function.
+To account for remaining dynamic correlation, CASSCF
+calculations are refined using multireference perturbative
+methods. One of the most prominent approaches is the
+N -electron valence state perturbation theory (NEVPT2).
+
+∗ jrondinelli@northwestern.edu
+
+A primary bottleneck in applying multiconfigurational
+methods at scale lies in determining which electrons and
+orbitals need to be treated explicitly within the correlated wavefunction [14]. Omitting essential orbitals fails
+to capture critical static correlation, whereas an excessively large active space rapidly becomes computationally
+intractable. Traditionally, active space selection relies
+on manual choices grounded in chemical intuition and
+literature precedents; it is also often biased towards a
+particular property of interest, presenting a major barrier
+to the large-scale generation of high-accuracy data for
+multiple or yet specified purposes.
+To minimize reliance on user intervention, several automated selection protocols have been introduced [14]. The
+two prominent examples are the atomic valence active
+space (AVAS) and AutoCAS [15–18]. The former uses a
+set of atomic orbitals (AO) of a minimal basis set that are
+sufficient to qualitatively represent the final CASSCF active orbitals while the later uses large-active-space density
+matrix renormalization group (DMRG) [19] calculations
+to identify orbitals characterized by strong correlation.
+Other efforts have tailored active space automation to
+high-throughput workflows and machine learning (ML)
+applications. To that end, Gagliardi and coworkers developed an automated protocol for molecular dynamics
+and ML potentials that generates initial active space
+guesses by interpolating molecular orbital coefficient matrices from previously optimized wavefunctions [20]. More
+recently, the same group developed an automated algorithm for high-throughput magnetic property calculations
+of lanthanides complexes [21].
+Recent advances in large language models (LLMs) offer a promising pathway to overcome this bottleneck.
+LLMs have demonstrated rapid improvements in techni-
+
+2
+cal reading comprehension, structured information extraction, and scientific reasoning [22–24]. In computational
+chemistry, LLMs have been studied as tools for molecular structure generation and prediction [25, 26]. More
+recently, LLM agents have recently been suggested for
+multireference computational chemistry tasks [27]. However, the full extent of their operational autonomy and
+decision making fidelity has not been systematically evaluated. Moving beyond static script generation or simple
+code execution requires quantifying how effectively an
+agent can independently handle non-trivial chemical judgments, including active-space selection, state-averaging
+schemes, and dynamic failure recovery, especially when
+confronted with challenging electronic structures. Leveraging these capabilities, we benchmark an autonomous
+LLM agent on executing complex multiconfigurational
+CASSCF calculations. By combining literature-derived
+domain context with dynamic decision scaffolding, the
+agent autonomously selects active spaces, constructs and
+executes a quantum chemistry software package. This
+framework allows us to systematically evaluate the agent’s
+ability to exercise expert-level chemical judgment, establishing both its baseline predictive accuracy and the key
+challenges in scaling autonomous multiconfigurational
+workflows.
+II.
+
+AGENT ARCHITECTURE AND
+BENCHMARK DESIGN
+A.
+
+Overview
+
+As illustrated in Figure 1, the autonomous LLM decision agent operates as a transparent reasoning engine
+rather than a black-box automation pipeline. The agent
+evaluates each molecule’s geometry, consults a curated
+literature database, constructs and submits ORCA v6.1
+[28] inputs. In CASSCF calculations, a geometry file
+alone is insufficient to start a calculation; it requires, at
+minimum, the electron/orbital counts of the active space,
+the multiplicities to compute, and the number of roots
+per multiplicity. These initial selections are informed by
+the knowledge sources provided to the model (see below).
+The LLM agent dynamically constructs the Python tools
+it deems necessary to complete its assigned task. To
+that end, the LLM agent makes all substantive chemistry
+decisions and records its reasoning in an append-only, permolecule audit log. The escalation logic (decision ladder)
+is kept strictly advisory and is never automatically executed. This design choice, enforced in code, stems from
+the realization that per-molecule quantum chemical judgment requires dynamic reasoning that static programs
+cannot provide.
+
+LLM Agent
+AIMdb
+Execution
+
+Input
+Claude Opus 5
+
+Molecular
+structure
+
+ORCA
+Manual
+
+Decision
+Ladder
+
+ORCA
+code
+
+CASSCF
+Results
+
+Tools
+Python
+
+SLURM
+Guide
+
+FIG. 1. Overview of the autonomous LLM agent workflow
+for quantum chemical calculations. Input molecular structures, along with reference documentation (ORCA manual
+and SLURM workload manager guide), are passed to the core
+agent powered by Claude Opus 5. The agent interacts with an
+internal database (AIMdb) and operates under a structured
+decision ladder to guide execution logic. During execution, the
+agent leverages Python scripting tools, consults its knowledge
+sources to generate CASSCF results.
+
+B.
+
+Knowledge Sources
+
+Benchmarking LLM-guided workflows is challenging
+because undisclosed training data can introduce datacontamination effects [29]. To mitigate this risk, we supply
+the agent with a curated reference database and explicitly
+instruct it to exclude any prior knowledge or literature
+precedents contained in QUESTDB [30]. The literature
+database was extracted from AIMdb [31], and is searched
+using the compound name or formula, metal center, d/f
+electron count, and ligand environment when a transitionmetal or lanthanide/actinide center is present. For each
+matching entry, the agent retrieves the active-space size,
+orbital description, computational protocol, multiplicities,
+method, and associated citation.
+Analogical reasoning is defined narrowly and explicitly
+in the agent policy. For a transition-metal and f -electron
+complex, a literature precedent is considered analogous
+only when it shares the same metal, oxidation state, and
+coordination environment. For organic and main-group
+systems, analogy requires the same functional group and
+conjugation pattern. Every active-space recommendation derived from an analogous precedent must cite the
+corresponding database entry. When no genuinely analogous examples are found, the agent policy defaults to
+sizing the active space directly from general quantumchemical principles. The resulting record is explicitly
+tagged so that readers can distinguish literature-based
+from agent-derived choices throughout the workflow and
+in all downstream data exports.
+When the target active orbitals can be specified in
+terms of atomic orbitals (AOs), the policy requires building the active space using the Atomic Valence Active
+Space (AVAS) approach rather than specifying explicitly the electron/orbital counts (nel , norb ) and allowing
+ORCA to populate the window strictly from the orbital-
+
+3
+energy frontier [15, 16]. Because AVAS derives the active
+space from chemically motivated AO targets, agreement
+with cited active-space sizes provides confidence in the
+selected space, while disagreements prompt additional
+examination of the orbital content and space definition.
+C.
+
+Governance and Audit Trail
+
+All chemical and technical decisions are delegated to the
+LLM agent without requiring a human approval. However,
+every decision must be grounded in literature precedent,
+the escalation ladder, or explicitly-flagged chemical intuition, and logged with reasoning to a per-molecule, in
+append-only files.
+The agent is required to stop and flag a particular
+calculation for four categories only: a genuine give-up
+condition (the attempt budget exhausted with every distinct action tried and recorded), literature conflict too
+large to explain (Rule F, see below), anything resembling data corruption and infrastructure failure outside
+the ladder’s scope. No early stopping condition exists
+for a repeated diagnosis and a recurring failure mode is
+explicitly defined as evidence that the previous fix was
+wrong, not that the molecule is intractable. The decision
+ladder enumerates the number of genuinely distinct actions available under a single diagnosis to clarify that a
+diagnosis is rarely exhausted after two or three attempts.
+Overruling the ladder or a cited literature entry is
+permitted but carries three obligations:
+1. State explicitly what is being overruled and provide
+the rational for doing so.
+2. Ground the override in something that can be
+checked against the same output (e.g., composition,
+occupation, symmetry, etc.).
+3. Document the override appropriately rather than
+framing it as established precedent.
+D.
+
+Convergence criteria
+
+To determined whether a CASSCF calculation has both
+numerically converged and produced a physically meaningful wave function, the agent is required to evaluate
+four independent validation criteria:
+1. Total energy relative to Hartree-Fock (HF):
+The CASSCF energy is compared against the corresponding HF energy obtained with the same molecular geometry and basis set. For a given state, the
+CASSCF energy should generally be lower than
+the HF reference. Although state-averaged calculations spanning many roots may occasionally yield
+energies slightly above the HF value, substantial increases indicate an incorrectly defined active space,
+convergence failure, or wave-function instability.
+
+2. Ground-state configuration-interaction (CI)
+weight: The weight of the dominant electronic configuration is monitored as a measure of static correlation. A leading configuration with a CI weight
+approaching unity indicates that the active space
+is contributing little to the wave function and that
+the calculation may be effectively single reference.
+Rather than applying a fixed universal threshold,
+the policy evaluates the ground state dominant CI
+weights relative to normally correlating attempts
+for that molecule.
+3. Irreducible representation (irrep) distribution: The symmetry distribution of active orbitals
+is compared with the intended active-space. Agreement in the total number of orbitals is insufficient;
+the orbitals must also occupy the correct irreps and
+correspond to the intended chemical subspace. An
+apparently correct irrep can still arise from an active space containing orbitals of incorrect chemical
+character.
+4. Orbital indices and CI-configuration positions: Molecular orbital (MO) indices and CIconfiguration identifies are valid only for the exact
+wave-function state that generated it. Because orbital ordering and CI string positions can change
+between optimization stages, state averages, and
+restarted calculations, the policy requires continuous verification of orbital indices and CI string
+positions at every decision point. Historical index
+lists are never assumed to remain valid, as doing
+so can lead to orbital rotations, active-space modifications, or state assignments being applied to
+unintended targets.
+E.
+
+Decision ladder
+
+The decision ladder defines a prioritized hierarchy of
+corrective and diagnostic actions used by the agent when
+a calculation deviates from the desired outcome. The
+rules are evaluated sequentially from highest to lowest priority, ensuring that fundamental execution and numerical
+issues are resolved before chemically motivated refinements are considered. Rather than serving as rigid, hardcoded constraints, the ladder functions as a collection of
+expert-informed heuristics and policy recommendations
+that guide autonomous decision-making while preserving
+flexibility across diverse chemical systems.
+• Rule A: Job execution failure. Detect and
+resolve scheduler- or infrastructure-level failures,
+including SLURM submission errors, node failures,
+wall-time limits, and missing output files.
+• Rule B: SCF non-convergence. Address failures
+of the underlying Hartree–Fock procedure through
+appropriate convergence aids, restart strategies, or
+modifications to the initial guess.
+
+4
+• Rule C: CASSCF non-convergence. Remedy
+failures of the multiconfigurational optimization,
+including problematic orbital rotations, inadequate
+active spaces, or unstable state averaging.
+• Rule D: Convergence to an incorrect electronic state. Identify situations in which the calculation converges formally but yields a chemically
+incorrect solution, such as an unintended occupation
+pattern, spin state, or orbital character.
+• Rule E: Incomplete correlation treatment.
+Recognize cases where convergence is achieved but
+the selected active space or state-averaging window is insufficient to capture the relevant electronic
+structure.
+• Rule F: Strong disagreement with literature
+precedent. Compare converged results with analogous literature benchmarks and investigate significant discrepancies in active-space composition, state
+ordering, or qualitative electronic structure.
+• Rule G: Rydberg or diffuse-state contamination. Detect and appropriately treat diffuse excited
+states that may require specialized basis functions,
+enlarged active spaces, or revised state-selection
+strategies.
+• Rule H: Successful completion. Confirm that
+the calculation has converged, the active orbitals
+possess the intended chemical character, orbital occupations are physically reasonable, and the results
+are consistent with available literature expectations.
+The agent’s ability to make chemically and physically
+informed calculations is concentrated within Rules D, E,
+and G, which address scenarios where formal numerical
+convergence alone is insufficient to guarantee a physically
+meaningful wave function. These rules, described below,
+govern incorrect electronic states, incomplete correlation
+treatment, and diffuse-state character.
+Rule D: Convergence to an Incorrect Electronic State
+
+During orbital optimization, the solver can gradually
+rotate a physically relevant active orbital into the inactive or virtual space while simultaneously replacing it
+with an unintended orbital. Consequently, the calculation may formally converge, yet the final active space
+can differ substantially from the intended one and contain orbitals with incorrect chemical character. To detect
+such failures, Rule D performs a comprehensive orbitalcomposition analysis based on three complementary diagonistics: natural orbital occupation numbers (NOON),
+Löwdin orbital decomposition analysis, and geometric
+atomic-contribution analysis. Together, these metrics assess both the correlation character and chemical identity
+of the active orbitals.
+
+When an incorrect active-space composition is identified, the primary corrective action is orbital rotation.
+Orbital rotations are used to bias the calculations toward
+a target electronic state by exchanging pairs of MOs from
+a previous calculation. Within the decision ladder, orbital
+rotation is treated as a core state-targeting mechanism
+rather than a post hoc workaround. To maintain physical
+consistency, however, rotations are strictly constrained
+from converged orbitals. Furthermore, when point-group
+symmetry is enabled, rotations must strictly preserve spatial symmetry by operating within individual irreps. To
+further prevent active-space drift, this rule pairs orbital
+rotations are coupled with level shifting and adaptive
+solver-selection strategies that stabilize retention of the
+intended active-space manifold.
+Rule E: Clean convergence with an Incomplete Correlation
+Space or Truncated Energy-root Window
+
+A CASSCF calculation may converge smoothly with
+a modest number of active electrons, orbitals, and stateaveraged roots yet still fail to provide an adequate description of the electronic structure. Such cases arise
+when the active space is too small to capture the relevant
+correlation effects or when the state-averaging window
+excludes energetically accessible states that influence the
+target solution. Rule E therefore probes the completeness of both the active space and the root window. For
+active-space validation, the agent examines the natural
+orbital occupation numbers (NOONs), paying particular
+attention to the least occupied active orbital. A small
+but non-negligible occupation suggests that additional
+correlating orbitals may be contributing to the wave function. In response, the subsequent calculation expands the
+active space and records the occupations of the newly
+introduced orbitals. The decision to retain the larger
+active space is based on the observed occupation pattern,
+e.g., mutual degeneracy, rather than a fixed threshold.
+Selection of the state-averaging window is governed by
+the energetic and symmetry relationships among the target states rather than by an arbitrary root count. When
+near-degenerate states are present, the window is expanded to ensure a balanced description of the relevant
+electronic manifold. Further expansion is constrained
+by available literature precedent and chemical justification. Beyond this regime, the policy favors performing
+separate calculations for distinct sets of states instead of
+indefinitely widening a single state-averaged calculation.
+Excessively large state-averaging windows can degrade
+the quality of the optimized molecular orbitals, as the
+orbitals must simultaneously accommodate an increasingly diverse set of electronic states. Consistent with this
+expectation, calculations performed with narrow stateaveraging windows typically yield slightly lower energies
+for a given target state than otherwise identical calculations employing much broader root windows.
+
+5
+
+CLAUDE.md
+
+TASK.md
+
+/runs/ & /logs/
+
+Agent Configuration
+
+Execution control
+
+Outputs & Verdicts
+
+Limit: 150k Characters
+
+Set objectives & limits
+
+Core Purpose
+
+Loop control
+
+Decision ladder
+
+Calculation directories
+Results & reasonings
+/runs/
+
+• Reopen
+periodically
+
+• Guidance
+• Systematic Checks
+
+• ORCA inputs &
+Outputs
+
+• Prompt to re-read
+CLAUDE.md
+
+• Verdicts.md files
+/logs/
+
+• Prevent context
+loss
+
+• decisions.csv
+• results.csv
+
+Evidence.md
+
+Supporting information
+
+FIG. 2. Agent architecture overview showing interactions between agent configuration (CLAUDE.md and Evidence.md), execution
+loop control (TASK.md), and output directories containing calculation runs (/runs/) and structured verdict logs (/logs/).
+
+Rule G: Rydberg (diffuse) states
+
+The preceding rules are designed to identify deficiencies in active-space composition, orbital occupations, and
+state selection; however, they are not sufficient for reliably
+detecting Rydberg excitations. Unlike valence excitations,
+Rydberg states are distinguished primarily by the large
+spatial extent and diffuse character of the orbitals involved rather than by their occupation patterns alone.
+Consequently, identifying such states requires explicit
+analysis of orbital diffuseness in addition to conventional
+active-space diagnostics.
+To address this limitation, the policy employs
+ORCA’s multiconfigurational random phase approximation (MCRPA) linear-response module using a converged
+CASSCF reference wave function. MCRPA is used exclusively as a diagnostic tool to identify candidate excited
+states and the orbitals that contribute to them. Because MCRPA excitation energies are obtained within
+a CASSCF linear-response framework, they do not recover the dynamic correlation subsequently captured by
+NEVPT2 and are therefore not used for reporting final
+excitation energies.
+Once candidate orbitals have been identified, their diffuse character is quantified by evaluating the smallest
+Gaussian exponent associated with the relevant atomic
+center and angular-momentum channel. Orbitals with significant contributions from highly diffuse basis functions
+are classified as Rydberg candidates and ranked accordingly. The identified diffuse orbitals are then incorporated
+into an expanded active space, after which the target state
+is recomputed using SA-CASSCF followed by NEVPT2.
+This procedure enables the agent to describe Rydberg
+states within a physically meaningful active space while
+
+retaining the quantitative accuracy of the final correlated
+treatment.
+F.
+
+Agent Implementation
+
+The Claude Opus 5 model was deployed using a modular instruction architecture (Figure 2). Claude Code
+initializes each agent session from a CLAUDE.md file, which
+defines the system instructions and operational framework
+governing the agent’s behavior. In practice, however, the
+size of this file is constrained, with performance often
+degrading as the instruction set grows beyond approximately 150,000 characters. Furthermore, during extended
+execution, newly generated content progressively occupies the context window (capped at 1 million tokens),
+increasing the risk that critical instructions, policy details, or reasoning guidance will receive less attention or
+be displaced from the model’s active context.
+To improve instruction persistence and reduce contextmanagement failures, the agent architecture separates
+information across three specialized files:
+• CLAUDE.md: Defines the system context, operational
+boundaries, and core policies (including the decision
+ladder and ORCA’s manual checks).
+• TASK.md: Manages execution state and objective
+tracking, forcing the agent to re-read system instructions at each iteration loop.
+• EVIDENCE.md: Serves as an auxiliary knowledge
+store, holding detailed reasoning, supporting context, and rule-specific justifications for the primary
+policies in CLAUDE.md.
+
+6
+
+FIG. 3. Framework for evaluating LLM agents performance across varying levels of domain context. The benchmark progresses
+along a gradient of model knowledge from minimal contextual information to extensive domain-specific guidance, enabling
+systematic assessment of replication fidelity and agent reliability. (DB: Database; VTE: Vertical transition energies; SA: State
+Average)
+
+This seperation minimizes competition for context-window
+resources, improves retention of critical operational policies, and provides a scalable framework for long-running
+autonomous calculations.
+III.
+
+COMPUTATIONAL METHODS
+
+Complete active space self-consistent field (CASSCF)
+calculations followed by strongly contracted N-electron
+valence state perturbation theory (SC-NEVPT2) were performed using the ORCA v6.1 software package [28, 32, 33].
+For all calculations, the aug-cc-pVTZ basis set was employed, consistent with the default protocol of QUESTDB.
+To accelerate the calculation of two-electron integrals,
+the resolution-of-identity chain-of-spheres exchange (RIJCOSX) approximation was utilized [34] together with
+auxiliary basis sets automatically generated via ORCA’s
+AutoAux feature. Active space construction and orbital
+selection were governed autonomously by an LLM agent
+workflow powered by Anthropic’s Claude Opus 5 model
+[35].
+To evaluate the autonomous decision-making performance of the agent, a curated benchmark set of 84
+molecules was selected from the 2025 QUESTDB[30]
+obtained with similar CASSCF/SC-NEVPT2 protocol. Although the reference benchmark calculations
+in QUESTDB were generated using MolPro [36], all
+CASSCF/SC-NEVPT2 calculations in this work were
+executed using the ORCA v6.1 software package to align
+with our local computational workflow.
+IV.
+
+RESULTS AND DISCUSSION
+A.
+
+Benchmark Framework
+
+To evaluate the ability of the LLM agent to autonomously perform multireference electronic-structure
+
+calculations, we benchmarked the workflow against the
+vertical transition energy (VTE) dataset contained in
+QUESTDB using only the molecular structure files. Three
+information regimes were considered (Figure 3)
+1. Baseline model: Access to the ORCA documentation and the literature database only.
+2. Decision model: The Baseline model supplemented with the decision ladder described in Section II E.
+3. Replication model: Access to all available
+QUESTDB knowledge, including all information
+required to reproduce published calculations.
+These three tiers define a controlled knowledge gradient,
+ranging from general quantum-chemistry resources to
+complete task-specific information. This framework allows
+the effects of domain context on agent performance to be
+isolated and quantified.
+The Baseline model establishes the capabilities of
+an essential unguided LLM agent operating with access
+only to standard software documentation and literature
+precedents. The ORCA manual provides methodological
+and implementation details, while the literature database
+supplies externally grounded examples of active spaces,
+state selections, and computational protocols. This design
+also serves as a partial control for potential training-data
+contamination, allowing decisions supported by explicit
+literature retrieval to be distinguished from those derived from the model’s internal chemical reasoning [31].
+Across the benchmark set, the agent identified direct literature analogues for the vast majority of molecules. Only
+four molecules from the QUESTDB benchmark dataset
+were deemed dissimilar from available precedents that
+active-space selection and state-averaging choices were
+were based primarily on chemical intuition rather that
+literature-grounded analogy [37–134].
+The Decision model augments the Baseline model
+with a decision ladder, providing a structured set of expert-
+
+7
+
+B.
+
+Impact of the Decision Ladder
+
+To quantify the role of structural domain guidance, we
+compare the performance of the Baseline and Decision
+models for predicting VTEs from molecular structures
+using CASSCF/SC-NEVPT2. Statistical error metrics,
+including the mean absolute error (MAE) and coefficient
+of determination (R2 ), were computed exclusively for
+VTEs whose identity against the reference could be unambiguously verified against the reference benchmark. VTEs
+identified solely by energy ordering or those belonging
+to a manifold of degenerate/near-degenerate states with
+ambiguous assignments were excluded from the error analysis and classified as unidentified. Consequently, failures
+in state assignment are reflected through the reduced coverage rather than artificially skewing the reported MAE
+or R2 values.
+The addition of the decision ladder significantly improves the overall performance. As shown in Figure 4,
+R2 = 0.713 for the Baseline model increases to R2 = 0.832
+for the Decision model, while the number of verified VTEs
+Nscored increased from 139 to 246. This simultaneous improvement in accuracy and coverage indicates that the
+procedural knowledge encoded within the decision ladder
+enables the agents to solve and execute a substantially
+larger fraction of multireference quantum chemistry problems without sacrificing predictive quality. This is further
+supported by the distribution of errors. In the Baseline
+model, 22 out of 139 scored VTEs (15.8%) exhibited absolute errors greater than 0.5 eV, with a maximum error of
+3.97 eV. In comparison, the Decision model increased the
+number of successfully identified VTEs to 246, of which
+46 (18.7%) exhibited absolute errors exceeding 0.5 eV
+and a maximum error of 3.76 eV. Although the decision
+ladder greatly expands the range of molecules that can
+be successfully treated, these results indicate that additional refinement of the decision policies are necessary to
+systematically reduce the largest energy errors.
+Performance is evaluated separately for each class of
+
+14
+
+Decision n=246 R 2=0.832
+Baseline n=139 R 2=0.713
+
+12
+
+Computed SC-NEVPT2 (eV)
+
+informed policies for diagnosing and correcting common
+failures in mulitreference calculation workflows. Importantly, the decision ladder neither overrides the LLM’s
+intrinsic reasoning process nor prescribes specific calculation inputs; it also does not have final authority over
+task-level decisions. Instead, it supplies procedural guidance while leaving final decisions to the agent, thereby
+isolating the value of formalized domain expertise independent of detailed task-specific instructions.
+Finally, the Replication model provides the agent
+with all workflow information to reproduce the QUESTDB
+results, including access to their repository resources,
+calculation protocols, and supporting and documentation.
+This regime represents an upper bound on the contextual
+information available to the agent and evaluates its ability
+to reproduce published multireference calculations when
+complete domain knowledge is accessible.
+
+10
+8
+6
+4
+2
+0
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+Reference SC-NEVPT2 (eV)
+
+12
+
+14
+
+FIG. 4. Comparison of computed and reference vertical transition energies for the Baseline and Decision models. The
+dashed line denotes perfect agreement.
+
+VTEs so that accuracy and coverage are assessed independently (Table I). Across the full benchmark out of
+Nrefs = 558 reference VTEs, the Decision model increased
+dataset coverage from 24.9% (Nscored = 138 in the Baseline model) to 44.1% while simultaneously reducing the
+overall MAE of 0.373 eV to 0.339 eV. However, performance varied substantially depending on the underlying
+electronic character of the VTE. For successfully scored
+VTEs, the agent was reasonable stable and there were no
+catastrophic outliers (Figure 4).
+The largest volume of scored cases belonged to single (valence) excitations (Nrefs = 352). The Decision
+model increased both metrics substantially, yielding 165
+scored VTEs (46.3% coverage) and reducing the MAE
+to 0.332 eV compared to the Baseline model with 124
+scored VTEs (34.8% coverage) and an MAE of 0.384 eV.
+Double excitations proved more difficult for the Baseline
+model, which failed to produce any verified assignments.
+In contrast, the Decision model successfully identified 14
+out of the 30 double excitations (46.7% coverage). This
+result highlights the importance of explicit policies for
+diagnosing incomplete active spaces and incorrect state
+assignments.
+C.
+
+Recovery of Rydberg States
+
+The most dramatic improvement was observed for Rydberg excitations, where coverage increased from only 4.8%
+to 46.0% while keeping a MAE of 0.308 eV comparable
+to that of single excitations. This behavior is consistent
+
+8
+TABLE I. Evaluation metrics by VTE excitation classes for the Baseline and Decision models. Nscored denotes the number of
+verified computed vertical transitions included in the statistical analysis, and Nrefs is the total number of reference transitions in
+QUESTDB.
+Nrefs
+356
+30
+124
+48
+558
+
+Class
+Single
+Double
+Rydberg
+TM
+Total
+
+Nscored
+124
+0
+6
+9
+139
+
+Baseline
+Coverage (%)
+34.8
+0.0
+4.8
+18.8
+24.9
+
+with the design of Rule G, which explicitly introduces
+orbital-diffuseness analysis and targeted active-space expansion for Rydberg-state identification. Without these
+diagnostics, the Baseline model rarely selected the diffuse orbitals required to describe Rydberg excitations.
+Transition-metal systems remained the most challenging
+category, exhibiting only modest improvements in coverage and similar MAEs between the two models. These
+results demonstrate that identifying diffuse orbital character is a critical capability that is not naturally captured
+through occupation analysis alone.
+D.
+
+Transition-Metal Systems
+
+Transition-metal excitations remained the most challenging class in the benchmark. Although the decisionguided workflow substantially improved the accuracy of
+successfully identified states, increasing reliability came
+at the expense of benchmark coverage. For the subset of
+four VTEs successfully evaluated by both workflows, the
+Decision model consistently outperformed the Baseline
+model, reducing the MAE from 0.348 to 0.217 eV.
+The reduction in coverage highlights a difficulty of
+transition-metal electronic structures. Unlike the predominantly organic systems found elsewhere in the benchmark,
+transition-metal can exhibit near-degenerate d-orbital
+manifolds, competing spin states, and complex excited
+manifolds and state-averaging. These features increase
+ambiguity in active-space selection and state assignment,
+making it difficult to distinguish physically meaningful solutions from formally converged but chemically incorrect
+wave functions. The improved accuracy achieved by the
+Decision model suggests that the additional validation
+procedures successfully filtered out a fraction of these incorrect solutions. However, the accompanying reduction
+in coverage indicates that the current decision policies
+remain insufficiently robust for general transition-metal
+chemistry. Future improvements will likely require more
+specialized active-space construction strategies, stronger
+state-tracking procedures, and a larger body of transitionmetal-specific literature precedents.
+
+Decision
+Coverage (%)
+46.3
+46.7
+46.0
+20.8
+44.1
+
+Nscored
+165
+14
+57
+10
+246
+
+MAE (eV)
+0.384
+–
+0.116
+0.393
+0.373
+
+E.
+
+MAE (eV)
+0.332
+0.488
+0.308
+0.429
+0.339
+
+Coverage
+
+To assess the robustness of our workflow, coverage was
+evaluated across all 84 target molecules. The Baseline
+model failed to reproduce a single reference-matched VTE
+for 33 molecules, whereas the Decision model failed on
+29 molecules. Of these failures, 23 were shared between
+both models, while 7 and 3 were unique to the Baseline
+and Decision models, respectively. The decision ladder
+substantially improved molecular-level coverage. The
+Decision model achieved an MAE below 0.3 eV for 38
+molecules, including 15 for which all reference VTEs were
+successfully reproduced. In comparison, the Baseline
+model achieved an MAE below 0.3 eV for 35 molecules,
+but only 3 reproduced the complete reference VTE set.
+The increased breadth of the Decision model is exemplified
+by triazine, for which all 14 reference VTEs were recovered,
+whereas the best Baseline result reproduced only 6 of 8
+VTEs for acrolein.
+Across molecules with at least one successfully identified
+VTE, the Decision model reproduced 71.7% of reference
+VTEs per molecule compared with 46.7% for the Baseline
+model. For the subset of 109 VTEs identified by both
+workflows, the two models exhibited comparable accuracy, with MAEs of 0.268 and 0.242 eV for the Decision
+and Baseline models, respectively. The largest error in
+both workflows occurred for cyclopentadienone, which
+exhibited MAEs of 3.763 (Decision model) and 3.774 eV
+(Baseline model).
+The increase in coverage was accompanied by a higher
+computational cost. The Baseline model completed 131
+calculations spanning 84 distinct structure, active-space,
+and state-averaging configurations. In contrast, the Decision model executed 576 calculations across 148 configurations and reached the maximum eight-attempt limit
+for two molecules without obtaining a successful result.
+Nevertheless, both workflows remained conservative relative to the QUESTDB benchmark, which contains 502
+distinct active-space and state-averaging protocols.
+F.
+
+Failure Modes and Limitations
+
+The dominant failure mode for both models was the inability to identify an active space and state-averaging
+
+9
+
+14
+
+TABLE II. Evaluation metrics by VTE excitation classes for
+the Replication model. Nscored denotes the number of verified
+computed vertical transitions, and Nrefs the total number of
+reference transitions in QUESTDB.
+Nrefs
+356
+30
+124
+48
+558
+
+Nscored
+266
+19
+61
+32
+378
+
+Replication
+Coverage (%)
+74.7
+63.3
+49.2
+66.7
+67.7
+
+MAE (eV)
+0.023
+0.019
+0.021
+0.037
+0.023
+
+strategy to reproduce the reference electronic states.
+These failures led into incorrect underlying orbital manifolds, missed VTEs, and incomplete descriptions of electronically complex systems, particularly molecules containing transition-metals.
+More broadly, most unsuccessful benchmark cases arose
+from incorrect or ambiguous state assignments rather than
+large numerical errors in successfully identified states.
+This observation suggests that future improvements are
+more likely to come from enhanced orbital interpretation, state tracking, and active-space construction than
+from incremental refinements in the underlying electronicstructure methods. Accurately identifying the desired electronic states remains a difficult problem even for expert
+practitioners, especially when little a priori information
+is available.
+Despite these limitations, the benchmark demonstrates
+that LLM agents can achieve reasonable quantitative
+accuracy when appropriate active spaces and state assignments are obtained. More importantly, the results show
+that structured decision policies substantially improve
+the autonomous execution of multireference quantumchemical workflows by increasing both the reliability and
+breadth of successful calculations. This highlight opportunities for improving state-selection strategies rather than
+fundamental limitations of the agent-based framework
+itself.
+G.
+
+Replication Test
+
+To establish an upper bound on agent performance, we
+evaluated a Replication model provided with all information necessary to reproduce the QUESTDB reference
+calculations. This included the active space definitions,
+state-averaging specifications by irrep, and the associated
+publications and supplementary information. As shown
+in Figure 5, the replicated calculations exhibit excellent
+agreement with the reference data, without evidence of
+systematic bias or significant outliers. This result shows
+that the LLM agent can reliably reproduce published multireference workflows when provided with the necessary
+computational context.
+Unlike the previous benchmarks, which only verified
+
+12
+
+Computed SC-NEVPT2 (eV)
+
+Class
+Single
+Double
+Rydberg
+TM
+Total
+
+R 2 = 0.9995
+
+10
+8
+6
+4
+2
+0
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+Published SC-NEVPT2 (eV)
+
+12
+
+14
+
+FIG. 5. Comparison of computed and reference vertical transition energies for the Replication model. The dashed line
+denotes perfect agreement.
+
+VTE identity matches, successful replication additionally
+required reproducing the published active-space and stateaveraging protocols. Under these stricter criteria, the
+Replication model achieved an overall MAE of 23 meV,
+representing an order-of-magnitude improvement over
+both the Baseline and Decision models. Performance
+was remarkably consistent across excitation classes, with
+transition-metal systems showing only a modest increase
+in error (Table II).
+In total, 201 VTEs were reproduced with errors below
+5 meV, including 51 reproduced exactly. The remaining
+overall MAE of 0.023 eV is primarily due to differences in
+state-average weighting between ORCA and MOLPRO.
+56 states were computing using weighting schemes that
+differed from the original MOLPRO calculations, resulting
+in a higher average MAE of 45.1 meV. Whereas MOLPRO
+applies equal weighting to all roots, ORCA weights roots
+by blocks. Although this discrepancy is documented in
+the decision ladder, it was not strictly enforced within the
+decision-making process, leading to it being overlooked in
+multiple instances. In contrast, when the agent explicitly
+corrected the state-average weights to match the reference protocol (22 states), the average MAE decreased to
+8.1 meV. Thus, the residual discrepancies arise primarily
+from workflow implementation details rather than failures
+in state identification or active-space selection.
+Overall, coverage reached 67.7%, with most unreproduced VTEs attributable to the imposed limit of eight
+calculation attempts: 117 VTEs reached the attempt cap
+without a successful result, 51 produced incorrect solutions, 9 converged without yielding a usable assignment,
+
+10
+
+250
+200
+
+210
+42%
+
+V.
+
+150
+
+n
+
+114
+23%
+
+100
+
+62
+12%
+
+50
+0
+
+1
+
+2
+
+29 27
+20 16 9
+6% 5% 15 4%
+3% 2%
+3%
+3 4 5 6 7 8 >8
+
+Attempts submitted
+
+FIG. 6. Distribution of calculation attempts executed by the
+LLM agent per target specification. Percentages and absolute
+counts (n) are shown above each bar. The imposed attempt
+threshold is capped at 8 (n = 9, 2%), while the gray-hatched
+bar (> 8, n = 114, 23%) corresponds to specifications that
+failed to converge within the maximum allowed attempt limit
+and would require additional calculations to complete.
+
+and only 3 failed due to other errors. Thus, the principal
+constraint on coverage was not accuracy but the computational budget allocated to autonomous exploration.
+While increasing the allowed attempts could improve
+coverage, the resulting computational cost must be factored into evaluations of LLM replication capabilities
+as the computational cost of replication was substantial.
+The agent submitted 2,459 ORCA jobs, of which 1,253
+successfully reproduced the target VTEs. For these successful runs, the agent needed 3.48 calculation attempts
+on average to successfully reproduce a calculation. The
+largest contributor to unsuccessful calculations was the
+eight-attempt cap, accounting for 776 jobs. Nevertheless,
+42% of target specifications (n = 210) were reproduced
+on the first attempt, typically when MP2 natural orbitals
+already generated the correct active space. Moreover,
+75% of successful reproductions were completed within
+seven attempts, and 77% within the imposed limit of eight
+attempts. These results indicate that roughly one-third
+of benchmark calculations required at least one corrective
+intervention by the agent.
+The distribution in Figure 6 also suggests diminishing
+returns beyond approximately eight attempts, as increasingly large computational effort is required to recover a
+progressively smaller fraction of remaining targets. Consequently, future improvements are likely to be achieved
+more effectively through refinement of the decision policies than by simply increasing the allowed number of
+attempts. Additionally, the agent could be used as a
+screening or ranking tool to filter out routine calculations
+while reserving challenging cases for human experts.
+
+CONCLUSIONS
+
+We benchmarked an autonomous LLM agent capable
+of executing multireference quantum-chemical workflows,
+including active-space selection, ORCA input generation,
+output analysis, convergence recovery, and electronic-state
+identification. Across 558 reference vertical transition
+energies from QUESTDB, introducing a structured decision ladder increased benchmark coverage from 24.9%
+to 44.1% while reducing the overall MAE from 0.373
+to 0.339 eV. The largest gains were observed for double and Rydberg excitations, demonstrating that expertinformed decision policies can substantially improve the
+reliability and breadth of autonomous multireference calculations. Transition-metal systems remained the most
+challenging class, highlighting the need for more specialized active-space construction, state-tracking procedures,
+and domain-specific guidance.
+The replication benchmark establishes a practical upper
+bound on agent performance when complete contextual
+information is available. Under these conditions, the
+agent reproduced published calculations with an overall
+MAE of only 23 meV, with 42% of target calculations
+completed on the first attempt and 75% within seven
+attempts. Our results show that LLM agents are capable
+of reliably reproducing complex multireference workflows.
+The dominant remaining limitations arise from workflow
+efficiency and search strategy rather than an inability to
+recover the correct electronic structure. The ability to
+autonomously replicate published calculations creates new
+opportunities for automated verification, cross-platform
+benchmarking, and large-scale reproducibility studies of
+quantum chemical data.
+To that end, our results demonstrate that the effectiveness of LLM agents in scientific computing depends
+strongly on the quality of the reasoning framework provided to them. General-purpose language models possess
+substantial chemical knowledge but often lack the structured decision-making processes required for demanding
+multistep workflows. Embedding expert knowledge in the
+form of decision ladders, validation criteria, and domainspecific retrieval systems offers a practical route toward
+improving reliability while retaining the flexibility of foundation models. Future progress will likely come from agent
+architectures that combine specialized scientific knowledge
+bases, more sophisticated state identification and activespace selection strategies, and tighter integration between
+machine reasoning and electronic-structure theory. Such
+developments could substantially reduce computational
+overhead while increasing coverage and accuracy, enabling
+autonomous, high-throughput multireference quantum
+chemistry and accelerating the generation, verification,
+and dissemination of computational benchmark data.
+
+11
+CODE AND DATA AVAILABILITY
+
+All data presented in this work were generated using
+publicly available software. The LLM agent and documentation, the generated data and LLM reasoning is available
+at [Placeholder].
+
+CESS) program, which is supported by U.S. National Science Foundation grants #2138259, #2138286, #2138307,
+#2137603, and #2138296. During the preparation of this
+manuscript/study, the author(s) used Microsoft Copilot
+(institutional instance) for the purposes of editing and
+language polishing. No new content was generated, and
+the authors have reviewed and edited the output and take
+full responsibility for the content of this publication.
+
+ACKNOWLEDGMENTS
+
+This material is based upon work supported by the U.S.
+Department of Energy, Office of Science, Office of Basic
+Energy Sciences under Award Number DE-SC0025176.
+This research was supported in part through the computational resources and staff contributions provided
+for the Quest high performance computing facility at
+Northwestern University which is jointly supported by
+the Office of the Provost, the Office for Research, and
+Northwestern University Information Technology. This
+work used Anvil at Purdue University through allocation PHY250069 from the Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (AC-
+
+[1] K. Burke, Perspective on density functional theory, The
+Journal of Chemical Physics 136, 150901 (2012).
+[2] P. Hohenberg and W. Kohn, Inhomogeneous electron
+gas, Phys. Rev. 136, B864 (1964).
+[3] W. Kohn, A. D. Becke, and R. G. Parr,
+Density functional theory of electronic structure, The Journal of Physical Chemistry 100,
+12974 (1996), https://pubs.acs.org/jpchax/articlepdf/100/31/12974/16073344/jp960669l.pdf.
+[4] D. S. Levine, M. Shuaibi, E. W. C. Spotte-Smith,
+M. G. Taylor, M. R. Hasyim, K. Michel, I. Batatia,
+G. Csányi, M. Dzamba, P. Eastman, N. C. Frey, X. Fu,
+V. Gharakhanyan, A. S. Krishnapriyan, J. A. Rackers,
+S. Raja, A. Rizvi, A. S. Rosen, Z. Ulissi, S. Vargas,
+C. L. Zitnick, S. M. Blau, and B. M. Wood, The open
+molecules 2025 (omol25) dataset, evaluations, and models (2026), arXiv:2505.08762 [physics.chem-ph].
+[5] M. K. Horton, P. Huck, R. X. Yang, J. M. Munro,
+S. Dwaraknath, A. M. Ganose, R. S. Kingsbury, M. Wen,
+J. X. Shen, T. S. Mathis, A. D. Kaplan, K. Berket,
+J. Riebesell, J. George, A. S. Rosen, E. W. C. SpotteSmith, M. J. McDermott, O. A. Cohen, A. Dunn, M. C.
+Kuner, G.-M. Rignanese, G. Petretto, D. Waroquiers,
+S. M. Griffin, J. B. Neaton, D. C. Chrzan, M. Asta,
+G. Hautier, S. Cholia, G. Ceder, S. P. Ong, A. Jain, and
+K. A. Persson, Accelerated data-driven materials science
+with the materials project, Nature Materials 24, 1522
+(2025).
+[6] S. Kirklin, J. E. Saal, B. Meredig, A. Thompson, J. W.
+Doak, M. Aykol, S. Rühl, and C. Wolverton, The open
+quantum materials database (oqmd): assessing the accuracy of dft formation energies, npj Computational
+Materials 1, 15010 (2015).
+[7] S. Saade and H. G. A. Burton, Excited statespecific casscf theory for the torsion of ethy-
+
+AUTHOR CONTRIBUTIONS
+
+V.C.L. - Writing - Original Draft, Conceptualization,
+Methodology, Software, Formal analysis, Investigation, Visualization, Resources. J.M.R. - Writing - Original Draft ,
+Supervision, Project administration, Funding acquisition.
+COMPETING INTEREST
+
+The authors declare no competing interests.
+
+lene, Journal of Chemical Theory and Computation
+20, 5105 (2024), https://pubs.acs.org/jctcce/articlepdf/20/12/5105/1775462/ct4c00212.pdf.
+[8] R. Khurana, M. R. Hermes, V. Agarawal, C. Knight,
+L. Gagliardi, and C. Liu, Multireference investigations
+of ethylene hydrogenation over bimetallic catalysts, npj
+Computational Materials 10.1038/s41524-026-02255-y
+(2026).
+[9] W. T. Morrillo, A. Mattioni, W. J. A. Blackmore, D. P.
+Mills, and N. F. Chilton, Modelling electric field control in a 4f molecular qudit with hyperfine coupling,
+Communications Chemistry 9, 45 (2025).
+[10] D. Barreiro-Lage, V. Ledentu, J. D’Ascenzi,
+M. Huix-Rotllant, and N. Ferré, Investigating
+the origin of automatic rhodopsin modeling outliers using the microbial gloeobacter rhodopsin as
+testbed, The Journal of Physical Chemistry B 128,
+12368 (2024), https://pubs.acs.org/jpcbfk/articlepdf/128/50/12368/14969665/jp4c05962.pdf.
+[11] X. Miao, K. Diemer, and R. Mitrić, A casscf/mrci trajectory surface hopping simulation of the photochemical
+dynamics and the gas phase ultrafast electron diffraction patterns of cyclobutanone, The Journal of Chemical
+Physics 160, 124309 (2024).
+[12] P. E. M. Siegbahn, J. Almlöf, A. Heiberg, and B. O.
+Roos, The complete active space scf (casscf) method in
+a newton–raphson formulation with application to the
+hno molecule, The Journal of Chemical Physics 74, 2384
+(1981).
+[13] D.-K. Dang and P. M. Zimmerman, Fully variational
+incremental casscf, The Journal of Chemical Physics
+154, 014105 (2021).
+[14] J. J. Wardzala, M. R. Hennefarth, V. Agarawal,
+B. Jangid, A. Seal, M. R. Hermes, D. S. King,
+and L. Gagliardi, Multireference methods for
+
+12
+chemistry and materials science:
+Automated
+datasets for metal–organic frameworks, Digital Disactive
+spaces,
+efficient
+dynamic
+correlation,
+covery 4, 2676 (2025), https://pubs.rsc.org/dd/articleand extended systems, Chemical Reviews 126,
+pdf/4/10/2676/10331351/d5dd00081e.pdf.
+4592
+(2026),
+https://pubs.acs.org/chreay/article[25] J. M. Cavanagh, K. Sun, A. Gritsevskiy, D. Bagni,
+pdf/126/8/4592/65005694/cr5c00866.pdf.
+Y. Wang, T. D. Bannister, and T. Head-Gordon, Smi[15] E. R. Sayfutyarova, Q. Sun, G. K.-L. Chan,
+leyllama: modifying large language models for directed
+and G. Knizia, Automated construction of molecchemical space exploration, Nature Computational Sciular active spaces from atomic valence orbitals,
+ence 6, 856 (2026).
+Journal of Chemical Theory and Computation
+[26] J. M. Cavanagh, J. B. Arnold, G. B. Alteri, A. Grit13, 4063 (2017), https://pubs.acs.org/jctcce/articlesevskiy, and T. Head-Gordon, How well can frontier
+pdf/13/9/4063/7645019/ct7b00128.pdf.
+large language models generate structures? high quality prediction of molecular geometries with help from
+[16] E. R. Sayfutyarova and S. Hammes-Schiffer, Constructing molecular π-orbital active spaces for
+fine-tuning (2026), arXiv:2607.13350 [physics.chem-ph].
+multireference calculations of conjugated systems,
+[27] Y. Chen, D. G. Truhlar, and X. He, Cof26: A new on-top
+Journal of Chemical Theory and Computation 15,
+functional for multiconfiguration pair-density functional
+1679
+(2019),
+https://pubs.acs.org/jctcce/articletheory (2026), arXiv:2605.06215 [physics.chem-ph].
+pdf/15/3/1679/10312694/ct8b01196.pdf.
+[28] F. Neese, Software update: The orca program system—
+[17] C. J. Stein and M. Reiher, Automated seversion 6.0, Wiley Interdiscip. Rev. Comput. Mol. Sci.
+lection of active orbital spaces, Journal of
+15, e70019 (2025).
+Chemical Theory and Computation 12, 1760
+[29] K. Zhou, Y. Zhu, Z. Chen, W. Chen, W. X. Zhao,
+(2016),
+https://pubs.acs.org/jctcce/articleX. Chen, Y. Lin, J.-R. Wen, and J. Han, Don’t
+pdf/12/4/1760/8916165/ct6b00156.pdf.
+make your llm an evaluation benchmark cheater (2023),
+[18] C. J. Stein and M. Reiher, autocas: A program for
+arXiv:2311.01964 [cs.CL].
+fully automated multiconfigurational calculations,
+M. Boggio-Pasqua,
+A. Blondel,
+[30] P.-F. Loos,
+Journal of Computational Chemistry 40, 2216 (2019),
+F. Lipparini, and D. Jacquemin, Quest database
+https://onlinelibrary.wiley.com/doi/pdf/10.1002/jcc.25869.
+of
+highly-accurate
+excitation
+energies,
+Jour[19] G. K.-L. Chan, An algorithm for large scale density
+nal of Chemical Theory and Computation 21,
+matrix renormalization group calculations, The Journal
+8010
+(2025),
+https://pubs.acs.org/jctcce/articleof Chemical Physics 120, 3172 (2004).
+pdf/21/16/8010/41269129/ct5c00975.pdf.
+[20] W. Jeong, S. J. Stoneburner, D. King, R. Li,
+[31] V. C. Lee, J. Lee, and J. M. Rondinelli,
+A. Walker, R. Lindh, and L. Gagliardi, AutomaAimdb:
+Artificial
+intelligence
+multiconfigution of active space selection for multireference methrational
+database,
+ChemRxiv
+2026
+(2026),
+ods via machine learning on chemical bond dissohttps://chemrxiv.org/doi/pdf/10.26434/chemrxiv.15007136/v1.
+ciation, Journal of Chemical Theory and Computa[32] F. Neese, The orca program system, Wiley Interdiscip.
+tion 16, 2389 (2020), https://pubs.acs.org/jctcce/articleRev. Comput. Mol. Sci. 2, 73 (2012).
+pdf/16/4/2389/6275351/ct9b01297.pdf.
+[33] C. Angeli, R. Cimiraglia, S. Evangelisti, T. Leininger,
+and J.-P. Malrieu, Introduction of n-electron valence
+[21] J. Zhou, B. Jangid, M. R. Hermes, and
+L.
+Gagliardi,
+High-throughput
+multireference
+states for multireference perturbation theory, The Jourcalculations of magnetic properties of lannal of Chemical Physics 114, 10252 (2001).
+[34] S. Kossmann and F. Neese, Efficient structure
+thanide
+complexes,
+ChemRxiv
+2026
+(2026),
+https://chemrxiv.org/doi/pdf/10.26434/chemrxiv.15003428/v2. optimization with second-order many-body per[22] J. Gottweis, W.-H. Weng, A. Daryin, T. Tu, P. Sirkovic,
+turbation theory: The rijcosx-mp2 method, JourA. Myaskovsky, G. Glowaty, F. Weissenberger, A. Ornal of Chemical Theory and Computation 6,
+landi, D. Popovici, A. Palepu, K. Rong, R. Tanno,
+2325
+(2010),
+https://pubs.acs.org/jctcce/articleK. Saab, F. Zhang, J. Blum, A. Carroll, K. Kulkapdf/6/8/2325/1961783/ct100199k.pdf.
+[35] Anthropic, Claude, Large language model (2026), acrni, N. Tomašev, D. Zverinski, I. Rendulic, E. Vedadi,
+F. Hasler, L. Rimanic, M. Boia, I. Budiselic, B. Fecessed: [Date, e.g., July 31, 2026].
+instein, M. Bellaiche, T. Sheffer, J. Freyberg, J. Rat[36] H.-J. Werner, P. J. Knowles, F. R. Manby, J. A. Black,
+cliff, O. Bertolli, K. Chou, A. Hassidim, B. Gokturk,
+K. Doll, A. Heßelmann, D. Kats, A. Köhn, T. KoA. Vahdat, Y. Guan, V. Dhillon, E. D. Vaishnav, B. Lee,
+rona, D. A. Kreplin, Q. Ma, I. Miller, Thomas F.,
+T. R. D. Costa, J. R. Penadés, G. Peltz, Y. Matias,
+A. Mitrushchenkov, K. A. Peterson, I. Polyak, G. Rauhut,
+J. Manyika, D. Hassabis, Y. Xu, P. Kohli, A. Pawlosky,
+and M. Sibaev, The molpro quantum chemistry package,
+A. Karthikesalingam, and V. Natarajan, Accelerating
+The Journal of Chemical Physics 152, 144107 (2020).
+scientific discovery with co-scientist, Nature 655, 487
+[37] M. Hapka, M. Przybytek, and K. Pernal, Second-Order
+(2026).
+Exchange-Dispersion Energy Based on a Multireference
+[23] A. E. Ghareeb, B. Chang, L. Mitchener, A. Yiu, C. J.
+Description of Monomers, Journal of Chemical Theory
+Szostkiewicz, D. Shved, G. J. Gyimesi, J. M. Laurent,
+and Computation 10.1021/acs.jctc.9b00925 (2019).
+S. M. Wright, M. T. Razzak, A. D. White, S. C. Finne[38] B. C. Hoffman, Y. Yamaguchi, and H. F. Schaefer, The X̃
+mann, M. M. Hinks, and S. G. Rodriques, A multi-agent
+1A1, ã 3B1 and Ã 1B1 Electronic States of the Aluminum
+system for automating scientific discovery, Nature 655,
+Dihydride Anion, The Journal of Physical Chemistry A
+497 (2026).
+10.1021/jp984714w (1999).
+[24] Y. Shi, N. Rampal, C. Zhao, D. J. Fu, C. Borgs, J. T.
+[39] A. Kerridge, Oxidation state and covalency in fChayes, and O. M. Yaghi, Comparison of llms in exelement metallocenes (M = Ce, Th, Pu): a combined
+tracting synthesis conditions and generating q&amp;a
+CASSCF and topological study, Dalton Transactions
+
+13
+10.1039/c3dt52279b (2013).
+[40] J. Lennartz, E. Dumas, L. Ramirez, and J. M. Galbraith,
+A Computational Determination of the Lowest Energy
+Electronic and Geometric States of First Row Transition Metal Dioxygen Dications, Journal of Theoretical
+Chemistry 10.1155/2013/734354 (2013).
+[41] X. Li, W. Ai, and N. Q. Su, A Benchmark Database for
+Spin-Flip Gap Calculations in Single- and Multireference
+Systems Using ∆DFT and Beyond, Journal of Chemical Theory and Computation 10.1021/acs.jctc.5c01411
+(2025).
+[42] F. Feixas, J. Vandenbussche, P. Bultinck, E. Matito,
+and M. Solà, Electron delocalization and aromaticity in low-lying excited states of archetypal organic
+compounds, Physical Chemistry Chemical Physics
+10.1039/c1cp22239b (2011).
+[43] A. O. Lykhin, D. G. Truhlar, and L. Gagliardi, Dipole
+Moment Calculations Using Multiconfiguration PairDensity Functional Theory and Hybrid Multiconfiguration Pair-Density Functional Theory, Journal of Chemical Theory and Computation 10.1021/acs.jctc.1c00915
+(2021).
+[44] S. A. do Monte, R. F. K. Spada, R. L. R. Alves,
+L. Belcher, R. Shepard, H. Lischka, and F. Plasser, Quantification of the Ionic Character of Multiconfigurational
+Wave Functions: The Qat Diagnostic, The Journal of
+Physical Chemistry A 10.1021/acs.jpca.3c05559 (2023).
+[45] J. G. F. Romeu, J. L. Gole, and D. A. Dixon, The
+Electronic Structure of Boron, Aluminum, and Scandium
+Monoxides: BO, AlO, and ScO, The Journal of Physical
+Chemistry A 10.1021/acs.jpca.5c05513 (2025).
+[46] C. Sepali, L. Goletto, P. Lafiosca, M. Rinaldi, T. Giovannini, and C. Cappelli, Fully Polarizable Multiconfigurational Self-Consistent Field/Fluctuating Charges
+Approach, Journal of Chemical Theory and Computation
+10.1021/acs.jctc.4c01125 (2024).
+[47] C. Sousa, W. A. de Jong, R. Broer, and W. C. Nieuwpoort, Theoretical characterization of the low-lying excited states of the CuCl molecule, The Journal of Chemical Physics 10.1063/1.473161 (1997).
+[48] S. An, T. Wang, L. Xiao, D. Liu, X. Zhang,
+and B. Yan, Opacities of X2Σ+, A2Π, and B2Σ+
+states of CO+ molecule ion, Acta Physica Sinica
+10.7498/aps.74.20250380 (2025).
+[49] J. M. Anglada, J. M. Bofill, S. Olivella, and A. Solé,
+Unimolecular Isomerizations and Oxygen Atom Loss
+in Formaldehyde and Acetaldehyde Carbonyl Oxides.
+A Theoretical Investigation, Journal of the American
+Chemical Society 10.1021/ja953858a (1996).
+[50] J. M. Anglada, S. Olivella, and A. Solé, On the Dissociation of Ground State trans-HOOO Radical: A Theoretical Study, Journal of Chemical Theory and Computation
+10.1021/ct100358e (2010).
+[51] J. F. Arenas, I. López-Tocón, J. C. Otero, and J. Soto,
+Carbene Formation in Its Lower Singlet State from
+Photoexcited 3H-Diazirine or Diazomethane. A Combined CASPT2 and ab Initio Direct Dynamics Trajectory Study, Journal of the American Chemical Society
+10.1021/ja010750o (2002).
+[52] J. F. Babb and B. M. McLaughlin, Radiative association
+of C(3P) and H+: triplet states, Monthly Notices of
+the Royal Astronomical Society 10.1093/mnras/stx630
+(2017).
+
+[53] S. Battaglia and R. Lindh, On the role of symmetry
+in XDW-CASPT2, The Journal of Chemical Physics
+10.1063/5.0030944 (2021).
+[54] C. W. Bauschlicher and S. R. Langhoff, Theoretical determination of the radiative lifetime of the A 2Σ+ state of
+OH, The Journal of Chemical Physics 10.1063/1.452829
+(1987).
+[55] P. P. Bera, Y. Yamaguchi, H. F. Schaefer, and T. D.
+Crawford, Born−Oppenheimer Symmetry Breaking in
+the C̃ State of NO2: Importance of Static and Dynamic
+Correlation Effects, The Journal of Physical Chemistry
+A 10.1021/jp077561y (2008).
+[56] R. Berger, C. Fischer, and M. Klessinger, Calculation
+of the Vibronic Fine Structure in Electronic Spectra at
+Higher Temperatures. 1. Benzene and Pyrazine, The
+Journal of Physical Chemistry A 10.1021/jp981597w
+(1998).
+[57] N. A. Besley and J. D. Hirst, Ab Initio Study of
+the Electronic Spectrum of Formamide with Explicit
+Solvent, Journal of the American Chemical Society
+10.1021/ja990064d (1999).
+[58] I. Bhattacharjee, D. Ghosh, and A. Paul, Resolving the
+Quadruple Bonding Conundrum in C2 Using Insights
+Derived from Excited State Potential Energy Surfaces:
+A Molecular Orbital Perspective, ChemRxiv preprint
+(2019).
+[59] N. Blaise, J. A. Green, C. Benitez-Martin, C. Kaiser,
+M. Braun, J. M. Schaible, J. Andréasson, I. Burghardt,
+and J. Wachtveitl, Isomerization dynamics of a
+novel cis/trans-only merocyanine, ChemPhotoChem
+10.1002/cptc.202300327 (2024).
+[60] J. Bone, J. Carmona-Garcı́a, D. Hollas, and B. F. E.
+Curchod, Benchmarking Electronic-Structure Methods
+for the Description of Dark Transitions in Carbonyls at
+and Beyond the Franck–Condon Point, The Journal of
+Physical Chemistry A 10.1021/acs.jpca.5c05510 (2025).
+[61] W. J. Buma and F. Zerbetto, Vibronic activity in
+trans,trans-1,3,5,7 octatetraene: The S0→S1 spectrum,
+The Journal of Chemical Physics 10.1063/1.469899
+(1995).
+[62] D. Buzsáki, S. Mandal, and M. Pápai, Trajectory
+excited-state dynamics study of pyrazine: Assessment
+of potential energy surfaces and simulation of picosecond timescales, The Journal of Chemical Physics
+10.1063/5.0320535 (2026).
+[63] P. B. Calio, D. G. Truhlar, and L. Gagliardi, Nonadiabatic Molecular Dynamics by Multiconfiguration PairDensity Functional Theory, Journal of Chemical Theory
+and Computation 10.1021/acs.jctc.1c01048 (2022).
+[64] M. Chachisvilis and A. H. Zewail, Femtosecond Dynamics of Pyridine in the Condensed Phase: Valence Isomerization by Conical Intersections, The Journal of Physical
+Chemistry A 10.1021/jp991821x (1999).
+[65] G. Cui and W. Fang, Channels to Singlet and Triplet
+Phenylcarbenes in Phenyldiazomethane: A CASSCF and
+MRCI Study, ChemPhysChem 10.1002/cphc.201100025
+(2011).
+[66] W.-J. Ding, W.-H. Fang, and R.-Z. Liu, A combined
+CASSCF and TDDFT study on the structures and properties of formyl cyanide in low-lying electronic states,
+Chemical Physics Letters 10.1016/s0009-2614(03)00006x (2003).
+[67] Q. Fang and Y.-J. Liu, Wavelength-Dependent Photodissociation of Benzoic Acid Monomer in α C−O Fission,
+
+14
+The Journal of Physical Chemistry A 10.1021/jp908567m
+(2010).
+[68] M. Fehér and P. A. Martin, Ab initio calculation of the
+electrical properties of the X 2 Σ g + ground and A 2 Π
+u excited states of N 2 +, J. Chem. Soc., Faraday Trans.
+10.1039/ft9959101063 (1995).
+[69] B. E. S. de Freitas, Espectroscopia dos ı́ons moleculares CH+ , CF+ , CCl+ , CBr+ , CI+ : busca por sistemas
+adequados para medida de constantes fundamentais, Master’s thesis, Universidade de Sao Paulo, Agencia USP de
+Gestao da Informacao Academica (AGUIA) (2023).
+[70] D. Ganyushin and F. Neese, A fully variational spinorbit coupled complete active space self-consistent field
+approach: Application to electron paramagnetic resonance g-tensors, The Journal of Chemical Physics
+10.1063/1.4793736 (2013).
+[71] D. Ghosh, J. Hachmann, T. Yanai, and G. K.-L. Chan,
+Orbital optimization in the density matrix renormalization group, with applications to polyenes and β-carotene,
+The Journal of Chemical Physics 10.1063/1.2883976
+(2008).
+[72] M. González, I. Miquel, and R. Sayós, VTST kinetics study of the ()+(Σ)→(Π)+(,) reactions based on
+CASSCF and CASPT2 ab initio calculations including
+excited potential energy surfaces, Chemical Physics Letters 10.1016/s0009-2614(00)01468-8 (2001).
+[73] J. González-Vázquez and L. González, A CASSCF
+and CASPT2 study of the photochemistry of
+1,1- and 1,2-difluoroethylenes, Chemical Physics
+10.1016/j.chemphys.2008.01.043 (2008).
+[74] J. Greiner, I. Gianni, T. Nottoli, F. Lipparini, J. J. Eriksen, and J. Gauss, MBE-CASSCF Approach for the Accurate Treatment of Large Active Spaces, Journal of Chemical Theory and Computation 10.1021/acs.jctc.4c00388
+(2024).
+[75] P.-J. Guan and W.-H. Fang, The combined CASPT2 and
+CASSCF studies on photolysis of 3-thienyldiazomethane
+and subsequent reactions, Theoretical Chemistry Accounts 10.1007/s00214-014-1532-3 (2014).
+[76] R. Guareschi and C. Filippi, Ground- and Excited-State
+Geometry Optimization of Small Organic Molecules with
+Quantum Monte Carlo, Journal of Chemical Theory and
+Computation 10.1021/ct400876y (2013).
+[77] R. Guareschi, F. M. Floris, C. Amovilli, and C. Filippi,
+Solvent Effects on Excited-State Structures: A Quantum
+Monte Carlo and Density Functional Study, Journal of
+Chemical Theory and Computation 10.1021/ct500723s
+(2014).
+[78] M. Gudem, A. Yadav, and A. Vijayan, Mechanism of Chemiluminescence in the Air Afterglow
+Reaction, The Journal of Physical Chemistry A
+10.1021/acs.jpca.5c01912 (2025).
+[79] Y. Guo and K. Pernal, Approximation to Second Order
+N-Electron Valence State Perturbation Theory: Limiting
+the Wave Function within Singles, Journal of Chemical Theory and Computation 10.1021/acs.jctc.5c00582
+(2025).
+[80] T. Hashimoto, H. Nakano, and K. Hirao, Theoretical
+study of the valence π→π* excited states of polyacenes:
+Benzene and naphthalene, The Journal of Chemical
+Physics 10.1063/1.471286 (1996).
+[81] B. Helmich-Paris, Benchmarks for Electronically Excited
+States with CASSCF Methods, Journal of Chemical Theory and Computation 10.1021/acs.jctc.9b00325 (2019).
+
+[82] B. Helmich-Paris, E. R. Kjellgren, and H. J. A. Jensen,
+Excited-state methods based on state-averaged longrange CASSCF short-range DFT, Physical Chemistry
+Chemical Physics 10.1039/d5cp00881f (2025).
+[83] B. Helmich-Paris, A Two-Level Preconditioner for the
+CASSCF Linear-Response Equations, The Journal of
+Physical Chemistry A 10.1021/acs.jpca.5c04385 (2025).
+[84] E. G. Hohenstein, M. E. F. Bouduban, C. Song, N. Luehr,
+I. S. Ufimtsev, and T. J. Martı́nez, Analytic first
+derivatives of floating occupation molecular orbitalcomplete active space configuration interaction on graphical processing units, The Journal of Chemical Physics
+10.1063/1.4923259 (2015).
+[85] D. Hu, Y. Xie, X. Li, L. Li, and Z. Lan, Inclusion of
+Machine Learning Kernel Ridge Regression Potential
+Energy Surfaces in On-the-Fly Nonadiabatic Molecular
+Dynamics Simulation, The Journal of Physical Chemistry
+Letters 10.1021/acs.jpclett.8b00684 (2018).
+[86] M. R. Jangrouei, A. Krzemińska, M. Hapka, E. Pastorczak, and K. Pernal, Dispersion Interactions in ExcitonLocalized States. Theory and Applications to π–π* and
+n−π* Excited States, Journal of Chemical Theory and
+Computation 10.1021/acs.jctc.2c00221 (2022).
+[87] J. Jiang, M. Zhang, A. Gu, R. J. D. Miller, and
+Z. Li, Quantum tomography of molecules using ultrafast
+electron diffraction, The Journal of Chemical Physics
+10.1063/5.0183568 (2024).
+[88] V. Jovanović, I. Lyskov, M. Kleinschmidt, and C. M.
+Marian, On the performance of DFT/MRCI-R and MRMP2 in spin–orbit coupling calculations on diatomics
+and polyatomic organic molecules, Molecular Physics
+10.1080/00268976.2016.1201600 (2017).
+[89] S. Keller, K. Boguslawski, T. Janowski, M. Reiher, and
+P. Pulay, Selection of active spaces for multiconfigurational wavefunctions, The Journal of Chemical Physics
+10.1063/1.4922352 (2015).
+[90] N. Koga and K. Morokuma, Comparison of biradical
+formation between enediyne and enyne-allene. Ab initio
+CASSCF and MRSDCI study, Journal of the American
+Chemical Society 10.1021/ja00006a006 (1991).
+[91] J. Kubelka and T. A. Keiderling, Ab Initio Calculation of
+Amide Carbonyl Stretch Vibrational Frequencies in Solution with Modified Basis Sets. 1. N-Methyl Acetamide,
+The Journal of Physical Chemistry A 10.1021/jp013203y
+(2001).
+[92] T. S. Kuhlman, W. J. Glover, T. Mori, K. B. Møller, and
+T. J. Martı́nez, Between ethylene and polyenes - the nonadiabatic dynamics of cis-dienes, Faraday Discussions
+10.1039/c2fd20055d (2012).
+[93] T. N. Lan, Y. Kurashige, and T. Yanai, Toward Reliable
+Prediction of Hyperfine Coupling Constants Using Ab
+Initio Density Matrix Renormalization Group Method:
+Diatomic 2Σ and Vinyl Radicals as Test Cases, Journal
+of Chemical Theory and Computation 10.1021/ct400978j
+(2014).
+[94] S. R. Langhoff, C. W. Bauschlicher, and H. Partridge,
+Theoretical study of the N+2 Meinel system, The Journal
+of Chemical Physics 10.1063/1.452835 (1987).
+[95] S. R. Langhoff and C. W. Bauschlicher, Theoretical study
+of the first and second negative systems of N+2, The
+Journal of Chemical Physics 10.1063/1.454604 (1988).
+[96] D. Lavorato, J. K. Terlouw, T. K. Dargel, W. Koch,
+G. A. McGibbon, and H. Schwarz, Observation of the
+Hammick Intermediate: Reduction of the Pyridine-2-ylid
+
+15
+Ion in the Gas Phase, Journal of the American Chemical
+Society 10.1021/ja961954l (1996).
+[97] G. Luo and X. Chen, Ground-State Intermolecular Proton Transfer of N2O4 and H2O: An Important Source of
+Atmospheric Hydroxyl Radical?, The Journal of Physical
+Chemistry Letters 10.1021/jz300336s (2012).
+[98] A. Lykhin, D. Truhlar, and L. Gagliardi, Dipole Moment Calculations Using Multiconfiguration Pair-Density
+Functional Theory and Hybrid Multiconfiguration PairDensity Functional Theory, ChemRxiv preprint (2021).
+[99] S. Mai, A. J. Atkins, F. Plasser, and L. González, The
+Influence of the Electronic Structure Method on Intersystem Crossing Dynamics. The Case of Thioformaldehyde, Journal of Chemical Theory and Computation
+10.1021/acs.jctc.9b00282 (2019).
+[100] Z. B. Maksić, D. Barić, and I. Petanjek, On the Correlation Energy of π-Electrons in Planar Hydrocarbons,
+The Journal of Physical Chemistry A 10.1021/jp0015473
+(2000).
+[101] N. O. J. Malcolm and J. J. W. McDouall, Combining
+Multiconfigurational Wave Functions with Density Functional Estimates of Dynamic Electron Correlation. 2.
+Effect of Improved Valence Correlation, The Journal of
+Physical Chemistry A 10.1021/jp971605t (1997).
+[102] Q. Meng and M.-B. Huang, CASSCF and CASPT2
+Study on O- and Cl-Loss Predissociation Mechanisms
+of OClO (A2A2), The Journal of Physical Chemistry A
+10.1021/jp110894v (2011).
+[103] M. F. S. J. Menger and H. Köppel, On the Fluorescence
+Properties and Nonradiative Transitions in MediumSized All-Trans Polyenes, The Journal of Physical Chemistry A 10.1021/acs.jpca.3c03117 (2023).
+[104] T. Nakajima and S. Kato, Theoretical Study of the
+Effect of the Intermolecular Spin−Orbit Interaction in
+the Collision-Induced Intersystem Crossing of S1 State
+Glyoxal by Ar, The Journal of Physical Chemistry A
+10.1021/jp012970u (2001).
+[105] Y. Nishimoto, Analytic First-Order Derivatives of
+CASPT2 Combined with the Polarizable Continuum
+Model, Journal of Chemical Theory and Computation
+10.1021/acs.jctc.4c01473 (2025).
+[106] J. M. Oliva, M. E. D. G. Azenha, H. D. Burrows,
+R. Coimbra, J. S. S. de Melo, M. C. L., M. I. Fernández,
+J. A. Santaballa, and L. Serrano-Andrés, On the LowLying Excited States of sym-Triazine-Based Herbicides,
+ChemPhysChem 10.1002/cphc.200400349 (2005).
+[107] D. Peláez, J. F. Arenas, J. C. Otero, and J. Soto, Dependence ofN-Nitrosodimethylamine Photodecomposition
+on the Irradiation Wavelength: Excitation to the S2State
+as a Doorway to the Dimethylamine Radical GroundState Chemistry, The Journal of Organic Chemistry
+10.1021/jo070399a (2007).
+[108] D. Picconi and S. Y. Grebenshchikov, Photodissociation
+dynamics in the first absorption band of pyrrole. I. Molecular Hamiltonian and the Herzberg-Teller absorption
+spectrum for the A21(πσ*)←X̃1 A1(ππ) transition, The
+Journal of Chemical Physics 10.1063/1.5019735 (2018).
+[109] A. Ponzi, M. Sapunar, C. Angeli, R. Cimiraglia,
+N. Došlić, and P. Decleva, Photoionization of furan from
+the ground and excited electronic states, The Journal of
+Chemical Physics 10.1063/1.4941608 (2016).
+[110] D. M. Potts, C. M. Taylor, R. K. Chaudhuri, and
+K. F. Freed, The improved virtual orbital-complete active space configuration interaction method, a “package-
+
+able” efficient ab initio many-body method for describing
+electronically excited states, The Journal of Chemical
+Physics 10.1063/1.1337053 (2001).
+[111] K. Rowell, S. Kable, and M. J. T. Jordan, Structural
+Causes of Singlet/triplet Preferences of Norrish Type II
+Reactions in Carbonyls, ChemRxiv preprint (2020).
+[112] S. Saade and H. G. A. Burton, Excited StateSpecific CASSCF Theory for the Torsion of Ethylene, Journal of Chemical Theory and Computation
+10.1021/acs.jctc.4c00212 (2024).
+[113] S. Saha, L. L. E. Cigrang, and G. A. Worth, Direct
+wavepacket dynamics with spin–orbit coupling: simulation of thioformaldehyde, Physical Chemistry Chemical
+Physics 10.1039/d5cp04004c (2026).
+[114] V. Santolini, J. P. Malhado, M. A. Robb, M. Garavelli,
+and M. J. Bearpark, Photochemical reaction paths of
+cis-dienes studied with RASSCF: the changing balance
+between ionic and covalent excited states, Molecular
+Physics 10.1080/00268976.2015.1025880 (2015).
+[115] R. Sayós, C. Oliva, and M. González, The lowest doublet and quartet potential energy surfaces involved
+in the N(4S)+O2 reaction. I. Ab initio study of
+the Cs-symmetry (2A′ , 4A′ ) abstraction and insertion mechanisms, The Journal of Chemical Physics
+10.1063/1.1381012 (2001).
+[116] T. R. Scott, M. R. Hermes, A. M. Sand, M. S. Oakley, D. G. Truhlar, and L. Gagliardi, Analytic gradients for state-averaged multiconfiguration pair-density
+functional theory, The Journal of Chemical Physics
+10.1063/5.0007040 (2020).
+[117] L. Serrano-Andrés, R. Pou-Amérigo, M. P. Fülscher,
+and A. C. Borin, Electronic excited states of conjugated
+cyclic ketones and thioketones: A theoretical study, The
+Journal of Chemical Physics 10.1063/1.1482706 (2002).
+[118] S. Olsen, Canonical-ensemble SA-CASSCF strategy for
+problems with more diabatic than adiabatic states:
+Charge-bond resonance in monomethine cyanines, arXiv
+preprint arXiv:1407.6063 (2014), arXiv:1407.6063.
+[119] P. Sharma, V. Bernales, S. Knecht, D. G. Truhlar,
+and L. Gagliardi, Density matrix renormalization group
+pair-density functional theory (DMRG-PDFT): singlet–
+triplet gaps in polyacenes and polyacetylenes, Chemical
+Science 10.1039/c8sc03569e (2019).
+[120] T. Shiozaki, C. Woywod, and H.-J. Werner, Pyrazine
+excited states revisited using the extended multi-state
+complete active space second-order perturbation method,
+Phys. Chem. Chem. Phys. 10.1039/c2cp43381h (2013).
+[121] T. Shiozaki and T. Yanai, Hyperfine Coupling Constants
+from Internally Contracted Multireference Perturbation
+Theory, Journal of Chemical Theory and Computation
+10.1021/acs.jctc.6b00646 (2016).
+[122] P. E. M. Siegbahn, J. Almlöf, A. Heiberg, and B. O.
+Roos, The complete active space SCF (CASSCF) method
+in a Newton–Raphson formulation with application to
+the HNO molecule, The Journal of Chemical Physics
+10.1063/1.441359 (1981).
+[123] A. L. Sobolewski and L. Adamowicz, Ab initio characterization of electronically excited states in highly unsaturated hydrocarbons, The Journal of Chemical Physics
+10.1063/1.469414 (1995).
+[124] J. Soto, D. Peláez, and J. C. Otero, A SA-CASSCF
+and MS-CASPT2 study on the electronic structure of
+nitrosobenzene and its relation to its dissociation dynamics, The Journal of Chemical Physics 10.1063/5.0033181
+
+16
+(2021).
+[125] G. Stock, C. Woywod, W. Domcke, T. Swinney, and B. S.
+Hudson, Resonance Raman spectroscopy of the S1 and
+S2 states of pyrazine: Experiment and first principles
+calculation of spectra, The Journal of Chemical Physics
+10.1063/1.470689 (1995).
+[126] K. Sugisaki, K. Toyota, K. Sato, D. Shiomi, M. Kitagawa, and T. Takui, Ab initio calculations of spin–
+orbit contribution to the zero-field splitting tensors
+of nπ∗ excited states by the CASSCF method with
+MRMP2 energy correction, Chemical Physics Letters
+10.1016/j.cplett.2009.07.007 (2009).
+[127] P. C. Varras, P. S. Gritzapis, and K. C. Fylaktakidou,
+An explanation of the very low fluorescence and phosphorescence in pyridine: a CASSCF/CASMP2 study, Molecular Physics 10.1080/00268976.2017.1371800 (2018).
+[128] L. R. Ventura, R. S. da Silva, J. Amorim, and C. E.
+Fellows, A new look at N 2 + electronic transitions: An
+experimental and theoretical study, Journal of Molecular
+Spectroscopy 10.1016/j.jms.2024.111902 (2024).
+[129] A. Venturini and J. González, A CASPT2 and CASSCF
+Approach to the Cycloaddition of Ketene and Imine: A
+New Mechanistic Scheme of the Staudinger Reaction,
+The Journal of Organic Chemistry 10.1021/jo026188h
+(2002).
+[130] Z.-Z. Wei, B.-T. Li, H.-X. Zhang, C.-C. Sun, and
+K.-L. Han, A theoretical investigation of the excited
+
+states of OCLO radical, cation, and anion using the
+CASSCF/CASPT2 method, Journal of Computational
+Chemistry 10.1002/jcc.20538 (2007).
+[131] Z. Xu, S. R. Federman, W. M. Jackson, C.-Y. Ng, L.P. Wang, and K. N. Crabtree, Multireference configuration interaction study of the predissociation of C2
+via its F1Π u state, The Journal of Chemical Physics
+10.1063/5.0097451 (2022).
+[132] M. C. Zammit, J. A. Leiding, J. Colgan, W. Even, C. J.
+Fontes, and E. Timmermans, A comprehensive study of
+the radiative properties of NO—a first step toward a complete air opacity, Journal of Physics B: Atomic, Molecular
+and Optical Physics 10.1088/1361-6455/ac8213 (2022).
+[133] P. Zhang, S. Irle, K. Morokuma, and G. S. Tschumper,
+Ab initio theoretical studies of potential energy surfaces in the photodissociation of the vinyl radical. I.
+Ã state dissociation, The Journal of Chemical Physics
+10.1063/1.1604378 (2003).
+[134] J. Zhang, W. Wu, L. Wang, X. Chen, and Z. Cao, Electronic Spectra of Linear Isoelectronic Clusters C2n+1S
+and C2n+1Cl+ (n = 0−4): An ab Initio Study, The
+Journal of Physical Chemistry A 10.1021/jp063109n
+(2006).
+
+

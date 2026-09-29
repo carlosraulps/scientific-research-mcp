@@ -1,0 +1,54 @@
+{
+  "sol27lc_benchmark_platinum_study": {
+    "key": "sol27lc_benchmark_platinum_study",
+    "title": "Sol27LC Benchmark Platinum Study",
+    "file": "sol27lc_benchmark_platinum_study.md",
+    "created_at": "2026-09-29T17:03:32.902371+00:00",
+    "claim_count": 1,
+    "sealed": true
+  },
+  "sol27lc_benchmark_platinum_study_report_unique": {
+    "key": "sol27lc_benchmark_platinum_study_report_unique",
+    "title": "Sol27LC Benchmark Platinum Study Report Unique",
+    "file": "sol27lc_benchmark_platinum_study_report_unique.md",
+    "created_at": "2026-09-29T17:19:39.191113+00:00",
+    "claim_count": 1,
+    "sealed": true
+  },
+  "sol27lc_benchmark_platinum_study_report_a769b1": {
+    "key": "sol27lc_benchmark_platinum_study_report_a769b1",
+    "title": "Sol27LC Benchmark Platinum Study Report a769b1",
+    "file": "sol27lc_benchmark_platinum_study_report_a769b1.md",
+    "created_at": "2026-09-29T17:21:29.664627+00:00",
+    "claim_count": 1,
+    "sealed": true
+  },
+  "sol27lc_benchmark_platinum_study_report_18a8ee": {
+    "key": "sol27lc_benchmark_platinum_study_report_18a8ee",
+    "title": "Sol27LC Benchmark Platinum Study Report 18a8ee",
+    "file": "sol27lc_benchmark_platinum_study_report_18a8ee.md",
+    "created_at": "2026-09-29T17:27:09.951464+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": null,
+      "short_commit": null,
+      "branch": null,
+      "is_dirty": false
+    }
+  },
+  "sol27lc_benchmark_platinum_study_report_965f17": {
+    "key": "sol27lc_benchmark_platinum_study_report_965f17",
+    "title": "Sol27LC Benchmark Platinum Study Report 965f17",
+    "file": "sol27lc_benchmark_platinum_study_report_965f17.md",
+    "created_at": "2026-09-29T17:28:37.580572+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": null,
+      "short_commit": null,
+      "branch": null,
+      "is_dirty": false
+    }
+  }
+}

@@ -1,0 +1,1164 @@
+communications materials
+
+Article
+
+A Nature Portfolio journal
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+GENIUS: an agentic AI framework for
+autonomous design and execution of
+simulation protocols
+Check for updates
+1
+
+2
+
+3
+
+1234567890():,;
+
+1234567890():,;
+
+Mohammad Soleymanibrojeni , Roland Aydin , Diego Guedes-Sobrinho , Alexandre C. Dias
+Maurício J. Piotrowski 5, Wolfgang Wenzel 6 & Celso Ricardo Caldeira Rêgo 6
+
+4
+
+,
+
+Predictive atomistic simulations have propelled materials discovery, yet routine setup and debugging
+still demand computer specialists. This know-how gap limits the use of Integrated Computational
+Materials Engineering (ICME), where state-of-the-art codes exist but remain cumbersome for nonexperts. We address this bottleneck with GENIUS, an AI-agentic workﬂow that fuses a smart Quantum
+ESPRESSO knowledge graph with a tiered hierarchy of large language models supervised by a ﬁnitestate error-recovery machine. Here we show that GENIUS translates free-form human-generated
+prompts into Quantum ESPRESSO input ﬁles that pass early execution validation for ≈ 80% of 295
+diverse benchmarks. Zero-shot generation succeeds for 14.2% of all prompts, and among cases that
+do not succeed initially, 76.3% are autonomously recovered by the automated error-handling loop,
+with the attempt-wise success rate decaying exponentially toward a 7% baseline. Compared with
+LLM-only baselines, GENIUS increases inference and computational efﬁciency and virtually
+eliminates hallucinations. The framework democratizes electronic-structure DFT simulations by
+intelligently automating protocol generation, validation, and repair, enabling large-scale screening and
+accelerating ICME design loops worldwide across academia and industry.
+
+Computational simulations have revolutionized materials design, accelerating innovation by enabling researchers to explore material properties
+and behavior virtually before experimental validation1–5. This shift has led to
+signiﬁcant breakthroughs that range from energy storage6,7 to pharmaceutical development8,9. However, a persistent challenge to this potential is the
+technical barriers to effective simulation setup, which disproportionately
+burden researchers, particularly those whose expertise lies in experimental
+rather than computational domains. When scientists identify a promising
+new compound, understanding its fundamental properties often requires
+computational validation. Yet even seemingly straightforward simulations
+often pose lengthy technical challenges. Even experienced computational
+scientists (physicists, chemists, engineers) ﬁnd themselves diverted from
+scientiﬁc inquiry toward navigating complex programming challenges,
+engaging in trial-and-error attempts, and struggling with computational
+setup details rather than focusing on the scientiﬁc questions10–14.
+Integrated computational materials engineering (ICME) has emerged
+as a robust framework for accelerating materials development by integrating
+
+experimental data, simulations, and theoretical models across multiple
+scales. ICME aims to streamline the transition from laboratory discovery to
+industrial application through predictive modeling15,16. However, its full
+potential remains constrained by what implementation science describes as
+the know-do gap, the disparity between available computational tools and
+their practical application by the broader scientiﬁc community. This gap
+persists despite the availability of a wide range of these tools. The open
+source community has made remarkable progress in the accuracy and
+consistency of computational codes. Recent community-wide benchmarks
+demonstrate that modern DFT codes and pseudopotentials now yield nearidentical equations of state for elemental crystals, approaching the precision
+of experiments17,18. This technical convergence suggests that the tools are
+mature, yet the human interface remains a signiﬁcant bottleneck. The time
+spent on technical implementation, rather than on scientiﬁc thinking,
+dramatically slows the pace of discovery.
+As current approaches to creating simulation protocols rely on predeﬁned or rigid parameter settings across several programs19–21, integrating
+
+1
+
+Institute of Material Systems Modeling, Helmholtz-Zentrum Hereon, Geesthacht, Germany. 2Saarland University and German Research Center for Artiﬁcial
+Intelligence (DFKI), Saarbrücken, Germany. 3Department of Chemistry, Federal University of Paraná, Curitiba, Brazil. 4Institute of Physics and International Center
+of Physics, University of Brasília, Brasília, Brazil. 5Department of Physics, Federal University of Pelotas, Pelotas, Brazil. 6Institute of Nanotechnology, Karlsruhe
+e-mail: celso.rego@kit.edu
+Institute of Technology, Karlsruhe, Germany.
+
+Communications Materials | (2026)7:115
+
+1
+
+Article
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+different computational tools remains challenging. Creating and validating
+these protocols requires that the user manually interact with the databases to
+collect relevant data. Furthermore, users must master the syntax of several
+computational tools and possess deep expertise in all of them, effectively
+becoming experts in their documentation through debugging protocols
+when errors occur. Although state-of-the-art (SOTA) electronic-structure
+codes are accurate, open, and widely accessible, their routine use still
+demands technical expertise that many domain scientists ﬁnd challenging.
+This expertise barrier narrows the pool of researchers who can exploit
+computational materials science. It creates barriers that drain time and delay
+critical discoveries, thereby slowing the translation of theory into concrete
+advances in batteries, catalysts, and structural alloys. Implementation science principles22,23, the ﬁeld that studies how evidence-based practices move
+from the laboratory into everyday use, offer a path forward. By diagnosing
+and dismantling the educational, cultural, and infrastructural obstacles that
+restrict the adoption of evidence-based tools, this principle can shrink the
+know-do gap separating mature computational capabilities from the needs
+of working material scientists. The goal is not to invent another method but
+to democratize existing powerful methods, freeing researchers to focus on
+scientiﬁc questions rather than on software conﬁguration and workﬂow
+maintenance. In doing so, we can accelerate the translation of computational insights into real-world materials innovations, which might otherwise
+transform industries and address global challenges.
+To address this critical interface bottleneck and bridge the know-do
+gap, this paper introduces GENIUS, an AI-driven agentic framework
+combining large language models (LLMs)24 with a smart knowledge graph
+(KG)25 employing reinforcement learning with veriﬁable rewards26–28, that
+in our case interprets the schema, enforces constraints, reformulates questions, and surfaces only consistent answers. This framework serves as an
+intelligent interface to computational tools, speciﬁcally designed to generate
+and automatically debug simulation protocols based on density functional
+theory (DFT), and to validate our approach, we use the Quantum
+ESPRESSO (QE) program29. A schematic overview of this framework is
+presented in Fig. 1. The mechanisms of the smart KG with LLMs infer
+relevant parameters by understanding both explicit and implicit conditions
+in the user’s request, and then critically evaluate the retrieved information to
+ensure its suitability and context. This process provides the LLM with
+accurate, structured knowledge, mitigating limitations, such as
+hallucinations30,31 and enabling reliable protocol generation tailored to user
+requirements, including material-speciﬁc details from curated databases.
+Furthermore, the framework incorporates robust automated error handling
+that can debug and validate protocols when initial attempts fail, thereby
+overcoming a signiﬁcant hurdle in generating protocols for practical
+simulation workﬂows. This integrated approach addresses the inherent
+limitations of current AI models when applied to precise scientiﬁc tasks.
+
+GENIUS reshapes who can participate in computational materials
+research by bridging technical computational tasks with the nature of the
+materials. We integrate previously discrete manual tasks into a single AI
+system by evaluating the researcher’s request, generating compliant simulation protocols, validating them, and automatically handling errors. This
+integration improves the reproducibility, reusability, and transferability of
+simulation protocols4,10,32 while making advanced simulations accessible to
+researchers regardless of their computational background. Our work
+advances both in ICME and in the implementation of science objectives: we
+enhance the ICME paradigm by making its computational tools more
+accessible, while applying implementation science principles to overcome
+adoption barriers in computational materials research. By allowing
+researchers to focus on scientiﬁc questions rather than technical implementation, GENIUS delivers incremental efﬁciency gains while enabling a
+fundamental shift in how—and by whom—materials discovery can be
+conducted33. In the following sections, we detail the creation of the smart QE
+KG and explain the framework’s architecture, including its specialized
+agents and subsystems, such as recommendation, protocol generation, and
+automated error handling. We present benchmarks assessing the framework’s performance across several computational tasks.
+
+Results
+We tested GENIUS with multiple LLMs to evaluate our approach, each
+exhibiting incremental capabilities, to obtain more comprehensive diagnostic insights into the workﬂow’s performance. By gathering a large dataset
+of human-generated prompts for DFT calculations using QE and the corresponding workﬂow logs (see Fig. 4), we analyzed the number of attempts
+required to successfully complete each prompt. These prompts were
+authored by chemists and physicists who routinely perform DFT simulations with electronic-structure packages other than Quantum ESPRESSO,
+ensuring that the benchmark reﬂects realistic expert usage while remaining
+unbiased toward QE-speciﬁc syntax.
+To understand the diversity of the prompts dataset, we converted the
+295 prompts into 3072-dimensional embedding vectors with OpenAI’s
+text-embedding-3-large model. A 10 × 10 self-organizing map
+(SOM)34 was then trained to visualize their semantic landscape. The SOM is
+an unsupervised neural network for dimensionality reduction and clustering by projecting high-dimensional input data onto a lower-dimensional
+grid (here, 2-dimensional) while preserving topological relationships
+between the input data. Each of the 100 SOM neurons was initialized with a
+random weight vector of equal dimensionality, and training proceeded for
+50,000 iterations in mini-batches of 50 samples. During each iteration, the
+neurons compete to best represent the input pattern. The algorithm identiﬁes the best matching unit (BMU) for each input vector, which is deﬁned as
+the neuron whose weight vector has the smallest Euclidean distance to the
+
+Fig. 1 | GENIUS framework for autonomous
+Quantum ESPRESSO simulations. This schematic
+illustration depicts the end-to-end workﬂow of the
+GENIUS framework, designed to overcome technical barriers in DFT simulations. Users' natural language prompts are interpreted by a
+recommendation system powered by a smart
+knowledge graph that encodes Quantum
+ESPRESSO parameter details and constraints. Large
+language models then generate the corresponding
+simulation protocols. The framework includes
+automated validation and an automated error
+handling (AEH (error 1 and error 2) loop that utilizes
+a knowledge graph and large language models to
+diagnose and correct failed runs iteratively. This
+integrated process autonomously translates user
+intent into validated Quantum ESPRESSO input
+ﬁles, ready for submission to the available computational resources.
+
+Communications Materials | (2026)7:115
+
+2
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Article
+
+Fig. 2 | Self-organizing map (SOM) analysis of user input prompt embeddings.
+a U-matrix visualization of the SOM trained on user prompt embeddings, where
+regions with more distance indicate cluster boundaries and regions with lower
+distance denote dense clusters of similar prompts. b SOM hit map (BMU activation
+
+count) showing the distribution of prompts across the neuron grid. Five distinct
+high-activation and low-activation regions are scattered in between, suggesting a
+balance between semantic clusters and diverse request types in the input data.
+
+input vector. Afterward, the BMU and its neighboring neurons are updated,
+with the adjustment magnitude decreasing as a function of distance from the
+BMU, according to a Gaussian neighborhood function. This neighborhood
+inﬂuence, combined with a linearly decreasing learning rate, allows the
+SOM to form a topologically ordered map of the input space. The convergence and quality of the resulting map were quantitatively validated by
+calculating standard SOM metrics: the quantization error, representing the
+average distance between input data vectors and their best matching unit’s
+weight vector, and the topological error (TE), measuring the proportion of
+data points for which the ﬁrst and second BMUs are not adjacent on the
+map grid.
+The SOM and BMU analyses provide information on the prompts’
+degree of complexity and semantic similarity. The score-based metric evaluation shows that the prompts comprise 44.3% basic, 48.5% standard, and
+7.2% complex prompts. This evaluation is performed by an LLM, which
+assigns a numerical value to text data35. The SOM analysis creates a selforganizing map grid of hexagonally packed neurons, Fig. 2, trained on the
+embeddings of the prompts, which are then clustered into different groups.
+The SOM preserves topological identity while showing the clusters. The
+quality of the SOM representation reinforces the reliability of the observed
+prompt distribution (Fig. 2). The low TE (0.0373) conﬁrms excellent preservation of the original data’s neighborhood structure. The quantization
+error (0.4970) indicates good representational ﬁdelity; given that the input
+vectors were unit-normalized (maximum pairwise distance of 2.0), the
+average distance between data points and their map representatives is low,
+especially given the signiﬁcant dimensionality reduction. The U-matrix
+(uniﬁed distance matrix) in Fig. 2a shows the distances between neurons; the
+hexagonal structure captures six equidistant neighbors, compared to a
+square grid with only four. To analyze the learned representations, two
+complementary visualizations were generated. The U-matrix visualizes the
+average distance between neighboring neurons, with higher values indicating cluster boundaries and lower values indicating dense regions of
+similar inputs. The BMU activation count plot (hit map) in Fig. 2b shows
+how frequently each neuron was selected as a BMU, revealing the distribution of input assignments across the SOM grid. Neurons with zero
+activations indicate they serve as boundary regions or represent semantic
+areas not covered by the current dataset. These empty neurons are crucial for
+preserving topology, helping maintain proper inter-cluster distance
+relationships.
+A similar SOM representation can be generated for each component of
+the embedding vectors, revealing which dimensions contribute most
+
+signiﬁcantly to semantic distinctions and helping identify correlated components that form meaningful semantic features. These visualizations are
+available in the project’s GitHub repository. The ﬁgure shows ﬁve neurons
+with the highest activation counts, including their respective BMUs. These
+neurons are well-separated on the SOM grid, indicating that the calculation
+prompts can be grouped primarily into ﬁve semantic clusters, with additional residual prompts that share similarities with the core concepts.
+Overall, the SOM grid shows that the prompt collection is dispersed, providing a good balance between semantic cohesion within the identiﬁed
+clusters and conceptual diversity across them. Upon manual inspection of
+prompts, it was found that the prompts are mainly divided into two major
+categories, namely structural relaxation and a variety of single-shot DFT
+calculations, using different methodologies available in the QE code, which
+is further conﬁrmed by a simpler k-means analysis (See GitHub repository).
+Discussing these ﬁndings highlights the framework’s sensitivity to input
+quality and type, potentially informing future improvements to user
+interaction or prompt pre-processing. This analysis uncovers latent structures in the user-request space that are directly relevant to the development
+of automated protocol-generation mechanisms.
+In Fig. 3, the user’s prompt (classiﬁed as standard) is shown at the top,
+specifying a geometry optimization for a 2D PdS2 structure using the
+B3LYP functional, whereas the bottom portion highlights the valid QE
+input ﬁle generated by the GENIUS framework. In Fig. 4, we illustrate the
+complete timeline log for the same prompt, emphasizing the sequence of
+events, as indicated by color-coded statuses (PENDING, SUCCESS, RETRY,
+and ERROR), as the system progresses from the interface agent phase to the
+ﬁnal solution generation. As evidenced in Fig. 4, the extended time required
+to evaluate input parameters is a secondary constraint imposed by LLM API
+providers, which a self-host service could mitigate; without such limitations,
+parameters could be processed in parallel, reducing overall latency. The
+stepwise entries in the log ﬁgure demonstrate the framework’s resilience,
+including how QE crashes (red dots) can result from hallucinations or
+confabulations. Our framework automatically detects and resolves these
+failures, iteratively reﬁning and validating the input parameters until the
+ﬁnal QE calculation is completed. It’s important to note that the wall-clock
+performance illustrated in Fig. 4 reﬂects the speciﬁc benchmark setup used
+in this research. In this setup, considering only the QE attempt has a
+maximum validation period of 60 s. As a result, the overall workﬂow runtime is primarily inﬂuenced by orchestration factors, such as model inference and retry mechanisms, rather than the time required to complete a full
+production DFT calculation.
+
+Communications Materials | (2026)7:115
+
+3
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Article
+
+Fig. 3 | Real simulation protocol example of Quantum Espresso generated by
+GENIUS. The user’s prompt request is displayed at the top, instructing the QE code
+to perform a geometry optimization for 2D PdS2 in the P21/c space group, using
+Quantum ESPRESSO with the B3LYP exchange-correlation functional. The generated protocol is provided in two columns for compactness. The framework parses
+these instructions and automatically generates the valid QE input. The protocol
+
+speciﬁes 20% exact-exchange, a plane-wave basis set, smearing for occupation, a
+mixing parameter for the SCF cycle, and a 7 × 7 × 2 k-points mesh. Additionally, the
+ﬁle includes detailed control parameters for geometry relaxation (via BFGS),
+pseudopotentials for Pd and S, and the required settings, including ecutwfc, ecutrho,
+occupations, and spin polarization, as shown in the output.
+
+An overview of the outcomes for the 295 test prompts is presented in
+Fig. 5, which depicts the distribution between successful and failed runs, the
+path to success, zero-shot or via speciﬁc models in the AEH system, as well as
+a breakdown according to the initial prompt complexity. Additionally, when
+prompts are evaluated using only base LLMs, without the GENIUS framework, they yield negligible contributions to generating valid QE input
+ﬁles that contain the correct cards and mutually consistent parameters for a
+given geometric structure, regardless of their nominal reasoning enhancements. This limitation likely arises because the models do not embed explicit
+crystallographic information and cannot infer the subtle interdependencies
+among geometry, namelist keywords, and the card syntax required by QE.
+We reiterate that Model 1, the ﬁrst component in the protocol generation
+hierarchy, produces the initial simulation protocol version. Therefore, a
+
+zero-shot success corresponds to cases in which the ﬁrst output generated by
+Model 1 is valid and does not require any further correction. Within the
+GENIUS framework, Model 1 proceeds with the ﬁrst cycle of automated
+error-handling retries if this initial attempt fails.
+In Fig. 5, we present the distribution of successful runs that reached the
+FINISHED state in the workﬂow after a given number of attempts. The
+success in zero-shot cases indicates scenarios in which a request was
+FINISHED using only the workﬂow’s recommendation system, without
+invoking the automated error-handling system. This scenario accounts for
+17.9%, comprising 9.4% for basic prompts, 7.2% for standard prompts, and
+1.3% for complex prompts. A similar distribution pattern can be observed
+for subsequent attempts. If the initial execution fails, the GENIUS AEH
+system is triggered. Each retry within an attempt cycle uses the same model
+
+Communications Materials | (2026)7:115
+
+4
+
+Article
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Fig. 4 | Live timeline of a self-healing (AEH) GENIUS job. Each dot marks a log
+event (y-axis, newest at top) plotted against wall-clock time (x-axis), colors denote
+status: PENDING (orange), SUCCESS (green), RETRY (gray), ERROR (red). The
+workﬂow ﬁrst parses the user prompt, harvests documentation, builds a parameter
+graph, and generates a QE input template. After launch, QE crashes once (red); the
+
+ﬁnite-state loop applies a single retry (gray) within the AEH, resolves the issue, and
+the simulation reaches steady execution and completion (green) in ≈3 min. The
+timeline exposes full provenance and illustrates how GENIUS autonomously
+recovers from runtime failures while streaming real-time status updates.
+
+that generated the initial protocol. After three attempts per model, the
+process switches to the next model in the hierarchy if no solution is found.
+Based on the user’s calculation prompt, the workﬂow resets from the
+recommendation system’s output, which serves as a template for generating
+a simulation protocol. Previous changelog attempts are not provided to the
+new model during each model exchange. The model receives only the error
+message, the relevant documentation, the latest version of the simulation
+protocol, and the original user calculation prompt.
+Our results demonstrate that successful cases across attempts comprise
+a mixture of basic, standard, and complex calculation prompts. This
+observation shows that prompt complexity (basic, standard, or complex) is
+not inherently problematic for the framework’s performance. Complex
+prompts can contain more distinctive instructions, enhancing the framework’s ability to generate valid protocols. The general trend reveals that after
+the initial attempts with Model 1, the number of successful attempts stabilizes at a baseline level. This initial high success rate is followed by a
+plateau, which resembles an exponential decay behavior in the number of
+cases requiring successive attempts. For the model selection hierarchy, we
+assume a performance ordering of Model 1 < Model 2 < referee. This can be
+done with any set of language models, but the predeﬁned order characterizes
+the framework’s behavior, where the referee model was chosen as the SOTA
+model. The referee model is used to establish the performance baseline. This
+outcome indicates that the framework itself, rather than just the power of the
+strongest model, is responsible for handling most cases, as the referee model
+is not disproportionately utilized, which would otherwise suggest a failure in
+
+the preceding stages. This demonstrates that the GENIUS framework can be
+used with any model (it is model-agnostic) and that its overall performance
+is attributable to its architecture intelligence, not just the underlying language model’s capabilities. The opposite scenario would manifest as a lack of
+a baseline, with an increase in successful attempts. Speciﬁcally indicating
+that success relied primarily on the more performative model rather than
+the framework’s architectural design.
+From our total dataset of 295 calculation requests analyzed, 235 successfully produced a valid simulation protocol, with 42 of these succeeding
+in the zero-shot scenario, which is deﬁned here as the framework converging
+to a correct protocol on its very ﬁrst attempt, without invoking any automated error-handling loops. This yields an overall system success ratio of
+PðSÞ ¼ 235
+a zero-shot,
+(ZS),
+success ratio of
+295  0:7966,
+42
+PðZSÞ ¼ 295
+ 0:1424, and a ratio of success through automated error
+handling (given zero-shot fails) of PðAEHj not ZSÞ ¼ 193
+253  0:7628. To
+characterize how the success rate evolves with successive attempts, we ﬁtted
+an exponential decay model to the observed success rates (S) across multiple
+attempts, where x denotes the attempt number. The function takes the form,
+Eq. 1:
+
+Communications Materials | (2026)7:115
+
+SðxÞ ¼ A ebx þ C; RMSE ¼ 1:9%;
+
+ð1Þ
+
+obtaining A = 11.1% ± 1.0, b = 0.46(1/attempt) ± 0.1, and C = 7.0% ± 0.70. In
+this parametrization, the initial amplitude, A(%), represents the maximum
+inﬂuence of the zero-shot attempt; the decay rate, b(1/attempt), determines
+
+5
+
+Article
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Fig. 5 | GENIUS performance benchmark on 295 tested prompts. The stacked bar
+chart reports the percentage of successful runs (y-axis) for the zero-shot pass
+(GENIUS without AEH) and GENIUS using AEH combined with Model 1, Model 2,
+and referee models. Shaded vertical panels group the bars for systems assessed by the
+
+same model. Within every bar, colored segments disaggregate the total success rate
+by prompt complexity: basic, standard, and complex. The cumulative solved percentage (right y-axis) is overlaid in dark blue, showing the total proportion of
+prompts solved after each successive attempt.
+
+how quickly this initial advantage decreases over successive attempts, and
+the baseline, C(%) is the asymptotic success probability reached after many
+retries.
+Figure 6 delineates three distinct operational regimes within GENIUS:
+recommendation-system, maximum workﬂow utilization, and shallow
+workﬂow utilization. The opening recommendation-system regime coincides
+with the zero-shot pass, highlighting the framework’s ability to successfully
+generate protocols independently of model switching or fallback mechanisms. Immediately thereafter, the curve plunges into the maximum workﬂow utilization regime: each early retry unlocks deeper cross-model
+synergies, yielding rapidly diminishing but still substantive gains. Once the
+process reaches roughly six attempts, the trajectory ﬂattens into the shallow
+workﬂow utilization regime, where the performance asymptotically converges toward the baseline value of C ≈ 7%. Within this regime, further
+retries contribute marginal beneﬁt; success is governed primarily by the
+workﬂow’s inherent competence rather than by additional computation.
+The slight oscillations superimposed on the ﬁtted curve stem from the
+design choice to reset the context after every third attempt and switch the
+model. Inter-block inﬂuence is shortened because each reset isolates the
+subsequent block of attempts. Allowing more consecutive attempts per
+model would amplify these oscillations, which could be quantitatively
+captured by extending the ﬁtting function to include an explicit periodic
+component, thereby requiring ﬁner-grained modeling.
+The recommendation system (Rec) includes the smart knowledge
+graph, extracts boundary conditions, and evaluates key parameters for each
+user query (Q). The workﬂow is complete if the calculation request is successfully resolved in a zero-shot scenario. Otherwise, the request proceeds to
+the AEH subsystem, which can be a successful case. Given an effective
+recommendation system, we can decompose S as in Eq. 2:
+
+To estimate the system’s performance in the absence of Rec, we
+introduce the scaling factors α and β, which quantify how much Rec multiplies the zero-shot and AEH success probabilities, respectively, assuming α,
+β ≥ 1. Using Eq. 2 the hypothetical Q-only success probabilities are then,
+
+PðSÞ ¼ PðZSÞ þ ð1  PðZSÞÞ PðAEHj:ZSÞ:
+
+Communications Materials | (2026)7:115
+
+ð2Þ
+
+PðZSjQ onlyÞ ¼
+
+ 0:7628
+0:1424
+; P AEHj:ZS; Q only ¼
+;
+α
+β
+
+ð3Þ
+
+0:1424 0:7628 0:1086
+þ
+
+:
+α
+β
+αβ
+
+ð4Þ
+
+0:9052 0:1086
+
+:
+γ
+γ2
+
+ð5Þ
+
+so that
+PðSjQ onlyÞ ¼
+Setting α = β = γ gives
+PðSjQ onlyÞ ¼
+
+This dependency of the success probability on the effectiveness of the
+recommendation system can be considered with a few representative
+examples: In the limiting case where the recommendation system has no
+effect (γ = 1), the success probability is 0.7966, which is the same as the
+overall success probability with the recommendation system. A case where
+the recommendation system has an effectiveness reduction of 50% (i.e.,
+γ = 1.50), the success rate without the recommendation system drops to
+0.56. In the case of double effectiveness (γ = 2), the success rate further
+declines to 0.43. The sensitivity of the success rate concerning variations in
+the recommendation system’s effectiveness is shown in the following Eq. 6:
+d
+0:9052 0:2172
+PðSjQ onlyÞ ¼ 
+þ
+; for γ > 1:
+dγ
+γ2
+γ3
+
+ð6Þ
+
+6
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Article
+
+Fig. 6 | Exponential decay ﬁt (red curve) applied to the observed fraction of
+successful runs per attempt number (black points). A single-parameter exponential, S(x) = 11.1 e−0.46x + 7.0 % (red line), captures the trend. Shaded bands specify
+the three operating regimes: the opening recommendation system zone (zeroshot wins), the steep maximum workﬂow utilization zone where early retries yield
+
+rapidly diminishing but still substantive gains, and the long-tail shallow workﬂow
+utilization zone in which performance plateaus at the 7% baseline. The ﬁt conﬁrms
+that most recoverable errors are corrected within the ﬁrst three attempts, after which
+additional computation yields marginal returns.
+
+This derivative indicates that the reduction in success rate (when the
+recommendation system is removed) is most sensitive when its effectiveness
+factor (γ) is close to 1. These results imply that the recommendation system
+signiﬁcantly boosts system performance. As γ increases (implying that the
+recommendation system is even slightly effective), the success probability in
+the Q-only regime diminishes sharply. The derivative analysis conﬁrms that
+the decrease in success probability is steepest when γ is near 1. Small
+enhancements due to the recommendation system can lead to substantial
+differences in overall performance. The benchmark reported here evaluates
+protocol executability using the controlled validation procedure described
+in the “Methods” section. Accordingly, a successful case indicates that
+GENIUS generated a QE protocol that passed parsing and early runtime
+validation within the benchmark window. This metric does not by itself
+establish that the resulting workﬂow is scientiﬁcally optimal, that it is the
+unique protocol an expert user would have chosen, or that it improves enduser productivity relative to manual practice. These questions require
+dedicated comparative studies with human users and are therefore left for
+future work.
+
+247 parameters and 330 dependency edges, the KG supplies the LLMs with
+grounded, constraint-aware facts, reducing hallucinations and improving
+syntactic and physical consistency. Model hierarchy: lightweight models
+address most queries, while larger models are invoked only when the
+workﬂow stalls, improving cost-performance trade-offs without sacriﬁcing
+robustness. Finite-state error recovery: a transparent ﬁnite-state machine
+monitors every run, restarts from a clean template after three failed ﬁxes, and
+escalates only when the evidence justiﬁes the additional expense.
+Together, these elements help narrow the know-do gap that separates
+mature electronic-structure codes from more routine, accessible use. This
+reduces the need for users to engage directly with arcane input syntax, while
+allowing computational specialists to redirect more effort from boilerplate
+scripting toward scientiﬁc exploration. In the context of ICME, GENIUS
+addresses an important implementation barrier, helping predictive simulation integrate more effectively into design loops and high-throughput
+campaigns. By automating protocol generation, validation, and repair,
+GENIUS can broaden access to advanced simulation tools for groups
+without deep computational expertise, thereby supporting wider participation in materials discovery. Its transparent logs also support reproducibility, a prerequisite for FAIR data practices.
+The present KG covers only pw.x; extending it to other Quantum
+ESPRESSO modules and to codes beyond QE will broaden GENIUS’s reach.
+The GENIUS architecture is, in principle, transferable to other simulation
+codes provided that four key elements are present: (i) a curated parameter
+representation encoding syntax, dependencies, and conditional logic; (ii) a
+retrieval layer that maps user prompts to this representation; (iii) an
+executable validator that exposes machine-interpretable errors; and (iv) a
+backend adapter for submission, monitoring, and provenance capture. In
+this sense, the core design of GENIUS is code-agnostic at the systems level.
+However, its practical performance in a new domain will depend signiﬁcantly on the quality of the documentation, the informativeness of the
+target code’s error messages, and the maturity of the curated knowledge
+representation. Community-driven contributions could include additional
+simulation codes, reﬁned edge conditions, and enriched manually curated
+metadata.
+
+Conclusion
+Our study demonstrates that the GENIUS framework has successfully
+automated protocol generation, early validation, and failure recovery for a
+substantial fraction of QE-based DFT requests under the benchmark conditions studied here. By integrating a domain-speciﬁc knowledge graph with
+a tiered stack of large language models and an intelligent, automated errorhandling loop, the framework converts text user requests into Quantum
+ESPRESSO simulation protocol inputs that pass early-execution validation
+for approximately 80% of the benchmark cases. When the initial attempt
+fails, the agentic loop repairs > 76% of crashes, and the attempt-wise success
+curve follows a fast exponential decay toward a stable 7% baseline, indicating
+that most recoverable errors are neutralized in the earliest retries. These
+claims are consistent with the role of QE in this study as an execution-level
+validator, in which malformed or inconsistent inputs typically fail immediately during input reading or at early runtime stages. Three architectural
+choices underpin this performance. Smart knowledge graph: encapsulating
+Communications Materials | (2026)7:115
+
+7
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Finally, incorporating physics-informed validators (e.g., symmetry
+checks, charge counting) and adaptive hyperparameter tuning may further
+improve ﬁrst-shot accuracy. For high-cost production workloads, we do not
+view fully automatic submission as the only appropriate operating mode. A
+human-in-the-loop checkpoint between protocol drafting and scheduler
+submission is both technically straightforward in the current architecture
+and scientiﬁcally desirable when modeling choices remain ambiguous.
+GENIUS shows that a substantial part of the long-standing technical drag on
+computational materials science can be reduced when factual domain
+knowledge, strategic model selection, and disciplined workﬂow control are
+fused into a single agentic system.
+
+Methods
+We developed GENIUS to address technical challenges in computational
+materials science and to make QE-based simulation methods more accessible to researchers in the domain. Although we focus here on QE as a
+representative case, this approach can easily be extended to any atomistic
+simulation code, including molecular dynamics. This framework combines
+LLMs with a smart KG, serving as an intelligent interface between users and
+QE to automate the generation, validation, and debugging of complex
+simulation protocols. Our system architecture comprises three main components, which are: (i) a recommendation system, (ii) a protocol generation
+module, and (iii) an automated error handling system (denoted as error 1
+and error 2) as shown in Fig. 1. These components are designed to handle
+speciﬁc aspects of the workﬂow, from user input to the generation of the
+ﬁnal protocol. The framework prioritizes reproducibility, accuracy, and user
+adaptability, aligning with best practices and scientiﬁc standards in computational materials research. Therefore, references to computational
+resources, model names, service providers, or other entities are made by
+name, as these are considered common knowledge within the relevant ﬁelds.
+System architecture overview
+In GENIUS, our three-tier QE simulation protocol generation architecture
+is based on a set of sequential propositions. (i) Recommendation system: this
+interface connects the user to the protocol generation pipeline. It comprises
+submodules that collect material-speciﬁc information, retrieve relevant QE
+simulation parameters, and evaluate them. This information is formulated
+into a template recommended to the protocol generation system. The
+template includes a collection of parameters with suggested values and data
+types (CHARACTER, REAL, INTEGER, and LOGICAL), followed by
+material-speciﬁc information, such as atomic positions and appropriate
+element-speciﬁc pseudopotentials. (ii) Protocol generation system: it generates the simulation protocol based on the template provided by the
+recommendation system. The system may not use all suggested parameters,
+as the ﬁnal selection occurs during protocol generation, taking into account
+the user’s prompt and additional context provided to the LLM. The generated input is syntactically validated by running the QE program. Upon
+successful validation, the workﬂow concludes. If validation fails, the automated error-handling module is invoked. (iii) Automated error handling
+system: it receives the current simulation protocol and error messages from
+the QE program and extracts relevant documentation from these messages.
+Using the currently generated protocol and extracted documentation, the
+error can be resolved and the protocol revalidated. Each LLM is allocated a
+speciﬁc number of attempts to resolve the error. If the error persists, the
+system switches to the next, presumably more capable LLM in a predeﬁned
+hierarchy. If all attempts fail, the process terminates with a failure message.
+System components integration. The framework employs a ﬁnite-state
+machine (FSM) architecture to manage component interactions and
+workﬂow progression. Each component operates as a distinct FSM state
+node, with well-deﬁned transition conditions that depend on the state of
+the executing process. The FSM implementation has an (i) entry node: to
+initialize the framework and validate user inputs, (ii) state transitions:
+deﬁned by the success or failure conditions at each processing step, (iii)
+error recovery states: implementing retry mechanisms (for I/O, network,
+Communications Materials | (2026)7:115
+
+Article
+validation), and (iv) terminal states: indicating either success (valid
+protocol generation) or failure (unresolved error). The overall framework
+is illustrated in Fig. 7. GENIUS keeps reasoning and execution separate by
+preventing the language model from directly accessing the execution
+system. Instead, it creates a structured protocol object that is sent to a
+reliable execution layer, which then manages the necessary input ﬁles and
+handles the submission locally. This separation ensures that users and
+sites retain control over key settings, including permissions, job queues,
+time limits, ﬁle storage, and accounting rules. In practice, this system also
+allows a human review step before any long-running tasks are sent to the
+scheduler. This design also supports a human-in-the-loop operating
+mode for expensive production calculations. In this mode, the structured
+protocol draft can be presented to the user for conﬁrmation or clariﬁcation of ambiguous choices, for example, the exchange-correlation
+functional, spin treatment, boundary conditions, k-point density, or
+relaxation strategy, before the calculation is released to the scheduler.
+This interactive checkpoint was not activated in the present
+benchmark because all QE executions were intentionally limited to a
+short validation window.
+Smart knowledge graph
+The user interfaces with the original documentation, as provided, via our
+developed smart KG, as shown in Fig. 8a, which displays the QE KG
+structure. The user can search for nodes and examine their connectivity.
+Although we performed some manual reﬁnement, the parameter descriptions remain faithful to the original documentation. The KG is the core
+component of the recommendation system, comprising 247 nodes and 330
+edges, providing structured, connected information extracted from the QE
+program documentation. The data source for the QE knowledge graph is the
+online documentation for the QE pw.x code at https://www.quantumespresso.org/Doc/INPUT_PW.html. Initially, the documentation was
+converted into a plain .txt version, as QE uses parameters organized into
+nameless sections and cards, each with distinct syntax and purposes,
+which made this format easier to manage than the original HTML format. As
+a result, information was extracted separately for each type. The curated
+documentation was then transformed into a key-value pair format using
+anthropic/claude-3.5-sonnet36 language model, followed by
+manual veriﬁcation and adjustments. For a complete description of the
+resulting key-value schema (including all namelist and card entries, their
+connections and conditions keys, and illustrative JSON examples,
+such as the parameter nspin and card ATOMIC_SPECIES given in
+Fig. 8b, c), please refer to our GitHub repository at https://github.com/KITWorkﬂows/agentic-workﬂow-framework/blob/main/knowledge_graph_
+schema.md. Given the specialized expertise required, improving the KG,
+particularly the connections and conditions, remains an area for future work
+and potential community contributions. We refer to this object as smart
+when we name it as smart knowledge graph to distinguish it from a plain.
+The nodes are retrieved from the KG using two complementary
+approaches: (i) direct keyword matching and (ii) context-aware retrieval
+based on graph relationships and inferred logical conditions. A threshold of
+top 70% cosine similarity37 is used as the cutoff for retrieval, increasing the
+number of nodes evaluated and requiring more computational resources. A
+hashing vectorizer is employed for node embedding because it is robust,
+reliable, fast, and effective for large corpora. Due to the domain-speciﬁc
+nature of calculation requests, keyword- and condition-based retrieval
+proved highly effective and efﬁcient compared to denser embedding
+representations. Additionally, implicit conditions were inferred from the
+user’s input request. For example, when a calculation mentions the Cu
+surface, bulk, or elemental system, the metallic systems condition is
+automatically invoked. We extracted 162 conditions under nine different
+categories to facilitate knowledge retrieval. These nine categories are: calculation type, functional and method, cell and material properties, pseudopotential, magnetism (and spin), isolated systems (by imposing boundary
+conditions), k-point settings, electric-ﬁeld conditions, and occupation types.
+User input requests are processed under these nine categories, and the
+8
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Article
+
+Fig. 7 | State diagram of the AI-driven framework for generating QE simulation
+protocols. The diagram is organized into four composite states (dashed boxes):
+RecommendationSystem parses the user’s natural-language request (“interface“ → “InitializeWorkﬂow”), retrieves materials data (“MaterialsDb”) and simulation parameters (via “DocumentCollection” → “ConditionExtraction” →
+“RetrieveCandidateParameters”), and evaluates them (“EvaluateParameters”) to
+produce a structured input template. “ProtocolGeneration” uses that template
+(“PrepareInputTemplate”) to generate the actual QE input ﬁle
+
+(“QeInputGeneration”). “ExecutionValidation” runs the simulation (“QeRun”),
+transitioning to `Finished' on success. “AutomatedErrorHandling” detects failures
+(“FailureDetected” → “CheckRetries”) and either retries execution (“AttemptCorrection”), switches to an alternative model (“SwitchModel”), or terminates at
+“failure” if all options are exhausted. Solid arrows show transitions labeled with the
+triggering action or condition; color and class styling differentiate data sources, main
+processes, and error-handling loops; more details can be found in the GitHub
+repository.
+
+explicit and implicit relevant conditions are extracted. Each condition serves
+as an access key to nodes in the KG. This inference of implicit conditions
+enables the KG to provide relevant information even when not explicitly
+requested, thereby signiﬁcantly enhancing the contextual understanding
+presented to the user or used in downstream tasks.
+
+explain the current context and then expand upon it, making a reasoned
+conclusion based on incrementally acquired in-context knowledge. Such a
+technique was crucial for error handling and resolution, but less critical for
+tasks like keyword extraction. The second strategy, aimed at structured
+information extraction, employed explicit schema deﬁnitions with expected
+keys and data types, supported by few-shot examples, ensuring that the
+output was a valid JSON object. The LLM’s raw output was extracted using
+regular expressions and parsed into a Python dictionary. This method
+helped to secure downstream integration for API calls and system updates.
+As displayed in panel Fig. 9a, user calculation prompts are parsed to
+extract keywords and calculation conditions. This structured output facilitates access to three parts of the KG nodes. (i) The required nodes corresponding to essential QE parameters for any calculation are included. (ii) A
+keyword search is performed using the extracted keywords against the
+knowledge graph’s raw text. The top 70% of nodes ranked by relevance
+(cosine similarity) are selected. This text search utilizes a hashing vectorizer
+(scikit-learn implementation) with 217 features to vectorize the raw
+text in the knowledge graph and the query keywords. (iii) QE-speciﬁc
+conditions are extracted from the user’s prompt. We identiﬁed 164 unique
+conditions across nine categories within the QE documentation. The user’s
+prompt is parsed to identify applicable conditions within these categories.
+Each matched condition activates relevant KG nodes. The nodes connected
+to the collected nodes are added to the ﬁnal set. The nodes from these three
+parts are concatenated and sent for evaluation. Each selected node (QE
+parameter) is assessed based on the user’s prompt and calculation conditions to determine an appropriate value. If a parameter is evaluated as nonrelevant, it gets none as a value and is excluded.
+
+Large language model integration
+We employed LLMs to perform various tasks, including user-prompt
+interfacing for material information, keyword extraction for KG retrieval,
+evaluation of QE parameters, and processing of QE error messages. Users
+choose the LLM based on accuracy, cost, context window length, and
+runtime availability. For initial interfacing, condition extraction, and parameter evaluation, we used mistralai/mixtral-8 × 22binstruct38. For error keyword extraction, databricks/dbrxinstruct39 was employed. Our core protocol generation involved a
+hierarchical model structure with two worker models (databricks/
+dbrx-instruct, meta-llama/llama-3.1-405b-instruct)40
+and one referee model anthropic/claude-3.5-sonnet36. Additionally, google/gemini-2.0-ﬂash-00141 was used for preprocessing user prompts to extract scoring metrics. This framework validates the effectiveness of the knowledge graph and the automated errorhandling system, providing insights into LLM capabilities.
+We implemented two main prompt engineering strategies. The ﬁrst
+aimed to provide contextual scaffolding to the LLM, and the second strategy
+focused on extracting structured information. The ﬁrst is used as subsequent
+LLM inputs and for further processing, or to initiate other framework
+components. When generating textual responses, the LLM was guided to
+Communications Materials | (2026)7:115
+
+9
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Article
+
+Fig. 8 | The three panels illustrate the structure and interface of the QE knowledge
+graph and how individual QE input parameters are formalized as machinereadable nodes and exposed through an interactive graph that makes their
+dependencies explicit. a Screenshot of the Quantum ESPRESSO knowledge graph’s
+web interface, enabling interactive exploration of nodes and their relationships.
+
+b Example JSON structure for a namelist parameter node “nspin”in the knowledge graph, showing its attributes and inter-parameter relationships. c Example
+JSON structure for a card node “ATOMIC_SPECIES”, illustrating its complex
+syntax and conditional options.
+
+Prompt dataset and complexity mapping
+As shown in Fig. 9b, the framework provides a web interface for users to
+submit free-form calculation prompts. Moreover, because materialstructure geometries can be inconsistent when directly extracted from different models, we employ an agent to retrieve and standardize all structural
+data from the speciﬁed database to ensure reproducibility of the DFT calculations. Upon submission, the system parses the text, extracts the material
+formula or structure, and automatically routes the request to the appropriate
+Materials Cloud database (MC2D or MC3D) based on whether the target
+compound is two- or three-dimensional42,43. To benchmark the interface
+under realistic conditions, we compiled more than 400 prompts from
+independent researchers with no prior knowledge of the framework’s
+internal design. After verifying that each requested material was available in
+MC2D or MC3D, we selected 295 prompts for testing the framework. We
+quantiﬁed prompt complexity using a score-based rubric inspired by Brown
+et al.35. Using the google/gemini-2.0-ﬂash-001 model, we
+extracted ten linguistic and domain-speciﬁc features from every prompt;
+each feature present assigned +1 to the total score. Prompts scoring 0–4,
+
+5–8, and 9 or more were labeled basic, standard, and complex, respectively.
+The complete scoring scripts and prompt dataset are available in our public
+repository44 for more details.
+
+Communications Materials | (2026)7:115
+
+Automated error handling (AEH)
+The framework incorporates an automated error-handling (AEH) system to
+mitigate the critical challenge of time-consuming manual debugging when
+simulations fail. After generating the simulation protocol, the QE program is
+executed. If the execution fails, QE generates a CRASH ﬁle containing a
+descriptive error message. An LLM processes this message to extract relevant keywords, which are then used to query the smart KG for relevant
+information. The retrieved nodes provide contextual information to the
+LLM, which then attempts to formulate a solution to the encountered error.
+Each LLM within the hierarchical architecture is allocated a predeﬁned
+number of retries. Logs from previous unsuccessful attempts within the
+same model’s retry cycle are omitted from the LLM input due to their length
+and potential lack of immediate usefulness. If an LLM uses all its retries
+without resolving the error, it switches to the next model in the hierarchy.
+10
+
+Article
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Fig. 9 | Comparison of the workﬂow service JSON payload and the web interface.
+a Schematic of the minimal JSON payload accepted by the POST /workﬂow/REST
+endpoint. The object deﬁnes the free-text calculation_prompt, the ordered
+gen_model_hierarchy, per-task model_conﬁg, optional interface-agent
+kwargs, the target LLM API, and an optional project conﬁguration. b The browser
+
+dashboard wraps the same parameters in a point-and-click interface: users paste an
+API key, enter their calculation prompt, select a model hierarchy, and launch or
+abort the run. A live log pane streams server-sent events for real-time monitoring.
+The two views illustrate parity between programmatic and interactive control of the
+GENIUS workﬂow service.
+
+The subsequent model restarts the error resolution process from the
+beginning, using the initial output from the recommendation module as its
+starting point. The overall effectiveness of the AEH system is thus signiﬁcantly dependent on the clarity and informational content of the CRASH
+ﬁle combined with the KG, operating within a self-consistent feedback loop.
+In this study, we used the QE PWSCF v.7.2 package45 to validate the
+simulation protocols we developed. It’s important to note that the benchmark we set up focused on generating protocols and performing initial
+validation, rather than a full-ﬂedged production run. Each generated QE
+protocol was executed within a strict 60-s time limit. We considered a case
+successful if the generated input could be parsed and validated during this
+time without causing any crashes. This benchmark helps us determine
+whether GENIUS can generate executable, coherent QE protocols from
+open-ended prompts, rather than whether each calculation was fully carried
+out to yield scientiﬁc results.
+Logs were collected from executing the 295 curated calculation
+prompts to track the framework’s evolution. Each log ﬁle records the
+workﬂow’s terminal status (success or failure) and, for successful runs,
+includes the number of attempts and any model switches that occurred
+during the automated error-handling phase. The primary metric for
+assessing the efﬁciency of protocol generation is the number of attempts and
+model switches required to achieve a successful outcome. A zero value
+indicates zero-shot generation: the initial protocol generated by Model 1,
+using the recommendation system’s output, succeeded on the ﬁrst attempt
+without requiring any intervention from the AEH system. The primary
+requirements are the capability to interact with LLM provider APIs and to
+execute the QE program for protocol validation. Some tools, such as the
+atomic simulation environment (ASE), scikit-learn, and networkx, were also used. Additional dependencies are standard Python
+libraries. The workﬂow API is a RESTful design written in FastAPI,
+managing the workﬂow through standardized HTTP endpoints. Once the
+workﬂow server is initialized, its primary endpoint POST "/workﬂow/"
+accepts JSON payloads that specify calculation parameters, model conﬁgurations, and optional project settings, as shown in Fig. 9a. The service
+provides additional workﬂow management through other endpoints for:
+Status monitoring (GET "/workﬂow-status/{workﬂow_id}"),
+Result retrieval (GET "/results/{workﬂow_id}"), and visualization
+access (GET "/timeline/{workﬂow_id}"). Real-time monitoring is
+enabled via server-sent events (SSE) at the /logs endpoint, as illustrated in
+
+Fig. 9b. These approaches facilitate programmatic integration with other AIdriven applications while supporting interactive human user experiences.
+
+Communications Materials | (2026)7:115
+
+Data availability
+The authors conﬁrm that the data supporting the study’s ﬁndings are
+available in the article GitHub repository https://github.com/KITWorkﬂows/agentic-workﬂow-framework.
+
+Code availability
+The code supporting this study’s ﬁndings is available at https://github.com/
+KIT-Workﬂows/agentic-workﬂow-framework.
+Received: 30 May 2025; Accepted: 15 April 2026;
+
+References
+1.
+
+2.
+
+3.
+
+4.
+5.
+
+6.
+
+7.
+
+8.
+
+Hafner, J., Wolverton, C. & Ceder, G. Toward computational materials
+design: the impact of density functional theory on materials research.
+MRS Bull. 31, 659–668 (2006).
+Shen, S. C. et al. Computational design and manufacturing of
+sustainable materials through ﬁrst-principles and materiomics. Chem.
+Rev. 123, 2242–2275 (2023).
+Bock, F. E. et al. A review of the application of machine learning and
+data mining approaches in continuum materials mechanics. Front.
+Mater. 6, 110 (2019).
+Caldeira Rego, C. R. et al. SimStack: an intuitive workﬂow framework.
+Front. Mater. 9, 877597 (2022).
+Guedes-Sobrinho, D. et al. Revealing the impact of organic spacers
+and cavity cations on quasi-2D perovskites via computational
+simulations. Sci. Rep. 13, 4446 (2023).
+Yu, Z., Singh, B., Yu, Y. & Nazar, L. F. Suppressing argyrodite
+oxidation by tuning the host structure for high-areal-capacity all-solidstate lithium-sulfur batteries. Nat. Mater. 24, 1082–1090 (2025).
+Lin, X. et al. A family of dual-anion-based sodium superionic
+conductors for all-solid-state sodium-ion batteries. Nat. Mater. 24,
+83–91 (2024).
+Han, X. et al. Fast and facile synthesis of amidine-incorporated
+degradable lipids for versatile MRNA delivery in vivo. Nat. Chem. 16,
+1687–1697 (2024).
+
+11
+
+Article
+
+https://doi.org/10.1038/s43246-026-01167-0
+9.
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+17.
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+23.
+
+24.
+
+25.
+
+26.
+
+27.
+28.
+29.
+
+30.
+
+King, A. Four ways to power-up AI for drug discovery. Nature, https://
+doi.org/10.1038/d41586-025-00602-5 (2025).
+Schaarschmidt, J. et al. Workﬂow engineering in materials design
+within the battery 2030+ project. Adv. Energy Mater. 12, 2102638
+(2021).
+Bekemeier, S. et al. Advancing digital transformation in material
+science: the role of workﬂows within the materialdigital initiative. Adv.
+Eng. Mater. https://doi.org/10.1002/adem.202402149 (2025).
+Dalmedico, J. F. et al. Tuning electronic and structural properties of
+lead-free metal halide perovskites: a comparative study of 2D
+Ruddlesden-Popper and 3D compositions. Chemphyschem 25,
+e202400118 (2024).
+Bastos, C. M.dO. et al. First-principles statistical investigation of
+thermodynamic behavior with excitonic effects in mo1−x Wx Se2 alloys
+through a data-driven workﬂow approach. J. Mater. Chem. A Mater.
+Energy Sustain. 13, 39053–39064 (2025).
+Mieller, B., Valavi, M. & Caldeira Rêgo, C. R. An automatized
+simulation workﬂow for powder pressing simulations using SimStack.
+Adv. Eng. Mater. 27, 2400872 (2025).
+Allison, J., Backman, D. & Christodoulou, L. Integrated computational
+materials engineering: a new paradigm for the global materials
+profession. Jom 58, 25–27 (2006).
+Taylor, C. D., Lu, P., Saal, J., Frankel, G. & Scully, J. Integrated
+computational materials engineering of corrosion resistant alloys.
+NPJ Mater. Degrad. 2, 6 (2018).
+Lejaeghere, K. et al. Reproducibility in density functional theory
+calculations of solids. Science 351, aad3000 (2016).
+Huber, S. P. et al. Common workﬂows for computing material
+properties using different quantum engines. NPJ Comput. Mater. 7,
+136 (2021).
+de Araujo, L. O. et al. Automated workﬂow for analyzing
+thermodynamic stability in polymorphic perovskite alloys. NPJ
+Comput. Mater. 10, 146 (2024).
+Bonacci, M. et al. Towards high-throughput many-body perturbation
+theory: efﬁcient algorithms and automated workﬂows. NPJ Comput.
+Mater. 9, 74 (2023).
+Soleymanibrojeni, M., Caldeira Rego, C. R., Esmaeilpour, M. &
+Wenzel, W. An active learning approach to model solid-electrolyte
+interphase formation in Li-ion batteries. J. Mater. Chem. A 12,
+2249–2266 (2024).
+Luke, D. A., Powell, B. J. & Paniagua-Avila, A. Bridges and
+mechanisms: integrating systems science thinking into
+implementation research. Annu. Rev. Public Health 45, 7–25 (2024).
+Toner-Rodgers, A. Artiﬁcial intelligence, scientiﬁc discovery, and
+product innovation. Preprint at https://doi.org/10.48550/arXiv.2412.
+17866 (2024).
+Jablonka, K. M. et al. 14 examples of how LLMs can transform
+materials science and chemistry: a reﬂection on a large language
+model hackathon. Digit. Discov. 2, 1233–1250 (2023).
+Wang, Q., Mao, Z., Wang, B. & Guo, L. Knowledge graph embedding:
+a survey of approaches and applications. IEEE Trans. Knowl. Data
+Eng. 29, 2724–2743 (2017).
+Lambert, N. et al. Tulu 3: pushing frontiers in open language model
+post-training. Preprint at https://doi.org/10.48550/ARXIV.2411.
+15124 (2024).
+Guo, D. et al. DeepSeek-R1 incentivizes reasoning in LLMs through
+reinforcement learning. Nature 645, 633–638 (2025).
+Kimi Team et al. Kimi k1.5: scaling reinforcement learning with LLMs.
+Preprint at https://doi.org/10.48550/ARXIV.2501.12599 (2025).
+Giannozzi, P. et al. Quantum espresso: a modular and open-source
+software project for quantum simulations of materials. J. Phys.
+Condens. Matter 21, 395502 (2009).
+Michelutti, C., Eckert, J., Monecke, M., Klein, J. & Glesner, S. A
+systematic study on the potentials and limitations of LLM-assisted
+software development. In Proc. 2024 2nd International Conference on
+
+Communications Materials | (2026)7:115
+
+31.
+
+32.
+33.
+34.
+35.
+36.
+37.
+
+38.
+39.
+40.
+41.
+
+42.
+
+43.
+
+44.
+
+45.
+
+Foundation and Large Language Models (FLLM), 330–338 (IEEE,
+2024).
+Ledger, G. & Mancinni, R. Detecting LLM hallucinations using Monte
+Carlo simulations on token probabilities. Preprint at https://doi.org/
+10.36227/techrxiv.171822396.61518693/v1 (2024).
+Gundersen, O. E. The fundamental principles of reproducibility.
+Philos. Trans. R. Soc. A 379, 20200210 (2021).
+Holbrook, J. B. Open science, open access, and the democratization
+of knowledge. Issues Sci. Technol. 35, 26–28 (2019).
+Kohonen, T. The self-organizing map. Proc. IEEE 78, 1464–1480
+(1990).
+Brown, T. et al. Language models are few-shot learners. Adv. Neural
+Inf. Process. Syst. 33, 1877–1901 (2020).
+Claude 3.5 sonnet. https://www.anthropic.com/news/claude-3-5sonnet (2024). Accessed: February, 2025.
+Steck, H., Ekanadham, C. & Kallus, N. Is cosine-similarity of
+embeddings really about similarity? Preprint at https://doi.org/10.
+48550/ARXIV.2403.05440 (2024).
+Mistral AI. Mixtral-8 × 22b instruct. https://mistral.ai/news/mixtral8x22b (2024). Accessed: February, 2025.
+Databricks, I. dbrx. https://www.databricks.com/blog/introducingdbrx-new-state-art-open-llm (2024). Accessed: February, 2025.
+AI, M. Meta llama 3.1. https://ai.meta.com/blog/meta-llama-3-1/
+(2024). Accessed: February, 2025.
+Google AI. Gemini 2.0 ﬂash. https://blog.google/technology/googledeepmind/google-gemini-ai-update-december-2024/ (2024).
+Accessed: February, 2025.
+Huber, S. et al. Materials Cloud Three-dimensional Crystals Database
+(mc3d). Materials Cloud Archive 2022.38 https://doi.org/10.24435/
+materialscloud:rw-t0 (2022).
+Campi, D., Mounet, N., Gibertini, M., Pizzi, G. & Marzari, N. Expansion
+of the materials cloud 2D database. ACS Nano 17, 11268–11278
+(2023).
+Soleymanibrojeni, M. & Caldeira Rego, C. R. Agentic-workﬂowframework: AI-driven agentic framework for autonomous simulation
+protocol generation and execution. https://github.com/KITWorkﬂows/agentic-workﬂow-framework (2025).
+Quantum ESPRESSO Group. User’s Guide for Quantum ESPRESSO
+(pw.x). Quantum ESPRESSO Foundation https://www.quantumespresso.org/Doc/pw_user_guide/ (2023). Accessed: February, (2025).
+
+Acknowledgements
+We acknowledge support by the KIT Publication Fund of the Karlsruhe
+Institute of Technology. The authors are also thankful for ﬁnancial
+support from the National Council for Scientiﬁc and Technological
+Development (CNPq, grant numbers 444431/2024-1, and 444069/2024-0).
+W.W., C.R.C.R. thank the German Federal Ministry of Education and
+Research (BMBF) for ﬁnancial support of the project Innovation-Platform
+MaterialDigital (www.materialdigital.de) through project funding FKZ
+number 13XP5094A. The project (HGF ZT-I-PF-5-261 GENIUS)
+underlying this publication is/was funded by the Initiative and Networking
+Fund of the Helmholtz Association in the framework of the Helmholtz AI
+project call.
+
+Author contributions
+M.S., C.R.C.R. conceptualized the study, led the data analysis, prepared the
+ﬁgures, curated the data, and drafted the manuscript. M.J.P., A.C.D., and
+D.G.S. developed and reﬁned the prompts used in GENIUS. C.R.C.R., W.W.,
+and R.A. contributed to funding acquisition, project design, and scientiﬁc
+supervision. All authors contributed to the writing, review, and revision of the
+manuscript.
+
+Funding
+Open Access funding enabled and organized by Projekt DEAL.
+
+12
+
+Article
+
+https://doi.org/10.1038/s43246-026-01167-0
+
+Competing interests
+The authors declare no competing interests.
+
+Additional information
+Correspondence and requests for materials should be addressed to
+Celso Ricardo Caldeira Rêgo.
+Peer review information Communications Materials thanks Massimiliano
+Lupo Pasini, Sandra Diaz-Pier and the other anonymous reviewer(s) for their
+contribution to the peer review of this work. A peer review ﬁle is available.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2026
+
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional
+claims in published maps and institutional afﬁliations.
+
+Communications Materials | (2026)7:115
+
+13
+
+

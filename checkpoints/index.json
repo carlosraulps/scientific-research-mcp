@@ -1,0 +1,60 @@
+{
+  "test_md_20260929_170314": {
+    "run_id": "test_md_20260929_170314",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:03:14.236221+00:00",
+    "metrics": {}
+  },
+  "test_md_20260929_170332": {
+    "run_id": "test_md_20260929_170332",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:03:32.903293+00:00",
+    "metrics": {}
+  },
+  "test_md_20260929_171925": {
+    "run_id": "test_md_20260929_171925",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:19:25.582704+00:00",
+    "metrics": {}
+  },
+  "test_md_20260929_171939": {
+    "run_id": "test_md_20260929_171939",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:19:39.198128+00:00",
+    "metrics": {}
+  },
+  "test_md_20260929_172048": {
+    "run_id": "test_md_20260929_172048",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:20:48.338759+00:00",
+    "metrics": {}
+  },
+  "test_md_20260929_172129": {
+    "run_id": "test_md_20260929_172129",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:21:29.667480+00:00",
+    "metrics": {}
+  },
+  "test_md_20260929_172709": {
+    "run_id": "test_md_20260929_172709",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:27:09.979522+00:00",
+    "metrics": {},
+    "git_commit": null
+  },
+  "test_md_20260929_172837": {
+    "run_id": "test_md_20260929_172837",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-09-29T17:28:37.593356+00:00",
+    "metrics": {},
+    "git_commit": null
+  }
+}

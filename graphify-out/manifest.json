@@ -1,0 +1,674 @@
+{
+  "canvas/artifacts/392fc9ca.json": {
+    "mtime": 1790701412.9014194,
+    "seen": 1790701514.3245332,
+    "ast_hash": "d8063816800408a1d2cceda8fedcc98c",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/668ac4aa.json": {
+    "mtime": 1790701400.9698842,
+    "seen": 1790701514.3245442,
+    "ast_hash": "87363bd22ee302b33b3a44ec2f3f6304",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/9491d3e6.json": {
+    "mtime": 1790701412.895673,
+    "seen": 1790701514.3245473,
+    "ast_hash": "33dc350f4f5b8eb2938028413cd130a5",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/b08a0d43.json": {
+    "mtime": 1790701394.2300947,
+    "seen": 1790701514.3245494,
+    "ast_hash": "605b45437e3c17ff2ea555e6eabdf4b6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/b21b3cd3.json": {
+    "mtime": 1790701394.2341013,
+    "seen": 1790701514.324551,
+    "ast_hash": "6d5450e232fe6262d3e677ecc03a89b1",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/c75fa8f8.json": {
+    "mtime": 1790701412.9008486,
+    "seen": 1790701514.324553,
+    "ast_hash": "dcb44c2a2198b43bd60a3f1221456470",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/e6188405.json": {
+    "mtime": 1790701412.8963244,
+    "seen": 1790701514.3245559,
+    "ast_hash": "2d8840c39f48a6bca02445f81e5adf02",
+    "semantic_hash": ""
+  },
+  "checkpoints/index.json": {
+    "mtime": 1790702829.98388,
+    "seen": 1790702912.3046992,
+    "ast_hash": "d4a5d2e940bef96861c4ad57e4d8f7eb",
+    "semantic_hash": ""
+  },
+  "cli.py": {
+    "mtime": 1790702784.3348098,
+    "seen": 1790702912.3047018,
+    "ast_hash": "e469413dfdfc78344c53228c64cda8eb",
+    "semantic_hash": ""
+  },
+  "logs/artifacts_registry.json": {
+    "mtime": 1790702829.9463003,
+    "seen": 1790702912.3047051,
+    "ast_hash": "59e7e26fc332dcae4f37bf6b8f186280",
+    "semantic_hash": ""
+  },
+  "logs/notes_index.json": {
+    "mtime": 1790702829.9506743,
+    "seen": 1790702912.304707,
+    "ast_hash": "2e5c5ff81da840b8408021a90ce41607",
+    "semantic_hash": ""
+  },
+  "logs/reports_index.json": {
+    "mtime": 1790702829.9706166,
+    "seen": 1790702912.304709,
+    "ast_hash": "34c2ed85e106fca42e771df9d8556d17",
+    "semantic_hash": ""
+  },
+  "scripts/__init__.py": {
+    "mtime": 1790702278.3382332,
+    "seen": 1790702445.416829,
+    "ast_hash": "091dc9c93ed31249f16b216391e44fb9",
+    "semantic_hash": ""
+  },
+  "scripts/canvas_store.py": {
+    "mtime": 1790702669.320566,
+    "seen": 1790702912.3047132,
+    "ast_hash": "c348a4ae08e93e3b4b5d9a189a15c27a",
+    "semantic_hash": ""
+  },
+  "scripts/checkpoint_manager.py": {
+    "mtime": 1790702699.6918952,
+    "seen": 1790702912.3047152,
+    "ast_hash": "2ecefa7db55f09310fd9ebe05902bb1a",
+    "semantic_hash": ""
+  },
+  "scripts/graphify_bridge.py": {
+    "mtime": 1790701326.6276886,
+    "seen": 1790701514.3245754,
+    "ast_hash": "4bedc579d398079d65a44d733155a74c",
+    "semantic_hash": ""
+  },
+  "scripts/historical_memory.py": {
+    "mtime": 1790701299.9012432,
+    "seen": 1790701514.3245778,
+    "ast_hash": "bf5fe25a84f8f9696ad1d5ebb8296f3d",
+    "semantic_hash": ""
+  },
+  "scripts/mcp_server.py": {
+    "mtime": 1790702737.8573084,
+    "seen": 1790702912.3047287,
+    "ast_hash": "215d1f01bb4dafd3ecc48de39b6f2864",
+    "semantic_hash": ""
+  },
+  "scripts/scientific_evaluator.py": {
+    "mtime": 1790701318.445553,
+    "seen": 1790701514.3245816,
+    "ast_hash": "ca36395c31500470bcac8bed4e304286",
+    "semantic_hash": ""
+  },
+  "tests/test_sciresearch.py": {
+    "mtime": 1790702824.3602402,
+    "seen": 1790702912.304738,
+    "ast_hash": "a801b889681e7e8d31a301c3c15849b8",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v1.md": {
+    "mtime": 1790701412.9020383,
+    "seen": 1790701514.3245854,
+    "ast_hash": "a0ace0c8dc60dedae6f675671b23e71e",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study.md": {
+    "mtime": 1790701412.9024491,
+    "seen": 1790701514.324587,
+    "ast_hash": "58d193c7a00551c420d3a729cdc18d90",
+    "semantic_hash": ""
+  },
+  "docs/KNOWLEDGE_MAP.md": {
+    "mtime": 1790702910.2741787,
+    "seen": 1790702912.304762,
+    "ast_hash": "fa3253c16ae747d05df548701ccabf95",
+    "semantic_hash": ""
+  },
+  "extracted_insights/01_DREAMS_provenance_canvas.md": {
+    "mtime": 1790701231.499061,
+    "seen": 1790701514.3245897,
+    "ast_hash": "0145cee5fa46754a1ddafee6e2886e24",
+    "semantic_hash": ""
+  },
+  "extracted_insights/02_MDCROW_checkpoints.md": {
+    "mtime": 1790701237.2131624,
+    "seen": 1790701514.3245926,
+    "ast_hash": "94f38257c01b9ca355b405cb8fa629f9",
+    "semantic_hash": ""
+  },
+  "extracted_insights/03_TRITONDFT_historical_memory.md": {
+    "mtime": 1790701243.2492688,
+    "seen": 1790701514.324594,
+    "ast_hash": "d02c981c9333367d3c73a12f96803c1f",
+    "semantic_hash": ""
+  },
+  "extracted_insights/04_MDAGENT_reflexion_evaluator.md": {
+    "mtime": 1790701248.4743605,
+    "seen": 1790701514.3245955,
+    "ast_hash": "6a0f2ffda9f7f0537678b6c117f2e3af",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1790701487.8282096,
+    "seen": 1790701514.3245988,
+    "ast_hash": "694befc27266f67b81b821e4657b043f",
+    "semantic_hash": ""
+  },
+  "EVIDENCE.md": {
+    "mtime": 1790701501.1824071,
+    "seen": 1790701514.3246012,
+    "ast_hash": "38be099721bb1d3d1c8909f9098d286c",
+    "semantic_hash": ""
+  },
+  "SKILL.md": {
+    "mtime": 1790702905.567673,
+    "seen": 1790702912.3048291,
+    "ast_hash": "d240ec0e6435c4f40894077b40c2e75c",
+    "semantic_hash": ""
+  },
+  "TASK.md": {
+    "mtime": 1790702545.0002086,
+    "seen": 1790702551.745922,
+    "ast_hash": "2085d0ba7c2dbafc4630f8266cfcf405",
+    "semantic_hash": ""
+  },
+  "extracted_insights/05_LEE_multireference_decision_ladder.md": {
+    "mtime": 1790701257.6355202,
+    "seen": 1790701514.3246067,
+    "ast_hash": "6c86d221ade5e9ffb3959374fd954ee7",
+    "semantic_hash": ""
+  },
+  "extracted_insights/06_LIU_lifelong_agent_memory.md": {
+    "mtime": 1790701897.2397265,
+    "seen": 1790701945.7259161,
+    "ast_hash": "a0e34f8caeb7daa3f359929105a3f303",
+    "semantic_hash": ""
+  },
+  "extracted_insights/07_GENIUS_simulation_protocols.md": {
+    "mtime": 1790701904.77982,
+    "seen": 1790701945.7259188,
+    "ast_hash": "4760905760db95a26e58354c6e3a8649",
+    "semantic_hash": ""
+  },
+  "extracted_insights/08_MATSCIAGENT_modular_multitask.md": {
+    "mtime": 1790701915.2329493,
+    "seen": 1790701945.7259214,
+    "ast_hash": "c752d874d6f5b300a4ed7b30348e5921",
+    "semantic_hash": ""
+  },
+  "extracted_insights/09_MI_computer_systems_agents.md": {
+    "mtime": 1790701928.1281083,
+    "seen": 1790701945.725923,
+    "ast_hash": "ca140f972c020ab6a6a5395a6fa30bdf",
+    "semantic_hash": ""
+  },
+  "extracted_insights/10_SIMTHESIZER_workload_simulation.md": {
+    "mtime": 1790701935.3171964,
+    "seen": 1790701945.7259252,
+    "ast_hash": "718cfbffd76bf1d8be9bc8a7840ff1f0",
+    "semantic_hash": ""
+  },
+  "papers_md/Chaudhari_2025_Modular_LLM_Agents_Materials_Science.md": {
+    "mtime": 1790701752.0976734,
+    "seen": 1790701945.7259266,
+    "ast_hash": "53a1651ba6a2e9adcf0942605dfe9a8c",
+    "semantic_hash": ""
+  },
+  "papers_md/Hu_2026_TritonDFT_MultiAgent_Framework.md": {
+    "mtime": 1790701694.6683538,
+    "seen": 1790701945.7259283,
+    "ast_hash": "bfc58815856ef0a67baf0037b96e8c82",
+    "semantic_hash": ""
+  },
+  "papers_md/Kim_2026_Simthesizer_Agent_Driven_Simulation.md": {
+    "mtime": 1790701776.8302011,
+    "seen": 1790701945.72593,
+    "ast_hash": "1fa2181cc0e8979260a845e6dfe32d01",
+    "semantic_hash": ""
+  },
+  "papers_md/Lee_2026_Multireference_Quantum_Chemistry_Agent.md": {
+    "mtime": 1790701720.108469,
+    "seen": 1790701945.7259324,
+    "ast_hash": "643e91e4bb13fba6915bf9e90b068a9c",
+    "semantic_hash": ""
+  },
+  "papers_md/Liu_2026_Lifelong_Agent_Memory_Materials_Scientists.md": {
+    "mtime": 1790701760.492989,
+    "seen": 1790701945.7259364,
+    "ast_hash": "4b1c98de3cbf77a39ff68f1484803b3a",
+    "semantic_hash": ""
+  },
+  "papers_md/Mi_2025_Building_LLM_Agents_Computer_Systems.md": {
+    "mtime": 1790701784.2176518,
+    "seen": 1790701945.7259383,
+    "ast_hash": "a5f37904f6f21fb26d19cd48461c4f78",
+    "semantic_hash": ""
+  },
+  "papers_md/Shi_2025_MDAgent_Thermodynamics_Code_Generation.md": {
+    "mtime": 1790701710.7852798,
+    "seen": 1790701945.7259412,
+    "ast_hash": "00e7d610514634f5a6e84c9f11558018",
+    "semantic_hash": ""
+  },
+  "papers_md/Soleymanibrojeni_2026_GENIUS_Simulation_Protocols.md": {
+    "mtime": 1790701767.861085,
+    "seen": 1790701945.7259426,
+    "ast_hash": "b76c6644306745d7dbd1da7f05248f52",
+    "semantic_hash": ""
+  },
+  "papers_text/Chaudhari_2025_Modular_LLM_Agents_Materials_Science.txt": {
+    "mtime": 1790701721.6994798,
+    "seen": 1790701945.7259438,
+    "ast_hash": "c6325758761ee064d28542f13d0177df",
+    "semantic_hash": ""
+  },
+  "papers_text/Liu_2026_Lifelong_Agent_Memory_Materials_Scientists.txt": {
+    "mtime": 1790701753.1018927,
+    "seen": 1790701945.7259452,
+    "ast_hash": "9d988452c44444de28221797929c7707",
+    "semantic_hash": ""
+  },
+  "papers_text/Shi_2025_MDAgent_Thermodynamics_Code_Generation.txt": {
+    "mtime": 1790701703.3562362,
+    "seen": 1790701945.725947,
+    "ast_hash": "be093574f17340ce5aa9974f651a9bc8",
+    "semantic_hash": ""
+  },
+  "papers_text/Soleymanibrojeni_2026_GENIUS_Simulation_Protocols.txt": {
+    "mtime": 1790701761.4690018,
+    "seen": 1790701945.7259486,
+    "ast_hash": "b7238b923634523128896fed25e1dbba",
+    "semantic_hash": ""
+  },
+  "papers/Campbell_2026_MDCrow_Automating_MD_Workflows.pdf": {
+    "mtime": 1790700220.4523861,
+    "seen": 1790701945.7259657,
+    "ast_hash": "150f3f709a44f65e998e5b1262086ff3",
+    "semantic_hash": ""
+  },
+  "papers/Chaudhari_2025_Modular_LLM_Agents_Materials_Science.pdf": {
+    "mtime": 1790701149.7945607,
+    "seen": 1790701945.7259674,
+    "ast_hash": "42f86b12916d13c6ae8ec46bf214ab50",
+    "semantic_hash": ""
+  },
+  "papers/Hu_2026_TritonDFT_MultiAgent_Framework.pdf": {
+    "mtime": 1790700265.0947676,
+    "seen": 1790701945.7259688,
+    "ast_hash": "1602a726ad0c475f519bb219025aa51f",
+    "semantic_hash": ""
+  },
+  "papers/Kim_2026_Simthesizer_Agent_Driven_Simulation.pdf": {
+    "mtime": 1790701493.7742977,
+    "seen": 1790701945.7259705,
+    "ast_hash": "6a255137cc207989ca6fcf9fcc40133a",
+    "semantic_hash": ""
+  },
+  "papers/Lee_2026_Multireference_Quantum_Chemistry_Agent.pdf": {
+    "mtime": 1790700245.4926002,
+    "seen": 1790701945.7259717,
+    "ast_hash": "ac3c5ee93c2503372c8d68f8933e09f0",
+    "semantic_hash": ""
+  },
+  "papers/Liu_2026_Lifelong_Agent_Memory_Materials_Scientists.pdf": {
+    "mtime": 1790701140.1613765,
+    "seen": 1790701945.7259731,
+    "ast_hash": "7c70ae340b85fd75f05c03ff17a75f30",
+    "semantic_hash": ""
+  },
+  "papers/Mi_2025_Building_LLM_Agents_Computer_Systems.pdf": {
+    "mtime": 1790701476.1730359,
+    "seen": 1790701945.7259748,
+    "ast_hash": "57b99d258b9b4724c8ad1ba71753ade5",
+    "semantic_hash": ""
+  },
+  "papers/Shi_2025_MDAgent_Thermodynamics_Code_Generation.pdf": {
+    "mtime": 1790700316.8932087,
+    "seen": 1790701945.7259758,
+    "ast_hash": "41654f0a8f1aebc2a1302451d94be6c7",
+    "semantic_hash": ""
+  },
+  "papers/Soleymanibrojeni_2026_GENIUS_Simulation_Protocols.pdf": {
+    "mtime": 1790701166.3548732,
+    "seen": 1790701945.725978,
+    "ast_hash": "08eb90ef90102aa9e1fd0b500203daa9",
+    "semantic_hash": ""
+  },
+  "papers/Wang_2026_DREAMS_DFT_Research_Engine.pdf": {
+    "mtime": 1790700286.4839501,
+    "seen": 1790701945.7259793,
+    "ast_hash": "f2fafc75e88c7cb496a203d69565c712",
+    "semantic_hash": ""
+  },
+  "papers_md/Campbell_2026_MDCrow_Automating_MD_Workflows.md": {
+    "mtime": 1790701702.187377,
+    "seen": 1790701945.7259812,
+    "ast_hash": "7aca00d72f10b6fdeaaa361339ead84c",
+    "semantic_hash": ""
+  },
+  "papers_md/Wang_2026_DREAMS_DFT_Research_Engine.md": {
+    "mtime": 1790701687.2270205,
+    "seen": 1790701945.7259824,
+    "ast_hash": "f36e0be583b26938af731a141b388c2a",
+    "semantic_hash": ""
+  },
+  "papers_text/Campbell_2026_MDCrow_Automating_MD_Workflows.txt": {
+    "mtime": 1790701695.3051286,
+    "seen": 1790701945.725984,
+    "ast_hash": "4da21da1971c191e74294545fa67a926",
+    "semantic_hash": ""
+  },
+  "papers_text/Hu_2026_TritonDFT_MultiAgent_Framework.txt": {
+    "mtime": 1790701688.322035,
+    "seen": 1790701945.7259858,
+    "ast_hash": "35c894fb6cdc4646ec78f89751d32c18",
+    "semantic_hash": ""
+  },
+  "papers_text/Kim_2026_Simthesizer_Agent_Driven_Simulation.txt": {
+    "mtime": 1790701769.0110998,
+    "seen": 1790701945.725987,
+    "ast_hash": "994d29e0aea99305524a2dcf15aef6ed",
+    "semantic_hash": ""
+  },
+  "papers_text/Lee_2026_Multireference_Quantum_Chemistry_Agent.txt": {
+    "mtime": 1790701711.7943485,
+    "seen": 1790701945.7259881,
+    "ast_hash": "f32ef4b8761dc407582fa0a3627b4604",
+    "semantic_hash": ""
+  },
+  "papers_text/Mi_2025_Building_LLM_Agents_Computer_Systems.txt": {
+    "mtime": 1790701778.1722186,
+    "seen": 1790701945.7259893,
+    "ast_hash": "d9452ca8d711e508abf671a63556ce01",
+    "semantic_hash": ""
+  },
+  "papers_text/Wang_2026_DREAMS_DFT_Research_Engine.txt": {
+    "mtime": 1790701669.6337833,
+    "seen": 1790701945.725991,
+    "ast_hash": "d7a61b57787776a3d2d893d80a2b59bc",
+    "semantic_hash": ""
+  },
+  "docs/GLOBAL_IMPROVEMENT_PLAN.md": {
+    "mtime": 1790701960.0224986,
+    "seen": 1790701967.6261327,
+    "ast_hash": "ff6031ab1171b1032e99d5afd70a7595",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/0076ccd9.json": {
+    "mtime": 1790702365.5795102,
+    "seen": 1790702445.4167483,
+    "ast_hash": "07183c7724e7443d6f6069dcba013474",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/0ba067d4.json": {
+    "mtime": 1790702365.577358,
+    "seen": 1790702445.416757,
+    "ast_hash": "aa70f57ae1cf3d48e25ba84de5d12366",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/0ca8b719.json": {
+    "mtime": 1790702379.1759427,
+    "seen": 1790702445.4167602,
+    "ast_hash": "06a093dd4118c5100e1bb36b5fdd4a4e",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/570cd628.json": {
+    "mtime": 1790702379.1812465,
+    "seen": 1790702445.4167733,
+    "ast_hash": "200aa49cfc0b6398dbdb75714125b291",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/8bbd7724.json": {
+    "mtime": 1790702365.5765793,
+    "seen": 1790702445.416781,
+    "ast_hash": "1526aa60c9ea10f10e77db8c8667c334",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/a1de0dc8.json": {
+    "mtime": 1790702379.175091,
+    "seen": 1790702445.4167879,
+    "ast_hash": "468d256ae6d33879cef76542a04a0fae",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/f3efb3b9.json": {
+    "mtime": 1790702365.5802002,
+    "seen": 1790702445.416802,
+    "ast_hash": "5e929486995e05a9abfd335f19d92056",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/fa089e9d.json": {
+    "mtime": 1790702379.1823463,
+    "seen": 1790702445.416804,
+    "ast_hash": "ddf81fd06aa4140f1b9e33fce3a371e2",
+    "semantic_hash": ""
+  },
+  "scripts/dual_verifier.py": {
+    "mtime": 1790702263.723067,
+    "seen": 1790702445.4168375,
+    "ast_hash": "ed5f92ec093961abccedf53a3862dea7",
+    "semantic_hash": ""
+  },
+  "scripts/facts_store.py": {
+    "mtime": 1790702244.002842,
+    "seen": 1790702445.4168391,
+    "ast_hash": "41a9a32b7816e5487dbb5a35bfc57e9d",
+    "semantic_hash": ""
+  },
+  "scripts/protocol_engine.py": {
+    "mtime": 1790702271.800159,
+    "seen": 1790702445.4168496,
+    "ast_hash": "1febcd499c6515ca6d3b5f6333452550",
+    "semantic_hash": ""
+  },
+  "scripts/skill_crystallizer.py": {
+    "mtime": 1790702253.1799467,
+    "seen": 1790702445.4168553,
+    "ast_hash": "95ca4b627d74647dadf5a9469eaf165e",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v2.md": {
+    "mtime": 1790702365.580976,
+    "seen": 1790702445.4168634,
+    "ast_hash": "aed71fce8befc1dafd29ee1c9b6d2893",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v3.md": {
+    "mtime": 1790702379.1879857,
+    "seen": 1790702445.4168653,
+    "ast_hash": "9f25bbcf0bb72940c246781df49ade5b",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study_report_unique.md": {
+    "mtime": 1790702379.191646,
+    "seen": 1790702445.4168766,
+    "ast_hash": "0bbb28910ccc1638dce93abff4698827",
+    "semantic_hash": ""
+  },
+  "extracted_insights/12_MEADOWS_thinking_in_systems.md": {
+    "mtime": 1790702230.8016908,
+    "seen": 1790702445.4169133,
+    "ast_hash": "210f616bcf79e553d63fa86d1093b826",
+    "semantic_hash": ""
+  },
+  "papers_md/Meadows_2008_Thinking_In_Systems.md": {
+    "mtime": 1790702197.2056437,
+    "seen": 1790702445.4169295,
+    "ast_hash": "431b271e933d21890d6d1548c7ddf706",
+    "semantic_hash": ""
+  },
+  "papers_md/Sankaralingam_2026_Rosetta_Performance_Modeling.md": {
+    "mtime": 1790702163.7370226,
+    "seen": 1790702445.4169345,
+    "ast_hash": "34d40c2511d703a480099e857422a5f2",
+    "semantic_hash": ""
+  },
+  "papers_text/Meadows_2008_Thinking_In_Systems.txt": {
+    "mtime": 1790702165.6169393,
+    "seen": 1790702445.4169536,
+    "ast_hash": "0121447d1896bcdc9fd8911eb04a9cc9",
+    "semantic_hash": ""
+  },
+  "extracted_insights/11_ROSSETTA_first_principles_modeling.md": {
+    "mtime": 1790702222.1955922,
+    "seen": 1790702445.4169862,
+    "ast_hash": "596beb9da4611d70819788596b4ee994",
+    "semantic_hash": ""
+  },
+  "papers/Meadows_2008_Thinking_In_Systems.pdf": {
+    "mtime": 1790702026.7773044,
+    "seen": 1790702445.4170125,
+    "ast_hash": "2ee4a14a158e824b867e07ad95005643",
+    "semantic_hash": ""
+  },
+  "papers/Sankaralingam_2026_Rosetta_Performance_Modeling.pdf": {
+    "mtime": 1790701976.4096978,
+    "seen": 1790702445.417019,
+    "ast_hash": "5181bffde9f111bb66a07ea709efe4fe",
+    "semantic_hash": ""
+  },
+  "papers_text/Sankaralingam_2026_Rosetta_Performance_Modeling.txt": {
+    "mtime": 1790702156.6008346,
+    "seen": 1790702445.4170496,
+    "ast_hash": "53774346b81f85ccbdf2e2c1149cc4a8",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/0ec38bf8.json": {
+    "mtime": 1790702464.3275545,
+    "seen": 1790702551.745702,
+    "ast_hash": "2e2d8747878cbb359e4f673dbf117d9a",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/393d48fb.json": {
+    "mtime": 1790702448.2824063,
+    "seen": 1790702551.7457094,
+    "ast_hash": "f4084a2246ed330eb219f29367ff969d",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/5a008ddc.json": {
+    "mtime": 1790702489.6535306,
+    "seen": 1790702551.7457144,
+    "ast_hash": "01085a437a8112da49efe08f65cd1dd2",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/5d7463e7.json": {
+    "mtime": 1790702448.2781408,
+    "seen": 1790702551.7457163,
+    "ast_hash": "0ed856ae76976e3ebb2254a29832bcea",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/65476e01.json": {
+    "mtime": 1790702448.2833836,
+    "seen": 1790702551.7457178,
+    "ast_hash": "11413bee50e0a911567b971384bbc6ac",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/84267b0e.json": {
+    "mtime": 1790702489.6624477,
+    "seen": 1790702551.7457247,
+    "ast_hash": "860bed73180ce1eb7a45c8a2658c2de6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/a9edc4dd.json": {
+    "mtime": 1790702489.6608834,
+    "seen": 1790702551.7457356,
+    "ast_hash": "a347c10ec36fa014f9dff2043a5bccc2",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/ce445e15.json": {
+    "mtime": 1790702489.643272,
+    "seen": 1790702551.7457483,
+    "ast_hash": "ce408a97a24bd25e95a03ab8a9f5af45",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/d518f5a6.json": {
+    "mtime": 1790702464.3294988,
+    "seen": 1790702551.7457497,
+    "ast_hash": "db5836402df54ad419c74aaa58e614d6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/da73f59d.json": {
+    "mtime": 1790702448.2771873,
+    "seen": 1790702551.7457514,
+    "ast_hash": "f5aaf9a5bac46c7c96745e4bfbcb3cbe",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v4.md": {
+    "mtime": 1790702448.2844775,
+    "seen": 1790702551.7458284,
+    "ast_hash": "88b87f26734f69cd36b0939de62d93bf",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v5.md": {
+    "mtime": 1790702489.664009,
+    "seen": 1790702551.74583,
+    "ast_hash": "b8d7dc33e17c80a8ee7863c80a06cfb0",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study_report_a769b1.md": {
+    "mtime": 1790702489.6647391,
+    "seen": 1790702551.745835,
+    "ast_hash": "c2b5c8e5362e0033d197a29b7852676c",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/23d64afd.json": {
+    "mtime": 1790702829.9303002,
+    "seen": 1790702912.3046248,
+    "ast_hash": "48a7087ed782ea04683a37b0dffe89a6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/2fb7b3e8.json": {
+    "mtime": 1790702829.9391491,
+    "seen": 1790702912.3046274,
+    "ast_hash": "aaf3cd90493e5555f37576f5e6eea659",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/46ea4929.json": {
+    "mtime": 1790702829.9433002,
+    "seen": 1790702912.304637,
+    "ast_hash": "5bd321a7cfb2685b1aa2666e63535bd6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/c6ffc7cb.json": {
+    "mtime": 1790702829.9254847,
+    "seen": 1790702912.30467,
+    "ast_hash": "ec63f90e498bc7526ab29592494c1f8d",
+    "semantic_hash": ""
+  },
+  "scripts/git_controller.py": {
+    "mtime": 1790702632.2361627,
+    "seen": 1790702912.3047216,
+    "ast_hash": "b805609b9967f91d283a52f218dc0323",
+    "semantic_hash": ""
+  },
+  "canvas/notes/pt_bulk_convergence_discussion_v6.md": {
+    "mtime": 1790702829.9504585,
+    "seen": 1790702912.3047504,
+    "ast_hash": "6ffc792f8a3c17c70847800b4e6458df",
+    "semantic_hash": ""
+  },
+  "canvas/reports/sol27lc_benchmark_platinum_study_report_18a8ee.md": {
+    "mtime": 1790702829.9693005,
+    "seen": 1790702912.304754,
+    "ast_hash": "de4ab852b0c9c4908e1958501a58ad65",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790702854.2114182,
+    "seen": 1790702912.3048272,
+    "ast_hash": "825572d924a4040a9d4c0f9ca3169176",
+    "semantic_hash": ""
+  }
+}
