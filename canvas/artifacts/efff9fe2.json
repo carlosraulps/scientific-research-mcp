@@ -1,0 +1,33 @@
+{
+  "result_id": "efff9fe2",
+  "producing_tool": "plot_tm_site_competition.py:plot_presentation_summary",
+  "value": {
+    "figure_path": "/home/cr/simulations/crcl3-HER/crcl3-newcals/postprosseing/tm_site_preference_barchart.png",
+    "groups_count": 8,
+    "status": "INCLUDED_NI_U"
+  },
+  "arguments": {
+    "figure_name": "tm_site_preference_barchart.png",
+    "groups": [
+      "Co (PBE)",
+      "Co (PBE+D3)",
+      "Co (PBE+D3+U)",
+      "Fe (PBE)",
+      "Fe (PBE+D3)",
+      "Ni (PBE)",
+      "Ni (PBE+D3)",
+      "Ni (PBE+D3+U)"
+    ]
+  },
+  "rationales": {},
+  "sources": {},
+  "declared_context": "Presentation bar chart summarizing site binding energies of Co, Fe, and Ni on monolayer CrCl3 across exchange-correlation variants.",
+  "parent_ids": [],
+  "created_at": "2026-09-30T13:52:15.388337+00:00",
+  "git": {
+    "commit": "2f140276e87cfcb187383b738fb208248507e615",
+    "short_commit": "2f140276",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

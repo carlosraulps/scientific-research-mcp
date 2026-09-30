@@ -1,0 +1,35 @@
+[
+  {
+    "site_index": 29,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      19,
+      28,
+      26
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "C"
+    ],
+    "bond_lengths_ang": [
+      1.25,
+      1.25,
+      1.4431
+    ],
+    "adsorbate_index": 58,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.1,
+    "bond_angles_deg": [
+      86.11,
+      86.11,
+      147.48
+    ],
+    "average_bond_angle_deg": 106.56,
+    "poav1_theta_p_deg": 16.248,
+    "poav1_theta_sp_deg": 73.752,
+    "puckering_height_ang": 0.35,
+    "base_area_ang2": 1.68,
+    "polyhedron_volume_ang3": 0.196
+  }
+]

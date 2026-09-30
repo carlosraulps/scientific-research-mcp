@@ -27,9 +27,13 @@
 - **Run `test_md_20260929_173042`** [RUNNING]: Equilibrate solvated protein in NPT ensemble at 300K. - Updated: `2026-09-29T17:30:42.889321+00:00`
 - **Run `crcl3_2x2_co_embedded_clean`** [CONVERGED]: Two-phase in-allocation structural relaxation of embedded Co in monolayer CrCl3 (PBE+D3 BJ followed by PBE+D3+U). - Updated: `2026-09-29T17:58:13.301641+00:00`
 - **Run `crcl3_2x2_ni_embedded_clean`** [RUNNING]: In-allocation two-phase relaxation of clean Ni-embedded monolayer CrCl3 (Cr8NiCl24) from PBE+D3 to PBE+D3+U. - Updated: `2026-09-29T20:13:43.827758+00:00`
+- **Run `crcl3_2x2_fe_embedded_clean`** [CONVERGED]: Fully converged structural relaxation of clean Fe-embedded monolayer CrCl3 (PBE+D3+U) on Huk huk120. - Updated: `2026-09-30T10:41:09.703262+00:00`
+- **Run ``** [RUNNING]:  - Updated: `2026-09-30T14:40:48.365471+00:00`
+- **Run `crcl3_2x2_fe_emb_h_ads`** [RUNNING]:  - Updated: `2026-09-30T14:41:14.980365+00:00`
+- **Run `crcl3_2x2_ni_emb_pipeline`** [RUNNING]:  - Updated: `2026-09-30T14:41:34.887352+00:00`
 
 ## 4. Append-Only Provenance Registry Stats
-- **Total Registered Artifacts**: 41
+- **Total Registered Artifacts**: 45
 - **Audit Log**: [`decisions.csv`](file:///home/cr/simulations/scientific-research/logs/decisions.csv)
 - **Evidence Store**: [`EVIDENCE.md`](file:///home/cr/simulations/scientific-research/EVIDENCE.md)
 - **Operational Protocol**: [`CLAUDE.md`](file:///home/cr/simulations/scientific-research/CLAUDE.md)

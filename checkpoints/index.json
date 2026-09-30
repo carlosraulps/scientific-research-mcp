@@ -91,5 +91,43 @@
       "phase2_status": "RUNNING"
     },
     "git_commit": "5958522f"
+  },
+  "crcl3_2x2_fe_embedded_clean": {
+    "run_id": "crcl3_2x2_fe_embedded_clean",
+    "prompt_summary": "Fully converged structural relaxation of clean Fe-embedded monolayer CrCl3 (PBE+D3+U) on Huk huk120.",
+    "status": "CONVERGED",
+    "updated_at": "2026-09-30T10:41:09.703262+00:00",
+    "metrics": {
+      "final_e0_ev": -154.08029,
+      "forces_converged": true,
+      "ionic_steps_phase2": 19,
+      "mag_moment_mub": 29.767,
+      "status": "CONVERGED"
+    },
+    "git_commit": "2f140276"
+  },
+  "": {
+    "run_id": "",
+    "prompt_summary": "",
+    "status": "RUNNING",
+    "updated_at": "2026-09-30T14:40:48.365471+00:00",
+    "metrics": {},
+    "git_commit": "2f140276"
+  },
+  "crcl3_2x2_fe_emb_h_ads": {
+    "run_id": "crcl3_2x2_fe_emb_h_ads",
+    "prompt_summary": "",
+    "status": "RUNNING",
+    "updated_at": "2026-09-30T14:41:14.980365+00:00",
+    "metrics": {},
+    "git_commit": "2f140276"
+  },
+  "crcl3_2x2_ni_emb_pipeline": {
+    "run_id": "crcl3_2x2_ni_emb_pipeline",
+    "prompt_summary": "",
+    "status": "RUNNING",
+    "updated_at": "2026-09-30T14:41:34.887352+00:00",
+    "metrics": {},
+    "git_commit": "2f140276"
   }
 }

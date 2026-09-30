@@ -1,0 +1,46 @@
+{
+  "run_id": "crcl3_2x2_fe_embedded_clean",
+  "prompt_summary": "Fully converged structural relaxation of clean Fe-embedded monolayer CrCl3 (PBE+D3+U) on Huk huk120.",
+  "status": "CONVERGED",
+  "run_directory": "/home/cr/simulations/scientific-research/runs/crcl3_2x2_fe_embedded_clean",
+  "created_at": "2026-09-30T10:41:09.703262+00:00",
+  "updated_at": "2026-09-30T10:41:09.703262+00:00",
+  "agent_trace": [
+    "Phase 1 (PBE+D3 BJ) converged on Huk huk120. Phase 2 (PBE+D3+U with U_Cr=3.29 eV) converged in 19 ionic steps with RMM-DIIS (ALGO=Fast, POTIM=0.25) to E0 = -154.08029 eV, M_tot = 29.767 mu_B. All files synced to origin/master at commit 255f2e6."
+  ],
+  "parameter_registry": {
+    "algo": "Fast",
+    "ediff": 1e-05,
+    "ediffg": -0.02,
+    "encut": 400,
+    "formula": "Cr8FeCl24",
+    "ispin": 2,
+    "ivdw": 12,
+    "kpoints": "5x5x1",
+    "ldau": true,
+    "magmom": "8*3.0 24*0.0 1*4.0",
+    "potim": 0.25,
+    "u_cr": 3.29
+  },
+  "file_paths": [
+    "crcl3-newcals/crcl3-2x2-fe_emb-huk/clean/u_converged/CONTCAR",
+    "crcl3-newcals/crcl3-2x2-fe_emb-huk/clean/u_converged/OUTCAR",
+    "crcl3-newcals/crcl3-2x2-fe_emb-huk/clean/u_converged/OSZICAR"
+  ],
+  "figures": [
+    "crcl3-newcals/postprosseing/crcl3_fe_h_u_comparison_multipanel.png"
+  ],
+  "metrics": {
+    "final_e0_ev": -154.08029,
+    "forces_converged": true,
+    "ionic_steps_phase2": 19,
+    "mag_moment_mub": 29.767,
+    "status": "CONVERGED"
+  },
+  "git": {
+    "commit": "2f140276e87cfcb187383b738fb208248507e615",
+    "short_commit": "2f140276",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

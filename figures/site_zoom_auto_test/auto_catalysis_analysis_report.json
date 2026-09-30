@@ -1,0 +1,200 @@
+[
+  {
+    "site_index": 29,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      19,
+      28,
+      26
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "C"
+    ],
+    "bond_lengths_ang": [
+      1.25,
+      1.25,
+      1.4431
+    ],
+    "adsorbate_index": 58,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.1,
+    "bond_angles_deg": [
+      86.11,
+      86.11,
+      147.48
+    ],
+    "average_bond_angle_deg": 106.56,
+    "poav1_theta_p_deg": 16.248,
+    "poav1_theta_sp_deg": 73.752,
+    "puckering_height_ang": 0.35,
+    "base_area_ang2": 1.68,
+    "polyhedron_volume_ang3": 0.196
+  },
+  {
+    "site_index": 56,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      55,
+      57,
+      75
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "H"
+    ],
+    "bond_lengths_ang": [
+      1.3892,
+      1.3892,
+      2.1468
+    ],
+    "adsorbate_index": 76,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.09,
+    "bond_angles_deg": [
+      145.72,
+      26.23,
+      119.49
+    ],
+    "average_bond_angle_deg": 97.14,
+    "poav1_theta_p_deg": 0.0,
+    "poav1_theta_sp_deg": 90.0,
+    "puckering_height_ang": 0.0,
+    "base_area_ang2": 0.6591,
+    "polyhedron_volume_ang3": 0.0
+  },
+  {
+    "site_index": 55,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      56,
+      54,
+      76
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "H"
+    ],
+    "bond_lengths_ang": [
+      1.3892,
+      1.4,
+      2.155
+    ],
+    "adsorbate_index": 75,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.09,
+    "bond_angles_deg": [
+      146.16,
+      25.91,
+      120.26
+    ],
+    "average_bond_angle_deg": 97.44,
+    "poav1_theta_p_deg": 0.0,
+    "poav1_theta_sp_deg": 90.0,
+    "puckering_height_ang": 0.0,
+    "base_area_ang2": 0.654,
+    "polyhedron_volume_ang3": 0.0
+  },
+  {
+    "site_index": 54,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      53,
+      55,
+      73
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "H"
+    ],
+    "bond_lengths_ang": [
+      1.3892,
+      1.4,
+      2.155
+    ],
+    "adsorbate_index": 74,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.09,
+    "bond_angles_deg": [
+      146.16,
+      25.91,
+      120.26
+    ],
+    "average_bond_angle_deg": 97.44,
+    "poav1_theta_p_deg": 0.0,
+    "poav1_theta_sp_deg": 90.0,
+    "puckering_height_ang": 0.0,
+    "base_area_ang2": 0.654,
+    "polyhedron_volume_ang3": 0.0
+  },
+  {
+    "site_index": 53,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      54,
+      52,
+      74
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "H"
+    ],
+    "bond_lengths_ang": [
+      1.3892,
+      1.3892,
+      2.1468
+    ],
+    "adsorbate_index": 73,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.09,
+    "bond_angles_deg": [
+      145.72,
+      26.23,
+      119.49
+    ],
+    "average_bond_angle_deg": 97.14,
+    "poav1_theta_p_deg": 0.0,
+    "poav1_theta_sp_deg": 90.0,
+    "puckering_height_ang": 0.0,
+    "base_area_ang2": 0.6591,
+    "polyhedron_volume_ang3": 0.0
+  },
+  {
+    "site_index": 48,
+    "site_symbol": "C",
+    "neighbor_indices": [
+      47,
+      49,
+      71
+    ],
+    "neighbor_symbols": [
+      "C",
+      "C",
+      "H"
+    ],
+    "bond_lengths_ang": [
+      1.3892,
+      1.4,
+      2.155
+    ],
+    "adsorbate_index": 72,
+    "adsorbate_symbol": "H",
+    "adsorbate_bond_length_ang": 1.09,
+    "bond_angles_deg": [
+      146.16,
+      25.91,
+      120.26
+    ],
+    "average_bond_angle_deg": 97.44,
+    "poav1_theta_p_deg": 0.0,
+    "poav1_theta_sp_deg": 90.0,
+    "puckering_height_ang": 0.0,
+    "base_area_ang2": 0.654,
+    "polyhedron_volume_ang3": 0.0
+  }
+]

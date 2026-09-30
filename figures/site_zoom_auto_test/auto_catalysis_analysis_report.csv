@@ -1,0 +1,7 @@
+site,atom_idx,element,theta_p_deg,puckering_height_ang,tet_volume_ang3,avg_bond_angle_deg,adsorbate,adsorbate_dist_ang
+S1,29,C,16.248,0.35,0.196,106.56,H58,1.1
+S2,56,C,0.0,0.0,0.0,97.14,H76,1.09
+S3,55,C,0.0,0.0,0.0,97.44,H75,1.09
+S4,54,C,0.0,0.0,0.0,97.44,H74,1.09
+S5,53,C,0.0,0.0,0.0,97.14,H73,1.09
+S6,48,C,0.0,0.0,0.0,97.44,H72,1.09

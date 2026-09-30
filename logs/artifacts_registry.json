@@ -1189,5 +1189,174 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "9af5c0e5": {
+    "result_id": "9af5c0e5",
+    "producing_tool": "vasp_std_6.2.0",
+    "value": {
+      "e0_ev": -154.08029,
+      "forces_converged": true,
+      "ionic_steps": 19,
+      "magmom_mub": 29.767,
+      "system": "crcl3_2x2_fe_embedded_clean_u_converged"
+    },
+    "arguments": {
+      "algo": "Fast",
+      "ediff": 1e-05,
+      "ediffg": -0.02,
+      "encut": 400,
+      "formula": "Cr8FeCl24",
+      "ispin": 2,
+      "ivdw": 12,
+      "kpoints": "5x5x1",
+      "ldau": true,
+      "magmom": "8*3.0 24*0.0 1*4.0",
+      "potim": 0.25,
+      "u_cr": 3.29,
+      "xc": "PBE-D3(BJ)+U"
+    },
+    "rationales": {
+      "algo": "RMM-DIIS fast electronic minimizer with pre-converged wavefunctions from Phase 1",
+      "ediffg": "Publication target force threshold (<0.02 eV/A)",
+      "potim": "Reduced step length to avoid conjugate-gradient overshooting in 2D puckered halides",
+      "u_cr": "Linear response / structural observable benchmark for Cr 3d manifold"
+    },
+    "sources": {
+      "algo": "6aba240c",
+      "ediffg": "6aba240c",
+      "potim": "6aba240c",
+      "u_cr": "6aba240c"
+    },
+    "declared_context": "Phase 2 (+U) structural optimization of clean Fe-embedded monolayer CrCl3 supercell (Cr8FeCl24, 33 atoms) on Huk huk120 (Job 7953). Fully converged in 19 ionic steps with RMM-DIIS.",
+    "parent_ids": [
+      "6aba240c"
+    ],
+    "created_at": "2026-09-30T10:29:41.680091+00:00",
+    "git": {
+      "commit": "2f140276e87cfcb187383b738fb208248507e615",
+      "short_commit": "2f140276",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "08804a7b": {
+    "result_id": "08804a7b",
+    "producing_tool": "bader_henkelman_ovito_xcrysden",
+    "value": {
+      "bader_summary_csv": "/home/cr/simulations/photh-gr/04_strain_analysis/bader_strained/bader_strained_summary.csv",
+      "composite_figure_pdf": "/home/cr/simulations/photh-gr/04_strain_analysis/figures_bader/fig_bader_pristine_vs_strained_composite.pdf",
+      "composite_figure_png": "/home/cr/simulations/photh-gr/04_strain_analysis/figures_bader/fig_bader_pristine_vs_strained_composite.png",
+      "pristine_net_charges": {
+        "C1": 0.094351,
+        "C2_2": 0.02692,
+        "C2_3": -0.11308,
+        "C3_4": 0.208469,
+        "C3_5": 0.03801,
+        "C4_6": -0.155733,
+        "C4_7": 0.006918,
+        "C5_8": 0.012703,
+        "C5_9": -0.115729,
+        "C6_10": -0.002828
+      },
+      "profiles_figure_pdf": "/home/cr/simulations/photh-gr/04_strain_analysis/figures_bader/fig_bader_charge_profiles.pdf",
+      "profiles_figure_png": "/home/cr/simulations/photh-gr/04_strain_analysis/figures_bader/fig_bader_charge_profiles.png"
+    },
+    "arguments": {
+      "cases": [
+        "Strain_X_+0.00",
+        "Strain_X_-0.02",
+        "Strain_X_+0.02",
+        "Strain_Y_-0.02",
+        "Strain_Y_+0.02",
+        "Strain_Biaxial_-0.02",
+        "Strain_Biaxial_+0.02"
+      ],
+      "figures": [
+        "fig_bader_charge_profiles.png",
+        "fig_bader_pristine_vs_strained_composite.png"
+      ],
+      "tools_used": [
+        "ovito-snapshot",
+        "xcrysden-visualizer",
+        "bader_henkelman"
+      ]
+    },
+    "rationales": {},
+    "sources": {},
+    "declared_context": "PHOTH-graphene 2D monolayer ground-state Bader charge analysis and strain-induced polarization modulation study.",
+    "parent_ids": [],
+    "created_at": "2026-09-30T13:12:31.262827+00:00",
+    "git": {
+      "commit": "2f140276e87cfcb187383b738fb208248507e615",
+      "short_commit": "2f140276",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "a08e594b": {
+    "result_id": "a08e594b",
+    "producing_tool": "plot_tm_site_competition.py:plot_multipanel_tm_comparison",
+    "value": {
+      "binding_energy_Ni_S2_U": -4.37193,
+      "figure_path": "/home/cr/simulations/crcl3-HER/crcl3-newcals/postprosseing/tm_site_competition_multipanel.png",
+      "status": "UPDATED_WITH_GS_PEDESTALS"
+    },
+    "arguments": {
+      "figure_name": "tm_site_competition_multipanel.png",
+      "metals": [
+        "Co",
+        "Fe",
+        "Ni"
+      ],
+      "sites": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Study of transition metal site competition and dispersion energetics on monolayer CrCl3 2x2 supercell.",
+    "parent_ids": [],
+    "created_at": "2026-09-30T13:51:57.676001+00:00",
+    "git": {
+      "commit": "2f140276e87cfcb187383b738fb208248507e615",
+      "short_commit": "2f140276",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "efff9fe2": {
+    "result_id": "efff9fe2",
+    "producing_tool": "plot_tm_site_competition.py:plot_presentation_summary",
+    "value": {
+      "figure_path": "/home/cr/simulations/crcl3-HER/crcl3-newcals/postprosseing/tm_site_preference_barchart.png",
+      "groups_count": 8,
+      "status": "INCLUDED_NI_U"
+    },
+    "arguments": {
+      "figure_name": "tm_site_preference_barchart.png",
+      "groups": [
+        "Co (PBE)",
+        "Co (PBE+D3)",
+        "Co (PBE+D3+U)",
+        "Fe (PBE)",
+        "Fe (PBE+D3)",
+        "Ni (PBE)",
+        "Ni (PBE+D3)",
+        "Ni (PBE+D3+U)"
+      ]
+    },
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Presentation bar chart summarizing site binding energies of Co, Fe, and Ni on monolayer CrCl3 across exchange-correlation variants.",
+    "parent_ids": [],
+    "created_at": "2026-09-30T13:52:15.388337+00:00",
+    "git": {
+      "commit": "2f140276e87cfcb187383b738fb208248507e615",
+      "short_commit": "2f140276",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

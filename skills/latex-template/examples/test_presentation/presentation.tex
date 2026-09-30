@@ -1,0 +1,96 @@
+\documentclass[aspectratio=169, sectionpages, codemintedoverleaf, bibref]{beamer}
+
+% Bibliography File
+\newcommand{\bibfilename}{mhoRef.bib}
+
+% Choose Theme: Dark mode
+\usetheme{sthlmnord}
+
+\usepackage{lipsum}
+
+% Image File Paths
+\graphicspath{{./assets/},{./images/}}
+
+% Document Information
+\title{Excitons in 2D Halides}
+\subtitle{Research Progress and Electronic Structure Modeling}
+\newcommand{\titleAuthor}{Presenter}
+\author{UFABC Physics Group}
+\newcommand{\titleInstitute}{Institution}
+\institute{Universidade Federal do ABC (UFABC)}
+\newcommand{\titleMiscI}{Project}
+\newcommand{\descMiscI}{Advanced Ab Initio Simulations}
+\newcommand{\titleMiscII}{Date}
+\newcommand{\descMiscII}{\today}
+\date{\today}
+
+% Grayscale High-Contrast Logo for Dark Theme
+\titlegraphic{logo-ufabc-light}
+
+\hypersetup{
+  colorlinks=false,
+  linkcolor={nordNine},
+  citecolor={nordNine},
+  urlcolor={nordNine}
+}
+
+\begin{document}
+
+% Title Slide
+\titlepage
+
+% Table of Contents
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction and Methodology}
+
+\begin{frame}{Density Functional Theory and Materials Simulation}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Kohn-Sham Equations}
+        Self-consistent single-particle formulation:
+        \[
+          \left[ -\frac{1}{2}\nabla^2 + V_{\text{ext}}(\mathbf{r}) + V_{\text{H}}(\mathbf{r}) + V_{\text{xc}}(\mathbf{r}) \right] \psi_i(\mathbf{r}) = \varepsilon_i \psi_i(\mathbf{r})
+        \]
+      \end{block}
+      \begin{itemize}
+        \item Projected Augmented Wave (PAW) method
+        \item Generalized Gradient Approximation (PBE)
+        \item On-site Coulomb interaction (+U)
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Simulation Protocol}
+        \begin{itemize}
+          \item Geometry relaxation ($F_{\text{max}} < 0.01\,\text{eV/\AA}$)
+          \item Electronic convergence ($10^{-6}\,\text{eV}$)
+          \item Micro-batch Slurm execution on HPC clusters
+        \end{itemize}
+      \end{exampleblock}
+      \vspace{1em}
+      \centering
+      {\small \textcolor{nordEight}{\textbf{Universidade Federal do ABC (UFABC)}}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Summary and Outlook}
+
+\begin{frame}{Conclusions and Outlook}
+  \begin{alertblock}{Key Milestones}
+    \begin{itemize}
+      \item Integrated custom Nord Beamer theme with UFABC insignia.
+      \item High-contrast grayscale vector-aligned branding on title slide.
+      \item Ready for conference presentations, seminars, and defenses.
+    \end{itemize}
+  \end{alertblock}
+  \vfill
+  \centering
+  {\Large \textbf{\textcolor{nordEight}{Thank you for your attention!}}}\\[1em]
+  {\small Questions and Discussion}
+\end{frame}
+
+\end{document}
