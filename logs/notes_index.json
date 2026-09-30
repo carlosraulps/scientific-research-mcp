@@ -2,17 +2,17 @@
   "pt_bulk_convergence_discussion": {
     "key": "pt_bulk_convergence_discussion",
     "title": "Pt Bulk Convergence Discussion",
-    "current_version": 8,
-    "current_file": "pt_bulk_convergence_discussion_v8.md",
+    "current_version": 9,
+    "current_file": "pt_bulk_convergence_discussion_v9.md",
     "tags": [
       "dft",
       "pt",
       "convergence"
     ],
     "references": [
-      "8085ade2"
+      "f7bb02ec"
     ],
-    "updated_at": "2026-09-29T17:30:42.853076+00:00",
+    "updated_at": "2026-09-30T22:48:42.369595+00:00",
     "history": [
       {
         "version": 1,
@@ -53,6 +53,11 @@
         "version": 8,
         "file": "pt_bulk_convergence_discussion_v8.md",
         "timestamp": "2026-09-29T17:30:42.853076+00:00"
+      },
+      {
+        "version": 9,
+        "file": "pt_bulk_convergence_discussion_v9.md",
+        "timestamp": "2026-09-30T22:48:42.369595+00:00"
       }
     ]
   },
@@ -155,6 +160,28 @@
         "version": 1,
         "file": "crcl3_2x2_tm_adsorption_competition_complete_suite__36_states_v1.md",
         "timestamp": "2026-09-30T20:29:41.320345+00:00"
+      }
+    ]
+  },
+  "photh-graphene_her_electrocatalysis___mechanical_verification": {
+    "key": "photh-graphene_her_electrocatalysis___mechanical_verification",
+    "title": "PHOTH-Graphene HER Electrocatalysis & Mechanical Verification",
+    "current_version": 1,
+    "current_file": "photh-graphene_her_electrocatalysis___mechanical_verification_v1.md",
+    "tags": [
+      "photh-graphene",
+      "her-catalysis",
+      "bader",
+      "lobster-cohp",
+      "strain"
+    ],
+    "references": [],
+    "updated_at": "2026-09-30T00:08:06.984901+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "photh-graphene_her_electrocatalysis___mechanical_verification_v1.md",
+        "timestamp": "2026-09-30T00:08:06.984901+00:00"
       }
     ]
   }

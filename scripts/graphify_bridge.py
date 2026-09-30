@@ -109,11 +109,19 @@ class GraphifyBridge:
         """
         map_path = self.generate_knowledge_map()
 
-        graphify_bin = "/home/cr/.local/bin/graphify"
-        if not os.path.exists(graphify_bin):
+        import shutil
+        graphify_bin = (
+            shutil.which("graphify")
+            or (os.path.expanduser("~/.local/bin/graphify") if os.path.exists(os.path.expanduser("~/.local/bin/graphify")) else None)
+            or ("/home/cr/.local/bin/graphify" if os.path.exists("/home/cr/.local/bin/graphify") else None)
+        )
+        if not graphify_bin:
             return {
-                "error": "graphify binary not found at /home/cr/.local/bin/graphify",
-                "isError": True
+                "status": "KNOWLEDGE_MAP_GENERATED",
+                "knowledge_map": map_path,
+                "warning": "graphify binary not found on PATH or ~/.local/bin/graphify. KNOWLEDGE_MAP.md was regenerated.",
+                "graph_json_exists": os.path.exists(os.path.join(self.graphify_out, "graph.json")),
+                "isError": False
             }
 
         try:

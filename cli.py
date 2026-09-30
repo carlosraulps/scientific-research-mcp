@@ -14,8 +14,8 @@ import sys
 import json
 import argparse
 
-# Add scripts directory
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Add scripts directory (using realpath to correctly resolve global symlinks)
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
 if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
