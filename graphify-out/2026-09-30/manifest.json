@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "checkpoints/index.json": {
-    "mtime": 1790779294.8970068,
-    "seen": 1790779366.7315853,
-    "ast_hash": "9181ce8ad5e8bcdec520049e320d8427",
+    "mtime": 1790787221.895773,
+    "seen": 1790787281.3468282,
+    "ast_hash": "a2dfc35679731e0fb2c38d41570c1b49",
     "semantic_hash": ""
   },
   "cli.py": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/KNOWLEDGE_MAP.md": {
-    "mtime": 1790779365.2926278,
-    "seen": 1790779366.7316635,
-    "ast_hash": "46807fa0bcf5ba6a39735b6a714d38bb",
+    "mtime": 1790787279.8630843,
+    "seen": 1790787281.3469007,
+    "ast_hash": "87b85dd55794a055e54ccba56ff9abf3",
     "semantic_hash": ""
   },
   "extracted_insights/01_DREAMS_provenance_canvas.md": {
@@ -1317,6 +1317,798 @@
     "mtime": 1790781031.37057,
     "seen": 1790781107.9941983,
     "ast_hash": "2d3767a5b737978c543e0d99dbf2bd20",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/scripts/latex_manager.py": {
+    "mtime": 1790786791.7503607,
+    "seen": 1790786912.7490234,
+    "ast_hash": "ae7b76c13272b538bc4ee930ee847f9c",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/SKILL.md": {
+    "mtime": 1790786875.06116,
+    "seen": 1790786912.74915,
+    "ast_hash": "fefe85f6092abbf5b996872ee6e0eaae",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/README.md": {
+    "mtime": 1790784434.4217682,
+    "seen": 1790786912.7491517,
+    "ast_hash": "3bc7a679910c8bd168275f0f9fc91dc1",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/0-slides/tex.slide.ctanPackages.pdf": {
+    "mtime": 1790784434.42128,
+    "seen": 1790786912.749231,
+    "ast_hash": "165ac13171ab3bbf9a9c13f684df14ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/0-slides/tex.slide.fonts.pdf": {
+    "mtime": 1790784434.42128,
+    "seen": 1790786912.7492332,
+    "ast_hash": "1e1fc60aa0d01f6bcec17988b1186232",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/0-slides/tex.slide.nordPaletteDark.pdf": {
+    "mtime": 1790784434.42128,
+    "seen": 1790786912.7492347,
+    "ast_hash": "1fa5e9b0b7e8ba52ad4b8e76cba7ad25",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/0-slides/tex.slide.nordPaletteLight.pdf": {
+    "mtime": 1790784434.42128,
+    "seen": 1790786912.749236,
+    "ast_hash": "f4a222e4eb5011a83140b9a8c63193bb",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/0-slides/tex.slide.nordPaletteTextHighlightDark.pdf": {
+    "mtime": 1790784434.42128,
+    "seen": 1790786912.749238,
+    "ast_hash": "fad5d59029634680bffd038185fb8ee8",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/imgs.tikz.057w.pdf": {
+    "mtime": 1790784434.4217682,
+    "seen": 1790786912.7492394,
+    "ast_hash": "ea2efa2c3286dda03015f1a5c5267b9b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/imgs.tikz.057x.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.7492409,
+    "ast_hash": "9e543d5d7c12212a83d491e909cde6e7",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/imgs.tikz.058w.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.7492423,
+    "ast_hash": "bba72f888c1d786ceeb4e1d9f4c79d5f",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/imgs.tikz.05a1.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.7492437,
+    "ast_hash": "b7b74be83170409ec3aaeb59454a1b62",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/imgs.tikz.05c9.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.7492452,
+    "ast_hash": "f0105f3a0bfd95ff16fc96fe486e3ef8",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/nordsegel.pdf": {
+    "mtime": 1790784434.4287684,
+    "seen": 1790786912.7492468,
+    "ast_hash": "8fe80b91fbfd4665c19129e11782a54a",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/nordtitlelogodark.pdf": {
+    "mtime": 1790784434.4297683,
+    "seen": 1790786912.749248,
+    "ast_hash": "33129ec2993999fb53bc70cd0593fa0d",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/nordtitlelogolight.pdf": {
+    "mtime": 1790784434.4297683,
+    "seen": 1790786912.7492492,
+    "ast_hash": "ccd88f23946103c5e686b6c18d68d69a",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/youTubeLogo.pdf": {
+    "mtime": 1790784434.4327683,
+    "seen": 1790786912.749251,
+    "ast_hash": "0f2469a9afed2a54c8f38159ce9f25e3",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/demo_ufabc_presentation.pdf": {
+    "mtime": 1790786643.4349375,
+    "seen": 1790786912.749252,
+    "ast_hash": "918063017f406872f6bc2f872bdeb802",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/sthlmNordDarkDemo.pdf": {
+    "mtime": 1790784434.4857688,
+    "seen": 1790786912.7492537,
+    "ast_hash": "59051987dc36b69daecf69552a7dde1b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/sthlmNordLightDemo.pdf": {
+    "mtime": 1790784434.489769,
+    "seen": 1790786912.749255,
+    "ast_hash": "000bffabd95fbcdd263c6b247365927e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/sthlmNordTemplate-v3_0.pdf": {
+    "mtime": 1790784434.494769,
+    "seen": 1790786912.7492564,
+    "ast_hash": "1c392fd2df3b5ba32a4860daab936374",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/template.pdf": {
+    "mtime": 1790786525.096802,
+    "seen": 1790786912.7492583,
+    "ast_hash": "f421f7b3b6dd99e0750c13050a26be0d",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/imgs.tikz.057w.pdf": {
+    "mtime": 1790784434.4217682,
+    "seen": 1790786912.7492595,
+    "ast_hash": "ea2efa2c3286dda03015f1a5c5267b9b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/imgs.tikz.057x.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.749261,
+    "ast_hash": "9e543d5d7c12212a83d491e909cde6e7",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/imgs.tikz.058w.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.749262,
+    "ast_hash": "bba72f888c1d786ceeb4e1d9f4c79d5f",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/imgs.tikz.05a1.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.7492633,
+    "ast_hash": "b7b74be83170409ec3aaeb59454a1b62",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/imgs.tikz.05c9.pdf": {
+    "mtime": 1790784434.4229193,
+    "seen": 1790786912.7492647,
+    "ast_hash": "f0105f3a0bfd95ff16fc96fe486e3ef8",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/nordsegel.pdf": {
+    "mtime": 1790784434.4287684,
+    "seen": 1790786912.749266,
+    "ast_hash": "8fe80b91fbfd4665c19129e11782a54a",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/nordtitlelogodark.pdf": {
+    "mtime": 1790784434.4297683,
+    "seen": 1790786912.749267,
+    "ast_hash": "33129ec2993999fb53bc70cd0593fa0d",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/nordtitlelogolight.pdf": {
+    "mtime": 1790784434.4297683,
+    "seen": 1790786912.7492688,
+    "ast_hash": "ccd88f23946103c5e686b6c18d68d69a",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/youTubeLogo.pdf": {
+    "mtime": 1790784434.4327683,
+    "seen": 1790786912.74927,
+    "ast_hash": "0f2469a9afed2a54c8f38159ce9f25e3",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/presentation.pdf": {
+    "mtime": 1790786829.6267242,
+    "seen": 1790786912.7492716,
+    "ast_hash": "0d38eb36475a6a110a1803bc229b0148",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/logo-ufabc-dark.png": {
+    "mtime": 1790786275.439393,
+    "seen": 1790786912.7493045,
+    "ast_hash": "ef899e3a4eabbbce8ab93c587a9d1663",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/logo-ufabc-gray.png": {
+    "mtime": 1790786275.4394464,
+    "seen": 1790786912.7493062,
+    "ast_hash": "6acac95ff2f9130d4fb1e042d66770ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/logo-ufabc-light.png": {
+    "mtime": 1790786275.4394906,
+    "seen": 1790786912.7493074,
+    "ast_hash": "c4b8f2002b98d741ec52805855994106",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/logo-ufabc.png": {
+    "mtime": 1790786275.43953,
+    "seen": 1790786912.7493086,
+    "ast_hash": "6acac95ff2f9130d4fb1e042d66770ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/assets/octocat.png": {
+    "mtime": 1790784434.4317684,
+    "seen": 1790786912.7493105,
+    "ast_hash": "ef468e275a2c13d0bc7156549261fde6",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/content_slide_preview-4.png": {
+    "mtime": 1790786675.5452456,
+    "seen": 1790786912.7493117,
+    "ast_hash": "70756ad20739aa916f70b946a08afbf6",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 01.png": {
+    "mtime": 1790784434.4341693,
+    "seen": 1790786912.7493136,
+    "ast_hash": "c84fbd5daaa8e1991662b8bde4e23a9e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 02.png": {
+    "mtime": 1790784434.4347684,
+    "seen": 1790786912.7493148,
+    "ast_hash": "c1853b678ad566d9dd757f2d4e7ee986",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 03.png": {
+    "mtime": 1790784434.4357684,
+    "seen": 1790786912.749316,
+    "ast_hash": "8116e4b4c8c641efd6dd6fe3205deecb",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 04.png": {
+    "mtime": 1790784434.4357684,
+    "seen": 1790786912.7493172,
+    "ast_hash": "945e10a4c496e9ec1dabaddbc15cab6e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 05.png": {
+    "mtime": 1790784434.4367685,
+    "seen": 1790786912.7493186,
+    "ast_hash": "0319410681a301eb621d4fdf12c5a4d7",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 06.png": {
+    "mtime": 1790784434.4367685,
+    "seen": 1790786912.74932,
+    "ast_hash": "52e64d8ec738956f0e3a2b0f466063bc",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 07.png": {
+    "mtime": 1790784434.4377685,
+    "seen": 1790786912.749321,
+    "ast_hash": "b84d9f8537c90adbc13808a6f1791662",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 08.png": {
+    "mtime": 1790784434.4377685,
+    "seen": 1790786912.7493224,
+    "ast_hash": "5dba6c5e04ece42d9a659edbef97edc9",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 09.png": {
+    "mtime": 1790784434.4387684,
+    "seen": 1790786912.7493238,
+    "ast_hash": "b266c2726eed262465af59fb1304cac7",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 10.png": {
+    "mtime": 1790784434.4387684,
+    "seen": 1790786912.749325,
+    "ast_hash": "9f0f08dea587652585eb34de801b6a22",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 11.png": {
+    "mtime": 1790784434.4397686,
+    "seen": 1790786912.749326,
+    "ast_hash": "d43d3b3c2fc06d210983684a27885582",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 12.png": {
+    "mtime": 1790784434.4397686,
+    "seen": 1790786912.7493274,
+    "ast_hash": "29e49b1fef9cd378dd4d869f8a5e5242",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 13.png": {
+    "mtime": 1790784434.4397686,
+    "seen": 1790786912.749329,
+    "ast_hash": "bfea2d7e4d20a70ac54eaf5f40f02c34",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 14.png": {
+    "mtime": 1790784434.4407685,
+    "seen": 1790786912.7493308,
+    "ast_hash": "6496213ed1f6d5a9397deee16da1be6b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 15.png": {
+    "mtime": 1790784434.4417684,
+    "seen": 1790786912.749332,
+    "ast_hash": "9183a871e4e9e9cebd3adb2a9418be88",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 16.png": {
+    "mtime": 1790784434.4417684,
+    "seen": 1790786912.7493331,
+    "ast_hash": "cd14ab8bd5e25c066f92fd5037eee864",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 17.png": {
+    "mtime": 1790784434.4427686,
+    "seen": 1790786912.7493346,
+    "ast_hash": "45973c165032d157e624ddbad2f7abd2",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 18.png": {
+    "mtime": 1790784434.4427686,
+    "seen": 1790786912.7493358,
+    "ast_hash": "745b0f69a8ca9f70ce8c937f4d5545ac",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 19.png": {
+    "mtime": 1790784434.4437685,
+    "seen": 1790786912.7493374,
+    "ast_hash": "4d559afd4f3c682c16088545dee1d410",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 20.png": {
+    "mtime": 1790784434.4437685,
+    "seen": 1790786912.7493386,
+    "ast_hash": "289181ce25757ca56b79a5a3d685c4d5",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 21.png": {
+    "mtime": 1790784434.4447684,
+    "seen": 1790786912.7493398,
+    "ast_hash": "217a004c2a8357e85fec81a61c76bc79",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 22.png": {
+    "mtime": 1790784434.4447684,
+    "seen": 1790786912.7493412,
+    "ast_hash": "3765d82d924f35b1c20081bfc44fa4cc",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 23.png": {
+    "mtime": 1790784434.4457686,
+    "seen": 1790786912.7493427,
+    "ast_hash": "f432b4aa791148b13c06a5b801cca64b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 24.png": {
+    "mtime": 1790784434.4467685,
+    "seen": 1790786912.7493436,
+    "ast_hash": "676fb6946fc0b7a8eca2cfcd9c079cdc",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 25.png": {
+    "mtime": 1790784434.4467685,
+    "seen": 1790786912.7493453,
+    "ast_hash": "f642ea1f9c03622b6dfbae18cda3e7b2",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 26.png": {
+    "mtime": 1790784434.4467685,
+    "seen": 1790786912.7493463,
+    "ast_hash": "bbf50e8eeede1a65cdcb890fcce8d46d",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 27.png": {
+    "mtime": 1790784434.4467685,
+    "seen": 1790786912.749348,
+    "ast_hash": "48b4956c9328113ce84c1b5af668e09b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 28.png": {
+    "mtime": 1790784434.4477684,
+    "seen": 1790786912.7493494,
+    "ast_hash": "0b31a18b8928ef37c96cc1c0ed245d52",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 29.png": {
+    "mtime": 1790784434.4477684,
+    "seen": 1790786912.7493505,
+    "ast_hash": "4a6f2f4e1746d4d3302ac6c4f03bfdaa",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 30.png": {
+    "mtime": 1790784434.4477684,
+    "seen": 1790786912.7493522,
+    "ast_hash": "85fcc2b2f88f8e9a811da0dc7fefa1de",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 31.png": {
+    "mtime": 1790784434.4477684,
+    "seen": 1790786912.7493536,
+    "ast_hash": "f0197ab19e887dcbac9ec6ccaf4f746e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 32.png": {
+    "mtime": 1790784434.4487686,
+    "seen": 1790786912.749355,
+    "ast_hash": "2dd596f08f987ef985f82976752d3f97",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 33.png": {
+    "mtime": 1790784434.4487686,
+    "seen": 1790786912.7493565,
+    "ast_hash": "c1b0d51fa1f3ddc04a97e8ae0ab9c816",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 34.png": {
+    "mtime": 1790784434.4487686,
+    "seen": 1790786912.749358,
+    "ast_hash": "1a89a923d4ade2216262c9324f77c38b",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 35.png": {
+    "mtime": 1790784434.4497685,
+    "seen": 1790786912.7493594,
+    "ast_hash": "75d660caa4cd8d79d30cf8315ce93c37",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 36.png": {
+    "mtime": 1790784434.4497685,
+    "seen": 1790786912.7493603,
+    "ast_hash": "1194e8c820d2ef49d4622e63c6d05033",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 37.png": {
+    "mtime": 1790784434.4507685,
+    "seen": 1790786912.7493618,
+    "ast_hash": "efe7c64c781dfb7a97adae40bd9b7934",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 38.png": {
+    "mtime": 1790784434.4507685,
+    "seen": 1790786912.749363,
+    "ast_hash": "14c9fb1b6fd9634c8ef511c93cfb1049",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 39.png": {
+    "mtime": 1790784434.4517686,
+    "seen": 1790786912.7493644,
+    "ast_hash": "b6ea2b9a65bf1d88da3cff02afd94fd4",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 40.png": {
+    "mtime": 1790784434.4517686,
+    "seen": 1790786912.749366,
+    "ast_hash": "7d3266e61ae5d017cd4d8a23c44d7629",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/dark/Page 41.png": {
+    "mtime": 1790784434.4517686,
+    "seen": 1790786912.7493675,
+    "ast_hash": "788e860180b8948bd0b63a1cc21e6cdf",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 01.png": {
+    "mtime": 1790784434.4527686,
+    "seen": 1790786912.7493687,
+    "ast_hash": "a09bbca9c8ab40b7a54ee4ee2bf51eba",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 02.png": {
+    "mtime": 1790784434.4544659,
+    "seen": 1790786912.7493706,
+    "ast_hash": "c1853b678ad566d9dd757f2d4e7ee986",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 03.png": {
+    "mtime": 1790784434.4544659,
+    "seen": 1790786912.749372,
+    "ast_hash": "eb4e5e828632e6a6c0be183c6bc6a9a4",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 04.png": {
+    "mtime": 1790784434.4544659,
+    "seen": 1790786912.7493732,
+    "ast_hash": "55c539794804b0a0b42689d5876538ba",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 05.png": {
+    "mtime": 1790784434.4547687,
+    "seen": 1790786912.7493744,
+    "ast_hash": "fe7487d556ae02356b8b2d3b8e811d1c",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 06.png": {
+    "mtime": 1790784434.4547687,
+    "seen": 1790786912.749376,
+    "ast_hash": "3b7730558d6c4ecb9b503603aea9d050",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 07.png": {
+    "mtime": 1790784434.4557686,
+    "seen": 1790786912.7493773,
+    "ast_hash": "01bc5d64acc278f2b722adce3e57d513",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 08.png": {
+    "mtime": 1790784434.4557686,
+    "seen": 1790786912.749379,
+    "ast_hash": "41e7d64fad83cad4b4e9274acda2dbcb",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 09.png": {
+    "mtime": 1790784434.4567688,
+    "seen": 1790786912.74938,
+    "ast_hash": "ab17b0675187d189936113ed0263e401",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 10.png": {
+    "mtime": 1790784434.4567688,
+    "seen": 1790786912.7493815,
+    "ast_hash": "344cdb46fbe755f549d4b8df10f1e1bf",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 11.png": {
+    "mtime": 1790784434.4577687,
+    "seen": 1790786912.749383,
+    "ast_hash": "760bf6e59fedb80bd5ff729d197534d4",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 12.png": {
+    "mtime": 1790784434.4577687,
+    "seen": 1790786912.7493842,
+    "ast_hash": "b344d5da64d2931367d3afbef2626262",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 13.png": {
+    "mtime": 1790784434.4577687,
+    "seen": 1790786912.7493858,
+    "ast_hash": "3c48fddb9025a60edf0d60abfe5e2de4",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 14.png": {
+    "mtime": 1790784434.4587686,
+    "seen": 1790786912.7493875,
+    "ast_hash": "eaf20a4fd4d14c4db4317f7b9aae7053",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 15.png": {
+    "mtime": 1790784434.4597688,
+    "seen": 1790786912.7493887,
+    "ast_hash": "2c741fbf1c7fe850f61dbea3583d8b90",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 16.png": {
+    "mtime": 1790784434.4597688,
+    "seen": 1790786912.7493904,
+    "ast_hash": "d75b0ff693da700592d423fa89d4a0a1",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 17.png": {
+    "mtime": 1790784434.4607687,
+    "seen": 1790786912.7493918,
+    "ast_hash": "6e67d2d43ee9b5e0e6204996e0e2396a",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 18.png": {
+    "mtime": 1790784434.4607687,
+    "seen": 1790786912.7493937,
+    "ast_hash": "3a8d1a80000a264964116e3a8c874d1e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 19.png": {
+    "mtime": 1790784434.4607687,
+    "seen": 1790786912.749395,
+    "ast_hash": "dcd00e0d5d61af3a6321e4a1b80fb3cf",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 20.png": {
+    "mtime": 1790784434.4617686,
+    "seen": 1790786912.7493963,
+    "ast_hash": "359bd7cfc68228fb3bb800cea844b2c5",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 21.png": {
+    "mtime": 1790784434.4617686,
+    "seen": 1790786912.7493975,
+    "ast_hash": "260c2e49493ad2df4f7075861e402a75",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 22.png": {
+    "mtime": 1790784434.4627688,
+    "seen": 1790786912.749399,
+    "ast_hash": "306f14fd748e9a32c42ace0f7ff06766",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 23.png": {
+    "mtime": 1790784434.4627688,
+    "seen": 1790786912.7494006,
+    "ast_hash": "3f853ea86e7c6c889d6e51176a1c8e4f",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 24.png": {
+    "mtime": 1790784434.4627688,
+    "seen": 1790786912.7494018,
+    "ast_hash": "6877d997fe4380ad7edcb7284b64e0f8",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 25.png": {
+    "mtime": 1790784434.4637687,
+    "seen": 1790786912.7494032,
+    "ast_hash": "b0074a82efcb5415528d27fc58d3745f",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 26.png": {
+    "mtime": 1790784434.4637687,
+    "seen": 1790786912.7494044,
+    "ast_hash": "90bf25bdcc41b0898a060d6c40c1a0f4",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 27.png": {
+    "mtime": 1790784434.4637687,
+    "seen": 1790786912.7494056,
+    "ast_hash": "c0697bc9a81f4b46f162b8e499635489",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 28.png": {
+    "mtime": 1790784434.4637687,
+    "seen": 1790786912.749407,
+    "ast_hash": "529aeb8c77ab019c157fa6824e9a0e86",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 29.png": {
+    "mtime": 1790784434.4637687,
+    "seen": 1790786912.7494082,
+    "ast_hash": "b6944510e4b8c8bfda20f29b5b578904",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 30.png": {
+    "mtime": 1790784434.4647686,
+    "seen": 1790786912.7494094,
+    "ast_hash": "2ba8ba9cb1fb841ad51b5fe00ce14e75",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 31.png": {
+    "mtime": 1790784434.4647686,
+    "seen": 1790786912.7494109,
+    "ast_hash": "7c7aadb9e6d4bb62ed532445d8a107ec",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 32.png": {
+    "mtime": 1790784434.4647686,
+    "seen": 1790786912.7494123,
+    "ast_hash": "893f2bf30265dc03e11009dc719c2867",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 33.png": {
+    "mtime": 1790784434.4657688,
+    "seen": 1790786912.749414,
+    "ast_hash": "315a86472b8c095ff820e1a00aaf2a4e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 34.png": {
+    "mtime": 1790784434.4657688,
+    "seen": 1790786912.7494152,
+    "ast_hash": "ff0f7a8c1b34c8c2c8277119fdb9f96e",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 35.png": {
+    "mtime": 1790784434.4657688,
+    "seen": 1790786912.7494166,
+    "ast_hash": "0fc63eea7b994cb7e8beef3007ab0965",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 36.png": {
+    "mtime": 1790784434.4667687,
+    "seen": 1790786912.7494183,
+    "ast_hash": "e4a798cf311cc64bc37e8dcf26697abe",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 37.png": {
+    "mtime": 1790784434.4667687,
+    "seen": 1790786912.7494195,
+    "ast_hash": "0b03f22107b8786864f1e0ea6a8c3132",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 38.png": {
+    "mtime": 1790784434.4667687,
+    "seen": 1790786912.7494211,
+    "ast_hash": "bcd4bd07d61cc83d65f8becd4301bf32",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 39.png": {
+    "mtime": 1790784434.4677687,
+    "seen": 1790786912.7494228,
+    "ast_hash": "6ba2ded99d60a73dce75099d818e1b90",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 40.png": {
+    "mtime": 1790784434.4677687,
+    "seen": 1790786912.7494245,
+    "ast_hash": "0104de78d76468f51b11552e709a1408",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/images/light/Page 41.png": {
+    "mtime": 1790784434.4677687,
+    "seen": 1790786912.7494256,
+    "ast_hash": "a015c664e783a227e342e0c9c0d34dee",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/logo-ufabc-dark.png": {
+    "mtime": 1790786247.3051357,
+    "seen": 1790786912.7494273,
+    "ast_hash": "ef899e3a4eabbbce8ab93c587a9d1663",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/logo-ufabc-gray.png": {
+    "mtime": 1790786247.2841356,
+    "seen": 1790786912.7494285,
+    "ast_hash": "6acac95ff2f9130d4fb1e042d66770ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/logo-ufabc-light.png": {
+    "mtime": 1790786247.2951357,
+    "seen": 1790786912.749436,
+    "ast_hash": "c4b8f2002b98d741ec52805855994106",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/logo-ufabc.png": {
+    "mtime": 1790786247.2771356,
+    "seen": 1790786912.749437,
+    "ast_hash": "6acac95ff2f9130d4fb1e042d66770ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/beamer-theme/title_slide_preview-1.png": {
+    "mtime": 1790786648.4039853,
+    "seen": 1790786912.7494388,
+    "ast_hash": "266445ec9b13b2579de3fa05a25925fb",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/logo-ufabc-dark.png": {
+    "mtime": 1790786275.439393,
+    "seen": 1790786912.74944,
+    "ast_hash": "ef899e3a4eabbbce8ab93c587a9d1663",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/logo-ufabc-gray.png": {
+    "mtime": 1790786275.4394464,
+    "seen": 1790786912.7494416,
+    "ast_hash": "6acac95ff2f9130d4fb1e042d66770ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/logo-ufabc-light.png": {
+    "mtime": 1790786275.4394906,
+    "seen": 1790786912.7494428,
+    "ast_hash": "c4b8f2002b98d741ec52805855994106",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/logo-ufabc.png": {
+    "mtime": 1790786275.43953,
+    "seen": 1790786912.749444,
+    "ast_hash": "6acac95ff2f9130d4fb1e042d66770ff",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/assets/octocat.png": {
+    "mtime": 1790784434.4317684,
+    "seen": 1790786912.7494454,
+    "ast_hash": "ef468e275a2c13d0bc7156549261fde6",
+    "semantic_hash": ""
+  },
+  "skills/latex-template/examples/test_presentation/presentation_page1-1.png": {
+    "mtime": 1790786840.1268249,
+    "seen": 1790786912.7494466,
+    "ast_hash": "23c14072d7d0772f1523c113ed144b1d",
+    "semantic_hash": ""
+  },
+  "checkpoints/crcl3_2x2_co_emb_pipeline.json": {
+    "mtime": 1790787221.8954985,
+    "seen": 1790787281.3468194,
+    "ast_hash": "c289f3965258c0e73175222a743b7f1d",
     "semantic_hash": ""
   }
 }

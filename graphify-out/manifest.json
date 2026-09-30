@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "checkpoints/index.json": {
-    "mtime": 1790779294.8970068,
-    "seen": 1790779366.7315853,
-    "ast_hash": "9181ce8ad5e8bcdec520049e320d8427",
+    "mtime": 1790800245.4915328,
+    "seen": 1790800251.1796386,
+    "ast_hash": "532b26f78604a333a878ce4b5872245e",
     "semantic_hash": ""
   },
   "cli.py": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "logs/notes_index.json": {
-    "mtime": 1790712841.685416,
-    "seen": 1790712849.7892804,
-    "ast_hash": "d2d662c1b1d6f1af41153aa4583e201d",
+    "mtime": 1790800181.3207035,
+    "seen": 1790800251.1796467,
+    "ast_hash": "1d8ee9903b11912a0754284f1d2ac022",
     "semantic_hash": ""
   },
   "logs/reports_index.json": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/KNOWLEDGE_MAP.md": {
-    "mtime": 1790779365.2926278,
-    "seen": 1790779366.7316635,
-    "ast_hash": "46807fa0bcf5ba6a39735b6a714d38bb",
+    "mtime": 1790800249.6335835,
+    "seen": 1790800251.1797507,
+    "ast_hash": "60a6f6d0a8cc006ae17e31d1899b07be",
     "semantic_hash": ""
   },
   "extracted_insights/01_DREAMS_provenance_canvas.md": {
@@ -1176,9 +1176,9 @@
     "semantic_hash": ""
   },
   "checkpoints/crcl3_2x2_ni_emb_pipeline.json": {
-    "mtime": 1790779294.8966455,
-    "seen": 1790779366.731582,
-    "ast_hash": "d9ef7b127b45d77bf241a95a3c890bab",
+    "mtime": 1790800241.2224414,
+    "seen": 1790800251.1796358,
+    "ast_hash": "838ec8d7eaeb4b959aa6dca997a7a595",
     "semantic_hash": ""
   },
   "skills/site-pyramidalization-zoom/scripts/generate_demo_structure.py": {
@@ -2103,6 +2103,24 @@
     "mtime": 1790786840.1268249,
     "seen": 1790786912.7494466,
     "ast_hash": "23c14072d7d0772f1523c113ed144b1d",
+    "semantic_hash": ""
+  },
+  "checkpoints/crcl3_2x2_co_emb_pipeline.json": {
+    "mtime": 1790800245.491086,
+    "seen": 1790800251.1796281,
+    "ast_hash": "c4bd26d46b4dcd95e1ac111807fc8529",
+    "semantic_hash": ""
+  },
+  "checkpoints/crcl3_2x2_fe_emb_huk.json": {
+    "mtime": 1790800234.14145,
+    "seen": 1790800251.1796327,
+    "ast_hash": "350c1168e94b930a021ccc140ce1c9c8",
+    "semantic_hash": ""
+  },
+  "canvas/notes/crcl3_2x2_tm_adsorption_competition_complete_suite__36_states_v1.md": {
+    "mtime": 1790800181.3204746,
+    "seen": 1790800251.1797032,
+    "ast_hash": "35ce16e9e09ed82f18d1375fb6c772f9",
     "semantic_hash": ""
   }
 }

@@ -1,5 +1,5 @@
 {
-  "0": "cli.py",
+  "0": "scripts/__init__.py",
   "1": "CanvasStore",
   "2": "TestScientificResearchLog",
   "3": "sthlmNord BeamerTheme",
@@ -59,15 +59,17 @@
   "57": "generate_demo_structure.py",
   "58": "vesta_auto.py",
   "59": "Core Principles & Typography",
-  "60": "GitController",
+  "60": ".get_status",
   "61": "sync_graphify.sh",
   "62": "SkillCrystallizer",
-  "63": "scripts/__init__.py",
+  "63": "GitController",
   "64": "GraphifyBridge",
-  "65": "mcp_server.py",
+  "65": "handle_tool_call",
   "66": "Site Pyramidalization & Circular Zoom Annotator",
-  "67": ".setUp",
+  "67": "ProtocolEngine",
   "68": "latex_manager.py",
   "69": "FactsStore",
-  "70": "LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`)"
+  "70": "LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`)",
+  "71": ".save_run",
+  "72": "Transition Metal Adsorption Competition Suite on CrCl3 (2x2) Monolayer - 100% Completed"
 }

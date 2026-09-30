@@ -14,6 +14,7 @@
 - **[Distributed Execution and Converged Benchmarks for Monolayer CrCl3](file:///home/cr/simulations/scientific-research/canvas/notes/distributed_execution_and_converged_benchmarks_for_monolayer_crcl3_v1.md)** (v1) - Tags: `crcl3, dft_plus_u, co_embedded, her_catalysis, provenance`
 - **[PHOTH-Graphene DFT & MD Convergence Benchmarks and Supercell Scaling Report](file:///home/cr/simulations/scientific-research/canvas/notes/photh-graphene_dft___md_convergence_benchmarks_and_supercell_scaling_report_v1.md)** (v1) - Tags: `dft, photh-graphene, convergence, supercell, lammps, reaxff, hpc`
 - **[Multi-Cluster Distributed Execution and Convergence Milestones for Monolayer CrCl3 Systems](file:///home/cr/simulations/scientific-research/canvas/notes/multi-cluster_distributed_execution_and_convergence_milestones_for_monolayer_crcl3_systems_v1.md)** (v1) - Tags: `crcl3, her, dft_plus_u, co_fe_ni, convergence, hpc`
+- **[CrCl3 2x2 TM Adsorption Competition Complete Suite (36 States)](file:///home/cr/simulations/scientific-research/canvas/notes/crcl3_2x2_tm_adsorption_competition_complete_suite__36_states_v1.md)** (v1) - Tags: `crcl3, tm_adsorption, dft_plus_u, vdw_d3, fe, co, ni, her`
 
 ## 3. MDCrow Simulation Checkpoints (Resumable Runs)
 - **Run `test_md_20260929_170314`** [RUNNING]: Equilibrate solvated protein in NPT ensemble at 300K. - Updated: `2026-09-29T17:03:14.236221+00:00`
@@ -30,7 +31,9 @@
 - **Run `crcl3_2x2_fe_embedded_clean`** [CONVERGED]: Fully converged structural relaxation of clean Fe-embedded monolayer CrCl3 (PBE+D3+U) on Huk huk120. - Updated: `2026-09-30T10:41:09.703262+00:00`
 - **Run ``** [RUNNING]:  - Updated: `2026-09-30T14:40:48.365471+00:00`
 - **Run `crcl3_2x2_fe_emb_h_ads`** [RUNNING]:  - Updated: `2026-09-30T14:41:14.980365+00:00`
-- **Run `crcl3_2x2_ni_emb_pipeline`** [RUNNING]:  - Updated: `2026-09-30T14:41:34.887352+00:00`
+- **Run `crcl3_2x2_ni_emb_pipeline`** [RUNNING]: Ni-embedded monolayer CrCl3 calculation (clean on Huk, H_ads on Carbono) - Updated: `2026-09-30T20:30:41.204783+00:00`
+- **Run `crcl3_2x2_co_emb_pipeline`** [CONVERGED]: Co-embedded monolayer CrCl3 + H adsorption calculation (Fully converged, Delta G = +0.670 eV) - Updated: `2026-09-30T20:30:45.469582+00:00`
+- **Run `crcl3_2x2_fe_emb_huk`** [RUNNING]: Fe-embedded monolayer CrCl3 + H adsorption calculation on Huk cluster - Updated: `2026-09-30T20:30:34.120752+00:00`
 
 ## 4. Append-Only Provenance Registry Stats
 - **Total Registered Artifacts**: 45

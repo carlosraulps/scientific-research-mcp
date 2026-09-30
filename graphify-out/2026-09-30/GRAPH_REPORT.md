@@ -1,25 +1,25 @@
 # Graph Report - scientific-research  (2026-09-30)
 
 ## Corpus Check
-- 140 files · ~691,111 words
+- 144 files · ~1,379,962 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 31 file(s) not represented in the graph (top: (none) 10, .csv 8, .ipynb 6)
+- Unclassified: 80 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
 
 ## Summary
-- 561 nodes · 797 edges · 70 communities (48 shown, 3 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 39 edges (avg confidence: 0.9)
+- 600 nodes · 845 edges · 71 communities (49 shown, 3 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 44 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2f140276`
+- Built from commit: `72e48b0e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- scripts/__init__.py
+- cli.py
 - CanvasStore
 - TestScientificResearchLog
-- .save_run
+- sthlmNord BeamerTheme
 - HistoricalMemoryStore
 - allocate
 - MDCrow: Checkpoint-Based Memory & Session Resumption
@@ -57,16 +57,17 @@
 - generate_demo_structure.py
 - vesta_auto.py
 - Core Principles & Typography
-- .get_status
+- GitController
 - sync_graphify.sh
 - SkillCrystallizer
-- DualVerifier
+- scripts/__init__.py
 - GraphifyBridge
-- handle_tool_call
+- mcp_server.py
 - Site Pyramidalization & Circular Zoom Annotator
-- ProtocolEngine
-- GitController
+- .setUp
+- latex_manager.py
 - FactsStore
+- LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`)
 
 ## God Nodes (most connected - your core abstractions)
 1. `TestScientificResearchLog` - 25 edges
@@ -83,31 +84,31 @@
 ## Surprising Connections (you probably didn't know these)
 - `main()` --uses--> `CanvasStore`  [INFERRED]
   cli.py → scripts/canvas_store.py
+- `main()` --uses--> `CheckpointManager`  [INFERRED]
+  cli.py → scripts/checkpoint_manager.py
 - `main()` --uses--> `DualVerifier`  [INFERRED]
   cli.py → scripts/dual_verifier.py
 - `main()` --uses--> `FactsStore`  [INFERRED]
   cli.py → scripts/facts_store.py
-- `main()` --uses--> `GraphifyBridge`  [INFERRED]
-  cli.py → scripts/graphify_bridge.py
-- `main()` --uses--> `HistoricalMemoryStore`  [INFERRED]
-  cli.py → scripts/historical_memory.py
+- `main()` --uses--> `GitController`  [INFERRED]
+  cli.py → scripts/git_controller.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (70 total, 3 thin omitted)
+## Communities (71 total, 3 thin omitted)
 
-### Community 0 - "scripts/__init__.py"
-Cohesion: 0.15
-Nodes (13): ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, Scientific Research Log Skill & MCP Engine package. (+5 more)
+### Community 0 - "cli.py"
+Cohesion: 0.19
+Nodes (8): main(), ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, Unit tests for Scientific Research Log Skill & MCP Engine (21 Tools).
 
 ### Community 1 - "CanvasStore"
 Cohesion: 0.21
 Nodes (8): CanvasStore, Any, Traverses upstream DAG dependencies to produce an auditable provenance tree., Creates or updates a version-controlled, append-only working note. Validates…, Creates an immutable scientific report after auditing all claims against the…, Lists available keys and metadata across canvas stores., Reads a specific item from notes, artifacts, or reports., Registers an immutable tool output artifact with anti-laundering verification.…
 
-### Community 3 - ".save_run"
-Cohesion: 0.27
-Nodes (5): Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory.
+### Community 3 - "sthlmNord BeamerTheme"
+Cohesion: 0.11
+Nodes (17): Block Environments, Libertinus fonts compiled with XeLaTeX, Light and Dark Mode Available, Lists, Major Features, Mathematics, Nord Color Palette, Other Nord Beamer themes (+9 more)
 
 ### Community 4 - "HistoricalMemoryStore"
 Cohesion: 0.27
@@ -253,56 +254,60 @@ Nodes (3): automate_vesta(), main(), VESTA GUI Automation & Multi-Axis Crystal C
 Cohesion: 0.18
 Nodes (11): 1. Typography & Mathematical Formats, 2. Label Anti-Collision Engines, 3. Python Integration Pattern, 4. Colorblind Accessibility & Colormaps, 5. VESTA Element Color Concordance, Common Pitfalls & Solutions, Core Principles & Typography, Overview (+3 more)
 
-### Community 60 - ".get_status"
-Cohesion: 0.24
-Nodes (7): CompletedProcess, Any, Creates an atomic Git commit snapshot linking the workspace state to active…, Evaluates whether a simulation setup is strictly reproducible from Git., Helper to run git commands in the base directory., Checks if base_dir is inside an active git repository., Retrieves current git repository state for scientific audit trails.
+### Community 60 - "GitController"
+Cohesion: 0.12
+Nodes (14): CompletedProcess, CheckpointManager, Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory., GitController (+6 more)
 
 ### Community 62 - "SkillCrystallizer"
-Cohesion: 0.32
-Nodes (4): Any, Finds crystallized skills and procedures matching a natural language query or…, Crystallizes an operational procedure into persistent memory and appends to…, SkillCrystallizer
+Cohesion: 0.24
+Nodes (5): Any, Finds crystallized skills and procedures matching a natural language query or…, ===============================================================================…, Crystallizes an operational procedure into persistent memory and appends to…, SkillCrystallizer
 
-### Community 63 - "DualVerifier"
-Cohesion: 0.40
-Nodes (3): DualVerifier, Any, Performs dual verification across Functional Correctness and Scientific…
+### Community 63 - "scripts/__init__.py"
+Cohesion: 0.25
+Nodes (5): DualVerifier, Any, ===============================================================================…, Performs dual verification across Functional Correctness and Scientific…, Scientific Research Log Skill & MCP Engine package.
 
 ### Community 64 - "GraphifyBridge"
-Cohesion: 0.33
-Nodes (4): GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, Creates an interconnected Markdown summary linking all Notes, Reports,…
+Cohesion: 0.25
+Nodes (5): GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, ===============================================================================…, Creates an interconnected Markdown summary linking all Notes, Reports,…
 
-### Community 65 - "handle_tool_call"
-Cohesion: 0.40
-Nodes (5): handle_tool_call(), main(), Any, Dispatches tool calls to the underlying engine., Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients.
+### Community 65 - "mcp_server.py"
+Cohesion: 0.25
+Nodes (7): ===============================================================================…, handle_tool_call(), main(), Any, ===============================================================================…, Dispatches tool calls to the underlying engine., Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients.
 
 ### Community 66 - "Site Pyramidalization & Circular Zoom Annotator"
 Cohesion: 0.22
 Nodes (8): 1. Vector Formulation, 2. Coordination Polyhedron, Options & Arguments, Overview, Physical Background: Haddon's POAV1 Pyramidalization, Quick Reference, Site Pyramidalization & Circular Zoom Annotator, When to Use
 
-### Community 67 - "ProtocolEngine"
-Cohesion: 0.40
-Nodes (3): ProtocolEngine, Any, AEH Stage 1: Static verification of multi-step simulation protocols.
+### Community 67 - ".setUp"
+Cohesion: 0.25
+Nodes (4): ProtocolEngine, Any, ===============================================================================…, AEH Stage 1: Static verification of multi-step simulation protocols.
 
-### Community 68 - "GitController"
-Cohesion: 0.31
-Nodes (4): main(), CheckpointManager, ===============================================================================…, GitController
+### Community 68 - "latex_manager.py"
+Cohesion: 0.40
+Nodes (10): add_template(), clean_auxiliary(), compile_file(), list_templates(), load_catalog(), main(), new_project(), preview_file() (+2 more)
 
 ### Community 69 - "FactsStore"
 Cohesion: 0.31
 Nodes (4): FactsStore, Any, Records an empirical fact, failure warning, or boundary condition into lifelong…, Retrieves matching facts and warnings before launching expensive workflows.
 
+### Community 70 - "LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`)"
+Cohesion: 0.20
+Nodes (9): 1. Scaffold a New Presentation, 2. Compile an Existing Document, 3. Generate PNG Previews, 4. Manage Templates Catalog, Directory Architecture, Features & Capabilities, LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`), Quick Reference CLI (+1 more)
+
 ## Knowledge Gaps
-- **121 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `1. Overview`, `2. Converged Benchmarks & Artifact Provenance`, `3. Hubbard U Dual Benchmark` (+116 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 307 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **143 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `1. Overview`, `2. Converged Benchmarks & Artifact Provenance`, `3. Hubbard U Dual Benchmark` (+138 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 331 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TestScientificResearchLog` connect `TestScientificResearchLog` to `scripts/__init__.py`, `CanvasStore`, `GraphifyBridge`, `ProtocolEngine`, `GitController`, `FactsStore`, `HistoricalMemoryStore`, `ScientificEvaluator`, `SkillCrystallizer`, `DualVerifier`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `CanvasStore` connect `CanvasStore` to `scripts/__init__.py`, `TestScientificResearchLog`, `GitController`?**
+- **Why does `TestScientificResearchLog` connect `TestScientificResearchLog` to `cli.py`, `CanvasStore`, `GraphifyBridge`, `.setUp`, `HistoricalMemoryStore`, `FactsStore`, `ScientificEvaluator`, `GitController`, `SkillCrystallizer`, `scripts/__init__.py`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `CanvasStore` connect `CanvasStore` to `cli.py`, `TestScientificResearchLog`, `.setUp`, `GitController`, `scripts/__init__.py`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `auto_adjust_labels()` connect `style_config.py` to `adjustText/__init__.py`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 10 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
   _`TestScientificResearchLog` has 10 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `CanvasStore` (e.g. with `main()` and `GitController`) actually correct?**
@@ -310,4 +315,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 5 inferred relationships involving `GitController` (e.g. with `main()` and `CanvasStore`) actually correct?**
   _`GitController` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sync_graphify.sh script`, `textalloc`, `1. Overview` to the rest of the system?**
-  _121 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _143 weakly-connected nodes found - possible documentation gaps or missing edges._

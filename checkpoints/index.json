@@ -124,10 +124,32 @@
   },
   "crcl3_2x2_ni_emb_pipeline": {
     "run_id": "crcl3_2x2_ni_emb_pipeline",
-    "prompt_summary": "",
+    "prompt_summary": "Ni-embedded monolayer CrCl3 calculation (clean on Huk, H_ads on Carbono)",
     "status": "RUNNING",
-    "updated_at": "2026-09-30T14:41:34.887352+00:00",
+    "updated_at": "2026-09-30T20:30:41.204783+00:00",
     "metrics": {},
-    "git_commit": "2f140276"
+    "git_commit": "72e48b0e"
+  },
+  "crcl3_2x2_co_emb_pipeline": {
+    "run_id": "crcl3_2x2_co_emb_pipeline",
+    "prompt_summary": "Co-embedded monolayer CrCl3 + H adsorption calculation (Fully converged, Delta G = +0.670 eV)",
+    "status": "CONVERGED",
+    "updated_at": "2026-09-30T20:30:45.469582+00:00",
+    "metrics": {
+      "Delta_E_H_ads": -2.95095,
+      "Delta_G_HER": 0.67,
+      "E0_H_ads": -154.96345,
+      "E0_clean": -152.0125,
+      "mag_tot": 24
+    },
+    "git_commit": "72e48b0e"
+  },
+  "crcl3_2x2_fe_emb_huk": {
+    "run_id": "crcl3_2x2_fe_emb_huk",
+    "prompt_summary": "Fe-embedded monolayer CrCl3 + H adsorption calculation on Huk cluster",
+    "status": "RUNNING",
+    "updated_at": "2026-09-30T20:30:34.120752+00:00",
+    "metrics": {},
+    "git_commit": "72e48b0e"
   }
 }

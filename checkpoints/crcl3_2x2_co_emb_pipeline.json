@@ -1,0 +1,32 @@
+{
+  "run_id": "crcl3_2x2_co_emb_pipeline",
+  "prompt_summary": "Co-embedded monolayer CrCl3 + H adsorption calculation (Fully converged, Delta G = +0.670 eV)",
+  "status": "CONVERGED",
+  "run_directory": "/home/cr/simulations/scientific-research/runs/crcl3_2x2_co_emb_pipeline",
+  "created_at": "2026-09-30T16:53:41.877523+00:00",
+  "updated_at": "2026-09-30T20:30:45.469582+00:00",
+  "agent_trace": "Fully converged on Carbono gn01 (Job 165536). E0_clean = -152.01250 eV, E0_H_ads = -154.96345 eV. Delta G_HER = +0.670 eV. All files synchronized to local master branch.",
+  "parameter_registry": {
+    "functional": "PBE+D3(BJ)+U",
+    "system": "Cr8Cl24Co + H",
+    "u_cr": 3.29
+  },
+  "file_paths": [
+    "crcl3-newcals/crcl3-2x2-co_emb-metano/clean",
+    "crcl3-newcals/crcl3-2x2-co_emb-metano/H_ads"
+  ],
+  "figures": [],
+  "metrics": {
+    "Delta_E_H_ads": -2.95095,
+    "Delta_G_HER": 0.67,
+    "E0_H_ads": -154.96345,
+    "E0_clean": -152.0125,
+    "mag_tot": 24
+  },
+  "git": {
+    "commit": "72e48b0e9e74a31f4285c0eb961a873ce6fa4854",
+    "short_commit": "72e48b0e",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

@@ -1,18 +1,30 @@
 {
   "run_id": "crcl3_2x2_ni_emb_pipeline",
-  "prompt_summary": "",
+  "prompt_summary": "Ni-embedded monolayer CrCl3 calculation (clean on Huk, H_ads on Carbono)",
   "status": "RUNNING",
   "run_directory": "/home/cr/simulations/scientific-research/runs/crcl3_2x2_ni_emb_pipeline",
   "created_at": "2026-09-30T14:41:34.887352+00:00",
-  "updated_at": "2026-09-30T14:41:34.887352+00:00",
-  "agent_trace": [],
-  "parameter_registry": {},
-  "file_paths": {},
+  "updated_at": "2026-09-30T20:30:41.204783+00:00",
+  "agent_trace": "Ni clean running on Huk huk128 (Job 7981, Phase 2 Step 7+). Ni H_ads running on Carbono n14 (Job 166021, Phase 1 Step 12+).",
+  "parameter_registry": {
+    "clean_cluster": "huk",
+    "clean_job": 7981,
+    "clean_node": "huk128",
+    "clean_phase": "Phase 2 (+U) Step 7+",
+    "h_ads_cluster": "carbono",
+    "h_ads_job": 166021,
+    "h_ads_node": "n14",
+    "h_ads_phase": "Phase 1 Step 12+"
+  },
+  "file_paths": [
+    "/home/carlos/crcl3-newcals/crcl3-2x2-ni_emb-huk/clean",
+    "/home/carlos.primo/crcl3-HER/crcl3-newcals/crcl3-2x2-ni_emb-pipeline/H_ads"
+  ],
   "figures": [],
   "metrics": {},
   "git": {
-    "commit": "2f140276e87cfcb187383b738fb208248507e615",
-    "short_commit": "2f140276",
+    "commit": "72e48b0e9e74a31f4285c0eb961a873ce6fa4854",
+    "short_commit": "72e48b0e",
     "branch": "master",
     "is_dirty": true
   }

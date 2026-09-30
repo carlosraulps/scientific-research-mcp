@@ -132,5 +132,30 @@
         "timestamp": "2026-09-29T20:14:01.684736+00:00"
       }
     ]
+  },
+  "crcl3_2x2_tm_adsorption_competition_complete_suite__36_states": {
+    "key": "crcl3_2x2_tm_adsorption_competition_complete_suite__36_states",
+    "title": "CrCl3 2x2 TM Adsorption Competition Complete Suite (36 States)",
+    "current_version": 1,
+    "current_file": "crcl3_2x2_tm_adsorption_competition_complete_suite__36_states_v1.md",
+    "tags": [
+      "crcl3",
+      "tm_adsorption",
+      "dft_plus_u",
+      "vdw_d3",
+      "fe",
+      "co",
+      "ni",
+      "her"
+    ],
+    "references": [],
+    "updated_at": "2026-09-30T20:29:41.320345+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "crcl3_2x2_tm_adsorption_competition_complete_suite__36_states_v1.md",
+        "timestamp": "2026-09-30T20:29:41.320345+00:00"
+      }
+    ]
   }
 }

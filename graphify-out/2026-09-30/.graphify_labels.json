@@ -1,8 +1,8 @@
 {
-  "0": "scripts/__init__.py",
+  "0": "cli.py",
   "1": "CanvasStore",
   "2": "TestScientificResearchLog",
-  "3": ".save_run",
+  "3": "sthlmNord BeamerTheme",
   "4": "HistoricalMemoryStore",
   "5": "allocate",
   "6": "MDCrow: Checkpoint-Based Memory & Session Resumption",
@@ -59,14 +59,15 @@
   "57": "generate_demo_structure.py",
   "58": "vesta_auto.py",
   "59": "Core Principles & Typography",
-  "60": ".get_status",
+  "60": "GitController",
   "61": "sync_graphify.sh",
   "62": "SkillCrystallizer",
-  "63": "DualVerifier",
+  "63": "scripts/__init__.py",
   "64": "GraphifyBridge",
-  "65": "handle_tool_call",
+  "65": "mcp_server.py",
   "66": "Site Pyramidalization & Circular Zoom Annotator",
-  "67": "ProtocolEngine",
-  "68": "GitController",
-  "69": "FactsStore"
+  "67": ".setUp",
+  "68": "latex_manager.py",
+  "69": "FactsStore",
+  "70": "LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`)"
 }
