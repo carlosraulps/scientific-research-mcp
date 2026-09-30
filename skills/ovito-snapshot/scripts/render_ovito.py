@@ -24,6 +24,7 @@ from typing import Dict, List, Optional, Tuple, Union
 # Add current script directory for sibling imports
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from publication_colorbar import generate_publication_colorbar, composite_image_with_colorbar
+from scale_bar_overlay import add_scale_bar, autotrim_whitespace
 
 
 # Standard pseudopotential valence electron counts for common elements
@@ -113,9 +114,17 @@ def render_structure(
     composite_colorbar: bool = False,
     colorbar_label: Optional[str] = None,
     no_cell: bool = False,
+    renderer_type: str = "standard",
+    scale_bar: Optional[float] = None,
+    autotrim: bool = False,
+    vectors_file: Optional[Union[str, Path]] = None,
+    vector_scale: float = 1.0,
+    vector_width: float = 0.12,
+    vector_color: Tuple[float, float, float] = (0.85, 0.15, 0.15),
 ) -> List[str]:
     """
-    Renders high-resolution snapshots with padded tripods and publication typography.
+    Renders high-resolution snapshots with padded tripods, raytracing (Tachyon/OSPRay),
+    physical scale bars, and publication typography.
     """
     import ovito
     from ovito.io import import_file
@@ -231,7 +240,58 @@ def render_structure(
                 data.cell.vis.enabled = False
         pipeline.modifiers.append(hide_cell_modifier)
 
+    # Atomic vectors (forces, magnetic moments, etc.)
+    if vectors_file:
+        v_path = Path(vectors_file).resolve()
+        if v_path.exists():
+            vec_list = []
+            with open(v_path, "r") as f:
+                for line in f:
+                    parts = line.strip().split()
+                    if len(parts) >= 3:
+                        try:
+                            vec_list.append([float(parts[0]), float(parts[1]), float(parts[2])])
+                        except ValueError:
+                            pass
+            if vec_list:
+                from ovito.vis import VectorVis
+                def assign_vectors_modifier(frame, data):
+                    prop = data.particles_.create_property("Vector", data=vec_list[:data.particles.count])
+                    prop.vis = VectorVis(
+                        scaling=vector_scale,
+                        width=vector_width,
+                        color=vector_color,
+                    )
+                pipeline.modifiers.append(assign_vectors_modifier)
+
     pipeline.add_to_scene()
+
+    # Configure raytracing or standard renderer
+    ovito_renderer = None
+    if renderer_type.lower() == "tachyon":
+        try:
+            from ovito.vis import TachyonRenderer
+            ovito_renderer = TachyonRenderer(
+                ambient_occlusion=True,
+                ambient_occlusion_samples=12,
+                shadows=True,
+                antialiasing=True,
+                antialiasing_samples=12,
+            )
+            print("[OVITO] Enabled Tachyon raytracing renderer (ambient occlusion + soft shadows)")
+        except Exception as e:
+            print(f"[OVITO] Warning: TachyonRenderer unavailable ({e}). Falling back to standard renderer.", file=sys.stderr)
+    elif renderer_type.lower() == "ospray":
+        try:
+            from ovito.vis import OSPRayRenderer
+            ovito_renderer = OSPRayRenderer(
+                direct_light_enabled=True,
+                ambient_light_enabled=True,
+                denoising_enabled=True,
+            )
+            print("[OVITO] Enabled OSPRay path-tracing renderer (direct lighting + denoising)")
+        except Exception as e:
+            print(f"[OVITO] Warning: OSPRayRenderer unavailable ({e}). Falling back to standard renderer.", file=sys.stderr)
 
     bg_colors = {
         "white": (1.0, 1.0, 1.0),
@@ -285,8 +345,24 @@ def render_structure(
             filename=str(out_file),
             size=(width, height),
             background=bg,
+            renderer=ovito_renderer,
         )
         print(f"[OVITO] Saved: {out_file} ({width}x{height}, view={v}, proj={vp_type.name})")
+
+        # Injected physical scale bar for orthographic views
+        if scale_bar and vp_type == Viewport.Type.Ortho:
+            add_scale_bar(
+                image_path=out_file,
+                length_angstrom=scale_bar,
+                fov_angstrom=vp.fov,
+                output_path=out_file,
+                color="black" if background.lower() == "white" else "white",
+            )
+            print(f"[OVITO] Injected {scale_bar} Å scale bar onto: {out_file}")
+
+        # Auto-trim uniform whitespace padding
+        if autotrim:
+            autotrim_whitespace(image_path=out_file, output_path=out_file, padding=30)
 
         # Generate / composite decoupled publication colorbar
         if bader_file and (publish_colorbar or composite_colorbar):
@@ -419,6 +495,40 @@ def main():
         action="store_true",
         help="Hide simulation cell box wireframe",
     )
+    parser.add_argument(
+        "--renderer",
+        choices=["standard", "tachyon", "ospray"],
+        default="standard",
+        help="Rendering backend: standard (fast offscreen), tachyon (CPU raytracing with ambient occlusion and soft shadows), or ospray (path-tracing with denoising)",
+    )
+    parser.add_argument(
+        "--scale-bar",
+        type=float,
+        default=None,
+        metavar="ANGSTROM",
+        help="Inject physical scale bar with specified length in Angstroms (e.g. --scale-bar 5.0 for 5 Å; ortho views only)",
+    )
+    parser.add_argument(
+        "--autotrim",
+        action="store_true",
+        help="Automatically crop uniform whitespace/transparent margins around rendered crystals",
+    )
+    parser.add_argument(
+        "--vectors-file",
+        help="Path to 3-column vector file (e.g. atomic forces or magnetic moments) to render 3D vector arrows on atoms",
+    )
+    parser.add_argument(
+        "--vector-scale",
+        type=float,
+        default=1.0,
+        help="Scaling factor for vector arrows (default: 1.0)",
+    )
+    parser.add_argument(
+        "--vector-width",
+        type=float,
+        default=0.12,
+        help="Cylinder diameter/width for vector arrows (default: 0.12 Å)",
+    )
 
     args = parser.parse_args()
 
@@ -449,6 +559,12 @@ def main():
         composite_colorbar=args.composite_colorbar,
         colorbar_label=args.colorbar_label,
         no_cell=args.no_cell,
+        renderer_type=args.renderer,
+        scale_bar=args.scale_bar,
+        autotrim=args.autotrim,
+        vectors_file=args.vectors_file,
+        vector_scale=args.vector_scale,
+        vector_width=args.vector_width,
     )
 
 

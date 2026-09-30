@@ -25,6 +25,7 @@ Standards and automated toolchain for generating publication-grade scientific gr
 | **Anti-Collision (`textalloc`)** | `auto_adjust_labels(ax, x, y, labels, engine="textalloc")` |
 | **Dual PDF & PNG Export** | `save_publication_figure(fig, "figures/reaction_profile")` |
 | **Direct CLI Format** | `format-figure data.csv -o ./fig --engine adjustText --xlabel "$E - E_{\mathrm{F}}\ \mathrm{(eV)}$"` |
+| **Multi-Panel Compositor** | `format-multipanel panel_a.png panel_b.png panel_c.png -o fig1.png -g 1 3` |
 
 ## Core Principles & Typography
 
@@ -86,6 +87,13 @@ from style_config import get_vesta_color, get_element_cycler
 ax.plot(energies, pdos_Ti, color=get_vesta_color("Ti"), label="Ti $3d$ (VESTA Sky Blue)")
 ax.plot(energies, pdos_O,  color=get_vesta_color("O"),  label="O $2p$ (VESTA Red)")
 ax.plot(energies, pdos_Sr, color=get_vesta_color("Sr"), label="Sr $4d$ (VESTA Green)")
+### 6. Multi-Panel Figure Assembly (`format-multipanel`)
+When assembling multi-panel manuscript figures (e.g. Figure 1(a-d)):
+- Pre-trims uniform padding around each panel so visual scaling remains identical.
+- Injects bold Times New Roman sublabels `(a)`, `(b)`, `(c)` with translucent backing pills for 100% contrast.
+- Supports arbitrary layouts: `1x2`, `1x3`, `1x4`, `2x2`, `2x3`.
+```bash
+format-multipanel top_view.png side_view.png charge_density.png -g 1 3 -o Fig1_composite.png
 ```
 
 ## Common Pitfalls & Solutions

@@ -40,6 +40,7 @@ Automates **VESTA** (Visualization for Electronic and STructural Analysis) acros
 | **View along $a$-axis (yz plane)** | `vesta-snapshot POSCAR -v a -o ./figures` |
 | **Publication 600 DPI print scale** | `vesta-snapshot POSCAR -s 3 -o ./figures` |
 | **Charge Density Difference (CDD)** | `vesta-snapshot cdd.vasp --cdd --pos-level 0.005 --neg-level -0.005` |
+| **Batch Render Directory + Gallery** | `vesta-batch ./relax_steps/ -v c -o ./gallery --pattern "POSCAR*"` |
 | **Interactive GUI mode on X11** | `vesta-snapshot POSCAR --gui --keep-open` |
 | **Generate standalone .vesta wrapper** | `python <script_dir>/vstd_generator.py POSCAR -o project.vesta -v c --bound 0` |
 

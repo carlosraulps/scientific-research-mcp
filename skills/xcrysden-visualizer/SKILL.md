@@ -35,9 +35,9 @@ The skill automatically translates input parameters into clean TCL routines hand
 
 ## Quick Reference
 
-| Action | CLI Command |
-| :--- | :--- |
 | **Snapshot structure with white background** | `xcrysden-snapshot POSCAR -o ./figures/struc.png` |
+| **Auto-Detect 2D Sheet & Contour Slice** | `xcrysden-slice density.xsf --target sheet -p xy -o ./figures/slice_sheet.png` |
+| **Auto-Detect Adsorbate & Contour Slice** | `xcrysden-slice density.xsf --target adsorbate -p xy -o ./figures/slice_ads.png` |
 | **2D Density Contour ($xy$ basal plane)** | `xcrysden-snapshot density.cube --slice-2d --plane xy --plane-pos 0.50 -o ./figures/slice_xy.png` |
 | **3D Isosurface snapshot** | `xcrysden-snapshot density.cube --isovalue 0.05 -o ./figures/iso.png` |
 | **Export headless TCL script** | `xcrysden-snapshot POSCAR --export-script render.tcl` |

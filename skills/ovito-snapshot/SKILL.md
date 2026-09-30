@@ -37,6 +37,22 @@ Headless, high-throughput crystal structure and trajectory rendering using the O
   $$\Delta Q = Z_{\mathrm{valence}} - Q_{\mathrm{bader}}$$
   centered cleanly around zero.
 
+### 5. CPU Raytracing & Path-Tracing Renderers (`--renderer`)
+- `--renderer standard`: Fast OpenGL/offscreen rasterizer for batch runs.
+- `--renderer tachyon`: Headless software raytracer with ambient occlusion (`ambient_occlusion=True`), soft contact shadows beneath atoms and bond cylinders, and multisample antialiasing. Runs headlessly on any CPU without X11 or GPU!
+- `--renderer ospray`: Intel OSPRay photorealistic path-tracer with direct lighting, ambient sky illumination, principled specular highlights, and real-time CPU denoising.
+
+### 6. Nature-Grade Physical Scale Bar (`--scale-bar`)
+- Automatically calculates the exact physical magnification from the orthographic camera's field of view (`vp.fov` in Ångströms):
+  $$\text{Scale (px/Å)} = \frac{\text{Height}}{\text{FOV}}$$
+- Injects a high-contrast physical scale bar (e.g., 5 Å, 10 Å, 1 nm) in Times New Roman / STIX typography directly onto crystallographic projections ($a, b, c$).
+
+### 7. Automated Whitespace Trimming (`--autotrim`)
+- Crops excess uniform margins down to a calibrated padding border (30 px) for seamless journal layout insertion.
+
+### 8. 3D Atomic Vector Overlays (`--vectors-file`)
+- Renders forces, displacement vectors, or magnetic moments as 3D arrows emanating from atomic coordinates using `ovito.vis.VectorVis`.
+
 ---
 
 ## Quick Reference
@@ -49,6 +65,10 @@ Headless, high-throughput crystal structure and trajectory rendering using the O
 | **View along $a$-axis (yz plane)** | `ovito-snapshot POSCAR -v a -o ./figures` |
 | **Supercell expansion ($2\times 2\times 2$)** | `ovito-snapshot POSCAR --supercell 2 2 2` |
 | **High resolution (4K UHD)** | `ovito-snapshot POSCAR --width 3840 --height 2160` |
+| **CPU Raytracing (Tachyon + Shadows)** | `ovito-snapshot POSCAR --renderer tachyon --autotrim -o ./figures` |
+| **Path-Tracing (Intel OSPRay)** | `ovito-snapshot POSCAR --renderer ospray -v iso -o ./figures` |
+| **Physical Scale Bar (5 Å on 2D sheet)** | `ovito-snapshot POSCAR -v c --scale-bar 5.0 --autotrim -o ./figures` |
+| **Atomic Vector Overlay (Forces/Moments)** | `ovito-snapshot POSCAR --vectors-file forces.dat --vector-scale 1.5 -v c` |
 | **Bader Net Charge with STIX Colorbar** | `ovito-snapshot POSCAR --bader-file ACF.dat --net-charge --publish-colorbar -v c` |
 | **Composite Snapshot + Publication Colorbar** | `ovito-snapshot POSCAR --bader-file ACF.dat --net-charge --composite-colorbar -v c` |
 | **Generate Standalone STIX Colorbar** | `python <script_dir>/publication_colorbar.py --vmin -0.25 --vmax 0.25 -o colorbar.png` |
