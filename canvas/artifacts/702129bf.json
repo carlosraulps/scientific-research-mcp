@@ -1,0 +1,17 @@
+{
+  "result_id": "702129bf",
+  "producing_tool": "",
+  "value": null,
+  "arguments": {},
+  "rationales": {},
+  "sources": {},
+  "declared_context": "Investigation of strain-induced electronic band modulation and C pz orbital projection in 2D PHOTH-graphene.",
+  "parent_ids": [],
+  "created_at": "2026-10-01T02:10:12.232266+00:00",
+  "git": {
+    "commit": "57f2e64f5638d65edf6052f5c2d911ee801a9907",
+    "short_commit": "57f2e64f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

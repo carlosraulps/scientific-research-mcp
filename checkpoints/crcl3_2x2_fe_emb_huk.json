@@ -1,10 +1,10 @@
 {
   "run_id": "crcl3_2x2_fe_emb_huk",
-  "prompt_summary": "Fe-embedded monolayer CrCl3 + H adsorption calculation on Huk cluster",
-  "status": "RUNNING",
+  "prompt_summary": "Fe-embedded monolayer CrCl3 + H adsorption calculation on Huk cluster (Fully converged, Delta G = +1.092 eV)",
+  "status": "CONVERGED",
   "run_directory": "/home/cr/simulations/scientific-research/runs/crcl3_2x2_fe_emb_huk",
   "created_at": "2026-09-30T20:30:34.120752+00:00",
-  "updated_at": "2026-09-30T20:30:34.120752+00:00",
+  "updated_at": "2026-10-01T12:35:35.059489+00:00",
   "agent_trace": "Fe clean fully converged (-154.08029 eV). Job 7980 running Phase 2 for H_ads on huk126.",
   "parameter_registry": {
     "clean_converged_energy": -154.08029,
@@ -20,10 +20,16 @@
     "/home/carlos/crcl3-newcals/crcl3-2x2-fe_emb-huk/clean"
   ],
   "figures": [],
-  "metrics": {},
+  "metrics": {
+    "Delta_E_ads": 1.0587,
+    "Delta_G_HER": 1.092,
+    "E0_H_ads": -156.40263,
+    "E0_clean": -154.08029,
+    "mag_tot": 31
+  },
   "git": {
-    "commit": "72e48b0e9e74a31f4285c0eb961a873ce6fa4854",
-    "short_commit": "72e48b0e",
+    "commit": "57f2e64f5638d65edf6052f5c2d911ee801a9907",
+    "short_commit": "57f2e64f",
     "branch": "master",
     "is_dirty": true
   }

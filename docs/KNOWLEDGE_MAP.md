@@ -32,13 +32,13 @@
 - **Run `crcl3_2x2_fe_embedded_clean`** [CONVERGED]: Fully converged structural relaxation of clean Fe-embedded monolayer CrCl3 (PBE+D3+U) on Huk huk120. - Updated: `2026-09-30T10:41:09.703262+00:00`
 - **Run ``** [RUNNING]:  - Updated: `2026-09-30T14:40:48.365471+00:00`
 - **Run `crcl3_2x2_fe_emb_h_ads`** [RUNNING]:  - Updated: `2026-09-30T14:41:14.980365+00:00`
-- **Run `crcl3_2x2_ni_emb_pipeline`** [RUNNING]: Ni-embedded monolayer CrCl3 calculation (clean on Huk, H_ads on Carbono) - Updated: `2026-09-30T20:30:41.204783+00:00`
+- **Run `crcl3_2x2_ni_emb_pipeline`** [CONVERGED]: Ni-embedded monolayer CrCl3 + H adsorption calculation (Fully converged, Delta G = +0.821 eV) - Updated: `2026-10-01T12:35:30.433617+00:00`
 - **Run `crcl3_2x2_co_emb_pipeline`** [CONVERGED]: Co-embedded monolayer CrCl3 + H adsorption calculation (Fully converged, Delta G = +0.670 eV) - Updated: `2026-09-30T20:30:45.469582+00:00`
-- **Run `crcl3_2x2_fe_emb_huk`** [RUNNING]: Fe-embedded monolayer CrCl3 + H adsorption calculation on Huk cluster - Updated: `2026-09-30T20:30:34.120752+00:00`
+- **Run `crcl3_2x2_fe_emb_huk`** [CONVERGED]: Fe-embedded monolayer CrCl3 + H adsorption calculation on Huk cluster (Fully converged, Delta G = +1.092 eV) - Updated: `2026-10-01T12:35:35.059489+00:00`
 
 ## 4. Append-Only Provenance Registry Stats
-- **Total Registered Artifacts**: 45
-- **Audit Log**: [`decisions.csv`](file:///Users/apple/Research/abc/scientific-research-mcp/logs/decisions.csv)
-- **Evidence Store**: [`EVIDENCE.md`](file:///Users/apple/Research/abc/scientific-research-mcp/EVIDENCE.md)
-- **Operational Protocol**: [`CLAUDE.md`](file:///Users/apple/Research/abc/scientific-research-mcp/CLAUDE.md)
-- **Active Execution Tracking**: [`TASK.md`](file:///Users/apple/Research/abc/scientific-research-mcp/TASK.md)
+- **Total Registered Artifacts**: 50
+- **Audit Log**: [`decisions.csv`](file:///home/cr/simulations/scientific-research/logs/decisions.csv)
+- **Evidence Store**: [`EVIDENCE.md`](file:///home/cr/simulations/scientific-research/EVIDENCE.md)
+- **Operational Protocol**: [`CLAUDE.md`](file:///home/cr/simulations/scientific-research/CLAUDE.md)
+- **Active Execution Tracking**: [`TASK.md`](file:///home/cr/simulations/scientific-research/TASK.md)

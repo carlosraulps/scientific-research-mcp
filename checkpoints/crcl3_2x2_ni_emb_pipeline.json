@@ -1,10 +1,10 @@
 {
   "run_id": "crcl3_2x2_ni_emb_pipeline",
-  "prompt_summary": "Ni-embedded monolayer CrCl3 calculation (clean on Huk, H_ads on Carbono)",
-  "status": "RUNNING",
+  "prompt_summary": "Ni-embedded monolayer CrCl3 + H adsorption calculation (Fully converged, Delta G = +0.821 eV)",
+  "status": "CONVERGED",
   "run_directory": "/home/cr/simulations/scientific-research/runs/crcl3_2x2_ni_emb_pipeline",
   "created_at": "2026-09-30T14:41:34.887352+00:00",
-  "updated_at": "2026-09-30T20:30:41.204783+00:00",
+  "updated_at": "2026-10-01T12:35:30.433617+00:00",
   "agent_trace": "Ni clean running on Huk huk128 (Job 7981, Phase 2 Step 7+). Ni H_ads running on Carbono n14 (Job 166021, Phase 1 Step 12+).",
   "parameter_registry": {
     "clean_cluster": "huk",
@@ -21,10 +21,16 @@
     "/home/carlos.primo/crcl3-HER/crcl3-newcals/crcl3-2x2-ni_emb-pipeline/H_ads"
   ],
   "figures": [],
-  "metrics": {},
+  "metrics": {
+    "Delta_E_ads": 0.6208,
+    "Delta_G_HER": 0.821,
+    "E0_H_ads": -153.97851,
+    "E0_clean": -151.21824,
+    "mag_tot": 25
+  },
   "git": {
-    "commit": "72e48b0e9e74a31f4285c0eb961a873ce6fa4854",
-    "short_commit": "72e48b0e",
+    "commit": "57f2e64f5638d65edf6052f5c2d911ee801a9907",
+    "short_commit": "57f2e64f",
     "branch": "master",
     "is_dirty": true
   }
