@@ -6,99 +6,61 @@ description: Use when creating, styling, or formatting publication-ready scienti
 # Publication Figure Formatter Skill
 
 ## Overview
-Standards and automated toolchain for generating publication-grade scientific graphics matching Physical Review, Nature, and ACS quality benchmarks. Mandates Times New Roman serif typography, native STIX math font rendering, zero text overlap via algorithmic placement (`adjustText` force-repulsion and `textalloc` bounding-box allocation), and automated dual raster/vector (`.png` and `.pdf`) export.
+Standards and automated toolchain for generating publication-grade scientific graphics matching Physical Review, Nature, and ACS quality benchmarks. Mandates Times New Roman serif typography, native STIX math font rendering, zero text overlap via algorithmic placement (`adjustText` and `textalloc`), coupled Band Structure + PDOS architectures, and the Zero-Dilation Rule for scientific animations.
 
-## When to Use
-- **Trigger**: Creating scientific plots, band structures, DOS curves, reaction energy coordinates, or phase diagrams.
-- **Trigger**: Crowded scatter plots or multi-line graphs where annotations/labels overlap or collide.
-- **Trigger**: Preparing final graphics for journal submission requiring Times New Roman fonts and vector PDF formats.
-- **When NOT to use**:
-  - Headless 3D crystal rendering (use [blender-crystal-render](../blender-crystal-render/SKILL.md) or [ovito-snapshot](../ovito-snapshot/SKILL.md)).
-  - Real-space 3D electron density isosurfaces (use [electron-density-surfaces](../electron-density-surfaces/SKILL.md)).
+## Key Capabilities & Scientific Protocols
 
-## Quick Reference
+### 1. The Zero-Dilation Rule for Scientific Animations (`format-animation`)
+- **Problem**: When creating multi-frame animated GIFs ($0\% \to +3\% \to 0\% \to -3\% \to 0\%$), **NEVER USE `bbox_inches="tight"`** in loop saves. Text string fluctuations (e.g. $+0.027$ vs $-0.014$) cause bounding boxes to vary by 2–10 pixels between frames, creating an unsettling visual "dilation" or frame jitter.
+- **Protocol**:
+  1. Fix the figure canvas explicitly: `figsize=(W, H), dpi=DPI`.
+  2. Set explicit margins in `gridspec.GridSpec(left=0.06, right=0.94, top=0.81, bottom=0.12)`.
+  3. Save directly without `bbox_inches="tight"`: `fig.savefig(buf, format="png", dpi=DPI)`.
+  4. The `format-animation` tool validates that 100% of input frames have identical dimensions ($W \times H$) and normalizes any discrepancies.
 
-| Action | Python / CLI Pattern |
+### 2. Comfortable Animation Pacing Protocol
+- Scientific inspection requires distinct pacing for extrema and equilibrium:
+  - **Intermediate transition frames**: **800 ms** per frame.
+  - **Extrema holds** (e.g., maximum $-3\%$ and $+3\%$ strain): **1200 ms** hold.
+  - **Pristine / Equilibrium holds** ($0\%$ strain): **1000 ms** hold.
+  - **Oscillation**: Ping-pong cyclic looping (`--ping-pong`) without endpoint duplication.
+
+### 3. Header Clearance & Overlap Prevention
+- When deploying multi-line figure suptitles (Title + Subtitle with parameters):
+  - **Line 1 (Mode Title)**: `y = 0.955`, `fontsize = 12.0`, `weight="bold"`
+  - **Line 2 (Parameters $\varepsilon, a, b, \Delta Q$)**: `y = 0.895`, `fontsize = 10.5`
+  - **Subplot top margin**: `top = 0.81`
+  - This leaves a generous ~25-point vertical clearance between the subtitle and the subplot headers (`(a)`, `(b)`), preventing text collisions.
+
+### 4. Coupled Band Structure + PDOS Architecture (`render-coupled-suite`)
+- **Shared Energy Axis**: `fig, (ax_band, ax_dos) = plt.subplots(..., sharey=True, gridspec_kw={"width_ratios": [1.6, 1.0], "wspace": 0.08})`.
+- **Shared Fermi Level**: Plotting `ax.axhline(0.0, color="#d9534f", ls="--", lw=1.0)` on both axes produces an uninterrupted horizontal red dashed line connecting band extrema directly to PDOS van Hove singularities.
+- **Dedicated Fixed Colorbar Axis**: Allocates an explicit third axis (`width_ratios=[1.6, 1.0, 0.04]`), preventing dynamic width stealing from the PDOS axis.
+- **VESTA Element Color Concordance**: Maps element-projected DOS curves to the exact colors of atoms in the crystal structure figure.
+
+### 5. Label Anti-Collision Engines
+Embeds two layout algorithms (cloned in `external/`):
+- **`adjustText`**: Force-directed physics repulsion with automatic leader lines.
+- **`textalloc`**: Bounding-box void allocation for dense scatter clusters.
+
+---
+
+## Quick Reference CLI
+
+| Action | CLI Command |
 | :--- | :--- |
-| **Apply Standard Styling** | `from style_config import set_publication_style; set_publication_style()` |
-| **Anti-Collision (`adjustText`)** | `auto_adjust_labels(ax, x, y, labels, engine="adjustText")` |
-| **Anti-Collision (`textalloc`)** | `auto_adjust_labels(ax, x, y, labels, engine="textalloc")` |
-| **Dual PDF & PNG Export** | `save_publication_figure(fig, "figures/reaction_profile")` |
-| **Direct CLI Format** | `format-figure data.csv -o ./fig --engine adjustText --xlabel "$E - E_{\mathrm{F}}\ \mathrm{(eV)}$"` |
-| **Multi-Panel Compositor** | `format-multipanel panel_a.png panel_b.png panel_c.png -o fig1.png -g 1 3` |
+| **Apply Standard Python Styling** | `from style_config import set_publication_style; set_publication_style()` |
+| **Compose Zero-Dilation Animation** | `format-animation "./frames/frame_*.png" --ping-pong -o strain_movie.gif` |
+| **Render Coupled Band + PDOS Suite** | `render-coupled-suite` |
+| **Assemble Multi-Panel Figure** | `format-multipanel panel_a.png panel_b.png panel_c.png -g 1 3 -o Fig1.png` |
+| **Format Single Plot with Anti-Collision** | `format-figure data.csv -o ./fig --engine adjustText --xlabel "$E - E_{\mathrm{F}}\ \mathrm{(eV)}$"` |
 
-## Core Principles & Typography
+---
 
-### 1. Typography & Mathematical Formats
-- Always configure standard serif fonts with cross-platform fallbacks:
-  ```python
-  plt.rcParams.update({
-      "font.family": "serif",
-      "font.serif": ["Times New Roman", "Nimbus Roman", "Liberation Serif", "STIXGeneral", "DejaVu Serif"],
-      "mathtext.fontset": "stix",
-      "axes.edgecolor": "#222222",
-      "axes.linewidth": 1.2,
-      "xtick.direction": "in",
-      "ytick.direction": "in",
-  })
-  ```
-- **Math strings**: Always use raw LaTeX strings with explicit units:
-  - $r"$\Delta G_{\mathrm{H*}}\ \mathrm{(eV)}$"$
-  - $r"$\rho(\mathbf{r})\ \mathrm{(e/Å^3)}$"$
-  - $r"$\mathrm{Total\ Energy}\ E - E_0\ \mathrm{(meV/atom)}$"$
+## Script Architecture & CLI Binaries
 
-### 2. Label Anti-Collision Engines
-
-This skill embeds two state-of-the-art layout algorithms (cloned in `external/`):
-- **`adjustText`** (`external/adjustText`): Uses iterative force-directed physics simulation to repel text boxes away from data points, lines, and adjacent labels, with automatic leader lines.
-- **`textalloc`** (`external/textalloc`): Uses bounding-box candidate sampling and spatial partitioning to locate optimal empty voids around crowded scatter clusters.
-
-### 3. Python Integration Pattern
-```python
-import matplotlib.pyplot as plt
-from style_config import set_publication_style, auto_adjust_labels, save_publication_figure
-
-set_publication_style()
-fig, ax = plt.subplots(figsize=(6.5, 5))
-
-ax.scatter(x_data, y_data, color="#1f77b4", s=40)
-auto_adjust_labels(ax, x_data, y_data, labels, engine="adjustText", text_size=10)
-
-ax.set_xlabel(r"Reaction Coordinate $\xi$", fontsize=12)
-ax.set_ylabel(r"Gibbs Free Energy $\Delta G\ \mathrm{(eV)}$", fontsize=12)
-
-save_publication_figure(fig, "figures/energy_landscape")
-```
-
-### 4. Colorblind Accessibility & Colormaps
-- **Rule**: Avoid arbitrary color assignments, Rainbow, and Jet.
-- **Continuous 2D Colormaps**:
-  - Sequential: `cividis` (optimized for color vision deficiencies), `viridis`, `plasma`, `inferno`.
-  - Diverging: `coolwarm`, `RdBu_r`, `PRGn`.
-- **Categorical Data**:
-  - Use the **Okabe-Ito** palette (`OKABE_ITO_LIST`) or Paul Tol's palettes (`TOL_BRIGHT`, `TOL_MUTED`) available in `style_config`.
-
-### 5. VESTA Element Color Concordance
-In solid-state physics and computational materials science, element-projected DOS (PDOS), orbital fat bands, and atomic defect levels should strictly match the color of the atoms in the crystal structure figure:
-```python
-from style_config import get_vesta_color, get_element_cycler
-
-# Exact colors from /opt/VESTA/elements.ini:
-ax.plot(energies, pdos_Ti, color=get_vesta_color("Ti"), label="Ti $3d$ (VESTA Sky Blue)")
-ax.plot(energies, pdos_O,  color=get_vesta_color("O"),  label="O $2p$ (VESTA Red)")
-ax.plot(energies, pdos_Sr, color=get_vesta_color("Sr"), label="Sr $4d$ (VESTA Green)")
-### 6. Multi-Panel Figure Assembly (`format-multipanel`)
-When assembling multi-panel manuscript figures (e.g. Figure 1(a-d)):
-- Pre-trims uniform padding around each panel so visual scaling remains identical.
-- Injects bold Times New Roman sublabels `(a)`, `(b)`, `(c)` with translucent backing pills for 100% contrast.
-- Supports arbitrary layouts: `1x2`, `1x3`, `1x4`, `2x2`, `2x3`.
-```bash
-format-multipanel top_view.png side_view.png charge_density.png -g 1 3 -o Fig1_composite.png
-```
-
-## Common Pitfalls & Solutions
-
-1. **LaTeX syntax error**: Do not escape math without raw strings. Always prefix with `r"..."`.
-2. **Text truncated at figure margins**: Set `bbox_inches='tight'` or call `plt.tight_layout()`. `save_publication_figure` enforces this automatically.
-3. **Labels outside plot bounds**: Pass `lim=500` or specify axes bounds in `adjust_text(..., ax=ax)`.
-4. **Color mismatch across paper figures**: Import `get_vesta_color` so PDOS, fat bands, and scatter legends match VESTA crystal structure figures 100%.
+Installed globally in `~/.local/bin/`:
+- `format-figure` -> `skills/publication-figure-formatter/scripts/label_layout.py`
+- `format-multipanel` -> `skills/publication-figure-formatter/scripts/figure_panel_compositor.py`
+- `format-animation` -> `skills/publication-figure-formatter/scripts/animation_composer.py`
+- `render-coupled-suite` -> `skills/publication-figure-formatter/scripts/render_coupled_suite.py`

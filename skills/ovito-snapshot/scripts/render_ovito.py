@@ -165,7 +165,19 @@ def render_structure(
     if particle_radius or bond_width:
         def style_vis(frame, data):
             if particle_radius:
-                data.particles_.create_property("Radius", data=[particle_radius] * data.particles.count)
+                radii = [particle_radius] * data.particles.count
+                if preset and preset.lower() in ["2d-carbon", "graphene", "photh-graphene"]:
+                    try:
+                        from ase.io import read as ase_read
+                        syms = ase_read(str(input_path)).get_chemical_symbols()
+                        for i in range(min(len(syms), data.particles.count)):
+                            if syms[i] == "H":
+                                radii[i] = 0.24
+                            elif syms[i] == "C":
+                                radii[i] = 0.38
+                    except Exception:
+                        pass
+                data.particles_.create_property("Radius", data=radii)
             if data.particles.bonds and bond_width:
                 data.particles.bonds.vis.width = bond_width
         pipeline.modifiers.append(style_vis)
@@ -311,9 +323,9 @@ def render_structure(
     views_to_render = list(camera_configs.keys()) if view.lower() == "all" else [view.lower()]
     rendered_files = []
 
-    # Safe padded tripod offsets (never < 0.05 to prevent clipping -x label)
-    safe_ox = max(0.05, float(tripod_offset[0]))
-    safe_oy = max(0.05, float(tripod_offset[1]))
+    # Safe padded tripod offsets (never < 0.06 to prevent clipping -x and -z labels)
+    safe_ox = max(0.06, float(tripod_offset[0]))
+    safe_oy = max(0.06, float(tripod_offset[1]))
 
     for v in views_to_render:
         if v not in camera_configs:

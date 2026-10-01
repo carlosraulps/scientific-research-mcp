@@ -1,17 +1,17 @@
-# Graph Report - scientific-research  (2026-10-01)
+# Graph Report - scientific-research  (2026-09-30)
 
 ## Corpus Check
-- 168 files · ~1,396,550 words
+- 146 files · ~1,380,558 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 80 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
 
 ## Summary
-- 777 nodes · 1110 edges · 78 communities (55 shown, 4 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.89)
+- 604 nodes · 848 edges · 73 communities (51 shown, 3 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 44 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7b543871`
+- Built from commit: `72e48b0e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -46,8 +46,8 @@
 - Sol27LC Benchmark Platinum Study Report 965f17
 - Sol27LC Benchmark Platinum Study Report a1f321
 - Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3
-- Key Capabilities & Scientific Protocols
-- render_blender.py
+- Blender Crystal Render Skill
+- convert_to_xsf
 - textalloc/README.md
 - style_config.py
 - adjustText - automatic label placement for `matplotlib`
@@ -56,25 +56,20 @@
 - render_structure
 - generate_demo_structure.py
 - vesta_auto.py
-- Key Capabilities & Scientific Protocols
-- GitController
+- Core Principles & Typography
+- .get_status
 - sync_graphify.sh
 - SkillCrystallizer
-- .setUp
+- GitController
 - GraphifyBridge
 - handle_tool_call
 - Site Pyramidalization & Circular Zoom Annotator
-- auto_slice_2d.py
+- ProtocolEngine
 - latex_manager.py
 - FactsStore
 - LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`)
-- generate_vstd.py
+- .save_run
 - Transition Metal Adsorption Competition Suite on CrCl3 (2x2) Monolayer - 100% Completed
-- compose_animation
-- composite_panels
-- run_bader_protocol
-- Electron Density & Molecular Surfaces Skill
-- PHOTH-Graphene HER Electrocatalysis & Mechanical Strain Suite
 
 ## God Nodes (most connected - your core abstractions)
 1. `TestScientificResearchLog` - 25 edges
@@ -83,31 +78,31 @@
 4. `render_circular_site_zoom()` - 16 edges
 5. `render_full_composite_figure()` - 16 edges
 6. `CheckpointManager` - 15 edges
-7. `render_structure()` - 14 edges
-8. `allocate()` - 13 edges
-9. `get_non_overlapping_boxes()` - 13 edges
-10. `adjust_text()` - 12 edges
+7. `allocate()` - 13 edges
+8. `get_non_overlapping_boxes()` - 13 edges
+9. `adjust_text()` - 12 edges
+10. `analyze_site_geometry()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --uses--> `CanvasStore`  [INFERRED]
   cli.py → scripts/canvas_store.py
-- `main()` --uses--> `CheckpointManager`  [INFERRED]
-  cli.py → scripts/checkpoint_manager.py
-- `main()` --uses--> `DualVerifier`  [INFERRED]
-  cli.py → scripts/dual_verifier.py
 - `main()` --uses--> `FactsStore`  [INFERRED]
   cli.py → scripts/facts_store.py
-- `main()` --uses--> `GitController`  [INFERRED]
-  cli.py → scripts/git_controller.py
+- `main()` --uses--> `GraphifyBridge`  [INFERRED]
+  cli.py → scripts/graphify_bridge.py
+- `main()` --uses--> `HistoricalMemoryStore`  [INFERRED]
+  cli.py → scripts/historical_memory.py
+- `main()` --uses--> `ScientificEvaluator`  [INFERRED]
+  cli.py → scripts/scientific_evaluator.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (78 total, 4 thin omitted)
+## Communities (73 total, 3 thin omitted)
 
 ### Community 0 - "scripts/__init__.py"
-Cohesion: 0.14
-Nodes (15): main(), ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+7 more)
+Cohesion: 0.15
+Nodes (14): ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+6 more)
 
 ### Community 1 - "CanvasStore"
 Cohesion: 0.21
@@ -221,21 +216,21 @@ Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findi
 Cohesion: 0.40
 Nodes (4): 1. Overview, 2. Converged Benchmarks & Artifact Provenance, 3. Hubbard U Dual Benchmark, Multi-Cluster Distributed Execution & Baseline Benchmarks for Monolayer CrCl3
 
-### Community 48 - "Key Capabilities & Scientific Protocols"
-Cohesion: 0.05
-Nodes (38): Blender Crystal Render Skill, Common Pitfalls & Solutions, Overview, Quick Reference, Script Options & Arguments, When to Use, 1. Padded Coordinate Tripod Overlay, 2. Calibrated 2D Material & Carbon Presets (`--preset 2d-carbon`) (+30 more)
+### Community 48 - "Blender Crystal Render Skill"
+Cohesion: 0.07
+Nodes (30): Blender Crystal Render Skill, Common Pitfalls & Solutions, Overview, Quick Reference, Script Options & Arguments, When to Use, Common Pitfalls & Solutions, Electron Density & Molecular Surfaces Skill (+22 more)
 
-### Community 49 - "render_blender.py"
-Cohesion: 0.28
-Nodes (5): main(), parse_poscar(), Publication-Quality Photorealistic Crystal Structure Renderer using Blender.…, render_crystal(), read()
+### Community 49 - "convert_to_xsf"
+Cohesion: 0.17
+Nodes (11): main(), parse_poscar(), Publication-Quality Photorealistic Crystal Structure Renderer using Blender.…, render_crystal(), read(), convert_to_xsf(), main(), Path (+3 more)
 
 ### Community 50 - "textalloc/README.md"
 Cohesion: 0.15
 Nodes (12): Examples, Features, Implementation and speed, Installation, Parameters, Plotting in 3D, Plotting on images and using transforms, Quick-start (+4 more)
 
 ### Community 51 - "style_config.py"
-Cohesion: 0.11
-Nodes (26): cycler, main(), plot_dataset(), CLI Tool for Generating Collision-Free Scientific Plots with Times New Roman &…, generate_demo_suite(), ndarray, Path, Generates a synthetic demo coupled Band + PDOS figure. (+18 more)
+Cohesion: 0.15
+Nodes (19): cycler, main(), plot_dataset(), CLI Tool for Generating Collision-Free Scientific Plots with Times New Roman &…, auto_adjust_labels(), ndarray, Scientific Publication Plotting & Typography Configuration. Enforces Times New…, Dual-format exporter: saves both 300 DPI PNG and vector PDF. (+11 more)
 
 ### Community 52 - "adjustText - automatic label placement for `matplotlib`"
 Cohesion: 0.29
@@ -246,32 +241,32 @@ Cohesion: 0.27
 Nodes (5): Any, Executes the hierarchical 8-Rule Decision Ladder and Convergence Agent…, Appends an entry to logs/decisions.csv and updates EVIDENCE.md., Scores a simulation script (1-10) and flags redundant, dangerous, or unphysical…, ScientificEvaluator
 
 ### Community 56 - "render_structure"
-Cohesion: 0.08
-Nodes (28): composite_image_with_colorbar(), generate_publication_colorbar(), Path, Horizontally composites an OVITO crystal snapshot with the publication colorbar., ===============================================================================…, Renders a standalone publication-quality vector and raster colorbar., apply_presets(), main() (+20 more)
+Cohesion: 0.33
+Nodes (3): main(), Headless Crystal Structure & Trajectory Renderer using OVITO and ASE. Renders…, render_structure()
 
 ### Community 57 - "generate_demo_structure.py"
 Cohesion: 0.50
 Nodes (3): create_porous_carbon_model(), Demo Structure Generator for Catalytic / Adsorption Sites. Creates a realistic…, Constructs a 2D porous carbon lattice (similar to the biphenylene/porous…
 
 ### Community 58 - "vesta_auto.py"
-Cohesion: 0.11
-Nodes (24): batch_render_directory(), main(), Path, ===============================================================================…, Renders all matching crystal structures in input_dir and builds a summary…, automate_vesta_gui(), find_vesta_binary(), main() (+16 more)
+Cohesion: 0.67
+Nodes (3): automate_vesta(), main(), VESTA GUI Automation & Multi-Axis Crystal Capture for X11. Automates window…
 
-### Community 59 - "Key Capabilities & Scientific Protocols"
+### Community 59 - "Core Principles & Typography"
 Cohesion: 0.18
-Nodes (10): 1. The Zero-Dilation Rule for Scientific Animations (`format-animation`), 2. Comfortable Animation Pacing Protocol, 3. Header Clearance & Overlap Prevention, 4. Coupled Band Structure + PDOS Architecture (`render-coupled-suite`), 5. Label Anti-Collision Engines, Key Capabilities & Scientific Protocols, Overview, Publication Figure Formatter Skill (+2 more)
+Nodes (11): 1. Typography & Mathematical Formats, 2. Label Anti-Collision Engines, 3. Python Integration Pattern, 4. Colorblind Accessibility & Colormaps, 5. VESTA Element Color Concordance, Common Pitfalls & Solutions, Core Principles & Typography, Overview (+3 more)
 
-### Community 60 - "GitController"
-Cohesion: 0.12
-Nodes (14): CompletedProcess, CheckpointManager, Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory., GitController (+6 more)
+### Community 60 - ".get_status"
+Cohesion: 0.24
+Nodes (7): CompletedProcess, Any, Creates an atomic Git commit snapshot linking the workspace state to active…, Evaluates whether a simulation setup is strictly reproducible from Git., Helper to run git commands in the base directory., Checks if base_dir is inside an active git repository., Retrieves current git repository state for scientific audit trails.
 
 ### Community 62 - "SkillCrystallizer"
 Cohesion: 0.32
 Nodes (4): Any, Finds crystallized skills and procedures matching a natural language query or…, Crystallizes an operational procedure into persistent memory and appends to…, SkillCrystallizer
 
-### Community 63 - ".setUp"
-Cohesion: 0.18
-Nodes (6): DualVerifier, Any, Performs dual verification across Functional Correctness and Scientific…, ProtocolEngine, Any, AEH Stage 1: Static verification of multi-step simulation protocols.
+### Community 63 - "GitController"
+Cohesion: 0.22
+Nodes (6): main(), CheckpointManager, DualVerifier, Any, Performs dual verification across Functional Correctness and Scientific…, GitController
 
 ### Community 64 - "GraphifyBridge"
 Cohesion: 0.33
@@ -285,9 +280,9 @@ Nodes (5): handle_tool_call(), main(), Any, Dispatches tool calls to the underly
 Cohesion: 0.22
 Nodes (8): 1. Vector Formulation, 2. Coordination Polyhedron, Options & Arguments, Overview, Physical Background: Haddon's POAV1 Pyramidalization, Quick Reference, Site Pyramidalization & Circular Zoom Annotator, When to Use
 
-### Community 67 - "auto_slice_2d.py"
-Cohesion: 0.10
-Nodes (32): auto_slice_and_render(), compute_3point_plane(), find_monolayer_z_plane(), main(), ndarray, Path, ===============================================================================…, Finds the mean fractional z-coordinate of the 2D material sheet and identifies… (+24 more)
+### Community 67 - "ProtocolEngine"
+Cohesion: 0.40
+Nodes (3): ProtocolEngine, Any, AEH Stage 1: Static verification of multi-step simulation protocols.
 
 ### Community 68 - "latex_manager.py"
 Cohesion: 0.40
@@ -301,44 +296,28 @@ Nodes (4): FactsStore, Any, Records an empirical fact, failure warning, or bound
 Cohesion: 0.20
 Nodes (9): 1. Scaffold a New Presentation, 2. Compile an Existing Document, 3. Generate PNG Previews, 4. Manage Templates Catalog, Directory Architecture, Features & Capabilities, LaTeX & Beamer Template Skill (`latex-template` / `beamer-template`), Quick Reference CLI (+1 more)
 
-### Community 71 - "generate_vstd.py"
-Cohesion: 0.14
-Nodes (22): build_cdd_isosurface_section(), build_sbond_section(), estimate_bond_cutoffs(), extract_species_from_structure(), generate_vesta_project_content(), generate_vstd_content(), main(), Path (+14 more)
+### Community 71 - ".save_run"
+Cohesion: 0.27
+Nodes (5): Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory.
 
 ### Community 72 - "Transition Metal Adsorption Competition Suite on CrCl3 (2x2) Monolayer - 100% Completed"
 Cohesion: 0.50
 Nodes (3): Key Results Summary:, Transition Metal Adsorption Competition Suite on CrCl3 (2x2) Monolayer - 100% Completed, Updated Publication Figures:
 
-### Community 73 - "compose_animation"
-Cohesion: 0.21
-Nodes (14): build_ping_pong_sequence(), calculate_frame_durations(), compose_animation(), main(), parse_numeric_label(), Image, Path, Composes a publication-grade animated GIF obeying the Zero-Dilation Rule. (+6 more)
-
-### Community 74 - "composite_panels"
-Cohesion: 0.23
-Nodes (11): FreeTypeFont, composite_panels(), get_serif_font(), main(), Image, Path, ===============================================================================…, Trims uniform background padding from a panel while retaining specified border… (+3 more)
-
-### Community 75 - "run_bader_protocol"
-Cohesion: 0.27
-Nodes (11): main(), parse_acf_dat(), prepare_total_charge_reference(), Path, Parses Henkelman Bader ACF.dat output file. Columns: # X Y Z CHARGE MIN_DIST…, Executes the robust flux-weighted Bader charge protocol., ===============================================================================…, Extracts species list and Cartesian coordinates from POSCAR/CONTCAR. (+3 more)
-
-### Community 76 - "Electron Density & Molecular Surfaces Skill"
-Cohesion: 0.20
-Nodes (9): 1. Bader Charge Partitioning Protocol (`bader-analyze`), 2. 3D Isosurface Extraction & Wavefront OBJ Export, 3. 2D Topological Slicing & Laplacian Mapping, 4. Planar-Averaged Potential & Work Function, Electron Density & Molecular Surfaces Skill, Key Capabilities & Scientific Protocols, Overview, Quick Reference CLI (+1 more)
-
 ## Knowledge Gaps
-- **156 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `Key Results Summary:`, `Updated Publication Figures:`, `1. Overview` (+151 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 422 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **145 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `Key Results Summary:`, `Updated Publication Figures:`, `1. Overview` (+140 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 334 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `read()` connect `render_blender.py` to `auto_slice_2d.py`, `site_zoom_annotator.py`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `load_structure()` connect `site_zoom_annotator.py` to `render_blender.py`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `convert_to_xsf()` connect `auto_slice_2d.py` to `render_blender.py`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `TestScientificResearchLog` connect `TestScientificResearchLog` to `scripts/__init__.py`, `CanvasStore`, `GraphifyBridge`, `ProtocolEngine`, `HistoricalMemoryStore`, `FactsStore`, `ScientificEvaluator`, `SkillCrystallizer`, `GitController`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `CanvasStore` connect `CanvasStore` to `scripts/__init__.py`, `TestScientificResearchLog`, `GitController`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `auto_adjust_labels()` connect `style_config.py` to `adjustText/__init__.py`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 10 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
   _`TestScientificResearchLog` has 10 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `CanvasStore` (e.g. with `main()` and `GitController`) actually correct?**
@@ -346,4 +325,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 5 inferred relationships involving `GitController` (e.g. with `main()` and `CanvasStore`) actually correct?**
   _`GitController` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sync_graphify.sh script`, `textalloc`, `Key Results Summary:` to the rest of the system?**
-  _156 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _145 weakly-connected nodes found - possible documentation gaps or missing edges._

@@ -42,27 +42,27 @@
     "semantic_hash": ""
   },
   "checkpoints/index.json": {
-    "mtime": 1790858286.2479331,
-    "seen": 1790879221.2690232,
+    "mtime": 1790858135.0766187,
+    "seen": 1790858139.7597117,
     "ast_hash": "a189aa9f3fe22bc12afbd3c5eee722a6",
     "semantic_hash": ""
   },
   "cli.py": {
-    "mtime": 1790858286.237933,
-    "seen": 1790879221.2690258,
-    "ast_hash": "2b95415bb51443e7db7a5be61c7091b2",
+    "mtime": 1790702784.3348098,
+    "seen": 1790702912.3047018,
+    "ast_hash": "e469413dfdfc78344c53228c64cda8eb",
     "semantic_hash": ""
   },
   "logs/artifacts_registry.json": {
-    "mtime": 1790862620.40446,
-    "seen": 1790879221.2690341,
-    "ast_hash": "63042d52f2eda2f48746d621189f7755",
+    "mtime": 1790820662.1073673,
+    "seen": 1790858139.7597167,
+    "ast_hash": "c33527ad18fdc7028b8d4a10e0196b7e",
     "semantic_hash": ""
   },
   "logs/notes_index.json": {
-    "mtime": 1790858286.2389328,
-    "seen": 1790879221.269036,
-    "ast_hash": "46f02438d3f93c1cc49a7419eaaf2251",
+    "mtime": 1790800181.3207035,
+    "seen": 1790800251.1796467,
+    "ast_hash": "1d8ee9903b11912a0754284f1d2ac022",
     "semantic_hash": ""
   },
   "logs/reports_index.json": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "scripts/graphify_bridge.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.2690556,
-    "ast_hash": "1be048bdcd8157bc9e7f441aa9e46c07",
+    "mtime": 1790701326.6276886,
+    "seen": 1790701514.3245754,
+    "ast_hash": "4bedc579d398079d65a44d733155a74c",
     "semantic_hash": ""
   },
   "scripts/historical_memory.py": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/KNOWLEDGE_MAP.md": {
-    "mtime": 1790858326.313385,
-    "seen": 1790879221.269203,
-    "ast_hash": "e83b3559e91f578093df661e2d6c5516",
+    "mtime": 1790858138.5451374,
+    "seen": 1790858139.7597861,
+    "ast_hash": "9402d84881f8e803767721ef78fb519e",
     "semantic_hash": ""
   },
   "extracted_insights/01_DREAMS_provenance_canvas.md": {
@@ -168,9 +168,9 @@
     "semantic_hash": ""
   },
   "EVIDENCE.md": {
-    "mtime": 1790862640.1769323,
-    "seen": 1790879221.2692993,
-    "ast_hash": "f290dde460e6a4c299908f5c607a6b64",
+    "mtime": 1790820518.6349282,
+    "seen": 1790858139.7598367,
+    "ast_hash": "db38685ba33c6bdf8d8544c88545e87d",
     "semantic_hash": ""
   },
   "SKILL.md": {
@@ -810,27 +810,27 @@
     "semantic_hash": ""
   },
   "skills/blender-crystal-render/scripts/render_blender.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.2690766,
+    "mtime": 1790767290.3552094,
+    "seen": 1790767485.93214,
     "ast_hash": "941ad4d13493b7af7f7197460864b29f",
     "semantic_hash": ""
   },
   "skills/ovito-snapshot/scripts/render_ovito.py": {
-    "mtime": 1790878751.039539,
-    "seen": 1790879221.2690907,
-    "ast_hash": "5343ed9bbf6ce08b5f794ec1cd7da31f",
+    "mtime": 1790781156.0637863,
+    "seen": 1790781179.533554,
+    "ast_hash": "0c7350c8ca46f16a3b227dea5cb5367a",
     "semantic_hash": ""
   },
   "skills/vesta-automation/scripts/vesta_auto.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.269144,
-    "ast_hash": "db127dbd18e7b87934289846e2188c6b",
+    "mtime": 1790767221.9065583,
+    "seen": 1790767485.9321434,
+    "ast_hash": "ba6af0e7afe4a24739d0288697653f6d",
     "semantic_hash": ""
   },
   "skills/xcrysden-visualizer/scripts/xcrysden_auto.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.2691524,
-    "ast_hash": "4a81b61339d25383d52a701616d68e2b",
+    "mtime": 1790773154.7279422,
+    "seen": 1790776434.8619082,
+    "ast_hash": "3a5f25b86abe8f0c9de214d72ec0ca0d",
     "semantic_hash": ""
   },
   "skills/blender-crystal-render/SKILL.md": {
@@ -840,21 +840,21 @@
     "semantic_hash": ""
   },
   "skills/ovito-snapshot/SKILL.md": {
-    "mtime": 1790878869.2647007,
-    "seen": 1790879221.2692716,
-    "ast_hash": "d658a99b4f00cff8b8f93209ec2a5cc9",
+    "mtime": 1790768780.9343204,
+    "seen": 1790768891.353166,
+    "ast_hash": "e81604abeea04d701918b001548fbfa0",
     "semantic_hash": ""
   },
   "skills/vesta-automation/SKILL.md": {
-    "mtime": 1790878536.75843,
-    "seen": 1790879221.2692933,
-    "ast_hash": "9642cdbe449522e8ceea29964c93728a",
+    "mtime": 1790767255.1658747,
+    "seen": 1790767485.9322078,
+    "ast_hash": "02180b6e7096876bae0f34d0af8b88e6",
     "semantic_hash": ""
   },
   "skills/xcrysden-visualizer/SKILL.md": {
-    "mtime": 1790878606.2611146,
-    "seen": 1790879221.2692955,
-    "ast_hash": "3db88d8305ab2a493d44df10a9104563",
+    "mtime": 1790767394.075195,
+    "seen": 1790767485.932209,
+    "ast_hash": "74d6f8bc42b852138f75e4e60935c345",
     "semantic_hash": ""
   },
   "skills/electron-density-surfaces/scripts/density_analyzer.py": {
@@ -930,21 +930,21 @@
     "semantic_hash": ""
   },
   "skills/publication-figure-formatter/scripts/style_config.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.2691295,
+    "mtime": 1790769986.0931096,
+    "seen": 1790770006.1501653,
     "ast_hash": "19004101bbe07050a08729a71969189e",
     "semantic_hash": ""
   },
   "skills/electron-density-surfaces/SKILL.md": {
-    "mtime": 1790879166.1996143,
-    "seen": 1790879221.269265,
-    "ast_hash": "d3841fa47256226bf35e44896efc80e6",
+    "mtime": 1790767701.9371152,
+    "seen": 1790767819.1735923,
+    "ast_hash": "b437402685906bcb787e57bae9e9f1ba",
     "semantic_hash": ""
   },
   "skills/publication-figure-formatter/SKILL.md": {
-    "mtime": 1790879059.3495665,
-    "seen": 1790879221.2692735,
-    "ast_hash": "993a4bb50705f40cd61a2dee31a05e15",
+    "mtime": 1790768914.8786273,
+    "seen": 1790768925.4128325,
+    "ast_hash": "5c44a949c4a8561fc380ba5aebfad750",
     "semantic_hash": ""
   },
   "skills/publication-figure-formatter/external/adjustText/.github/workflows/python-publish.yml": {
@@ -1146,8 +1146,8 @@
     "semantic_hash": ""
   },
   "skills/publication-figure-formatter/scripts/vesta_colors.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.2691317,
+    "mtime": 1790768661.7961946,
+    "seen": 1790768891.3531096,
     "ast_hash": "175a42ed8c373af65acb536d53212802",
     "semantic_hash": ""
   },
@@ -1176,26 +1176,26 @@
     "semantic_hash": ""
   },
   "checkpoints/crcl3_2x2_ni_emb_pipeline.json": {
-    "mtime": 1790858286.2479331,
-    "seen": 1790879221.2690184,
+    "mtime": 1790858130.450627,
+    "seen": 1790858139.759709,
     "ast_hash": "2d6666447d30bc992a0e91a2b922216b",
     "semantic_hash": ""
   },
   "skills/site-pyramidalization-zoom/scripts/generate_demo_structure.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.269134,
+    "mtime": 1790779034.8327343,
+    "seen": 1790779366.7316308,
     "ast_hash": "0700fb1136380bcb7cfbfc74d1520b32",
     "semantic_hash": ""
   },
   "skills/site-pyramidalization-zoom/scripts/geometry.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.2691362,
+    "mtime": 1790780627.2406096,
+    "seen": 1790781107.9940345,
     "ast_hash": "8f8e1a8580c0a1ed05aa85c066984df3",
     "semantic_hash": ""
   },
   "skills/site-pyramidalization-zoom/scripts/site_zoom_annotator.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.2691383,
+    "mtime": 1790781005.728319,
+    "seen": 1790781107.9940362,
     "ast_hash": "45c6adc005f9f0832808e41bd1a44d18",
     "semantic_hash": ""
   },
@@ -2112,8 +2112,8 @@
     "semantic_hash": ""
   },
   "checkpoints/crcl3_2x2_fe_emb_huk.json": {
-    "mtime": 1790858286.2479331,
-    "seen": 1790879221.2690132,
+    "mtime": 1790858135.0763037,
+    "seen": 1790858139.7597067,
     "ast_hash": "9898826fc9d8e2e919d02c228f2b4016",
     "semantic_hash": ""
   },
@@ -2124,135 +2124,33 @@
     "semantic_hash": ""
   },
   "canvas/artifacts/1c3ac605.json": {
-    "mtime": 1790858286.246933,
-    "seen": 1790879221.2688363,
+    "mtime": 1790805613.8305957,
+    "seen": 1790858139.7596304,
     "ast_hash": "bebba96c37eba22c3bf297286a6dda0e",
     "semantic_hash": ""
   },
   "canvas/artifacts/1dab36f2.json": {
-    "mtime": 1790858286.246933,
-    "seen": 1790879221.2688406,
+    "mtime": 1790805579.4736516,
+    "seen": 1790858139.759632,
     "ast_hash": "8802fc29839d24d3ef0eeaa0022efd02",
     "semantic_hash": ""
   },
   "canvas/artifacts/702129bf.json": {
-    "mtime": 1790858286.246933,
-    "seen": 1790879221.2689004,
+    "mtime": 1790820612.271634,
+    "seen": 1790858139.7596538,
     "ast_hash": "208144d8d939503a88f25850b7b45268",
     "semantic_hash": ""
   },
   "canvas/artifacts/b0dea480.json": {
-    "mtime": 1790858286.246933,
-    "seen": 1790879221.268938,
+    "mtime": 1790805645.4132211,
+    "seen": 1790858139.7596743,
     "ast_hash": "ef973c21dc3f7d12f1a5529ad9651ded",
     "semantic_hash": ""
   },
   "canvas/artifacts/d0dcefa8.json": {
-    "mtime": 1790858286.2479331,
-    "seen": 1790879221.2689846,
+    "mtime": 1790820662.105528,
+    "seen": 1790858139.759682,
     "ast_hash": "1a6a050d73cfa40958a584c7908e2dc3",
-    "semantic_hash": ""
-  },
-  "canvas/artifacts/2f726270.json": {
-    "mtime": 1790862620.4040842,
-    "seen": 1790879221.2688465,
-    "ast_hash": "41af87e9757378fd11db45cd0f18fe45",
-    "semantic_hash": ""
-  },
-  "canvas/artifacts/32624615.json": {
-    "mtime": 1790862615.730329,
-    "seen": 1790879221.268852,
-    "ast_hash": "a6b480c81343061bc7b7ef2e6e011d34",
-    "semantic_hash": ""
-  },
-  "skills/electron-density-surfaces/scripts/bader_flux_analysis.py": {
-    "mtime": 1790879109.9160626,
-    "seen": 1790879221.2690787,
-    "ast_hash": "038d02a5abcf81b43bf1f423cb84bc05",
-    "semantic_hash": ""
-  },
-  "skills/ovito-snapshot/scripts/publication_colorbar.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.269088,
-    "ast_hash": "8e7696f59f59947830b67c8eb3bea51c",
-    "semantic_hash": ""
-  },
-  "skills/ovito-snapshot/scripts/scale_bar_overlay.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.269092,
-    "ast_hash": "2ceac6c5d87a215bf5600e0da91585aa",
-    "semantic_hash": ""
-  },
-  "skills/ovito-snapshot/scripts/strain_trajectory_snapshot.py": {
-    "mtime": 1790878823.9242554,
-    "seen": 1790879221.269094,
-    "ast_hash": "e3590bb6575a892337020b945c87a126",
-    "semantic_hash": ""
-  },
-  "skills/publication-figure-formatter/scripts/animation_composer.py": {
-    "mtime": 1790878937.0343661,
-    "seen": 1790879221.2691202,
-    "ast_hash": "8a8217861153283200a4ac06b7bfbcf4",
-    "semantic_hash": ""
-  },
-  "skills/publication-figure-formatter/scripts/figure_panel_compositor.py": {
-    "mtime": 1790858286.239933,
-    "seen": 1790879221.2691226,
-    "ast_hash": "bf45ec354d68c0c923db6e3beb10f94d",
-    "semantic_hash": ""
-  },
-  "skills/publication-figure-formatter/scripts/render_coupled_suite.py": {
-    "mtime": 1790879028.8482673,
-    "seen": 1790879221.2691271,
-    "ast_hash": "b8d1acdf3811c902ed82658f2ee33de9",
-    "semantic_hash": ""
-  },
-  "skills/vesta-automation/scripts/batch_vesta_render.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.26914,
-    "ast_hash": "071b6054955453cc5ade8ea48a9be728",
-    "semantic_hash": ""
-  },
-  "skills/vesta-automation/scripts/generate_vstd.py": {
-    "mtime": 1790878503.884106,
-    "seen": 1790879221.269142,
-    "ast_hash": "aead5369e778a12eb0033208c81e9f5a",
-    "semantic_hash": ""
-  },
-  "skills/vesta-automation/scripts/vesta_cdd.py": {
-    "mtime": 1790878513.5462012,
-    "seen": 1790879221.2691455,
-    "ast_hash": "07cb729d5b3ba5ed1eb99e3bdbeceb0d",
-    "semantic_hash": ""
-  },
-  "skills/vesta-automation/scripts/vstd_generator.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.2691474,
-    "ast_hash": "2883733815bae8451a6fb2c55fe562ef",
-    "semantic_hash": ""
-  },
-  "skills/xcrysden-visualizer/scripts/auto_slice_2d.py": {
-    "mtime": 1790858286.240933,
-    "seen": 1790879221.2691488,
-    "ast_hash": "b58292ee61cd58775d47f8a73fe3c6cf",
-    "semantic_hash": ""
-  },
-  "skills/xcrysden-visualizer/scripts/postprocess_image.py": {
-    "mtime": 1790878566.1367195,
-    "seen": 1790879221.2691505,
-    "ast_hash": "45392817f49d2b91dc4fbe6c2bdc5459",
-    "semantic_hash": ""
-  },
-  "skills/xcrysden-visualizer/scripts/xcrysden_cdd.py": {
-    "mtime": 1790878578.187838,
-    "seen": 1790879221.2691538,
-    "ast_hash": "eaa14085642dbcbf20d88179ca68489f",
-    "semantic_hash": ""
-  },
-  "canvas/notes/photh-graphene_her_electrocatalysis___mechanical_verification_v1.md": {
-    "mtime": 1790858286.237933,
-    "seen": 1790879221.2691677,
-    "ast_hash": "87b5c12d14aab2bc4fad91aba2ae3b4d",
     "semantic_hash": ""
   }
 }

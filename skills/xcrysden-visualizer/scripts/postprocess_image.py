@@ -26,7 +26,7 @@ def invert_black_background(
     dark_threshold: int = 25,
     blend_width: int = 35,
     trim_borders: bool = True,
-    border_padding: int = 20,
+    border_padding: int = 30,
 ) -> Path:
     """
     Remaps dark/black backgrounds to pure white with smooth fringe antialiasing.
@@ -111,6 +111,7 @@ if __name__ == "__main__":
     parser.add_argument("input", help="Path to input image file")
     parser.add_argument("--output", "-o", help="Path to output white-background image")
     parser.add_argument("--threshold", type=int, default=25, help="Dark threshold (default: 25)")
+    parser.add_argument("--padding", type=int, default=30, help="Border padding pixels (default: 30)")
     parser.add_argument("--no-trim", action="store_true", help="Disable automatic border trimming")
     args = parser.parse_args()
 
@@ -119,4 +120,5 @@ if __name__ == "__main__":
         output_image=args.output,
         dark_threshold=args.threshold,
         trim_borders=not args.no_trim,
+        border_padding=args.padding,
     )
