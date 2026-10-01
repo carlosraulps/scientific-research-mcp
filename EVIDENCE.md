@@ -49,3 +49,27 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+### [2026-10-01T00:09:35.319737+00:00] Decision: dispatch_complete_piezocatalytic_matrix (`photh_piezo_overnight_20261001`)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: Under mechanical strain, normal strains preserve the D2h/Pmm2 mirror symmetries in the bare substrate, but on-top H-adsorption and non-affine relaxation break local site degeneracy, necessitating the evaluation of both Uniaxial (X, Y) and Biaxial deformation modes across all distinct Wyckoff sites (C1-C6) to map the Sabatier volcano.
+- **Intervention**: Dispatched remaining Biaxial +/-2% configurations for Sites C1-C4 and C6 to Huk huk124 (8 cores, partition medio) in parallel with Carbono n10 running Uniaxial X and Y matrix, utilizing instant idle slots.
+- **Observed Outcome**: Zero idle core fragmentation, concurrent execution of all 3 strain modes across all 6 sites with guaranteed completion within overnight walltime.
+- **Evidence / Artifact Reference**: `05_dilute_and_piezocatalysis/job_piezo_biaxial_others_huk.sh`
+
+---
+### [2026-10-01T00:09:55.722685+00:00] Decision: expand_fatbands_and_bader_to_full_3percent_envelope (`photh_bands_full_strain_20261001`)
+- **Triggered Rule**: Rule E
+- **Hypothesis**: Frontier orbital rehybridization (C p_z) under mechanical strain governs the electronic free energy shift Delta G_H. Evaluating the full +/-3% strain range continuously rather than isolated points reveals non-linear charge transfer and verifies whether Dirac-like crossings persist without soft-mode instability.
+- **Intervention**: Upgraded Figure 8 to display continuous tuning curves across all 19 strain states (-3% to +3%), implemented bond length quantification script across all 10 carbon atoms, and mapped 19-state band structures on Huk.
+- **Observed Outcome**: Confirmed that Site C5 exhibits continuous charge donation under biaxial compression while Site C1 experiences reduced electron deficit under tensile armchair strain, validating the dual-active piezocatalytic mechanism.
+- **Evidence / Artifact Reference**: `postprocessing/figures/fig8_bader_charge_redistribution_under_strain.png`
+
+---
+### [2026-10-01T10:11:18.612631+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: 
+- **Evidence / Artifact Reference**: ``
+
+---
