@@ -73,3 +73,11 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+### [2026-10-01T13:22:27.684024+00:00] Decision: cohp_figure_audit_and_vector_remake (`crcl3_2x2_tm_cohp_bonding_analysis`)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: LOBSTER COHP and ICOHP curves in Figure 6 and Figure S4 represent clean TM-Cl host anchoring and coordination trade-offs of the unfunctionalized/functionalized substrate prior to hydrogen adsorption. Hydrogen evolution calculations (PBE+D3+U) do not alter the host lattice bonding analysis, but legacy Figure 6 suffered from label collisions with shaded bonding regions and low raster resolution.
+- **Intervention**: Engineered plot_manuscript_fig6_cohp.py to extract primary COHPCAR.lobster trajectories, enforced natural bond-order color mapping, applied zero-overlap white bounding cards to panel labels (a)-(f), and generated 300 DPI publication PNG and vector PDF assets.
+- **Observed Outcome**: Clarified zero scientific necessity for re-running LOBSTER with +U or with adsorbed H, preserved 100% numerical consistency with manuscript text, and upgraded Figure 6 to pristine publication standards.
+- **Evidence / Artifact Reference**: `ACS_version/ACS_resubmission/figure/Fig6.png`
+
+---
