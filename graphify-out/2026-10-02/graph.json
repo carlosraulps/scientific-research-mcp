@@ -69,30 +69,30 @@
       "source_location": "L26"
     },
     {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_vesta_cdd_stub",
-      "label": "vesta_cdd_stub",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "vesta_cdd_stub",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L32"
-    },
-    {
       "id": "scripts_checkpoint_manager_checkpointmanager",
       "label": "CheckpointManager",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "checkpointmanager",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L24"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller",
+      "label": "GitController",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "gitcontroller",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L23"
     },
     {
       "id": "scripts_skill_crystallizer_skillcrystallizer",
@@ -158,19 +158,6 @@
       "norm_label": "factsstore",
       "source_file": "scripts/facts_store.py",
       "source_location": "L20"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller",
-      "label": "GitController",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "gitcontroller",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L23"
     },
     {
       "id": "cli_main",
@@ -1514,19 +1501,7 @@
       "file_type": "code",
       "norm_label": "auto_adjust_labels()",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L109"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_style_config_register_truetype_fonts",
-      "label": "register_truetype_fonts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "style_config.py",
-      "file_type": "code",
-      "norm_label": "register_truetype_fonts()",
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L32"
+      "source_location": "L76"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_style_config_save_publication_figure",
@@ -1538,7 +1513,7 @@
       "file_type": "code",
       "norm_label": "save_publication_figure()",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L172"
+      "source_location": "L139"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_style_config_set_publication_style",
@@ -1550,19 +1525,7 @@
       "file_type": "code",
       "norm_label": "set_publication_style()",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L63"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_vesta_colors_bader_charge_colormap",
-      "label": "bader_charge_colormap()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "style_config.py",
-      "file_type": "code",
-      "norm_label": "bader_charge_colormap()",
-      "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L46"
+      "source_location": "L33"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_vesta_colors_get_element_cycler",
@@ -1574,7 +1537,7 @@
       "file_type": "code",
       "norm_label": "get_element_cycler()",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L150"
+      "source_location": "L118"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_vesta_colors_get_element_palette",
@@ -1586,7 +1549,7 @@
       "file_type": "code",
       "norm_label": "get_element_palette()",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L159"
+      "source_location": "L127"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_vesta_colors_get_vesta_color",
@@ -1598,7 +1561,7 @@
       "file_type": "code",
       "norm_label": "get_vesta_color()",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L134"
+      "source_location": "L102"
     },
     {
       "id": "scripts_scientific_evaluator_scientificevaluator_diagnose_convergence",
@@ -1901,138 +1864,6 @@
       "source_location": "L122"
     },
     {
-      "id": "skills_vesta_automation_scripts_generate_vstd_build_cdd_isosurface_section",
-      "label": "build_cdd_isosurface_section()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "build_cdd_isosurface_section()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L156"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_build_sbond_section",
-      "label": "build_sbond_section()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "build_sbond_section()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L128"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_estimate_bond_cutoffs",
-      "label": "estimate_bond_cutoffs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "estimate_bond_cutoffs()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L110"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_extract_species_from_structure",
-      "label": "extract_species_from_structure()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "extract_species_from_structure()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L78"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_generate_vesta_project_content",
-      "label": "generate_vesta_project_content()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "generate_vesta_project_content()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L204"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_generate_vstd_content",
-      "label": "generate_vstd_content()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "generate_vstd_content()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L180"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L254"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_dynamic_feature_crop",
-      "label": "dynamic_feature_crop()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "dynamic_feature_crop()",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L48"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L172"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_render_cdd_suite",
-      "label": "render_cdd_suite()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "render_cdd_suite()",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L70"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_vesta_cdd_stub_render_cdd",
-      "label": ".render_cdd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": ".render_cdd()",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L34"
-    },
-    {
       "id": "skills_vesta_automation_scripts_vesta_auto_automate_vesta_gui",
       "label": "automate_vesta_gui()",
       "_callable": true,
@@ -2093,42 +1924,6 @@
       "source_location": "L219"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
-      "source_location": "L146"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_render_cdd",
-      "label": "render_cdd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "render_cdd()",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
-      "source_location": "L57"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_trim_whitespace",
-      "label": "trim_whitespace()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "trim_whitespace()",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
-      "source_location": "L33"
-    },
-    {
       "id": "skills_vesta_automation_scripts_vstd_generator_build_cdd_isosurface_block",
       "label": "build_cdd_isosurface_block()",
       "_callable": true,
@@ -2170,7 +1965,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".append_trace_step()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2182,7 +1977,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".generate_run_id()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2194,7 +1989,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".__init__()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2206,7 +2001,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "._init_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2218,7 +2013,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".list_runs()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2230,7 +2025,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "._load_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2242,7 +2037,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".resume_run()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2254,7 +2049,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "._save_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2266,11 +2061,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": ".save_run()",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L55"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_create_snapshot",
+      "label": ".create_snapshot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".create_snapshot()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L108"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_get_status",
+      "label": ".get_status()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".get_status()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L43"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_is_git_repo",
+      "label": ".is_git_repo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".is_git_repo()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_run_git",
+      "label": "._run_git()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "._run_git()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L29"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller_verify_reproducibility",
+      "label": ".verify_reproducibility()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": ".verify_reproducibility()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L197"
     },
     {
       "id": "scripts_skill_crystallizer_skillcrystallizer_init",
@@ -2765,88 +2632,124 @@
       "source_location": "L52"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_auto_center_feature",
-      "label": "auto_center_feature()",
+      "id": "skills_vesta_automation_scripts_generate_vstd_build_cdd_isosurface_section",
+      "label": "build_cdd_isosurface_section()",
       "_callable": true,
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "auto_center_feature()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L112"
+      "norm_label": "build_cdd_isosurface_section()",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L156"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_extract_2d_slice",
-      "label": "extract_2d_slice()",
+      "id": "skills_vesta_automation_scripts_generate_vstd_build_sbond_section",
+      "label": "build_sbond_section()",
       "_callable": true,
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "extract_2d_slice()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L186"
+      "norm_label": "build_sbond_section()",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L128"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
+      "id": "skills_vesta_automation_scripts_generate_vstd_estimate_bond_cutoffs",
+      "label": "estimate_bond_cutoffs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "code",
+      "norm_label": "estimate_bond_cutoffs()",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L110"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_extract_species_from_structure",
+      "label": "extract_species_from_structure()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "code",
+      "norm_label": "extract_species_from_structure()",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L78"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_generate_vesta_project_content",
+      "label": "generate_vesta_project_content()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "code",
+      "norm_label": "generate_vesta_project_content()",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L204"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_generate_vstd_content",
+      "label": "generate_vstd_content()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "code",
+      "norm_label": "generate_vstd_content()",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L180"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_main",
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
       "norm_label": "main()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L245"
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L254"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_plot_slice",
-      "label": "plot_slice()",
+      "id": "skills_vesta_automation_scripts_vesta_cdd_main",
+      "label": "main()",
       "_callable": true,
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "plot_slice()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L213"
+      "norm_label": "main()",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L146"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_read_chgcar",
-      "label": "read_chgcar()",
+      "id": "skills_vesta_automation_scripts_vesta_cdd_render_cdd",
+      "label": "render_cdd()",
       "_callable": true,
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "read_chgcar()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L24"
+      "norm_label": "render_cdd()",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L57"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_unwrap_volumetric",
-      "label": "unwrap_volumetric()",
+      "id": "skills_vesta_automation_scripts_vesta_cdd_trim_whitespace",
+      "label": "trim_whitespace()",
       "_callable": true,
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "unwrap_volumetric()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L95"
-    },
-    {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_write_chgcar",
-      "label": "write_chgcar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "volumetric_unwrap.py",
-      "file_type": "code",
-      "norm_label": "write_chgcar()",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L170"
+      "norm_label": "trim_whitespace()",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L33"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_animation_composer_build_ping_pong_sequence",
@@ -3027,174 +2930,6 @@
       "norm_label": "run_bader_protocol()",
       "source_file": "skills/electron-density-surfaces/scripts/bader_flux_analysis.py",
       "source_location": "L153"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_create_snapshot",
-      "label": ".create_snapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".create_snapshot()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L108"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_get_status",
-      "label": ".get_status()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".get_status()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L43"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L24"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_is_git_repo",
-      "label": ".is_git_repo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".is_git_repo()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L38"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_run_git",
-      "label": "._run_git()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "._run_git()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L29"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_verify_reproducibility",
-      "label": ".verify_reproducibility()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".verify_reproducibility()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L197"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_crossfade",
-      "label": "crossfade()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "code",
-      "norm_label": "crossfade()",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L53"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L126"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_rotation_gif",
-      "label": "render_rotation_gif()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "code",
-      "norm_label": "render_rotation_gif()",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L14"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_strain_breathing",
-      "label": "render_strain_breathing()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "code",
-      "norm_label": "render_strain_breathing()",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L60"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_composite_badge",
-      "label": "composite_badge()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "code",
-      "norm_label": "composite_badge()",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L67"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_dynamic_feature_crop",
-      "label": "dynamic_feature_crop()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "code",
-      "norm_label": "dynamic_feature_crop()",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L7"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L130"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_sanitize_vesta_render",
-      "label": "sanitize_vesta_render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "code",
-      "norm_label": "sanitize_vesta_render()",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L112"
     },
     {
       "id": "cli",
@@ -6039,18 +5774,6 @@
       "source_location": "L43"
     },
     {
-      "id": "skills_vesta_automation_skill_4_saturation_grounded_dynamic_feature_crop_layer_separation_protocol_dynamic_crop",
-      "label": "4. Saturation-Grounded Dynamic Feature Crop & Layer Separation Protocol (`dynamic-crop`)",
-      "_origin": "ast",
-      "community": 48,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. saturation-grounded dynamic feature crop & layer separation protocol (`dynamic-crop`)",
-      "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L50"
-    },
-    {
       "id": "skills_vesta_automation_skill_common_options",
       "label": "Common Options:",
       "_origin": "ast",
@@ -6060,7 +5783,7 @@
       "node_kind": "heading",
       "norm_label": "common options:",
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L90"
+      "source_location": "L76"
     },
     {
       "id": "skills_vesta_automation_skill_common_pitfalls_solutions",
@@ -6072,7 +5795,7 @@
       "node_kind": "heading",
       "norm_label": "common pitfalls & solutions",
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L102"
+      "source_location": "L88"
     },
     {
       "id": "skills_vesta_automation_skill_key_technical_solutions_protocols",
@@ -6108,7 +5831,7 @@
       "node_kind": "heading",
       "norm_label": "quick reference cli",
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L64"
+      "source_location": "L52"
     },
     {
       "id": "skills_vesta_automation_skill_script_architecture_cli_binaries",
@@ -6120,7 +5843,7 @@
       "node_kind": "heading",
       "norm_label": "script architecture & cli binaries",
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L81"
+      "source_location": "L68"
     },
     {
       "id": "skills_vesta_automation_skill_vesta_automation_headless_high_resolution_skill",
@@ -6144,7 +5867,7 @@
       "node_kind": "heading",
       "norm_label": "1. headless tcl scripting architecture",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L27"
+      "source_location": "L13"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_2_2d_charge_density_difference_cdd_planar_contours_xcrysden_cdd",
@@ -6156,7 +5879,7 @@
       "node_kind": "heading",
       "norm_label": "2. 2d charge density difference (cdd) planar contours (`xcrysden-cdd`)",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L34"
+      "source_location": "L20"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_3_publication_background_whitening_pipeline_postprocess_image_py",
@@ -6168,19 +5891,7 @@
       "node_kind": "heading",
       "norm_label": "3. publication background whitening pipeline (`postprocess_image.py`)",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L48"
-    },
-    {
-      "id": "skills_xcrysden_visualizer_skill_3d_volumetric_cdd_deprecation_notice",
-      "label": "\u26a0\ufe0f 3D Volumetric CDD Deprecation Notice",
-      "_origin": "ast",
-      "community": 48,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\u26a0\ufe0f 3d volumetric cdd deprecation notice",
-      "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L11"
+      "source_location": "L34"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_4_headless_hpc_cluster_support_xvfb_run",
@@ -6192,7 +5903,7 @@
       "node_kind": "heading",
       "norm_label": "4. headless hpc cluster support (`xvfb-run`)",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L54"
+      "source_location": "L40"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_common_options",
@@ -6204,7 +5915,7 @@
       "node_kind": "heading",
       "norm_label": "common options:",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L82"
+      "source_location": "L68"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_key_capabilities_scientific_protocols",
@@ -6216,7 +5927,7 @@
       "node_kind": "heading",
       "norm_label": "key capabilities & scientific protocols",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L25"
+      "source_location": "L11"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_overview",
@@ -6240,7 +5951,7 @@
       "node_kind": "heading",
       "norm_label": "quick reference cli",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L59"
+      "source_location": "L45"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_script_architecture_cli_binaries",
@@ -6252,7 +5963,7 @@
       "node_kind": "heading",
       "norm_label": "script architecture & cli binaries",
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L74"
+      "source_location": "L60"
     },
     {
       "id": "skills_xcrysden_visualizer_skill_xcrysden_visualizer_skill",
@@ -6885,18 +6596,7 @@
       "source_location": "L1"
     },
     {
-      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_121",
-      "label": "Allocate non-overlapping text labels using adjustText or textalloc. Parameters:\u2026",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "style_config.py",
-      "file_type": "rationale",
-      "norm_label": "allocate non-overlapping text labels using adjusttext or textalloc. parameters:...",
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L121"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_173",
+      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_140",
       "label": "Dual-format exporter: saves both 300 DPI PNG and vector PDF.",
       "_origin": "ast",
       "community": 51,
@@ -6904,21 +6604,10 @@
       "file_type": "rationale",
       "norm_label": "dual-format exporter: saves both 300 dpi png and vector pdf.",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L173"
+      "source_location": "L140"
     },
     {
-      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_33",
-      "label": "Explicit TrueType font registration protocol. Registers Times New Roman\u2026",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "style_config.py",
-      "file_type": "rationale",
-      "norm_label": "explicit truetype font registration protocol. registers times new roman...",
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L33"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_70",
+      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_40",
       "label": "Apply mandatory scientific typography and formatting standards: - Times New\u2026",
       "_origin": "ast",
       "community": 51,
@@ -6926,7 +6615,18 @@
       "file_type": "rationale",
       "norm_label": "apply mandatory scientific typography and formatting standards: - times new...",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L70"
+      "source_location": "L40"
+    },
+    {
+      "id": "skills_publication_figure_formatter_scripts_style_config_rationale_88",
+      "label": "Allocate non-overlapping text labels using adjustText or textalloc. Parameters:\u2026",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "style_config.py",
+      "file_type": "rationale",
+      "norm_label": "allocate non-overlapping text labels using adjusttext or textalloc. parameters:...",
+      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
+      "source_location": "L88"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_1",
@@ -6940,7 +6640,7 @@
       "source_location": "L1"
     },
     {
-      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_135",
+      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_103",
       "label": "Get the exact VESTA color for a given chemical element. Parameters: - symbol:\u2026",
       "_origin": "ast",
       "community": 51,
@@ -6948,10 +6648,10 @@
       "file_type": "rationale",
       "norm_label": "get the exact vesta color for a given chemical element. parameters: - symbol:...",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L135"
+      "source_location": "L103"
     },
     {
-      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_151",
+      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_119",
       "label": "Create a Matplotlib cycler configured with the exact VESTA element colors.\u2026",
       "_origin": "ast",
       "community": 51,
@@ -6959,10 +6659,10 @@
       "file_type": "rationale",
       "norm_label": "create a matplotlib cycler configured with the exact vesta element colors....",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L151"
+      "source_location": "L119"
     },
     {
-      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_160",
+      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_128",
       "label": "Return a dictionary mapping element symbol -> VESTA hex color.",
       "_origin": "ast",
       "community": 51,
@@ -6970,18 +6670,7 @@
       "file_type": "rationale",
       "norm_label": "return a dictionary mapping element symbol -> vesta hex color.",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L160"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_47",
-      "label": "Map Bader net charges to RGBA colors using a diverging colormap. Args: charges:\u2026",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "style_config.py",
-      "file_type": "rationale",
-      "norm_label": "map bader net charges to rgba colors using a diverging colormap. args: charges:...",
-      "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L47"
+      "source_location": "L128"
     },
     {
       "id": "skills_publication_figure_formatter_external_adjusttext_readme",
@@ -7423,39 +7112,6 @@
       "source_location": ""
     },
     {
-      "id": "skills_vesta_automation_scripts_generate_vstd",
-      "label": "generate_vstd.py",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "generate_vstd.py",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "label": "render_cdd_hd_suite.py",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "render_cdd_hd_suite.py",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L1"
-    },
-    {
       "id": "skills_vesta_automation_scripts_vesta_auto",
       "label": "vesta_auto.py",
       "_origin": "ast",
@@ -7468,28 +7124,6 @@
     },
     {
       "id": "skills_vesta_automation_scripts_vesta_auto_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd",
-      "label": "vesta_cdd.py",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "vesta_cdd.py",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_py_path",
       "label": "Path",
       "_origin": "ast",
       "community": 58,
@@ -7544,116 +7178,6 @@
       "source_location": "L32"
     },
     {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_111",
-      "label": "Calculates physically realistic bond cutoff: (r1 + r2) * 1.25. Special\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "calculates physically realistic bond cutoff: (r1 + r2) * 1.25. special...",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L111"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_134",
-      "label": "Generates the SBOND block with strict Bound = 0 and SEARCH_BOUNDARY = 0.\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "generates the sbond block with strict bound = 0 and search_boundary = 0....",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L134"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_163",
-      "label": "Constructs ISURF and SURFC blocks for dual positive/negative Charge Density\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "constructs isurf and surfc blocks for dual positive/negative charge density...",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L163"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_189",
-      "label": "Creates a clean .vstd style configuration.",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "creates a clean .vstd style configuration.",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L189"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_2",
-      "label": "===============================================================================\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L2"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_216",
-      "label": "Creates an authentic, lightweight .vesta project file referencing an external\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "creates an authentic, lightweight .vesta project file referencing an external...",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L216"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_79",
-      "label": "Extracts unique chemical elements from POSCAR, CONTCAR, CIF, or XSF file.",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "extracts unique chemical elements from poscar, contcar, cif, or xsf file.",
-      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
-      "source_location": "L79"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_rationale_2",
-      "label": "Multi-view CDD publication suite that renders multiple crystallographic\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "multi-view cdd publication suite that renders multiple crystallographic...",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L2"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_rationale_49",
-      "label": "Non-destructive border inpainting (white border cleanup without touching\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "non-destructive border inpainting (white border cleanup without touching...",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L49"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_render_cdd_hd_suite_rationale_82",
-      "label": "Render multi-view CDD publication suite. Args: cdd_file (str): Path to the CDD\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "render multi-view cdd publication suite. args: cdd_file (str): path to the cdd...",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L82"
-    },
-    {
       "id": "skills_vesta_automation_scripts_vesta_auto_rationale_137",
       "label": "Fallback GUI automation using X11 window introspection and pyautogui.",
       "_origin": "ast",
@@ -7706,39 +7230,6 @@
       "file_type": "rationale",
       "norm_label": "renders an image headlessly using vesta's native terminal export flags.",
       "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L67"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_2",
-      "label": "===============================================================================\u2026",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
-      "source_location": "L2"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_34",
-      "label": "Trims uniform border whitespace down to padding pixels.",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "trims uniform border whitespace down to padding pixels.",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
-      "source_location": "L34"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_67",
-      "label": "Renders 3D Charge Density Difference headlessly using VESTA.",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "renders 3d charge density difference headlessly using vesta.",
-      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
       "source_location": "L67"
     },
     {
@@ -7862,42 +7353,6 @@
       "source_location": "L41"
     },
     {
-      "id": "skills_publication_figure_formatter_skill_6_3d_volumetric_animations_animate_cdd",
-      "label": "6. 3D Volumetric Animations (`animate-cdd`)",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6. 3d volumetric animations (`animate-cdd`)",
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L46"
-    },
-    {
-      "id": "skills_publication_figure_formatter_skill_7_multi_view_cdd_panel_render_cdd_suite",
-      "label": "7. Multi-View CDD Panel (`render-cdd-suite`)",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "7. multi-view cdd panel (`render-cdd-suite`)",
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L50"
-    },
-    {
-      "id": "skills_publication_figure_formatter_skill_8_truetype_font_registration_protocol",
-      "label": "8. TrueType Font Registration Protocol",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8. truetype font registration protocol",
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L53"
-    },
-    {
       "id": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
       "label": "Key Capabilities & Scientific Protocols",
       "_origin": "ast",
@@ -7943,7 +7398,7 @@
       "node_kind": "heading",
       "norm_label": "quick reference cli",
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L58"
+      "source_location": "L48"
     },
     {
       "id": "skills_publication_figure_formatter_skill_script_architecture_cli_binaries",
@@ -7955,7 +7410,7 @@
       "node_kind": "heading",
       "norm_label": "script architecture & cli binaries",
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L71"
+      "source_location": "L60"
     },
     {
       "id": "extracted_insights_02_mdcrow_checkpoints",
@@ -8042,11 +7497,33 @@
       "source_location": "L1"
     },
     {
+      "id": "completedprocess",
+      "label": "CompletedProcess",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "completedprocess",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "scripts_checkpoint_manager_py_any",
       "label": "Any",
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_git_controller_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
       "file_type": "code",
       "norm_label": "any",
       "source_file": "",
@@ -8057,7 +7534,7 @@
       "label": "Reloads memory summaries, trace, parameter registry, and files for an\u2026",
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "reloads memory summaries, trace, parameter registry, and files for an...",
       "source_file": "scripts/checkpoint_manager.py",
@@ -8068,7 +7545,7 @@
       "label": "Lists all runs with optional status and text search filtering.",
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "lists all runs with optional status and text search filtering.",
       "source_file": "scripts/checkpoint_manager.py",
@@ -8079,7 +7556,7 @@
       "label": "Appends a discrete milestone or action to the agent trace.",
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "appends a discrete milestone or action to the agent trace.",
       "source_file": "scripts/checkpoint_manager.py",
@@ -8090,11 +7567,66 @@
       "label": "Saves or updates a simulation run checkpoint and its dedicated run directory.",
       "_origin": "ast",
       "community": 60,
-      "community_name": "CheckpointManager",
+      "community_name": "GitController",
       "file_type": "rationale",
       "norm_label": "saves or updates a simulation run checkpoint and its dedicated run directory.",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L66"
+    },
+    {
+      "id": "scripts_git_controller_rationale_117",
+      "label": "Creates an atomic Git commit snapshot linking the workspace state to active\u2026",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "creates an atomic git commit snapshot linking the workspace state to active...",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L117"
+    },
+    {
+      "id": "scripts_git_controller_rationale_198",
+      "label": "Evaluates whether a simulation setup is strictly reproducible from Git.",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "evaluates whether a simulation setup is strictly reproducible from git.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L198"
+    },
+    {
+      "id": "scripts_git_controller_rationale_30",
+      "label": "Helper to run git commands in the base directory.",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "helper to run git commands in the base directory.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "scripts_git_controller_rationale_39",
+      "label": "Checks if base_dir is inside an active git repository.",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "checks if base_dir is inside an active git repository.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "scripts_git_controller_rationale_44",
+      "label": "Retrieves current git repository state for scientific audit trails.",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "GitController",
+      "file_type": "rationale",
+      "norm_label": "retrieves current git repository state for scientific audit trails.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L44"
     },
     {
       "id": "scripts_sync_graphify",
@@ -8886,103 +8418,158 @@
       "source_location": "L111"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "label": "volumetric_unwrap.py",
+      "id": "skills_vesta_automation_scripts_generate_vstd",
+      "label": "generate_vstd.py",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "volumetric_unwrap.py",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
+      "norm_label": "generate_vstd.py",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
       "source_location": "L1"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "label": "ndarray",
+      "id": "skills_vesta_automation_scripts_generate_vstd_py_path",
+      "label": "Path",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "code",
-      "norm_label": "ndarray",
+      "norm_label": "path",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_113",
-      "label": "Automatically detect the reactive feature and center it. Args: grid_data: 3D\u2026",
+      "id": "skills_vesta_automation_scripts_vesta_cdd",
+      "label": "vesta_cdd.py",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
-      "file_type": "rationale",
-      "norm_label": "automatically detect the reactive feature and center it. args: grid_data: 3d...",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L113"
+      "community_name": "generate_vstd.py",
+      "file_type": "code",
+      "norm_label": "vesta_cdd.py",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L1"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_171",
-      "label": "Write back the unwrapped CHGCAR with same header format.",
+      "id": "skills_vesta_automation_scripts_vesta_cdd_py_path",
+      "label": "Path",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
-      "file_type": "rationale",
-      "norm_label": "write back the unwrapped chgcar with same header format.",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L171"
+      "community_name": "generate_vstd.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_187",
-      "label": "Extract a 2D slice from the 3D volumetric grid. Args: grid_data: 3D numpy array\u2026",
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_111",
+      "label": "Calculates physically realistic bond cutoff: (r1 + r2) * 1.25. Special\u2026",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "rationale",
-      "norm_label": "extract a 2d slice from the 3d volumetric grid. args: grid_data: 3d numpy array...",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L187"
+      "norm_label": "calculates physically realistic bond cutoff: (r1 + r2) * 1.25. special...",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L111"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_2",
-      "label": "volumetric_unwrap.py Periodic boundary unwrapping for VASP volumetric files\u2026",
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_134",
+      "label": "Generates the SBOND block with strict Bound = 0 and SEARCH_BOUNDARY = 0.\u2026",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "rationale",
-      "norm_label": "volumetric_unwrap.py periodic boundary unwrapping for vasp volumetric files...",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
+      "norm_label": "generates the sbond block with strict bound = 0 and search_boundary = 0....",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L134"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_163",
+      "label": "Constructs ISURF and SURFC blocks for dual positive/negative Charge Density\u2026",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "rationale",
+      "norm_label": "constructs isurf and surfc blocks for dual positive/negative charge density...",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L163"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_189",
+      "label": "Creates a clean .vstd style configuration.",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "rationale",
+      "norm_label": "creates a clean .vstd style configuration.",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L189"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
       "source_location": "L2"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_214",
-      "label": "Plot and save a 2D slice.",
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_216",
+      "label": "Creates an authentic, lightweight .vesta project file referencing an external\u2026",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "rationale",
-      "norm_label": "plot and save a 2d slice.",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L214"
+      "norm_label": "creates an authentic, lightweight .vesta project file referencing an external...",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L216"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_25",
-      "label": "Read VASP CHGCAR/LOCPOT volumetric file. Args: filepath: Path to the VASP\u2026",
+      "id": "skills_vesta_automation_scripts_generate_vstd_rationale_79",
+      "label": "Extracts unique chemical elements from POSCAR, CONTCAR, CIF, or XSF file.",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "rationale",
-      "norm_label": "read vasp chgcar/locpot volumetric file. args: filepath: path to the vasp...",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L25"
+      "norm_label": "extracts unique chemical elements from poscar, contcar, cif, or xsf file.",
+      "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
+      "source_location": "L79"
     },
     {
-      "id": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_96",
-      "label": "Roll volumetric grid by fractional shifts to center features. Args: grid_data:\u2026",
+      "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_2",
+      "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 71,
-      "community_name": "volumetric_unwrap.py",
+      "community_name": "generate_vstd.py",
       "file_type": "rationale",
-      "norm_label": "roll volumetric grid by fractional shifts to center features. args: grid_data:...",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L96"
+      "norm_label": "===============================================================================...",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_34",
+      "label": "Trims uniform border whitespace down to padding pixels.",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "rationale",
+      "norm_label": "trims uniform border whitespace down to padding pixels.",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_67",
+      "label": "Renders 3D Charge Density Difference headlessly using VESTA.",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "generate_vstd.py",
+      "file_type": "rationale",
+      "norm_label": "renders 3d charge density difference headlessly using vesta.",
+      "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
+      "source_location": "L67"
     },
     {
       "id": "canvas_notes_crcl3_2x2_tm_adsorption_competition_complete_suite_36_states_v1",
@@ -9308,7 +8895,7 @@
       "label": "electron-density-surfaces/SKILL.md",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "frontmatter": {
         "name": "electron-density-surfaces",
@@ -9324,7 +8911,7 @@
       "label": "1. Bader Charge Partitioning Protocol (`bader-analyze`)",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "1. bader charge partitioning protocol (`bader-analyze`)",
@@ -9336,7 +8923,7 @@
       "label": "2. 3D Isosurface Extraction & Wavefront OBJ Export",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2. 3d isosurface extraction & wavefront obj export",
@@ -9348,7 +8935,7 @@
       "label": "3. 2D Topological Slicing & Laplacian Mapping",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "3. 2d topological slicing & laplacian mapping",
@@ -9360,7 +8947,7 @@
       "label": "4. Planar-Averaged Potential & Work Function",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "4. planar-averaged potential & work function",
@@ -9368,23 +8955,11 @@
       "source_location": "L45"
     },
     {
-      "id": "skills_electron_density_surfaces_skill_5_volumetric_grid_periodic_unwrapping",
-      "label": "5. Volumetric Grid Periodic Unwrapping",
-      "_origin": "ast",
-      "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. volumetric grid periodic unwrapping",
-      "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L50"
-    },
-    {
       "id": "skills_electron_density_surfaces_skill_electron_density_molecular_surfaces_skill",
       "label": "Electron Density & Molecular Surfaces Skill",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "electron density & molecular surfaces skill",
@@ -9396,7 +8971,7 @@
       "label": "Key Capabilities & Scientific Protocols",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "key capabilities & scientific protocols",
@@ -9408,7 +8983,7 @@
       "label": "Overview",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "overview",
@@ -9420,24 +8995,24 @@
       "label": "Quick Reference CLI",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "quick reference cli",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L56"
+      "source_location": "L52"
     },
     {
       "id": "skills_electron_density_surfaces_skill_script_architecture_cli_binaries",
       "label": "Script Architecture & CLI Binaries",
       "_origin": "ast",
       "community": 76,
-      "community_name": "Key Capabilities & Scientific Protocols",
+      "community_name": "Electron Density & Molecular Surfaces Skill",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "script architecture & cli binaries",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L70"
+      "source_location": "L65"
     },
     {
       "id": "canvas_notes_photh_graphene_her_electrocatalysis_mechanical_verification_v1",
@@ -9481,149 +9056,6 @@
       "norm_label": "photh-graphene her electrocatalysis & mechanical strain suite",
       "source_file": "canvas/notes/photh-graphene_her_electrocatalysis___mechanical_verification_v1.md",
       "source_location": "L9"
-    },
-    {
-      "id": "completedprocess",
-      "label": "CompletedProcess",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "completedprocess",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "scripts_git_controller_py_any",
-      "label": "Any",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "scripts_git_controller_rationale_117",
-      "label": "Creates an atomic Git commit snapshot linking the workspace state to active\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "creates an atomic git commit snapshot linking the workspace state to active...",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L117"
-    },
-    {
-      "id": "scripts_git_controller_rationale_198",
-      "label": "Evaluates whether a simulation setup is strictly reproducible from Git.",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "evaluates whether a simulation setup is strictly reproducible from git.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L198"
-    },
-    {
-      "id": "scripts_git_controller_rationale_30",
-      "label": "Helper to run git commands in the base directory.",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "helper to run git commands in the base directory.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L30"
-    },
-    {
-      "id": "scripts_git_controller_rationale_39",
-      "label": "Checks if base_dir is inside an active git repository.",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "checks if base_dir is inside an active git repository.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L39"
-    },
-    {
-      "id": "scripts_git_controller_rationale_44",
-      "label": "Retrieves current git repository state for scientific audit trails.",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "retrieves current git repository state for scientific audit trails.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L44"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
-      "label": "animate_3d_cdd.py",
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "code",
-      "norm_label": "animate_3d_cdd.py",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_py_image",
-      "label": "Image",
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "code",
-      "norm_label": "image",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_1",
-      "label": "3D Volumetric Animation Engine for creating publication-quality CDD animations:\u2026",
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "rationale",
-      "norm_label": "3d volumetric animation engine for creating publication-quality cdd animations:...",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_21",
-      "label": "Compose pre-rendered rotation frames into a smooth GIF.",
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "rationale",
-      "norm_label": "compose pre-rendered rotation frames into a smooth gif.",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L21"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_54",
-      "label": "Blend two PIL images with alpha crossfade.",
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "rationale",
-      "norm_label": "blend two pil images with alpha crossfade.",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L54"
-    },
-    {
-      "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_68",
-      "label": "Create strain breathing cycle animation. Uses comfortable pacing from Zero-\u2026",
-      "_origin": "ast",
-      "community": 79,
-      "community_name": "animate_3d_cdd.py",
-      "file_type": "rationale",
-      "norm_label": "create strain breathing cycle animation. uses comfortable pacing from zero-...",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L68"
     },
     {
       "id": "docs_knowledge_map",
@@ -9696,92 +9128,6 @@
       "norm_label": "scientific research knowledge map",
       "source_file": "docs/KNOWLEDGE_MAP.md",
       "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop",
-      "label": "dynamic_feature_crop.py",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "code",
-      "norm_label": "dynamic_feature_crop.py",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_py_image",
-      "label": "Image",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "code",
-      "norm_label": "image",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_rationale_119",
-      "label": "Full pipeline: crop -> sanitize borders -> composite badge LAST.",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "rationale",
-      "norm_label": "full pipeline: crop -> sanitize borders -> composite badge last.",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L119"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_rationale_13",
-      "label": "Crops VESTA render to structural features using saturation-based detection.\u2026",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "rationale",
-      "norm_label": "crops vesta render to structural features using saturation-based detection....",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L13"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_dynamic_feature_crop_rationale_73",
-      "label": "Composites orientation badge AFTER cropping (Layer Separation Protocol). This\u2026",
-      "_origin": "ast",
-      "community": 80,
-      "community_name": "composite_badge",
-      "file_type": "rationale",
-      "norm_label": "composites orientation badge after cropping (layer separation protocol). this...",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L73"
-    },
-    {
-      "id": "canvas_notes_photh_graphene_remote_sync_and_c5_piezo_matrix_v1",
-      "label": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "_origin": "ast",
-      "community": 81,
-      "community_name": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "file_type": "document",
-      "frontmatter": {
-        "title": "photh_graphene_remote_sync_and_c5_piezo_matrix",
-        "version": "1",
-        "created_at": "2026-10-02T12:52:11.051554+00:00",
-        "tags": "[&quot;git_sync&quot;, &quot;photh_graphene&quot;, &quot;piezocatalysis&quot;, &quot;dilute_limit&quot;]",
-        "references": "[]"
-      },
-      "node_kind": "page",
-      "norm_label": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "source_file": "canvas/notes/photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "canvas_notes_photh_graphene_remote_sync_and_c5_piezo_matrix_v1_remote_github_sync_piezocatalytic_dataset_ingestion",
-      "label": "Remote GitHub Sync & Piezocatalytic Dataset Ingestion",
-      "_origin": "ast",
-      "community": 81,
-      "community_name": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "remote github sync & piezocatalytic dataset ingestion",
-      "source_file": "canvas/notes/photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "source_location": "L9"
     },
     {
       "id": "extracted_insights_01_dreams_provenance_canvas",
@@ -10491,90 +9837,6 @@
       "context": "call",
       "source_file": "skills/electron-density-surfaces/scripts/density_analyzer.py",
       "source_location": "L540",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_auto_center_feature",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_unwrap_volumetric",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L165",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_read_chgcar",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L266",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_auto_center_feature",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L274",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_unwrap_volumetric",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L278",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_write_chgcar",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L282",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_extract_2d_slice",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L286",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_plot_slice",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -11382,42 +10644,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_main",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_rotation_gif",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L141",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_main",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_strain_breathing",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L145",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_strain_breathing",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_crossfade",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_scripts_animation_composer_calculate_frame_durations",
       "target": "skills_publication_figure_formatter_scripts_animation_composer_parse_numeric_label",
       "relation": "calls",
@@ -11658,18 +10884,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_style_config_set_publication_style",
-      "target": "skills_publication_figure_formatter_scripts_style_config_register_truetype_fonts",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L76",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_scripts_vesta_colors_get_element_cycler",
       "target": "skills_publication_figure_formatter_scripts_vesta_colors_get_vesta_color",
       "relation": "calls",
@@ -11678,7 +10892,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L155",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -11690,7 +10904,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L156",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -11702,7 +10916,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L163",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -12258,54 +11472,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_main",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_dynamic_feature_crop",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L155",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_main",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_composite_badge",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L163",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_sanitize_vesta_render",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_dynamic_feature_crop",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L120",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_sanitize_vesta_render",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_composite_badge",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L123",
-      "weight": 1.0
-    },
-    {
       "source": "skills_vesta_automation_scripts_generate_vstd_build_sbond_section",
       "target": "skills_vesta_automation_scripts_generate_vstd_estimate_bond_cutoffs",
       "relation": "calls",
@@ -12411,42 +11577,6 @@
       "context": "call",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
       "source_location": "L306",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_main",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_render_cdd_suite",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L186",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_render_cdd_suite",
-      "target": "skills_vesta_automation_scripts_vesta_cdd_render_cdd",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L133",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_render_cdd_suite",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_dynamic_feature_crop",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -13458,30 +12588,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_auto_center_feature",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_read_chgcar",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_external_textalloc_src_textalloc_init_allocate",
       "target": "skills_publication_figure_formatter_external_textalloc_src_textalloc_init_py_any",
       "relation": "references",
@@ -13574,7 +12680,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L109",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -13683,18 +12789,6 @@
       "context": "generic_arg",
       "source_file": "skills/site-pyramidalization-zoom/scripts/site_zoom_annotator.py",
       "source_location": "L553",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_dynamic_feature_crop",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_py_image",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -14187,30 +13281,6 @@
       "context": "import",
       "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
       "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "target": "skills_vesta_automation_scripts_vesta_cdd",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "target": "skills_publication_figure_formatter_scripts_style_config",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -15030,30 +14100,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_plot_slice",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L213",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_write_chgcar",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L170",
-      "weight": 1.0
-    },
-    {
       "source": "skills_ovito_snapshot_scripts_render_ovito_parse_bader_charges",
       "target": "skills_ovito_snapshot_scripts_render_ovito_py_path",
       "relation": "references",
@@ -15294,30 +14340,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_extract_2d_slice",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "return_type",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L186",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_unwrap_volumetric",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_py_ndarray",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "return_type",
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L95",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_external_textalloc_src_textalloc_candidates_generate_candidates",
       "target": "skills_publication_figure_formatter_external_textalloc_src_textalloc_candidates_py_ndarray",
       "relation": "references",
@@ -15438,18 +14460,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_crossfade",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_py_image",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "return_type",
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_scripts_figure_panel_compositor_get_serif_font",
       "target": "freetypefont",
       "relation": "references",
@@ -15507,18 +14517,6 @@
       "context": "return_type",
       "source_file": "skills/site-pyramidalization-zoom/scripts/site_zoom_annotator.py",
       "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_composite_badge",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_py_image",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "return_type",
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -15684,17 +14682,6 @@
       "confidence_score": 1.0,
       "source_file": "canvas/notes/photh-graphene_her_electrocatalysis___mechanical_verification_v1.md",
       "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "canvas_notes_photh_graphene_remote_sync_and_c5_piezo_matrix_v1",
-      "target": "canvas_notes_photh_graphene_remote_sync_and_c5_piezo_matrix_v1_remote_github_sync_piezocatalytic_dataset_ingestion",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "canvas/notes/photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -17029,83 +16016,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_auto_center_feature",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_write_chgcar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L170",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_extract_2d_slice",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L186",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_plot_slice",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L213",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_read_chgcar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_main",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L245",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_unwrap_volumetric",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L95",
-      "weight": 1.0
-    },
-    {
       "source": "skills_electron_density_surfaces_skill",
       "target": "skills_electron_density_surfaces_skill_electron_density_molecular_surfaces_skill",
       "relation": "contains",
@@ -17135,7 +16045,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L56",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -17146,7 +16056,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L70",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -17202,17 +16112,6 @@
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
       "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_skill_key_capabilities_scientific_protocols",
-      "target": "skills_electron_density_surfaces_skill_5_volumetric_grid_periodic_unwrapping",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -18514,50 +17413,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_main",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L126",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_rotation_gif",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_crossfade",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_strain_breathing",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L60",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_scripts_animation_composer",
       "target": "skills_publication_figure_formatter_scripts_animation_composer_compose_animation",
       "relation": "contains",
@@ -18713,35 +17568,13 @@
     },
     {
       "source": "skills_publication_figure_formatter_scripts_style_config",
-      "target": "skills_publication_figure_formatter_scripts_style_config_auto_adjust_labels",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L109",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_style_config",
       "target": "skills_publication_figure_formatter_scripts_style_config_save_publication_figure",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L172",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_style_config",
-      "target": "skills_publication_figure_formatter_scripts_style_config_register_truetype_fonts",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L32",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -18752,7 +17585,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L63",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_publication_figure_formatter_scripts_style_config",
+      "target": "skills_publication_figure_formatter_scripts_style_config_auto_adjust_labels",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -18763,7 +17607,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L134",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -18774,7 +17618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L150",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -18785,18 +17629,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L159",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_vesta_colors",
-      "target": "skills_publication_figure_formatter_scripts_vesta_colors_bader_charge_colormap",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L46",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -18866,39 +17699,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
-      "target": "skills_publication_figure_formatter_skill_6_3d_volumetric_animations_animate_cdd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
-      "target": "skills_publication_figure_formatter_skill_7_multi_view_cdd_panel_render_cdd_suite",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
-      "target": "skills_publication_figure_formatter_skill_8_truetype_font_registration_protocol",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_skill_publication_figure_formatter_skill",
       "target": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
       "relation": "contains",
@@ -18917,7 +17717,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L58",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -18928,7 +17728,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L71",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -19295,50 +18095,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_sanitize_vesta_render",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_main",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L130",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_composite_badge",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L67",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_dynamic_feature_crop",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
       "source": "skills_vesta_automation_scripts_generate_vstd",
       "target": "skills_vesta_automation_scripts_generate_vstd_estimate_bond_cutoffs",
       "relation": "contains",
@@ -19413,50 +18169,6 @@
       "confidence_score": 1.0,
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
       "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_main",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L172",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_vesta_cdd_stub",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_dynamic_feature_crop",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_render_cdd_suite",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -19625,17 +18337,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_vesta_automation_skill_key_technical_solutions_protocols",
-      "target": "skills_vesta_automation_skill_4_saturation_grounded_dynamic_feature_crop_layer_separation_protocol_dynamic_crop",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
       "source": "skills_vesta_automation_skill_script_architecture_cli_binaries",
       "target": "skills_vesta_automation_skill_common_options",
       "relation": "contains",
@@ -19643,18 +18344,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L90",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_skill_vesta_automation_headless_high_resolution_skill",
-      "target": "skills_vesta_automation_skill_common_pitfalls_solutions",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L102",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -19676,7 +18366,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L64",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_vesta_automation_skill_vesta_automation_headless_high_resolution_skill",
+      "target": "skills_vesta_automation_skill_script_architecture_cli_binaries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/vesta-automation/SKILL.md",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -19692,13 +18393,13 @@
     },
     {
       "source": "skills_vesta_automation_skill_vesta_automation_headless_high_resolution_skill",
-      "target": "skills_vesta_automation_skill_script_architecture_cli_binaries",
+      "target": "skills_vesta_automation_skill_common_pitfalls_solutions",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/vesta-automation/SKILL.md",
-      "source_location": "L81",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -19863,7 +18564,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L27",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -19874,7 +18575,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L34",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -19885,7 +18586,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L48",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -19896,7 +18597,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L54",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -19907,18 +18608,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L82",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_xcrysden_visualizer_skill_xcrysden_visualizer_skill",
-      "target": "skills_xcrysden_visualizer_skill_3d_volumetric_cdd_deprecation_notice",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L11",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -19929,7 +18619,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L25",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -19940,7 +18630,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L59",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -19951,7 +18641,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/xcrysden-visualizer/SKILL.md",
-      "source_location": "L74",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -20579,17 +19269,6 @@
       "confidence_score": 1.0,
       "source_file": "scripts/skill_crystallizer.py",
       "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_vesta_cdd_stub",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_vesta_cdd_stub_render_cdd",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -21374,83 +20053,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_113",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_auto_center_feature",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L113",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_171",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_write_chgcar",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L171",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_187",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_extract_2d_slice",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L187",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_2",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_214",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_plot_slice",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L214",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_25",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_read_chgcar",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_scripts_volumetric_unwrap_rationale_96",
-      "target": "skills_electron_density_surfaces_scripts_volumetric_unwrap_unwrap_volumetric",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/scripts/volumetric_unwrap.py",
-      "source_location": "L96",
-      "weight": 1.0
-    },
-    {
       "source": "skills_latex_template_scripts_latex_manager_rationale_2",
       "target": "skills_latex_template_scripts_latex_manager",
       "relation": "rationale_for",
@@ -21825,50 +20427,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_1",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_21",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_rotation_gif",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_54",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_crossfade",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_animate_3d_cdd_rationale_68",
-      "target": "skills_publication_figure_formatter_scripts_animate_3d_cdd_render_strain_breathing",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/animate_3d_cdd.py",
-      "source_location": "L68",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_scripts_animation_composer_rationale_129",
       "target": "skills_publication_figure_formatter_scripts_animation_composer_compose_animation",
       "relation": "rationale_for",
@@ -22034,47 +20592,36 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_121",
-      "target": "skills_publication_figure_formatter_scripts_style_config_auto_adjust_labels",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L121",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_173",
+      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_140",
       "target": "skills_publication_figure_formatter_scripts_style_config_save_publication_figure",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L173",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_33",
-      "target": "skills_publication_figure_formatter_scripts_style_config_register_truetype_fonts",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_70",
+      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_40",
       "target": "skills_publication_figure_formatter_scripts_style_config_set_publication_style",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L70",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_publication_figure_formatter_scripts_style_config_rationale_88",
+      "target": "skills_publication_figure_formatter_scripts_style_config_auto_adjust_labels",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -22089,47 +20636,36 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_135",
+      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_103",
       "target": "skills_publication_figure_formatter_scripts_vesta_colors_get_vesta_color",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L135",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_151",
+      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_119",
       "target": "skills_publication_figure_formatter_scripts_vesta_colors_get_element_cycler",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L151",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_160",
+      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_128",
       "target": "skills_publication_figure_formatter_scripts_vesta_colors_get_element_palette",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L160",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_scripts_vesta_colors_rationale_47",
-      "target": "skills_publication_figure_formatter_scripts_vesta_colors_bader_charge_colormap",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/scripts/vesta_colors.py",
-      "source_location": "L47",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -22386,39 +20922,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_rationale_119",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_sanitize_vesta_render",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L119",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_rationale_13",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_dynamic_feature_crop",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_dynamic_feature_crop_rationale_73",
-      "target": "skills_vesta_automation_scripts_dynamic_feature_crop_composite_badge",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
-      "source_location": "L73",
-      "weight": 1.0
-    },
-    {
       "source": "skills_vesta_automation_scripts_generate_vstd_rationale_111",
       "target": "skills_vesta_automation_scripts_generate_vstd_estimate_bond_cutoffs",
       "relation": "rationale_for",
@@ -22493,39 +20996,6 @@
       "confidence_score": 1.0,
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
       "source_location": "L79",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_rationale_2",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_rationale_49",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_dynamic_feature_crop",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L49",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_vesta_automation_scripts_render_cdd_hd_suite_rationale_82",
-      "target": "skills_vesta_automation_scripts_render_cdd_hd_suite_render_cdd_suite",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
-      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -23023,7 +21493,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "skills/publication-figure-formatter/scripts/style_config.py",
-      "source_location": "L164",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -23415,5 +21885,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7d3090e03a8cd073560b650f1782a31391eef919"
+  "built_at_commit": "7b543871b935275ac32114abfdce761270f11e25"
 }
