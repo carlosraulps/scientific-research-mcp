@@ -8,6 +8,20 @@ description: Use when visualizing Fermi surfaces (BXSF), 2D charge density topol
 ## Overview
 Automates **XCrySDen** across X11 and headless environments. Features a programmatic **TCL Scripting Engine** for 2D charge density topological contour slicing, 3D isosurfaces, and Fermi surface extraction, paired with an automated **Publication Background Whitening Pipeline** that converts default black OpenGL viewports into crisp, publication-ready white graphics with fringe antialiasing and uniform 30 px padding.
 
+## ⚠️ 3D Volumetric CDD Deprecation Notice
+
+> [!WARNING]
+> **XCrySDen is NOT recommended for 3D volumetric Charge Density Difference (CDD) isosurface rendering.** Empirical testing on PHOTH-graphene and adsorbate systems reveals three critical failure modes:
+> 1. **Dark Haloing Artifacts**: XCrySDen's legacy OpenGL pipeline produces persistent dark halo fringes around 3D isosurfaces that cannot be eliminated by background whitening post-processing.
+> 2. **Poor Anti-Aliasing**: The fixed-pipeline rasterizer produces jagged isosurface edges with no MSAA support, unacceptable for publication-quality 3D renders.
+> 3. **Xvfb Segfaults**: Headless 3D isosurface rendering via `xvfb-run` triggers intermittent segfaults in the GLX context on certain Mesa drivers.
+>
+> **Use instead:**
+> - **3D CDD Isosurfaces**: `vesta-cdd` (VESTA automation skill) or OVITO with Tachyon ray tracer
+> - **2D CDD Planar Contours**: XCrySDen remains the **best tool** for 2D topological contour slicing via `xcrysden-cdd`
+
+---
+
 ## Key Capabilities & Scientific Protocols
 
 ### 1. Headless TCL Scripting Architecture

@@ -32,6 +32,38 @@ COLORBLIND_SEQUENTIAL = ["cividis", "viridis", "plasma", "inferno", "magma"]
 COLORBLIND_DIVERGING = ["coolwarm", "RdBu_r", "PRGn", "PuOr"]
 
 # ---------------------------------------------------------------------------
+# 1b. Standardized CDD Isosurface Color Constants
+# ---------------------------------------------------------------------------
+CDD_COLORS = {
+    "accumulation": {"hex": "#f1c40f", "rgb": (0.945, 0.769, 0.059), "rgb255": (241, 196, 15), "label": r"$\Delta\rho > 0$ (accumulation)"},
+    "depletion":    {"hex": "#00b4d8", "rgb": (0.000, 0.706, 0.847), "rgb255": (0, 180, 216),   "label": r"$\Delta\rho < 0$ (depletion)"},
+    "opacity":      0.60,
+}
+
+# ---------------------------------------------------------------------------
+# 1c. Continuous Bader Charge Colormap Utility
+# ---------------------------------------------------------------------------
+def bader_charge_colormap(charges, cmap_name="RdBu_r", vmin=None, vmax=None):
+    """Map Bader net charges to RGBA colors using a diverging colormap.
+
+    Args:
+        charges: Array-like of net atomic charges (ΔQ = Z_val - Q_bader).
+        cmap_name: Matplotlib colormap name (default: 'RdBu_r', red=positive, blue=negative).
+        vmin, vmax: Symmetric limits. If None, uses max(|charges|) for symmetric scale.
+
+    Returns:
+        List of hex color strings, one per atom.
+    """
+    import numpy as np
+    charges = np.asarray(charges, dtype=float)
+    if vmin is None or vmax is None:
+        limit = max(abs(charges.min()), abs(charges.max()), 0.01)
+        vmin, vmax = -limit, limit
+    cmap = mpl.colormaps.get_cmap(cmap_name)
+    norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+    return [mpl.colors.to_hex(cmap(norm(q))) for q in charges]
+
+# ---------------------------------------------------------------------------
 # 2. VESTA Standard Element Colors & Radii (Extracted from /opt/VESTA/elements.ini)
 # ---------------------------------------------------------------------------
 VESTA_ELEMENTS = {

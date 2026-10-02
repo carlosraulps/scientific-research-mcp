@@ -29,6 +29,36 @@ from vesta_colors import (
     get_vesta_color,
 )
 
+def register_truetype_fonts():
+    """Explicit TrueType font registration protocol.
+    
+    Registers Times New Roman TrueType fonts at known system paths
+    BEFORE any matplotlib figure creation. This prevents the fallback
+    to DejaVu Sans when font discovery fails silently.
+    
+    Verification: After rendering, run `pdffonts output.pdf` to confirm
+    embedded font is 'TimesNewRomanPSMT' not 'DejaVuSans'.
+    """
+    import matplotlib.font_manager as fm
+    
+    font_paths = [
+        '/usr/share/fonts/TTF/Times New Roman.ttf',
+        '/usr/share/fonts/TTF/Times New Roman Bold.ttf',
+        '/usr/share/fonts/TTF/Times New Roman Italic.ttf',
+        '/usr/share/fonts/TTF/Times New Roman Bold Italic.ttf',
+        '/usr/share/fonts/TTF/timesbd.ttf',
+        '/usr/share/fonts/TTF/timesi.ttf',
+        '/usr/share/fonts/TTF/times.ttf',
+    ]
+    registered = 0
+    for fp in font_paths:
+        if Path(fp).exists():
+            fm.fontManager.addfont(fp)
+            registered += 1
+    if registered > 0:
+        fm._load_fontmanager(try_read_cache=False)
+    return registered
+
 
 def set_publication_style(
     font_size: int = 11,
@@ -43,6 +73,7 @@ def set_publication_style(
     - STIX math fontset matching Nature, Phys. Rev., and ACS standards
     - Inward ticks and clean axes spines
     """
+    register_truetype_fonts()
     plt.rcParams.update({
         "font.family": "serif",
         "font.serif": [
@@ -70,6 +101,8 @@ def set_publication_style(
         "figure.autolayout": False,
         "savefig.bbox": "tight",
         "savefig.dpi": 300,
+        "pdf.fonttype": 42,   # TrueType vector embedding (Nature/APS/ACS compliant)
+        "ps.fonttype": 42,    # TrueType for PostScript output
     })
 
 

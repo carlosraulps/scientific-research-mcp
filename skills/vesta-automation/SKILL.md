@@ -47,6 +47,18 @@ Automates **VESTA** (Visualization for Electronic and STructural Analysis) acros
   - **Opacity**: Calibrated to 60% (`alpha=0.60`) to keep internal atomic coordinates and bonding networks visible.
 - Execution is completely headless with automatic border whitespace trimming down to a clean 30 px padding.
 
+### 4. Saturation-Grounded Dynamic Feature Crop & Layer Separation Protocol (`dynamic-crop`)
+- **Problem**: When rendering 2D materials (monolayers) in VESTA, the output has excessive vacuum whitespace with a tiny structure in the center. Attempting to clean the border can destructively overwrite crystallographic orientation badges/tripods.
+- **Solution**:
+  1. Convert rendered PNG to HSV color space.
+  2. Create a binary mask detecting actual structural features based on saturation (`> 18`) or value (`< 240`, for dark atoms/bonds).
+  3. Crop to the bounding box of this mask with configurable padding (default `30px`).
+  4. **Layer Separation Protocol**: Composite the orientation badge/tripod *after* cropping to prevent destructive border cleanup bugs.
+- **Usage**:
+  ```bash
+  dynamic-crop input.png -o output.png --padding 30 --badge tripod.png --badge-position bottom-right
+  ```
+
 ---
 
 ## Quick Reference CLI
@@ -62,6 +74,7 @@ Automates **VESTA** (Visualization for Electronic and STructural Analysis) acros
 | **Generate complete .vesta wrapper** | `generate-vstd POSCAR -o project.vesta -v c --bound 0` |
 | **Batch Render Directory + Gallery** | `vesta-batch ./relax_steps/ -v c -o ./gallery --pattern "POSCAR*"` |
 | **Interactive GUI mode on X11** | `vesta-snapshot POSCAR --gui --keep-open` |
+| **Dynamic Feature Crop & Badge Composite** | `dynamic-crop input.png -o output.png --badge tripod.png` |
 
 ---
 
@@ -72,6 +85,7 @@ Installed globally in `~/.local/bin/`:
 - `generate-vstd` -> `skills/vesta-automation/scripts/generate_vstd.py`
 - `vesta-cdd` -> `skills/vesta-automation/scripts/vesta_cdd.py`
 - `vesta-batch` -> `skills/vesta-automation/scripts/batch_vesta_render.py`
+- `dynamic-crop` -> `skills/vesta-automation/scripts/dynamic_feature_crop.py`
 
 ### Common Options:
 - `input`: Path to input crystal structure (`POSCAR`, `CONTCAR`, `structure.cif`, `file.xsf`) or volumetric dataset (`CHGCAR`, `cdd.vasp`, `LOCPOT`, `.cube`).
@@ -90,3 +104,4 @@ Installed globally in `~/.local/bin/`:
 1. **`The file (/usr/local/bin/elements.ini) was not opened`**: Occurs when VESTA is invoked via an unresolved symlink. The scripts resolve symlinks (`os.path.realpath`) to locate bundled application resources.
 2. **Periodic duplicate explosion**: Occurs when `Bound = 2` is used with bonding search across cell faces. Enforce `Bound = 0` and `SEARCH_BOUNDARY = 0` with `generate-vstd`.
 3. **Headless Linux environments without X11**: Automatically wraps calls in `xvfb-run -a -s "-screen 0 3840x2160x24"`.
+4. **Destructive Inpainting on Badges**: Border cropping may ruin VESTA-generated badges. Use the `dynamic-crop`'s Layer Separation Protocol to cleanly crop structure and subsequently paste the badge.

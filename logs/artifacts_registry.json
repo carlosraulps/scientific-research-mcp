@@ -1477,5 +1477,61 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "4e1e5e2a": {
+    "result_id": "4e1e5e2a",
+    "producing_tool": "render_cdd_hd_suite.py",
+    "value": {
+      "cli_composite": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/fig_cdd_3d_composite_cli.png",
+      "snapshot_composite": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/fig_cdd_3d_composite_snapshot.png"
+    },
+    "arguments": {
+      "dpi": 350,
+      "format": "png/pdf",
+      "panels": [
+        "Top View",
+        "Side Profile",
+        "3D Isometric"
+      ]
+    },
+    "rationales": {},
+    "sources": {},
+    "declared_context": "PHOTH-graphene hydrogen chemisorption 3D charge density difference publication visualization study.",
+    "parent_ids": [],
+    "created_at": "2026-10-02T13:43:28.908108+00:00",
+    "git": {
+      "commit": "3fd8641ccf191e236ac95e3f1c542ee2405c0a88",
+      "short_commit": "3fd8641c",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "1e036b5a": {
+    "result_id": "1e036b5a",
+    "producing_tool": "render_cdd_hd_suite.py and animate_3d_cdd_and_ccd.py",
+    "value": {
+      "dimensions": "5425x1890 @ 350 DPI",
+      "fonts": "TimesNewRomanPSMT, TimesNewRomanPS-BoldMT, STIXGeneral",
+      "format": "PNG, PDF (Type 42 vector), GIF (15 fps and 12 fps)",
+      "status": "PUBLICATION_READY"
+    },
+    "arguments": {
+      "cdd_guide": "/home/cr/simulations/photh-gr/CDD_VISUALIZATION_AND_SCIRESEARCH_GUIDE.md",
+      "cli_composite": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/fig_cdd_3d_composite_cli.pdf",
+      "gif_breathing_3d": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_ccd/anim_ccd_3d_biaxial_breathing.gif",
+      "gif_orbital_3d": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/anim_cdd_3d_orbital_rotation.gif",
+      "snapshot_composite": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/fig_cdd_3d_composite_snapshot.pdf"
+    },
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Publication-grade 3D CDD and CCD composite figures, continuous volumetric animations, and visual engineering guide for PHOTH-Graphene and adsorbate interfaces.",
+    "parent_ids": [],
+    "created_at": "2026-10-02T15:06:56.737479+00:00",
+    "git": {
+      "commit": "3fd8641ccf191e236ac95e3f1c542ee2405c0a88",
+      "short_commit": "3fd8641c",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

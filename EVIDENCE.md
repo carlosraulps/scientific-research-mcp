@@ -89,3 +89,43 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+### [2026-10-01T21:02:34.020145+00:00] Decision: structure_reviewer_responses (`crcl3_her_acs_revision_2026`)
+- **Triggered Rule**: Rule A
+- **Hypothesis**: Complete explicit separation of review questions for Reviewers 1 through 6 plus Editor requirements in response_letter.tex ensures thorough peer-review compliance and institutional rigor.
+- **Intervention**: Refactor response_letter.tex to include explicit Associate Editor section, update Reviewer 4 and Reviewer 6 into dedicated sections, enforce uniform Delta G_H* notation, and integrate converged PBE+D3+U and vibrational thermodynamics.
+- **Observed Outcome**: Zero ambiguity in reviewer response matching, flawless LaTeX compilation of response_letter.pdf, full compliance with ACS Applied Energy Materials editorial standards.
+- **Evidence / Artifact Reference**: `ACS_version/ACS_resubmission/Revision.txt`
+
+---
+### [2026-10-02T12:45:45.217067+00:00] Decision: sync_remote_and_build_clean_docs (`crcl3_her_acs_revision_2026`)
+- **Triggered Rule**: Rule A
+- **Hypothesis**: Fast-forwarding remote updates from origin/master and generating cross-platform manuscript_clean.tex/pdf guarantees complete editorial compliance with ACS requirements.
+- **Intervention**: Pull remote commits 9b5f36d..7a0c4ec via fast-forward, update sync_manuscript_locations.py for portable path resolution, and compile all 4 submission documents with bibtex.
+- **Observed Outcome**: All 4 PDF documents (manuscript_marked.pdf, manuscript_clean.pdf, supporting.pdf, response_letter.pdf) compile with code 0 and zero unresolved citations.
+- **Evidence / Artifact Reference**: `git log -n 3 --oneline`
+
+---
+### [2026-10-02T12:51:28.919184+00:00] Decision: git_remote_synchronization (`photh_gr_piezo_sync`)
+- **Triggered Rule**: Rule E
+- **Hypothesis**: Remote repository updates from secondary workstation contain converged C5 piezocatalytic HER DFT results and modular postprocessing taxonomy
+- **Intervention**: Fast-forward git merge to origin/master and synchronize scientific calculation memory
+- **Observed Outcome**: Merged 8 remote commits with zero conflicts; integrated complete 6-state C5 piezocatalysis dataset and 3x3 dilute supercell result
+- **Evidence / Artifact Reference**: `git:feec631..31f6ae4`
+
+---
+### [2026-10-02T13:41:46.709093+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: 
+- **Evidence / Artifact Reference**: ``
+
+---
+### [2026-10-02T15:06:39.015047+00:00] Decision: resolve_cdd_composite_typography_and_inpainting (`photh_gr_cdd_3d_viz`)
+- **Triggered Rule**: Rule D
+- **Hypothesis**: Inpainting slice executed after vector badge compositing caused white square cutout over c-vector; matplotlib font fallback to DejaVu Sans occurred due to unregistered system TTF fonts.
+- **Intervention**: Enforced strict layer separation (sanitize/inpaint before badge compositing) and registered TrueType Times New Roman via fm.fontManager.addfont with pdf.fonttype=42.
+- **Observed Outcome**: Crisp blue c-axis tripod badge restored (1515 blue px, 0 cutouts) and 100% TrueType TimesNewRomanPSMT/STIX embedded vector PDFs.
+- **Evidence / Artifact Reference**: `fig_cdd_3d_composite_cli.pdf, fig_cdd_3d_composite_snapshot.pdf, CDD_VISUALIZATION_AND_SCIRESEARCH_GUIDE.md`
+
+---

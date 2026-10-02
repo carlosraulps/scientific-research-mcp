@@ -1,0 +1,28 @@
+{
+  "result_id": "4e1e5e2a",
+  "producing_tool": "render_cdd_hd_suite.py",
+  "value": {
+    "cli_composite": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/fig_cdd_3d_composite_cli.png",
+    "snapshot_composite": "/home/cr/simulations/photh-gr/06_charge_density_analysis/figures_cdd/fig_cdd_3d_composite_snapshot.png"
+  },
+  "arguments": {
+    "dpi": 350,
+    "format": "png/pdf",
+    "panels": [
+      "Top View",
+      "Side Profile",
+      "3D Isometric"
+    ]
+  },
+  "rationales": {},
+  "sources": {},
+  "declared_context": "PHOTH-graphene hydrogen chemisorption 3D charge density difference publication visualization study.",
+  "parent_ids": [],
+  "created_at": "2026-10-02T13:43:28.908108+00:00",
+  "git": {
+    "commit": "3fd8641ccf191e236ac95e3f1c542ee2405c0a88",
+    "short_commit": "3fd8641c",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

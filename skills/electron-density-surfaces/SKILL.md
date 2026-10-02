@@ -47,6 +47,10 @@ Comprehensive analysis and visualization toolkit for electronic structure, molec
 - Identifies the asymptotic vacuum level $V_{\text{vac}}$ in slab geometries and calculates the surface work function:
   $$\Phi = V_{\text{vac}} - E_{\mathrm{F}}$$
 
+### 5. Volumetric Grid Periodic Unwrapping
+- **Problem**: Reactive moieties at unit cell boundaries create charge density differences (CDD) split across the periodic boundary, causing truncated 2D contour mappings.
+- **Solution**: Volumetric grids are shifted via `np.roll` based on fractional shifts or auto-centered using the `max_gradient`, `max_abs`, or `centroid` of the electron density features.
+
 ---
 
 ## Quick Reference CLI
@@ -59,6 +63,7 @@ Comprehensive analysis and visualization toolkit for electronic structure, molec
 | **2D Density Laplacian ($\nabla^2 \rho$)** | `density-analyzer CHGCAR --slice-plane xy --slice-out laplacian.png --laplacian` |
 | **Planar Potential & Work Function** | `density-analyzer LOCPOT --planar-potential pot.png --fermi-energy -2.35` |
 | **Analyze Gaussian Cube File** | `density-analyzer orbital.cube -i 0.02 --html orbital.html` |
+| **Unwrap Volumetric Periodic Boundary** | `volumetric-unwrap cdd.vasp --auto-center --method max_abs -o cdd_centered.vasp` |
 
 ---
 
@@ -67,5 +72,6 @@ Comprehensive analysis and visualization toolkit for electronic structure, molec
 Installed globally in `~/.local/bin/`:
 - `bader-analyze` -> `skills/electron-density-surfaces/scripts/bader_flux_analysis.py`
 - `density-analyzer` -> `skills/electron-density-surfaces/scripts/density_analyzer.py`
+- `volumetric-unwrap` -> `skills/electron-density-surfaces/scripts/volumetric_unwrap.py`
 - `bader` -> Henkelman Bader analysis executable
 - `chgsum.pl` -> Core + valence charge density summation script

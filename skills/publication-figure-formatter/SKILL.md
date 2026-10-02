@@ -43,6 +43,16 @@ Embeds two layout algorithms (cloned in `external/`):
 - **`adjustText`**: Force-directed physics repulsion with automatic leader lines.
 - **`textalloc`**: Bounding-box void allocation for dense scatter clusters.
 
+### 6. 3D Volumetric Animations (`animate-cdd`)
+- **Rotation Mode**: Generates 360° orbital rotation GIFs around a fixed structure (`--mode rotation`). Supports boomerang (forward + reverse).
+- **Breathing Mode**: Creates biaxial strain breathing cycles morphing between strain states with crossfading (`--mode breathing`).
+
+### 7. Multi-View CDD Panel (`render-cdd-suite`)
+- Renders Charge Density Difference panels highlighting multiple perspectives simultaneously.
+
+### 8. TrueType Font Registration Protocol
+- Ensure Times New Roman and STIX math fonts are available in the system and registered dynamically through `matplotlib.font_manager`.
+
 ---
 
 ## Quick Reference CLI
@@ -54,6 +64,7 @@ Embeds two layout algorithms (cloned in `external/`):
 | **Render Coupled Band + PDOS Suite** | `render-coupled-suite` |
 | **Assemble Multi-Panel Figure** | `format-multipanel panel_a.png panel_b.png panel_c.png -g 1 3 -o Fig1.png` |
 | **Format Single Plot with Anti-Collision** | `format-figure data.csv -o ./fig --engine adjustText --xlabel "$E - E_{\mathrm{F}}\ \mathrm{(eV)}$"` |
+| **Animate 3D Volumetric Data (CDD)** | `animate-cdd --mode rotation --frames frame_*.png --output rot.gif` |
 
 ---
 
@@ -64,3 +75,4 @@ Installed globally in `~/.local/bin/`:
 - `format-multipanel` -> `skills/publication-figure-formatter/scripts/figure_panel_compositor.py`
 - `format-animation` -> `skills/publication-figure-formatter/scripts/animation_composer.py`
 - `render-coupled-suite` -> `skills/publication-figure-formatter/scripts/render_coupled_suite.py`
+- `animate-cdd` -> `skills/publication-figure-formatter/scripts/animate_3d_cdd.py`

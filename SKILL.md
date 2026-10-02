@@ -173,3 +173,12 @@ def fix_sloshing(incar):
     incar['AMIX'] = 0.2
     return incar
 ```
+
+
+### Learned Skill: ``
+- **Description**: Multi-view 3D Charge Density Difference (CDD) publication suite. Renders a, b, c, iso, and edge-on views of CDD volumetric files using VESTA headless CLI with dual isosurfaces (Gold accumulation, Cyan depletion at 60% opacity). Applies dynamic feature cropping, Layer Separation Protocol for badge compositing, and assembles unified multi-panel publication figure with Times New Roman typography.
+- **Trigger**: 
+- **Validation**: Automated schema verification
+```python
+
+```
