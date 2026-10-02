@@ -205,5 +205,27 @@
         "timestamp": "2026-10-02T12:52:11.051554+00:00"
       }
     ]
+  },
+  "authentic_vesta_cdd_3d_orbital_animation_v1": {
+    "key": "authentic_vesta_cdd_3d_orbital_animation_v1",
+    "title": "authentic_vesta_cdd_3d_orbital_animation_v1",
+    "current_version": 1,
+    "current_file": "authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
+    "tags": [
+      "cdd",
+      "vesta",
+      "isosurface",
+      "animation",
+      "photh-graphene"
+    ],
+    "references": [],
+    "updated_at": "2026-10-02T20:40:59.533517+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
+        "timestamp": "2026-10-02T20:40:59.533517+00:00"
+      }
+    ]
   }
 }

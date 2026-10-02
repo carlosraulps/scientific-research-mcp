@@ -129,3 +129,27 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `fig_cdd_3d_composite_cli.pdf, fig_cdd_3d_composite_snapshot.pdf, CDD_VISUALIZATION_AND_SCIRESEARCH_GUIDE.md`
 
 ---
+### [2026-10-02T19:06:14.348595+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: 
+- **Evidence / Artifact Reference**: ``
+
+---
+### [2026-10-02T19:48:00.134902+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: 
+- **Evidence / Artifact Reference**: ``
+
+---
+### [2026-10-02T20:40:19.741813+00:00] Decision: render_vesta_cdd_orbital_animation (`photh_gr_cdd_vesta_orbital`)
+- **Triggered Rule**: Rule C
+- **Hypothesis**: Authentic VESTA 3D CDD rendering requires headless CLI execution with UCOLP unit-cell line hiding and 36-frame continuous azimuthal rotation around the normal perspective.
+- **Intervention**: Deployed render_cdd_3d_vesta_orbital.py utilizing VESTA-gui headless export_img scale=2 with default.ini UCOLP line suppression and Times New Roman / STIX typography compositing.
+- **Observed Outcome**: Generated flawless 360-degree continuous 3D CDD isosurface GIF (anim_cdd_3d_vesta_orbital.gif) with authentic VESTA ball-and-stick lattice and dual cyan/yellow isosurfaces.
+- **Evidence / Artifact Reference**: `06_charge_density_analysis/figures_cdd/anim_cdd_3d_vesta_orbital.gif`
+
+---
