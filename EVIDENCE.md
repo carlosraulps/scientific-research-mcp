@@ -153,3 +153,11 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `06_charge_density_analysis/figures_cdd/anim_cdd_3d_vesta_orbital.gif`
 
 ---
+
+---
+### [2026-10-02T11:55:29.317255+00:00] Decision: fix_coupled_suptitle_overlap (`RUN_COUPLED_BAND_PDOS_20261002`)
+- **Triggered Rule**: Rule E
+- **Hypothesis**: Increasing vertical figure bounds and lowering GridSpec top from 0.87 to 0.83 eliminates title-subtitle collisions while preserving identical aspect ratio and zero-jump dynamics.
+- **Intervention**: Enlarged figsize from (11.8, 5.2) to (12.0, 5.6), set top=0.83, pad=6, and suptitle y=0.965 across all 3 coupled GIFs and vector figures.
+- **Observed Outcome**: 100% collision-free publication-quality coupled Band+PDOS animations across Biaxial, Uniaxial X, and Uniaxial Y modes.
+- **Evidence / Artifact Reference**: `https://github.com/carlosraulps/photh-gr/commit/1dba48f`
