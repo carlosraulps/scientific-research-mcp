@@ -22,6 +22,21 @@
    - When encountering non-convergence or calculation failure, traverse the 8-Rule Decision Ladder (Rules A through H).
    - If a calculation fails after 8 interventions, terminate the automatic retry loop, log full diagnostics to `logs/decisions.csv`, and seal the state for human review.
 
+5. **Declarative Input Delta Composition (Anti-Regeneration Rule)**:
+   - Autonomous agents must **NEVER** regenerate entire multi-page input files (`INCAR`, `.fdf`, `in.lammps`) from scratch.
+   - All progressive calculation stages must be composed via `ponytail-compose` or `sciresearch compose` applying semantic deltas to `base_templates/`.
+
+6. **Self-Documenting Tag Standard & NotebookLM Grounding**:
+   - Every mutated tag must contain an inline physical rationale: `TAG = VALUE  # [Grounding:Source] Physical rationale`.
+   - Query the local NotebookLM (`dft-documentation` / `md-documentation`) to anchor parameters in literature citations.
+
+7. **Hybrid 2-Tier Directory Standard**:
+   - Filesystem directories are capped at 2 tiers: `<tier_number>_<category>/<semantic_slug>/` (`00_convergence/`, `01_pristine/`, `02_strained/`, `03_functionalized/`, `04_dynamics/`, `05_publication_figures/`).
+   - Non-linear relationships, multi-parent DAG dependencies, and provenance are maintained via DREAMS and Graphify.
+
+8. **Continuous Graphify Knowledge Graph Sync**:
+   - Keep `graphify-out/graph.json` synchronized by running `sciresearch sync` after creating or completing calculation stages.
+
 ---
 
 ## 2. Decision Ladder Diagnostic Rules (Rules A–H)

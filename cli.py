@@ -30,6 +30,7 @@ from skill_crystallizer import SkillCrystallizer
 from dual_verifier import DualVerifier
 from protocol_engine import ProtocolEngine
 from git_controller import GitController
+from ponytail_delta import PonytailDeltaComposer
 
 
 def main():
@@ -92,6 +93,15 @@ def main():
     snap_p.add_argument("--push", action="store_true", help="Push to origin remote")
     ver_p = git_sub.add_parser("verify", help="Verify reproducibility of input scripts against git commit")
     ver_p.add_argument("files", nargs="*", help="Optional target files to check")
+
+    # Ponytail Compose
+    comp_parser = subparsers.add_parser("compose", help="Compose self-documenting input from base template and delta")
+    comp_parser.add_argument("--base", "-b", required=True, help="Path to base template (INCAR.base, template.fdf)")
+    comp_parser.add_argument("--delta", "-d", help="Path to delta JSON file or raw JSON string")
+    comp_parser.add_argument("--set", "-s", nargs="+", help="Direct key=value overrides (e.g. NSW=0 ISMEAR=-5)")
+    comp_parser.add_argument("--output", "-o", required=True, help="Path to output file (e.g. 01_dos/INCAR)")
+    comp_parser.add_argument("--engine", "-e", default="vasp", choices=["vasp", "siesta", "lammps"], help="Simulation engine")
+    comp_parser.add_argument("--no-prune", action="store_true", help="Disable Ponytail zero-redundancy pruning")
 
     args = parser.parse_args()
     if not args.subcommand:
@@ -181,6 +191,39 @@ def main():
         elif args.git_action == "verify":
             res = git.verify_reproducibility(target_files=args.files if args.files else None)
             print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "compose":
+        delta_dict = {}
+        if args.delta:
+            d_path = os.path.abspath(args.delta)
+            if os.path.exists(d_path):
+                with open(d_path, "r", encoding="utf-8") as f:
+                    delta_dict = json.load(f)
+            else:
+                try:
+                    delta_dict = json.loads(args.delta)
+                except json.JSONDecodeError:
+                    print(f"Error: Invalid JSON for delta: {args.delta}", file=sys.stderr)
+                    sys.exit(1)
+        if args.set:
+            for item in args.set:
+                if "=" in item:
+                    k, v = item.split("=", 1)
+                    delta_dict[k.strip()] = v.strip()
+
+        composer = PonytailDeltaComposer(engine=args.engine)
+        out_file = composer.compose_to_file(
+            base_file=args.base,
+            delta=delta_dict,
+            output_file=args.output,
+            prune_redundant=not args.no_prune
+        )
+        print(json.dumps({
+            "status": "success",
+            "engine": args.engine,
+            "output_file": str(out_file),
+            "composed_tags_count": len(composer.composed_tags)
+        }, indent=2))
 
 
 if __name__ == "__main__":

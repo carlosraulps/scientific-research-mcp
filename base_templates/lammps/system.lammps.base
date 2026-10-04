@@ -1,0 +1,24 @@
+# ==============================================================================
+# Master LAMMPS Baseline Template (base_templates/lammps/system.lammps.base)
+# Framework: Ponytail Zero-Redundancy & Literature Grounding Standard
+# Grounding: [NotebookLM:md-documentation] & Dynamic Stability Benchmarks
+# ==============================================================================
+
+# --- Initialization & Units ---
+units            real         # Energy in kcal/mol, distance in Angstroms, time in fs
+dimension        3            # 3D periodic boundary
+boundary         p p p        # Periodic in x, y, z
+atom_style       full         # Supports bonds, angles, dihedrals, and charges
+
+# --- Parameter Variables & Time Integration Constants ---
+variable         dt        equal 1.0              # [NotebookLM:md-doc:Timestep] ~1/10th of highest C-C bond frequency (10 fs)
+variable         Ttarget   equal 300.0            # Target temperature in K
+variable         Ptarget   equal 1.0              # Target pressure in atm
+variable         Tdamp     equal "100.0 * v_dt"   # [NotebookLM:md-doc:Tdamp] Relaxation timescale for thermal bath (100 fs)
+variable         Pdamp     equal "1000.0 * v_dt"  # [NotebookLM:md-doc:Pdamp] 10x Tdamp to decouple volume from high-freq vibrations
+
+timestep         ${dt}
+
+# --- Neighbor List Optimization ---
+neighbor         2.0 bin                          # 2.0 Angstrom skin buffer beyond force cutoff
+neigh_modify     delay 0 every 1 check yes        # Rebuild list dynamically only when atoms move half skin distance

@@ -58,13 +58,16 @@ sciresearch skills "charge sloshing"
 # 6. Score simulation input script against Ponytail zero-redundancy and physical rules
 sciresearch eval INCAR --engine vasp
 
-# 7. Rosetta Dual Verification (Functional Correctness + Scientific Validity)
+# 7. Compose input file using Ponytail Delta Composer (anti-regeneration standard)
+sciresearch compose --base base_templates/vasp/INCAR.base --set NSW=0 ISMEAR=-5 NEDOS=2001 LORBIT=11 --output 01_pristine/dos/INCAR
+
+# 8. Rosetta Dual Verification (Functional Correctness + Scientific Validity)
 sciresearch verify INCAR --domain dft
 
-# 8. List resumable simulation runs and checkpoints
+# 9. List resumable simulation runs and checkpoints
 sciresearch runs --status RUNNING
 
-# 9. Synchronize Knowledge Map and update Graphify knowledge graph
+# 10. Synchronize Knowledge Map and update Graphify knowledge graph
 sciresearch sync
 ```
 
@@ -181,4 +184,13 @@ def fix_sloshing(incar):
 - **Validation**: Automated schema verification
 ```python
 
+```
+
+
+### Learned Skill: `ponytail_delta_composition`
+- **Description**: Declarative input delta composition and grounded self-documentation across simulation stages for VASP, SIESTA, and LAMMPS.
+- **Trigger**: Transitioning from structural relaxation to static, DOS, bands, adsorption, or MD.
+- **Validation**: Ponytail zero-redundancy passes, every mutated line annotated with rationale, no baseline drift.
+```python
+sciresearch compose --base base_templates/vasp/INCAR.base --set NSW=0 ISMEAR=-5 NEDOS=2001 LORBIT=11 --output 01_pristine/dos/INCAR
 ```

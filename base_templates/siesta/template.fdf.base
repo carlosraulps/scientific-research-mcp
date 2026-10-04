@@ -1,0 +1,26 @@
+# ==============================================================================
+# Master SIESTA FDF Baseline (base_templates/siesta/template.fdf.base)
+# Framework: Ponytail Zero-Redundancy & Literature Grounding Standard
+# Grounding: [NotebookLM:dft-documentation] & SIESTA Extended Systems Memory
+# ==============================================================================
+
+# --- System & Functional Specification ---
+XC.functional            GGA          # Generalized Gradient Approximation
+XC.authors               PBE          # Perdew-Burke-Ernzerhof functional
+PAO.BasisSize            DZP          # Double-Zeta with Polarization for realistic bonding
+MeshCutoff               350.0 Ry     # Real-space integration grid cutoff
+
+# --- SCF Convergence & Charge Sloshing Mitigation ---
+MaxSCFIterations         150          # Sufficient iterations for difficult convergence
+DM.Tolerance             1.0d-4       # Density matrix convergence tolerance
+DM.MixingWeight          0.04         # [NotebookLM:dft-doc:Sloshing] Dampened weight prevents charge oscillations in large/2D systems
+DM.NumberPulay           5            # [NotebookLM:dft-doc:Pulay] Multi-step extrapolation over 5 historical iterations
+
+# --- Solution & Integration Options ---
+SolutionMethod           Diagon       # Standard exact diagonalization
+ElectronicTemperature   300.0 K      # Fermi-Dirac electronic temperature
+
+# --- Relaxation Constraints ---
+MD.TypeOfRun             CG           # Conjugate gradient structural optimization
+MD.NumCGsteps            200          # Maximum relaxation steps
+MD.MaxForceTol           0.02 eV/Ang  # Residual atomic force tolerance
