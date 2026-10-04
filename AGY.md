@@ -121,3 +121,12 @@ When a simulation encounters an error or SCF non-convergence:
 
 - **Strict Master Branch Rule**: Always operate on `master` branch (never `main`) for all git branches, commits, and remote pushes.
 - **Atomic Scientific Snapshots**: Use Conventional Commits (`feat(skills):`, `chore(templates):`, `fix(convergence):`).
+
+---
+
+## 6. Frontier Closed-Loop Discovery & Guardrail Standard (Microsoft, LLM4SR, SDE, Huyen)
+
+- **Pre-Flight Structure Sanity**: Always invoke `sciresearch guard-structure <file>` on POSCAR or crystal geometry prior to cluster dispatch to catch LLM coordinate hallucinations (<0.8 Å overlap) and volume inversions.
+- **Multi-Dimensional Hypothesis Evaluation**: Always score research plans with `sciresearch eval-hypothesis` requiring balanced scores across Novelty, Validity, Clarity, and Feasibility (threshold: 75.0/100).
+- **Anti-Saturation Sentinel (SDE 2026)**: Track closed-loop cycles with `sciresearch sde-verify`. Never allow >2 consecutive ungrounded reasoning rounds without invoking external deterministic solvers/oracles (ASE, VASPKIT, SIESTA, LAMMPS). Pure internal LLM reasoning plateaus.
+- **Component-Level Evaluation (Chip Huyen 2025)**: Decouple tool unit tests from complex multi-stage runs to ensure robust, bug-free automation pipelines.

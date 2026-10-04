@@ -31,6 +31,11 @@ Welcome to the **Scientific Research Log & Shared Memory Engine**. Grounded in 1
 | **Simthesizer** | W. Kim et al., *arXiv:2608.24650* (2026) | **Workload Simulation & Profiling**: Synthetic trace simulation estimating node-hours, disk I/O, and token budgets prior to cluster submission. |
 | **Rosetta** | K. Sankaralingam, *arXiv:2609.19376* (2026) | **The Scientific Constitution**: Prohibits circular reasoning, enforces calibration-as-overlay, and establishes **Dual Verification** separating functional correctness from scientific validity. |
 | **Meadows** | D. H. Meadows, *Thinking in Systems* (2008) | **Systems Leverage Points**: Balancing convergence loops, reinforcing lifelong memory accumulation, springing the "Rule Beating" and "Drift to Low Performance" system traps. |
+| **Microsoft AI4Science** | AI4Science Team, *arXiv:2311.07361* (2023) | **Physical Geometry Sanity Guard**: Prevents POSCAR coordinate hallucinations, atomic overlaps (<0.8 Å), unphysical short bonds (<1.0 Å), and volume inversions. |
+| **LLM4SR** | Z. Luo et al., *ACM Comput. Surv.* (2025) | **Hypothesis Discovery & Feedback**: 4-stage research loop, Novelty/Validity/Clarity/Feasibility multi-criteria feedback, and multi-inspiration association (LMI). |
+| **HKUST Autonomy** | T. Zheng et al., *arXiv:2505.13259* (2025) | **Three-Tier Autonomy Taxonomy**: Progression from Level 1 (Tool) to Level 2 (Analyst) to Level 3 (Autonomous Scientist) navigating full-cycle scientific inquiry. |
+| **SDE Benchmark** | Z. Song, C. Duan, H. Kulik et al., *arXiv:2512.15567* (2026) | **Closed-Loop Discovery Harness (`sde-harness`)**: Multi-round hypothesis testing against simulation oracles, anti-saturation sentinel preventing ungrounded linguistic loops. |
+| **AI Engineering** | C. Huyen, *O'Reilly Media* (2025) | **Defense-in-Depth AI Architecture**: 5-step application framework, component-level evaluations, strict input/output guardrails, and hierarchical prompt/memory caching. |
 
 ---
 
@@ -64,18 +69,27 @@ sciresearch compose --base base_templates/vasp/INCAR.base --set NSW=0 ISMEAR=-5 
 # 8. Rosetta Dual Verification (Functional Correctness + Scientific Validity)
 sciresearch verify INCAR --domain dft
 
-# 9. List resumable simulation runs and checkpoints
+# 9. Structure Sanity Guard (Prevent coordinate hallucinations & atomic overlaps)
+sciresearch guard-structure POSCAR
+
+# 10. Multi-Dimensional Hypothesis Evaluation (Novelty, Validity, Clarity, Feasibility)
+sciresearch eval-hypothesis "We hypothesize PHOTH-graphene band gap tuning with VASP..."
+
+# 11. SDE Closed-Loop Discovery Verification (Multi-Round state & anti-saturation sentinel)
+sciresearch sde-verify photh_project 1 "Hypothesis text..." --oracle --metric 1.25
+
+# 12. List resumable simulation runs and checkpoints
 sciresearch runs --status RUNNING
 
-# 10. Synchronize Knowledge Map and update Graphify knowledge graph
+# 13. Synchronize Knowledge Map and update Graphify knowledge graph
 sciresearch sync
 ```
 
 ---
 
-## 🔌 Model Context Protocol (MCP) Tool Suite (23 Tools)
+## 🔌 Model Context Protocol (MCP) Tool Suite (26 Tools)
 
-The skill exposes 23 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
+The skill exposes 26 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
 
 ### 1. DREAMS Shared Canvas & Provenance Store
 * `canvas_register_artifact(producing_tool, value, arguments, rationales, sources, declared_context, sensitive_params)`:
@@ -138,6 +152,14 @@ The skill exposes 23 dedicated tools via the `sciresearch` MCP server (`sciresea
 ### 8. Graphify Knowledge Graph Bridge
 * `graphify_sync_knowledge()`:
   Generates `docs/KNOWLEDGE_MAP.md` cross-linking all research deliverables and executes `graphify update .` to keep the local graph current.
+
+### 9. Frontier Closed-Loop & Guardrail Engines (Microsoft, LLM4SR, SDE, Huyen)
+* `guard_structure_geometry(filepath)`:
+  Inspects crystal/molecular structure files (POSCAR, CONTCAR, XYZ, CIF) for coordinate hallucinations, overlapping atoms (<0.8 Å), unphysically short bonds (<1.05 Å), negative/zero cell volumes, and fractional bounds (grounded in Microsoft AI4Science & Chip Huyen guardrails).
+* `evaluator_score_hypothesis(hypothesis_text, context)`:
+  Evaluates proposed scientific hypotheses and simulation plans across 4 rigorous dimensions: Novelty, Validity, Clarity & Operational Specificity, and Feasibility (grounded in LLM4SR Luo et al. 2025 and HKUST Autonomy).
+* `sde_verify_loop(project_name, round_index, hypothesis_text, structure_file, observed_metric, oracle_called, target_metric_goal)`:
+  Audits closed-loop discovery steps, prevents LLM reasoning compute saturation plateaus, verifies generational progression, and issues next-step guidance (grounded in SDE benchmark Song, Duan, Kulik et al. 2026).
 
 ---
 

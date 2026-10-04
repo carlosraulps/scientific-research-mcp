@@ -31,6 +31,9 @@ from dual_verifier import DualVerifier
 from protocol_engine import ProtocolEngine
 from git_controller import GitController
 from ponytail_delta import PonytailDeltaComposer
+from structure_guard import StructureSanityGuard
+from hypothesis_evaluator import HypothesisEvaluator
+from sde_loop_verifier import SDELoopVerifier
 
 
 def main():
@@ -103,6 +106,25 @@ def main():
     comp_parser.add_argument("--engine", "-e", default="vasp", choices=["vasp", "siesta", "lammps"], help="Simulation engine")
     comp_parser.add_argument("--no-prune", action="store_true", help="Disable Ponytail zero-redundancy pruning")
 
+    # Structure Sanity Guard
+    guard_parser = subparsers.add_parser("guard-structure", help="Inspect structure file (POSCAR, XYZ, CIF) for coordinate hallucinations and atomic overlaps")
+    guard_parser.add_argument("file", help="Path to structure file")
+
+    # Hypothesis Evaluator
+    hypo_parser = subparsers.add_parser("eval-hypothesis", help="Evaluate scientific hypothesis across Novelty, Validity, Clarity, and Feasibility")
+    hypo_parser.add_argument("hypothesis", help="Text or JSON file containing hypothesis")
+
+    # SDE Closed-Loop Verifier
+    sde_parser = subparsers.add_parser("sde-verify", help="Audit closed-loop discovery step and check for reasoning saturation")
+    sde_parser.add_argument("project", help="Project name")
+    sde_parser.add_argument("round", type=int, help="Round index")
+    sde_parser.add_argument("hypothesis", help="Hypothesis text")
+    sde_parser.add_argument("--structure", help="Path to structure file")
+    sde_parser.add_argument("--oracle", action="store_true", help="External computational/simulation oracle was called")
+    sde_parser.add_argument("--metric", type=float, help="Observed property metric")
+    sde_parser.add_argument("--goal", type=float, help="Target metric goal")
+    sde_parser.add_argument("--reset", action="store_true", help="Reset project state history")
+
     args = parser.parse_args()
     if not args.subcommand:
         parser.print_help()
@@ -117,6 +139,9 @@ def main():
     skills = SkillCrystallizer(BASE_DIR)
     verifier = DualVerifier(BASE_DIR)
     git = GitController(BASE_DIR)
+    structure_guard = StructureSanityGuard()
+    hypothesis_evaluator = HypothesisEvaluator(BASE_DIR)
+    sde_verifier = SDELoopVerifier(BASE_DIR)
 
     if args.subcommand == "inspect":
         res = canvas.inspect(args.store)
@@ -224,6 +249,38 @@ def main():
             "output_file": str(out_file),
             "composed_tags_count": len(composer.composed_tags)
         }, indent=2))
+
+    elif args.subcommand == "guard-structure":
+        res = structure_guard.inspect_file(args.file)
+        print(json.dumps(res, indent=2))
+        sys.exit(0 if res.get("valid", False) else 1)
+
+    elif args.subcommand == "eval-hypothesis":
+        hypo_text = args.hypothesis
+        if os.path.exists(hypo_text):
+            with open(hypo_text, "r", encoding="utf-8") as f:
+                hypo_text = f.read()
+        res = hypothesis_evaluator.evaluate_hypothesis(hypo_text)
+        print(json.dumps(res, indent=2))
+        sys.exit(0 if res.get("passed", False) else 1)
+
+    elif args.subcommand == "sde-verify":
+        if args.reset:
+            sde_verifier.reset_project(args.project)
+        hypo_text = args.hypothesis
+        if os.path.exists(hypo_text):
+            with open(hypo_text, "r", encoding="utf-8") as f:
+                hypo_text = f.read()
+        res = sde_verifier.verify_discovery_step(
+            project_name=args.project,
+            round_index=args.round,
+            hypothesis_text=hypo_text,
+            structure_file=args.structure,
+            observed_metric=args.metric,
+            oracle_called=args.oracle,
+            target_metric_goal=args.goal
+        )
+        print(json.dumps(res, indent=2))
 
 
 if __name__ == "__main__":

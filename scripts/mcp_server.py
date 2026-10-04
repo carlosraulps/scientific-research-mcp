@@ -54,6 +54,9 @@ from skill_crystallizer import SkillCrystallizer
 from dual_verifier import DualVerifier
 from protocol_engine import ProtocolEngine
 from git_controller import GitController
+from structure_guard import StructureSanityGuard
+from hypothesis_evaluator import HypothesisEvaluator
+from sde_loop_verifier import SDELoopVerifier
 
 # Initialize singletons
 BASE_DIR = os.path.dirname(SCRIPT_DIR)
@@ -67,6 +70,9 @@ SKILLS = SkillCrystallizer(BASE_DIR)
 VERIFIER = DualVerifier(BASE_DIR)
 PROTOCOLS = ProtocolEngine(BASE_DIR)
 GIT = GitController(BASE_DIR)
+STRUCTURE_GUARD = StructureSanityGuard()
+HYPOTHESIS_EVALUATOR = HypothesisEvaluator(BASE_DIR)
+SDE_VERIFIER = SDELoopVerifier(BASE_DIR)
 
 TOOLS = [
     {
@@ -413,6 +419,46 @@ TOOLS = [
                 "target_files": {"type": "array", "items": {"type": "string"}, "description": "Specific files to check for uncommitted modifications"}
             }
         }
+    },
+    {
+        "name": "guard_structure_geometry",
+        "description": "Inspects crystal/molecular structure files (POSCAR, CONTCAR, XYZ, CIF) for coordinate hallucinations, overlapping atoms (<0.8 A), unphysically short bonds (<1.05 A), negative/zero cell volumes, and fractional bounds (grounded in Microsoft AI4Science & Chip Huyen guardrails).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "filepath": {"type": "string", "description": "Path to the structure file (POSCAR, CONTCAR, etc.)"}
+            },
+            "required": ["filepath"]
+        }
+    },
+    {
+        "name": "evaluator_score_hypothesis",
+        "description": "Evaluates proposed scientific hypotheses and simulation plans across 4 rigorous dimensions: Novelty, Validity, Clarity & Operational Specificity, and Feasibility (grounded in LLM4SR Luo et al. 2025 and HKUST Autonomy).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "hypothesis_text": {"type": "string", "description": "The full scientific hypothesis or proposed simulation plan to evaluate"},
+                "context": {"type": "object", "description": "Optional simulation context dictionary"}
+            },
+            "required": ["hypothesis_text"]
+        }
+    },
+    {
+        "name": "sde_verify_loop",
+        "description": "Audits closed-loop discovery steps, prevents LLM reasoning compute saturation plateaus, verifies generational progression, and issues next-step guidance (grounded in SDE benchmark Song, Duan, Kulik et al. 2026).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "project_name": {"type": "string", "description": "Name of the research/discovery project"},
+                "round_index": {"type": "integer", "description": "Current round/generation index"},
+                "hypothesis_text": {"type": "string", "description": "Hypothesis for this round"},
+                "structure_file": {"type": "string", "description": "Optional structure file to validate"},
+                "observed_metric": {"type": "number", "description": "Observed property metric from simulation oracle"},
+                "oracle_called": {"type": "boolean", "default": False, "description": "Whether an external simulation/computational oracle was called"},
+                "target_metric_goal": {"type": "number", "description": "Optional target objective value"}
+            },
+            "required": ["project_name", "round_index", "hypothesis_text"]
+        }
     }
 ]
 
@@ -573,6 +619,20 @@ def handle_tool_call(name: str, args: Dict[str, Any]) -> Any:
         if target_files:
             return GIT.verify_reproducibility(target_files=target_files)
         return GIT.get_status()
+    elif name == "guard_structure_geometry":
+        return STRUCTURE_GUARD.inspect_file(args.get("filepath", ""))
+    elif name == "evaluator_score_hypothesis":
+        return HYPOTHESIS_EVALUATOR.evaluate_hypothesis(args.get("hypothesis_text", ""), args.get("context"))
+    elif name == "sde_verify_loop":
+        return SDE_VERIFIER.verify_discovery_step(
+            project_name=args.get("project_name", ""),
+            round_index=args.get("round_index", 1),
+            hypothesis_text=args.get("hypothesis_text", ""),
+            structure_file=args.get("structure_file"),
+            observed_metric=args.get("observed_metric"),
+            oracle_called=args.get("oracle_called", False),
+            target_metric_goal=args.get("target_metric_goal")
+        )
     else:
         return {"error": f"Unknown tool: {name}", "isError": True}
 
