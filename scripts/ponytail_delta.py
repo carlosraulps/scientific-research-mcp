@@ -263,6 +263,22 @@ class PonytailDeltaComposer:
             final_comment = rationale if rationale else existing_comm
             final_source = source if source else existing_src
 
+            # Fallback to NotebookLM grounding cache if no comment exists
+            if not final_comment:
+                try:
+                    try:
+                        from notebooklm_bridge import NotebookLMBridge
+                    except ImportError:
+                        from scripts.notebooklm_bridge import NotebookLMBridge
+                    bridge = NotebookLMBridge()
+                    grounding = bridge.lookup_grounding(self.engine, key)
+                    if grounding:
+                        final_comment = grounding["rationale"]
+                        src = grounding["source_citations"][0] if grounding["source_citations"] else grounding["notebook_id"]
+                        final_source = f"NotebookLM:{src}"
+                except Exception:
+                    pass
+
             tags[key] = {
                 "value": val,
                 "comment": final_comment,

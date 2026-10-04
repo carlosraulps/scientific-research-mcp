@@ -1,0 +1,88 @@
+{
+  "vasp:ALGO": {
+    "tag": "ALGO",
+    "engine": "vasp",
+    "notebook_id": "dft-documentation",
+    "recommended_value": "Fast",
+    "rationale": "Combines Blocked-Davidson (1 sweep) with RMM-DIIS, avoiding full orthonormalization per ionic step. For magnetic 2D systems, verify local magnetic moments do not collapse.",
+    "source_citations": [
+      "dft-doc:1",
+      "dft-doc:2",
+      "dft-doc:5"
+    ],
+    "cached_at": 1791113518.835287
+  },
+  "vasp:POTIM": {
+    "tag": "POTIM",
+    "engine": "vasp",
+    "notebook_id": "dft-documentation",
+    "recommended_value": "0.25",
+    "rationale": "Reduces ionic step length to 0.25 for 2D layered and puckered materials; prevents conjugate-gradient line searches from overshooting soft van der Waals minima.",
+    "source_citations": [
+      "dft-doc:7",
+      "dft-doc:10"
+    ],
+    "cached_at": 1791113518.835288
+  },
+  "vasp:AMIX": {
+    "tag": "AMIX",
+    "engine": "vasp",
+    "notebook_id": "dft-documentation",
+    "recommended_value": "0.2",
+    "rationale": "Linear mixing parameter reduced to 0.2 alongside BMIX=0.0001 (Pulay) to prevent persistent SCF charge sloshing oscillations on narrow-gap metallic slabs.",
+    "source_citations": [
+      "dft-doc:Sloshing",
+      "DREAMS:Wang2026"
+    ],
+    "cached_at": 1791113518.835288
+  },
+  "lammps:timestep": {
+    "tag": "timestep",
+    "engine": "lammps",
+    "notebook_id": "md-documentation",
+    "recommended_value": "1.0",
+    "rationale": "Set to ~1/10th of the highest vibrational frequency in the system (1.0 fs for units real; 0.25-0.5 fs for ReaxFF/eFF) to prevent bond stretching numerical explosion.",
+    "source_citations": [
+      "md-doc:31",
+      "md-doc:41"
+    ],
+    "cached_at": 1791113518.835288
+  },
+  "lammps:Tdamp": {
+    "tag": "Tdamp",
+    "engine": "lammps",
+    "notebook_id": "md-documentation",
+    "recommended_value": "100.0 * dt",
+    "rationale": "Thermostat damping timescale (~100 fs) controls thermalization speed; too small causes wild temperature oscillations, too large causes sluggish thermal response.",
+    "source_citations": [
+      "md-doc:35",
+      "md-doc:45"
+    ],
+    "cached_at": 1791113518.835289
+  },
+  "lammps:Pdamp": {
+    "tag": "Pdamp",
+    "engine": "lammps",
+    "notebook_id": "md-documentation",
+    "recommended_value": "1000.0 * dt",
+    "rationale": "Barostat damping timescale kept ~10x larger than Tdamp to decouple box volume relaxation from high-frequency thermal vibrations.",
+    "source_citations": [
+      "md-doc:30",
+      "md-doc:35",
+      "md-doc:48"
+    ],
+    "cached_at": 1791113518.835289
+  },
+  "lammps:aniso": {
+    "tag": "aniso",
+    "engine": "lammps",
+    "notebook_id": "md-documentation",
+    "recommended_value": "aniso 1.0 1.0 $(1000.0 * dt)",
+    "rationale": "For anisotropic 2D carbon sheets or slabs, use aniso or independent directional pressure control (x and y) instead of isotropic (iso) barostatting to avoid unphysical box tilting.",
+    "source_citations": [
+      "md-doc:31",
+      "md-doc:68"
+    ],
+    "cached_at": 1791113518.835289
+  }
+}

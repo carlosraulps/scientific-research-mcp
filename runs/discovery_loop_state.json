@@ -3,7 +3,7 @@
   "rounds": [
     {
       "round_index": 1,
-      "timestamp": 1791113305.86944,
+      "timestamp": 1791113693.542507,
       "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
       "hypothesis_score": 100.0,
       "hypothesis_passed": true,
@@ -15,7 +15,7 @@
     },
     {
       "round_index": 2,
-      "timestamp": 1791113305.8698611,
+      "timestamp": 1791113693.542928,
       "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
       "hypothesis_score": 100.0,
       "hypothesis_passed": true,
@@ -27,7 +27,7 @@
     },
     {
       "round_index": 3,
-      "timestamp": 1791113305.8702452,
+      "timestamp": 1791113693.5433118,
       "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
       "hypothesis_score": 100.0,
       "hypothesis_passed": true,
@@ -39,7 +39,7 @@
     },
     {
       "round_index": 4,
-      "timestamp": 1791113305.8706298,
+      "timestamp": 1791113693.543705,
       "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
       "hypothesis_score": 100.0,
       "hypothesis_passed": true,

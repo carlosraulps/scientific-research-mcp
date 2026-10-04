@@ -34,6 +34,7 @@ from ponytail_delta import PonytailDeltaComposer
 from structure_guard import StructureSanityGuard
 from hypothesis_evaluator import HypothesisEvaluator
 from sde_loop_verifier import SDELoopVerifier
+from notebooklm_bridge import NotebookLMBridge
 
 
 def main():
@@ -124,6 +125,11 @@ def main():
     sde_parser.add_argument("--metric", type=float, help="Observed property metric")
     sde_parser.add_argument("--goal", type=float, help="Target metric goal")
     sde_parser.add_argument("--reset", action="store_true", help="Reset project state history")
+
+    # NotebookLM Grounding Lookup
+    ground_parser = subparsers.add_parser("ground", help="Look up NotebookLM-grounded parameter rationale and literature citation")
+    ground_parser.add_argument("engine", choices=["vasp", "siesta", "lammps", "orca", "all"], help="Simulation engine")
+    ground_parser.add_argument("tag", help="Parameter tag (e.g. ALGO, POTIM, Tdamp, Pdamp, AMIX)")
 
     args = parser.parse_args()
     if not args.subcommand:
@@ -281,6 +287,14 @@ def main():
             target_metric_goal=args.goal
         )
         print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "ground":
+        bridge = NotebookLMBridge(BASE_DIR)
+        res = bridge.lookup_grounding(args.engine, args.tag)
+        if res:
+            print(json.dumps(res, indent=2))
+        else:
+            print(json.dumps({"error": f"No cached NotebookLM grounding found for {args.engine}:{args.tag}", "isError": True}))
 
 
 if __name__ == "__main__":

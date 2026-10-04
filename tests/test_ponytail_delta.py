@@ -132,6 +132,14 @@ class TestPonytailDeltaComposer(unittest.TestCase):
             self.assertIn("NEDOS        = 2001", content)
             self.assertIn("LORBIT       = 11", content)
 
+    def test_06_auto_grounding_fallback(self):
+        base_incar = "ENCUT = 520\nNSW = 50\n"
+        delta = {"POTIM": "0.25"}
+        tags = self.composer_vasp.apply_delta(base_incar, delta, prune_redundant=False)
+        rendered = self.composer_vasp.render_incar(tags)
+        self.assertIn("POTIM", rendered)
+        self.assertIn("NotebookLM:dft-doc:7", rendered)
+
 
 if __name__ == "__main__":
     unittest.main()
