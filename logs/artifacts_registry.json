@@ -1533,5 +1533,107 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "1da13279": {
+    "result_id": "1da13279",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Investigation of hydrogen chemisorption orbital rearrangement and 3D charge density difference (CDD) in PHOTH-graphene via high-resolution headless VESTA CLI rendering.",
+    "parent_ids": [],
+    "created_at": "2026-10-05T13:32:16.237400+00:00",
+    "git": {
+      "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+      "short_commit": "cd025a47",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "109e1be5": {
+    "result_id": "109e1be5",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Electronic structure and mechanical deformation analysis of 2D PHOTH-graphene under biaxial strain (-3% to +3%) with Wyckoff site identification.",
+    "parent_ids": [],
+    "created_at": "2026-10-05T14:28:42.701185+00:00",
+    "git": {
+      "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+      "short_commit": "cd025a47",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "9f4c9fe3": {
+    "result_id": "9f4c9fe3",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Piezocatalytic hydrogen evolution reaction (HER) electronic structure and 3D Charge Density Difference (CDD) analysis for Site C5 of PHOTH-graphene under biaxial mechanical strain (-3% to +3%).",
+    "parent_ids": [],
+    "created_at": "2026-10-05T15:53:15.116102+00:00",
+    "git": {
+      "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+      "short_commit": "cd025a47",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "4268dba3": {
+    "result_id": "4268dba3",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Investigation of 3D Charge Density Difference and piezocatalytic response for hydrogen adsorption on PHOTH-graphene under biaxial mechanical strain.",
+    "parent_ids": [],
+    "created_at": "2026-10-05T17:20:47.745971+00:00",
+    "git": {
+      "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+      "short_commit": "cd025a47",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "def049e3": {
+    "result_id": "def049e3",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "3D Bader charge quantum partitioning and valence density visualization for hydrogen chemisorption at site C5 of PHOTH-graphene.",
+    "parent_ids": [],
+    "created_at": "2026-10-05T17:21:12.013688+00:00",
+    "git": {
+      "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+      "short_commit": "cd025a47",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "a2108b2d": {
+    "result_id": "a2108b2d",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Authentic DFT 3D frontier molecular orbital animation of HOMO and LUMO states for hydrogen chemisorption at site C5 of PHOTH-graphene with continuous orbital rotation and gold base formula unit labeling.",
+    "parent_ids": [],
+    "created_at": "2026-10-05T17:41:23.445172+00:00",
+    "git": {
+      "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+      "short_commit": "cd025a47",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

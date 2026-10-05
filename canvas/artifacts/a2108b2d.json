@@ -1,0 +1,17 @@
+{
+  "result_id": "a2108b2d",
+  "producing_tool": "",
+  "value": null,
+  "arguments": {},
+  "rationales": {},
+  "sources": {},
+  "declared_context": "Authentic DFT 3D frontier molecular orbital animation of HOMO and LUMO states for hydrogen chemisorption at site C5 of PHOTH-graphene with continuous orbital rotation and gold base formula unit labeling.",
+  "parent_ids": [],
+  "created_at": "2026-10-05T17:41:23.445172+00:00",
+  "git": {
+    "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+    "short_commit": "cd025a47",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

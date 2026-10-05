@@ -1,0 +1,17 @@
+{
+  "result_id": "def049e3",
+  "producing_tool": "",
+  "value": null,
+  "arguments": {},
+  "rationales": {},
+  "sources": {},
+  "declared_context": "3D Bader charge quantum partitioning and valence density visualization for hydrogen chemisorption at site C5 of PHOTH-graphene.",
+  "parent_ids": [],
+  "created_at": "2026-10-05T17:21:12.013688+00:00",
+  "git": {
+    "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+    "short_commit": "cd025a47",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

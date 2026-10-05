@@ -1,0 +1,17 @@
+{
+  "result_id": "4268dba3",
+  "producing_tool": "",
+  "value": null,
+  "arguments": {},
+  "rationales": {},
+  "sources": {},
+  "declared_context": "Investigation of 3D Charge Density Difference and piezocatalytic response for hydrogen adsorption on PHOTH-graphene under biaxial mechanical strain.",
+  "parent_ids": [],
+  "created_at": "2026-10-05T17:20:47.745971+00:00",
+  "git": {
+    "commit": "cd025a47a527fbc9d856e20706e73625cf862ed5",
+    "short_commit": "cd025a47",
+    "branch": "master",
+    "is_dirty": true
+  }
+}
