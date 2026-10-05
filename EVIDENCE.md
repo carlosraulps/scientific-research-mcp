@@ -161,3 +161,11 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Intervention**: Enlarged figsize from (11.8, 5.2) to (12.0, 5.6), set top=0.83, pad=6, and suptitle y=0.965 across all 3 coupled GIFs and vector figures.
 - **Observed Outcome**: 100% collision-free publication-quality coupled Band+PDOS animations across Biaxial, Uniaxial X, and Uniaxial Y modes.
 - **Evidence / Artifact Reference**: `https://github.com/carlosraulps/photh-gr/commit/1dba48f`
+### [2026-10-04T21:01:19.338095+00:00] Decision: multi_tier_hubbard_audit (`run_tm_multitier_comparison`)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: Multi-site Hubbard U (U_Cr + U_TM = 3.29 eV) shifts 3d orbital localization relative to single-site U_Cr, modulating both the Sabatier HER free energy and the thermodynamic driving force for pore penetration.
+- **Intervention**: Constructed multi-tier comparative analysis for Adsorbed vs Embedded Co, Fe, Ni across vdW, U_Cr, and U_Cr+U_TM tiers.
+- **Observed Outcome**: Comprehensive 4-panel publication figure resolving Delta G, E_ads, E_bind, and magnetization trends with zero collisions.
+- **Evidence / Artifact Reference**: `tab_sistemas_termo_completed_all_functionals.tex`
+
+---

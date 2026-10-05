@@ -247,5 +247,57 @@
         "timestamp": "2026-10-02T20:40:59.533517+00:00"
       }
     ]
+  },
+  "phonon_band_structure___strain_physics_in_monolayer_crcl3": {
+    "key": "phonon_band_structure___strain_physics_in_monolayer_crcl3",
+    "title": "Phonon Band Structure & Strain Physics in Monolayer CrCl3",
+    "current_version": 1,
+    "current_file": "phonon_band_structure___strain_physics_in_monolayer_crcl3_v1.md",
+    "tags": [
+      "phonons",
+      "strain",
+      "CrCl3",
+      "phonopy",
+      "VASP"
+    ],
+    "references": [],
+    "updated_at": "2026-10-04T11:47:46.182509+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "phonon_band_structure___strain_physics_in_monolayer_crcl3_v1.md",
+        "timestamp": "2026-10-04T11:47:46.182509+00:00"
+      }
+    ]
+  },
+  "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot": {
+    "key": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot",
+    "title": "CrCl3 2x2 TM Adsorption and Embedding Multi-Tier Convergence Snapshot",
+    "current_version": 2,
+    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
+    "tags": [
+      "crcl3",
+      "hpc",
+      "server_info",
+      "convergence",
+      "u_all329",
+      "co_fe_ni"
+    ],
+    "references": [
+      "22e6c873"
+    ],
+    "updated_at": "2026-10-05T10:16:39.592103+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v1.md",
+        "timestamp": "2026-10-04T23:15:49.477487+00:00"
+      },
+      {
+        "version": 2,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
+        "timestamp": "2026-10-05T10:16:39.592103+00:00"
+      }
+    ]
   }
 }

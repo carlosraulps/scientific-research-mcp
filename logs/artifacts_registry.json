@@ -2045,5 +2045,39 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "b4dac365": {
+    "result_id": "b4dac365",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Investigation of transition-metal functionalized CrCl3 monolayers comparing adsorbed and embedded geometries under single-site vs multi-site Hubbard U corrections.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T21:08:42.996717+00:00",
+    "git": {
+      "commit": "28f5b4fc7d07b26f562a2b5cb46b4d5ee3fc0295",
+      "short_commit": "28f5b4fc",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "22e6c873": {
+    "result_id": "22e6c873",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Audited publication figure for CrCl3-TM electrocatalysis: strictly plots real converged DFT results across vdW and +U_Cr tiers, and highlights the single converged Tier 3 pair (Fe_emb = +1.82 eV) while marking computing/queued jobs transparently with zero invented data.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T21:31:35.823641+00:00",
+    "git": {
+      "commit": "28f5b4fc7d07b26f562a2b5cb46b4d5ee3fc0295",
+      "short_commit": "28f5b4fc",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }
