@@ -75,7 +75,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "vesta_cdd_stub",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
@@ -88,24 +88,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": "checkpointmanager",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L24"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller",
-      "label": "GitController",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "gitcontroller",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L23"
     },
     {
       "id": "scripts_skill_crystallizer_skillcrystallizer",
@@ -171,6 +158,31 @@
       "norm_label": "factsstore",
       "source_file": "scripts/facts_store.py",
       "source_location": "L20"
+    },
+    {
+      "id": "scripts_git_controller_gitcontroller",
+      "label": "GitController",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "GitController",
+      "file_type": "code",
+      "norm_label": "gitcontroller",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "cli_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "scripts/__init__.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "cli.py",
+      "source_location": "L35"
     },
     {
       "id": "scripts_canvas_store_canvasstore_audit_provenance_chain",
@@ -1865,12 +1877,36 @@
       "source_location": "L13"
     },
     {
+      "id": "skills_vesta_automation_scripts_batch_vesta_render_batch_render_directory",
+      "label": "batch_render_directory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "batch_render_directory()",
+      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_batch_vesta_render_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
+      "source_location": "L122"
+    },
+    {
       "id": "skills_vesta_automation_scripts_generate_vstd_build_cdd_isosurface_section",
       "label": "build_cdd_isosurface_section()",
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "build_cdd_isosurface_section()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1882,7 +1918,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "build_sbond_section()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1894,7 +1930,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "estimate_bond_cutoffs()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1906,7 +1942,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "extract_species_from_structure()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1918,7 +1954,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "generate_vesta_project_content()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1930,7 +1966,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "generate_vstd_content()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1942,7 +1978,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -1954,7 +1990,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "dynamic_feature_crop()",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
@@ -1966,7 +2002,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
@@ -1978,7 +2014,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "render_cdd_suite()",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
@@ -1990,11 +2026,71 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": ".render_cdd()",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
       "source_location": "L34"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_automate_vesta_gui",
+      "label": "automate_vesta_gui()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "automate_vesta_gui()",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L129"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_find_vesta_binary",
+      "label": "find_vesta_binary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "find_vesta_binary()",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L36"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L308"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_render_vesta_native",
+      "label": "render_vesta_native()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "render_vesta_native()",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L59"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_run_vesta_pipeline",
+      "label": "run_vesta_pipeline()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "run_vesta_pipeline()",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L219"
     },
     {
       "id": "skills_vesta_automation_scripts_vesta_cdd_main",
@@ -2002,7 +2098,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
@@ -2014,7 +2110,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "render_cdd()",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
@@ -2026,11 +2122,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "trim_whitespace()",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
       "source_location": "L33"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_build_cdd_isosurface_block",
+      "label": "build_cdd_isosurface_block()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "build_cdd_isosurface_block()",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L94"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_build_sbond_block",
+      "label": "build_sbond_block()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "build_sbond_block()",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_generate_vesta_project",
+      "label": "generate_vesta_project()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "generate_vesta_project()",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L118"
     },
     {
       "id": "scripts_checkpoint_manager_checkpointmanager_append_trace_step",
@@ -2038,7 +2170,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": ".append_trace_step()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2050,7 +2182,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": ".generate_run_id()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2062,7 +2194,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": ".__init__()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2074,7 +2206,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": "._init_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2086,7 +2218,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": ".list_runs()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2098,7 +2230,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": "._load_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2110,7 +2242,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": ".resume_run()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2122,7 +2254,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": "._save_index()",
       "source_file": "scripts/checkpoint_manager.py",
@@ -2134,83 +2266,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": ".save_run()",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L55"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_create_snapshot",
-      "label": ".create_snapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".create_snapshot()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L108"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_get_status",
-      "label": ".get_status()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".get_status()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L43"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L24"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_is_git_repo",
-      "label": ".is_git_repo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".is_git_repo()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L38"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_run_git",
-      "label": "._run_git()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "._run_git()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L29"
-    },
-    {
-      "id": "scripts_git_controller_gitcontroller_verify_reproducibility",
-      "label": ".verify_reproducibility()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": ".verify_reproducibility()",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L197"
     },
     {
       "id": "scripts_skill_crystallizer_skillcrystallizer_init",
@@ -2357,28 +2417,16 @@
       "source_location": "L106"
     },
     {
-      "id": "cli_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "cli.py",
-      "source_location": "L41"
-    },
-    {
       "id": "scripts_mcp_server_handle_tool_call",
       "label": "handle_tool_call()",
       "_callable": true,
       "_origin": "ast",
       "community": 65,
-      "community_name": "scripts/__init__.py",
+      "community_name": "handle_tool_call",
       "file_type": "code",
       "norm_label": "handle_tool_call()",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L479"
+      "source_location": "L420"
     },
     {
       "id": "scripts_mcp_server_main",
@@ -2386,83 +2434,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 65,
-      "community_name": "scripts/__init__.py",
+      "community_name": "handle_tool_call",
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L666"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "label": "extract_compact_2d_slice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "extract_compact_2d_slice()",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L280"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_parse_acf_dat",
-      "label": "parse_acf_dat()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "parse_acf_dat()",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L51"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "label": "quantify_electronic_strain_metrics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "quantify_electronic_strain_metrics()",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L566"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics_get_col",
-      "label": "get_col()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "get_col()",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L606"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "label": "standardize_wyckoff_bader_charges()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "standardize_wyckoff_bader_charges()",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L92"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "label": "validate_animation_geometry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "validate_animation_geometry()",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L480"
+      "source_location": "L580"
     },
     {
       "id": "skills_xcrysden_visualizer_scripts_auto_slice_2d_auto_slice_and_render",
@@ -2762,7 +2738,7 @@
       "file_type": "code",
       "norm_label": ".save_fact()",
       "source_file": "scripts/facts_store.py",
-      "source_location": "L135"
+      "source_location": "L98"
     },
     {
       "id": "scripts_facts_store_factsstore_search_facts",
@@ -2774,7 +2750,7 @@
       "file_type": "code",
       "norm_label": ".search_facts()",
       "source_file": "scripts/facts_store.py",
-      "source_location": "L166"
+      "source_location": "L129"
     },
     {
       "id": "scripts_facts_store_factsstore_seed_reference_traps",
@@ -3053,124 +3029,76 @@
       "source_location": "L153"
     },
     {
-      "id": "skills_vesta_automation_scripts_batch_vesta_render_batch_render_directory",
-      "label": "batch_render_directory()",
+      "id": "scripts_git_controller_gitcontroller_create_snapshot",
+      "label": ".create_snapshot()",
       "_callable": true,
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "batch_render_directory()",
-      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
-      "source_location": "L23"
+      "norm_label": ".create_snapshot()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L108"
     },
     {
-      "id": "skills_vesta_automation_scripts_batch_vesta_render_main",
-      "label": "main()",
+      "id": "scripts_git_controller_gitcontroller_get_status",
+      "label": ".get_status()",
       "_callable": true,
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
-      "source_location": "L122"
+      "norm_label": ".get_status()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L43"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_automate_vesta_gui",
-      "label": "automate_vesta_gui()",
+      "id": "scripts_git_controller_gitcontroller_init",
+      "label": ".__init__()",
       "_callable": true,
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "automate_vesta_gui()",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L129"
+      "norm_label": ".__init__()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L24"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_find_vesta_binary",
-      "label": "find_vesta_binary()",
+      "id": "scripts_git_controller_gitcontroller_is_git_repo",
+      "label": ".is_git_repo()",
       "_callable": true,
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "find_vesta_binary()",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L36"
+      "norm_label": ".is_git_repo()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L38"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_main",
-      "label": "main()",
+      "id": "scripts_git_controller_gitcontroller_run_git",
+      "label": "._run_git()",
       "_callable": true,
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L308"
+      "norm_label": "._run_git()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L29"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_render_vesta_native",
-      "label": "render_vesta_native()",
+      "id": "scripts_git_controller_gitcontroller_verify_reproducibility",
+      "label": ".verify_reproducibility()",
       "_callable": true,
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "render_vesta_native()",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L59"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_auto_run_vesta_pipeline",
-      "label": "run_vesta_pipeline()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "run_vesta_pipeline()",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L219"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_build_cdd_isosurface_block",
-      "label": "build_cdd_isosurface_block()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "build_cdd_isosurface_block()",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L94"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_build_sbond_block",
-      "label": "build_sbond_block()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "build_sbond_block()",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L57"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_generate_vesta_project",
-      "label": "generate_vesta_project()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "generate_vesta_project()",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L118"
+      "norm_label": ".verify_reproducibility()",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L197"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd_crossfade",
@@ -3273,7 +3201,7 @@
       "label": "cli.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "cli.py",
       "source_file": "cli.py",
@@ -3284,7 +3212,7 @@
       "label": "canvas_store.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "canvas_store.py",
       "source_file": "scripts/canvas_store.py",
@@ -3295,7 +3223,7 @@
       "label": "checkpoint_manager.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "checkpoint_manager.py",
       "source_file": "scripts/checkpoint_manager.py",
@@ -3306,7 +3234,7 @@
       "label": "dual_verifier.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "dual_verifier.py",
       "source_file": "scripts/dual_verifier.py",
@@ -3317,7 +3245,7 @@
       "label": "facts_store.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "facts_store.py",
       "source_file": "scripts/facts_store.py",
@@ -3328,7 +3256,7 @@
       "label": "git_controller.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "git_controller.py",
       "source_file": "scripts/git_controller.py",
@@ -3339,7 +3267,7 @@
       "label": "graphify_bridge.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "graphify_bridge.py",
       "source_file": "scripts/graphify_bridge.py",
@@ -3350,10 +3278,21 @@
       "label": "historical_memory.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "historical_memory.py",
       "source_file": "scripts/historical_memory.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_init",
+      "label": "scripts/__init__.py",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "scripts/__init__.py",
+      "file_type": "code",
+      "norm_label": "scripts/__init__.py",
+      "source_file": "scripts/__init__.py",
       "source_location": "L1"
     },
     {
@@ -3361,7 +3300,7 @@
       "label": "mcp_server.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "mcp_server.py",
       "source_file": "scripts/mcp_server.py",
@@ -3372,7 +3311,7 @@
       "label": "protocol_engine.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "protocol_engine.py",
       "source_file": "scripts/protocol_engine.py",
@@ -3383,7 +3322,7 @@
       "label": "scientific_evaluator.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "scientific_evaluator.py",
       "source_file": "scripts/scientific_evaluator.py",
@@ -3394,7 +3333,7 @@
       "label": "skill_crystallizer.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "skill_crystallizer.py",
       "source_file": "scripts/skill_crystallizer.py",
@@ -3405,7 +3344,7 @@
       "label": "test_sciresearch.py",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "code",
       "norm_label": "test_sciresearch.py",
       "source_file": "tests/test_sciresearch.py",
@@ -3416,7 +3355,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "cli.py",
@@ -3427,7 +3366,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/canvas_store.py",
@@ -3438,7 +3377,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/checkpoint_manager.py",
@@ -3449,7 +3388,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/dual_verifier.py",
@@ -3460,7 +3399,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/facts_store.py",
@@ -3471,7 +3410,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/git_controller.py",
@@ -3482,7 +3421,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/graphify_bridge.py",
@@ -3493,18 +3432,29 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/historical_memory.py",
       "source_location": "L2"
     },
     {
+      "id": "scripts_init_rationale_1",
+      "label": "Scientific Research Log Skill & MCP Engine package.",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "scripts/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "scientific research log skill & mcp engine package.",
+      "source_file": "scripts/__init__.py",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_mcp_server_rationale_2",
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/mcp_server.py",
@@ -3515,7 +3465,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/protocol_engine.py",
@@ -3526,7 +3476,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/scientific_evaluator.py",
@@ -3537,7 +3487,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/skill_crystallizer.py",
@@ -3548,7 +3498,7 @@
       "label": "Unit tests for Scientific Research Log Skill & MCP Engine (21 Tools).",
       "_origin": "ast",
       "community": 0,
-      "community_name": "mcp_server.py",
+      "community_name": "scripts/__init__.py",
       "file_type": "rationale",
       "norm_label": "unit tests for scientific research log skill & mcp engine (21 tools).",
       "source_file": "tests/test_sciresearch.py",
@@ -7451,11 +7401,33 @@
       "source_location": "L14"
     },
     {
+      "id": "skills_vesta_automation_scripts_batch_vesta_render",
+      "label": "batch_vesta_render.py",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "batch_vesta_render.py",
+      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_batch_vesta_render_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "skills_vesta_automation_scripts_generate_vstd",
       "label": "generate_vstd.py",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "generate_vstd.py",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7466,7 +7438,7 @@
       "label": "Path",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "path",
       "source_file": "",
@@ -7477,18 +7449,40 @@
       "label": "render_cdd_hd_suite.py",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "render_cdd_hd_suite.py",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
       "source_location": "L1"
     },
     {
+      "id": "skills_vesta_automation_scripts_vesta_auto",
+      "label": "vesta_auto.py",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "vesta_auto.py",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "skills_vesta_automation_scripts_vesta_cdd",
       "label": "vesta_cdd.py",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "vesta_cdd.py",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
@@ -7499,18 +7493,62 @@
       "label": "Path",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "code",
       "norm_label": "path",
       "source_file": "",
       "source_location": ""
     },
     {
+      "id": "skills_vesta_automation_scripts_vstd_generator",
+      "label": "vstd_generator.py",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "vstd_generator.py",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "skills_vesta_automation_scripts_batch_vesta_render_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_batch_vesta_render_rationale_32",
+      "label": "Renders all matching crystal structures in input_dir and builds a summary\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "renders all matching crystal structures in input_dir and builds a summary...",
+      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
+      "source_location": "L32"
+    },
+    {
       "id": "skills_vesta_automation_scripts_generate_vstd_rationale_111",
       "label": "Calculates physically realistic bond cutoff: (r1 + r2) * 1.25. Special\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "calculates physically realistic bond cutoff: (r1 + r2) * 1.25. special...",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7521,7 +7559,7 @@
       "label": "Generates the SBOND block with strict Bound = 0 and SEARCH_BOUNDARY = 0.\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "generates the sbond block with strict bound = 0 and search_boundary = 0....",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7532,7 +7570,7 @@
       "label": "Constructs ISURF and SURFC blocks for dual positive/negative Charge Density\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "constructs isurf and surfc blocks for dual positive/negative charge density...",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7543,7 +7581,7 @@
       "label": "Creates a clean .vstd style configuration.",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "creates a clean .vstd style configuration.",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7554,7 +7592,7 @@
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7565,7 +7603,7 @@
       "label": "Creates an authentic, lightweight .vesta project file referencing an external\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "creates an authentic, lightweight .vesta project file referencing an external...",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7576,7 +7614,7 @@
       "label": "Extracts unique chemical elements from POSCAR, CONTCAR, CIF, or XSF file.",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "extracts unique chemical elements from poscar, contcar, cif, or xsf file.",
       "source_file": "skills/vesta-automation/scripts/generate_vstd.py",
@@ -7587,7 +7625,7 @@
       "label": "Multi-view CDD publication suite that renders multiple crystallographic\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "multi-view cdd publication suite that renders multiple crystallographic...",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
@@ -7598,7 +7636,7 @@
       "label": "Non-destructive border inpainting (white border cleanup without touching\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "non-destructive border inpainting (white border cleanup without touching...",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
@@ -7609,18 +7647,73 @@
       "label": "Render multi-view CDD publication suite. Args: cdd_file (str): Path to the CDD\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "render multi-view cdd publication suite. args: cdd_file (str): path to the cdd...",
       "source_file": "skills/vesta-automation/scripts/render_cdd_hd_suite.py",
       "source_location": "L82"
     },
     {
+      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_137",
+      "label": "Fallback GUI automation using X11 window introspection and pyautogui.",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "fallback gui automation using x11 window introspection and pyautogui.",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L137"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_233",
+      "label": "Unified high-level rendering entry point with automatic CLI prioritization and\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "unified high-level rendering entry point with automatic cli prioritization and...",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L233"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_37",
+      "label": "Locates the VESTA binary across macOS and Linux installations. CRITICAL:\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "locates the vesta binary across macos and linux installations. critical:...",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_67",
+      "label": "Renders an image headlessly using VESTA's native terminal export flags.",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "renders an image headlessly using vesta's native terminal export flags.",
+      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
+      "source_location": "L67"
+    },
+    {
       "id": "skills_vesta_automation_scripts_vesta_cdd_rationale_2",
       "label": "===============================================================================\u2026",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
@@ -7631,7 +7724,7 @@
       "label": "Trims uniform border whitespace down to padding pixels.",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "trims uniform border whitespace down to padding pixels.",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
@@ -7642,11 +7735,55 @@
       "label": "Renders 3D Charge Density Difference headlessly using VESTA.",
       "_origin": "ast",
       "community": 58,
-      "community_name": "vesta_cdd.py",
+      "community_name": "vesta_auto.py",
       "file_type": "rationale",
       "norm_label": "renders 3d charge density difference headlessly using vesta.",
       "source_file": "skills/vesta-automation/scripts/vesta_cdd.py",
       "source_location": "L67"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_101",
+      "label": "Builds the ISURF and SURFC blocks for dual positive/negative isosurface\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "builds the isurf and surfc blocks for dual positive/negative isosurface...",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L101"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_129",
+      "label": "Creates an authentic, lightweight .vesta project wrapper that references an\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "creates an authentic, lightweight .vesta project wrapper that references an...",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L129"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_61",
+      "label": "Builds the SBOND section for VESTA. Token 7 ('Bound') controls periodic\u2026",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "vesta_auto.py",
+      "file_type": "rationale",
+      "norm_label": "builds the sbond section for vesta. token 7 ('bound') controls periodic...",
+      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
+      "source_location": "L61"
     },
     {
       "id": "skills_publication_figure_formatter_skill",
@@ -7663,18 +7800,6 @@
       "norm_label": "publication-figure-formatter/skill.md",
       "source_file": "skills/publication-figure-formatter/SKILL.md",
       "source_location": "L1"
-    },
-    {
-      "id": "skills_publication_figure_formatter_skill_10_programmatic_zero_dilation_auditing",
-      "label": "10. Programmatic Zero-Dilation Auditing",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "10. programmatic zero-dilation auditing",
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L65"
     },
     {
       "id": "skills_publication_figure_formatter_skill_1_the_zero_dilation_rule_for_scientific_animations_format_animation",
@@ -7773,18 +7898,6 @@
       "source_location": "L53"
     },
     {
-      "id": "skills_publication_figure_formatter_skill_9_quantitative_electronic_strain_descriptors_suite",
-      "label": "9. Quantitative Electronic Strain Descriptors Suite",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "Key Capabilities & Scientific Protocols",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9. quantitative electronic strain descriptors suite",
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L56"
-    },
-    {
       "id": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
       "label": "Key Capabilities & Scientific Protocols",
       "_origin": "ast",
@@ -7830,7 +7943,7 @@
       "node_kind": "heading",
       "norm_label": "quick reference cli",
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L70"
+      "source_location": "L58"
     },
     {
       "id": "skills_publication_figure_formatter_skill_script_architecture_cli_binaries",
@@ -7842,7 +7955,7 @@
       "node_kind": "heading",
       "norm_label": "script architecture & cli binaries",
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L85"
+      "source_location": "L71"
     },
     {
       "id": "extracted_insights_02_mdcrow_checkpoints",
@@ -7929,33 +8042,11 @@
       "source_location": "L1"
     },
     {
-      "id": "completedprocess",
-      "label": "CompletedProcess",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "completedprocess",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "scripts_checkpoint_manager_py_any",
       "label": "Any",
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "scripts_git_controller_py_any",
-      "label": "Any",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "code",
       "norm_label": "any",
       "source_file": "",
@@ -7966,7 +8057,7 @@
       "label": "Reloads memory summaries, trace, parameter registry, and files for an\u2026",
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "rationale",
       "norm_label": "reloads memory summaries, trace, parameter registry, and files for an...",
       "source_file": "scripts/checkpoint_manager.py",
@@ -7977,7 +8068,7 @@
       "label": "Lists all runs with optional status and text search filtering.",
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "rationale",
       "norm_label": "lists all runs with optional status and text search filtering.",
       "source_file": "scripts/checkpoint_manager.py",
@@ -7988,7 +8079,7 @@
       "label": "Appends a discrete milestone or action to the agent trace.",
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "rationale",
       "norm_label": "appends a discrete milestone or action to the agent trace.",
       "source_file": "scripts/checkpoint_manager.py",
@@ -7999,66 +8090,11 @@
       "label": "Saves or updates a simulation run checkpoint and its dedicated run directory.",
       "_origin": "ast",
       "community": 60,
-      "community_name": "GitController",
+      "community_name": "CheckpointManager",
       "file_type": "rationale",
       "norm_label": "saves or updates a simulation run checkpoint and its dedicated run directory.",
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L66"
-    },
-    {
-      "id": "scripts_git_controller_rationale_117",
-      "label": "Creates an atomic Git commit snapshot linking the workspace state to active\u2026",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "creates an atomic git commit snapshot linking the workspace state to active...",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L117"
-    },
-    {
-      "id": "scripts_git_controller_rationale_198",
-      "label": "Evaluates whether a simulation setup is strictly reproducible from Git.",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "evaluates whether a simulation setup is strictly reproducible from git.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L198"
-    },
-    {
-      "id": "scripts_git_controller_rationale_30",
-      "label": "Helper to run git commands in the base directory.",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "helper to run git commands in the base directory.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L30"
-    },
-    {
-      "id": "scripts_git_controller_rationale_39",
-      "label": "Checks if base_dir is inside an active git repository.",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "checks if base_dir is inside an active git repository.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L39"
-    },
-    {
-      "id": "scripts_git_controller_rationale_44",
-      "label": "Retrieves current git repository state for scientific audit trails.",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "GitController",
-      "file_type": "rationale",
-      "norm_label": "retrieves current git repository state for scientific audit trails.",
-      "source_file": "scripts/git_controller.py",
-      "source_location": "L44"
     },
     {
       "id": "scripts_sync_graphify",
@@ -8201,147 +8237,37 @@
       "source_location": "L35"
     },
     {
-      "id": "scripts_init",
-      "label": "scripts/__init__.py",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "scripts/__init__.py",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L1"
-    },
-    {
       "id": "scripts_mcp_server_py_any",
       "label": "Any",
       "_origin": "ast",
       "community": 65,
-      "community_name": "scripts/__init__.py",
+      "community_name": "handle_tool_call",
       "file_type": "code",
       "norm_label": "any",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "scripts_scientific_visualization_tools",
-      "label": "scientific_visualization_tools.py",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "scientific_visualization_tools.py",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_py_any",
-      "label": "Any",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "scripts_init_rationale_1",
-      "label": "Scientific Research Log Skill & MCP Engine package.",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "scientific research log skill & mcp engine package.",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_mcp_server_rationale_480",
+      "id": "scripts_mcp_server_rationale_421",
       "label": "Dispatches tool calls to the underlying engine.",
       "_origin": "ast",
       "community": 65,
-      "community_name": "scripts/__init__.py",
+      "community_name": "handle_tool_call",
       "file_type": "rationale",
       "norm_label": "dispatches tool calls to the underlying engine.",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L480"
+      "source_location": "L421"
     },
     {
-      "id": "scripts_mcp_server_rationale_667",
+      "id": "scripts_mcp_server_rationale_581",
       "label": "Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients.",
       "_origin": "ast",
       "community": 65,
-      "community_name": "scripts/__init__.py",
+      "community_name": "handle_tool_call",
       "file_type": "rationale",
       "norm_label": "simple json-rpc 2.0 loop over stdin/stdout for mcp clients.",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L667"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_rationale_2",
-      "label": "===============================================================================\u2026",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L2"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_rationale_286",
-      "label": "Extracts a compact 2D planar density slice from a 3D volumetric file\u2026",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "extracts a compact 2d planar density slice from a 3d volumetric file...",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L286"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_rationale_484",
-      "label": "Validates that 100% of frames in a scientific animation sequence possess\u2026",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "validates that 100% of frames in a scientific animation sequence possess...",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L484"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_rationale_52",
-      "label": "Parses Henkelman ACF.dat Bader analysis output. Columns: #, X, Y, Z, CHARGE,\u2026",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "parses henkelman acf.dat bader analysis output. columns: #, x, y, z, charge,...",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L52"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_rationale_570",
-      "label": "Quantifies fundamental electronic strain descriptors across 2D carbon\u2026",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "quantifies fundamental electronic strain descriptors across 2d carbon...",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L570"
-    },
-    {
-      "id": "scripts_scientific_visualization_tools_rationale_99",
-      "label": "Standardizes Bader charges according to crystallographic Wyckoff site symmetry\u2026",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "scripts/__init__.py",
-      "file_type": "rationale",
-      "norm_label": "standardizes bader charges according to crystallographic wyckoff site symmetry...",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L99"
+      "source_location": "L581"
     },
     {
       "id": "skills_site_pyramidalization_zoom_skill",
@@ -8742,7 +8668,7 @@
       "source_location": ""
     },
     {
-      "id": "scripts_facts_store_rationale_144",
+      "id": "scripts_facts_store_rationale_107",
       "label": "Records an empirical fact, failure warning, or boundary condition into lifelong\u2026",
       "_origin": "ast",
       "community": 69,
@@ -8750,10 +8676,10 @@
       "file_type": "rationale",
       "norm_label": "records an empirical fact, failure warning, or boundary condition into lifelong...",
       "source_file": "scripts/facts_store.py",
-      "source_location": "L144"
+      "source_location": "L107"
     },
     {
-      "id": "scripts_facts_store_rationale_172",
+      "id": "scripts_facts_store_rationale_135",
       "label": "Retrieves matching facts and warnings before launching expensive workflows.",
       "_origin": "ast",
       "community": 69,
@@ -8761,7 +8687,7 @@
       "file_type": "rationale",
       "norm_label": "retrieves matching facts and warnings before launching expensive workflows.",
       "source_file": "scripts/facts_store.py",
-      "source_location": "L172"
+      "source_location": "L135"
     },
     {
       "id": "canvas_reports_sol27lc_benchmark_platinum_study",
@@ -9415,7 +9341,7 @@
       "node_kind": "heading",
       "norm_label": "2. 3d isosurface extraction & wavefront obj export",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L44"
+      "source_location": "L34"
     },
     {
       "id": "skills_electron_density_surfaces_skill_3_2d_topological_slicing_laplacian_mapping",
@@ -9427,7 +9353,7 @@
       "node_kind": "heading",
       "norm_label": "3. 2d topological slicing & laplacian mapping",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L49"
+      "source_location": "L39"
     },
     {
       "id": "skills_electron_density_surfaces_skill_4_planar_averaged_potential_work_function",
@@ -9439,7 +9365,7 @@
       "node_kind": "heading",
       "norm_label": "4. planar-averaged potential & work function",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L55"
+      "source_location": "L45"
     },
     {
       "id": "skills_electron_density_surfaces_skill_5_volumetric_grid_periodic_unwrapping",
@@ -9451,7 +9377,7 @@
       "node_kind": "heading",
       "norm_label": "5. volumetric grid periodic unwrapping",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L60"
+      "source_location": "L50"
     },
     {
       "id": "skills_electron_density_surfaces_skill_electron_density_molecular_surfaces_skill",
@@ -9499,7 +9425,7 @@
       "node_kind": "heading",
       "norm_label": "quick reference cli",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L66"
+      "source_location": "L56"
     },
     {
       "id": "skills_electron_density_surfaces_skill_script_architecture_cli_binaries",
@@ -9511,7 +9437,7 @@
       "node_kind": "heading",
       "norm_label": "script architecture & cli binaries",
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L80"
+      "source_location": "L70"
     },
     {
       "id": "canvas_notes_photh_graphene_her_electrocatalysis_mechanical_verification_v1",
@@ -9557,191 +9483,81 @@
       "source_location": "L9"
     },
     {
-      "id": "skills_vesta_automation_scripts_batch_vesta_render",
-      "label": "batch_vesta_render.py",
+      "id": "completedprocess",
+      "label": "CompletedProcess",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "batch_vesta_render.py",
-      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_batch_vesta_render_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "path",
+      "norm_label": "completedprocess",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto",
-      "label": "vesta_auto.py",
+      "id": "scripts_git_controller_py_any",
+      "label": "Any",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "code",
-      "norm_label": "vesta_auto.py",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_auto_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "path",
+      "norm_label": "any",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "skills_vesta_automation_scripts_vstd_generator",
-      "label": "vstd_generator.py",
+      "id": "scripts_git_controller_rationale_117",
+      "label": "Creates an atomic Git commit snapshot linking the workspace state to active\u2026",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "vstd_generator.py",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_vesta_automation_scripts_batch_vesta_render_rationale_2",
-      "label": "===============================================================================\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
-      "source_location": "L2"
+      "norm_label": "creates an atomic git commit snapshot linking the workspace state to active...",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L117"
     },
     {
-      "id": "skills_vesta_automation_scripts_batch_vesta_render_rationale_32",
-      "label": "Renders all matching crystal structures in input_dir and builds a summary\u2026",
+      "id": "scripts_git_controller_rationale_198",
+      "label": "Evaluates whether a simulation setup is strictly reproducible from Git.",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "rationale",
-      "norm_label": "renders all matching crystal structures in input_dir and builds a summary...",
-      "source_file": "skills/vesta-automation/scripts/batch_vesta_render.py",
-      "source_location": "L32"
+      "norm_label": "evaluates whether a simulation setup is strictly reproducible from git.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L198"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_137",
-      "label": "Fallback GUI automation using X11 window introspection and pyautogui.",
+      "id": "scripts_git_controller_rationale_30",
+      "label": "Helper to run git commands in the base directory.",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "rationale",
-      "norm_label": "fallback gui automation using x11 window introspection and pyautogui.",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L137"
+      "norm_label": "helper to run git commands in the base directory.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L30"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_2",
-      "label": "===============================================================================\u2026",
+      "id": "scripts_git_controller_rationale_39",
+      "label": "Checks if base_dir is inside an active git repository.",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L2"
+      "norm_label": "checks if base_dir is inside an active git repository.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L39"
     },
     {
-      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_233",
-      "label": "Unified high-level rendering entry point with automatic CLI prioritization and\u2026",
+      "id": "scripts_git_controller_rationale_44",
+      "label": "Retrieves current git repository state for scientific audit trails.",
       "_origin": "ast",
       "community": 78,
-      "community_name": "vesta_auto.py",
+      "community_name": "GitController",
       "file_type": "rationale",
-      "norm_label": "unified high-level rendering entry point with automatic cli prioritization and...",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L233"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_37",
-      "label": "Locates the VESTA binary across macOS and Linux installations. CRITICAL:\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "locates the vesta binary across macos and linux installations. critical:...",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L37"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vesta_auto_rationale_67",
-      "label": "Renders an image headlessly using VESTA's native terminal export flags.",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "renders an image headlessly using vesta's native terminal export flags.",
-      "source_file": "skills/vesta-automation/scripts/vesta_auto.py",
-      "source_location": "L67"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_101",
-      "label": "Builds the ISURF and SURFC blocks for dual positive/negative isosurface\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "builds the isurf and surfc blocks for dual positive/negative isosurface...",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L101"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_129",
-      "label": "Creates an authentic, lightweight .vesta project wrapper that references an\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "creates an authentic, lightweight .vesta project wrapper that references an...",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L129"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_2",
-      "label": "===============================================================================\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L2"
-    },
-    {
-      "id": "skills_vesta_automation_scripts_vstd_generator_rationale_61",
-      "label": "Builds the SBOND section for VESTA. Token 7 ('Bound') controls periodic\u2026",
-      "_origin": "ast",
-      "community": 78,
-      "community_name": "vesta_auto.py",
-      "file_type": "rationale",
-      "norm_label": "builds the sbond section for vesta. token 7 ('bound') controls periodic...",
-      "source_file": "skills/vesta-automation/scripts/vstd_generator.py",
-      "source_location": "L61"
+      "norm_label": "retrieves current git repository state for scientific audit trails.",
+      "source_file": "scripts/git_controller.py",
+      "source_location": "L44"
     },
     {
       "id": "skills_publication_figure_formatter_scripts_animate_3d_cdd",
@@ -9966,73 +9782,6 @@
       "norm_label": "remote github sync & piezocatalytic dataset ingestion",
       "source_file": "canvas/notes/photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
       "source_location": "L9"
-    },
-    {
-      "id": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1",
-      "label": "authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "_origin": "ast",
-      "community": 82,
-      "community_name": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
-      "file_type": "document",
-      "frontmatter": {
-        "title": "authentic_vesta_cdd_3d_orbital_animation_v1",
-        "version": "1",
-        "created_at": "2026-10-02T20:40:59.533517+00:00",
-        "tags": "[&quot;cdd&quot;, &quot;vesta&quot;, &quot;isosurface&quot;, &quot;animation&quot;, &quot;photh-graphene&quot;]",
-        "references": "[]"
-      },
-      "node_kind": "page",
-      "norm_label": "authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_authentic_vesta_headless_cli_3d_cdd_isosurface_animation",
-      "label": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
-      "_origin": "ast",
-      "community": 82,
-      "community_name": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "authentic vesta headless cli 3d cdd isosurface animation",
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L9"
-    },
-    {
-      "id": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_executive_summary",
-      "label": "Executive Summary",
-      "_origin": "ast",
-      "community": 82,
-      "community_name": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "executive summary",
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L11"
-    },
-    {
-      "id": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_key_advancements",
-      "label": "Key Advancements",
-      "_origin": "ast",
-      "community": 82,
-      "community_name": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "key advancements",
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L14"
-    },
-    {
-      "id": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_output_files",
-      "label": "Output Files",
-      "_origin": "ast",
-      "community": 82,
-      "community_name": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "output files",
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L26"
     },
     {
       "id": "extracted_insights_01_dreams_provenance_canvas",
@@ -10561,7 +10310,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L703",
+      "source_location": "L617",
       "weight": 1.0
     },
     {
@@ -10574,30 +10323,6 @@
       "context": "call",
       "source_file": "scripts/scientific_evaluator.py",
       "source_location": "L36",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "target": "scripts_scientific_visualization_tools_parse_acf_dat",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L130",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "target": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -13157,18 +12882,6 @@
       "weight": 1.0
     },
     {
-      "source": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "target": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics_get_col",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L606",
-      "weight": 1.0
-    },
-    {
       "source": "skills_site_pyramidalization_zoom_scripts_geometry_analyze_site_geometry",
       "target": "skills_site_pyramidalization_zoom_scripts_geometry_analyze_site_geometry_angle_deg",
       "relation": "contains",
@@ -13190,18 +12903,6 @@
       "context": "export",
       "source_file": "scripts/__init__.py",
       "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_init",
-      "target": "scripts_scientific_visualization_tools",
-      "relation": "re_exports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "export",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -13585,7 +13286,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "scripts/facts_store.py",
-      "source_location": "L135",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -13597,7 +13298,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "scripts/facts_store.py",
-      "source_location": "L166",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -13718,66 +13419,6 @@
       "context": "generic_arg",
       "source_file": "scripts/scientific_evaluator.py",
       "source_location": "L291",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "target": "scripts_scientific_visualization_tools_py_any",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L280",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_parse_acf_dat",
-      "target": "scripts_scientific_visualization_tools_py_any",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "target": "scripts_scientific_visualization_tools_py_any",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L566",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "target": "scripts_scientific_visualization_tools_py_any",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L92",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "target": "scripts_scientific_visualization_tools_py_any",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L480",
       "weight": 1.0
     },
     {
@@ -14102,54 +13743,6 @@
       "context": "import",
       "source_file": "scripts/__init__.py",
       "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_init",
-      "target": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_init",
-      "target": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_init",
-      "target": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_init",
-      "target": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "scripts/__init__.py",
-      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -14885,18 +14478,6 @@
       "weight": 1.0
     },
     {
-      "source": "cli",
-      "target": "scripts_scientific_visualization_tools",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "cli.py",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
       "source": "scripts_canvas_store",
       "target": "scripts_git_controller",
       "relation": "imports_from",
@@ -15038,18 +14619,6 @@
       "context": "import",
       "source_file": "scripts/mcp_server.py",
       "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_mcp_server",
-      "target": "scripts_scientific_visualization_tools",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "scripts/mcp_server.py",
-      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -15721,7 +15290,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L479",
+      "source_location": "L420",
       "weight": 1.0
     },
     {
@@ -15950,50 +15519,6 @@
       "context": "return_type",
       "source_file": "skills/vesta-automation/scripts/dynamic_feature_crop.py",
       "source_location": "L67",
-      "weight": 1.0
-    },
-    {
-      "source": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1",
-      "target": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_authentic_vesta_headless_cli_3d_cdd_isosurface_animation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_authentic_vesta_headless_cli_3d_cdd_isosurface_animation",
-      "target": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_executive_summary",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_authentic_vesta_headless_cli_3d_cdd_isosurface_animation",
-      "target": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_key_advancements",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_authentic_vesta_headless_cli_3d_cdd_isosurface_animation",
-      "target": "canvas_notes_authentic_vesta_cdd_3d_orbital_animation_v1_v1_output_files",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
-      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -16510,7 +16035,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cli.py",
-      "source_location": "L41",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -17214,7 +16739,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L479",
+      "source_location": "L420",
       "weight": 1.0
     },
     {
@@ -17225,7 +16750,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L666",
+      "source_location": "L580",
       "weight": 1.0
     },
     {
@@ -17248,61 +16773,6 @@
       "confidence_score": 1.0,
       "source_file": "scripts/scientific_evaluator.py",
       "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools",
-      "target": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L280",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools",
-      "target": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L480",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools",
-      "target": "scripts_scientific_visualization_tools_parse_acf_dat",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools",
-      "target": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L566",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools",
-      "target": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -17665,7 +17135,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L66",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_electron_density_surfaces_skill_electron_density_molecular_surfaces_skill",
+      "target": "skills_electron_density_surfaces_skill_script_architecture_cli_binaries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/electron-density-surfaces/SKILL.md",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -17677,17 +17158,6 @@
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
       "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_electron_density_surfaces_skill_electron_density_molecular_surfaces_skill",
-      "target": "skills_electron_density_surfaces_skill_script_architecture_cli_binaries",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -17709,7 +17179,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L44",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -17720,7 +17190,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L49",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -17731,7 +17201,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L55",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -17742,7 +17212,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/electron-density-surfaces/SKILL.md",
-      "source_location": "L60",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -19429,28 +18899,6 @@
       "weight": 1.0
     },
     {
-      "source": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
-      "target": "skills_publication_figure_formatter_skill_9_quantitative_electronic_strain_descriptors_suite",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
-      "target": "skills_publication_figure_formatter_skill_10_programmatic_zero_dilation_auditing",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L65",
-      "weight": 1.0
-    },
-    {
       "source": "skills_publication_figure_formatter_skill_publication_figure_formatter_skill",
       "target": "skills_publication_figure_formatter_skill_key_capabilities_scientific_protocols",
       "relation": "contains",
@@ -19469,7 +18917,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L70",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_publication_figure_formatter_skill_publication_figure_formatter_skill",
+      "target": "skills_publication_figure_formatter_skill_script_architecture_cli_binaries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/publication-figure-formatter/SKILL.md",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -19481,17 +18940,6 @@
       "confidence_score": 1.0,
       "source_file": "skills/publication-figure-formatter/SKILL.md",
       "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "skills_publication_figure_formatter_skill_publication_figure_formatter_skill",
-      "target": "skills_publication_figure_formatter_skill_script_architecture_cli_binaries",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "skills/publication-figure-formatter/SKILL.md",
-      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -20805,24 +20253,13 @@
     },
     {
       "source": "scripts_facts_store_factsstore",
-      "target": "scripts_facts_store_factsstore_save_fact",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/facts_store.py",
-      "source_location": "L135",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_facts_store_factsstore",
       "target": "scripts_facts_store_factsstore_search_facts",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/facts_store.py",
-      "source_location": "L166",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -20856,6 +20293,17 @@
       "confidence_score": 1.0,
       "source_file": "scripts/facts_store.py",
       "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_facts_store_factsstore",
+      "target": "scripts_facts_store_factsstore_save_fact",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/facts_store.py",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -21464,25 +20912,25 @@
       "weight": 1.0
     },
     {
-      "source": "scripts_facts_store_rationale_144",
+      "source": "scripts_facts_store_rationale_107",
       "target": "scripts_facts_store_factsstore_save_fact",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/facts_store.py",
-      "source_location": "L144",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
-      "source": "scripts_facts_store_rationale_172",
+      "source": "scripts_facts_store_rationale_135",
       "target": "scripts_facts_store_factsstore_search_facts",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/facts_store.py",
-      "source_location": "L172",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -21662,25 +21110,25 @@
       "weight": 1.0
     },
     {
-      "source": "scripts_mcp_server_rationale_480",
+      "source": "scripts_mcp_server_rationale_421",
       "target": "scripts_mcp_server_handle_tool_call",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L480",
+      "source_location": "L421",
       "weight": 1.0
     },
     {
-      "source": "scripts_mcp_server_rationale_667",
+      "source": "scripts_mcp_server_rationale_581",
       "target": "scripts_mcp_server_main",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L667",
+      "source_location": "L581",
       "weight": 1.0
     },
     {
@@ -21747,72 +21195,6 @@
       "confidence_score": 1.0,
       "source_file": "scripts/scientific_evaluator.py",
       "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_rationale_2",
-      "target": "scripts_scientific_visualization_tools",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_rationale_286",
-      "target": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L286",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_rationale_484",
-      "target": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L484",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_rationale_52",
-      "target": "scripts_scientific_visualization_tools_parse_acf_dat",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_rationale_570",
-      "target": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L570",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_scientific_visualization_tools_rationale_99",
-      "target": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/scientific_visualization_tools.py",
-      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -23609,102 +22991,6 @@
       "weight": 1.0
     },
     {
-      "source": "cli_main",
-      "target": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "cli.py",
-      "source_location": "L221",
-      "weight": 1.0
-    },
-    {
-      "source": "cli_main",
-      "target": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "cli.py",
-      "source_location": "L231",
-      "weight": 1.0
-    },
-    {
-      "source": "cli_main",
-      "target": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "cli.py",
-      "source_location": "L241",
-      "weight": 1.0
-    },
-    {
-      "source": "cli_main",
-      "target": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "cli.py",
-      "source_location": "L248",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_mcp_server_handle_tool_call",
-      "target": "scripts_scientific_visualization_tools_standardize_wyckoff_bader_charges",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "scripts/mcp_server.py",
-      "source_location": "L636",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_mcp_server_handle_tool_call",
-      "target": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "scripts/mcp_server.py",
-      "source_location": "L644",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_mcp_server_handle_tool_call",
-      "target": "scripts_scientific_visualization_tools_validate_animation_geometry",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "scripts/mcp_server.py",
-      "source_location": "L653",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_mcp_server_handle_tool_call",
-      "target": "scripts_scientific_visualization_tools_quantify_electronic_strain_metrics",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "scripts/mcp_server.py",
-      "source_location": "L658",
-      "weight": 1.0
-    },
-    {
       "source": "skills_blender_crystal_render_scripts_render_blender_render_crystal",
       "target": "skills_publication_figure_formatter_external_adjusttext_setup_read",
       "relation": "calls",
@@ -23904,7 +23190,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L132",
+      "source_location": "L101",
       "weight": 0.8
     },
     {
@@ -23915,7 +23201,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L133",
+      "source_location": "L102",
       "weight": 0.8
     },
     {
@@ -23926,7 +23212,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L134",
+      "source_location": "L103",
       "weight": 0.8
     },
     {
@@ -23937,7 +23223,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L135",
+      "source_location": "L104",
       "weight": 0.8
     },
     {
@@ -23948,7 +23234,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L136",
+      "source_location": "L105",
       "weight": 0.8
     },
     {
@@ -23959,7 +23245,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L137",
+      "source_location": "L106",
       "weight": 0.8
     },
     {
@@ -23970,7 +23256,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L138",
+      "source_location": "L107",
       "weight": 0.8
     },
     {
@@ -23981,7 +23267,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L139",
+      "source_location": "L108",
       "weight": 0.8
     },
     {
@@ -23992,7 +23278,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L140",
+      "source_location": "L109",
       "weight": 0.8
     },
     {
@@ -24129,5 +23415,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c8db34ce179e6bfe8bf553ae3d78613e81bc0cf5"
+  "built_at_commit": "7d3090e03a8cd073560b650f1782a31391eef919"
 }

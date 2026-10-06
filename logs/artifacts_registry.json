@@ -1635,5 +1635,39 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "abf468f6": {
+    "result_id": "abf468f6",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Authentic 3D real-space Bader charge redistribution animation for PHOTH-graphene under biaxial mechanical strain (-3% to +3%), featuring 3D ball-and-stick lattice, continuous 2D Gaussian charge contour floor projection, vertical topological registration drop lines, and live atomic charge badges.",
+    "parent_ids": [],
+    "created_at": "2026-10-06T12:24:32.249271+00:00",
+    "git": {
+      "commit": "c8db34ce179e6bfe8bf553ae3d78613e81bc0cf5",
+      "short_commit": "c8db34ce",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "a9a90a30": {
+    "result_id": "a9a90a30",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Dual-panel synchronized 3D Bader charge animation for PHOTH-graphene: Left panel displays 3D real-space breathing lattice with floor contour projection, right panel displays dynamic Wyckoff site charge tuning curves with tracking cursor across strain loop (-3% to +3%).",
+    "parent_ids": [],
+    "created_at": "2026-10-06T12:25:04.946942+00:00",
+    "git": {
+      "commit": "c8db34ce179e6bfe8bf553ae3d78613e81bc0cf5",
+      "short_commit": "c8db34ce",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

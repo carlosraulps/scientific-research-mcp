@@ -54,6 +54,12 @@ from skill_crystallizer import SkillCrystallizer
 from dual_verifier import DualVerifier
 from protocol_engine import ProtocolEngine
 from git_controller import GitController
+from scientific_visualization_tools import (
+    standardize_wyckoff_bader_charges,
+    extract_compact_2d_slice,
+    validate_animation_geometry,
+    quantify_electronic_strain_metrics
+)
 
 # Initialize singletons
 BASE_DIR = os.path.dirname(SCRIPT_DIR)
@@ -413,6 +419,59 @@ TOOLS = [
                 "target_files": {"type": "array", "items": {"type": "string"}, "description": "Specific files to check for uncommitted modifications"}
             }
         }
+    },
+    {
+        "name": "standardize_wyckoff_bader_charges",
+        "description": "Standardizes Bader charge populations into crystallographic Wyckoff symmetry orbits and enforces PAW core charge offset (q_C = 4.0 - Q_Bader), diagnosing numerical Cartesian FFT grid splitting artifacts.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "bader_data": {"description": "File path to ACF.dat / bader_charges.csv or list/dict of atomic charge populations"},
+                "wyckoff_mapping": {"type": "object", "description": "Optional mapping of atom index to Wyckoff orbit (e.g. {'1': 'C1', '2': 'C2', '3': 'C2'})"},
+                "z_core": {"type": "number", "default": 4.0, "description": "PAW pseudopotential core charge offset (default: 4.0 for Carbon, 1.0 for Hydrogen)"},
+                "tolerance": {"type": "number", "default": 0.15, "description": "Maximum charge splitting tolerance across mirror sites for numerical FFT grid artifact classification"},
+                "element": {"type": "string", "default": "C", "description": "Element symbol"}
+            },
+            "required": ["bader_data"]
+        }
+    },
+    {
+        "name": "extract_compact_2d_slice",
+        "description": "Zero-Bloat Remote Volumetric Slicing: Extracts a compact 2D planar density slice from 3D VASP volumetric files (CHGCAR, LOCPOT, ELFCAR) at an invariant crystallographic plane (e.g. z = 0.50 cutting through nuclei in 2D sheets), compressing multi-gigabyte datasets down to <500 KB.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "source_path": {"type": "string", "description": "Path to 3D volumetric file (CHGCAR, LOCPOT, ELFCAR)"},
+                "output_path": {"type": "string", "description": "Optional destination path for extracted slice (.npz, .bin, or .json)"},
+                "z_slice": {"type": "number", "default": 0.50, "description": "Fractional height along the perpendicular normal (default: 0.50)"},
+                "plane": {"type": "string", "default": "xy", "enum": ["xy", "xz", "yz"], "description": "Planar slice orientation"}
+            },
+            "required": ["source_path"]
+        }
+    },
+    {
+        "name": "validate_animation_geometry",
+        "description": "Zero-Dilation Rule Validator: Audits multi-frame scientific animation sequences to ensure 100% uniform pixel geometry (W x H), catching frame dilation jitter caused by matplotlib bbox_inches='tight'.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "frame_paths": {"type": "array", "items": {"type": "string"}, "description": "List of frame image file paths"},
+                "target_resolution": {"type": "array", "items": {"type": "integer"}, "description": "Optional expected [width, height] resolution"}
+            },
+            "required": ["frame_paths"]
+        }
+    },
+    {
+        "name": "quantify_electronic_strain_metrics",
+        "description": "Quantifies electronic strain descriptors (Eg, Delta E_F, v_F, Delta k_Dirac) across strained 2D allotropes, extracting chemical potential shifts and HER electron injection insights.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "band_data": {"description": "Band structure data dictionary, eigenvalues, or path to CSV/JSON table"},
+                "reference_efermi": {"type": "number", "description": "Fermi energy of the pristine (0% strain) state"}
+            },
+            "required": ["band_data"]
+        }
     }
 ]
 
@@ -573,6 +632,33 @@ def handle_tool_call(name: str, args: Dict[str, Any]) -> Any:
         if target_files:
             return GIT.verify_reproducibility(target_files=target_files)
         return GIT.get_status()
+    elif name == "standardize_wyckoff_bader_charges":
+        return standardize_wyckoff_bader_charges(
+            bader_data=args.get("bader_data"),
+            wyckoff_mapping=args.get("wyckoff_mapping"),
+            z_core=args.get("z_core", 4.0),
+            tolerance=args.get("tolerance", 0.15),
+            element=args.get("element", "C")
+        )
+    elif name == "extract_compact_2d_slice":
+        return extract_compact_2d_slice(
+            source_path=args.get("source_path", ""),
+            output_path=args.get("output_path"),
+            z_slice=args.get("z_slice", 0.50),
+            plane=args.get("plane", "xy")
+        )
+    elif name == "validate_animation_geometry":
+        target_res = args.get("target_resolution")
+        target_tuple = tuple(target_res) if target_res and len(target_res) == 2 else None
+        return validate_animation_geometry(
+            frame_paths=args.get("frame_paths", []),
+            target_resolution=target_tuple
+        )
+    elif name == "quantify_electronic_strain_metrics":
+        return quantify_electronic_strain_metrics(
+            band_data=args.get("band_data", {}),
+            reference_efermi=args.get("reference_efermi")
+        )
     else:
         return {"error": f"Unknown tool: {name}", "isError": True}
 

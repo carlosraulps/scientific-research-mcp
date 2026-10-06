@@ -19,17 +19,27 @@ Comprehensive analysis and visualization toolkit for electronic structure, molec
        bader CHGCAR -b weight
        ```
        The `-b weight` algorithm interpolates boundary flux surfaces, ensuring that net Bader charges vary **strictly monotonically and continuously** across applied mechanical strain.
-    2. **Core Charge Reference Integration**:
+    2. **Core Charge Reference Integration & PAW Net Charge Offset**:
        When `AECCAR0` and `AECCAR2` are present, automatically sum them via `chgsum.pl AECCAR0 AECCAR2` into `CHGCAR_total` and run:
        ```bash
        bader CHGCAR -b weight -ref CHGCAR_total
        ```
-    3. **Physical Net Charge Mapping**:
-       Converts raw electron populations into physical net atomic charges:
-       $$\Delta Q = Z_{\mathrm{valence}} - Q_{\mathrm{bader}}$$
-       validating total charge conservation ($\sum \Delta Q_i \approx 0.0$).
-    4. **Automated Toolchain**:
-       The `bader-analyze` CLI tool executes the entire protocol automatically, outputting `bader_summary.json` and `bader_charges.csv`.
+       Net atomic charge is defined by electrostatic ionic core balance ($q = Z_{\text{core}} - Q_{\text{Bader}}$). In PAW pseudopotentials with frozen $1s^2$ cores, $Z_{\text{core}} = 4.0\,e$ for Carbon and $1.0\,e$ for Hydrogen:
+       $$q_{\mathrm{C}} = 4.0 - Q_{\mathrm{bader}}(\mathrm{C}), \quad q_{\mathrm{H}} = 1.0 - Q_{\mathrm{bader}}(\mathrm{H})$$
+       - Neutral: $Q = 4.000\,e \implies q_{\mathrm{C}} = 0.000\,e$
+       - Anionic: $Q = 4.113\,e \implies q_{\mathrm{C}} = -0.113\,e$
+       - Cationic: $Q = 3.892\,e \implies q_{\mathrm{C}} = +0.108\,e$
+    3. **Wyckoff Symmetry Orbit Standardization ($\mathrm{C}_{\text{subindex}}^{(\text{superscript})}$)**:
+       Cartesian FFT grid discretization cutting across mirror planes creates artificial numerical splitting ($\sim 0.14\,e$) between paired sites (e.g. $C_2^{(2)}$ vs $C_2^{(3)}$).
+       Always group atoms by Wyckoff symmetry orbits and compute orbit averages $\bar{q}_{\text{orbit}}$ via `sciresearch bader-standardize` to prevent claiming spurious physical symmetry breaking.
+    4. **Zero-Bloat Remote Slicing Protocol**:
+       Never transfer gigabyte-scale 3D volumetric datasets (`CHGCAR`, `LOCPOT`, $>30\text{ MB}$ to GBs) across SSH. Slices are extracted directly on the remote cluster at the invariant nuclear plane ($z = 0.50$ for 2D sheets):
+       ```bash
+       sciresearch slice-2d CHGCAR --plane xy --z-slice 0.50 -o slice_ccd_z0.50.npz
+       ```
+       compressing the dataset to $<500\text{ KB}$ binary/npz before local download.
+    5. **Automated Toolchain**:
+       The `bader-analyze` and `sciresearch bader-standardize` CLI tools execute the entire protocol automatically, outputting `bader_summary.json` and `bader_charges.csv`.
 
 ### 2. 3D Isosurface Extraction & Wavefront OBJ Export
 - Extracts polygonal meshes with `skimage.measure.marching_cubes`.

@@ -30,6 +30,12 @@ from skill_crystallizer import SkillCrystallizer
 from dual_verifier import DualVerifier
 from protocol_engine import ProtocolEngine
 from git_controller import GitController
+from scientific_visualization_tools import (
+    standardize_wyckoff_bader_charges,
+    extract_compact_2d_slice,
+    validate_animation_geometry,
+    quantify_electronic_strain_metrics
+)
 
 
 def main():
@@ -92,6 +98,31 @@ def main():
     snap_p.add_argument("--push", action="store_true", help="Push to origin remote")
     ver_p = git_sub.add_parser("verify", help="Verify reproducibility of input scripts against git commit")
     ver_p.add_argument("files", nargs="*", help="Optional target files to check")
+
+    # Bader Wyckoff Standardization
+    bader_p = subparsers.add_parser("bader-standardize", help="Standardize Bader charges by Wyckoff orbits and PAW core offset")
+    bader_p.add_argument("file", help="Path to ACF.dat, bader_charges.csv, or JSON file")
+    bader_p.add_argument("--z-core", type=float, default=4.0, help="PAW pseudopotential core charge (default: 4.0 for C)")
+    bader_p.add_argument("--tolerance", type=float, default=0.15, help="FFT grid splitting tolerance")
+    bader_p.add_argument("--element", default="C", help="Element symbol")
+    bader_p.add_argument("--wyckoff-json", help="Optional JSON file mapping atom id to Wyckoff orbit")
+
+    # 2D Volumetric Slicing
+    slice_p = subparsers.add_parser("slice-2d", help="Zero-bloat remote extraction of 2D density slice from CHGCAR/LOCPOT")
+    slice_p.add_argument("file", help="Path to volumetric file (CHGCAR, LOCPOT, ELFCAR)")
+    slice_p.add_argument("--plane", default="xy", choices=["xy", "xz", "yz"], help="Slicing plane")
+    slice_p.add_argument("--z-slice", type=float, default=0.50, help="Fractional position along normal axis (default: 0.50)")
+    slice_p.add_argument("-o", "--output", help="Output path (.npz, .bin, or .json)")
+
+    # Animation Frame Dimension Audit
+    anim_p = subparsers.add_parser("validate-anim", help="Audit animation frames against Zero-Dilation Rule")
+    anim_p.add_argument("frames", nargs="+", help="Image frame paths")
+    anim_p.add_argument("--target-res", nargs=2, type=int, metavar=("W", "H"), help="Target resolution width and height")
+
+    # Electronic Strain Metrics
+    strain_p = subparsers.add_parser("strain-metrics", help="Quantify electronic strain descriptors across 2D states")
+    strain_p.add_argument("file", help="Path to CSV or JSON file containing strain states")
+    strain_p.add_argument("--pristine-ef", type=float, help="Pristine Fermi level for Delta E_F reference")
 
     args = parser.parse_args()
     if not args.subcommand:
@@ -181,6 +212,44 @@ def main():
         elif args.git_action == "verify":
             res = git.verify_reproducibility(target_files=args.files if args.files else None)
             print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "bader-standardize":
+        wyckoff_map = None
+        if args.wyckoff_json and os.path.exists(args.wyckoff_json):
+            with open(args.wyckoff_json, "r") as wf:
+                wyckoff_map = json.load(wf)
+        res = standardize_wyckoff_bader_charges(
+            bader_data=args.file,
+            wyckoff_mapping=wyckoff_map,
+            z_core=args.z_core,
+            tolerance=args.tolerance,
+            element=args.element
+        )
+        print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "slice-2d":
+        res = extract_compact_2d_slice(
+            source_path=args.file,
+            output_path=args.output,
+            z_slice=args.z_slice,
+            plane=args.plane
+        )
+        print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "validate-anim":
+        target_res = tuple(args.target_res) if args.target_res else None
+        res = validate_animation_geometry(
+            frame_paths=args.frames,
+            target_resolution=target_res
+        )
+        print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "strain-metrics":
+        res = quantify_electronic_strain_metrics(
+            band_data=args.file,
+            reference_efermi=args.pristine_ef
+        )
+        print(json.dumps(res, indent=2))
 
 
 if __name__ == "__main__":

@@ -66,13 +66,25 @@ sciresearch runs --status RUNNING
 
 # 9. Synchronize Knowledge Map and update Graphify knowledge graph
 sciresearch sync
+
+# 10. Wyckoff symmetry orbit Bader standardization & PAW core offset
+sciresearch bader-standardize ACF.dat --z-core 4.0 --element C
+
+# 11. Zero-bloat remote extraction of 2D density slice (<500 KB)
+sciresearch slice-2d CHGCAR --plane xy --z-slice 0.50 -o slice_z0.50.npz
+
+# 12. Validate animation frames against the Zero-Dilation Rule
+sciresearch validate-anim ./frames/frame_*.png
+
+# 13. Quantify electronic strain descriptors across 2D states
+sciresearch strain-metrics strain_electronic_metrics.csv
 ```
 
 ---
 
-## 🔌 Model Context Protocol (MCP) Tool Suite (23 Tools)
+## 🔌 Model Context Protocol (MCP) Tool Suite (27 Tools)
 
-The skill exposes 23 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
+The skill exposes 27 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
 
 ### 1. DREAMS Shared Canvas & Provenance Store
 * `canvas_register_artifact(producing_tool, value, arguments, rationales, sources, declared_context, sensitive_params)`:
@@ -135,6 +147,16 @@ The skill exposes 23 dedicated tools via the `sciresearch` MCP server (`sciresea
 ### 8. Graphify Knowledge Graph Bridge
 * `graphify_sync_knowledge()`:
   Generates `docs/KNOWLEDGE_MAP.md` cross-linking all research deliverables and executes `graphify update .` to keep the local graph current.
+
+### 9. Scientific Visualization & Crystallographic Analysis
+* `standardize_wyckoff_bader_charges(bader_data, wyckoff_mapping, z_core, tolerance, element)`:
+  Standardizes Bader populations into crystallographic Wyckoff symmetry orbits ($\mathrm{C}_{\text{sub}}^{(\text{super})}$), applies PAW core charge offset ($q = Z_{\text{core}} - Q_{\text{Bader}}$), and diagnoses numerical Cartesian FFT grid splitting artifacts vs physical symmetry breaking.
+* `extract_compact_2d_slice(source_path, output_path, z_slice, plane)`:
+  Zero-Bloat Remote Slicing: Extracts 2D planar density cross sections at invariant crystallographic coordinates (e.g. $z = 0.50$ cutting through 2D sheet nuclei) from gigabyte-scale volumetric files (CHGCAR/LOCPOT/ELFCAR), compressing down to $<500\text{ KB}$ for lightweight transfer.
+* `validate_animation_geometry(frame_paths, target_resolution)`:
+  Zero-Dilation Rule Validator: Audits multi-frame scientific animation sequences to ensure 100% uniform pixel geometry ($W \times H$), detecting and preventing frame dilation jitter caused by `matplotlib` `bbox_inches="tight"`.
+* `quantify_electronic_strain_metrics(band_data, reference_efermi)`:
+  Quantifies electronic strain descriptors ($E_g$, $\Delta E_{\text{F}}(\varepsilon)$, $v_{\text{F}}$, $\Delta k_{\text{Dirac}}$, $p_z\text{ purity}$) across strained 2D allotropes, extracting chemical potential shifts and HER electrocatalytic electron injection mechanisms.
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "0": "mcp_server.py",
+  "0": "scripts/__init__.py",
   "1": "CanvasStore",
   "2": "TestScientificResearchLog",
   "3": "sthlmNord BeamerTheme",
@@ -57,14 +57,14 @@
   "55": "ScientificEvaluator",
   "56": "render_structure",
   "57": "generate_demo_structure.py",
-  "58": "vesta_cdd.py",
+  "58": "vesta_auto.py",
   "59": "Key Capabilities & Scientific Protocols",
-  "60": "GitController",
+  "60": "CheckpointManager",
   "61": "sync_graphify.sh",
   "62": "SkillCrystallizer",
   "63": ".setUp",
   "64": "GraphifyBridge",
-  "65": "scripts/__init__.py",
+  "65": "handle_tool_call",
   "66": "Site Pyramidalization & Circular Zoom Annotator",
   "67": "auto_slice_2d.py",
   "68": "latex_manager.py",
@@ -77,9 +77,8 @@
   "75": "run_bader_protocol",
   "76": "Key Capabilities & Scientific Protocols",
   "77": "PHOTH-Graphene HER Electrocatalysis & Mechanical Strain Suite",
-  "78": "vesta_auto.py",
+  "78": "GitController",
   "79": "animate_3d_cdd.py",
   "80": "composite_badge",
-  "81": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-  "82": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation"
+  "81": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md"
 }

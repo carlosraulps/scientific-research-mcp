@@ -53,6 +53,18 @@ Embeds two layout algorithms (cloned in `external/`):
 ### 8. TrueType Font Registration Protocol
 - Ensure Times New Roman and STIX math fonts are available in the system and registered dynamically through `matplotlib.font_manager`.
 
+### 9. Quantitative Electronic Strain Descriptors Suite
+- When presenting electronic band structures under mechanical strain ($\varepsilon \in [-3\%, +3\%]$), qualitative fat band plots must be accompanied by quantitative parametric descriptors:
+  - **Fundamental Band Gap $E_g$**: Insulator/semimetal verification ($E_g = 0.00\text{ eV}$ robust semimetal in PHOTH-graphene).
+  - **Dirac Crossing Gap $\Delta E_{\text{Dirac}}$**: Direct gap at crossing point ($<35\text{ meV}$).
+  - **Electrochemical Potential Shift $\Delta E_{\text{F}}(\varepsilon)$**: Linear shift ($\sim -0.044\text{ eV}/\%$ strain) quantifying Fermi level elevation under compression for accelerated HER electron injection.
+  - **Fermi Velocity $v_{\text{F}}$**: Kinematic dispersion ($v_{\text{F}} = \frac{1}{\hbar}\|\nabla_{\mathbf{k}} E\| \approx 4.48 \times 10^5\text{ m/s}$).
+  - **Frontier $p_z$ Purity**: Ratio of $2p_z$ orbital character at $E_{\text{F}}$ (100.0% pure in planar $sp^2$ states).
+  - Compute automatically with `sciresearch strain-metrics <csv_or_json>`.
+
+### 10. Programmatic Zero-Dilation Auditing
+- Verify animation sequences before export using `sciresearch validate-anim <frame_glob>` to catch any inadvertent `bbox_inches="tight"` dimension jitter across frames.
+
 ---
 
 ## Quick Reference CLI
@@ -61,6 +73,8 @@ Embeds two layout algorithms (cloned in `external/`):
 | :--- | :--- |
 | **Apply Standard Python Styling** | `from style_config import set_publication_style; set_publication_style()` |
 | **Compose Zero-Dilation Animation** | `format-animation "./frames/frame_*.png" --ping-pong -o strain_movie.gif` |
+| **Audit Zero-Dilation Compliance** | `sciresearch validate-anim ./frames/frame_*.png` |
+| **Quantify Electronic Strain Descriptors** | `sciresearch strain-metrics strain_electronic_metrics.csv` |
 | **Render Coupled Band + PDOS Suite** | `render-coupled-suite` |
 | **Assemble Multi-Panel Figure** | `format-multipanel panel_a.png panel_b.png panel_c.png -g 1 3 -o Fig1.png` |
 | **Format Single Plot with Anti-Collision** | `format-figure data.csv -o ./fig --engine adjustText --xlabel "$E - E_{\mathrm{F}}\ \mathrm{(eV)}$"` |

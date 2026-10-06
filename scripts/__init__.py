@@ -8,6 +8,12 @@ from .facts_store import FactsStore
 from .skill_crystallizer import SkillCrystallizer
 from .dual_verifier import DualVerifier
 from .protocol_engine import ProtocolEngine
+from .scientific_visualization_tools import (
+    standardize_wyckoff_bader_charges,
+    extract_compact_2d_slice,
+    validate_animation_geometry,
+    quantify_electronic_strain_metrics
+)
 
 __all__ = [
     "CanvasStore",
@@ -18,5 +24,9 @@ __all__ = [
     "FactsStore",
     "SkillCrystallizer",
     "DualVerifier",
-    "ProtocolEngine"
+    "ProtocolEngine",
+    "standardize_wyckoff_bader_charges",
+    "extract_compact_2d_slice",
+    "validate_animation_geometry",
+    "quantify_electronic_strain_metrics"
 ]
