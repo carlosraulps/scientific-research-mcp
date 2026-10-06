@@ -1,22 +1,22 @@
-# Graph Report - scientific-research  (2026-10-02)
+# Graph Report - scientific-research  (2026-10-06)
 
 ## Corpus Check
-- 175 files · ~1,397,356 words
+- 186 files · ~1,406,050 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 80 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
 
 ## Summary
-- 833 nodes · 1187 edges · 82 communities (58 shown, 5 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.89)
+- 866 nodes · 1245 edges · 84 communities (60 shown, 5 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 56 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7d3090e0`
+- Built from commit: `9e063c62`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- scripts/__init__.py
+- mcp_server.py
 - CanvasStore
 - TestScientificResearchLog
 - sthlmNord BeamerTheme
@@ -55,14 +55,14 @@
 - ScientificEvaluator
 - render_structure
 - generate_demo_structure.py
-- vesta_auto.py
+- vesta_cdd.py
 - Key Capabilities & Scientific Protocols
-- CheckpointManager
+- GitController
 - sync_graphify.sh
 - SkillCrystallizer
 - .setUp
 - GraphifyBridge
-- handle_tool_call
+- scripts/__init__.py
 - Site Pyramidalization & Circular Zoom Annotator
 - auto_slice_2d.py
 - latex_manager.py
@@ -75,10 +75,12 @@
 - run_bader_protocol
 - Key Capabilities & Scientific Protocols
 - PHOTH-Graphene HER Electrocatalysis & Mechanical Strain Suite
-- GitController
+- vesta_auto.py
 - animate_3d_cdd.py
 - composite_badge
 - photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md
+- Authentic VESTA Headless CLI 3D CDD Isosurface Animation
+- brillouin_zone_visualizer.py
 
 ## God Nodes (most connected - your core abstractions)
 1. `TestScientificResearchLog` - 25 edges
@@ -87,10 +89,10 @@
 4. `render_circular_site_zoom()` - 16 edges
 5. `render_full_composite_figure()` - 16 edges
 6. `CheckpointManager` - 15 edges
-7. `render_structure()` - 14 edges
-8. `allocate()` - 13 edges
-9. `get_non_overlapping_boxes()` - 13 edges
-10. `adjust_text()` - 12 edges
+7. `main()` - 14 edges
+8. `render_structure()` - 14 edges
+9. `allocate()` - 13 edges
+10. `get_non_overlapping_boxes()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --uses--> `CanvasStore`  [INFERRED]
@@ -107,11 +109,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (82 total, 5 thin omitted)
+## Communities (84 total, 5 thin omitted)
 
-### Community 0 - "scripts/__init__.py"
+### Community 0 - "mcp_server.py"
 Cohesion: 0.14
-Nodes (15): main(), ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+7 more)
+Nodes (13): ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+5 more)
 
 ### Community 1 - "CanvasStore"
 Cohesion: 0.21
@@ -257,17 +259,17 @@ Nodes (28): composite_image_with_colorbar(), generate_publication_colorbar(), Pa
 Cohesion: 0.50
 Nodes (3): create_porous_carbon_model(), Demo Structure Generator for Catalytic / Adsorption Sites. Creates a realistic…, Constructs a 2D porous carbon lattice (similar to the biphenylene/porous…
 
-### Community 58 - "vesta_auto.py"
-Cohesion: 0.05
-Nodes (53): batch_render_directory(), main(), Path, ===============================================================================…, Renders all matching crystal structures in input_dir and builds a summary…, build_cdd_isosurface_section(), build_sbond_section(), estimate_bond_cutoffs() (+45 more)
+### Community 58 - "vesta_cdd.py"
+Cohesion: 0.10
+Nodes (29): build_cdd_isosurface_section(), build_sbond_section(), estimate_bond_cutoffs(), extract_species_from_structure(), generate_vesta_project_content(), generate_vstd_content(), main(), Path (+21 more)
 
 ### Community 59 - "Key Capabilities & Scientific Protocols"
-Cohesion: 0.14
-Nodes (13): 1. The Zero-Dilation Rule for Scientific Animations (`format-animation`), 2. Comfortable Animation Pacing Protocol, 3. Header Clearance & Overlap Prevention, 4. Coupled Band Structure + PDOS Architecture (`render-coupled-suite`), 5. Label Anti-Collision Engines, 6. 3D Volumetric Animations (`animate-cdd`), 7. Multi-View CDD Panel (`render-cdd-suite`), 8. TrueType Font Registration Protocol (+5 more)
+Cohesion: 0.12
+Nodes (15): 10. Programmatic Zero-Dilation Auditing, 1. The Zero-Dilation Rule for Scientific Animations (`format-animation`), 2. Comfortable Animation Pacing Protocol, 3. Header Clearance & Overlap Prevention, 4. Coupled Band Structure + PDOS Architecture (`render-coupled-suite`), 5. Label Anti-Collision Engines, 6. 3D Volumetric Animations (`animate-cdd`), 7. Multi-View CDD Panel (`render-cdd-suite`) (+7 more)
 
-### Community 60 - "CheckpointManager"
-Cohesion: 0.24
-Nodes (6): CheckpointManager, Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory.
+### Community 60 - "GitController"
+Cohesion: 0.12
+Nodes (14): CompletedProcess, CheckpointManager, Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory., GitController (+6 more)
 
 ### Community 62 - "SkillCrystallizer"
 Cohesion: 0.32
@@ -281,9 +283,9 @@ Nodes (6): DualVerifier, Any, Performs dual verification across Functional Corre
 Cohesion: 0.33
 Nodes (4): GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, Creates an interconnected Markdown summary linking all Notes, Reports,…
 
-### Community 65 - "handle_tool_call"
-Cohesion: 0.40
-Nodes (5): handle_tool_call(), main(), Any, Dispatches tool calls to the underlying engine., Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients.
+### Community 65 - "scripts/__init__.py"
+Cohesion: 0.16
+Nodes (19): main(), Scientific Research Log Skill & MCP Engine package., handle_tool_call(), main(), Any, Dispatches tool calls to the underlying engine., Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients., extract_compact_2d_slice() (+11 more)
 
 ### Community 66 - "Site Pyramidalization & Circular Zoom Annotator"
 Cohesion: 0.22
@@ -329,9 +331,9 @@ Nodes (11): main(), parse_acf_dat(), prepare_total_charge_reference(), Path, Par
 Cohesion: 0.18
 Nodes (10): 1. Bader Charge Partitioning Protocol (`bader-analyze`), 2. 3D Isosurface Extraction & Wavefront OBJ Export, 3. 2D Topological Slicing & Laplacian Mapping, 4. Planar-Averaged Potential & Work Function, 5. Volumetric Grid Periodic Unwrapping, Electron Density & Molecular Surfaces Skill, Key Capabilities & Scientific Protocols, Overview (+2 more)
 
-### Community 78 - "GitController"
-Cohesion: 0.24
-Nodes (8): CompletedProcess, GitController, Any, Creates an atomic Git commit snapshot linking the workspace state to active…, Evaluates whether a simulation setup is strictly reproducible from Git., Helper to run git commands in the base directory., Checks if base_dir is inside an active git repository., Retrieves current git repository state for scientific audit trails.
+### Community 78 - "vesta_auto.py"
+Cohesion: 0.11
+Nodes (24): batch_render_directory(), main(), Path, ===============================================================================…, Renders all matching crystal structures in input_dir and builds a summary…, automate_vesta_gui(), find_vesta_binary(), main() (+16 more)
 
 ### Community 79 - "animate_3d_cdd.py"
 Cohesion: 0.27
@@ -341,25 +343,33 @@ Nodes (9): crossfade(), main(), Image, 3D Volumetric Animation Engine for creati
 Cohesion: 0.36
 Nodes (8): composite_badge(), dynamic_feature_crop(), main(), Image, Full pipeline: crop -> sanitize borders -> composite badge LAST., Crops VESTA render to structural features using saturation-based detection.…, Composites orientation badge AFTER cropping (Layer Separation Protocol). This…, sanitize_vesta_render()
 
+### Community 82 - "Authentic VESTA Headless CLI 3D CDD Isosurface Animation"
+Cohesion: 0.40
+Nodes (4): Authentic VESTA Headless CLI 3D CDD Isosurface Animation, Executive Summary, Key Advancements, Output Files
+
+### Community 83 - "brillouin_zone_visualizer.py"
+Cohesion: 0.27
+Nodes (11): compute_brillouin_zone_voronoi(), compute_reciprocal_lattice(), main(), parse_poscar_lattice(), ndarray, Renders 3D publication-quality Brillouin zone figure., ===============================================================================…, Extracts 3x3 lattice vector matrix from VASP POSCAR. (+3 more)
+
 ## Knowledge Gaps
-- **163 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `Key Results Summary:`, `Updated Publication Figures:`, `1. Overview` (+158 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 451 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **168 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `Executive Summary`, `Key Advancements`, `Output Files` (+163 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 469 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `load_structure()` connect `site_zoom_annotator.py` to `render_blender.py`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **Why does `read()` connect `render_blender.py` to `auto_slice_2d.py`, `site_zoom_annotator.py`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **Why does `convert_to_xsf()` connect `auto_slice_2d.py` to `render_blender.py`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Are the 10 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
   _`TestScientificResearchLog` has 10 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `CanvasStore` (e.g. with `main()` and `GitController`) actually correct?**
   _`CanvasStore` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 5 inferred relationships involving `GitController` (e.g. with `main()` and `CanvasStore`) actually correct?**
   _`GitController` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `sync_graphify.sh script`, `textalloc`, `Key Results Summary:` to the rest of the system?**
-  _163 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `sync_graphify.sh script`, `textalloc`, `Executive Summary` to the rest of the system?**
+  _168 weakly-connected nodes found - possible documentation gaps or missing edges._

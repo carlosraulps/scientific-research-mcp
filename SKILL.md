@@ -182,8 +182,46 @@ The skill exposes 27 dedicated tools via the `sciresearch` MCP server (`sciresea
 │   ├── decisions.csv            # Tabular append-only audit trail
 │   ├── results.csv              # Machine-readable verified physical values
 │   └── artifacts_registry.json  # Master index of artifact DAG
+├── skills/                      # Modular domain-specific agent skills
+│   ├── reciprocal-space-visualizer/  # 3D Brillouin Zone, SeeK-path, k-paths, Wigner-Seitz
+│   ├── povray-crystal-raytracer/     # POV-Ray 3.7 studio raytracing & realistic shadows
+│   ├── avogadro-automation/          # Avogadro 2 & OpenBabel molecular builder & grafting
+│   ├── pyprocar-electronic-suite/    # Fat bands, spin texture (Sx,Sy,Sz), band unfolding
+│   ├── chargemol-ddec6/              # DDEC6 net atomic charges & atomic bond orders
+│   ├── ifermi-surface-topology/      # 3D Fermi surfaces & Fermi velocity vector fields
+│   ├── blender-crystal-render/       # Photorealistic ray-traced Blender crystal scenes
+│   ├── electron-density-surfaces/    # CHGCAR/LOCPOT isosurfaces & 2D topological slices
+│   ├── latex-template/               # Production LaTeX & Beamer presentation templates
+│   ├── ovito-snapshot/               # Headless high-throughput structural snapshots
+│   ├── publication-figure-formatter/ # Times New Roman & STIX publication figure styling
+│   ├── site-pyramidalization-zoom/   # Polyhedral zoom insets & Haddon POAV1 pyramidalization
+│   ├── vesta-automation/             # Headless VASTA CLI with Bound=0 spillover fix
+│   └── xcrysden-visualizer/          # Fermi surfaces (BXSF) & Brillouin zone rendering
+├── FUTURE_SKILLS_ROADMAP.md     # Architecture for deferred (LOBSTER, BoltzTraP2) & next-gen skills
 └── graphify-out/                # Graphify persistent knowledge graph
 ```
+
+---
+
+## 🛠️ Specialized Subskills Ecosystem
+
+All subskills in `skills/` are symlinked to `~/.gemini/config/skills/` and exposed directly across Antigravity CLI and multi-agent sessions:
+
+| Skill | Primary CLI Utility | Core Scientific Function |
+| :--- | :--- | :--- |
+| **`reciprocal-space-visualizer`** | `bz-visualizer` | 3D Brillouin Zone Voronoi cells, SeeK-path standardization, 2D monolayers, VASP KPOINTS. |
+| **`povray-crystal-raytracer`** | `povray-crystal-render` | Studio 3-point lighting, ground shadow receiver, metallic/dielectric materials via POV-Ray 3.7. |
+| **`avogadro-automation`** | `avogadro-runner` | 3D molecular builder (SMILES), UFF/MMFF94 geometry optimization, slab adsorbate grafting. |
+| **`pyprocar-electronic-suite`** | `pyprocar-suite` | Fat bands, $S_x, S_y, S_z$ spin texture, supercell band unfolding onto primitive BZ. |
+| **`chargemol-ddec6`** | `chargemol-ddec6` | DDEC6 net atomic charges, atomic spin moments, pairwise atomic bond orders from VASP AECCARs. |
+| **`ifermi-surface-topology`** | `ifermi-surface` | 3D Fermi surfaces in Wigner-Seitz cells, Fermi velocity $\mathbf{v}_{\mathrm{F}}$ vector fields, 2D Fermi slices. |
+| **`vesta-automation`** | `generate-vstd` | Clean boundary rules (`Bound=0`), headless offscreen export, multi-view CDD isosurfaces. |
+| **`publication-figure-formatter`**| `format-pub-fig` | Times New Roman typography, STIX math, collision-free annotations, journal aspect ratios. |
+| **`electron-density-surfaces`** | `extract-slice-2d` | CHGCAR 3D isosurfaces, compact 2D slices ($<500\text{ KB}$), Bader Wyckoff standardization. |
+| **`blender-crystal-render`** | `render-blender-crystal`| Cycles raytracing, glass/metal shaders, depth-of-field, studio softbox lighting. |
+
+> **Deferred Candidates & Future Roadmap**: See [`FUTURE_SKILLS_ROADMAP.md`](file:///home/cr/simulations/scientific-research/FUTURE_SKILLS_ROADMAP.md) for specifications on **Skill 5** (`lobster-cohp-bonding`), **Skill 8** (`boltztrap2-transport`), and upcoming topological/vibrational skills (WannierBerri, Phonopy, Phono3py, VTST-NEB, universal MLIPs).
+
 
 
 ### Learned Skill: `test_charge_sloshing_fix`

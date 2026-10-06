@@ -1,22 +1,22 @@
 # Graph Report - scientific-research  (2026-10-06)
 
 ## Corpus Check
-- 185 files · ~1,402,957 words
+- 199 files · ~1,414,951 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 80 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
+- Unclassified: 81 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
 
 ## Summary
-- 854 nodes · 1227 edges · 83 communities (59 shown, 5 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 56 edges (avg confidence: 0.89)
+- 981 nodes · 1372 edges · 98 communities (74 shown, 5 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 56 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c8db34ce`
+- Built from commit: `9e063c62`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- mcp_server.py
+- GitController
 - CanvasStore
 - TestScientificResearchLog
 - sthlmNord BeamerTheme
@@ -57,7 +57,7 @@
 - generate_demo_structure.py
 - vesta_cdd.py
 - Key Capabilities & Scientific Protocols
-- GitController
+- CheckpointManager
 - sync_graphify.sh
 - SkillCrystallizer
 - .setUp
@@ -80,6 +80,21 @@
 - composite_badge
 - photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md
 - Authentic VESTA Headless CLI 3D CDD Isosurface Animation
+- brillouin_zone_visualizer.py
+- 2. Next-Generation Computational Skills
+- .get_status
+- bz_visualizer.py
+- avogadro_runner.py
+- chargemol_ddec6.py
+- povray_crystal_render.py
+- pyprocar_suite.py
+- ifermi_surface.py
+- 🧬 Avogadro 2 & OpenBabel Molecular Modeling Skill
+- ⚛️ Chargemol DDEC6 Population & Bond Order Analysis Skill
+- 🌐 IFermi 3D Fermi Surface & Topology Skill
+- 💎 POV-Ray Crystal Raytracer Skill
+- ⚡ PyProcar Electronic Structure Suite Skill
+- 🌐 Reciprocal Space & Brillouin Zone Visualizer Skill
 
 ## God Nodes (most connected - your core abstractions)
 1. `TestScientificResearchLog` - 25 edges
@@ -108,11 +123,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (83 total, 5 thin omitted)
+## Communities (98 total, 5 thin omitted)
 
-### Community 0 - "mcp_server.py"
-Cohesion: 0.14
-Nodes (13): ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+5 more)
+### Community 0 - "GitController"
+Cohesion: 0.13
+Nodes (14): ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, GitController, ===============================================================================…, ===============================================================================… (+6 more)
 
 ### Community 1 - "CanvasStore"
 Cohesion: 0.21
@@ -266,9 +281,9 @@ Nodes (29): build_cdd_isosurface_section(), build_sbond_section(), estimate_bond
 Cohesion: 0.12
 Nodes (15): 10. Programmatic Zero-Dilation Auditing, 1. The Zero-Dilation Rule for Scientific Animations (`format-animation`), 2. Comfortable Animation Pacing Protocol, 3. Header Clearance & Overlap Prevention, 4. Coupled Band Structure + PDOS Architecture (`render-coupled-suite`), 5. Label Anti-Collision Engines, 6. 3D Volumetric Animations (`animate-cdd`), 7. Multi-View CDD Panel (`render-cdd-suite`) (+7 more)
 
-### Community 60 - "GitController"
-Cohesion: 0.12
-Nodes (14): CompletedProcess, CheckpointManager, Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory., GitController (+6 more)
+### Community 60 - "CheckpointManager"
+Cohesion: 0.24
+Nodes (6): CheckpointManager, Any, Reloads memory summaries, trace, parameter registry, and files for an…, Lists all runs with optional status and text search filtering., Appends a discrete milestone or action to the agent trace., Saves or updates a simulation run checkpoint and its dedicated run directory.
 
 ### Community 62 - "SkillCrystallizer"
 Cohesion: 0.32
@@ -346,25 +361,85 @@ Nodes (8): composite_badge(), dynamic_feature_crop(), main(), Image, Full pipeli
 Cohesion: 0.40
 Nodes (4): Authentic VESTA Headless CLI 3D CDD Isosurface Animation, Executive Summary, Key Advancements, Output Files
 
+### Community 83 - "brillouin_zone_visualizer.py"
+Cohesion: 0.27
+Nodes (11): compute_brillouin_zone_voronoi(), compute_reciprocal_lattice(), main(), parse_poscar_lattice(), ndarray, Renders 3D publication-quality Brillouin zone figure., ===============================================================================…, Extracts 3x3 lattice vector matrix from VASP POSCAR. (+3 more)
+
+### Community 84 - "2. Next-Generation Computational Skills"
+Cohesion: 0.12
+Nodes (15): 1.1 Skill 5: `lobster-cohp-bonding`, 1.2 Skill 8: `boltztrap2-transport`, 1. Deferred Sprint Candidates, 2.1 Skill 9: `wannier90-berri-topological`, 2.2 Skill 10: `phonopy-vibrational-thermo`, 2.3 Skill 11: `phono3py-anharmonic-lattice-thermal`, 2.4 Skill 12: `vasp-vtst-reaction-kinetics`, 2.5 Skill 13: `ai-ml-interatomic-potentials` (+7 more)
+
+### Community 85 - ".get_status"
+Cohesion: 0.24
+Nodes (7): CompletedProcess, Any, Creates an atomic Git commit snapshot linking the workspace state to active…, Evaluates whether a simulation setup is strictly reproducible from Git., Helper to run git commands in the base directory., Checks if base_dir is inside an active git repository., Retrieves current git repository state for scientific audit trails.
+
+### Community 86 - "bz_visualizer.py"
+Cohesion: 0.27
+Nodes (11): compute_brillouin_zone_voronoi(), compute_reciprocal_lattice(), main(), parse_poscar_lattice(), ndarray, Renders 3D publication-quality Brillouin zone figure., ===============================================================================…, Extracts 3x3 lattice vector matrix from VASP POSCAR. (+3 more)
+
+### Community 87 - "avogadro_runner.py"
+Cohesion: 0.25
+Nodes (10): build_molecule_from_smiles(), convert_format(), graft_molecule_on_slab(), launch_avogadro(), main(), Launches Avogadro 2 AppImage., ===============================================================================…, Builds 3D optimized molecular coordinates from SMILES string. (+2 more)
+
+### Community 88 - "chargemol_ddec6.py"
+Cohesion: 0.25
+Nodes (10): generate_job_control(), main(), parse_bond_orders(), parse_ddec6_charges(), Parses net atomic charges and dipole moments from DDEC6 output., Parses pairwise bond orders and total sum of bond orders (SBO)., ===============================================================================…, Generates standard Chargemol job_control.txt file. (+2 more)
+
+### Community 89 - "povray_crystal_render.py"
+Cohesion: 0.25
+Nodes (10): compute_bonds(), generate_pov_scene(), main(), parse_poscar(), Generates complete POV-Ray 3.7 scene description code., ===============================================================================…, Executes povray CLI binary to render scene., Parses standard VASP POSCAR returning lattice, species, and Cartesian… (+2 more)
+
+### Community 90 - "pyprocar_suite.py"
+Cohesion: 0.25
+Nodes (10): main(), ===============================================================================…, Generates projected fat bands or parametric orbital band structure., Plots spin texture along band structure or 2D Fermi surface., Unfolds supercell electronic band structure into primitive Brillouin zone., Extracts electronic band gap, VBM, CBM, and transition type., run_bandgap(), run_bands() (+2 more)
+
+### Community 91 - "ifermi_surface.py"
+Cohesion: 0.38
+Nodes (6): main(), ===============================================================================…, Calculates quantitative Fermi surface properties (area, v_F, DOS)., Renders 3D Fermi surface or 2D slice., run_ifermi_info(), run_ifermi_plot()
+
+### Community 92 - "🧬 Avogadro 2 & OpenBabel Molecular Modeling Skill"
+Cohesion: 0.33
+Nodes (5): 🧬 Avogadro 2 & OpenBabel Molecular Modeling Skill, ⚡ CLI Usage, 🚀 Key Capabilities, Overview, 🐍 Python API Reference
+
+### Community 93 - "⚛️ Chargemol DDEC6 Population & Bond Order Analysis Skill"
+Cohesion: 0.33
+Nodes (5): ⚛️ Chargemol DDEC6 Population & Bond Order Analysis Skill, ⚡ CLI Usage, 🚀 Key Capabilities, Overview, 🐍 Python API Reference
+
+### Community 94 - "🌐 IFermi 3D Fermi Surface & Topology Skill"
+Cohesion: 0.33
+Nodes (5): ⚡ CLI Usage, 🌐 IFermi 3D Fermi Surface & Topology Skill, 🚀 Key Capabilities, Overview, 🐍 Python API Reference
+
+### Community 95 - "💎 POV-Ray Crystal Raytracer Skill"
+Cohesion: 0.33
+Nodes (5): ⚡ CLI Usage, 🚀 Key Capabilities, Overview, 💎 POV-Ray Crystal Raytracer Skill, 🐍 Python API Reference
+
+### Community 96 - "⚡ PyProcar Electronic Structure Suite Skill"
+Cohesion: 0.33
+Nodes (5): ⚡ CLI Usage, 🚀 Key Capabilities, Overview, ⚡ PyProcar Electronic Structure Suite Skill, 🐍 Python API Reference
+
+### Community 97 - "🌐 Reciprocal Space & Brillouin Zone Visualizer Skill"
+Cohesion: 0.33
+Nodes (5): ⚡ CLI Usage, 🚀 Key Capabilities, Overview, 🐍 Python API Reference, 🌐 Reciprocal Space & Brillouin Zone Visualizer Skill
+
 ## Knowledge Gaps
-- **168 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `Executive Summary`, `Key Advancements`, `Output Files` (+163 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 464 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **204 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `📌 Executive Summary`, `1.1 Skill 5: `lobster-cohp-bonding``, `1.2 Skill 8: `boltztrap2-transport`` (+199 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 540 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `load_structure()` connect `site_zoom_annotator.py` to `render_blender.py`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `read()` connect `render_blender.py` to `auto_slice_2d.py`, `site_zoom_annotator.py`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `convert_to_xsf()` connect `auto_slice_2d.py` to `render_blender.py`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 10 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
   _`TestScientificResearchLog` has 10 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `CanvasStore` (e.g. with `main()` and `GitController`) actually correct?**
   _`CanvasStore` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 5 inferred relationships involving `GitController` (e.g. with `main()` and `CanvasStore`) actually correct?**
   _`GitController` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `sync_graphify.sh script`, `textalloc`, `Executive Summary` to the rest of the system?**
-  _168 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `sync_graphify.sh script`, `textalloc`, `📌 Executive Summary` to the rest of the system?**
+  _204 weakly-connected nodes found - possible documentation gaps or missing edges._

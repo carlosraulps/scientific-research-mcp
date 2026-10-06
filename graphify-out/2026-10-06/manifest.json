@@ -48,21 +48,21 @@
     "semantic_hash": ""
   },
   "cli.py": {
-    "mtime": 1790858286.237933,
-    "seen": 1790879221.2690258,
-    "ast_hash": "2b95415bb51443e7db7a5be61c7091b2",
+    "mtime": 1791292961.2616463,
+    "seen": 1791293144.2839813,
+    "ast_hash": "53988c2b6b598eb3296d0a8a076e4042",
     "semantic_hash": ""
   },
   "logs/artifacts_registry.json": {
-    "mtime": 1790953616.7516804,
-    "seen": 1790956020.4557235,
-    "ast_hash": "158fbb2c334c7034da77bb96917c28b2",
+    "mtime": 1791289504.997306,
+    "seen": 1791293144.2839947,
+    "ast_hash": "b65d8a43339c22eb312b5281027efe5a",
     "semantic_hash": ""
   },
   "logs/notes_index.json": {
-    "mtime": 1790945531.0521114,
-    "seen": 1790956020.4557247,
-    "ast_hash": "6f49870a1eb64d09a36e165a9a3fce89",
+    "mtime": 1790973659.5339477,
+    "seen": 1791293144.2839987,
+    "ast_hash": "e53ef218f5f7a7f310eb937ae10e1f60",
     "semantic_hash": ""
   },
   "logs/reports_index.json": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "scripts/__init__.py": {
-    "mtime": 1790702278.3382332,
-    "seen": 1790702445.416829,
-    "ast_hash": "091dc9c93ed31249f16b216391e44fb9",
+    "mtime": 1791292811.5701659,
+    "seen": 1791293144.284007,
+    "ast_hash": "cd986f9be337ed84b5ae927cd7b4ecaa",
     "semantic_hash": ""
   },
   "scripts/canvas_store.py": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "scripts/mcp_server.py": {
-    "mtime": 1790702737.8573084,
-    "seen": 1790702912.3047287,
-    "ast_hash": "215d1f01bb4dafd3ecc48de39b6f2864",
+    "mtime": 1791292879.032833,
+    "seen": 1791293144.2840436,
+    "ast_hash": "e3226dc8ca082421336734c8b19be6cc",
     "semantic_hash": ""
   },
   "scripts/scientific_evaluator.py": {
@@ -168,15 +168,15 @@
     "semantic_hash": ""
   },
   "EVIDENCE.md": {
-    "mtime": 1790953599.0144463,
-    "seen": 1790956020.4558744,
-    "ast_hash": "3009e9ab21a0f7f1fcdc49488f1b303d",
+    "mtime": 1791292205.9681673,
+    "seen": 1791293144.2851696,
+    "ast_hash": "5c59fef66f7d1eee0a505070b985debe",
     "semantic_hash": ""
   },
   "SKILL.md": {
-    "mtime": 1790955958.2884595,
-    "seen": 1790956020.455877,
-    "ast_hash": "dd63bce9c5373e8f33e771c3d90cd8bf",
+    "mtime": 1791293060.0376227,
+    "seen": 1791293144.2851884,
+    "ast_hash": "179078a15c6a4ebc2069134d10fcc54e",
     "semantic_hash": ""
   },
   "TASK.md": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "scripts/facts_store.py": {
-    "mtime": 1790702244.002842,
-    "seen": 1790702445.4168391,
-    "ast_hash": "41a9a32b7816e5487dbb5a35bfc57e9d",
+    "mtime": 1791292661.2116785,
+    "seen": 1791293144.2840216,
+    "ast_hash": "8086ffcfb6284b6b0caeb08f73139718",
     "semantic_hash": ""
   },
   "scripts/protocol_engine.py": {
@@ -936,15 +936,15 @@
     "semantic_hash": ""
   },
   "skills/electron-density-surfaces/SKILL.md": {
-    "mtime": 1790955811.1330254,
-    "seen": 1790956020.4558547,
-    "ast_hash": "283e9dedde7a31bb6aa40ae75aade8b4",
+    "mtime": 1791293078.0938013,
+    "seen": 1791293144.28502,
+    "ast_hash": "e6ac98aeb6fb252fe311ee9b3eaa10ad",
     "semantic_hash": ""
   },
   "skills/publication-figure-formatter/SKILL.md": {
-    "mtime": 1790955804.6469622,
-    "seen": 1790956020.4558594,
-    "ast_hash": "4e21f57e83b231c27b91b47a4e047706",
+    "mtime": 1791293103.0410478,
+    "seen": 1791293144.2850528,
+    "ast_hash": "89b0c8c041abae71b3e298c7aa169fa0",
     "semantic_hash": ""
   },
   "skills/publication-figure-formatter/external/adjustText/.github/workflows/python-publish.yml": {
@@ -2283,6 +2283,78 @@
     "mtime": 1790945531.0514886,
     "seen": 1790956020.4558022,
     "ast_hash": "8c54fda70fa38f09346eab2e66334a39",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/109e1be5.json": {
+    "mtime": 1791210522.71821,
+    "seen": 1791293144.2834172,
+    "ast_hash": "1d0d77223cd814e102dbb3218650c1e4",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/1da13279.json": {
+    "mtime": 1791207136.2524033,
+    "seen": 1791293144.2834716,
+    "ast_hash": "36e8a19e090c29f563447560bd8ad215",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/4268dba3.json": {
+    "mtime": 1791220847.7638113,
+    "seen": 1791293144.283655,
+    "ast_hash": "3d40085283082a0d309ada5aeeeb42f6",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/9f4c9fe3.json": {
+    "mtime": 1791215595.1345766,
+    "seen": 1791293144.2837832,
+    "ast_hash": "e08a1dcf750905ad53b2d8b062a4b238",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/a2108b2d.json": {
+    "mtime": 1791222083.4613862,
+    "seen": 1791293144.2837944,
+    "ast_hash": "9900a34f6707e778ef87824b1e324d6a",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/a9a90a30.json": {
+    "mtime": 1791289504.9923322,
+    "seen": 1791293144.2838006,
+    "ast_hash": "1b0b6df85151b7255beca444736a7db9",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/abf468f6.json": {
+    "mtime": 1791289472.2953355,
+    "seen": 1791293144.2838066,
+    "ast_hash": "aecabe0c6d9451814cb3db10e831e5bc",
+    "semantic_hash": ""
+  },
+  "canvas/artifacts/def049e3.json": {
+    "mtime": 1791220872.030797,
+    "seen": 1791293144.2838473,
+    "ast_hash": "c5f6e1b22127fa639a3acc919d23cd5d",
+    "semantic_hash": ""
+  },
+  "scripts/scientific_visualization_tools.py": {
+    "mtime": 1791293007.0933492,
+    "seen": 1791293144.2840607,
+    "ast_hash": "bc2598eebec36143f5f806ff491b0665",
+    "semantic_hash": ""
+  },
+  "canvas/notes/authentic_vesta_cdd_3d_orbital_animation_v1_v1.md": {
+    "mtime": 1790973659.5336318,
+    "seen": 1791293144.2845411,
+    "ast_hash": "9639584014de90e780a43b0a5e882a42",
+    "semantic_hash": ""
+  },
+  "skills/publication-figure-formatter/scripts/brillouin_zone_visualizer.py": {
+    "mtime": 1791294931.2631056,
+    "seen": 1791295084.1341505,
+    "ast_hash": "44fe50c76ea2db8e4c3624a659b4e045",
+    "semantic_hash": ""
+  },
+  "figures/brillouin_zones/crcl3_brillouin_zone_panel_e.png": {
+    "mtime": 1791294852.019323,
+    "seen": 1791295084.1347027,
+    "ast_hash": "febb449b4528ca61941979ee0deed6c5",
     "semantic_hash": ""
   }
 }

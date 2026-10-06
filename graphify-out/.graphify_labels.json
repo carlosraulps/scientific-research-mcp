@@ -1,5 +1,5 @@
 {
-  "0": "mcp_server.py",
+  "0": "GitController",
   "1": "CanvasStore",
   "2": "TestScientificResearchLog",
   "3": "sthlmNord BeamerTheme",
@@ -59,7 +59,7 @@
   "57": "generate_demo_structure.py",
   "58": "vesta_cdd.py",
   "59": "Key Capabilities & Scientific Protocols",
-  "60": "GitController",
+  "60": "CheckpointManager",
   "61": "sync_graphify.sh",
   "62": "SkillCrystallizer",
   "63": ".setUp",
@@ -81,5 +81,20 @@
   "79": "animate_3d_cdd.py",
   "80": "composite_badge",
   "81": "photh_graphene_remote_sync_and_c5_piezo_matrix_v1.md",
-  "82": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation"
+  "82": "Authentic VESTA Headless CLI 3D CDD Isosurface Animation",
+  "83": "brillouin_zone_visualizer.py",
+  "84": "2. Next-Generation Computational Skills",
+  "85": ".get_status",
+  "86": "bz_visualizer.py",
+  "87": "avogadro_runner.py",
+  "88": "chargemol_ddec6.py",
+  "89": "povray_crystal_render.py",
+  "90": "pyprocar_suite.py",
+  "91": "ifermi_surface.py",
+  "92": "🧬 Avogadro 2 & OpenBabel Molecular Modeling Skill",
+  "93": "⚛️ Chargemol DDEC6 Population & Bond Order Analysis Skill",
+  "94": "🌐 IFermi 3D Fermi Surface & Topology Skill",
+  "95": "💎 POV-Ray Crystal Raytracer Skill",
+  "96": "⚡ PyProcar Electronic Structure Suite Skill",
+  "97": "🌐 Reciprocal Space & Brillouin Zone Visualizer Skill"
 }

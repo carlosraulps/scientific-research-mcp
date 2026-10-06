@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "SKILL.md": {
-    "mtime": 1791293060.0376227,
-    "seen": 1791293144.2851884,
-    "ast_hash": "179078a15c6a4ebc2069134d10fcc54e",
+    "mtime": 1791307040.5439808,
+    "seen": 1791307049.9888158,
+    "ast_hash": "00b44c3fd0640bbf2d247582eb25b919",
     "semantic_hash": ""
   },
   "TASK.md": {
@@ -2343,6 +2343,96 @@
     "mtime": 1790973659.5336318,
     "seen": 1791293144.2845411,
     "ast_hash": "9639584014de90e780a43b0a5e882a42",
+    "semantic_hash": ""
+  },
+  "skills/publication-figure-formatter/scripts/brillouin_zone_visualizer.py": {
+    "mtime": 1791294931.2631056,
+    "seen": 1791295084.1341505,
+    "ast_hash": "44fe50c76ea2db8e4c3624a659b4e045",
+    "semantic_hash": ""
+  },
+  "figures/brillouin_zones/crcl3_brillouin_zone_panel_e.png": {
+    "mtime": 1791294852.019323,
+    "seen": 1791295084.1347027,
+    "ast_hash": "febb449b4528ca61941979ee0deed6c5",
+    "semantic_hash": ""
+  },
+  "skills/avogadro-automation/scripts/avogadro_runner.py": {
+    "mtime": 1791306672.2081132,
+    "seen": 1791307049.988673,
+    "ast_hash": "84a50bafda75f6afa36e3b149c985633",
+    "semantic_hash": ""
+  },
+  "skills/chargemol-ddec6/scripts/chargemol_ddec6.py": {
+    "mtime": 1791306891.0435288,
+    "seen": 1791307049.9886763,
+    "ast_hash": "0b8422f42ccfb51a3057fe529326b2f7",
+    "semantic_hash": ""
+  },
+  "skills/ifermi-surface-topology/scripts/ifermi_surface.py": {
+    "mtime": 1791306944.2530458,
+    "seen": 1791307049.988682,
+    "ast_hash": "1feb0b3c7fde8b9b3baf14f4489bc669",
+    "semantic_hash": ""
+  },
+  "skills/povray-crystal-raytracer/scripts/povray_crystal_render.py": {
+    "mtime": 1791306506.6047828,
+    "seen": 1791307049.9886897,
+    "ast_hash": "e888517e3b984653b51ebd67ae426095",
+    "semantic_hash": ""
+  },
+  "skills/pyprocar-electronic-suite/scripts/pyprocar_suite.py": {
+    "mtime": 1791306762.349277,
+    "seen": 1791307049.9887109,
+    "ast_hash": "a94ae6e9f5a933970814df69d15598b4",
+    "semantic_hash": ""
+  },
+  "skills/reciprocal-space-visualizer/scripts/bz_visualizer.py": {
+    "mtime": 1791306454.19333,
+    "seen": 1791307049.9887118,
+    "ast_hash": "44fe50c76ea2db8e4c3624a659b4e045",
+    "semantic_hash": ""
+  },
+  "FUTURE_SKILLS_ROADMAP.md": {
+    "mtime": 1791306302.1857793,
+    "seen": 1791307049.9887316,
+    "ast_hash": "0f4adf28d370439eb5dbc8e9f73c1e1e",
+    "semantic_hash": ""
+  },
+  "skills/avogadro-automation/SKILL.md": {
+    "mtime": 1791306703.171701,
+    "seen": 1791307049.9887877,
+    "ast_hash": "75370b34fa1b584f0f35c7a7a4871113",
+    "semantic_hash": ""
+  },
+  "skills/chargemol-ddec6/SKILL.md": {
+    "mtime": 1791306907.9106927,
+    "seen": 1791307049.98879,
+    "ast_hash": "9bb302d2915737afb00d91c45239f452",
+    "semantic_hash": ""
+  },
+  "skills/ifermi-surface-topology/SKILL.md": {
+    "mtime": 1791306973.2613275,
+    "seen": 1791307049.9887922,
+    "ast_hash": "f6c666d1cb9fb459eb3831e5d6e9c6ba",
+    "semantic_hash": ""
+  },
+  "skills/povray-crystal-raytracer/SKILL.md": {
+    "mtime": 1791306569.891401,
+    "seen": 1791307049.9887965,
+    "ast_hash": "2334951f5fe2b90d4886fadda0138bd0",
+    "semantic_hash": ""
+  },
+  "skills/pyprocar-electronic-suite/SKILL.md": {
+    "mtime": 1791306802.8756714,
+    "seen": 1791307049.9888072,
+    "ast_hash": "7fb82c9935dc88c11629fa5890d91087",
+    "semantic_hash": ""
+  },
+  "skills/reciprocal-space-visualizer/SKILL.md": {
+    "mtime": 1791306468.2924082,
+    "seen": 1791307049.9888082,
+    "ast_hash": "5be406d45d89644a940ea9d0270e39b2",
     "semantic_hash": ""
   }
 }

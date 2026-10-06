@@ -36,3 +36,4 @@ runs/test_md_*
 checkpoints/test_md_*
 tmp/
 scratch/
+*.log
