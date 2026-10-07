@@ -112,7 +112,17 @@ def render_brillouin_zone(
     B = compute_reciprocal_lattice(lattice)
     b1, b2, b3 = B[0], B[1], B[2]
 
-    # For hexagonal crystals, orient so that b1 points to lower-left and b2 to lower-right
+    # Detect crystal system or use parameter
+    lengths = [np.linalg.norm(lattice[i]) for i in range(3)]
+    angles = [
+        np.degrees(np.arccos(np.dot(lattice[1], lattice[2]) / (lengths[1] * lengths[2]))),
+        np.degrees(np.arccos(np.dot(lattice[0], lattice[2]) / (lengths[0] * lengths[2]))),
+        np.degrees(np.arccos(np.dot(lattice[0], lattice[1]) / (lengths[0] * lengths[1]))),
+    ]
+    is_orthorhombic = crystal_type.lower() in ["orthorhombic", "ortho"] or (
+        np.allclose(angles, 90.0, atol=1.5) and not np.isclose(lengths[0], lengths[1], atol=0.05)
+    )
+
     if crystal_type.lower() in ["hexagonal", "hex", "trigonal"]:
         b_mag = np.linalg.norm(b1)
         b3_mag = np.linalg.norm(b3)
@@ -123,26 +133,72 @@ def render_brillouin_zone(
 
     bz_verts, bz_edges, bz_faces, vor = compute_brillouin_zone_voronoi(B)
 
-    # High-symmetry points for hexagonal lattice
     gamma = np.array([0.0, 0.0, 0.0])
-    M = 0.5 * b1
-    K = (1.0 / 3.0) * b1 + (1.0 / 3.0) * b2
-    A_pt = 0.5 * b3
-    L_pt = M + 0.5 * b3
-    H_pt = K + 0.5 * b3
 
-    prism_vertices = {
-        "\\Gamma": gamma,
-        "M": M,
-        "K": K,
-        "A": A_pt,
-        "L": L_pt,
-        "H": H_pt
-    }
+    if is_orthorhombic:
+        b1_mag = np.linalg.norm(b1)
+        b2_mag = np.linalg.norm(b2)
+        b3_mag = np.linalg.norm(b3)
+        kx = b1_mag / 2.0
+        ky = b2_mag / 2.0
+        kz = b3_mag / 2.0
 
-    prism_faces = [
-        [gamma, M, K],
-        [A_pt, L_pt, H_pt],
+        prism_vertices = {
+            "\\Gamma": gamma,
+            "X": np.array([kx, 0.0, 0.0]),
+            "S": np.array([kx, ky, 0.0]),
+            "Y": np.array([0.0, ky, 0.0]),
+            "Z": np.array([0.0, 0.0, kz]),
+            "U": np.array([kx, 0.0, kz]),
+            "R": np.array([kx, ky, kz]),
+            "T": np.array([0.0, ky, kz]),
+        }
+        X_pt, S_pt, Y_pt = prism_vertices["X"], prism_vertices["S"], prism_vertices["Y"]
+        Z_pt, U_pt, R_pt, T_pt = prism_vertices["Z"], prism_vertices["U"], prism_vertices["R"], prism_vertices["T"]
+
+        prism_faces = [
+            [gamma, X_pt, S_pt, Y_pt],
+            [Z_pt, U_pt, R_pt, T_pt],
+            [gamma, X_pt, U_pt, Z_pt],
+            [X_pt, S_pt, R_pt, U_pt],
+            [S_pt, Y_pt, T_pt, R_pt],
+            [Y_pt, gamma, Z_pt, T_pt],
+        ]
+        prism_edges = [
+            (gamma, X_pt), (X_pt, S_pt), (S_pt, Y_pt), (Y_pt, gamma),
+            (Z_pt, U_pt), (U_pt, R_pt), (R_pt, T_pt), (T_pt, Z_pt),
+            (gamma, Z_pt), (X_pt, U_pt), (S_pt, R_pt), (Y_pt, T_pt),
+        ]
+    else:
+        # High-symmetry points for hexagonal lattice
+        M = 0.5 * b1
+        K = (1.0 / 3.0) * b1 + (1.0 / 3.0) * b2
+        A_pt = 0.5 * b3
+        L_pt = M + 0.5 * b3
+        H_pt = K + 0.5 * b3
+
+        prism_vertices = {
+            "\\Gamma": gamma,
+            "M": M,
+            "K": K,
+            "A": A_pt,
+            "L": L_pt,
+            "H": H_pt
+        }
+
+        prism_faces = [
+            [gamma, M, K],
+            [A_pt, L_pt, H_pt],
+            [gamma, M, L_pt, A_pt],
+            [M, K, H_pt, L_pt],
+            [K, gamma, A_pt, H_pt]
+        ]
+
+        prism_edges = [
+            (gamma, M), (M, K), (K, gamma),
+            (A_pt, L_pt), (L_pt, H_pt), (H_pt, A_pt),
+            (gamma, A_pt), (M, L_pt), (K, H_pt)
+        ]
         [gamma, M, L_pt, A_pt],
         [M, K, H_pt, L_pt],
         [K, gamma, A_pt, H_pt]

@@ -88,6 +88,17 @@ The shaded tetrahedron comprises 4 vertices:
 - `--colorbar-label`: Colorbar title (supports LaTeX math, e.g. `$\Delta G_{\mathrm{ads}}\ (\mathrm{eV})$`).
 - `--composite`: Render the complete multi-panel figure (Panel a: property map, Panel b: 3D macro + callout + pyramid inset, Panels e-j: circular zooms).
 - `--pyramid-site`: Designated site name for the 3D pyramid inset in composite mode (default: `S6`).
+
+---
+
+## Publication Typography & Figure Standards
+
+All figures and animated GIF loops generated under this skill MUST strictly adhere to:
+1. **Font Family**: Times New Roman typography (`font.family: serif`, `font.serif: ["Times New Roman", "DejaVu Serif"]`, `mathtext.fontset: "stix"`).
+2. **Mathematical Notation**: Rigorous LaTeX STIX math formatting with proper roman text prefixes (`\mathrm{}`) for elements, units, and chemical species (e.g., $\Delta z_{\mathrm{buckle}}$, $d(\mathrm{C-H})$, $\theta_p(\mathrm{POAV1})$, $\Delta G_{\mathrm{H}^*}$).
+3. **Centered Titles**: All figure and GIF animation titles must be horizontally centered (`ha="center"`, `x = width / 2`).
+4. **Seamless Reversible Loops**: In dynamic chemisorption cycles, reaction coordinates must smoothly ping-pong from $0 \rightarrow 1 \rightarrow 0$ using harmonic/smoothstep weighting $\lambda(\tau) = \frac{1 - \cos(\tau)}{2}$ so $\lambda'(0) = \lambda'(2\pi) = 0$, guaranteeing zero velocity jumps at loop seams.
+
 - `--output-dir`, `-o`: Directory to save generated PNG and PDF files.
 - `--prefix`, `-p`: File prefix (default: `site_zoom`).
 - `--dpi`: Figure resolution (default: `300`).
