@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/cr/.local/share/mamba/envs/vasp-env/bin/python
 """
 ================================================================================
 Avogadro 2 & OpenBabel Molecular Modeling Automation Suite

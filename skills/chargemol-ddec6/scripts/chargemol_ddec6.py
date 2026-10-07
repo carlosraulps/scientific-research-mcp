@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/cr/.local/share/mamba/envs/vasp-env/bin/python
 """
 ================================================================================
 Chargemol DDEC6 Population Analysis Suite (chargemol-ddec6)

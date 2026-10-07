@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/cr/.local/share/mamba/envs/vasp-env/bin/python
 """
 ================================================================================
 PyProcar Electronic Structure Suite (pyprocar-suite)

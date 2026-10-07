@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/cr/.local/share/mamba/envs/vasp-env/bin/python
 """
 ================================================================================
 IFermi Surface & Topology Analysis Suite (ifermi-surface)
