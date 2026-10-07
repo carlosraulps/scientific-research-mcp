@@ -95,26 +95,51 @@ The Chairman delivers the finalized **Resolution Blueprint** before any git merg
 
 ---
 
-## 4. Helper Tool CLI Usage
+## 4. Helper Tool CLI Usage (`git-sync` in `$PATH`)
 
-The skill provides the standalone utility [`scripts/git_sync_tool.py`](file:///home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py):
+The utility is deployed globally in `$PATH` at [`~/.local/bin/git-sync`](file:///home/cr/.local/bin/git-sync) (pointing to [`scripts/git_sync_tool.py`](file:///home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py)). It runs natively in Bash, Fish, and Zsh.
+
+### CLI Syntax & Commands
 
 ```bash
-# 1. Inspect status, ahead/behind counts, and divergence
-python /home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py
+# 1. Full Safe Sync (fetch -> audit -> safe fast-forward pull / push)
+git-sync
 
-# 2. Fetch remote and run complete audit with DecisionCouncil checks
-python /home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py --fetch
+# 2. Pre-Flight Remote Divergence Audit
+git-sync --fetch
 
-# 3. Explicitly generate the DecisionCouncil deliberation brief
-python /home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py --council
+# 3. Explicit DecisionCouncil Deliberation Brief
+git-sync --council
 
-# 4. Attempt safe fast-forward pull (aborts if diverged/conflicted)
-python /home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py --fetch --pull
+# 4. In-Memory Conflict Simulation (Zero Working Tree Touch)
+git-sync -n    # dry-run mode
 
-# 5. Attempt safe push (verifies SSH auth first)
-python /home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py --push
+# 5. Safe Pull Execution (Aborts if diverged or conflicting)
+git-sync --pull
+git-sync --pull --autostash   # Stashes dirty worktree before pull
 
-# 6. Output raw JSON for automated pipelines
-python /home/cr/simulations/scientific-research/skills/git-sync/scripts/git_sync_tool.py --json
+# 6. Safe Push Execution (Verifies SSH batch authentication first)
+git-sync --push
+
+# 7. SQLite & Binary Database Safeguard Snapshot
+git-sync --backup   # Snapshots memory/*.db into .git/git-sync-backups/
+
+# 8. Structured Execution Logging Inspection
+git-sync --log      # Displays the last 40 lines of ~/.local/state/git-sync/git-sync.log
+
+# 9. Low-Level Command Tracing (Debug Mode with Millisecond Latencies)
+git-sync -d
+
+# 10. Machine-Readable JSON Output (for Agents & MCP Tools)
+git-sync --json
 ```
+
+### Logging Architecture
+- **Terminal Console**: ANSI color-coded statuses (`[✓]`, `[✗]`, `[⚠]`, `[ℹ]`, `[🏛️]`) respecting `NO_COLOR` and non-TTY redirection.
+- **Persistent Audit File**: Structured log records appended to `~/.local/state/git-sync/git-sync.log` (or custom `--log-file`) tracking:
+  - Timestamp (millisecond precision `YYYY-MM-DD HH:MM:SS.mmm`)
+  - Execution PID
+  - Log Level (`INFO`, `DEBUG`, `WARN`, `ERROR`, `CRIT`, `OK`)
+  - Git command duration in milliseconds
+  - Process return codes
+
