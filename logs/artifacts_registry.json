@@ -1534,6 +1534,552 @@
       "is_dirty": true
     }
   },
+  "67ce2aae": {
+    "result_id": "67ce2aae",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:26:26.744474+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "11571321": {
+    "result_id": "11571321",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "67ce2aae"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "67ce2aae"
+    ],
+    "created_at": "2026-10-04T11:26:26.841921+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "e8e7e02a": {
+    "result_id": "e8e7e02a",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:26:26.923189+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "9cbb0ec2": {
+    "result_id": "9cbb0ec2",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "e8e7e02a"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "e8e7e02a"
+    ],
+    "created_at": "2026-10-04T11:26:26.998373+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "2349cb7b": {
+    "result_id": "2349cb7b",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:28:25.879287+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "f780337e": {
+    "result_id": "f780337e",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "2349cb7b"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "2349cb7b"
+    ],
+    "created_at": "2026-10-04T11:28:25.964413+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "61e3961e": {
+    "result_id": "61e3961e",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:28:26.041736+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "2a9ae615": {
+    "result_id": "2a9ae615",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "61e3961e"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "61e3961e"
+    ],
+    "created_at": "2026-10-04T11:28:26.119226+00:00",
+    "git": {
+      "commit": "e648874f6289e2ce76ccdb609cbcca668a23dade",
+      "short_commit": "e648874f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "b954fd49": {
+    "result_id": "b954fd49",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:34:12.872393+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "537eb1f7": {
+    "result_id": "537eb1f7",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "b954fd49"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "b954fd49"
+    ],
+    "created_at": "2026-10-04T11:34:12.974867+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "f7bf1f89": {
+    "result_id": "f7bf1f89",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:34:13.052854+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "ed9e5634": {
+    "result_id": "ed9e5634",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "f7bf1f89"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "f7bf1f89"
+    ],
+    "created_at": "2026-10-04T11:34:13.127803+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "50afce75": {
+    "result_id": "50afce75",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:34:53.556045+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "889a110b": {
+    "result_id": "889a110b",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "50afce75"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "50afce75"
+    ],
+    "created_at": "2026-10-04T11:34:53.649843+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "c7f4118a": {
+    "result_id": "c7f4118a",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T11:34:53.727550+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "502c1475": {
+    "result_id": "502c1475",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "c7f4118a"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "c7f4118a"
+    ],
+    "created_at": "2026-10-04T11:34:53.802467+00:00",
+    "git": {
+      "commit": "341fc7254aa41c7824f33101909fe085e303efce",
+      "short_commit": "341fc725",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "b4dac365": {
+    "result_id": "b4dac365",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Investigation of transition-metal functionalized CrCl3 monolayers comparing adsorbed and embedded geometries under single-site vs multi-site Hubbard U corrections.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T21:08:42.996717+00:00",
+    "git": {
+      "commit": "28f5b4fc7d07b26f562a2b5cb46b4d5ee3fc0295",
+      "short_commit": "28f5b4fc",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "22e6c873": {
+    "result_id": "22e6c873",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Audited publication figure for CrCl3-TM electrocatalysis: strictly plots real converged DFT results across vdW and +U_Cr tiers, and highlights the single converged Tier 3 pair (Fe_emb = +1.82 eV) while marking computing/queued jobs transparently with zero invented data.",
+    "parent_ids": [],
+    "created_at": "2026-10-04T21:31:35.823641+00:00",
+    "git": {
+      "commit": "28f5b4fc7d07b26f562a2b5cb46b4d5ee3fc0295",
+      "short_commit": "28f5b4fc",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
   "1da13279": {
     "result_id": "1da13279",
     "producing_tool": "",
@@ -1666,6 +2212,262 @@
     "git": {
       "commit": "c8db34ce179e6bfe8bf553ae3d78613e81bc0cf5",
       "short_commit": "c8db34ce",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "ef499271": {
+    "result_id": "ef499271",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-07T22:47:10.813362+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "38d8a377": {
+    "result_id": "38d8a377",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "ef499271"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "ef499271"
+    ],
+    "created_at": "2026-10-07T22:47:10.830769+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "9c241177": {
+    "result_id": "9c241177",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-07T22:47:10.851148+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "2c2831c3": {
+    "result_id": "2c2831c3",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "9c241177"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "9c241177"
+    ],
+    "created_at": "2026-10-07T22:47:10.867774+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "c059cbfc": {
+    "result_id": "c059cbfc",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-07T22:47:16.983024+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "31373e31": {
+    "result_id": "31373e31",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "c059cbfc"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "c059cbfc"
+    ],
+    "created_at": "2026-10-07T22:47:17.001190+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "0532f49b": {
+    "result_id": "0532f49b",
+    "producing_tool": "dft_cutoff_sweep",
+    "value": {
+      "converged_encut": 520,
+      "energy_diff_mev": 0.4
+    },
+    "arguments": {
+      "encut_range": [
+        400,
+        450,
+        500,
+        520,
+        600
+      ]
+    },
+    "rationales": {
+      "encut": "Convergence sweep to Delta E < 1 meV/atom"
+    },
+    "sources": {},
+    "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+    "parent_ids": [],
+    "created_at": "2026-10-07T22:47:17.022140+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "2d1743f7": {
+    "result_id": "2d1743f7",
+    "producing_tool": "dft_equilibrium_volume",
+    "value": {
+      "a0": 3.924,
+      "e0": -6.048
+    },
+    "arguments": {
+      "encut": 520,
+      "kpoints": [
+        12,
+        12,
+        12
+      ]
+    },
+    "rationales": {
+      "encut": "Sourced from prior convergence sweep",
+      "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+    },
+    "sources": {
+      "encut": "0532f49b"
+    },
+    "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+    "parent_ids": [
+      "0532f49b"
+    ],
+    "created_at": "2026-10-07T22:47:17.039236+00:00",
+    "git": {
+      "commit": "34f86280ad5fbeb53c52c75b03826b8dec608c3f",
+      "short_commit": "34f86280",
       "branch": "master",
       "is_dirty": true
     }

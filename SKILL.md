@@ -31,6 +31,11 @@ Welcome to the **Scientific Research Log & Shared Memory Engine**. Grounded in 1
 | **Simthesizer** | W. Kim et al., *arXiv:2608.24650* (2026) | **Workload Simulation & Profiling**: Synthetic trace simulation estimating node-hours, disk I/O, and token budgets prior to cluster submission. |
 | **Rosetta** | K. Sankaralingam, *arXiv:2609.19376* (2026) | **The Scientific Constitution**: Prohibits circular reasoning, enforces calibration-as-overlay, and establishes **Dual Verification** separating functional correctness from scientific validity. |
 | **Meadows** | D. H. Meadows, *Thinking in Systems* (2008) | **Systems Leverage Points**: Balancing convergence loops, reinforcing lifelong memory accumulation, springing the "Rule Beating" and "Drift to Low Performance" system traps. |
+| **Microsoft AI4Science** | AI4Science Team, *arXiv:2311.07361* (2023) | **Physical Geometry Sanity Guard**: Prevents POSCAR coordinate hallucinations, atomic overlaps (<0.8 Å), unphysical short bonds (<1.0 Å), and volume inversions. |
+| **LLM4SR** | Z. Luo et al., *ACM Comput. Surv.* (2025) | **Hypothesis Discovery & Feedback**: 4-stage research loop, Novelty/Validity/Clarity/Feasibility multi-criteria feedback, and multi-inspiration association (LMI). |
+| **HKUST Autonomy** | T. Zheng et al., *arXiv:2505.13259* (2025) | **Three-Tier Autonomy Taxonomy**: Progression from Level 1 (Tool) to Level 2 (Analyst) to Level 3 (Autonomous Scientist) navigating full-cycle scientific inquiry. |
+| **SDE Benchmark** | Z. Song, C. Duan, H. Kulik et al., *arXiv:2512.15567* (2026) | **Closed-Loop Discovery Harness (`sde-harness`)**: Multi-round hypothesis testing against simulation oracles, anti-saturation sentinel preventing ungrounded linguistic loops. |
+| **AI Engineering** | C. Huyen, *O'Reilly Media* (2025) | **Defense-in-Depth AI Architecture**: 5-step application framework, component-level evaluations, strict input/output guardrails, and hierarchical prompt/memory caching. |
 
 ---
 
@@ -58,8 +63,20 @@ sciresearch skills "charge sloshing"
 # 6. Score simulation input script against Ponytail zero-redundancy and physical rules
 sciresearch eval INCAR --engine vasp
 
-# 7. Rosetta Dual Verification (Functional Correctness + Scientific Validity)
+# 7. Compose input file using Ponytail Delta Composer (anti-regeneration standard)
+sciresearch compose --base base_templates/vasp/INCAR.base --set NSW=0 ISMEAR=-5 NEDOS=2001 LORBIT=11 --output 01_pristine/dos/INCAR
+
+# 8. Rosetta Dual Verification (Functional Correctness + Scientific Validity)
 sciresearch verify INCAR --domain dft
+
+# 9. Structure Sanity Guard (Prevent coordinate hallucinations & atomic overlaps)
+sciresearch guard-structure POSCAR
+
+# 10. Multi-Dimensional Hypothesis Evaluation (Novelty, Validity, Clarity, Feasibility)
+sciresearch eval-hypothesis "We hypothesize PHOTH-graphene band gap tuning with VASP..."
+
+# 11. SDE Closed-Loop Discovery Verification (Multi-Round state & anti-saturation sentinel)
+sciresearch sde-verify photh_project 1 "Hypothesis text..." --oracle --metric 1.25
 
 # 8. List resumable simulation runs and checkpoints
 sciresearch runs --status RUNNING
@@ -82,9 +99,9 @@ sciresearch strain-metrics strain_electronic_metrics.csv
 
 ---
 
-## 🔌 Model Context Protocol (MCP) Tool Suite (27 Tools)
+## 🔌 Model Context Protocol (MCP) Tool Suite (30 Tools)
 
-The skill exposes 27 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
+The skill exposes 30 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
 
 ### 1. DREAMS Shared Canvas & Provenance Store
 * `canvas_register_artifact(producing_tool, value, arguments, rationales, sources, declared_context, sensitive_params)`:
@@ -241,4 +258,12 @@ def fix_sloshing(incar):
 - **Validation**: Automated schema verification
 ```python
 
+```
+
+### Learned Skill: `ponytail_delta_composition`
+- **Description**: Declarative input delta composition and grounded self-documentation across simulation stages for VASP, SIESTA, and LAMMPS.
+- **Trigger**: Transitioning from structural relaxation to static, DOS, bands, adsorption, or MD.
+- **Validation**: Ponytail zero-redundancy passes, every mutated line annotated with rationale, no baseline drift.
+```python
+sciresearch compose --base base_templates/vasp/INCAR.base --set NSW=0 ISMEAR=-5 NEDOS=2001 LORBIT=11 --output 01_pristine/dos/INCAR
 ```

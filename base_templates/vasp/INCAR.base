@@ -1,0 +1,30 @@
+# ==============================================================================
+# Master VASP INCAR Baseline (base_templates/vasp/INCAR.base)
+# Framework: Ponytail Zero-Redundancy & Literature Grounding Standard
+# Grounding: [NotebookLM:dft-documentation] & TRITONDFT Historical Memory
+# ==============================================================================
+
+# --- Electronic Minimization ---
+PREC       = Accurate      # [NotebookLM:dft-doc:Accuracy] High FFT grid precision eliminates Pulay stress
+ENCUT      = 520           # [DREAMS:encut_sweep_4e1e5e2a] Converged to Delta E < 1 meV/atom
+EDIFF      = 1E-6          # Standard electronic convergence criteria for ground state relaxations
+NELM       = 120           # Sufficient electronic iterations to guarantee self-consistency
+LREAL      = .FALSE.       # Exact reciprocal space projection for high accuracy (required for cell relax)
+IVDW       = 12            # [NotebookLM:dft-doc:Grimme-D3-Zero] Dynamic environment-dependent dispersion
+
+# --- Smearing & Occupations ---
+ISMEAR     = 0             # [NotebookLM:dft-doc:Semiconductor-Rule] Gaussian smearing for gap > 0 eV
+SIGMA      = 0.05          # Minimal smearing width (50 meV) preventing unphysical fractional occupancies
+
+# --- Ionic Dynamics & Relaxation ---
+IBRION     = 2             # Conjugate-gradient algorithm for ionic optimization
+NSW        = 300           # Maximum ionic relaxation steps
+ISIF       = 3             # Full relaxation of ion coordinates, cell shape, and volume
+EDIFFG     = -0.01         # Force convergence threshold (-0.01 eV/Angstrom)
+
+# --- Spin & Magnetism ---
+ISPIN      = 2             # Spin-polarized calculation enabled by default
+
+# --- Parallelization & HPC Topology ---
+NCORE      = 16            # [server-info:iskay_spec] Optimal core geometry matching AMD EPYC socket divisor
+KPAR       = 2             # Parallelization across k-points for multi-node efficiency

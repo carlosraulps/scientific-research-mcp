@@ -12,6 +12,7 @@ Generates interconnected Markdown documents with typed wikilinks and invokes
 
 import os
 import sys
+import re
 import json
 import subprocess
 import glob
@@ -95,8 +96,43 @@ class GraphifyBridge:
         content += f"- **Total Registered Artifacts**: {len(artifacts)}\n"
         content += f"- **Audit Log**: [`decisions.csv`](file://{os.path.join(self.logs_dir, 'decisions.csv')})\n"
         content += f"- **Evidence Store**: [`EVIDENCE.md`](file://{os.path.join(self.base_dir, 'EVIDENCE.md')})\n"
-        content += f"- **Operational Protocol**: [`CLAUDE.md`](file://{os.path.join(self.base_dir, 'CLAUDE.md')})\n"
+        content += f"- **Operational Protocol**: [`CLAUDE.md`](file://{os.path.join(self.base_dir, 'CLAUDE.md')}) & [`AGY.md`](file://{os.path.join(self.base_dir, 'AGY.md')})\n"
         content += f"- **Active Execution Tracking**: [`TASK.md`](file://{os.path.join(self.base_dir, 'TASK.md')})\n"
+
+        # Gather base templates
+        templates_dir = os.path.join(self.base_dir, "base_templates")
+        content += "\n## 5. Master Base Templates (Declarative Baselines)\n"
+        if os.path.exists(templates_dir):
+            for root, _, files in os.walk(templates_dir):
+                for f in sorted(files):
+                    if f.endswith(".base") or f.startswith("INCAR") or f.endswith(".fdf"):
+                        rel_p = os.path.relpath(os.path.join(root, f), self.base_dir)
+                        content += f"- **[[template:{f}]]**: [`{rel_p}`](file://{os.path.join(root, f)})\n"
+        else:
+            content += "- *No base templates registered.*\n"
+
+        # Gather calculation directories (Hybrid 2-Tier Standard: 00_*, 01_*, 02_*, 03_*, 04_*, 05_*)
+        content += "\n## 6. Calculation Stages (Hybrid 2-Tier Directory Standard)\n"
+        calc_dirs = []
+        for d in sorted(os.listdir(self.base_dir)):
+            if re.match(r"^0[0-9]_[a-zA-Z0-9_-]+", d) and os.path.isdir(os.path.join(self.base_dir, d)):
+                calc_dirs.append(d)
+
+        if calc_dirs:
+            for top_d in calc_dirs:
+                content += f"\n### Tier: `{top_d}`\n"
+                full_top = os.path.join(self.base_dir, top_d)
+                sub_items = sorted(os.listdir(full_top))
+                for item in sub_items:
+                    sub_p = os.path.join(full_top, item)
+                    if os.path.isdir(sub_p):
+                        has_incar = os.path.exists(os.path.join(sub_p, "INCAR"))
+                        has_fdf = any(f.endswith(".fdf") for f in os.listdir(sub_p)) if os.path.exists(sub_p) else False
+                        has_lammps = any(f.startswith("in.") or f.endswith(".lammps") for f in os.listdir(sub_p)) if os.path.exists(sub_p) else False
+                        engine_badge = "VASP" if has_incar else ("SIESTA" if has_fdf else ("LAMMPS" if has_lammps else "Dir"))
+                        content += f"- **[[calculation:{top_d}/{item}]]** [`{engine_badge}`]: [`{item}`](file://{sub_p})\n"
+        else:
+            content += "- *No active calculation stage directories found.*\n"
 
         with open(map_path, "w", encoding="utf-8") as f:
             f.write(content)

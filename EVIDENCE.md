@@ -33,6 +33,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Intervention**: Deployed Canvas Store, Checkpoint Manager, Historical Memory SQLite DB, Scientific Evaluator, and Graphify Bridge.
 - **Observed Outcome**: 8/8 unit tests passed; 15 MCP tools verified over JSON-RPC 2.0 stdio.
 - **Evidence / Artifact Reference**: `scripts/mcp_server.py`
+
+---
+
 ### [2026-09-29T17:58:45.743960+00:00] Decision: phase2_algorithmic_acceleration (`crcl3_2x2_embedded_pipeline_optimization`)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: In Phase 2 (+U) continuation from pre-converged WAVECAR, taking small damped ionic steps (POTIM=0.25) and using RMM-DIIS (ALGO=Fast) with NELMIN=4 will cut electronic time by 2x while preventing conjugate-gradient overshooting in 2D CrCl3.
@@ -41,6 +44,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `DecisionCouncil deliberation transcript (2026-09-29) and Job 165535 force trajectory`
 
 ---
+
+---
+
 ### [2026-09-30T14:40:27.645430+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -49,6 +55,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-01T00:09:35.319737+00:00] Decision: dispatch_complete_piezocatalytic_matrix (`photh_piezo_overnight_20261001`)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: Under mechanical strain, normal strains preserve the D2h/Pmm2 mirror symmetries in the bare substrate, but on-top H-adsorption and non-affine relaxation break local site degeneracy, necessitating the evaluation of both Uniaxial (X, Y) and Biaxial deformation modes across all distinct Wyckoff sites (C1-C6) to map the Sabatier volcano.
@@ -57,6 +66,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `05_dilute_and_piezocatalysis/job_piezo_biaxial_others_huk.sh`
 
 ---
+
+---
+
 ### [2026-10-01T00:09:55.722685+00:00] Decision: expand_fatbands_and_bader_to_full_3percent_envelope (`photh_bands_full_strain_20261001`)
 - **Triggered Rule**: Rule E
 - **Hypothesis**: Frontier orbital rehybridization (C p_z) under mechanical strain governs the electronic free energy shift Delta G_H. Evaluating the full +/-3% strain range continuously rather than isolated points reveals non-linear charge transfer and verifies whether Dirac-like crossings persist without soft-mode instability.
@@ -65,6 +77,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `postprocessing/figures/fig8_bader_charge_redistribution_under_strain.png`
 
 ---
+
+---
+
 ### [2026-10-01T10:11:18.612631+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -73,6 +88,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-01T13:22:27.684024+00:00] Decision: cohp_figure_audit_and_vector_remake (`crcl3_2x2_tm_cohp_bonding_analysis`)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: LOBSTER COHP and ICOHP curves in Figure 6 and Figure S4 represent clean TM-Cl host anchoring and coordination trade-offs of the unfunctionalized/functionalized substrate prior to hydrogen adsorption. Hydrogen evolution calculations (PBE+D3+U) do not alter the host lattice bonding analysis, but legacy Figure 6 suffered from label collisions with shaded bonding regions and low raster resolution.
@@ -81,6 +99,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `ACS_version/ACS_resubmission/figure/Fig6.png`
 
 ---
+
+---
+
 ### [2026-10-01T13:50:40.177590+00:00] Decision:  (``)
 - **Triggered Rule**: Rule-4-Publishable-Quality
 - **Hypothesis**: 
@@ -89,6 +110,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-01T21:02:34.020145+00:00] Decision: structure_reviewer_responses (`crcl3_her_acs_revision_2026`)
 - **Triggered Rule**: Rule A
 - **Hypothesis**: Complete explicit separation of review questions for Reviewers 1 through 6 plus Editor requirements in response_letter.tex ensures thorough peer-review compliance and institutional rigor.
@@ -97,6 +121,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `ACS_version/ACS_resubmission/Revision.txt`
 
 ---
+
+---
+
 ### [2026-10-02T12:45:45.217067+00:00] Decision: sync_remote_and_build_clean_docs (`crcl3_her_acs_revision_2026`)
 - **Triggered Rule**: Rule A
 - **Hypothesis**: Fast-forwarding remote updates from origin/master and generating cross-platform manuscript_clean.tex/pdf guarantees complete editorial compliance with ACS requirements.
@@ -105,6 +132,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `git log -n 3 --oneline`
 
 ---
+
+---
+
 ### [2026-10-02T12:51:28.919184+00:00] Decision: git_remote_synchronization (`photh_gr_piezo_sync`)
 - **Triggered Rule**: Rule E
 - **Hypothesis**: Remote repository updates from secondary workstation contain converged C5 piezocatalytic HER DFT results and modular postprocessing taxonomy
@@ -113,6 +143,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `git:feec631..31f6ae4`
 
 ---
+
+---
+
 ### [2026-10-02T13:41:46.709093+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -121,6 +154,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-02T15:06:39.015047+00:00] Decision: resolve_cdd_composite_typography_and_inpainting (`photh_gr_cdd_3d_viz`)
 - **Triggered Rule**: Rule D
 - **Hypothesis**: Inpainting slice executed after vector badge compositing caused white square cutout over c-vector; matplotlib font fallback to DejaVu Sans occurred due to unregistered system TTF fonts.
@@ -129,6 +165,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `fig_cdd_3d_composite_cli.pdf, fig_cdd_3d_composite_snapshot.pdf, CDD_VISUALIZATION_AND_SCIRESEARCH_GUIDE.md`
 
 ---
+
+---
+
 ### [2026-10-02T19:06:14.348595+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -137,6 +176,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-02T19:48:00.134902+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -145,6 +187,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-02T20:40:19.741813+00:00] Decision: render_vesta_cdd_orbital_animation (`photh_gr_cdd_vesta_orbital`)
 - **Triggered Rule**: Rule C
 - **Hypothesis**: Authentic VESTA 3D CDD rendering requires headless CLI execution with UCOLP unit-cell line hiding and 36-frame continuous azimuthal rotation around the normal perspective.
@@ -153,6 +198,31 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `06_charge_density_analysis/figures_cdd/anim_cdd_3d_vesta_orbital.gif`
 
 ---
+
+---
+
+---
+
+### [2026-10-02T11:55:29.317255+00:00] Decision: fix_coupled_suptitle_overlap (`RUN_COUPLED_BAND_PDOS_20261002`)
+- **Triggered Rule**: Rule E
+- **Hypothesis**: Increasing vertical figure bounds and lowering GridSpec top from 0.87 to 0.83 eliminates title-subtitle collisions while preserving identical aspect ratio and zero-jump dynamics.
+- **Intervention**: Enlarged figsize from (11.8, 5.2) to (12.0, 5.6), set top=0.83, pad=6, and suptitle y=0.965 across all 3 coupled GIFs and vector figures.
+- **Observed Outcome**: 100% collision-free publication-quality coupled Band+PDOS animations across Biaxial, Uniaxial X, and Uniaxial Y modes.
+- **Evidence / Artifact Reference**: `https://github.com/carlosraulps/photh-gr/commit/1dba48f`
+
+---
+
+### [2026-10-04T21:01:19.338095+00:00] Decision: multi_tier_hubbard_audit (`run_tm_multitier_comparison`)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: Multi-site Hubbard U (U_Cr + U_TM = 3.29 eV) shifts 3d orbital localization relative to single-site U_Cr, modulating both the Sabatier HER free energy and the thermodynamic driving force for pore penetration.
+- **Intervention**: Constructed multi-tier comparative analysis for Adsorbed vs Embedded Co, Fe, Ni across vdW, U_Cr, and U_Cr+U_TM tiers.
+- **Observed Outcome**: Comprehensive 4-panel publication figure resolving Delta G, E_ads, E_bind, and magnetization trends with zero collisions.
+- **Evidence / Artifact Reference**: `tab_sistemas_termo_completed_all_functionals.tex`
+
+---
+
+---
+
 ### [2026-10-05T11:57:08.489634+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -161,6 +231,9 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
+---
+
 ### [2026-10-06T13:10:05.968147+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 

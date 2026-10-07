@@ -2,17 +2,17 @@
   "pt_bulk_convergence_discussion": {
     "key": "pt_bulk_convergence_discussion",
     "title": "Pt Bulk Convergence Discussion",
-    "current_version": 9,
-    "current_file": "pt_bulk_convergence_discussion_v9.md",
+    "current_version": 15,
+    "current_file": "pt_bulk_convergence_discussion_v15.md",
     "tags": [
       "dft",
       "pt",
       "convergence"
     ],
     "references": [
-      "f7bb02ec"
+      "0532f49b"
     ],
-    "updated_at": "2026-09-30T22:48:42.369595+00:00",
+    "updated_at": "2026-10-07T22:47:17.057053+00:00",
     "history": [
       {
         "version": 1,
@@ -58,6 +58,36 @@
         "version": 9,
         "file": "pt_bulk_convergence_discussion_v9.md",
         "timestamp": "2026-09-30T22:48:42.369595+00:00"
+      },
+      {
+        "version": 10,
+        "file": "pt_bulk_convergence_discussion_v10.md",
+        "timestamp": "2026-10-04T11:26:27.073209+00:00"
+      },
+      {
+        "version": 11,
+        "file": "pt_bulk_convergence_discussion_v11.md",
+        "timestamp": "2026-10-04T11:28:26.195031+00:00"
+      },
+      {
+        "version": 12,
+        "file": "pt_bulk_convergence_discussion_v12.md",
+        "timestamp": "2026-10-04T11:34:13.203187+00:00"
+      },
+      {
+        "version": 13,
+        "file": "pt_bulk_convergence_discussion_v13.md",
+        "timestamp": "2026-10-04T11:34:53.877501+00:00"
+      },
+      {
+        "version": 14,
+        "file": "pt_bulk_convergence_discussion_v14.md",
+        "timestamp": "2026-10-07T22:47:10.885011+00:00"
+      },
+      {
+        "version": 15,
+        "file": "pt_bulk_convergence_discussion_v15.md",
+        "timestamp": "2026-10-07T22:47:17.057053+00:00"
       }
     ]
   },
@@ -225,6 +255,58 @@
         "version": 1,
         "file": "authentic_vesta_cdd_3d_orbital_animation_v1_v1.md",
         "timestamp": "2026-10-02T20:40:59.533517+00:00"
+      }
+    ]
+  },
+  "phonon_band_structure___strain_physics_in_monolayer_crcl3": {
+    "key": "phonon_band_structure___strain_physics_in_monolayer_crcl3",
+    "title": "Phonon Band Structure & Strain Physics in Monolayer CrCl3",
+    "current_version": 1,
+    "current_file": "phonon_band_structure___strain_physics_in_monolayer_crcl3_v1.md",
+    "tags": [
+      "phonons",
+      "strain",
+      "CrCl3",
+      "phonopy",
+      "VASP"
+    ],
+    "references": [],
+    "updated_at": "2026-10-04T11:47:46.182509+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "phonon_band_structure___strain_physics_in_monolayer_crcl3_v1.md",
+        "timestamp": "2026-10-04T11:47:46.182509+00:00"
+      }
+    ]
+  },
+  "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot": {
+    "key": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot",
+    "title": "CrCl3 2x2 TM Adsorption and Embedding Multi-Tier Convergence Snapshot",
+    "current_version": 2,
+    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
+    "tags": [
+      "crcl3",
+      "hpc",
+      "server_info",
+      "convergence",
+      "u_all329",
+      "co_fe_ni"
+    ],
+    "references": [
+      "22e6c873"
+    ],
+    "updated_at": "2026-10-05T10:16:39.592103+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v1.md",
+        "timestamp": "2026-10-04T23:15:49.477487+00:00"
+      },
+      {
+        "version": 2,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
+        "timestamp": "2026-10-05T10:16:39.592103+00:00"
       }
     ]
   }

@@ -37,3 +37,6 @@ checkpoints/test_md_*
 tmp/
 scratch/
 *.log
+
+# Reference papers (ignore new heavy binary downloads)
+papers/*.pdf
