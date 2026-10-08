@@ -221,6 +221,22 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 
 ---
 
+### [2026-10-05T10:50:11.484510+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: 
+- **Evidence / Artifact Reference**: ``
+
+---
+
+### [2026-10-05T11:28:02.844300+00:00] Decision: dispatch_strained_phonons_hpc (`photh_strained_phonons_20261005`)
+- **Triggered Rule**: Rule A
+- **Hypothesis**: Generating authentic ab initio DFT forces across all 6 strained states (-3% to +3%) allows true data-driven interpolation of phonon branch softening/hardening without synthetic data fabrication.
+- **Intervention**: Dispatched master sequential Slurm job 8059 on Huk node huk126 targeting 24 cores in partition normal for 120 static displacements (20 per strain).
+- **Observed Outcome**: Job 8059 active on huk126 executing disp-001 of biaxial_-0.03_2x4x1 with ~98% CPU utilization across all 24 cores.
+- **Evidence / Artifact Reference**: `calculations_phonon/master_8059.out`
+
 ---
 
 ### [2026-10-05T11:57:08.489634+00:00] Decision:  (``)
@@ -232,8 +248,6 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 
 ---
 
----
-
 ### [2026-10-06T13:10:05.968147+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -242,6 +256,7 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
 ### [2026-10-08T13:25:05.321072+00:00] Decision:  (``)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: 
@@ -250,6 +265,7 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+
 ### [2026-10-08T20:12:53.015340+00:00] Decision: opportunistic_cluster_acceleration (`hpc_rebalance_20261008`)
 - **Triggered Rule**: Rule B
 - **Hypothesis**: Carbono queue latency (T_wait) in nanotubo is 12-24h due to user FairShare=0 and 26 competing jobs, whereas HUK normal partition has huk125 (28c) and huk128 (24c) completely idle with T_wait=0.0. Dispatching LOBSTER static SCF and secondary Co-S2 relaxation to HUK achieves opportunistic turnaround acceleration of >10x.

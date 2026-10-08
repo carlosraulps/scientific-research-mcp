@@ -313,8 +313,8 @@
   "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot": {
     "key": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot",
     "title": "CrCl3 2x2 TM Adsorption and Embedding Multi-Tier Convergence Snapshot",
-    "current_version": 2,
-    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
+    "current_version": 3,
+    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v3.md",
     "tags": [
       "crcl3",
       "hpc",
@@ -326,7 +326,7 @@
     "references": [
       "22e6c873"
     ],
-    "updated_at": "2026-10-05T10:16:39.592103+00:00",
+    "updated_at": "2026-10-06T00:00:58.845752+00:00",
     "history": [
       {
         "version": 1,
@@ -337,6 +337,35 @@
         "version": 2,
         "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
         "timestamp": "2026-10-05T10:16:39.592103+00:00"
+      },
+      {
+        "version": 3,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v3.md",
+        "timestamp": "2026-10-06T00:00:58.845752+00:00"
+      }
+    ]
+  },
+  "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4": {
+    "key": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4",
+    "title": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4",
+    "current_version": 1,
+    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4_v1.md",
+    "tags": [
+      "dft",
+      "crcl3",
+      "her",
+      "multitier",
+      "convergence"
+    ],
+    "references": [
+      "22e6c873"
+    ],
+    "updated_at": "2026-10-07T22:08:49.379335+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4_v1.md",
+        "timestamp": "2026-10-07T22:08:49.379335+00:00"
       }
     ]
   }
