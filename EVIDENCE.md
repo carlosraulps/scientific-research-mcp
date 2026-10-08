@@ -250,3 +250,11 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+### [2026-10-08T20:12:53.015340+00:00] Decision: opportunistic_cluster_acceleration (`hpc_rebalance_20261008`)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: Carbono queue latency (T_wait) in nanotubo is 12-24h due to user FairShare=0 and 26 competing jobs, whereas HUK normal partition has huk125 (28c) and huk128 (24c) completely idle with T_wait=0.0. Dispatching LOBSTER static SCF and secondary Co-S2 relaxation to HUK achieves opportunistic turnaround acceleration of >10x.
+- **Intervention**: Opportunistic multi-cluster load rebalance: Keep 171128 queued in Carbono fulereno (#2 slot); dispatch 6-system LOBSTER COHP static suite to HUK huk125/huk128 for immediate execution.
+- **Observed Outcome**: Anticipated turnaround <1.5h on HUK for full COHP update vs 12-24h stall on Carbono.
+- **Evidence / Artifact Reference**: `huk:huk125,huk128_idle_vs_carbono_queue_priority_171128`
+
+---

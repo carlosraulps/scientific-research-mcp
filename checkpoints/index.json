@@ -259,5 +259,13 @@
     "updated_at": "2026-10-08T13:49:21.894077+00:00",
     "metrics": {},
     "git_commit": "a400ee93"
+  },
+  "huk_lobster_cohp_uall_20261008": {
+    "run_id": "huk_lobster_cohp_uall_20261008",
+    "prompt_summary": "Opportunistic execution of 6 LOBSTER COHP calculations and companion Co S2 U_all relaxation on idle Huk nodes",
+    "status": "RUNNING",
+    "updated_at": "2026-10-08T20:17:25.499306+00:00",
+    "metrics": {},
+    "git_commit": "b06143a2"
   }
 }

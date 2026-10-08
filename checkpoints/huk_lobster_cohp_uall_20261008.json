@@ -1,0 +1,28 @@
+{
+  "run_id": "huk_lobster_cohp_uall_20261008",
+  "prompt_summary": "Opportunistic execution of 6 LOBSTER COHP calculations and companion Co S2 U_all relaxation on idle Huk nodes",
+  "status": "RUNNING",
+  "run_directory": "/home/cr/simulations/scientific-research/runs/huk_lobster_cohp_uall_20261008",
+  "created_at": "2026-10-08T20:17:25.499306+00:00",
+  "updated_at": "2026-10-08T20:17:25.499306+00:00",
+  "agent_trace": [],
+  "parameter_registry": {
+    "U_all": 3.29,
+    "U_eff": 3.29,
+    "cluster_ads": "huk125 (28c, Slurm 8169)",
+    "cluster_emb": "huk128 (24c, Slurm 8170)",
+    "cluster_relax": "huk124 (28c, Slurm 8171)",
+    "ivdw": 12,
+    "kpoints": "5x5x1",
+    "nbands": 216
+  },
+  "file_paths": {},
+  "figures": [],
+  "metrics": {},
+  "git": {
+    "commit": "b06143a20dbd5d90906d67f6ac5e8669d2cab93d",
+    "short_commit": "b06143a2",
+    "branch": "master",
+    "is_dirty": true
+  }
+}
