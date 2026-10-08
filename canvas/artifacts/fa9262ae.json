@@ -1,0 +1,34 @@
+{
+  "result_id": "fa9262ae",
+  "producing_tool": "dft_equilibrium_volume",
+  "value": {
+    "a0": 3.924,
+    "e0": -6.048
+  },
+  "arguments": {
+    "encut": 520,
+    "kpoints": [
+      12,
+      12,
+      12
+    ]
+  },
+  "rationales": {
+    "encut": "Sourced from prior convergence sweep",
+    "kpoints": "Monkhorst-Pack 12x12x12 grid standard for metallic FCC Pt"
+  },
+  "sources": {
+    "encut": "fc87f2c2"
+  },
+  "declared_context": "Equation of state volume relaxation for FCC Platinum.",
+  "parent_ids": [
+    "fc87f2c2"
+  ],
+  "created_at": "2026-10-08T13:24:16.572833+00:00",
+  "git": {
+    "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+    "short_commit": "1b754f1f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

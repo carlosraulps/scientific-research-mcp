@@ -63,7 +63,7 @@
   "61": "sync_graphify.sh",
   "62": "SkillCrystallizer",
   "63": "Microsoft_2023_Impact_LLMs_Scientific_Discovery.md",
-  "64": "GraphifyBridge",
+  "64": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
   "65": "scripts/__init__.py",
   "66": "Site Pyramidalization & Circular Zoom Annotator",
   "67": "auto_slice_2d.py",
@@ -112,7 +112,7 @@
   "110": "13. The Impact of Large Language Models on Scientific Discovery: A Preliminary Study Using GPT-4",
   "111": "Evaluating LLMs in Scientific Discovery: SDE & The Discovery Loop",
   "112": "From Automation to Autonomy: LLMs in Scientific Discovery",
-  "113": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+  "113": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
   "114": "Sol27LC Benchmark Platinum Study Report 2ba314",
   "115": "Sol27LC Benchmark Platinum Study Report 97202e",
   "116": "Sol27LC Benchmark Platinum Study Report c495dc",
@@ -130,5 +130,14 @@
   "128": "pt_bulk_convergence_discussion_v12.md",
   "129": "pt_bulk_convergence_discussion_v13.md",
   "130": "pt_bulk_convergence_discussion_v14.md",
-  "131": "pt_bulk_convergence_discussion_v15.md"
+  "131": "pt_bulk_convergence_discussion_v15.md",
+  "132": "ComponentEvaluator",
+  "133": "GuardrailsEngine",
+  "134": "CacheStore",
+  "135": "Sol27LC Benchmark Platinum Study Report 378f62",
+  "136": "Sol27LC Benchmark Platinum Study Report 892cc1",
+  "137": "Sol27LC Benchmark Platinum Study Report b3372c",
+  "138": "pt_bulk_convergence_discussion_v16.md",
+  "139": "pt_bulk_convergence_discussion_v17.md",
+  "140": "pt_bulk_convergence_discussion_v18.md"
 }

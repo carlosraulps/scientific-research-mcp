@@ -56,19 +56,6 @@
       "source_location": "L65"
     },
     {
-      "id": "scripts_sde_loop_verifier_sdeloopverifier",
-      "label": "SDELoopVerifier",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": "sdeloopverifier",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L30"
-    },
-    {
       "id": "scripts_structure_guard_structuresanityguard",
       "label": "StructureSanityGuard",
       "_callable": true,
@@ -95,6 +82,71 @@
       "source_location": "L25"
     },
     {
+      "id": "scripts_sde_loop_verifier_sdeloopverifier",
+      "label": "SDELoopVerifier",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": "sdeloopverifier",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator",
+      "label": "ComponentEvaluator",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "componentevaluator",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "scripts_guardrails_engine_guardrailsengine",
+      "label": "GuardrailsEngine",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": "guardrailsengine",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "label": "TestAIEngineeringTools",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": "testaiengineeringtools",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L28"
+    },
+    {
+      "id": "scripts_cache_store_cachestore",
+      "label": "CacheStore",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": "cachestore",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L26"
+    },
+    {
       "id": "scripts_dual_verifier_dualverifier",
       "label": "DualVerifier",
       "_callable": true,
@@ -106,6 +158,19 @@
       "norm_label": "dualverifier",
       "source_file": "scripts/dual_verifier.py",
       "source_location": "L19"
+    },
+    {
+      "id": "scripts_graphify_bridge_graphifybridge",
+      "label": "GraphifyBridge",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "code",
+      "norm_label": "graphifybridge",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L22"
     },
     {
       "id": "scripts_protocol_engine_protocolengine",
@@ -223,19 +288,6 @@
       "norm_label": "skillcrystallizer",
       "source_file": "scripts/skill_crystallizer.py",
       "source_location": "L20"
-    },
-    {
-      "id": "scripts_graphify_bridge_graphifybridge",
-      "label": "GraphifyBridge",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "code",
-      "norm_label": "graphifybridge",
-      "source_file": "scripts/graphify_bridge.py",
-      "source_location": "L22"
     },
     {
       "id": "scripts_facts_store_factsstore",
@@ -698,66 +750,6 @@
       "source_location": "L90"
     },
     {
-      "id": "scripts_sde_loop_verifier_sdeloopverifier_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L33"
-    },
-    {
-      "id": "scripts_sde_loop_verifier_sdeloopverifier_load_state",
-      "label": "._load_state()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": "._load_state()",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L39"
-    },
-    {
-      "id": "scripts_sde_loop_verifier_sdeloopverifier_reset_project",
-      "label": ".reset_project()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": ".reset_project()",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L145"
-    },
-    {
-      "id": "scripts_sde_loop_verifier_sdeloopverifier_save_state",
-      "label": "._save_state()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": "._save_state()",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L48"
-    },
-    {
-      "id": "scripts_sde_loop_verifier_sdeloopverifier_verify_discovery_step",
-      "label": ".verify_discovery_step()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": ".verify_discovery_step()",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L53"
-    },
-    {
       "id": "scripts_structure_guard_structuresanityguard_calc_volume",
       "label": "._calc_volume()",
       "_callable": true,
@@ -914,6 +906,66 @@
       "source_location": "L32"
     },
     {
+      "id": "scripts_sde_loop_verifier_sdeloopverifier_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "scripts_sde_loop_verifier_sdeloopverifier_load_state",
+      "label": "._load_state()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": "._load_state()",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "scripts_sde_loop_verifier_sdeloopverifier_reset_project",
+      "label": ".reset_project()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": ".reset_project()",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L145"
+    },
+    {
+      "id": "scripts_sde_loop_verifier_sdeloopverifier_save_state",
+      "label": "._save_state()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": "._save_state()",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L48"
+    },
+    {
+      "id": "scripts_sde_loop_verifier_sdeloopverifier_verify_discovery_step",
+      "label": ".verify_discovery_step()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": ".verify_discovery_step()",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L53"
+    },
+    {
       "id": "tests_test_frontier_tools_test_hypothesis_evaluator_rigorous",
       "label": "test_hypothesis_evaluator_rigorous()",
       "_callable": true,
@@ -974,6 +1026,390 @@
       "source_location": "L28"
     },
     {
+      "id": "scripts_component_evaluator_componentevaluator_evaluate_all",
+      "label": ".evaluate_all()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": ".evaluate_all()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L97"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "label": ".evaluate_component()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": ".evaluate_component()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_canvas_store",
+      "label": "._test_canvas_store()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_canvas_store()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L142"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_checkpoint_manager",
+      "label": "._test_checkpoint_manager()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_checkpoint_manager()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L149"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_dual_verifier",
+      "label": "._test_dual_verifier()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_dual_verifier()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L177"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_facts_store",
+      "label": "._test_facts_store()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_facts_store()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L163"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_guardrails_engine",
+      "label": "._test_guardrails_engine()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_guardrails_engine()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L226"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_historical_memory",
+      "label": "._test_historical_memory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_historical_memory()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L156"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_hypothesis_evaluator",
+      "label": "._test_hypothesis_evaluator()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_hypothesis_evaluator()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L209"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_sde_verifier",
+      "label": "._test_sde_verifier()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_sde_verifier()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L217"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_skill_crystallizer",
+      "label": "._test_skill_crystallizer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_skill_crystallizer()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L170"
+    },
+    {
+      "id": "scripts_component_evaluator_componentevaluator_test_structure_guard",
+      "label": "._test_structure_guard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "._test_structure_guard()",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L185"
+    },
+    {
+      "id": "scripts_guardrails_engine_guardrailsengine_audit_execution",
+      "label": ".audit_execution()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".audit_execution()",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L148"
+    },
+    {
+      "id": "scripts_guardrails_engine_guardrailsengine_audit_input",
+      "label": ".audit_input()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".audit_input()",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L68"
+    },
+    {
+      "id": "scripts_guardrails_engine_guardrailsengine_audit_output",
+      "label": ".audit_output()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".audit_output()",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L187"
+    },
+    {
+      "id": "scripts_guardrails_engine_guardrailsengine_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L65"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_setup",
+      "label": ".setUp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".setup()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_test_01_guardrail_credential_isolation",
+      "label": ".test_01_guardrail_credential_isolation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".test_01_guardrail_credential_isolation()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_test_02_guardrail_slurm_walltime_and_cores",
+      "label": ".test_02_guardrail_slurm_walltime_and_cores()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".test_02_guardrail_slurm_walltime_and_cores()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_test_03_guardrail_execution_budget",
+      "label": ".test_03_guardrail_execution_budget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".test_03_guardrail_execution_budget()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_test_04_guardrail_output_anchors",
+      "label": ".test_04_guardrail_output_anchors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".test_04_guardrail_output_anchors()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L67"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_test_05_component_evaluator_all",
+      "label": ".test_05_component_evaluator_all()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".test_05_component_evaluator_all()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L83"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_testaiengineeringtools_test_06_cache_store_exact_and_semantic",
+      "label": ".test_06_cache_store_exact_and_semantic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": ".test_06_cache_store_exact_and_semantic()",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L89"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_get",
+      "label": ".get()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": ".get()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L77"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_hash_key",
+      "label": "._hash_key()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": "._hash_key()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L31"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_init_db",
+      "label": "._init_db()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": "._init_db()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_jaccard_similarity",
+      "label": "._jaccard_similarity()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": "._jaccard_similarity()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L68"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": ".set()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L159"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_stats",
+      "label": ".stats()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": ".stats()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L178"
+    },
+    {
+      "id": "scripts_cache_store_cachestore_tokenize",
+      "label": "._tokenize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": "._tokenize()",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L62"
+    },
+    {
       "id": "scripts_dual_verifier_dualverifier_audit_dual_verification",
       "label": ".audit_dual_verification()",
       "_callable": true,
@@ -996,6 +1432,42 @@
       "norm_label": ".__init__()",
       "source_file": "scripts/dual_verifier.py",
       "source_location": "L20"
+    },
+    {
+      "id": "scripts_graphify_bridge_graphifybridge_generate_knowledge_map",
+      "label": ".generate_knowledge_map()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "code",
+      "norm_label": ".generate_knowledge_map()",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "scripts_graphify_bridge_graphifybridge_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "scripts_graphify_bridge_graphifybridge_sync_graphify",
+      "label": ".sync_graphify()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "code",
+      "norm_label": ".sync_graphify()",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L142"
     },
     {
       "id": "scripts_protocol_engine_protocolengine_init",
@@ -3002,42 +3474,6 @@
       "source_location": "L104"
     },
     {
-      "id": "scripts_graphify_bridge_graphifybridge_generate_knowledge_map",
-      "label": ".generate_knowledge_map()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "code",
-      "norm_label": ".generate_knowledge_map()",
-      "source_file": "scripts/graphify_bridge.py",
-      "source_location": "L35"
-    },
-    {
-      "id": "scripts_graphify_bridge_graphifybridge_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "scripts/graphify_bridge.py",
-      "source_location": "L23"
-    },
-    {
-      "id": "scripts_graphify_bridge_graphifybridge_sync_graphify",
-      "label": ".sync_graphify()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "code",
-      "norm_label": ".sync_graphify()",
-      "source_file": "scripts/graphify_bridge.py",
-      "source_location": "L142"
-    },
-    {
       "id": "cli_main",
       "label": "main()",
       "_callable": true,
@@ -3047,7 +3483,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "cli.py",
-      "source_location": "L48"
+      "source_location": "L51"
     },
     {
       "id": "scripts_mcp_server_handle_tool_call",
@@ -3059,7 +3495,7 @@
       "file_type": "code",
       "norm_label": "handle_tool_call()",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L529"
+      "source_location": "L587"
     },
     {
       "id": "scripts_mcp_server_main",
@@ -3071,7 +3507,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L730"
+      "source_location": "L828"
     },
     {
       "id": "scripts_scientific_visualization_tools_extract_compact_2d_slice",
@@ -4825,6 +5261,17 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_cache_store",
+      "label": "cache_store.py",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "code",
+      "norm_label": "cache_store.py",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_canvas_store",
       "label": "canvas_store.py",
       "_origin": "ast",
@@ -4844,6 +5291,17 @@
       "file_type": "code",
       "norm_label": "checkpoint_manager.py",
       "source_file": "scripts/checkpoint_manager.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_component_evaluator",
+      "label": "component_evaluator.py",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "code",
+      "norm_label": "component_evaluator.py",
+      "source_file": "scripts/component_evaluator.py",
       "source_location": "L1"
     },
     {
@@ -4877,6 +5335,28 @@
       "file_type": "code",
       "norm_label": "git_controller.py",
       "source_file": "scripts/git_controller.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_graphify_bridge",
+      "label": "graphify_bridge.py",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "code",
+      "norm_label": "graphify_bridge.py",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_guardrails_engine",
+      "label": "guardrails_engine.py",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "code",
+      "norm_label": "guardrails_engine.py",
+      "source_file": "scripts/guardrails_engine.py",
       "source_location": "L1"
     },
     {
@@ -4935,6 +5415,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tests_test_ai_engineering_tools",
+      "label": "test_ai_engineering_tools.py",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "code",
+      "norm_label": "test_ai_engineering_tools.py",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_test_sciresearch",
       "label": "test_sciresearch.py",
       "_origin": "ast",
@@ -4957,6 +5448,17 @@
       "source_location": "L2"
     },
     {
+      "id": "scripts_cache_store_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L2"
+    },
+    {
       "id": "scripts_canvas_store_rationale_2",
       "label": "===============================================================================\u2026",
       "_origin": "ast",
@@ -4976,6 +5478,17 @@
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/checkpoint_manager.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "scripts_component_evaluator_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "scripts/component_evaluator.py",
       "source_location": "L2"
     },
     {
@@ -5009,6 +5522,28 @@
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/git_controller.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "scripts_graphify_bridge_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "scripts_guardrails_engine_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "scripts/guardrails_engine.py",
       "source_location": "L2"
     },
     {
@@ -5064,6 +5599,17 @@
       "file_type": "rationale",
       "norm_label": "===============================================================================...",
       "source_file": "scripts/skill_crystallizer.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "tests_test_ai_engineering_tools_rationale_2",
+      "label": "===============================================================================\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "mcp_server.py",
+      "file_type": "rationale",
+      "norm_label": "===============================================================================...",
+      "source_file": "tests/test_ai_engineering_tools.py",
       "source_location": "L2"
     },
     {
@@ -6231,17 +6777,6 @@
       "source_location": "L2655"
     },
     {
-      "id": "scripts_sde_loop_verifier_py_any",
-      "label": "Any",
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "scripts_structure_guard_py_any",
       "label": "Any",
       "_origin": "ast",
@@ -6251,28 +6786,6 @@
       "norm_label": "any",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "scripts_sde_loop_verifier_rationale_31",
-      "label": "Verifies and orchestrates multi-round closed discovery loop steps.",
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "rationale",
-      "norm_label": "verifies and orchestrates multi-round closed discovery loop steps.",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L31"
-    },
-    {
-      "id": "scripts_sde_loop_verifier_rationale_63",
-      "label": "Audits a discovery iteration step and returns next-action guidance.",
-      "_origin": "ast",
-      "community": 103,
-      "community_name": "StructureSanityGuard",
-      "file_type": "rationale",
-      "norm_label": "audits a discovery iteration step and returns next-action guidance.",
-      "source_file": "scripts/sde_loop_verifier.py",
-      "source_location": "L63"
     },
     {
       "id": "scripts_structure_guard_rationale_128",
@@ -6363,6 +6876,17 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_sde_loop_verifier_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "scripts_structure_guard",
       "label": "structure_guard.py",
       "_origin": "ast",
@@ -6438,6 +6962,28 @@
       "norm_label": "===============================================================================...",
       "source_file": "scripts/sde_loop_verifier.py",
       "source_location": "L2"
+    },
+    {
+      "id": "scripts_sde_loop_verifier_rationale_31",
+      "label": "Verifies and orchestrates multi-round closed discovery loop steps.",
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "rationale",
+      "norm_label": "verifies and orchestrates multi-round closed discovery loop steps.",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L31"
+    },
+    {
+      "id": "scripts_sde_loop_verifier_rationale_63",
+      "label": "Audits a discovery iteration step and returns next-action guidance.",
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "HypothesisEvaluator",
+      "file_type": "rationale",
+      "norm_label": "audits a discovery iteration step and returns next-action guidance.",
+      "source_file": "scripts/sde_loop_verifier.py",
+      "source_location": "L63"
     },
     {
       "id": "scripts_structure_guard_rationale_2",
@@ -7626,7 +8172,7 @@
       "label": "17_HUYEN_ai_engineering_foundation_models.md",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "17_huyen_ai_engineering_foundation_models.md",
@@ -7638,7 +8184,7 @@
       "label": "1. Executive Summary & The AI Engineering Paradigm",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "1. executive summary & the ai engineering paradigm",
@@ -7646,76 +8192,244 @@
       "source_location": "L6"
     },
     {
-      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_2_rigorous_evaluation_methodology_chapters_3_4",
-      "label": "2. Rigorous Evaluation Methodology (Chapters 3 & 4)",
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_2_the_5_step_ai_engineering_architecture_chapter_10",
+      "label": "2. The 5-Step AI Engineering Architecture (Chapter 10)",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "2. rigorous evaluation methodology (chapters 3 & 4)",
+      "norm_label": "2. the 5-step ai engineering architecture (chapter 10)",
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L31"
+      "source_location": "L20"
     },
     {
-      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_defense_in_depth_guardrails_chapter_10_step_2",
-      "label": "3. Defense-in-Depth Guardrails (Chapter 10, Step 2)",
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "label": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "3. defense-in-depth guardrails (chapter 10, step 2)",
+      "norm_label": "3. multi-agent systems, planning & tool use (chapter 6)",
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L47"
+      "source_location": "L65"
     },
     {
-      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_4_agent_architecture_memory_planning_chapter_6",
-      "label": "4. Agent Architecture, Memory & Planning (Chapter 6)",
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_4_rigorous_evaluation_methodology_chapters_3_4",
+      "label": "4. Rigorous Evaluation Methodology (Chapters 3 & 4)",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "4. agent architecture, memory & planning (chapter 6)",
+      "norm_label": "4. rigorous evaluation methodology (chapters 3 & 4)",
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L58"
+      "source_location": "L121"
     },
     {
-      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_5_architectural_blueprint_for_sciresearch",
-      "label": "5. Architectural Blueprint for `sciresearch`",
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_5_defense_in_depth_guardrails_chapter_10_step_2",
+      "label": "5. Defense-in-Depth Guardrails (Chapter 10, Step 2)",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "5. architectural blueprint for `sciresearch`",
+      "norm_label": "5. defense-in-depth guardrails (chapter 10, step 2)",
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L70"
+      "source_location": "L143"
     },
     {
-      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
-      "label": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_6_observability_user_feedback_flywheels_chapter_10",
+      "label": "6. Observability & User Feedback Flywheels (Chapter 10)",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "ai engineering: architecture, guardrails & evaluation for foundation model systems",
+      "norm_label": "6. observability & user feedback flywheels (chapter 10)",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L153"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_7_direct_architectural_mapping_to_sciresearch_mcp_ecosystem",
+      "label": "7. Direct Architectural Mapping to `sciresearch` MCP Ecosystem",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "7. direct architectural mapping to `sciresearch` mcp ecosystem",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L167"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_a_core_devops_aiops_observability_metrics",
+      "label": "A. Core DevOps / AIOps Observability Metrics",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "a. core devops / aiops observability metrics",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L155"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_a_the_three_tiers_of_evaluation",
+      "label": "A. The Three Tiers of Evaluation",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "a. the three tiers of evaluation",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L125"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_a_what_is_an_agent",
+      "label": "A. What is an Agent?",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "a. what is an agent?",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "label": "AI Engineering: Architecture, Multi-Agent Systems, Guardrails & Evaluation for Foundation Model Systems",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ai engineering: architecture, multi-agent systems, guardrails & evaluation for foundation model systems",
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
       "source_location": "L1"
     },
     {
-      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_the_3_step_evaluation_pipeline",
-      "label": "The 3-Step Evaluation Pipeline:",
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_b_component_level_vs_system_level_evaluation",
+      "label": "B. Component-Level vs. System-Level Evaluation",
       "_origin": "ast",
       "community": 113,
-      "community_name": "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems",
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "the 3-step evaluation pipeline:",
+      "norm_label": "b. component-level vs. system-level evaluation",
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L34"
+      "source_location": "L136"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_b_conversational_user_feedback_loops",
+      "label": "B. Conversational User Feedback Loops",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "b. conversational user feedback loops",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L160"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_b_decoupled_planning_vs_execution_the_3_component_multi_agent_triad",
+      "label": "B. Decoupled Planning vs. Execution (The 3-Component Multi-Agent Triad)",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "b. decoupled planning vs. execution (the 3-component multi-agent triad)",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L70"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_c_planning_granularity_hierarchical_planning",
+      "label": "C. Planning Granularity & Hierarchical Planning",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "c. planning granularity & hierarchical planning",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L93"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_d_control_flow_topologies",
+      "label": "D. Control Flow Topologies",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d. control flow topologies",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L98"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_detailed_architectural_breakdown",
+      "label": "Detailed Architectural Breakdown:",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "detailed architectural breakdown:",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_e_reflection_and_error_correction_react_vs_reflexion",
+      "label": "E. Reflection and Error Correction (ReAct vs. Reflexion)",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e. reflection and error correction (react vs. reflexion)",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L104"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_f_tool_inventory_management",
+      "label": "F. Tool Inventory Management",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "f. tool inventory management",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L108"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_g_memory_systems",
+      "label": "G. Memory Systems",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "g. memory systems",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L114"
+    },
+    {
+      "id": "extracted_insights_17_huyen_ai_engineering_foundation_models_the_three_paradigms_compared",
+      "label": "The Three Paradigms Compared:",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "the three paradigms compared:",
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L10"
     },
     {
       "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_2ba314",
@@ -8664,6 +9378,414 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_component_evaluator_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_component_evaluator_rationale_35",
+      "label": "Component-level evaluation engine for autonomous scientific agent subsystems.",
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "rationale",
+      "norm_label": "component-level evaluation engine for autonomous scientific agent subsystems.",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "scripts_component_evaluator_rationale_46",
+      "label": "Runs an isolated benchmark suite on a single named component.",
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "rationale",
+      "norm_label": "runs an isolated benchmark suite on a single named component.",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "scripts_component_evaluator_rationale_98",
+      "label": "Runs component-level evaluation across all registered subsystems. Generates an\u2026",
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "ComponentEvaluator",
+      "file_type": "rationale",
+      "norm_label": "runs component-level evaluation across all registered subsystems. generates an...",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L98"
+    },
+    {
+      "id": "scripts_guardrails_engine_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_guardrails_engine_rationale_149",
+      "label": "Audits live execution state against recursion bounds and runtime budgets.",
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "rationale",
+      "norm_label": "audits live execution state against recursion bounds and runtime budgets.",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L149"
+    },
+    {
+      "id": "scripts_guardrails_engine_rationale_188",
+      "label": "Audits simulation outputs or calculation deliverables for physical anchors,\u2026",
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "rationale",
+      "norm_label": "audits simulation outputs or calculation deliverables for physical anchors,...",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L188"
+    },
+    {
+      "id": "scripts_guardrails_engine_rationale_34",
+      "label": "Defense-in-depth scientific guardrails engine implementing Chip Huyen's three-\u2026",
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "rationale",
+      "norm_label": "defense-in-depth scientific guardrails engine implementing chip huyen's three-...",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "scripts_guardrails_engine_rationale_69",
+      "label": "Audits incoming task inputs, script contents, or parameter dictionaries.\u2026",
+      "_origin": "ast",
+      "community": 133,
+      "community_name": "GuardrailsEngine",
+      "file_type": "rationale",
+      "norm_label": "audits incoming task inputs, script contents, or parameter dictionaries....",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L69"
+    },
+    {
+      "id": "scripts_cache_store_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_cache_store_rationale_160",
+      "label": "Stores an entry in the hierarchical cache.",
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "rationale",
+      "norm_label": "stores an entry in the hierarchical cache.",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L160"
+    },
+    {
+      "id": "scripts_cache_store_rationale_179",
+      "label": "Returns summary statistics of the cache store.",
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "rationale",
+      "norm_label": "returns summary statistics of the cache store.",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L179"
+    },
+    {
+      "id": "scripts_cache_store_rationale_27",
+      "label": "Two-tier hierarchical exact and semantic cache engine.",
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "rationale",
+      "norm_label": "two-tier hierarchical exact and semantic cache engine.",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L27"
+    },
+    {
+      "id": "scripts_cache_store_rationale_78",
+      "label": "Retrieves a cached result using exact hash matching first, falling back to\u2026",
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "CacheStore",
+      "file_type": "rationale",
+      "norm_label": "retrieves a cached result using exact hash matching first, falling back to...",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L78"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62",
+      "label": "sol27lc_benchmark_platinum_study_report_378f62.md",
+      "_origin": "ast",
+      "community": 135,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_executive_summary",
+      "label": "Executive Summary",
+      "_origin": "ast",
+      "community": 135,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "executive summary",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_finding_1_equilibrium_parameter",
+      "label": "Finding 1: Equilibrium Parameter",
+      "_origin": "ast",
+      "community": 135,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "finding 1: equilibrium parameter",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_scientific_findings_numerical_data",
+      "label": "Scientific Findings & Numerical Data",
+      "_origin": "ast",
+      "community": 135,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scientific findings & numerical data",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_sol27lc_benchmark_platinum_study_report_378f62",
+      "label": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "_origin": "ast",
+      "community": 135,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sol27lc benchmark platinum study report 378f62",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_verified_claims_provenance_audit",
+      "label": "Verified Claims & Provenance Audit",
+      "_origin": "ast",
+      "community": 135,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 378f62",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verified claims & provenance audit",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1",
+      "label": "sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_executive_summary",
+      "label": "Executive Summary",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "executive summary",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_finding_1_equilibrium_parameter",
+      "label": "Finding 1: Equilibrium Parameter",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "finding 1: equilibrium parameter",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_scientific_findings_numerical_data",
+      "label": "Scientific Findings & Numerical Data",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scientific findings & numerical data",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_sol27lc_benchmark_platinum_study_report_892cc1",
+      "label": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sol27lc benchmark platinum study report 892cc1",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_verified_claims_provenance_audit",
+      "label": "Verified Claims & Provenance Audit",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "Sol27LC Benchmark Platinum Study Report 892cc1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verified claims & provenance audit",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c",
+      "label": "sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_executive_summary",
+      "label": "Executive Summary",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "executive summary",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_finding_1_equilibrium_parameter",
+      "label": "Finding 1: Equilibrium Parameter",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "finding 1: equilibrium parameter",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_scientific_findings_numerical_data",
+      "label": "Scientific Findings & Numerical Data",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scientific findings & numerical data",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_sol27lc_benchmark_platinum_study_report_b3372c",
+      "label": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sol27lc benchmark platinum study report b3372c",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_verified_claims_provenance_audit",
+      "label": "Verified Claims & Provenance Audit",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "Sol27LC Benchmark Platinum Study Report b3372c",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verified claims & provenance audit",
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "canvas_notes_pt_bulk_convergence_discussion_v16",
+      "label": "pt_bulk_convergence_discussion_v16.md",
+      "_origin": "ast",
+      "community": 138,
+      "community_name": "pt_bulk_convergence_discussion_v16.md",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Pt Bulk Convergence Discussion",
+        "version": "16",
+        "created_at": "2026-10-08T13:21:37.046726+00:00",
+        "tags": "[&quot;dft&quot;, &quot;pt&quot;, &quot;convergence&quot;]",
+        "references": "[&quot;2f25b0de&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "pt_bulk_convergence_discussion_v16.md",
+      "source_file": "canvas/notes/pt_bulk_convergence_discussion_v16.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_notes_pt_bulk_convergence_discussion_v17",
+      "label": "pt_bulk_convergence_discussion_v17.md",
+      "_origin": "ast",
+      "community": 139,
+      "community_name": "pt_bulk_convergence_discussion_v17.md",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Pt Bulk Convergence Discussion",
+        "version": "17",
+        "created_at": "2026-10-08T13:24:16.591372+00:00",
+        "tags": "[&quot;dft&quot;, &quot;pt&quot;, &quot;convergence&quot;]",
+        "references": "[&quot;fc87f2c2&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "pt_bulk_convergence_discussion_v17.md",
+      "source_file": "canvas/notes/pt_bulk_convergence_discussion_v17.md",
+      "source_location": "L1"
+    },
+    {
       "id": "extracted_insights_07_genius_simulation_protocols",
       "label": "07_GENIUS_simulation_protocols.md",
       "_origin": "ast",
@@ -8721,6 +9843,25 @@
       "node_kind": "heading",
       "norm_label": "genius (2026): autonomous design & execution of simulation protocols",
       "source_file": "extracted_insights/07_GENIUS_simulation_protocols.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "canvas_notes_pt_bulk_convergence_discussion_v18",
+      "label": "pt_bulk_convergence_discussion_v18.md",
+      "_origin": "ast",
+      "community": 140,
+      "community_name": "pt_bulk_convergence_discussion_v18.md",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Pt Bulk Convergence Discussion",
+        "version": "18",
+        "created_at": "2026-10-08T13:25:15.962408+00:00",
+        "tags": "[&quot;dft&quot;, &quot;pt&quot;, &quot;convergence&quot;]",
+        "references": "[&quot;bd97976d&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "pt_bulk_convergence_discussion_v18.md",
+      "source_file": "canvas/notes/pt_bulk_convergence_discussion_v18.md",
       "source_location": "L1"
     },
     {
@@ -8903,6 +10044,17 @@
       "source_location": ""
     },
     {
+      "id": "scripts_graphify_bridge_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "scripts_protocol_engine_py_any",
       "label": "Any",
       "_origin": "ast",
@@ -8923,6 +10075,28 @@
       "norm_label": "performs dual verification across functional correctness and scientific...",
       "source_file": "scripts/dual_verifier.py",
       "source_location": "L32"
+    },
+    {
+      "id": "scripts_graphify_bridge_rationale_143",
+      "label": "Regenerates knowledge documents and runs `graphify update .`",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "rationale",
+      "norm_label": "regenerates knowledge documents and runs `graphify update .`",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L143"
+    },
+    {
+      "id": "scripts_graphify_bridge_rationale_36",
+      "label": "Creates an interconnected Markdown summary linking all Notes, Reports,\u2026",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "TestScientificResearchLog",
+      "file_type": "rationale",
+      "norm_label": "creates an interconnected markdown summary linking all notes, reports,...",
+      "source_file": "scripts/graphify_bridge.py",
+      "source_location": "L36"
     },
     {
       "id": "scripts_protocol_engine_rationale_30",
@@ -15867,59 +17041,424 @@
       "source_location": "L3581"
     },
     {
-      "id": "scripts_graphify_bridge",
-      "label": "graphify_bridge.py",
+      "id": "docs_ai_engineering_sciresearch_report",
+      "label": "AI_ENGINEERING_SCIRESEARCH_REPORT.md",
       "_origin": "ast",
       "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "code",
-      "norm_label": "graphify_bridge.py",
-      "source_file": "scripts/graphify_bridge.py",
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "ai_engineering_sciresearch_report.md",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
       "source_location": "L1"
     },
     {
-      "id": "scripts_graphify_bridge_py_any",
-      "label": "Any",
+      "id": "docs_ai_engineering_sciresearch_report_1_executive_summary_context",
+      "label": "1. Executive Summary & Context",
       "_origin": "ast",
       "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. executive summary & context",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L15"
     },
     {
-      "id": "scripts_graphify_bridge_rationale_143",
-      "label": "Regenerates knowledge documents and runs `graphify update .`",
+      "id": "docs_ai_engineering_sciresearch_report_2_1_the_ai_engineering_paradigm_vs_mle_vs_software_engineering",
+      "label": "2.1 The AI Engineering Paradigm vs. MLE vs. Software Engineering",
       "_origin": "ast",
       "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "rationale",
-      "norm_label": "regenerates knowledge documents and runs `graphify update .`",
-      "source_file": "scripts/graphify_bridge.py",
-      "source_location": "L143"
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.1 the ai engineering paradigm vs. mle vs. software engineering",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L32"
     },
     {
-      "id": "scripts_graphify_bridge_rationale_2",
-      "label": "===============================================================================\u2026",
+      "id": "docs_ai_engineering_sciresearch_report_2_2_the_5_step_ai_engineering_architecture_chapter_10",
+      "label": "2.2 The 5-Step AI Engineering Architecture (Chapter 10)",
       "_origin": "ast",
       "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "rationale",
-      "norm_label": "===============================================================================...",
-      "source_file": "scripts/graphify_bridge.py",
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.2 the 5-step ai engineering architecture (chapter 10)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L46"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "label": "2.3 Multi-Agent Systems, Planning & Tool Use (Chapter 6)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.3 multi-agent systems, planning & tool use (chapter 6)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_2_4_rigorous_evaluation_methodology_chapters_3_4",
+      "label": "2.4 Rigorous Evaluation Methodology (Chapters 3 & 4)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.4 rigorous evaluation methodology (chapters 3 & 4)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L137"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_2_5_production_observability_user_feedback_flywheels_chapter_10",
+      "label": "2.5 Production Observability & User Feedback Flywheels (Chapter 10)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2.5 production observability & user feedback flywheels (chapter 10)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L156"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "label": "2. In-Depth Reference Analysis: Chip Huyen's *AI Engineering* (2025)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. in-depth reference analysis: chip huyen's *ai engineering* (2025)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_3_synthesis_with_the_13_foundational_scientific_agent_frameworks",
+      "label": "3. Synthesis with the 13 Foundational Scientific Agent Frameworks",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. synthesis with the 13 foundational scientific agent frameworks",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L170"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_4_1_module_1_defense_in_depth_guardrails_engine_scripts_guardrails_engine_py",
+      "label": "4.1 Module 1: Defense-in-Depth Guardrails Engine (`scripts/guardrails_engine.py`)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.1 module 1: defense-in-depth guardrails engine (`scripts/guardrails_engine.py`)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L196"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_4_2_module_2_component_level_evaluation_suite_scripts_component_evaluator_py",
+      "label": "4.2 Module 2: Component-Level Evaluation Suite (`scripts/component_evaluator.py`)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.2 module 2: component-level evaluation suite (`scripts/component_evaluator.py`)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L211"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_4_3_module_3_hierarchical_exact_semantic_cache_store_scripts_cache_store_py",
+      "label": "4.3 Module 3: Hierarchical Exact & Semantic Cache Store (`scripts/cache_store.py`)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.3 module 3: hierarchical exact & semantic cache store (`scripts/cache_store.py`)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L231"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_4_4_upgraded_mcp_tool_suite_34_tools",
+      "label": "4.4 Upgraded MCP Tool Suite (34 Tools)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.4 upgraded mcp tool suite (34 tools)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L240"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_4_5_command_line_interface_cli_integration",
+      "label": "4.5 Command-Line Interface (CLI) Integration",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4.5 command-line interface (cli) integration",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L282"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "label": "4. Concrete Upgrades Implemented in `sciresearch`",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. concrete upgrades implemented in `sciresearch`",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L192"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_5_1_planner_agent_system_prompt_template",
+      "label": "5.1 Planner Agent System Prompt Template",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5.1 planner agent system prompt template",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L312"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_5_2_validator_agent_system_prompt_template",
+      "label": "5.2 Validator Agent System Prompt Template",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5.2 validator agent system prompt template",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L323"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_5_3_executor_worker_agent_system_prompt_template",
+      "label": "5.3 Executor / Worker Agent System Prompt Template",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5.3 executor / worker agent system prompt template",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L334"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_5_system_instructions_multi_agent_prompting_guidelines",
+      "label": "5. System Instructions & Multi-Agent Prompting Guidelines",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. system instructions & multi-agent prompting guidelines",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L308"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_6_verification_and_test_results",
+      "label": "6. Verification and Test Results",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6. verification and test results",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L348"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_7_future_roadmap_recommendations",
+      "label": "7. Future Roadmap & Recommendations",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "7. future roadmap & recommendations",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L369"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_a_the_multi_agent_triad_decoupling_planning_from_execution",
+      "label": "A. The Multi-Agent Triad: Decoupling Planning from Execution",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "a. the multi-agent triad: decoupling planning from execution",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L84"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "label": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ai engineering & multi-agent architecture for autonomous scientific discovery",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_b_planning_granularity_hierarchical_planning",
+      "label": "B. Planning Granularity & Hierarchical Planning",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "b. planning granularity & hierarchical planning",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L109"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_c_control_flow_topologies",
+      "label": "C. Control Flow Topologies",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "c. control flow topologies",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L113"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_component_level_vs_system_level_evaluation",
+      "label": "Component-Level vs. System-Level Evaluation:",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "component-level vs. system-level evaluation:",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L150"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_comprehensive_reference_analysis_of_chip_huyen_2025_and_production_hardening_of_the_sciresearch_mcp_engine",
+      "label": "Comprehensive Reference Analysis of Chip Huyen (2025) and Production Hardening of the SciResearch MCP Engine",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "comprehensive reference analysis of chip huyen (2025) and production hardening of the sciresearch mcp engine",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
       "source_location": "L2"
     },
     {
-      "id": "scripts_graphify_bridge_rationale_36",
-      "label": "Creates an interconnected Markdown summary linking all Notes, Reports,\u2026",
+      "id": "docs_ai_engineering_sciresearch_report_conversational_user_feedback_flywheels",
+      "label": "Conversational User Feedback Flywheels:",
       "_origin": "ast",
       "community": 64,
-      "community_name": "GraphifyBridge",
-      "file_type": "rationale",
-      "norm_label": "creates an interconnected markdown summary linking all notes, reports,...",
-      "source_file": "scripts/graphify_bridge.py",
-      "source_location": "L36"
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "conversational user feedback flywheels:",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L163"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_core_deliverables_executed_in_this_work",
+      "label": "Core Deliverables Executed in this Work:",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "core deliverables executed in this work:",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_d_reflection_and_error_correction_react_vs_reflexion",
+      "label": "D. Reflection and Error Correction (ReAct vs. Reflexion)",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d. reflection and error correction (react vs. reflexion)",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L120"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_detailed_stage_breakdown",
+      "label": "Detailed Stage Breakdown:",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "detailed stage breakdown:",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_devops_aiops_observability_metrics",
+      "label": "DevOps / AIOps Observability Metrics:",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "devops / aiops observability metrics:",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L158"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_e_tool_inventory_management_cognitive_limits",
+      "label": "E. Tool Inventory Management & Cognitive Limits",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e. tool inventory management & cognitive limits",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L124"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_f_memory_systems",
+      "label": "F. Memory Systems",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "f. memory systems",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "docs_ai_engineering_sciresearch_report_the_three_tiers_of_evaluation",
+      "label": "The Three Tiers of Evaluation:",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "the three tiers of evaluation:",
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L142"
     },
     {
       "id": "scripts_init",
@@ -15977,7 +17516,7 @@
       "source_location": "L1"
     },
     {
-      "id": "scripts_mcp_server_rationale_530",
+      "id": "scripts_mcp_server_rationale_588",
       "label": "Dispatches tool calls to the underlying engine.",
       "_origin": "ast",
       "community": 65,
@@ -15985,10 +17524,10 @@
       "file_type": "rationale",
       "norm_label": "dispatches tool calls to the underlying engine.",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L530"
+      "source_location": "L588"
     },
     {
-      "id": "scripts_mcp_server_rationale_731",
+      "id": "scripts_mcp_server_rationale_829",
       "label": "Simple JSON-RPC 2.0 loop over stdin/stdout for MCP clients.",
       "_origin": "ast",
       "community": 65,
@@ -15996,7 +17535,7 @@
       "file_type": "rationale",
       "norm_label": "simple json-rpc 2.0 loop over stdin/stdout for mcp clients.",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L731"
+      "source_location": "L829"
     },
     {
       "id": "scripts_scientific_visualization_tools_rationale_2",
@@ -20549,6 +22088,66 @@
   ],
   "links": [
     {
+      "source": "scripts_cache_store_cachestore_get",
+      "target": "scripts_cache_store_cachestore_jaccard_similarity",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore_get",
+      "target": "scripts_cache_store_cachestore_hash_key",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore_init",
+      "target": "scripts_cache_store_cachestore_init_db",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore_jaccard_similarity",
+      "target": "scripts_cache_store_cachestore_tokenize",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore_set",
+      "target": "scripts_cache_store_cachestore_hash_key",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_canvas_store_canvasstore_audit_provenance_chain",
       "target": "scripts_canvas_store_canvasstore_load_artifacts",
       "relation": "calls",
@@ -20849,6 +22448,138 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_all",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_canvas_store",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_checkpoint_manager",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_historical_memory",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_facts_store",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_skill_crystallizer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_dual_verifier",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_structure_guard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_hypothesis_evaluator",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_sde_verifier",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_componentevaluator_test_guardrails_engine",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_facts_store_factsstore_init",
       "target": "scripts_facts_store_factsstore_init_db",
       "relation": "calls",
@@ -21013,7 +22744,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L688",
+      "source_location": "L746",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_mcp_server_handle_tool_call",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/mcp_server.py",
+      "source_location": "L805",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_mcp_server_handle_tool_call",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_all",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/mcp_server.py",
+      "source_location": "L806",
       "weight": 1.0
     },
     {
@@ -21025,7 +22780,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L767",
+      "source_location": "L865",
       "weight": 1.0
     },
     {
@@ -25121,6 +26876,30 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_cache_store_cachestore_get",
+      "target": "scripts_cache_store_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore_stats",
+      "target": "scripts_cache_store_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_canvas_store_canvasstore_audit_provenance_chain",
       "target": "scripts_canvas_store_py_any",
       "relation": "references",
@@ -25337,6 +27116,150 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_all",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_canvas_store",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_checkpoint_manager",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_dual_verifier",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_facts_store",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_guardrails_engine",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_historical_memory",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_hypothesis_evaluator",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_sde_verifier",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_skill_crystallizer",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_structure_guard",
+      "target": "scripts_component_evaluator_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_dual_verifier_dualverifier_audit_dual_verification",
       "target": "scripts_dual_verifier_py_any",
       "relation": "references",
@@ -25418,6 +27341,42 @@
       "context": "generic_arg",
       "source_file": "scripts/graphify_bridge.py",
       "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine_audit_execution",
+      "target": "scripts_guardrails_engine_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine_audit_input",
+      "target": "scripts_guardrails_engine_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine_audit_output",
+      "target": "scripts_guardrails_engine_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -27174,7 +29133,7 @@
     },
     {
       "source": "cli",
-      "target": "scripts_scientific_visualization_tools",
+      "target": "scripts_guardrails_engine",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -27182,6 +29141,42 @@
       "context": "import",
       "source_file": "cli.py",
       "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "cli",
+      "target": "scripts_component_evaluator",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "cli.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "cli",
+      "target": "scripts_cache_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "cli.py",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "cli",
+      "target": "scripts_scientific_visualization_tools",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "cli.py",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -27366,7 +29361,19 @@
     },
     {
       "source": "scripts_mcp_server",
-      "target": "scripts_scientific_visualization_tools",
+      "target": "scripts_guardrails_engine",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/mcp_server.py",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_mcp_server",
+      "target": "scripts_component_evaluator",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -27374,6 +29381,30 @@
       "context": "import",
       "source_file": "scripts/mcp_server.py",
       "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_mcp_server",
+      "target": "scripts_cache_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/mcp_server.py",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_mcp_server",
+      "target": "scripts_scientific_visualization_tools",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/mcp_server.py",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -27689,6 +29720,42 @@
       "weight": 1.0
     },
     {
+      "source": "tests_test_ai_engineering_tools",
+      "target": "scripts_guardrails_engine",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools",
+      "target": "scripts_component_evaluator",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools",
+      "target": "scripts_cache_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
       "source": "tests_test_frontier_tools",
       "target": "scripts_structure_guard",
       "relation": "imports_from",
@@ -27854,6 +29921,18 @@
       "context": "import",
       "source_file": "tests/test_sciresearch.py",
       "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore_set",
+      "target": "scripts_cache_store_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -28249,7 +30328,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L529",
+      "source_location": "L587",
       "weight": 1.0
     },
     {
@@ -29134,6 +31213,116 @@
       "weight": 1.0
     },
     {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_sol27lc_benchmark_platinum_study_report_378f62",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_scientific_findings_numerical_data",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_finding_1_equilibrium_parameter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_sol27lc_benchmark_platinum_study_report_378f62",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_executive_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_sol27lc_benchmark_platinum_study_report_378f62",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_verified_claims_provenance_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_sol27lc_benchmark_platinum_study_report_378f62",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_378f62_scientific_findings_numerical_data",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_378f62.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_sol27lc_benchmark_platinum_study_report_892cc1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_scientific_findings_numerical_data",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_finding_1_equilibrium_parameter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_sol27lc_benchmark_platinum_study_report_892cc1",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_executive_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_sol27lc_benchmark_platinum_study_report_892cc1",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_verified_claims_provenance_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_sol27lc_benchmark_platinum_study_report_892cc1",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_892cc1_scientific_findings_numerical_data",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_892cc1.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
       "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17",
       "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_965f17_sol27lc_benchmark_platinum_study_report_965f17",
       "relation": "contains",
@@ -29351,6 +31540,61 @@
       "confidence_score": 1.0,
       "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_a769b1.md",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_sol27lc_benchmark_platinum_study_report_b3372c",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_scientific_findings_numerical_data",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_finding_1_equilibrium_parameter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_sol27lc_benchmark_platinum_study_report_b3372c",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_executive_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_sol27lc_benchmark_platinum_study_report_b3372c",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_verified_claims_provenance_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_sol27lc_benchmark_platinum_study_report_b3372c",
+      "target": "canvas_reports_sol27lc_benchmark_platinum_study_report_b3372c_scientific_findings_numerical_data",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "canvas/reports/sol27lc_benchmark_platinum_study_report_b3372c.md",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -29680,7 +31924,381 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cli.py",
-      "source_location": "L48",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report",
+      "target": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_1_executive_summary_context",
+      "target": "docs_ai_engineering_sciresearch_report_core_deliverables_executed_in_this_work",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_2_the_5_step_ai_engineering_architecture_chapter_10",
+      "target": "docs_ai_engineering_sciresearch_report_detailed_stage_breakdown",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "docs_ai_engineering_sciresearch_report_b_planning_granularity_hierarchical_planning",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "docs_ai_engineering_sciresearch_report_c_control_flow_topologies",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "docs_ai_engineering_sciresearch_report_d_reflection_and_error_correction_react_vs_reflexion",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "docs_ai_engineering_sciresearch_report_e_tool_inventory_management_cognitive_limits",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "docs_ai_engineering_sciresearch_report_f_memory_systems",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "docs_ai_engineering_sciresearch_report_a_the_multi_agent_triad_decoupling_planning_from_execution",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_4_rigorous_evaluation_methodology_chapters_3_4",
+      "target": "docs_ai_engineering_sciresearch_report_the_three_tiers_of_evaluation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_4_rigorous_evaluation_methodology_chapters_3_4",
+      "target": "docs_ai_engineering_sciresearch_report_component_level_vs_system_level_evaluation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_5_production_observability_user_feedback_flywheels_chapter_10",
+      "target": "docs_ai_engineering_sciresearch_report_devops_aiops_observability_metrics",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_5_production_observability_user_feedback_flywheels_chapter_10",
+      "target": "docs_ai_engineering_sciresearch_report_conversational_user_feedback_flywheels",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "target": "docs_ai_engineering_sciresearch_report_2_4_rigorous_evaluation_methodology_chapters_3_4",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "target": "docs_ai_engineering_sciresearch_report_2_5_production_observability_user_feedback_flywheels_chapter_10",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "target": "docs_ai_engineering_sciresearch_report_2_1_the_ai_engineering_paradigm_vs_mle_vs_software_engineering",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "target": "docs_ai_engineering_sciresearch_report_2_2_the_5_step_ai_engineering_architecture_chapter_10",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "target": "docs_ai_engineering_sciresearch_report_2_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "target": "docs_ai_engineering_sciresearch_report_4_1_module_1_defense_in_depth_guardrails_engine_scripts_guardrails_engine_py",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "target": "docs_ai_engineering_sciresearch_report_4_2_module_2_component_level_evaluation_suite_scripts_component_evaluator_py",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "target": "docs_ai_engineering_sciresearch_report_4_3_module_3_hierarchical_exact_semantic_cache_store_scripts_cache_store_py",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "target": "docs_ai_engineering_sciresearch_report_4_4_upgraded_mcp_tool_suite_34_tools",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "target": "docs_ai_engineering_sciresearch_report_4_5_command_line_interface_cli_integration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_5_system_instructions_multi_agent_prompting_guidelines",
+      "target": "docs_ai_engineering_sciresearch_report_5_1_planner_agent_system_prompt_template",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_5_system_instructions_multi_agent_prompting_guidelines",
+      "target": "docs_ai_engineering_sciresearch_report_5_2_validator_agent_system_prompt_template",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L323",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_5_system_instructions_multi_agent_prompting_guidelines",
+      "target": "docs_ai_engineering_sciresearch_report_5_3_executor_worker_agent_system_prompt_template",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_1_executive_summary_context",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_3_synthesis_with_the_13_foundational_scientific_agent_frameworks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_4_concrete_upgrades_implemented_in_sciresearch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_comprehensive_reference_analysis_of_chip_huyen_2025_and_production_hardening_of_the_sciresearch_mcp_engine",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_2_in_depth_reference_analysis_chip_huyen_s_ai_engineering_2025",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_5_system_instructions_multi_agent_prompting_guidelines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_6_verification_and_test_results",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L348",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_ai_engineering_sciresearch_report_ai_engineering_multi_agent_architecture_for_autonomous_scientific_discovery",
+      "target": "docs_ai_engineering_sciresearch_report_7_future_roadmap_recommendations",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/AI_ENGINEERING_SCIRESEARCH_REPORT.md",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -30587,7 +33205,7 @@
     },
     {
       "source": "extracted_insights_17_huyen_ai_engineering_foundation_models",
-      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -30597,51 +33215,205 @@
       "weight": 1.0
     },
     {
-      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_2_rigorous_evaluation_methodology_chapters_3_4",
-      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_the_3_step_evaluation_pipeline",
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_1_executive_summary_the_ai_engineering_paradigm",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_the_three_paradigms_compared",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L34",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
-      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
-      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_2_rigorous_evaluation_methodology_chapters_3_4",
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_2_the_5_step_ai_engineering_architecture_chapter_10",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_detailed_architectural_breakdown",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L31",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
-      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
-      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_defense_in_depth_guardrails_chapter_10_step_2",
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_e_reflection_and_error_correction_react_vs_reflexion",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L47",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
-      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
-      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_4_agent_architecture_memory_planning_chapter_6",
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_f_tool_inventory_management",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L58",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
-      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_g_memory_systems",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_a_what_is_an_agent",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_b_decoupled_planning_vs_execution_the_3_component_multi_agent_triad",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_c_planning_granularity_hierarchical_planning",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_d_control_flow_topologies",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_4_rigorous_evaluation_methodology_chapters_3_4",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_a_the_three_tiers_of_evaluation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_4_rigorous_evaluation_methodology_chapters_3_4",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_b_component_level_vs_system_level_evaluation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_6_observability_user_feedback_flywheels_chapter_10",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_a_core_devops_aiops_observability_metrics",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_6_observability_user_feedback_flywheels_chapter_10",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_b_conversational_user_feedback_loops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_4_rigorous_evaluation_methodology_chapters_3_4",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_5_defense_in_depth_guardrails_chapter_10_step_2",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_6_observability_user_feedback_flywheels_chapter_10",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_7_direct_architectural_mapping_to_sciresearch_mcp_ecosystem",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_2_the_5_step_ai_engineering_architecture_chapter_10",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
       "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_1_executive_summary_the_ai_engineering_paradigm",
       "relation": "contains",
       "_origin": "ast",
@@ -30652,14 +33424,14 @@
       "weight": 1.0
     },
     {
-      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_guardrails_evaluation_for_foundation_model_systems",
-      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_5_architectural_blueprint_for_sciresearch",
+      "source": "extracted_insights_17_huyen_ai_engineering_foundation_models_ai_engineering_architecture_multi_agent_systems_guardrails_evaluation_for_foundation_model_systems",
+      "target": "extracted_insights_17_huyen_ai_engineering_foundation_models_3_multi_agent_systems_planning_tool_use_chapter_6",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "extracted_insights/17_HUYEN_ai_engineering_foundation_models.md",
-      "source_location": "L70",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -35382,6 +38154,17 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_cache_store",
+      "target": "scripts_cache_store_cachestore",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_canvas_store",
       "target": "scripts_canvas_store_canvasstore",
       "relation": "contains",
@@ -35401,6 +38184,17 @@
       "confidence_score": 1.0,
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator",
+      "target": "scripts_component_evaluator_componentevaluator",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -35448,6 +38242,17 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_guardrails_engine",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_historical_memory",
       "target": "scripts_historical_memory_historicalmemorystore",
       "relation": "contains",
@@ -35477,7 +38282,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L529",
+      "source_location": "L587",
       "weight": 1.0
     },
     {
@@ -35488,7 +38293,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L730",
+      "source_location": "L828",
       "weight": 1.0
     },
     {
@@ -40189,6 +42994,17 @@
       "weight": 1.0
     },
     {
+      "source": "tests_test_ai_engineering_tools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
       "source": "tests_test_frontier_tools",
       "target": "tests_test_frontier_tools_test_structure_guard_valid",
       "relation": "contains",
@@ -40263,6 +43079,94 @@
       "confidence_score": 1.0,
       "source_file": "tests/test_sciresearch.py",
       "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_set",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_stats",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_init_db",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_hash_key",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_tokenize",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_jaccard_similarity",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_cachestore",
+      "target": "scripts_cache_store_cachestore_get",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -40519,6 +43423,149 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_canvas_store",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_checkpoint_manager",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_historical_memory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_facts_store",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_skill_crystallizer",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_dual_verifier",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_structure_guard",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_hypothesis_evaluator",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_sde_verifier",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_test_guardrails_engine",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_all",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_dual_verifier_dualverifier",
       "target": "scripts_dual_verifier_dualverifier_init",
       "relation": "method",
@@ -40692,6 +43739,50 @@
       "confidence_score": 1.0,
       "source_file": "scripts/graphify_bridge.py",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine",
+      "target": "scripts_guardrails_engine_guardrailsengine_audit_execution",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine",
+      "target": "scripts_guardrails_engine_guardrailsengine_audit_output",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine",
+      "target": "scripts_guardrails_engine_guardrailsengine_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_guardrailsengine",
+      "target": "scripts_guardrails_engine_guardrailsengine_audit_input",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -41454,6 +44545,83 @@
       "weight": 1.0
     },
     {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_setup",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_test_01_guardrail_credential_isolation",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_test_02_guardrail_slurm_walltime_and_cores",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_test_03_guardrail_execution_budget",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_test_04_guardrail_output_anchors",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_test_05_component_evaluator_all",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "tests_test_ai_engineering_tools_testaiengineeringtools_test_06_cache_store_exact_and_semantic",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
       "source": "tests_test_ponytail_delta_testponytaildeltacomposer",
       "target": "tests_test_ponytail_delta_testponytaildeltacomposer_test_05_end_to_end_file_composition",
       "relation": "method",
@@ -41696,6 +44864,61 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_cache_store_rationale_160",
+      "target": "scripts_cache_store_cachestore_set",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_rationale_179",
+      "target": "scripts_cache_store_cachestore_stats",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_rationale_2",
+      "target": "scripts_cache_store",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_rationale_27",
+      "target": "scripts_cache_store_cachestore",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_cache_store_rationale_78",
+      "target": "scripts_cache_store_cachestore_get",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/cache_store.py",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_canvas_store_rationale_190",
       "target": "scripts_canvas_store_canvasstore_audit_provenance_chain",
       "relation": "rationale_for",
@@ -41825,6 +45048,50 @@
       "confidence_score": 1.0,
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_rationale_2",
+      "target": "scripts_component_evaluator",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_rationale_35",
+      "target": "scripts_component_evaluator_componentevaluator",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_rationale_46",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_component",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_rationale_98",
+      "target": "scripts_component_evaluator_componentevaluator_evaluate_all",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -41982,6 +45249,61 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_guardrails_engine_rationale_149",
+      "target": "scripts_guardrails_engine_guardrailsengine_audit_execution",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_rationale_188",
+      "target": "scripts_guardrails_engine_guardrailsengine_audit_output",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_rationale_2",
+      "target": "scripts_guardrails_engine",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_rationale_34",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_guardrails_engine_rationale_69",
+      "target": "scripts_guardrails_engine_guardrailsengine_audit_input",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/guardrails_engine.py",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_historical_memory_rationale_142",
       "target": "scripts_historical_memory_historicalmemorystore_store_calculation",
       "relation": "rationale_for",
@@ -42092,25 +45414,25 @@
       "weight": 1.0
     },
     {
-      "source": "scripts_mcp_server_rationale_530",
+      "source": "scripts_mcp_server_rationale_588",
       "target": "scripts_mcp_server_handle_tool_call",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L530",
+      "source_location": "L588",
       "weight": 1.0
     },
     {
-      "source": "scripts_mcp_server_rationale_731",
+      "source": "scripts_mcp_server_rationale_829",
       "target": "scripts_mcp_server_main",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L731",
+      "source_location": "L829",
       "weight": 1.0
     },
     {
@@ -44842,6 +48164,17 @@
       "weight": 1.0
     },
     {
+      "source": "tests_test_ai_engineering_tools_rationale_2",
+      "target": "tests_test_ai_engineering_tools",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "tests_test_frontier_tools_rationale_2",
       "target": "tests_test_frontier_tools",
       "relation": "rationale_for",
@@ -45037,7 +48370,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "cli.py",
-      "source_location": "L319",
+      "source_location": "L343",
       "weight": 1.0
     },
     {
@@ -45049,7 +48382,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "cli.py",
-      "source_location": "L329",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -45061,7 +48394,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "cli.py",
-      "source_location": "L339",
+      "source_location": "L363",
       "weight": 1.0
     },
     {
@@ -45073,7 +48406,127 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "cli.py",
-      "source_location": "L346",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_canvas_store",
+      "target": "scripts_canvas_store_canvasstore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_checkpoint_manager",
+      "target": "scripts_checkpoint_manager_checkpointmanager",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_dual_verifier",
+      "target": "scripts_dual_verifier_dualverifier",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_facts_store",
+      "target": "scripts_facts_store_factsstore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_guardrails_engine",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L228",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_historical_memory",
+      "target": "scripts_historical_memory_historicalmemorystore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_hypothesis_evaluator",
+      "target": "scripts_hypothesis_evaluator_hypothesisevaluator",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_sde_verifier",
+      "target": "scripts_sde_loop_verifier_sdeloopverifier",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_skill_crystallizer",
+      "target": "scripts_skill_crystallizer_skillcrystallizer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator_test_structure_guard",
+      "target": "scripts_structure_guard_structuresanityguard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -45085,7 +48538,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L700",
+      "source_location": "L758",
       "weight": 1.0
     },
     {
@@ -45097,7 +48550,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L708",
+      "source_location": "L766",
       "weight": 1.0
     },
     {
@@ -45109,7 +48562,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L717",
+      "source_location": "L775",
       "weight": 1.0
     },
     {
@@ -45121,7 +48574,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "scripts/mcp_server.py",
-      "source_location": "L722",
+      "source_location": "L780",
       "weight": 1.0
     },
     {
@@ -45182,6 +48635,42 @@
       "context": "call",
       "source_file": "skills/xcrysden-visualizer/scripts/xcrysden_auto.py",
       "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools_setup",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools_setup",
+      "target": "scripts_component_evaluator_componentevaluator",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools_setup",
+      "target": "scripts_cache_store_cachestore",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -45336,7 +48825,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L166",
+      "source_location": "L190",
       "weight": 0.8
     },
     {
@@ -45347,7 +48836,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L167",
+      "source_location": "L191",
       "weight": 0.8
     },
     {
@@ -45358,7 +48847,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L168",
+      "source_location": "L192",
       "weight": 0.8
     },
     {
@@ -45369,7 +48858,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L169",
+      "source_location": "L193",
       "weight": 0.8
     },
     {
@@ -45380,7 +48869,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L170",
+      "source_location": "L194",
       "weight": 0.8
     },
     {
@@ -45391,7 +48880,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L171",
+      "source_location": "L195",
       "weight": 0.8
     },
     {
@@ -45402,7 +48891,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L172",
+      "source_location": "L196",
       "weight": 0.8
     },
     {
@@ -45413,7 +48902,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L173",
+      "source_location": "L197",
       "weight": 0.8
     },
     {
@@ -45424,7 +48913,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L174",
+      "source_location": "L198",
       "weight": 0.8
     },
     {
@@ -45435,7 +48924,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L217",
+      "source_location": "L241",
       "weight": 0.8
     },
     {
@@ -45446,7 +48935,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L223",
+      "source_location": "L247",
       "weight": 0.8
     },
     {
@@ -45457,7 +48946,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L257",
+      "source_location": "L281",
       "weight": 0.8
     },
     {
@@ -45468,7 +48957,40 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "cli.py",
-      "source_location": "L304",
+      "source_location": "L328",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_main",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "cli.py",
+      "source_location": "L377",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_main",
+      "target": "scripts_component_evaluator_componentevaluator",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "cli.py",
+      "source_location": "L406",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_main",
+      "target": "scripts_cache_store_cachestore",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "cli.py",
+      "source_location": "L415",
       "weight": 0.8
     },
     {
@@ -45491,6 +49013,116 @@
       "confidence_score": 0.95,
       "source_file": "scripts/checkpoint_manager.py",
       "source_location": "L29",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_canvas_store_canvasstore",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L144",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_checkpoint_manager_checkpointmanager",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L151",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_historical_memory_historicalmemorystore",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L158",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_facts_store_factsstore",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L165",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_skill_crystallizer_skillcrystallizer",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L172",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_dual_verifier_dualverifier",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L179",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_structure_guard_structuresanityguard",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L187",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_hypothesis_evaluator_hypothesisevaluator",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L211",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_sde_loop_verifier_sdeloopverifier",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L219",
+      "weight": 0.8
+    },
+    {
+      "source": "scripts_component_evaluator_componentevaluator",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "scripts/component_evaluator.py",
+      "source_location": "L228",
       "weight": 0.8
     },
     {
@@ -45524,6 +49156,39 @@
       "confidence_score": 0.95,
       "source_file": "scripts/sde_loop_verifier.py",
       "source_location": "L37",
+      "weight": 0.8
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "scripts_guardrails_engine_guardrailsengine",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L31",
+      "weight": 0.8
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "scripts_component_evaluator_componentevaluator",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L32",
+      "weight": 0.8
+    },
+    {
+      "source": "tests_test_ai_engineering_tools_testaiengineeringtools",
+      "target": "scripts_cache_store_cachestore",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tests/test_ai_engineering_tools.py",
+      "source_location": "L33",
       "weight": 0.8
     },
     {
@@ -45704,5 +49369,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "828af225af74397fc7e0bf4e7b5a1be924839a0a"
+  "built_at_commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8"
 }

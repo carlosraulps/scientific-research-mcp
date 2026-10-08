@@ -37,6 +37,9 @@ from structure_guard import StructureSanityGuard
 from hypothesis_evaluator import HypothesisEvaluator
 from sde_loop_verifier import SDELoopVerifier
 from notebooklm_bridge import NotebookLMBridge
+from guardrails_engine import GuardrailsEngine
+from component_evaluator import ComponentEvaluator
+from cache_store import CacheStore
 from scientific_visualization_tools import (
     standardize_wyckoff_bader_charges,
     extract_compact_2d_slice,
@@ -156,6 +159,27 @@ def main():
     strain_p = subparsers.add_parser("strain-metrics", help="Quantify electronic strain descriptors across 2D states")
     strain_p.add_argument("file", help="Path to CSV or JSON file containing band data")
     strain_p.add_argument("--pristine-ef", "-ef", type=float, help="Pristine Fermi level reference (eV)")
+
+    # Defense-in-Depth Guardrail
+    guard_p = subparsers.add_parser("guardrail", help="Audit scientific inputs, execution state, or outputs against defense-in-depth guardrails")
+    guard_p.add_argument("--stage", "-s", choices=["input", "execution", "output"], default="input", help="Guardrail stage")
+    guard_p.add_argument("--file", "-f", help="Target input or output file")
+    guard_p.add_argument("--text", "-t", help="Inline text payload")
+    guard_p.add_argument("--domain", "-d", default="dft", help="Scientific domain")
+    guard_p.add_argument("--iter", "-i", type=int, default=1, help="Current iteration against recovery budget")
+
+    # Component Evaluator
+    comp_eval_p = subparsers.add_parser("test-components", help="Run isolated component-level benchmarks across SciResearch modules")
+    comp_eval_p.add_argument("--component", "-c", help="Specific component to test (or omit for all)")
+
+    # Cache
+    cache_p = subparsers.add_parser("cache", help="Query or manage hierarchical semantic & exact cache")
+    cache_p.add_argument("action", choices=["get", "set", "stats"], help="Cache operation")
+    cache_p.add_argument("--key", "-k", help="Exact cache key")
+    cache_p.add_argument("--text", "-t", help="Natural language query for semantic matching")
+    cache_p.add_argument("--val", "-v", help="Value string or JSON for cache set")
+    cache_p.add_argument("--namespace", "-ns", default="default", help="Cache namespace")
+    cache_p.add_argument("--similarity", "-sim", type=float, default=0.85, help="Minimum semantic similarity")
 
     args = parser.parse_args()
     if not args.subcommand:
@@ -348,6 +372,71 @@ def main():
             reference_efermi=args.pristine_ef
         )
         print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "guardrail":
+        guard = GuardrailsEngine(BASE_DIR)
+        payload = {}
+        if args.file and os.path.exists(args.file):
+            with open(args.file, "r", encoding="utf-8") as f:
+                content = f.read()
+            if args.file.endswith(".json"):
+                try:
+                    payload = json.loads(content)
+                except Exception:
+                    payload = {"content": content}
+            else:
+                payload = {"content": content}
+        elif args.text:
+            try:
+                payload = json.loads(args.text)
+            except Exception:
+                payload = {"content": args.text}
+
+        if args.stage == "input":
+            res = guard.audit_input(payload, domain=args.domain)
+        elif args.stage == "execution":
+            res = guard.audit_execution(iteration_count=args.iter)
+        elif args.stage == "output":
+            raw_text = payload.get("content", str(payload)) if isinstance(payload, dict) else str(payload)
+            res = guard.audit_output(raw_text, engine=args.domain)
+        print(json.dumps(res, indent=2))
+        sys.exit(0 if res.get("passed", False) else 1)
+
+    elif args.subcommand == "test-components":
+        evaluator = ComponentEvaluator(BASE_DIR)
+        if args.component:
+            res = evaluator.evaluate_component(args.component)
+        else:
+            res = evaluator.evaluate_all()
+        print(json.dumps(res, indent=2))
+        sys.exit(0 if res.get("passed", res.get("system_health") == "HEALTHY") else 1)
+
+    elif args.subcommand == "cache":
+        cache_store = CacheStore(BASE_DIR)
+        if args.action == "get":
+            res = cache_store.get(
+                query_key=args.key or "",
+                query_text=args.text,
+                namespace=args.namespace,
+                min_similarity=args.similarity
+            )
+            print(json.dumps(res if res else {"hit": False, "message": "Cache miss"}, indent=2))
+        elif args.action == "set":
+            val = args.val
+            try:
+                val = json.loads(args.val)
+            except Exception:
+                pass
+            cid = cache_store.set(
+                query_key=args.key or "",
+                query_text=args.text or "",
+                value=val,
+                namespace=args.namespace
+            )
+            print(json.dumps({"stored": True, "cache_id": cid}, indent=2))
+        elif args.action == "stats":
+            res = cache_store.stats(namespace=args.namespace if args.namespace != "default" else None)
+            print(json.dumps(res, indent=2))
 
 
 if __name__ == "__main__":

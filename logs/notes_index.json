@@ -2,17 +2,17 @@
   "pt_bulk_convergence_discussion": {
     "key": "pt_bulk_convergence_discussion",
     "title": "Pt Bulk Convergence Discussion",
-    "current_version": 15,
-    "current_file": "pt_bulk_convergence_discussion_v15.md",
+    "current_version": 19,
+    "current_file": "pt_bulk_convergence_discussion_v19.md",
     "tags": [
       "dft",
       "pt",
       "convergence"
     ],
     "references": [
-      "0532f49b"
+      "f41d42bd"
     ],
-    "updated_at": "2026-10-07T22:47:17.057053+00:00",
+    "updated_at": "2026-10-08T13:33:17.591490+00:00",
     "history": [
       {
         "version": 1,
@@ -88,6 +88,26 @@
         "version": 15,
         "file": "pt_bulk_convergence_discussion_v15.md",
         "timestamp": "2026-10-07T22:47:17.057053+00:00"
+      },
+      {
+        "version": 16,
+        "file": "pt_bulk_convergence_discussion_v16.md",
+        "timestamp": "2026-10-08T13:21:37.046726+00:00"
+      },
+      {
+        "version": 17,
+        "file": "pt_bulk_convergence_discussion_v17.md",
+        "timestamp": "2026-10-08T13:24:16.591372+00:00"
+      },
+      {
+        "version": 18,
+        "file": "pt_bulk_convergence_discussion_v18.md",
+        "timestamp": "2026-10-08T13:25:15.962408+00:00"
+      },
+      {
+        "version": 19,
+        "file": "pt_bulk_convergence_discussion_v19.md",
+        "timestamp": "2026-10-08T13:33:17.591490+00:00"
       }
     ]
   },

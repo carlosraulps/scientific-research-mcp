@@ -40,3 +40,7 @@ scratch/
 
 # Reference papers (ignore new heavy binary downloads)
 papers/*.pdf
+
+# Databases & runtime caches
+*.db
+memory/*.db

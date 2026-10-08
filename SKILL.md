@@ -95,13 +95,23 @@ sciresearch validate-anim ./frames/frame_*.png
 
 # 13. Quantify electronic strain descriptors across 2D states
 sciresearch strain-metrics strain_electronic_metrics.csv
+
+# 14. Audit scientific payload against Chip Huyen Defense-in-Depth Guardrails
+sciresearch guardrail --stage input --file INCAR --domain vasp
+
+# 15. Run isolated Component-Level evaluation across all agent modules
+sciresearch test-components
+
+# 16. Two-tier exact & semantic cache query / storage
+sciresearch cache set --key pt111_her --text "Pt(111) HER free energy" --val '{"delta_G": -0.09}' --namespace her
+sciresearch cache get --key pt111_her --namespace her
 ```
 
 ---
 
-## 🔌 Model Context Protocol (MCP) Tool Suite (30 Tools)
+## 🔌 Model Context Protocol (MCP) Tool Suite (34 Tools)
 
-The skill exposes 30 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
+The skill exposes 34 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
 
 ### 1. DREAMS Shared Canvas & Provenance Store
 * `canvas_register_artifact(producing_tool, value, arguments, rationales, sources, declared_context, sensitive_params)`:
@@ -174,6 +184,16 @@ The skill exposes 30 dedicated tools via the `sciresearch` MCP server (`sciresea
   Zero-Dilation Rule Validator: Audits multi-frame scientific animation sequences to ensure 100% uniform pixel geometry ($W \times H$), detecting and preventing frame dilation jitter caused by `matplotlib` `bbox_inches="tight"`.
 * `quantify_electronic_strain_metrics(band_data, reference_efermi)`:
   Quantifies electronic strain descriptors ($E_g$, $\Delta E_{\text{F}}(\varepsilon)$, $v_{\text{F}}$, $\Delta k_{\text{Dirac}}$, $p_z\text{ purity}$) across strained 2D allotropes, extracting chemical potential shifts and HER electrocatalytic electron injection mechanisms.
+
+### 10. Chip Huyen AI Engineering Defense-in-Depth Suite (Chapters 3, 4, 10)
+* `guardrails_audit_pipeline(stage, payload, domain, iteration_count, expected_metrics)`:
+  Tri-stage defense-in-depth guardrail engine. Enforces credential non-disclosure (`.env`, private API keys), blocks monolithic 5-day Slurm walltimes, verifies AMD EPYC socket divisors (16, 32, 64, 128 cores), checks 8-attempt recovery limits, and confirms ground-state physics anchors (`reached required accuracy`, `E0=`).
+* `evaluate_system_components(component_name)`:
+  Isolated component-level evaluation benchmark suite. Runs automated unit tests on each registered agent module and generates a latency, error rate, and health scorecard (100% pass rate target).
+* `cache_query(query_key, query_text, namespace, min_similarity)`:
+  Hierarchical two-tier cache retrieval. Performs SHA-256 exact matching with semantic fallback (token set Jaccard similarity $\ge 0.85$) to eliminate redundant simulation queries and LLM token costs.
+* `cache_store_entry(query_key, query_text, value, namespace, ttl_seconds)`:
+  Stores expensive calculation manifests and verified physical properties in persistent SQLite cache with TTL expiration and LRU tracking.
 
 ---
 

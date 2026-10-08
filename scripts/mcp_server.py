@@ -57,6 +57,9 @@ from git_controller import GitController
 from structure_guard import StructureSanityGuard
 from hypothesis_evaluator import HypothesisEvaluator
 from sde_loop_verifier import SDELoopVerifier
+from guardrails_engine import GuardrailsEngine
+from component_evaluator import ComponentEvaluator
+from cache_store import CacheStore
 
 from scientific_visualization_tools import (
     standardize_wyckoff_bader_charges,
@@ -80,6 +83,9 @@ GIT = GitController(BASE_DIR)
 STRUCTURE_GUARD = StructureSanityGuard()
 HYPOTHESIS_EVALUATOR = HypothesisEvaluator(BASE_DIR)
 SDE_VERIFIER = SDELoopVerifier(BASE_DIR)
+GUARDRAILS = GuardrailsEngine(BASE_DIR)
+COMPONENT_EVALUATOR = ComponentEvaluator(BASE_DIR)
+CACHE = CacheStore(BASE_DIR)
 
 
 TOOLS = [
@@ -429,7 +435,6 @@ TOOLS = [
         }
     },
     {
-    {
         "name": "guard_structure_geometry",
         "description": "Inspects crystal/molecular structure files (POSCAR, CONTCAR, XYZ, CIF) for coordinate hallucinations, overlapping atoms (<0.8 A), unphysically short bonds (<1.05 A), negative/zero cell volumes, and fractional bounds (grounded in Microsoft AI4Science & Chip Huyen guardrails).",
         "inputSchema": {
@@ -468,7 +473,6 @@ TOOLS = [
             },
             "required": ["project_name", "round_index", "hypothesis_text"]
         }
-    },
     },
     {
         "name": "standardize_wyckoff_bader_charges",
@@ -521,6 +525,60 @@ TOOLS = [
                 "reference_efermi": {"type": "number", "description": "Fermi energy of the pristine (0% strain) state"}
             },
             "required": ["band_data"]
+        }
+    },
+    {
+        "name": "guardrails_audit_pipeline",
+        "description": "Defense-in-depth scientific guardrails: Audits input, live execution, or output payloads against credential leaks, 5-day blind walltimes, core divisors, recovery limits, and ground-state physics anchors (grounded in Chip Huyen 2025).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "stage": {"type": "string", "enum": ["input", "execution", "output"], "description": "Guardrail stage to evaluate"},
+                "payload": {"description": "Input dictionary/parameters, output string text, or execution dictionary"},
+                "domain": {"type": "string", "default": "dft", "description": "Scientific domain ('dft', 'vasp', 'hpc', 'general')"},
+                "iteration_count": {"type": "integer", "default": 1, "description": "Execution attempt index against recovery budget"},
+                "expected_metrics": {"type": "object", "description": "Optional expected physical metrics dictionary"}
+            },
+            "required": ["stage", "payload"]
+        }
+    },
+    {
+        "name": "evaluate_system_components",
+        "description": "Rigorous component-level evaluation: Runs isolated unit benchmarks on registered SciResearch agent modules and returns an objective latency and health scorecard (grounded in Chip Huyen Chapters 3 & 4).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "component_name": {"type": "string", "description": "Optional specific component to benchmark. If omitted, benchmarks all components."}
+            }
+        }
+    },
+    {
+        "name": "cache_query",
+        "description": "Hierarchical two-tier cache lookup: Queries exact (SHA-256) or semantic (Jaccard similarity) cache for scientific results and parameter recommendations, reducing redundant compute and latency (grounded in Chip Huyen Chapter 10).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query_key": {"type": "string", "description": "Exact lookup key"},
+                "query_text": {"type": "string", "description": "Natural language query for semantic matching fallback"},
+                "namespace": {"type": "string", "default": "default", "description": "Cache namespace partition ('dft_params', 'structure_sanity', 'hypotheses', etc.)"},
+                "min_similarity": {"type": "number", "default": 0.85, "description": "Minimum similarity threshold for semantic hit (0.0 to 1.0)"}
+            },
+            "required": ["query_key"]
+        }
+    },
+    {
+        "name": "cache_store_entry",
+        "description": "Hierarchical two-tier cache storage: Stores an expensive scientific result or calculation manifest in persistent SQLite cache with TTL expiry and LRU tracking (grounded in Chip Huyen Chapter 10).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query_key": {"type": "string", "description": "Exact lookup key"},
+                "query_text": {"type": "string", "description": "Natural language description or search query for semantic recall"},
+                "value": {"description": "Arbitrary serializable JSON result or parameter dictionary to cache"},
+                "namespace": {"type": "string", "default": "default", "description": "Cache namespace partition"},
+                "ttl_seconds": {"type": "number", "default": 86400.0, "description": "Time-to-live in seconds (default 86400 = 24h)"}
+            },
+            "required": ["query_key", "query_text", "value"]
         }
     }
 ]
@@ -723,6 +781,46 @@ def handle_tool_call(name: str, args: Dict[str, Any]) -> Any:
             band_data=args.get("band_data", {}),
             reference_efermi=args.get("reference_efermi")
         )
+    elif name == "guardrails_audit_pipeline":
+        stage = args.get("stage", "input").lower()
+        payload = args.get("payload")
+        if stage == "input":
+            return GUARDRAILS.audit_input(payload=payload if isinstance(payload, dict) else {"content": payload}, domain=args.get("domain", "dft"))
+        elif stage == "execution":
+            return GUARDRAILS.audit_execution(
+                iteration_count=args.get("iteration_count", 1),
+                max_budget=args.get("max_budget", 8)
+            )
+        elif stage == "output":
+            return GUARDRAILS.audit_output(
+                output_text=str(payload) if payload else "",
+                engine=args.get("domain", "vasp"),
+                expected_metrics=args.get("expected_metrics")
+            )
+        else:
+            return {"error": f"Invalid stage '{stage}'. Must be 'input', 'execution', or 'output'."}
+    elif name == "evaluate_system_components":
+        comp = args.get("component_name")
+        if comp:
+            return COMPONENT_EVALUATOR.evaluate_component(comp)
+        return COMPONENT_EVALUATOR.evaluate_all()
+    elif name == "cache_query":
+        res = CACHE.get(
+            query_key=args.get("query_key", ""),
+            query_text=args.get("query_text"),
+            namespace=args.get("namespace", "default"),
+            min_similarity=args.get("min_similarity", 0.85)
+        )
+        return res if res is not None else {"hit": False, "message": "Cache miss"}
+    elif name == "cache_store_entry":
+        cid = CACHE.set(
+            query_key=args.get("query_key", ""),
+            query_text=args.get("query_text", ""),
+            value=args.get("value"),
+            namespace=args.get("namespace", "default"),
+            ttl_seconds=args.get("ttl_seconds", 86400.0)
+        )
+        return {"stored": True, "cache_id": cid}
     else:
         return {"error": f"Unknown tool: {name}", "isError": True}
 

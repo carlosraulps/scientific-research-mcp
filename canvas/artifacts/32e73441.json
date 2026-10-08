@@ -1,0 +1,17 @@
+{
+  "result_id": "32e73441",
+  "producing_tool": "",
+  "value": null,
+  "arguments": {},
+  "rationales": {},
+  "sources": {},
+  "declared_context": "PHOTH-Graphene dynamic hydrogen chemisorption, thermal stability, and tetrahedral pyramidalization at 300 K molecular dynamics study.",
+  "parent_ids": [],
+  "created_at": "2026-10-08T13:40:55.692538+00:00",
+  "git": {
+    "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+    "short_commit": "1b754f1f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}

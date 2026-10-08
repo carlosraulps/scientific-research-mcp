@@ -148,5 +148,61 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "sol27lc_benchmark_platinum_study_report_b3372c": {
+    "key": "sol27lc_benchmark_platinum_study_report_b3372c",
+    "title": "Sol27LC Benchmark Platinum Study Report b3372c",
+    "file": "sol27lc_benchmark_platinum_study_report_b3372c.md",
+    "created_at": "2026-10-08T13:21:37.049135+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+      "short_commit": "1b754f1f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "sol27lc_benchmark_platinum_study_report_378f62": {
+    "key": "sol27lc_benchmark_platinum_study_report_378f62",
+    "title": "Sol27LC Benchmark Platinum Study Report 378f62",
+    "file": "sol27lc_benchmark_platinum_study_report_378f62.md",
+    "created_at": "2026-10-08T13:24:16.592901+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+      "short_commit": "1b754f1f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "sol27lc_benchmark_platinum_study_report_892cc1": {
+    "key": "sol27lc_benchmark_platinum_study_report_892cc1",
+    "title": "Sol27LC Benchmark Platinum Study Report 892cc1",
+    "file": "sol27lc_benchmark_platinum_study_report_892cc1.md",
+    "created_at": "2026-10-08T13:25:15.963899+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+      "short_commit": "1b754f1f",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "sol27lc_benchmark_platinum_study_report_e93d75": {
+    "key": "sol27lc_benchmark_platinum_study_report_e93d75",
+    "title": "Sol27LC Benchmark Platinum Study Report e93d75",
+    "file": "sol27lc_benchmark_platinum_study_report_e93d75.md",
+    "created_at": "2026-10-08T13:33:17.594361+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+      "short_commit": "1b754f1f",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

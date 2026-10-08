@@ -18,3 +18,4 @@ timestamp,run_id,step_name,rule_id,hypothesis,intervention,outcome,evidence_ref
 2026-10-04T21:01:19.338095+00:00,run_tm_multitier_comparison,multi_tier_hubbard_audit,Rule B,"Multi-site Hubbard U (U_Cr + U_TM = 3.29 eV) shifts 3d orbital localization relative to single-site U_Cr, modulating both the Sabatier HER free energy and the thermodynamic driving force for pore penetration.","Constructed multi-tier comparative analysis for Adsorbed vs Embedded Co, Fe, Ni across vdW, U_Cr, and U_Cr+U_TM tiers.","Comprehensive 4-panel publication figure resolving Delta G, E_ads, E_bind, and magnetization trends with zero collisions.",tab_sistemas_termo_completed_all_functionals.tex
 2026-10-05T11:57:08.489634+00:00,,,Rule B,,,,
 2026-10-06T13:10:05.968147+00:00,,,Rule B,,,,
+2026-10-08T13:25:05.321072+00:00,,,Rule B,,,,

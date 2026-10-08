@@ -1,0 +1,30 @@
+{
+  "result_id": "bd97976d",
+  "producing_tool": "dft_cutoff_sweep",
+  "value": {
+    "converged_encut": 520,
+    "energy_diff_mev": 0.4
+  },
+  "arguments": {
+    "encut_range": [
+      400,
+      450,
+      500,
+      520,
+      600
+    ]
+  },
+  "rationales": {
+    "encut": "Convergence sweep to Delta E < 1 meV/atom"
+  },
+  "sources": {},
+  "declared_context": "Initial kinetic energy cutoff sweep for FCC Platinum bulk.",
+  "parent_ids": [],
+  "created_at": "2026-10-08T13:25:15.923229+00:00",
+  "git": {
+    "commit": "1b754f1f612dd050bb48f57da53992a8b16eeba8",
+    "short_commit": "1b754f1f",
+    "branch": "master",
+    "is_dirty": true
+  }
+}
