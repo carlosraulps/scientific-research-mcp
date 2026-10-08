@@ -1,17 +1,17 @@
-# Graph Report - scientific-research  (2026-10-07)
+# Graph Report - scientific-research  (2026-10-08)
 
 ## Corpus Check
-- 265 files · ~2,111,274 words
+- 289 files · ~2,122,621 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 83 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
+- Unclassified: 84 file(s) not represented in the graph (top: .tex 35, (none) 13, .csv 8)
 
 ## Summary
-- 1726 nodes · 2223 edges · 132 communities (102 shown, 5 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 70 edges (avg confidence: 0.9)
+- 1854 nodes · 2411 edges · 141 communities (108 shown, 5 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 99 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `828af225`
+- Built from commit: `1b754f1f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -61,7 +61,7 @@
 - sync_graphify.sh
 - SkillCrystallizer
 - Microsoft_2023_Impact_LLMs_Scientific_Discovery.md
-- GraphifyBridge
+- AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery
 - scripts/__init__.py
 - Site Pyramidalization & Circular Zoom Annotator
 - auto_slice_2d.py
@@ -110,7 +110,7 @@
 - 13. The Impact of Large Language Models on Scientific Discovery: A Preliminary Study Using GPT-4
 - Evaluating LLMs in Scientific Discovery: SDE & The Discovery Loop
 - From Automation to Autonomy: LLMs in Scientific Discovery
-- AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems
+- 3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)
 - Sol27LC Benchmark Platinum Study Report 2ba314
 - Sol27LC Benchmark Platinum Study Report 97202e
 - Sol27LC Benchmark Platinum Study Report c495dc
@@ -123,26 +123,32 @@
 - Luo_2025_LLM4SR_Survey_Scientific_Research.md
 - Save bond lengths and energies to a file
 - Examples
+- ComponentEvaluator
+- GuardrailsEngine
+- CacheStore
+- Sol27LC Benchmark Platinum Study Report 378f62
+- Sol27LC Benchmark Platinum Study Report 892cc1
+- Sol27LC Benchmark Platinum Study Report b3372c
 
 ## God Nodes (most connected - your core abstractions)
 1. `tokens` - 145 edges
 2. `transformer blocks Model dim` - 51 edges
 3. `matches` - 40 edges
 4. `Replace with the UniProt IDs you want to download` - 30 edges
-5. `TestScientificResearchLog` - 25 edges
-6. `CanvasStore` - 20 edges
-7. `main()` - 18 edges
-8. `StructureSanityGuard` - 18 edges
-9. `GitController` - 16 edges
-10. `render_circular_site_zoom()` - 16 edges
+5. `ComponentEvaluator` - 28 edges
+6. `TestScientificResearchLog` - 25 edges
+7. `CanvasStore` - 22 edges
+8. `main()` - 21 edges
+9. `StructureSanityGuard` - 20 edges
+10. `CheckpointManager` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `test_sde_loop_verifier_anti_saturation()` --uses--> `SDELoopVerifier`  [INFERRED]
-  tests/test_frontier_tools.py → scripts/sde_loop_verifier.py
 - `test_structure_guard_atomic_overlap()` --uses--> `StructureSanityGuard`  [INFERRED]
   tests/test_frontier_tools.py → scripts/structure_guard.py
 - `test_structure_guard_valid()` --uses--> `StructureSanityGuard`  [INFERRED]
   tests/test_frontier_tools.py → scripts/structure_guard.py
+- `main()` --uses--> `CacheStore`  [INFERRED]
+  cli.py → scripts/cache_store.py
 - `main()` --uses--> `CanvasStore`  [INFERRED]
   cli.py → scripts/canvas_store.py
 - `main()` --uses--> `CheckpointManager`  [INFERRED]
@@ -151,19 +157,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (132 total, 5 thin omitted)
+## Communities (141 total, 5 thin omitted)
 
 ### Community 0 - "mcp_server.py"
-Cohesion: 0.14
-Nodes (12): CLI interface for the sciresearch ecosystem. Provides command-line access to: -…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+4 more)
+Cohesion: 0.10
+Nodes (17): CLI interface for the sciresearch ecosystem. Provides command-line access to: -…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================…, ===============================================================================… (+9 more)
 
 ### Community 1 - "CanvasStore"
 Cohesion: 0.21
 Nodes (8): CanvasStore, Any, Traverses upstream DAG dependencies to produce an auditable provenance tree., Creates or updates a version-controlled, append-only working note. Validates…, Creates an immutable scientific report after auditing all claims against the…, Lists available keys and metadata across canvas stores., Reads a specific item from notes, artifacts, or reports., Registers an immutable tool output artifact with anti-laundering verification.…
 
 ### Community 2 - "TestScientificResearchLog"
-Cohesion: 0.09
-Nodes (7): DualVerifier, Any, Performs dual verification across Functional Correctness and Scientific…, ProtocolEngine, Any, AEH Stage 1: Static verification of multi-step simulation protocols., TestScientificResearchLog
+Cohesion: 0.07
+Nodes (11): DualVerifier, Any, Performs dual verification across Functional Correctness and Scientific…, GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, Creates an interconnected Markdown summary linking all Notes, Reports,…, ProtocolEngine (+3 more)
 
 ### Community 3 - "sthlmNord BeamerTheme"
 Cohesion: 0.11
@@ -325,9 +331,9 @@ Nodes (4): Any, Finds crystallized skills and procedures matching a natural lang
 Cohesion: 0.02
 Nodes (80): 4 orbitals, 4 electrons in active space, Add a legend, Add a legend, Add labels to data points, AlxGa1-xAs, AlxGa1-xAs, Annotate the points with semiconductor names, Axes labels and title (+72 more)
 
-### Community 64 - "GraphifyBridge"
-Cohesion: 0.25
-Nodes (5): GraphifyBridge, Any, Regenerates knowledge documents and runs `graphify update .`, ===============================================================================…, Creates an interconnected Markdown summary linking all Notes, Reports,…
+### Community 64 - "AI Engineering & Multi-Agent Architecture for Autonomous Scientific Discovery"
+Cohesion: 0.06
+Nodes (34): 1. Executive Summary & Context, 2.1 The AI Engineering Paradigm vs. MLE vs. Software Engineering, 2.2 The 5-Step AI Engineering Architecture (Chapter 10), 2.3 Multi-Agent Systems, Planning & Tool Use (Chapter 6), 2.4 Rigorous Evaluation Methodology (Chapters 3 & 4), 2.5 Production Observability & User Feedback Flywheels (Chapter 10), 2. In-Depth Reference Analysis: Chip Huyen's *AI Engineering* (2025), 3. Synthesis with the 13 Foundational Scientific Agent Frameworks (+26 more)
 
 ### Community 65 - "scripts/__init__.py"
 Cohesion: 0.16
@@ -474,12 +480,12 @@ Cohesion: 0.07
 Nodes (30): ACACGTGG, AEVPEPAAPSRLHMSQHYQSGPVPGTAINGTLPLSHM, ATCA, CCACGTGC, CCCAATTC, CCGTGTGC, CTCCCATGGTGCCCCG, GAATATATAC (+22 more)
 
 ### Community 103 - "StructureSanityGuard"
-Cohesion: 0.12
-Nodes (11): Any, Verifies and orchestrates multi-round closed discovery loop steps., Audits a discovery iteration step and returns next-action guidance., SDELoopVerifier, Any, Comprehensive sanity check for POSCAR structure., Automatically detects format and applies appropriate sanity guard., Validates structural input files (POSCAR, XYZ, CIF, FDF) against physical… (+3 more)
+Cohesion: 0.18
+Nodes (7): Any, Comprehensive sanity check for POSCAR structure., Automatically detects format and applies appropriate sanity guard., Validates structural input files (POSCAR, XYZ, CIF, FDF) against physical…, Triple scalar product a . (b x c)., Parses standard VASP POSCAR / CONTCAR file., StructureSanityGuard
 
 ### Community 104 - "HypothesisEvaluator"
-Cohesion: 0.13
-Nodes (14): HypothesisEvaluator, Any, ===============================================================================…, Evaluates proposed scientific hypotheses and simulation workflows against…, Searches SQLite lifelong memory for existing facts or traps related to the text., Runs the 4-dimensional audit and returns a comprehensive scorecard., ===============================================================================…, ===============================================================================… (+6 more)
+Cohesion: 0.10
+Nodes (18): HypothesisEvaluator, Any, ===============================================================================…, Evaluates proposed scientific hypotheses and simulation workflows against…, Searches SQLite lifelong memory for existing facts or traps related to the text., Runs the 4-dimensional audit and returns a comprehensive scorecard., Any, ===============================================================================… (+10 more)
 
 ### Community 105 - "3. Core Protocol & Execution Phases"
 Cohesion: 0.14
@@ -513,9 +519,9 @@ Nodes (8): 1. Executive Summary & The Scientific Evaluation Crisis, 2.1 The Gene
 Cohesion: 0.25
 Nodes (7): 1. Executive Summary & The Three-Tier Autonomy Taxonomy, 2. Mapping to the Six Stages of the Scientific Method, 3. Key Findings on Autonomous Scientific Reasoning, 4. Unresolved Frontier Challenges, 5. Direct Architectural Blueprint for `sciresearch`, From Automation to Autonomy: LLMs in Scientific Discovery, Stage Breakdown & Agent Specializations:
 
-### Community 113 - "AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems"
-Cohesion: 0.25
-Nodes (7): 1. Executive Summary & The AI Engineering Paradigm, 2. Rigorous Evaluation Methodology (Chapters 3 & 4), 3. Defense-in-Depth Guardrails (Chapter 10, Step 2), 4. Agent Architecture, Memory & Planning (Chapter 6), 5. Architectural Blueprint for `sciresearch`, AI Engineering: Architecture, Guardrails & Evaluation for Foundation Model Systems, The 3-Step Evaluation Pipeline:
+### Community 113 - "3. Multi-Agent Systems, Planning & Tool Use (Chapter 6)"
+Cohesion: 0.09
+Nodes (21): 1. Executive Summary & The AI Engineering Paradigm, 2. The 5-Step AI Engineering Architecture (Chapter 10), 3. Multi-Agent Systems, Planning & Tool Use (Chapter 6), 4. Rigorous Evaluation Methodology (Chapters 3 & 4), 5. Defense-in-Depth Guardrails (Chapter 10, Step 2), 6. Observability & User Feedback Flywheels (Chapter 10), 7. Direct Architectural Mapping to `sciresearch` MCP Ecosystem, A. Core DevOps / AIOps Observability Metrics (+13 more)
 
 ### Community 114 - "Sol27LC Benchmark Platinum Study Report 2ba314"
 Cohesion: 0.33
@@ -561,25 +567,49 @@ Nodes (3): BLEU, EW DA, METEOR
 Cohesion: 0.50
 Nodes (4): M END, M END, Save bond lengths and energies to a file, SOTA
 
+### Community 132 - "ComponentEvaluator"
+Cohesion: 0.25
+Nodes (5): ComponentEvaluator, Any, Component-level evaluation engine for autonomous scientific agent subsystems., Runs an isolated benchmark suite on a single named component., Runs component-level evaluation across all registered subsystems. Generates an…
+
+### Community 133 - "GuardrailsEngine"
+Cohesion: 0.13
+Nodes (7): GuardrailsEngine, Any, Audits live execution state against recursion bounds and runtime budgets., Audits simulation outputs or calculation deliverables for physical anchors,…, Defense-in-depth scientific guardrails engine implementing Chip Huyen's three-…, Audits incoming task inputs, script contents, or parameter dictionaries.…, TestAIEngineeringTools
+
+### Community 134 - "CacheStore"
+Cohesion: 0.22
+Nodes (6): CacheStore, Any, Stores an entry in the hierarchical cache., Returns summary statistics of the cache store., Two-tier hierarchical exact and semantic cache engine., Retrieves a cached result using exact hash matching first, falling back to…
+
+### Community 135 - "Sol27LC Benchmark Platinum Study Report 378f62"
+Cohesion: 0.33
+Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findings & Numerical Data, Sol27LC Benchmark Platinum Study Report 378f62, Verified Claims & Provenance Audit
+
+### Community 136 - "Sol27LC Benchmark Platinum Study Report 892cc1"
+Cohesion: 0.33
+Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findings & Numerical Data, Sol27LC Benchmark Platinum Study Report 892cc1, Verified Claims & Provenance Audit
+
+### Community 137 - "Sol27LC Benchmark Platinum Study Report b3372c"
+Cohesion: 0.33
+Nodes (5): Executive Summary, Finding 1: Equilibrium Parameter, Scientific Findings & Numerical Data, Sol27LC Benchmark Platinum Study Report b3372c, Verified Claims & Provenance Audit
+
 ## Knowledge Gaps
-- **700 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `1. Zero Hallucinated or Laundered Data`, `2. The Ponytail Zero-Redundancy Principle`, `3. Declarative Input Delta Composition (Anti-Regeneration Rule)` (+695 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1132 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **744 isolated node(s):** `sync_graphify.sh script`, `textalloc`, `1. Zero Hallucinated or Laundered Data`, `2. The Ponytail Zero-Redundancy Principle`, `3. Declarative Input Delta Composition (Anti-Regeneration Rule)` (+739 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1206 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `tokens` connect `tokens` to `Huyen_2025_AI_Engineering_Foundation_Models.md`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `main()` connect `scripts/__init__.py` to `mcp_server.py`, `CanvasStore`, `TestScientificResearchLog`, `GraphifyBridge`, `HistoricalMemoryStore`, `FactsStore`, `StructureSanityGuard`, `HypothesisEvaluator`, `PonytailDeltaComposer`, `GitController`, `SkillCrystallizer`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **Why does `transformer blocks Model dim` connect `transformer blocks Model dim` to `Huyen_2025_AI_Engineering_Foundation_Models.md`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `main()` connect `scripts/__init__.py` to `mcp_server.py`, `CanvasStore`, `TestScientificResearchLog`, `ComponentEvaluator`, `FactsStore`, `CacheStore`, `GuardrailsEngine`, `HistoricalMemoryStore`, `HypothesisEvaluator`, `StructureSanityGuard`, `PonytailDeltaComposer`, `GitController`, `SkillCrystallizer`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `PonytailDeltaComposer` connect `PonytailDeltaComposer` to `scripts/__init__.py`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Are the 10 inferred relationships involving `TestScientificResearchLog` (e.g. with `CanvasStore` and `CheckpointManager`) actually correct?**
-  _`TestScientificResearchLog` has 10 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 13 inferred relationships involving `ComponentEvaluator` (e.g. with `main()` and `CanvasStore`) actually correct?**
+  _`ComponentEvaluator` has 13 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sync_graphify.sh script`, `textalloc`, `1. Zero Hallucinated or Laundered Data` to the rest of the system?**
-  _700 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _744 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `mcp_server.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.14130434782608695 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09803921568627451 - nodes in this community are weakly interconnected._
 - **Should `TestScientificResearchLog` be split into smaller, more focused modules?**
-  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07258064516129033 - nodes in this community are weakly interconnected._
