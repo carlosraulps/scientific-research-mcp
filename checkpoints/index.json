@@ -243,5 +243,21 @@
     "updated_at": "2026-10-08T13:33:17.617571+00:00",
     "metrics": {},
     "git_commit": "1b754f1f"
+  },
+  "test_md_20261008_134726": {
+    "run_id": "test_md_20261008_134726",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-10-08T13:47:26.870224+00:00",
+    "metrics": {},
+    "git_commit": "a400ee93"
+  },
+  "test_md_20261008_134921": {
+    "run_id": "test_md_20261008_134921",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-10-08T13:49:21.894077+00:00",
+    "metrics": {},
+    "git_commit": "a400ee93"
   }
 }

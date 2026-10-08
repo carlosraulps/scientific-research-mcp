@@ -204,5 +204,33 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "sol27lc_benchmark_platinum_study_report_a016aa": {
+    "key": "sol27lc_benchmark_platinum_study_report_a016aa",
+    "title": "Sol27LC Benchmark Platinum Study Report a016aa",
+    "file": "sol27lc_benchmark_platinum_study_report_a016aa.md",
+    "created_at": "2026-10-08T13:47:26.851930+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": "a400ee9388ccf9878a333d63fd58662acf56088a",
+      "short_commit": "a400ee93",
+      "branch": "master",
+      "is_dirty": true
+    }
+  },
+  "sol27lc_benchmark_platinum_study_report_61e9fd": {
+    "key": "sol27lc_benchmark_platinum_study_report_61e9fd",
+    "title": "Sol27LC Benchmark Platinum Study Report 61e9fd",
+    "file": "sol27lc_benchmark_platinum_study_report_61e9fd.md",
+    "created_at": "2026-10-08T13:49:21.876334+00:00",
+    "claim_count": 1,
+    "sealed": true,
+    "git": {
+      "commit": "a400ee9388ccf9878a333d63fd58662acf56088a",
+      "short_commit": "a400ee93",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }
