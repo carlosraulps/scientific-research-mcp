@@ -3290,5 +3290,22 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "d3c4f819": {
+    "result_id": "d3c4f819",
+    "producing_tool": "",
+    "value": null,
+    "arguments": {},
+    "rationales": {},
+    "sources": {},
+    "declared_context": "DFT+U multi-site Hubbard benchmarking of single-atom transition-metal functionalized CrCl3 monolayers for hydrogen evolution reaction catalysis",
+    "parent_ids": [],
+    "created_at": "2026-10-10T18:19:15.220743+00:00",
+    "git": {
+      "commit": "92c1cf5273f8061646f8c4a099d47e901079fd5e",
+      "short_commit": "92c1cf52",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }
