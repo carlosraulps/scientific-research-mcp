@@ -258,3 +258,19 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: `huk:huk125,huk128_idle_vs_carbono_queue_priority_171128`
 
 ---
+### [2026-10-09T13:33:47.320145+00:00] Decision: decision_council_acceleration_audit (`crcl3_her_u_all_workflow`)
+- **Triggered Rule**: Rule E
+- **Hypothesis**: LOBSTER binary is installed exclusively on Huk (/home/carlos/bin/lobster). Parallelizing COHP on Carbono is blocked by missing binary. Carbono nanotubo nodes n12 and n07 provide natural 64-core release as jobs 171124 and 171125 hit their 4-hour micro-batch limit.
+- **Intervention**: Maintain COHP execution on Huk under the 24-hour container; rely on Carbono nanotubo queue for automatic dispatch of Job 171421 (CDD) and Job 171446 (Fe S2 continuation) into released cores on n12; use local Arch workstation as fast zero-wait fallback.
+- **Observed Outcome**: Zero dependency failure risk, preserved FairShare limits, and guaranteed timely completion of both COHP bonding curves and surface hollow relaxations.
+- **Evidence / Artifact Reference**: `CALCULATION_SITES_MANIFEST.md`
+
+---
+### [2026-10-09T13:45:53.881843+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: Approved by DecisionCouncil (Chairman, Advocate, Skeptic, Scout, Fact Checker). Local execution underway.
+- **Evidence / Artifact Reference**: ``
+
+---

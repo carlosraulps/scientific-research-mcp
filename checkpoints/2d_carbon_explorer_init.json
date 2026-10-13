@@ -1,0 +1,37 @@
+{
+  "run_id": "2d_carbon_explorer_init",
+  "prompt_summary": "Initialize Git repo, push to origin master, integrate Materials Project crystaltoolkit and dash-mp-components submodules, and build the 2D Carbon Explorer web application with 61 allotropes.",
+  "status": "CONVERGED",
+  "run_directory": "/home/cr/simulations/scientific-research/runs/2d_carbon_explorer_init",
+  "created_at": "2026-10-09T23:38:15.776354+00:00",
+  "updated_at": "2026-10-09T23:38:15.776354+00:00",
+  "agent_trace": [],
+  "parameter_registry": {
+    "frameworks": [
+      "crystal-toolkit",
+      "dash-mp-components",
+      "pymatgen",
+      "dash"
+    ],
+    "remote_url": "git@github.com:carlosraulps/2d-carbon-explorer.git"
+  },
+  "file_paths": {
+    "app": "/home/cr/simulations/database-2dgr/app.py",
+    "catalog": "/home/cr/simulations/database-2dgr/data/catalog.json",
+    "data": "/home/cr/simulations/database-2dgr/data",
+    "upstream_crystaltoolkit": "/home/cr/simulations/database-2dgr/upstream/crystaltoolkit",
+    "upstream_dash_mp": "/home/cr/simulations/database-2dgr/upstream/dash-mp-components"
+  },
+  "figures": [],
+  "metrics": {
+    "allotropes_total": 61,
+    "cif_files": 61,
+    "dimensionality": "2D Planar/Buckled Monolayers"
+  },
+  "git": {
+    "commit": "1339263cc4b0b48b1f08da602069262c7e61e8d0",
+    "short_commit": "1339263c",
+    "branch": "master",
+    "is_dirty": true
+  }
+}
