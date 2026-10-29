@@ -116,12 +116,22 @@ def render_cdd(
 
     start_time = time.time()
     success = False
+    last_sz = 0
+    stable_count = 0
     try:
         while time.time() - start_time < timeout:
-            if out_img.exists() and out_img.stat().st_size > 2000:
-                success = True
-                break
-            time.sleep(0.4)
+            if out_img.exists():
+                sz = out_img.stat().st_size
+                if sz > 20000:
+                    if sz == last_sz:
+                        stable_count += 1
+                        if stable_count >= 3:
+                            success = True
+                            break
+                    else:
+                        stable_count = 0
+                    last_sz = sz
+            time.sleep(0.5)
     finally:
         if proc.poll() is None:
             proc.terminate()
