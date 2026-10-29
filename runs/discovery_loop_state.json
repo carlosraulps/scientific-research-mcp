@@ -1,17 +1,53 @@
 {
-  "current_project": "_comp_eval_test",
+  "current_project": "test_sde_saturation",
   "rounds": [
     {
       "round_index": 1,
-      "timestamp": 1791467361.7786286,
-      "hypothesis": "Initial test hypothesis",
-      "hypothesis_score": 76.0,
-      "hypothesis_passed": false,
+      "timestamp": 1792109568.171581,
+      "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
+      "hypothesis_score": 100.0,
+      "hypothesis_passed": true,
       "structure_valid": null,
       "oracle_called": false,
       "observed_metric": null,
       "fitness_delta": null,
-      "recommendation": "REFINE_HYPOTHESIS"
+      "recommendation": "DISPATCH_ORACLE"
+    },
+    {
+      "round_index": 2,
+      "timestamp": 1792109568.17199,
+      "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
+      "hypothesis_score": 100.0,
+      "hypothesis_passed": true,
+      "structure_valid": null,
+      "oracle_called": false,
+      "observed_metric": null,
+      "fitness_delta": null,
+      "recommendation": "DISPATCH_ORACLE"
+    },
+    {
+      "round_index": 3,
+      "timestamp": 1792109568.1724129,
+      "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
+      "hypothesis_score": 100.0,
+      "hypothesis_passed": true,
+      "structure_valid": null,
+      "oracle_called": false,
+      "observed_metric": null,
+      "fitness_delta": null,
+      "recommendation": "FORCE_ORACLE_EXECUTION"
+    },
+    {
+      "round_index": 4,
+      "timestamp": 1792109568.172826,
+      "hypothesis": "We hypothesize that nitrogen doping at the octagonal ring of PHOTH-graphene (C10)\nalters the band gap towards 1.2 eV using VASP PBE functional.\nExtended 2D lattice mixing is controlled with AMIX=0.2 and BMIX=0.0001 to prevent charge sloshing.\nBand structure along high-symmetry k-path will measure the resulting gap.",
+      "hypothesis_score": 100.0,
+      "hypothesis_passed": true,
+      "structure_valid": null,
+      "oracle_called": true,
+      "observed_metric": 1.2,
+      "fitness_delta": null,
+      "recommendation": "CONVERGED_GOAL_REACHED"
     }
   ],
   "active_lineage": []

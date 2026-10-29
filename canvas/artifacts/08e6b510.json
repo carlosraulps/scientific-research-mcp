@@ -1,0 +1,37 @@
+{
+  "result_id": "08e6b510",
+  "producing_tool": "vesta_cdd_render_and_assembly",
+  "value": {
+    "figure_4_deliverables": [
+      "crcl3-newcals/postprosseing/images-juan/04_Fig4_CDD_and_Bader_Charge/Fig4_Ucr.png",
+      "crcl3-newcals/postprosseing/images-juan/04_Fig4_CDD_and_Bader_Charge/Fig4_Uall.png",
+      "crcl3-newcals/postprosseing/images-juan/04_Fig4_CDD_and_Bader_Charge/Fig4_Ucr.pdf",
+      "crcl3-newcals/postprosseing/images-juan/04_Fig4_CDD_and_Bader_Charge/Fig4_Uall.pdf"
+    ],
+    "metals": [
+      "Co",
+      "Fe",
+      "Ni"
+    ],
+    "status": "CONVERGED_AND_RENDERED",
+    "tiers": [
+      "+U_Cr",
+      "+U_all"
+    ]
+  },
+  "arguments": {},
+  "rationales": {
+    "grid_density": "FFT mesh 160x160x280 and 180x180x300 for sub-angstrom spatial CDD resolution",
+    "isovalue": "delta = +-0.005 e/Angstrom^3 standard for transition metal 2D interface charge transfer"
+  },
+  "sources": {},
+  "declared_context": "Authentic 3D Charge Density Difference (CDD) calculations and VESTA renders for Figure 4 across Co, Fe, and Ni under +U_Cr and +U_all functional tiers for CrCl3 single-atom catalysis.",
+  "parent_ids": [],
+  "created_at": "2026-10-29T00:25:11.120938+00:00",
+  "git": {
+    "commit": "7a350243e9e5d0359839b337a3dc68fc3c5af2a3",
+    "short_commit": "7a350243",
+    "branch": "master",
+    "is_dirty": true
+  }
+}
