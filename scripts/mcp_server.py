@@ -60,6 +60,7 @@ from sde_loop_verifier import SDELoopVerifier
 from guardrails_engine import GuardrailsEngine
 from component_evaluator import ComponentEvaluator
 from cache_store import CacheStore
+from latex_bridge import LaTeXBridge
 
 from scientific_visualization_tools import (
     standardize_wyckoff_bader_charges,
@@ -86,6 +87,7 @@ SDE_VERIFIER = SDELoopVerifier(BASE_DIR)
 GUARDRAILS = GuardrailsEngine(BASE_DIR)
 COMPONENT_EVALUATOR = ComponentEvaluator(BASE_DIR)
 CACHE = CacheStore(BASE_DIR)
+LATEX = LaTeXBridge(BASE_DIR)
 
 
 TOOLS = [
@@ -580,6 +582,60 @@ TOOLS = [
             },
             "required": ["query_key", "query_text", "value"]
         }
+    },
+    {
+        "name": "latex_template_list",
+        "description": "Lists all available registered LaTeX document and presentation templates (e.g. latex-report, beamer-nord).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "latex_report_scaffold",
+        "description": "Scaffolds a publication-grade scientific experimental lab report or article (Tau-class v2.6.0) with two-column layout, STIX2/Fira typography, custom metadata, and optional instant compilation.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "destination": {"type": "string", "description": "Target project directory to scaffold into"},
+                "template": {"type": "string", "default": "latex-report", "description": "Template to use (e.g. 'latex-report' or 'beamer-nord')"},
+                "title": {"type": "string", "description": "Report title"},
+                "author": {"type": "string", "description": "Lead author name"},
+                "institute": {"type": "string", "description": "Author affiliation / university / institute"},
+                "doctype": {"type": "string", "default": "Experimental Lab Report", "description": "Document type badge in header"},
+                "compile_pdf": {"type": "boolean", "default": False, "description": "Whether to immediately compile to PDF after scaffolding"},
+                "force": {"type": "boolean", "default": False, "description": "Overwrite target directory if it exists and is not empty"}
+            },
+            "required": ["destination"]
+        }
+    },
+    {
+        "name": "latex_report_compile",
+        "description": "Compiles a LaTeX report or presentation with automatic multi-pass execution (XeLaTeX/pdfLaTeX), automatic Biber bibliography resolution, and auxiliary file pruning.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "tex_path": {"type": "string", "description": "Path to target .tex file"},
+                "compiler": {"type": "string", "enum": ["pdflatex", "xelatex", "lualatex"], "description": "LaTeX engine. If omitted, auto-detected from document class."},
+                "passes": {"type": "integer", "description": "Number of compilation passes (default: 3 for pdflatex+biber, 2 for beamer)"},
+                "clean_aux": {"type": "boolean", "default": True, "description": "Whether to clean auxiliary files (.aux, .bbl, .bcf, etc.) after compilation"},
+                "preview": {"type": "boolean", "default": False, "description": "Whether to render a PNG preview of the first page"}
+            },
+            "required": ["tex_path"]
+        }
+    },
+    {
+        "name": "latex_report_preview",
+        "description": "Renders a high-resolution PNG preview of any page of a compiled LaTeX document using pdftoppm.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "tex_path": {"type": "string", "description": "Path to target .tex file"},
+                "page": {"type": "integer", "default": 1, "description": "Page number to render (1-based)"},
+                "dpi": {"type": "integer", "default": 150, "description": "Resolution DPI (default: 150)"}
+            },
+            "required": ["tex_path"]
+        }
     }
 ]
 
@@ -821,6 +877,33 @@ def handle_tool_call(name: str, args: Dict[str, Any]) -> Any:
             ttl_seconds=args.get("ttl_seconds", 86400.0)
         )
         return {"stored": True, "cache_id": cid}
+    elif name == "latex_template_list":
+        return LATEX.list_templates()
+    elif name == "latex_report_scaffold":
+        return LATEX.scaffold_report(
+            destination=args.get("destination", ""),
+            template=args.get("template", "latex-report"),
+            title=args.get("title"),
+            author=args.get("author"),
+            institute=args.get("institute"),
+            doctype=args.get("doctype", "Experimental Lab Report"),
+            compile_pdf=args.get("compile_pdf", False),
+            force=args.get("force", False)
+        )
+    elif name == "latex_report_compile":
+        return LATEX.compile_document(
+            tex_path=args.get("tex_path", ""),
+            compiler=args.get("compiler"),
+            passes=args.get("passes"),
+            clean_aux=args.get("clean_aux", True),
+            preview=args.get("preview", False)
+        )
+    elif name == "latex_report_preview":
+        return LATEX.preview_document(
+            tex_path=args.get("tex_path", ""),
+            page=args.get("page", 1),
+            dpi=args.get("dpi", 150)
+        )
     else:
         return {"error": f"Unknown tool: {name}", "isError": True}
 
