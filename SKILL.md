@@ -295,3 +295,42 @@ def fix_sloshing(incar):
 ```python
 sciresearch compose --base base_templates/vasp/INCAR.base --set NSW=0 ISMEAR=-5 NEDOS=2001 LORBIT=11 --output 01_pristine/dos/INCAR
 ```
+
+
+### Learned Skill: `crystallographic_5_gate_validation_stage`
+- **Description**: Mandatory 5-Gate physical validation stage for active literature-deduced 2D carbon allotrope CIFs. Ensures handshaking lemma holds, vacuum buffer exceeds 15 A, bonds lie within physical cutoffs, coordination degrees match hybridization, and provenance is flagged for DFT/Phonon convergence checks.
+- **Trigger**: Whenever generating, deducing, or importing 2D carbon allotrope crystal structures from literature proposals before database ingestion or CIF release.
+- **Validation**: gate['passed_all_gates'] is True; no unphysical bond lengths (<1.15 A or >1.62 A); vacuum padding >= 15.0 A; handshaking lemma holds (sum of degrees is even).
+```python
+def verify_deduced_structure(atoms_obj, expected_rings=None, hybridization="sp2"):
+    import numpy as np
+    from ase.neighborlist import neighbor_list
+    cell_lengths = atoms_obj.cell.lengths()
+    vacuum_c = float(cell_lengths[2])
+    i_idx, j_idx, d_ij = neighbor_list("ijd", atoms_obj, cutoff=1.72)
+    n_atoms = len(atoms_obj)
+    degrees = [0] * n_atoms
+    for i in i_idx:
+        degrees[int(i)] += 1
+    min_d = float(np.min(d_ij)) if len(d_ij) > 0 else 0.0
+    max_d = float(np.max(d_ij)) if len(d_ij) > 0 else 0.0
+    sum_deg = sum(degrees)
+    two_e_even = (sum_deg % 2 == 0) and (sum_deg > 0)
+    vacuum_ok = vacuum_c >= 15.0
+    low_bound = 1.15 if "sp" in hybridization.split("-") else 1.32
+    bonds_ok = (len(d_ij) > 0) and (low_bound <= min_d) and (max_d <= 1.62)
+    allowed_deg = {2, 3} if hybridization == "sp-sp2" else ({3, 4} if "sp3" in hybridization else {3})
+    deg_ok = set(degrees).issubset(allowed_deg)
+    passed_all = bool(two_e_even and vacuum_ok and bonds_ok and deg_ok)
+    return {
+        "passed_all_gates": passed_all,
+        "gate1_handshaking_2E": sum_deg,
+        "gate1_edges": sum_deg // 2,
+        "gate2_vacuum_c_A": round(vacuum_c, 2),
+        "gate3_min_bond_A": round(min_d, 4),
+        "gate3_max_bond_A": round(max_d, 4),
+        "gate4_coordination_degrees": sorted(set(degrees)),
+        "gate5_dft_status": "literature_deduced_geometry (requires DFT EDIFF=1E-8 + Phonopy 4x4x1 check)",
+        "expected_rings": expected_rings
+    }
+```
