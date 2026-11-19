@@ -2,17 +2,17 @@
   "pt_bulk_convergence_discussion": {
     "key": "pt_bulk_convergence_discussion",
     "title": "Pt Bulk Convergence Discussion",
-    "current_version": 21,
-    "current_file": "pt_bulk_convergence_discussion_v21.md",
+    "current_version": 24,
+    "current_file": "pt_bulk_convergence_discussion_v24.md",
     "tags": [
       "dft",
       "pt",
       "convergence"
     ],
     "references": [
-      "3b85f0cd"
+      "63417af0"
     ],
-    "updated_at": "2026-10-08T13:49:21.874675+00:00",
+    "updated_at": "2026-10-16T00:12:57.530884+00:00",
     "history": [
       {
         "version": 1,
@@ -118,6 +118,21 @@
         "version": 21,
         "file": "pt_bulk_convergence_discussion_v21.md",
         "timestamp": "2026-10-08T13:49:21.874675+00:00"
+      },
+      {
+        "version": 22,
+        "file": "pt_bulk_convergence_discussion_v22.md",
+        "timestamp": "2026-10-16T00:02:18.166977+00:00"
+      },
+      {
+        "version": 23,
+        "file": "pt_bulk_convergence_discussion_v23.md",
+        "timestamp": "2026-10-16T00:10:34.332772+00:00"
+      },
+      {
+        "version": 24,
+        "file": "pt_bulk_convergence_discussion_v24.md",
+        "timestamp": "2026-10-16T00:12:57.530884+00:00"
       }
     ]
   },
@@ -313,8 +328,8 @@
   "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot": {
     "key": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot",
     "title": "CrCl3 2x2 TM Adsorption and Embedding Multi-Tier Convergence Snapshot",
-    "current_version": 2,
-    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
+    "current_version": 3,
+    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v3.md",
     "tags": [
       "crcl3",
       "hpc",
@@ -326,7 +341,7 @@
     "references": [
       "22e6c873"
     ],
-    "updated_at": "2026-10-05T10:16:39.592103+00:00",
+    "updated_at": "2026-10-06T00:00:58.845752+00:00",
     "history": [
       {
         "version": 1,
@@ -337,6 +352,57 @@
         "version": 2,
         "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v2.md",
         "timestamp": "2026-10-05T10:16:39.592103+00:00"
+      },
+      {
+        "version": 3,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_convergence_snapshot_v3.md",
+        "timestamp": "2026-10-06T00:00:58.845752+00:00"
+      }
+    ]
+  },
+  "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4": {
+    "key": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4",
+    "title": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4",
+    "current_version": 1,
+    "current_file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4_v1.md",
+    "tags": [
+      "dft",
+      "crcl3",
+      "her",
+      "multitier",
+      "convergence"
+    ],
+    "references": [
+      "22e6c873"
+    ],
+    "updated_at": "2026-10-07T22:08:49.379335+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "crcl3_2x2_tm_adsorption_and_embedding_multi-tier_100pct_converged_v4_v1.md",
+        "timestamp": "2026-10-07T22:08:49.379335+00:00"
+      }
+    ]
+  },
+  "2d_carbon_explorer_crystallographic_architecture___scalability_standard": {
+    "key": "2d_carbon_explorer_crystallographic_architecture___scalability_standard",
+    "title": "2D Carbon Explorer Crystallographic Architecture & Scalability Standard",
+    "current_version": 1,
+    "current_file": "2d_carbon_explorer_crystallographic_architecture___scalability_standard_v1.md",
+    "tags": [
+      "2D_carbon",
+      "crystallography",
+      "wallpaper_groups",
+      "thermodynamics",
+      "biphenylene"
+    ],
+    "references": [],
+    "updated_at": "2026-10-10T02:54:17.917537+00:00",
+    "history": [
+      {
+        "version": 1,
+        "file": "2d_carbon_explorer_crystallographic_architecture___scalability_standard_v1.md",
+        "timestamp": "2026-10-10T02:54:17.917537+00:00"
       }
     ]
   },

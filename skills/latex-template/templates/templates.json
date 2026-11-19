@@ -1,0 +1,18 @@
+{
+  "beamer-nord": {
+    "name": "beamer-nord",
+    "description": "Nordic Beamer presentation theme (sthlmNord) with UFABC grayscale branding, dark/light modes, and math macros",
+    "type": "beamer",
+    "compiler": "xelatex",
+    "path": "/Volumes/KingstonSSD/Krojects/Kresearch/scientific-research-mcp/skills/latex-template/beamer-theme",
+    "starter": "demo_ufabc_presentation.tex"
+  },
+  "latex-report": {
+    "name": "latex-report",
+    "description": "Publication-grade experimental lab report & research article template (Tau-class v2.6.0) with two-column layout, STIX2/Fira typography, biblatex/biber, and code blocks",
+    "type": "report",
+    "compiler": "pdflatex",
+    "path": "/Volumes/KingstonSSD/Krojects/Kresearch/scientific-research-mcp/skills/latex-template/templates/latex-report",
+    "starter": "template.tex"
+  }
+}

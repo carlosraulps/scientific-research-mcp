@@ -1,0 +1,412 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+%  _____           
+% |_   _|_ _ _   _ 
+%   | |/ _` | | | |
+%   | | (_| | |_| |
+%   |_|\__,_|\__,_|
+%
+% LaTeX2e Template
+% Version 2.6.0 (21/04/2026)
+%
+% Author: 
+% Guillermo Jimenez (memo.notess1@gmail.com)
+% 
+% License:
+% Creative Commons CC BY 4.0
+% --------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+% Github Repository:
+% https://github.com/MemoJimenez/Tau-class
+% --------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[9pt,a4paper,twocolumn,twoside]{tau-class/tau}
+\usepackage[english]{babel}
+
+% Spanish babel recomendation
+% \usepackage[spanish,es-nodecimaldot,es-noindentfirst]{babel} 
+
+%----------------------------------------------------------
+% Title & Authors/Affiliations
+%----------------------------------------------------------
+
+\doctype{Documentation Template}
+\title{Writing a lab report or research article with tau-class}
+
+%----------------------------------------------------------
+
+\author[a,1]{Author One\thanks{\href{mailto:author.one@institute.org}{author.one@institute.org} (A. One)}}
+\author[b,2]{Author Two}
+\author[c,3]{Author Three}
+
+%----------------------------------------------------------
+
+\affil[a]{Affiliation One}
+\affil[b]{Affiliation Two}
+\affil[c]{Affiliation Three}
+
+%----------------------------------------------------------
+% Document-, Footer- information
+%----------------------------------------------------------
+
+\dates{This manuscript was compiled on \today}
+
+\docinfo{This document class was prepared on Overleaf and compiled with pdf\LaTeX{}. No errors were found during the compilation process. Tau-class supports external editors, though additional setup may be required.} 
+
+%----------------------------------------------------------
+
+\footinfo{Tau-class (v.2.6)}
+\theday{\today}
+\organization{LaTeX Template}
+\leadauthor{A. One et al.}
+
+%----------------------------------------------------------
+% Abstract and Keywords
+%----------------------------------------------------------
+
+\begin{abstract}    
+    Tau-class was designed for creating professional \LaTeX{} documents, including research articles, technical reports, and academic documentation. It enhances the writing experience through intuitive custom environments, multilingual support, and refined typography. The class integrates Fira Sans for headings and highlighted elements, Fira Mono for code listings, and STIX2 for body text, ensuring consistent styling across tables, figures, equations, listings, and captions. \textit{New or updated features are marked with an asterisk (*)}.
+\end{abstract}
+
+%----------------------------------------------------------
+
+\keywords{tau-class, research article, lab report, academic writing}
+
+%----------------------------------------------------------
+
+\begin{document}
+		
+    \maketitle 
+    \thispagestyle{firststyle}
+    
+%----------------------------------------------------------
+
+\section{Tau Class}
+
+    \taustart{T}au-class is specially designed for research articles, technical/lab reports, and academic documentation. This guide will help you understand the features and proper use of the template, enabling you to efficiently structure and format your documents with clarity and precision.
+
+    This class includes the following files in the tau-class folder:
+	
+	\begin{itemize}
+		\item \inlinecode{tau.cls} — The main class file.
+		\item \inlinecode{tauenvs.sty} — A package containing custom environments.
+		\item \inlinecode{taubabel.sty} — A support package for multilingual.
+		\item \inlinecode{README.md} — With essential information.
+	\end{itemize}
+
+    Additionally, this template includes a sample document \inlinecode{main.tex}, a bibliography file \inlinecode{tau.bib}, as well as figures, tables and code examples to help you get started quickly.
+
+    \subsection{License}
+    
+        This work is the creation of Guillermo Jimenez licensed under Creative Commons CC BY 4.0. You may adapted, shared and distributed your work, ensuring that proper credit is given to the original author.
+
+\section{Document Styling}
+
+    \subsection{Document Type}
+
+        Before the main title, a brief descriptor indicates the type of document (e.g., Lab Report, Research Article, etc). This is controlled by the \inlinecode{\doctype{}} command. 
+        
+        If no such label is needed, omit the command and the title will automatically reposition itself to maintain proper vertical spacing and visual alignment.
+
+    \subsection{Abstract and Keywords}
+
+        The abstract and keywords are declared in the preamble of the document, before the beginning of the document, and are automatically positioned during the title creation process.
+
+    \subsection{Lettrine}
+
+		The \inlinecode{\taustart{}} command, provides a personalized lettrine for the beginning of the first paragraph as shown in this example.
+
+	\subsection{Table of Contents}
+
+        This class includes a customized design for the table of contents, which is disabled by default. To enable it, insert the \inlinecode{\tableofcontents} command before your first section.
+
+    \section{Cross-Reference Commands*}
+
+        Tau-class provides shorthand commands for cross-referencing figures, tables, code listings, and equations. To customize the label format, edit the \inlinecode{taubabel.sty} file. Label translations for Spanish are handled automatically.
+
+        \begin{itemize}
+            \item \inlinecode{\figref{}} — Uses the label style defined by \inlinecode{\figlabel}.
+            \item \inlinecode{\figsref{}} — Uses the label style defined by \inlinecode{\figslabel}.
+            \item \inlinecode{\tabref{}} — Uses the label style defined by \inlinecode{\tablabel}.
+            \item \inlinecode{\coderef{}}  — Uses the label style defined by \inlinecode{\captionlabelcode}.
+            \item \inlinecode{\equref{}} — Uses the label style defined by \inlinecode{\eqlabel}.
+        \end{itemize}
+        
+         These commands generate fully hyperlinked references, both the label and the number, ensuring navigation to the referenced element when clicked in the PDF.
+
+\section{Figures and Tables}
+
+    \subsection{Figures}
+		
+    	\figref{fig:figure} shows a 3D surface plot of the hyperbolic paraboloid $z=x^2-y^2$.
+    		
+    	\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.75\columnwidth]{figures/Example.pdf}
+    		\caption{Hyperbolic paraboloid obtained from PGFPlots \cite{PFGPlots}.}
+    		\label{fig:figure}
+    	\end{figure}
+
+    \subsection{Tables}
+	
+        \tabref{tab:table} shows an example table of some astronomical objects. 
+
+        \begin{table}[H]
+        	\caption{Astronomical Object Data}
+        	\label{tab:table}
+        	\begin{tabular}{
+        		>{\raggedright\arraybackslash}p{0.25\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.30\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.31\columnwidth}
+        	}
+        	\toprule
+        	\textbf{Object} & \textbf{Type} & \textbf{Distance (Light Years)} \\
+        	\midrule
+        	Alpha Centauri & Star system & 4.37 \\
+        	Betelgeuse & Red supergiant star & 642.5 \\
+        	Andromeda & Spiral galaxy & 2.537 million \\
+        	Earth & Planet & 0 \\
+        	Sirius & Binary star system & 8.6 \\
+        	\bottomrule
+        	\end{tabular}
+        	\tabletext{Note: The table contains data of some famous celestial objects.}
+        \end{table}
+
+        The \inlinecode{\tabletext{}} command is used to add notes to tables easily. 
+
+\section{Document Data}
+
+    \subsection{Front-Matter Footer Block*}
+
+        The \inlinecode{\docinfo{}} command inserts a dedicated block at the bottom of the first column. Unlike floating elements, this block stays fixed in place — positioned visually like a footnote, although technically it is not one.
+    
+        The \inlinecode{\docinfo{}} block was created to give you greater control over supplementary document data, such as publication dates, licensing information, extended author details, and other front-matter notes. You can fully customize its content to suit your needs. If it’s not required, omit the command to remove this block entirely.
+    
+        \begin{note}
+            This feature has been adapted to work seamlessly alongside the standard \verb|\thanks{}| command, which is commonly used to indicate corresponding authors, equal contributions, or other acknowledgments.
+        \end{note}
+    
+        If \inlinecode{\thanks{}} is not used, \inlinecode{\docinfo{}} will automatically adjust its position. The implementation was designed to handle any combination of front-matter elements you might need when starting your document. In this example template, you’ll find a minimal demonstration that combines both to illustrate their interaction.
+
+    \subsection{Headers and Footers}
+
+        \subsubsection{Headers}
+
+            On all pages except the first, the document title appear in the header. Since twoside layout is enabled, its position alternates depending on whether the page is odd or even.
+
+        \subsubsection{Footers}
+
+            On odd-numbered pages, five elements display supplementary information for your document:
+    
+            \begin{itemize}
+                \item \inlinecode{\thepage} — Including the total number of pages (only for the first page).
+                \item \inlinecode{\footinfo{}} — For a short title or custom note.
+                \item \inlinecode{\theday{}} — Displays the current date.
+                \item \inlinecode{\organization{}} — For a university, institute, company, or any institutional affiliation.
+                \item \inlinecode{\leadauthor{}} — For the main author name et al.
+            \end{itemize}
+
+            On even-numbered pages, the page number appears alongside the content of \inlinecode{\footinfo{}} and, on the other side, the \inlinecode{\leadauthor{}}. 
+
+            In contrast to the header, the footer elements do not alternate their positions. The footer is explicitly configured for either odd or even pages, resulting in a fixed layout.
+            
+            In all cases, you can freely rearrange or customize the order of these elements by modifying the class file to suit your needs. If any of them are not required, simply omit the corresponding command — the remaining elements will automatically adjust their spacing to remain evenly distributed.
+
+\section{Tau Custom Packages}
+
+    \subsection{Taubabel.sty}
+		
+		This package have all the commands that automatically translate from English to Spanish when this custom package is defined. 
+		
+		By default, this document has its content in English. However, at the beginning of the document you will find a recommendation when writing in Spanish. 
+		
+		You may modify this package if you want to use other language than English or Spanish. This will make easier to translate your document without having to modify the class document.
+
+	\subsection{Tauenvs.sty}
+
+        This package provides custom environments designed to enhance the visual presentation and structure of your document. Key examples include tauenv, info, and note.
+        
+		Their style is defined by \inlinecode{tauenvstyle} — allowing you to customize their appearance according to your document’s requirements.
+
+		An example using the \inlinecode{tauenv} environment is shown below.
+		
+		\begin{tauenv}[frametitle=Custom Title]
+			This is an example of the custom title environment. To add a title type this command \verb|[frametitle=Custom Title]| next to the beginning of this environment (as shown in this example).
+		\end{tauenv}
+
+        The \inlinecode{info} and \inlinecode{note} are environments which have a predefined title and translate their title to Spanish automatically when this language is defined.
+
+\section{Equations}
+
+	\equref{eq:equation} shows the Schrödinger equation as an example. 
+
+    \begin{equation}\label{eq:equation}
+        i\hbar \frac{\partial }{\partial t}\Psi(\mathbf{r},t) = \left[\frac{-\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t) \right]\Psi(\mathbf{r},t)
+    \end{equation}
+	
+	The \inlinecode{amssymb} and \inlinecode{amsmath} packages were not required, as \href{https://ctan.org/pkg/stix2-otf/}{STIX2} font incorporates mathematical symbols for writing quality equations.
+	
+	\begin{note}
+		If you would like to change the values that adjust the spacing above and below the equations, change the \verb|\eqskip| value until the preferred spacing is set. The default value is set to 9pt.
+	\end{note}
+
+\section{Codes}
+
+	\subsection{Coding with Minted*}
+	
+		The \inlinecode{minted} package offers customized features for adding codes. In addition, the template is designed to work seamlessly with Fira Code, a monospaced font specially crafted for programming environments.
+
+        If you are using a desktop app as \href{https://www.texstudio.org/}{TeXstudio}, try these steps to make this package work on Windows:
+		
+		\begin{enumerate}
+			\item Install Python — A stable version (e.g., v.3.11)
+			\item Open the terminal and type \inlinecode{pip install Pygments}.
+			\item Update if a newer version is available.
+			\item Go to TeXStudio settings and change the default compiler to \inlinecode{pdflatex --shell-escape -interaction=nonstopmode \%.tex}.
+			\item Compile and wait for the result.
+		\end{enumerate}
+        
+		\vspace*{-9pt}
+        
+		\begin{tauenv}[frametitle=Caution]
+			Ensure that \textbf{pygments} is properly installed and added to your system’s PATH. Otherwise, you may encounter compilation errors. Additionally, enable shell escape when compiling, as it is required for minted to process and highlight code.
+		\end{tauenv}
+		
+		In Overleaf, this package is easier to use since it does not require any additional installations or modifications — just add the code as shown in the example. \coderef{lst:example} shows a Python example.
+		
+		\begin{code}
+			\inputminted{python}{example.py}
+            \caption{Python code example with minted.}
+			\label{lst:example}
+		\end{code}
+		
+		You can customize its design changing \inlinecode{\usemintedstyle} command. The different styles offered by the \href{https://ctan.org/pkg/minted}{minted package} can be preview through this link — \url{https://pygments.org/styles/}.
+
+    \subsection{Coding with Listings}
+	
+		Since \inlinecode{minted} requires additional installations and can be complex in some desktop \TeX\ editors, you can use the \inlinecode{listings} package instead, which provides a simpler way to include code.
+		
+		\begin{code}
+			\lstinputlisting[language=python]{example.py}
+			\label{lst:example2}
+            \caption{Python code example with listings.}
+		\end{code}
+		
+		While \inlinecode{listings} is a simpler and widely supported package for code formatting, \inlinecode{minted} offers a more modern and powerful approach. It leverages the Pygments syntax highlighter to deliver superior coloring, language support, and styling options. One of its key advantages is the ability to easily switch between built-in color styles.
+		
+		In contrast, \inlinecode{listings} requires manual setup for colors, fonts, and formatting rules.
+		For users who prefer fine-tuned customization, the styling options for \inlinecode{listings} are organized in \inlinecode{tau.cls} file and can be modified at any time to suit individual preferences.
+
+	\subsection{Inline Code*}
+	
+		As shown in this template, inline code has a custom style for improved visual appeal. To use it, simply add \inlinecode{\inlinecode{}} command and place your code inside the braces.
+
+\section{Bibliography}
+		
+	Bibliography management is handled by \inlinecode{biblatex}, with the default citation and reference style set to IEEE. The \inlinecode{citestyle=numeric-comp} option is enabled, allowing multiple citations to be grouped within a single bracket (e.g., \cite{davis2023signalflow,bell2022codefont}). The citation format can be customized directly in \inlinecode{tau.cls} to suit any preferred style.
+
+\section{FAQ}
+
+    \subsection*{How do I manage my references?}
+    \addcontentsline{toc}{subsection}{How do I manage my references?}
+        
+        To manage your references, I recommend using the tool \href{https://www.scribbr.es/citar/generador/folders/73QOXYsCwMRu4ifQaN65mx/lists/msTfx7GJjIAOUkufbISnA/}{scribbr}. You can simply enter the URL or create your own citation, and then export it to \LaTeX\ using the options in the three-dot menu.
+            
+        The generated citation can be copied and pasted into \inlinecode{tau.bib}, the file designated for bibliography management. You may rename this file, but if you do, remember to update the \inlinecode{\addbibresource} command in \inlinecode{tau.cls} under the biblatex section.
+    
+        \begin{note}
+            Some platforms, such as Google Scholar or scientific journals, provide citations directly in BibTeX format. Therefore, check if there is a ``how to cite this document'' section to streamline the citation process even further.
+        \end{note}
+
+        If you have any further questions, you can refer to the following page — \href{https://es.overleaf.com/learn/latex/Bibliography_management_with_biblatex}{Bibliography management with biblatex}.
+        
+    \subsection*{What should I do with the example files?}
+    \addcontentsline{toc}{subsection}{What should I do with the example files?}
+
+        The template includes sample content — such as an example figure, bibliography entries, and the \inlinecode{example.py} script — to demonstrate how the layout and features work. Once you start customizing the document for your own use, feel free to delete all example files and entries you don’t need.
+
+    \subsection*{How do I place equations easily?}
+    \addcontentsline{toc}{subsection}{How do I place equations easily?}
+
+        For equations, we have two options: inline or on its own line. For inline equations, simply place a dollar sign (\$) at the beginning and end of the equation. However, if you want the equation to be displayed on its own line, you need to use the equation environment.
+        
+        If you find it challenging to write formulas directly in \LaTeX, you can use text editors like Word. In the equations menu, you can select \LaTeX\ in the conversion section and copy and paste the equation you wrote into one of these two environments.
+
+    \subsection*{How do I change the paper size?}
+    \addcontentsline{toc}{subsection}{How do I change the paper size?}
+
+        By default, this class was adapted for a4paper and test it with letterpaper. The following paper sizes are available in \LaTeX:
+
+        \begin{itemize}
+            \item letterpaper (11 $\times$ 8.5 in)
+            \item legalpaper (14 $\times$ 8.5 in)
+            \item executivepaper (10.5 $\times$ 7.25 in)
+            \item a4paper (21 $\times$ 29.7 cm)
+            \item a5paper (21 $\times$ 14.8 cm)
+            \item b5paper (25 $\times$ 17.6 cm)
+       \end{itemize}
+
+\section*{Contact me}
+\addcontentsline{toc}{section}{Contact me}
+    
+    Have questions, suggestions, or an idea for a new feature? Found a bug or working on a project you’d like to invite me to?  
+    
+    Feel free to reach out — I’d be happy to help, collaborate, or fix the issue.  Your feedback helps me improve my templates!
+
+    \AtBeginEnvironment{tabular}{\normalsize\sffamily\selectfont}
+    \begin{center}
+        \setlength{\tabcolsep}{3pt}
+        \begin{tabular}{cl}
+            \faEnvelope & \href{mailto:memo.notess1@gmail.com}{memo.notess1@gmail.com} \\
+            \faGlobe{} & \href{https://memonotess1.wixsite.com/memonotess}{memonotess.com} \\
+            \faInstagram{} & \href{https://www.instagram.com/memo.notess/}{@memo.notess}
+        \end{tabular}
+    \end{center}
+
+\section*{Github Repository}
+\addcontentsline{toc}{section}{Github Repository}
+
+    Visit the repository to access the source code, track ongoing development, report issues, and stay up to date with the latest changes.
+
+    \begin{center}
+        \setlength{\tabcolsep}{3pt}
+        \begin{tabular}{cl}
+             \faGithub &  \url{https://github.com/MemoJimenez/Tau-class}\\
+        \end{tabular}
+    \end{center}
+
+\section*{Supporting}
+\addcontentsline{toc}{section}{Supporting}
+
+    Did you like this class document? Check out rho-class, made for complex research articles.
+
+    \begin{center}
+        \setlength{\tabcolsep}{3pt}
+        \begin{tabular}{cl}
+             \faLink &  \href{https://www.overleaf.com/latex/templates/rho-class-research-article-template/bpgjxjjqhtfy}{https://es.overleaf.com/latex/templates/rho-class}\\
+        \end{tabular}
+    \end{center}
+    
+    \subsection*{Any contributions are welcome!}
+    \addcontentsline{toc}{subsection}{Any contributions are welcome!}
+    
+        Coffee keeps me awake and helps me create better \LaTeX\ templates. If you wish to support my work, you can do so through PayPal: 
+
+        \begin{center}
+            \setlength{\tabcolsep}{3pt}
+            \begin{tabular}{cl}
+                 \faPaypal & \textbf{\url{https://www.paypal.me/GuillermoJimeenez}}\\
+            \end{tabular}
+            \vskip9pt
+            Enjoy writing with tau-class!
+        \end{center}
+
+%----------------------------------------------------------
+
+\printbibliography
+
+%----------------------------------------------------------
+
+\end{document}

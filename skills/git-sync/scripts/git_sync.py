@@ -1,0 +1,1 @@
+/Users/apple/Research/abc/scientific-research-mcp/skills/git-sync/scripts/git_sync_tool.py

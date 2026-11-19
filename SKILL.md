@@ -111,13 +111,19 @@ sciresearch vmd POSCAR -o ./figures/ -v all --pbc-box --preset perovskite
 vmd-render POSCAR -o crystal_iso.png -v iso --preset 2d-carbon --pbc-box
 vmd-anim XDATCAR -o trajectory.mp4 --fps 24 --stride 2 --pbc-box
 vmd-volumetric CHGCAR -o cdd_3d.png --isoval 0.005 -v iso
+
+# 18. Manage, scaffold, and compile publication-grade experimental lab reports (Tau-class)
+sciresearch latex-report list
+sciresearch latex-report scaffold my_report --title "2D Allotropes Transport" --author "Research Group" --compile
+sciresearch latex-report compile my_report/template.tex --preview
+sciresearch latex-report preview my_report/template.tex --page 1
 ```
 
 ---
 
-## 🔌 Model Context Protocol (MCP) Tool Suite (34 Tools)
+## 🔌 Model Context Protocol (MCP) Tool Suite (38 Tools)
 
-The skill exposes 34 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
+The skill exposes 38 dedicated tools via the `sciresearch` MCP server (`sciresearch-mcp`):
 
 ### 1. DREAMS Shared Canvas & Provenance Store
 * `canvas_register_artifact(producing_tool, value, arguments, rationales, sources, declared_context, sensitive_params)`:
@@ -200,6 +206,16 @@ The skill exposes 34 dedicated tools via the `sciresearch` MCP server (`sciresea
   Hierarchical two-tier cache retrieval. Performs SHA-256 exact matching with semantic fallback (token set Jaccard similarity $\ge 0.85$) to eliminate redundant simulation queries and LLM token costs.
 * `cache_store_entry(query_key, query_text, value, namespace, ttl_seconds)`:
   Stores expensive calculation manifests and verified physical properties in persistent SQLite cache with TTL expiration and LRU tracking.
+
+### 11. Publication-Grade LaTeX & Experimental Lab Report Engine (Tau-class v2.6.0)
+* `latex_template_list()`:
+  Lists all available registered LaTeX document and presentation templates (e.g. `latex-report`, `beamer-nord`).
+* `latex_report_scaffold(destination, template, title, author, institute, doctype, compile_pdf, force)`:
+  Scaffolds a publication-grade experimental lab report or journal article with two-column layout, STIX2/Fira typography, custom metadata badges, and optional instant compilation.
+* `latex_report_compile(tex_path, compiler, passes, clean_aux, preview)`:
+  Compiles LaTeX reports and presentations with multi-pass execution (XeLaTeX/pdfLaTeX), automatic Biber bibliography resolution, and auxiliary file pruning.
+* `latex_report_preview(tex_path, page, dpi)`:
+  Renders a high-resolution PNG slide or document page preview using `pdftoppm`.
 
 ---
 
@@ -333,4 +349,27 @@ def verify_deduced_structure(atoms_obj, expected_rings=None, hybridization="sp2"
         "gate5_dft_status": "literature_deduced_geometry (requires DFT EDIFF=1E-8 + Phonopy 4x4x1 check)",
         "expected_rings": expected_rings
     }
+```
+
+
+### Learned Skill: `multitier_dft_sac_postprocessing`
+- **Description**: Multi-Tier DFT Post-Processing and Figure Harmonization for 2D Single-Atom Catalysts (+U_substrate vs +U_all vs PBE)
+- **Trigger**: When reviewing or updating DFT calculations for single-atom catalysts on 2D substrates where localized d or f electrons can be treated with substrate-only Hubbard U (+U_sub) vs all-transition-metal Hubbard U (+U_all), or when reviewer requests rigorous validation of U-dependence on free energy profiles and volcano scaling.
+- **Validation**: 1. Relative Delta G_H* ordering across TM candidates must be invariant to U tiering (e.g. Ni ~ Co > Fe >> pristine).
+2. All figures produced in vector formats (PDF/SVG) must strictly comply with zero-overlap and adaptive headroom policies.
+3. CONTCAR coordinates and reported lattice parameters must match the manuscript text exactly.
+```python
+def run_multitier_catalysis_audit(vasp_dirs, tiers=['PBE', 'U_Cr', 'U_all']):
+    """
+    Standardized multi-tier post-processing workflow for 2D halide/chalcogenide SACs:
+    1. Extracts structural metrics (lattice a/b, layer thickness, TM-Cl bond, TM height).
+    2. Computes Gibbs free energy of H adsorption: Delta G_H* = Delta E_H + Delta ZPE - T*Delta S.
+       (Standard correction: Delta ZPE - T*Delta S = +0.24 eV at 298.15 K).
+    3. Cross-validates d-band center shift and ICOHP anti-bonding orbital population.
+    4. Generates publication-ready dual-tier composite panels (e.g. Fig 3-8) with zero label collision.
+    """
+    results = {}
+    for tier in tiers:
+        results[tier] = process_tier(vasp_dirs[tier])
+    return results
 ```

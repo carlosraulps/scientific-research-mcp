@@ -268,17 +268,42 @@
     "metrics": {},
     "git_commit": "b06143a2"
   },
-  "2d_carbon_explorer_init": {
-    "run_id": "2d_carbon_explorer_init",
-    "prompt_summary": "Initialize Git repo, push to origin master, integrate Materials Project crystaltoolkit and dash-mp-components submodules",
-    "status": "CONVERGED",
-    "updated_at": "2026-10-09T23:38:15.776354+00:00",
+  "2d-carbon-explorer-v1": {
+    "run_id": "2d-carbon-explorer-v1",
+    "prompt_summary": "Wise git commiter separation, NotebookLM database consultation, and sciresearch provenance logging for 2D Carbon Explore",
+    "status": "COMPLETED",
+    "updated_at": "2026-10-10T02:54:33.016169+00:00",
     "metrics": {
-      "allotropes_total": 61,
-      "cif_files": 61,
-      "dimensionality": "2D Planar/Buckled Monolayers"
+      "allotrope_count": 61,
+      "biphenylene_benchmark_ev": 0.456,
+      "graphene_reference_ev": 0,
+      "wallpaper_groups_mapped": 14
     },
-    "git_commit": "1339263c"
+    "git_commit": "92c1cf52"
+  },
+  "test_md_20261015_210218": {
+    "run_id": "test_md_20261015_210218",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-10-16T00:02:18.253322+00:00",
+    "metrics": {},
+    "git_commit": "7a350243"
+  },
+  "test_md_20261015_211034": {
+    "run_id": "test_md_20261015_211034",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-10-16T00:10:34.417233+00:00",
+    "metrics": {},
+    "git_commit": "7a350243"
+  },
+  "test_md_20261015_211257": {
+    "run_id": "test_md_20261015_211257",
+    "prompt_summary": "Equilibrate solvated protein in NPT ensemble at 300K.",
+    "status": "RUNNING",
+    "updated_at": "2026-10-16T00:12:57.615821+00:00",
+    "metrics": {},
+    "git_commit": "7a350243"
   },
   "2d_carbon_explorer_sync_v2": {
     "run_id": "2d_carbon_explorer_sync_v2",

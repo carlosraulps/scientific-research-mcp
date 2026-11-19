@@ -9,22 +9,24 @@ A modular system for creating, managing, and compiling publication-grade LaTeX d
 
 ## Features & Capabilities
 
-1. **Nordic Beamer Presentation Theme (`beamer-nord`)**:
+1. **Experimental Lab Report & Article Template (`latex-report`)**:
+   - Two-column layout based on **Tau-class (v2.6.0)**.
+   - Elegant typography with **STIX2** (serif math and body), **Fira Sans** (headings, labels, tables), and **Fira Mono** (code).
+   - Custom callout environments (`\begin{info}`, `\begin{note}`, `\begin{tauenv}`) with subtle rounded borders and modern color themes.
+   - Superior code listings supporting both `minted` (Pygments syntax highlighting) and `listings`.
+   - Built-in `biblatex` IEEE bibliography with automatic `biber` backend resolution.
+   - Ready for DFT calculations, MD simulations, materials synthesis, and experimental physics/chemistry documentation.
+
+2. **Nordic Beamer Presentation Theme (`beamer-nord`)**:
    - Modern Nordic palette (Polar Night dark mode & Snow Storm light mode).
-   - High-contrast, transparent alpha-channel **UFABC grayscale insignia** in the bottom-right corner of the title slide:
-     - `logo-ufabc-light.png`: High-luminance silver/frost monochrome optimized for dark themes (`#2E3440`).
-     - `logo-ufabc-dark.png`: Deep charcoal slate monochrome optimized for light themes.
-   - Rich typography with Libertinus math & fontspec, custom colored blocks (`block`, `alertblock`, `exampleblock`), two-column layouts, and mathematical macros (`\circled`, `siunitx`, `diffcoeff`).
-2. **Instant Scaffolding**:
-   - Generate complete presentation folders ready to compile with one command.
-3. **Automated Multi-Pass Compiler & Aux Cleaner**:
-   - Compiles with XeLaTeX (`xelatex -interaction=nonstopmode`).
-   - Multi-pass resolution for table of contents, bookmarks, and cross-references.
-   - Automatically purges `.aux`, `.log`, `.nav`, `.snm`, `.toc`, `.vrb`, `.out` files unless `--keep-aux` is requested.
-4. **Slide Previewing**:
-   - Headless PNG rendering of any slide using `pdftoppm`.
-5. **Template Extensibility**:
-   - Register any future LaTeX template (e.g., RevTeX articles, UFABC theses, posters) with `latex-template add`.
+   - High-contrast, transparent alpha-channel **UFABC grayscale insignia** in the bottom-right corner of the title slide.
+   - Rich typography with Libertinus math & fontspec, custom colored blocks, two-column layouts, and mathematical macros.
+
+3. **Instant Scaffolding & Multi-Pass Build Automation**:
+   - Scaffold presentations or lab reports with a single command.
+   - Automatic compiler selection (XeLaTeX for Beamer presentations, pdfLaTeX for Tau reports).
+   - Multi-pass build pipeline with automatic Biber execution and auxiliary file cleanup (`.aux`, `.bbl`, `.bcf`, `.blg`, `.log`, `.toc`, etc.).
+   - Headless PNG slide / document preview generation using `pdftoppm`.
 
 ---
 
@@ -32,17 +34,31 @@ A modular system for creating, managing, and compiling publication-grade LaTeX d
 
 Both `latex-template` and `beamer-template` are installed in `~/.local/bin/` (available system-wide in PATH):
 
-### 1. Scaffold a New Presentation
+### 1. Scaffold a New Document or Presentation
 ```bash
-# Dark theme (default)
+# Experimental Lab Report (Tau-class, default)
+latex-template new my_lab_report \
+  --template latex-report \
+  --title "Transport Dynamics in 2D Phosphorene" \
+  --author "Research Group" \
+  --institute "Universidade Federal do ABC (UFABC)" \
+  --doctype "Experimental Lab Report" \
+  --compile
+
+# Or via the unified SciResearch CLI:
+sciresearch latex-report scaffold my_lab_report --title "2D Materials" --compile
+
+# Nordic Beamer Presentation (dark mode, default)
 beamer-template new my_talk \
+  --template beamer-nord \
   --title "Quantum Confinement in Halide Perovskites" \
   --author "Research Group" \
   --institute "Universidade Federal do ABC (UFABC)" \
   --compile
 
-# Light theme
+# Light theme presentation
 beamer-template new my_light_talk \
+  --template beamer-nord \
   --theme light \
   --title "Electronic Structure Methods" \
   --compile

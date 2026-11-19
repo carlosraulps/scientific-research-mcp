@@ -41,6 +41,7 @@ from notebooklm_bridge import NotebookLMBridge
 from guardrails_engine import GuardrailsEngine
 from component_evaluator import ComponentEvaluator
 from cache_store import CacheStore
+from latex_bridge import LaTeXBridge
 from scientific_visualization_tools import (
     standardize_wyckoff_bader_charges,
     extract_compact_2d_slice,
@@ -193,6 +194,38 @@ def main():
     vmd_p.add_argument("--height", type=int, default=1080, help="Output height")
     vmd_p.add_argument("--ao", type=float, default=0.7, help="Tachyon ambient occlusion factor")
     vmd_p.add_argument("--samples", type=int, default=12, help="Anti-aliasing rays per pixel")
+
+    # LaTeX Report Template & Compilation (Tau-class)
+    report_p = subparsers.add_parser("latex-report", help="Manage, scaffold, and compile publication-grade experimental lab reports (Tau-class)")
+    report_sub = report_p.add_subparsers(dest="report_action")
+
+    # list
+    report_sub.add_parser("list", help="List registered LaTeX document and presentation templates")
+
+    # scaffold
+    scaffold_p = report_sub.add_parser("scaffold", help="Scaffold a new experimental report from template")
+    scaffold_p.add_argument("destination", help="Target project directory")
+    scaffold_p.add_argument("--template", default="latex-report", help="Template name (default: latex-report)")
+    scaffold_p.add_argument("--title", help="Report title")
+    scaffold_p.add_argument("--author", help="Lead author")
+    scaffold_p.add_argument("--institute", help="Affiliation / Institute")
+    scaffold_p.add_argument("--doctype", default="Experimental Lab Report", help="Document type badge")
+    scaffold_p.add_argument("--compile", action="store_true", help="Compile immediately after scaffolding")
+    scaffold_p.add_argument("--force", action="store_true", help="Overwrite destination directory if exists")
+
+    # compile
+    comp_p = report_sub.add_parser("compile", help="Compile LaTeX document with automatic multi-pass, biber bibliography, and aux cleanup")
+    comp_p.add_argument("file", help="Path to .tex file")
+    comp_p.add_argument("--compiler", default=None, choices=["xelatex", "pdflatex", "lualatex"])
+    comp_p.add_argument("--passes", type=int, default=None, help="Number of compilation passes")
+    comp_p.add_argument("--keep-aux", dest="clean", action="store_false", help="Keep auxiliary files")
+    comp_p.add_argument("--preview", action="store_true", help="Render PNG preview of title page")
+
+    # preview
+    prev_p = report_sub.add_parser("preview", help="Render a page of a compiled document to PNG")
+    prev_p.add_argument("file", help="Path to .tex file")
+    prev_p.add_argument("--page", type=int, default=1, help="Page number to render")
+    prev_p.add_argument("--dpi", type=int, default=150, help="Resolution DPI")
 
     args = parser.parse_args()
     if not args.subcommand:
@@ -467,6 +500,45 @@ def main():
             cmd.append("--pbc-box")
         res = subprocess.run(cmd)
         sys.exit(res.returncode)
+
+    elif args.subcommand == "latex-report":
+        bridge = LaTeXBridge(BASE_DIR)
+        if args.report_action == "list":
+            res = bridge.list_templates()
+            print(json.dumps(res, indent=2))
+        elif args.report_action == "scaffold":
+            res = bridge.scaffold_report(
+                destination=args.destination,
+                template=args.template,
+                title=args.title,
+                author=args.author,
+                institute=args.institute,
+                doctype=args.doctype,
+                compile_pdf=args.compile,
+                force=args.force
+            )
+            print(json.dumps(res, indent=2))
+            sys.exit(0 if res.get("success", False) else 1)
+        elif args.report_action == "compile":
+            res = bridge.compile_document(
+                tex_path=args.file,
+                compiler=args.compiler,
+                passes=args.passes,
+                clean_aux=getattr(args, "clean", True),
+                preview=args.preview
+            )
+            print(json.dumps(res, indent=2))
+            sys.exit(0 if res.get("success", False) else 1)
+        elif args.report_action == "preview":
+            res = bridge.preview_document(
+                tex_path=args.file,
+                page=args.page,
+                dpi=args.dpi
+            )
+            print(json.dumps(res, indent=2))
+            sys.exit(0 if res.get("success", False) else 1)
+        else:
+            report_p.print_help()
 
 
 if __name__ == "__main__":

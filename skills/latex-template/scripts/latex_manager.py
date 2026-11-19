@@ -18,14 +18,7 @@ TEMPLATES_CATALOG_FILE = SKILL_DIR / "templates" / "templates.json"
 DEFAULT_BEAMER_THEME_DIR = SKILL_DIR / "beamer-theme"
 
 def load_catalog():
-    if TEMPLATES_CATALOG_FILE.exists():
-        try:
-            with open(TEMPLATES_CATALOG_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            pass
-    # Default fallback catalog
-    return {
+    default_catalog = {
         "beamer-nord": {
             "name": "beamer-nord",
             "description": "Nordic Beamer presentation theme (sthlmNord) with UFABC grayscale branding, dark/light modes, and math macros",
@@ -33,8 +26,30 @@ def load_catalog():
             "compiler": "xelatex",
             "path": str(DEFAULT_BEAMER_THEME_DIR),
             "starter": "demo_ufabc_presentation.tex"
+        },
+        "latex-report": {
+            "name": "latex-report",
+            "description": "Publication-grade experimental lab report & research article template (Tau-class v2.6.0) with two-column layout, STIX2/Fira typography, biblatex/biber, and code blocks",
+            "type": "report",
+            "compiler": "pdflatex",
+            "path": str(SKILL_DIR / "templates" / "latex-report"),
+            "starter": "template.tex"
         }
     }
+    if TEMPLATES_CATALOG_FILE.exists():
+        try:
+            with open(TEMPLATES_CATALOG_FILE, "r", encoding="utf-8") as f:
+                cat = json.load(f)
+                # Ensure defaults are present
+                for k, v in default_catalog.items():
+                    if k not in cat:
+                        cat[k] = v
+                return cat
+        except Exception:
+            pass
+    # Save default catalog
+    save_catalog(default_catalog)
+    return default_catalog
 
 def save_catalog(catalog):
     TEMPLATES_CATALOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -228,6 +243,36 @@ def new_project(args):
             f.write(main_tex_content)
         print(f"📝 Created starter presentation: {target_tex}")
 
+    elif template_name == "latex-report":
+        import re
+        for item in src_dir.iterdir():
+            if item.name.startswith("."):
+                continue
+            if item.is_dir():
+                shutil.copytree(item, out_dir / item.name, dirs_exist_ok=True)
+            else:
+                shutil.copy2(item, out_dir / item.name)
+        target_tex = out_dir / tmpl_info.get("starter", "template.tex")
+        
+        # Apply custom fields to target_tex if provided
+        if target_tex.exists():
+            content = target_tex.read_text(encoding="utf-8")
+            title = getattr(args, "title", None)
+            if title and title != "Computational Materials Physics & DFT":
+                content = content.replace("Investigation of Electronic Structure and Transport in Novel 2D Allotropes", title)
+                content = content.replace("Writing a lab report or research article with tau-class", title)
+            author = getattr(args, "author", None)
+            if author and author != "Research Group":
+                content = content.replace("Author One", author)
+            institute = getattr(args, "institute", None)
+            if institute and institute != "Universidade Federal do ABC (UFABC)":
+                content = content.replace("Center for Natural and Human Sciences (CCNH), Universidade Federal do ABC, Santo André, SP, Brazil", institute)
+                content = content.replace("Affiliation One", institute)
+            doctype = getattr(args, "doctype", None)
+            if doctype:
+                content = re.sub(r'\\doctype\{[^}]*\}', f'\\\\doctype{{{doctype}}}', content, count=1)
+            target_tex.write_text(content, encoding="utf-8")
+
     else:
         # Generic copy of template
         for item in src_dir.iterdir():
@@ -241,12 +286,13 @@ def new_project(args):
 
     print(f"✨ Scaffold complete!")
     print(f"👉 To compile, run:")
-    print(f"   beamer-template compile {target_tex.name} (inside {out_dir})")
+    print(f"   latex-template compile {target_tex.name} (inside {out_dir})")
     
     if args.compile:
         compile_file(argparse.Namespace(
             file=str(target_tex),
-            compiler=tmpl_info.get("compiler", "xelatex"),
+            compiler=tmpl_info.get("compiler", "pdflatex" if template_name == "latex-report" else "xelatex"),
+            passes=3 if template_name == "latex-report" else 2,
             clean=True,
             preview=False
         ))
@@ -255,14 +301,33 @@ def clean_auxiliary(tex_path):
     tex_path = Path(tex_path).resolve()
     stem = tex_path.stem
     parent = tex_path.parent
-    extensions = [".aux", ".bbl", ".blg", ".log", ".nav", ".out", ".snm", ".toc", ".vrb", ".run.xml", "-blx.bib"]
+    extensions = [
+        ".aux", ".bbl", ".bcf", ".blg", ".log", ".nav", ".out", ".snm", 
+        ".toc", ".vrb", ".run.xml", "-blx.bib"
+    ]
     deleted = 0
     for ext in extensions:
         aux_file = parent / f"{stem}{ext}"
         if aux_file.exists():
             aux_file.unlink()
             deleted += 1
+    # Clean temporary minted dirs
+    for d in parent.glob(f"_minted*"):
+        if d.is_dir():
+            shutil.rmtree(d, ignore_errors=True)
+            deleted += 1
     return deleted
+
+def detect_compiler(tex_path: Path) -> str:
+    try:
+        content = tex_path.read_text(encoding="utf-8", errors="ignore")
+        if "tau" in content or "tau-class" in content:
+            return "pdflatex"
+        if "beamer" in content:
+            return "xelatex"
+    except Exception:
+        pass
+    return "pdflatex"
 
 def compile_file(args):
     tex_path = Path(args.file).resolve()
@@ -271,15 +336,20 @@ def compile_file(args):
         sys.exit(1)
 
     workdir = tex_path.parent
-    compiler = getattr(args, "compiler", "xelatex")
-    passes = getattr(args, "passes", 2)
+    compiler = getattr(args, "compiler", None)
+    if not compiler:
+        compiler = detect_compiler(tex_path)
+
+    passes = getattr(args, "passes", None)
+    if not passes:
+        passes = 3 if compiler == "pdflatex" else 2
     clean = getattr(args, "clean", True)
     preview = getattr(args, "preview", False)
 
     print(f"⚙️  Compiling {tex_path.name} with {compiler} ({passes} passes)...")
     
     for p in range(1, passes + 1):
-        cmd = [compiler, "-interaction=nonstopmode", tex_path.name]
+        cmd = [compiler, "-shell-escape", "-interaction=nonstopmode", tex_path.name]
         res = subprocess.run(cmd, cwd=workdir, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         if res.returncode != 0:
             print(f"❌ Compilation failed at pass {p}:")
@@ -288,6 +358,17 @@ def compile_file(args):
                 print(f"   {line}")
             sys.exit(res.returncode)
         print(f"   ✓ Pass {p}/{passes} successful")
+
+        # After pass 1, resolve bibliography if .bcf exists
+        if p == 1:
+            bcf_file = workdir / f"{tex_path.stem}.bcf"
+            if bcf_file.exists():
+                print(f"   📚 Resolving bibliography with biber...")
+                b_res = subprocess.run(["biber", tex_path.stem], cwd=workdir, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                if b_res.returncode == 0:
+                    print(f"   ✓ Biber bibliography resolution complete")
+                else:
+                    print(f"   ⚠️ Biber completed with warnings (code {b_res.returncode})")
 
     pdf_file = workdir / f"{tex_path.stem}.pdf"
     if pdf_file.exists():
@@ -302,7 +383,7 @@ def compile_file(args):
             preview_png = workdir / f"{tex_path.stem}_preview"
             cmd_preview = ["pdftoppm", "-png", "-r", "150", "-f", "1", "-l", "1", str(pdf_file), str(preview_png)]
             subprocess.run(cmd_preview, check=True)
-            print(f"🖼️ Title slide preview generated: {preview_png}-1.png")
+            print(f"🖼️ Preview generated: {preview_png}-1.png")
     else:
         print("❌ Warning: PDF file was not created.")
 
@@ -313,8 +394,8 @@ def preview_file(args):
         print(f"Compiling {tex_path} first...")
         compile_file(argparse.Namespace(
             file=str(tex_path),
-            compiler=getattr(args, "compiler", "xelatex"),
-            passes=2,
+            compiler=getattr(args, "compiler", None),
+            passes=3,
             clean=True,
             preview=False
         ))
@@ -345,8 +426,8 @@ def main():
     parser_add.add_argument("name", help="Template name (e.g., revtex-article, thesis-ufabc)")
     parser_add.add_argument("path", help="Directory path containing the template")
     parser_add.add_argument("--desc", help="Short description of the template")
-    parser_add.add_argument("--type", default="article", choices=["beamer", "article", "thesis", "poster", "letter"])
-    parser_add.add_argument("--compiler", default="xelatex", choices=["xelatex", "pdflatex", "lualatex"])
+    parser_add.add_argument("--type", default="article", choices=["beamer", "article", "thesis", "poster", "letter", "report"])
+    parser_add.add_argument("--compiler", default="pdflatex", choices=["xelatex", "pdflatex", "lualatex"])
     parser_add.add_argument("--starter", help="Main starter .tex file name")
     parser_add.add_argument("--force", action="store_true", help="Overwrite existing template in registry")
     parser_add.set_defaults(func=add_template)
@@ -354,12 +435,13 @@ def main():
     # Subcommand: new
     parser_new = subparsers.add_parser("new", help="Scaffold a new project from a template")
     parser_new.add_argument("destination", help="Target project directory")
-    parser_new.add_argument("--template", default="beamer-nord", help="Template name to use")
+    parser_new.add_argument("--template", default="latex-report", help="Template name to use (latex-report, beamer-nord)")
     parser_new.add_argument("--theme", choices=["dark", "light"], default="dark", help="Color theme (for beamer-nord)")
     parser_new.add_argument("--title", default="Computational Materials Physics & DFT", help="Presentation / document title")
     parser_new.add_argument("--subtitle", default="Research Progress and Electronic Structure Modeling", help="Subtitle")
     parser_new.add_argument("--author", default="Research Group", help="Author name")
     parser_new.add_argument("--institute", default="Universidade Federal do ABC (UFABC)", help="Institute name")
+    parser_new.add_argument("--doctype", default="Experimental Lab Report", help="Document type label (for latex-report)")
     parser_new.add_argument("--project", default="Advanced Ab Initio Simulations", help="Course or project name")
     parser_new.add_argument("--logo", help="Custom logo graphic name or path")
     parser_new.add_argument("--compile", action="store_true", help="Compile immediately after scaffolding")
@@ -369,14 +451,14 @@ def main():
     # Subcommand: compile
     parser_compile = subparsers.add_parser("compile", help="Compile a .tex file with automatic multi-pass and cleanup")
     parser_compile.add_argument("file", help="Path to .tex file")
-    parser_compile.add_argument("--compiler", default="xelatex", choices=["xelatex", "pdflatex", "lualatex"])
-    parser_compile.add_argument("--passes", type=int, default=2, help="Number of compilation passes")
+    parser_compile.add_argument("--compiler", default=None, choices=["xelatex", "pdflatex", "lualatex"])
+    parser_compile.add_argument("--passes", type=int, default=None, help="Number of compilation passes (default: 3 for pdflatex, 2 for xelatex)")
     parser_compile.add_argument("--keep-aux", dest="clean", action="store_false", help="Keep auxiliary files (.aux, .toc, etc.)")
-    parser_compile.add_argument("--preview", action="store_true", help="Also generate PNG preview of title slide")
+    parser_compile.add_argument("--preview", action="store_true", help="Also generate PNG preview of title page")
     parser_compile.set_defaults(func=compile_file)
 
     # Subcommand: preview
-    parser_preview = subparsers.add_parser("preview", help="Render a page of a compiled presentation to PNG")
+    parser_preview = subparsers.add_parser("preview", help="Render a page of a compiled document to PNG")
     parser_preview.add_argument("file", help="Path to .tex file")
     parser_preview.add_argument("--page", type=int, default=1, help="Page number to render (default: 1)")
     parser_preview.add_argument("--dpi", type=int, default=150, help="Resolution DPI (default: 150)")
