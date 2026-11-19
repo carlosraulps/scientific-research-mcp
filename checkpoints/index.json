@@ -279,5 +279,20 @@
       "dimensionality": "2D Planar/Buckled Monolayers"
     },
     "git_commit": "1339263c"
+  },
+  "2d_carbon_explorer_sync_v2": {
+    "run_id": "2d_carbon_explorer_sync_v2",
+    "prompt_summary": "Synchronized 2D Carbon Explorer from GitHub origin/master (62 commits, fast-forwarded to 34aeb62), rebuilt Graphify AST ",
+    "status": "CONVERGED",
+    "updated_at": "2026-10-13T10:38:00.558189+00:00",
+    "metrics": {
+      "allotropes_total": 61,
+      "commits_integrated": 62,
+      "graph_communities": 251,
+      "graph_edges": 5399,
+      "graph_nodes": 2989,
+      "head_commit": "34aeb62"
+    },
+    "git_commit": "ce44f07f"
   }
 }

@@ -3367,5 +3367,38 @@
       "branch": "master",
       "is_dirty": true
     }
+  },
+  "cf890d2d": {
+    "result_id": "cf890d2d",
+    "producing_tool": "generate_fig_homo_lumo_strained_suite.py",
+    "value": {
+      "figure_file": "fig12_homo_lumo_strained_suite.png",
+      "homo_lumo_energy_window_range_eV": [
+        1.267,
+        1.607
+      ],
+      "resolution_dpi": 300
+    },
+    "arguments": {
+      "cases": [
+        "pristine_00",
+        "biaxial_+0.02",
+        "biaxial_-0.02"
+      ],
+      "energy_summary": "06_charge_density_analysis/04_plain_homo_lumo_strained/homo_lumo_strain_summary.csv",
+      "figure_path": "/home/cr/simulations/photh-gr/postprocessing/figures/fig12_homo_lumo_strained_suite.png",
+      "render_engine": "VESTA 3.5.0 CLI"
+    },
+    "rationales": {},
+    "sources": {},
+    "declared_context": "Publication master panel displaying VESTA 3D real-space orbital densities for HOMO (gold) and LUMO (cyan) across pristine, tensile (+2%), and compressive (-2%) strained PHOTH-graphene alongside 19-state electronic eigenvalue shifts.",
+    "parent_ids": [],
+    "created_at": "2026-10-13T13:42:45.868137+00:00",
+    "git": {
+      "commit": "ce44f07f66738de62a41b38bbf2c989ab8b640f0",
+      "short_commit": "ce44f07f",
+      "branch": "master",
+      "is_dirty": true
+    }
   }
 }

@@ -1,0 +1,37 @@
+{
+  "run_id": "2d_carbon_explorer_sync_v2",
+  "prompt_summary": "Synchronized 2D Carbon Explorer from GitHub origin/master (62 commits, fast-forwarded to 34aeb62), rebuilt Graphify AST knowledge graph (2,989 nodes, 5,399 edges), and logged provenance in sciresearch.",
+  "status": "CONVERGED",
+  "run_directory": "/home/cr/simulations/scientific-research/runs/2d_carbon_explorer_sync_v2",
+  "created_at": "2026-10-13T10:38:00.558189+00:00",
+  "updated_at": "2026-10-13T10:38:00.558189+00:00",
+  "agent_trace": [],
+  "parameter_registry": {
+    "backend_framework": "FastAPI",
+    "frontend_framework": "React/Vite",
+    "git_branch": "master",
+    "remote_origin": "git@github.com:carlosraulps/2d-carbon-explorer.git"
+  },
+  "file_paths": {
+    "backend": "/home/cr/simulations/database-2dgr/backend",
+    "data": "/home/cr/simulations/database-2dgr/data",
+    "frontend": "/home/cr/simulations/database-2dgr/frontend",
+    "graphify": "/home/cr/simulations/database-2dgr/graphify-out/graph.json",
+    "scripts": "/home/cr/simulations/database-2dgr/scripts"
+  },
+  "figures": [],
+  "metrics": {
+    "allotropes_total": 61,
+    "commits_integrated": 62,
+    "graph_communities": 251,
+    "graph_edges": 5399,
+    "graph_nodes": 2989,
+    "head_commit": "34aeb62"
+  },
+  "git": {
+    "commit": "ce44f07f66738de62a41b38bbf2c989ab8b640f0",
+    "short_commit": "ce44f07f",
+    "branch": "master",
+    "is_dirty": false
+  }
+}

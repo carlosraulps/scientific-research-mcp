@@ -274,3 +274,19 @@ Auditable record of all procedural decisions, theoretical justifications, litera
 - **Evidence / Artifact Reference**: ``
 
 ---
+### [2026-10-13T13:20:59.314643+00:00] Decision:  (``)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: 
+- **Intervention**: 
+- **Observed Outcome**: 
+- **Evidence / Artifact Reference**: ``
+
+---
+### [2026-10-13T13:24:08.563011+00:00] Decision: carbono_fulereno_acceleration_and_zbrent_healing (`PHOTH_CURV_SWNT_DISPATCH`)
+- **Triggered Rule**: Rule B
+- **Hypothesis**: Nanotubo partition suffered a 6-day backlog (queue delay to Oct 19) due to user job accumulation, whereas fulereno (64 cores, QoS min 64) has zero pending queue and schedules execution at 10:56 (in 30 min) on node n10. Switching from conjugate gradient (IBRION=2) to quasi-Newton (IBRION=1, POTIM=0.25) eliminates line-search ZBRENT bracketing failures in flexible 2D/1D acoustic modes.
+- **Intervention**: Scaled jobs to 64 cores on Carbono fulereno with mpirun -np 64 vasp_std, IBRION=1, POTIM=0.25, and auto-resumption from CONTCAR.
+- **Observed Outcome**: Anticipated immediate start at 10:56:40 with 64 AMD EPYC cores, bypassing a 6-day queue backlog on nanotubo.
+- **Evidence / Artifact Reference**: `Job 172421 & 172422 on Carbono fulereno, sbatch test-only 172426`
+
+---
