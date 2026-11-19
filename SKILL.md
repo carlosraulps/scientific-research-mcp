@@ -105,6 +105,12 @@ sciresearch test-components
 # 16. Two-tier exact & semantic cache query / storage
 sciresearch cache set --key pt111_her --text "Pt(111) HER free energy" --val '{"delta_G": -0.09}' --namespace her
 sciresearch cache get --key pt111_her --namespace her
+
+# 17. Headless VMD & Tachyon Raytracing (all views, 2D carbon/perovskite presets, PBC box)
+sciresearch vmd POSCAR -o ./figures/ -v all --pbc-box --preset perovskite
+vmd-render POSCAR -o crystal_iso.png -v iso --preset 2d-carbon --pbc-box
+vmd-anim XDATCAR -o trajectory.mp4 --fps 24 --stride 2 --pbc-box
+vmd-volumetric CHGCAR -o cdd_3d.png --isoval 0.005 -v iso
 ```
 
 ---
@@ -233,7 +239,8 @@ The skill exposes 34 dedicated tools via the `sciresearch` MCP server (`sciresea
 │   ├── publication-figure-formatter/ # Times New Roman & STIX publication figure styling
 │   ├── site-pyramidalization-zoom/   # Polyhedral zoom insets & Haddon POAV1 pyramidalization
 │   ├── vesta-automation/             # Headless VASTA CLI with Bound=0 spillover fix
-│   └── xcrysden-visualizer/          # Fermi surfaces (BXSF) & Brillouin zone rendering
+│   ├── xcrysden-visualizer/          # Fermi surfaces (BXSF) & Brillouin zone rendering
+│   └── vmd-automation/               # VMD 2.0+ headless Tachyon raytracing, trajectories & volumetric 3D
 ├── FUTURE_SKILLS_ROADMAP.md     # Architecture for deferred (LOBSTER, BoltzTraP2) & next-gen skills
 └── graphify-out/                # Graphify persistent knowledge graph
 ```
@@ -256,6 +263,7 @@ All subskills in `skills/` are symlinked to `~/.gemini/config/skills/` and expos
 | **`publication-figure-formatter`**| `format-pub-fig` | Times New Roman typography, STIX math, collision-free annotations, journal aspect ratios. |
 | **`electron-density-surfaces`** | `extract-slice-2d` | CHGCAR 3D isosurfaces, compact 2D slices ($<500\text{ KB}$), Bader Wyckoff standardization. |
 | **`blender-crystal-render`** | `render-blender-crystal`| Cycles raytracing, glass/metal shaders, depth-of-field, studio softbox lighting. |
+| **`vmd-automation`** | `vmd-render` / `vmd-anim` / `vmd-volumetric` | VMD 2.0+ headless Tachyon CPU raytracer (AO, soft shadows), MD trajectory animation (MP4/GIF), dual 3D CDD isosurfaces. |
 
 > **Deferred Candidates & Future Roadmap**: See [`FUTURE_SKILLS_ROADMAP.md`](file:///home/cr/simulations/scientific-research/FUTURE_SKILLS_ROADMAP.md) for specifications on **Skill 5** (`lobster-cohp-bonding`), **Skill 8** (`boltztrap2-transport`), and upcoming topological/vibrational skills (WannierBerri, Phonopy, Phono3py, VTST-NEB, universal MLIPs).
 

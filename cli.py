@@ -17,6 +17,7 @@ Provides command-line access to:
 import os
 import sys
 import json
+import subprocess
 import argparse
 from pathlib import Path
 
@@ -180,6 +181,18 @@ def main():
     cache_p.add_argument("--val", "-v", help="Value string or JSON for cache set")
     cache_p.add_argument("--namespace", "-ns", default="default", help="Cache namespace")
     cache_p.add_argument("--similarity", "-sim", type=float, default=0.85, help="Minimum semantic similarity")
+
+    # VMD Visualizer
+    vmd_p = subparsers.add_parser("vmd", help="Headless VMD & Tachyon raytracing visualizer")
+    vmd_p.add_argument("file", help="Input structure file (POSCAR, LAMMPS, PDB, XYZ, Cube, XSF)")
+    vmd_p.add_argument("--output", "-o", default="./vmd_render.png", help="Output image file or directory")
+    vmd_p.add_argument("--view", "-v", choices=["c", "a", "b", "iso", "all"], default="iso", help="Projection view")
+    vmd_p.add_argument("--preset", choices=["standard", "2d-carbon", "perovskite", "biomolecule", "quicksurf", "spacefill"], default="standard", help="Visualization preset")
+    vmd_p.add_argument("--pbc-box", action="store_true", help="Draw unit cell boundary box")
+    vmd_p.add_argument("--width", type=int, default=1920, help="Output width")
+    vmd_p.add_argument("--height", type=int, default=1080, help="Output height")
+    vmd_p.add_argument("--ao", type=float, default=0.7, help="Tachyon ambient occlusion factor")
+    vmd_p.add_argument("--samples", type=int, default=12, help="Anti-aliasing rays per pixel")
 
     args = parser.parse_args()
     if not args.subcommand:
@@ -437,6 +450,23 @@ def main():
         elif args.action == "stats":
             res = cache_store.stats(namespace=args.namespace if args.namespace != "default" else None)
             print(json.dumps(res, indent=2))
+
+    elif args.subcommand == "vmd":
+        vmd_script = os.path.join(BASE_DIR, "skills", "vmd-automation", "scripts", "vmd_render.py")
+        cmd = [
+            sys.executable, vmd_script, args.file,
+            "-o", args.output,
+            "-v", args.view,
+            "--preset", args.preset,
+            "--width", str(args.width),
+            "--height", str(args.height),
+            "--ao", str(args.ao),
+            "--samples", str(args.samples)
+        ]
+        if args.pbc_box:
+            cmd.append("--pbc-box")
+        res = subprocess.run(cmd)
+        sys.exit(res.returncode)
 
 
 if __name__ == "__main__":
